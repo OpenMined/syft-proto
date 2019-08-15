@@ -1,0 +1,5 @@
+.idea
+build
+*.egg-info
+pysyft_proto/__pycache__
+pysyft_proto/proto.json
