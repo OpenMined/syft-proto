@@ -65,63 +65,69 @@
     "syft.messaging.plan.Plan": {
       "code": 19
     },
-    "syft.messaging.protocol.Protocol": {
+    "syft.messaging.plan.State": {
       "code": 20
     },
-    "syft.generic.pointers.pointer_tensor.PointerTensor": {
+    "syft.messaging.plan.Procedure": {
       "code": 21
     },
-    "syft.generic.pointers.pointer_plan.PointerPlan": {
+    "syft.messaging.protocol.Protocol": {
       "code": 22
     },
-    "syft.generic.pointers.pointer_protocol.PointerProtocol": {
+    "syft.generic.pointers.pointer_tensor.PointerTensor": {
       "code": 23
     },
-    "syft.generic.pointers.object_wrapper.ObjectWrapper": {
+    "syft.generic.pointers.pointer_plan.PointerPlan": {
       "code": 24
     },
-    "syft.federated.train_config.TrainConfig": {
+    "syft.generic.pointers.pointer_protocol.PointerProtocol": {
       "code": 25
     },
-    "syft.workers.base.BaseWorker": {
-      "code": 26,
-      "forced_code": 39
+    "syft.generic.pointers.object_wrapper.ObjectWrapper": {
+      "code": 26
     },
-    "syft.frameworks.torch.tensors.interpreters.autograd.AutogradTensor": {
+    "syft.federated.train_config.TrainConfig": {
       "code": 27
     },
-    "syft.messaging.message.Message": {
-      "code": 28
+    "syft.workers.base.BaseWorker": {
+      "code": 28,
+      "forced_code": 41
     },
-    "syft.messaging.message.Operation": {
+    "syft.frameworks.torch.tensors.interpreters.autograd.AutogradTensor": {
       "code": 29
     },
-    "syft.messaging.message.ObjectMessage": {
+    "syft.messaging.message.Message": {
       "code": 30
     },
-    "syft.messaging.message.ObjectRequestMessage": {
+    "syft.messaging.message.Operation": {
       "code": 31
     },
-    "syft.messaging.message.IsNoneMessage": {
+    "syft.messaging.message.ObjectMessage": {
       "code": 32
     },
-    "syft.messaging.message.GetShapeMessage": {
+    "syft.messaging.message.ObjectRequestMessage": {
       "code": 33
     },
-    "syft.messaging.message.ForceObjectDeleteMessage": {
+    "syft.messaging.message.IsNoneMessage": {
       "code": 34
     },
-    "syft.messaging.message.SearchMessage": {
+    "syft.messaging.message.GetShapeMessage": {
       "code": 35
     },
-    "syft.messaging.message.PlanCommandMessage": {
+    "syft.messaging.message.ForceObjectDeleteMessage": {
       "code": 36
     },
-    "syft.exceptions.GetNotPermittedError": {
+    "syft.messaging.message.SearchMessage": {
       "code": 37
     },
-    "syft.exceptions.ResponseSignatureError": {
+    "syft.messaging.message.PlanCommandMessage": {
       "code": 38
+    },
+    "syft.exceptions.GetNotPermittedError": {
+      "code": 39
+    },
+    "syft.exceptions.ResponseSignatureError": {
+      "code": 40
     }
   }
 }
