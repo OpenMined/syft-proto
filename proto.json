@@ -62,13 +62,13 @@
     "syft.generic.pointers.multi_pointer.MultiPointerTensor": {
       "code": 18
     },
-    "syft.messaging.plan.Plan": {
+    "syft.messaging.plan.plan.Plan": {
       "code": 19
     },
-    "syft.messaging.plan.State": {
+    "syft.messaging.plan.state.State": {
       "code": 20
     },
-    "syft.messaging.plan.Procedure": {
+    "syft.messaging.plan.procedure.Procedure": {
       "code": 21
     },
     "syft.messaging.protocol.Protocol": {
