@@ -29,105 +29,120 @@
     "numpy.ndarray": {
       "code": 8
     },
-    "torch.device": {
+    "numpy.float32": {
       "code": 9
     },
-    "torch.Size": {
+    "numpy.float64": {
+      "code": 9
+    },
+    "numpy.int32": {
+      "code": 9
+    },
+    "numpy.int64": {
+      "code": 9
+    },
+    "torch.device": {
       "code": 10
     },
+    "torch.Size": {
+      "code": 11
+    },
     "torch.jit.ScriptModule": {
-      "code": 11
-    },
-    "torch.jit.TopLevelTracedModule": {
-      "code": 11
-    },
-    "torch.nn.parameter.Parameter": {
       "code": 12
     },
-    "torch.Tensor": {
+    "torch.jit.TopLevelTracedModule": {
+      "code": 12
+    },
+    "torch.nn.parameter.Parameter": {
       "code": 13
     },
-    "syft.frameworks.torch.tensors.interpreters.additive_shared.AdditiveSharingTensor": {
+    "torch.Tensor": {
       "code": 14
     },
-    "syft.frameworks.torch.tensors.interpreters.precision.FixedPrecisionTensor": {
+    "syft.frameworks.torch.tensors.interpreters.additive_shared.AdditiveSharingTensor": {
       "code": 15
     },
-    "syft.frameworks.torch.tensors.interpreters.crt_precision.CRTPrecisionTensor": {
+    "syft.frameworks.torch.tensors.interpreters.precision.FixedPrecisionTensor": {
       "code": 16
     },
-    "syft.frameworks.torch.tensors.decorators.logging.LoggingTensor": {
+    "syft.frameworks.torch.tensors.interpreters.crt_precision.CRTPrecisionTensor": {
       "code": 17
     },
-    "syft.generic.pointers.multi_pointer.MultiPointerTensor": {
+    "syft.frameworks.torch.tensors.decorators.logging.LoggingTensor": {
       "code": 18
     },
-    "syft.messaging.plan.plan.Plan": {
+    "syft.generic.pointers.multi_pointer.MultiPointerTensor": {
       "code": 19
     },
-    "syft.messaging.plan.state.State": {
+    "syft.generic.pointers.object_pointer.ObjectPointer": {
       "code": 20
     },
-    "syft.messaging.plan.procedure.Procedure": {
+    "syft.messaging.plan.plan.Plan": {
       "code": 21
     },
-    "syft.messaging.protocol.Protocol": {
+    "syft.messaging.plan.state.State": {
       "code": 22
     },
-    "syft.generic.pointers.pointer_tensor.PointerTensor": {
+    "syft.messaging.plan.procedure.Procedure": {
       "code": 23
     },
-    "syft.generic.pointers.pointer_plan.PointerPlan": {
+    "syft.messaging.protocol.Protocol": {
       "code": 24
     },
-    "syft.generic.pointers.pointer_protocol.PointerProtocol": {
+    "syft.generic.pointers.pointer_tensor.PointerTensor": {
       "code": 25
     },
-    "syft.generic.pointers.object_wrapper.ObjectWrapper": {
+    "syft.generic.pointers.pointer_plan.PointerPlan": {
       "code": 26
     },
-    "syft.federated.train_config.TrainConfig": {
+    "syft.generic.pointers.pointer_protocol.PointerProtocol": {
       "code": 27
     },
-    "syft.workers.base.BaseWorker": {
-      "code": 28,
-      "forced_code": 41
+    "syft.generic.pointers.object_wrapper.ObjectWrapper": {
+      "code": 28
     },
-    "syft.frameworks.torch.tensors.interpreters.autograd.AutogradTensor": {
+    "syft.federated.train_config.TrainConfig": {
       "code": 29
     },
-    "syft.messaging.message.Message": {
-      "code": 30
+    "syft.workers.base.BaseWorker": {
+      "code": 30,
+      "forced_code": 43
     },
-    "syft.messaging.message.Operation": {
+    "syft.frameworks.torch.tensors.interpreters.autograd.AutogradTensor": {
       "code": 31
     },
-    "syft.messaging.message.ObjectMessage": {
+    "syft.messaging.message.Message": {
       "code": 32
     },
-    "syft.messaging.message.ObjectRequestMessage": {
+    "syft.messaging.message.Operation": {
       "code": 33
     },
-    "syft.messaging.message.IsNoneMessage": {
+    "syft.messaging.message.ObjectMessage": {
       "code": 34
     },
-    "syft.messaging.message.GetShapeMessage": {
+    "syft.messaging.message.ObjectRequestMessage": {
       "code": 35
     },
-    "syft.messaging.message.ForceObjectDeleteMessage": {
+    "syft.messaging.message.IsNoneMessage": {
       "code": 36
     },
-    "syft.messaging.message.SearchMessage": {
+    "syft.messaging.message.GetShapeMessage": {
       "code": 37
     },
-    "syft.messaging.message.PlanCommandMessage": {
+    "syft.messaging.message.ForceObjectDeleteMessage": {
       "code": 38
     },
-    "syft.exceptions.GetNotPermittedError": {
+    "syft.messaging.message.SearchMessage": {
       "code": 39
     },
-    "syft.exceptions.ResponseSignatureError": {
+    "syft.messaging.message.PlanCommandMessage": {
       "code": 40
+    },
+    "syft.exceptions.GetNotPermittedError": {
+      "code": 41
+    },
+    "syft.exceptions.ResponseSignatureError": {
+      "code": 42
     }
   }
 }
