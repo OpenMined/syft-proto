@@ -50,6 +50,9 @@
     "torch.jit.ScriptModule": {
       "code": 12
     },
+    "torch._C.Function": {
+      "code": 12
+    },
     "torch.jit.TopLevelTracedModule": {
       "code": 12
     },
