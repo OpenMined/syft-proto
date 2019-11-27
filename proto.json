@@ -149,6 +149,9 @@
     },
     "syft.generic.string.String": {
       "code": 44
+    },
+    "syft.frameworks.torch.tensors.interpreters.promise.PromiseTensor": {
+      "code": 45
     }
       
   }
