@@ -152,7 +152,9 @@
     },
     "syft.frameworks.torch.tensors.interpreters.promise.PromiseTensor": {
       "code": 45
+    },
+    "syft.frameworks.torch.tensors.interpreters.private.PrivateTensor": {
+      "code": 46
     }
-      
   }
 }
