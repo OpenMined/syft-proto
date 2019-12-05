@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package pysyft.types.syft.v1;
+
+message Shape {
+    repeated int32 dims = 1;
+}

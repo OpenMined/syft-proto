@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package pysyft.types.torch.v1;
+
+// Covers torch.jit.ScriptModule, torch._C.Function, torch.jit.TopLevelTraceModule
+message ScriptModule {
+    // Should this be `bytes`?
+    string obj = 1;
+}

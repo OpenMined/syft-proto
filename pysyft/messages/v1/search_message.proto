@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package pysyft.messages.v1;
+
+message SearchMessage {
+    repeated string query_terms = 1;
+}

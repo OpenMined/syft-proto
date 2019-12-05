@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package pysyft.types.torch.v1;
+
+message Tensor {
+    oneof id {
+        int32 id_int = 1;
+        string id_str = 2;
+    }
+    bytes bin = 3;
+    Tensor chain = 4;
+    Tensor grad_chain = 5;
+    repeated string tags = 6;
+    string description = 7;
+    enum Serializer {
+        SERIALIZER_UNSPECIFIED = 0;
+        SERIALIZER_TORCH = 1;
+        SERIALIZER_NUMPY = 2;
+        SERIALIZER_TF = 3;
+        SERIALIZER_ALL = 4;
+    }
+    Serializer serializer = 8;
+}

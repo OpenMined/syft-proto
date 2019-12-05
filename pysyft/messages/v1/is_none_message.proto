@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package pysyft.messages.v1;
+
+import "pysyft/types/syft/v1/pointer_tensor.proto";
+
+message IsNoneMessage {
+    pysyft.types.syft.v1.PointerTensor tensor = 1;
+}

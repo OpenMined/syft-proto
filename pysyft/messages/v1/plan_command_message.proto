@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pysyft.messages.v1;
+
+message PlanCommandMessage {
+    string command = 1;
+    oneof id {
+        int32 id_int = 2;
+        string id_str = 3;
+    }
+    bool copy = 4;
+}

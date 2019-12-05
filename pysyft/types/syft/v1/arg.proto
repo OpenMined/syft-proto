@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package pysyft.types.syft.v1;
+
+import "pysyft/types/syft/v1/pointer_tensor.proto";
+import "pysyft/types/syft/v1/shape.proto";
+import "pysyft/types/syft/v1/virtual_worker.proto";
+import "pysyft/types/torch/v1/tensor.proto";
+import "pysyft/types/torch/v1/parameter.proto";
+
+
+message Arg {
+    oneof arg {
+        bool arg_bool = 1;
+        int32 arg_int = 2;
+        float arg_float = 3;
+        string arg_string = 4;
+
+        // TODO: Decide if we can live without VirtualWorker and just use int32 here
+        pysyft.types.syft.v1.VirtualWorker arg_virtual_worker = 5;
+        pysyft.types.syft.v1.Shape arg_shape = 6;
+        pysyft.types.syft.v1.PointerTensor arg_pointer_tensor = 7;
+
+        pysyft.types.torch.v1.Tensor arg_torch_tensor = 8;
+        pysyft.types.torch.v1.Parameter arg_torch_param = 9;
+    }
+}

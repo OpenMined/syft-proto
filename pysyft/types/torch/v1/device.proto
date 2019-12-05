@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package pysyft.types.torch.v1;
+
+message Device {
+    repeated string types = 1;
+}

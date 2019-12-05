@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package pysyft.messages.v1;
+
+message ForceObjectDeleteMessage {
+    oneof object_id {
+        int32 id_int = 1;
+        string id_str = 2;
+    }
+}
