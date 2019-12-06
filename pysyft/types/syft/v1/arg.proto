@@ -5,7 +5,7 @@ package pysyft.types.syft.v1;
 import "pysyft/types/syft/v1/pointer_tensor.proto";
 import "pysyft/types/syft/v1/shape.proto";
 import "pysyft/types/syft/v1/virtual_worker.proto";
-import "pysyft/types/torch/v1/tensor.proto";
+import "pysyft/types/syft/v1/tensor.proto";
 import "pysyft/types/torch/v1/parameter.proto";
 
 
@@ -20,8 +20,8 @@ message Arg {
         pysyft.types.syft.v1.VirtualWorker arg_virtual_worker = 5;
         pysyft.types.syft.v1.Shape arg_shape = 6;
         pysyft.types.syft.v1.PointerTensor arg_pointer_tensor = 7;
-
-        pysyft.types.torch.v1.Tensor arg_torch_tensor = 8;
+        pysyft.types.syft.v1.Tensor arg_tensor = 8;
+        
         pysyft.types.torch.v1.Parameter arg_torch_param = 9;
     }
 }

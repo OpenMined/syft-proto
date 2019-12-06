@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package pysyft.types.torch.v1;
-
-message Size {
-    // TODO: Decide if we need this, given that we have Syft Shape already
-    repeated int32 dims = 1;
-}
