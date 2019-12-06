@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package pysyft.messages.v1;
 
-import "pysyft/types/torch/v1/tensor.proto";
+import "pysyft/types/syft/v1/tensor.proto";
 
 message ObjectMessage {
-    pysyft.types.torch.v1.Tensor tensor = 1;
+    pysyft.types.syft.v1.Tensor tensor = 1;
 }
