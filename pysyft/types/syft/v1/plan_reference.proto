@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package pysyft.types.syft.v1;
+
+import "pysyft/types/syft/v1/id.proto";
+
+message PlanReference {
+    pysyft.types.syft.v1.Id worker_id = 1;
+    pysyft.types.syft.v1.Id plan_id = 2;
+}
