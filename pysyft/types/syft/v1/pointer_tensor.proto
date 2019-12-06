@@ -2,21 +2,13 @@ syntax = "proto3";
 
 package pysyft.types.syft.v1;
 
+import "pysyft/types/syft/v1/id.proto";
 import "pysyft/types/syft/v1/shape.proto";
 
 message PointerTensor {
-    oneof object_id {
-        int32 object_id_int = 1;
-        string object_id_str = 2;
-    }
-    oneof worker_id {
-        int32 worker_id_int = 3;
-        string worker_id_str = 4;
-    }
-    oneof object_id_at_location {
-        int32 location_id_int = 5;
-        string location_id_str = 6;
-    }
+    pysyft.types.syft.v1.Id object_id = 1;
+    pysyft.types.syft.v1.Id worker_id = 2;
+    pysyft.types.syft.v1.Id object_id_at_location = 3;
     string point_to_attr = 7;
     pysyft.types.syft.v1.Shape shape = 8;
     bool garbage_collect_data = 9;

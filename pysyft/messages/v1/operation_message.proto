@@ -3,14 +3,12 @@ syntax = "proto3";
 package pysyft.messages.v1;
 
 import "pysyft/types/syft/v1/arg.proto";
+import "pysyft/types/syft/v1/id.proto";
 
 message OperationMessage {
     string command = 1;
-    oneof owner_id {
-        int32 id_int = 2;
-        string id_str = 3;
-    }
-    repeated pysyft.types.syft.v1.Arg args = 4;
-    map<string, pysyft.types.syft.v1.Arg> kwargs = 5;
-    repeated int32 return_ids = 6;
+    pysyft.types.syft.v1.Id owner_id = 2;
+    repeated pysyft.types.syft.v1.Arg args = 3;
+    map<string, pysyft.types.syft.v1.Arg> kwargs = 4;
+    repeated int32 return_ids = 5;
 }
