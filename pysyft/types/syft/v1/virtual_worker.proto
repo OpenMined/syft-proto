@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-package pysyft.types.syft.v1;
-
-message VirtualWorker {
-    int32 id = 1;
-}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package pysyft.types.syft.v1;
+
+import "pysyft/types/syft/v1/tensor.proto";
+
+message Worker {
+    int32 id = 1;
+    repeated Tensor objects = 2;
+    bool auto_add = 3;
+}
