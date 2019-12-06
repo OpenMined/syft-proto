@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package pysyft.messages.v1;
-
-import "pysyft/types/syft/v1/id.proto";
-
-message ForceObjectDeleteMessage {
-    pysyft.types.syft.v1.Id object_id = 1;
-}

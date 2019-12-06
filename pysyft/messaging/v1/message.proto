@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package pysyft.messaging.v1;
+
+import "pysyft/types/syft/v1/id.proto";
+import "pysyft/types/syft/v1/operation.proto";
+import "pysyft/types/syft/v1/pointer_tensor.proto";
+import "pysyft/types/syft/v1/tensor.proto";
+
+message ForceObjectDeleteMessage {
+    pysyft.types.syft.v1.Id object_id = 1;
+}
+
+message GetShapeMessage {
+    pysyft.types.syft.v1.PointerTensor tensor = 1;
+}
+
+message IsNoneMessage {
+    pysyft.types.syft.v1.PointerTensor tensor = 1;
+}
+
+message ObjectMessage {
+    pysyft.types.syft.v1.Tensor tensor = 1;
+}
+
+message ObjectRequestMessage {
+    pysyft.types.syft.v1.Id object_id = 1;
+}
+
+message OperationMessage {
+    pysyft.types.syft.v1.Operation operation = 1;
+}
+
+message PlanCommandMessage {
+    string command = 1;
+    pysyft.types.syft.v1.Id id = 2;
+    bool copy = 3;
+}
+
+message SearchMessage {
+    repeated string query_terms = 1;
+}

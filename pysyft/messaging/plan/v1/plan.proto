@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package pysyft.types.syft.v1;
+package pysyft.messaging.plan.v1;
 
 import "pysyft/types/syft/v1/id.proto";
-import "pysyft/types/syft/v1/procedure.proto";
 import "pysyft/types/syft/v1/shape.proto";
-import "pysyft/types/syft/v1/state.proto";
+import "pysyft/messaging/plan/v1/procedure.proto";
+import "pysyft/messaging/plan/v1/state.proto";
 
 message Plan {
     pysyft.types.syft.v1.Id id = 1;
@@ -13,8 +13,8 @@ message Plan {
     State state = 3;
     bool include_state = 4;
     bool is_built = 5;
-    repeated Shape input_shapes = 6;
-    Shape output_shape = 7;
+    repeated pysyft.types.syft.v1.Shape input_shapes = 6;
+    pysyft.types.syft.v1.Shape output_shape = 7;
     string name = 8;
     repeated string tags = 9;
     string description = 10;
