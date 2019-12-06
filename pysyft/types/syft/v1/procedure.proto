@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package pysyft.types.syft.v1;
+
+import "pysyft/types/syft/v1/id.proto";
+import "pysyft/types/syft/v1/operation.proto";
+
+message Procedure {
+    repeated pysyft.types.syft.v1.Operation operations = 1;
+    repeated Id arg_ids = 2;
+    repeated Id result_ids = 3;
+    Id promise_out_id = 4;
+}

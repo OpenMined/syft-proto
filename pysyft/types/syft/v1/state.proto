@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package pysyft.types.syft.v1;
+
+import "pysyft/types/syft/v1/id.proto";
+import "pysyft/types/syft/v1/tensor.proto";
+
+message State {
+    repeated Id ids = 1;
+    repeated Tensor tensors = 2;
+}
