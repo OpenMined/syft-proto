@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pysyft_proto.frameworks.torch.tensors.interpreters.v1;
+
+import "pysyft_proto/types/syft/v1/id.proto";
+
+message AdditiveSharingTensor {
+    pysyft_proto.types.syft.v1.Id id = 1;
+    int64 field_size = 2;
+    pysyft_proto.types.syft.v1.Id crypto_provider_id = 3;
+    // It would be natural to capture a {location_id->share} dictionary
+    // as a map, but the key types of a map can't be messages. The ids
+    // use the Id type because they can be either integers or strings.
+    // Capturing them as two parallel lists/arrays isn't ideal but ought
+    // to work okay (given that constraint.)
+    repeated pysyft_proto.types.syft.v1.Id location_ids = 4;
+    repeated int64 shares = 5; // I think these should be tensors
+}

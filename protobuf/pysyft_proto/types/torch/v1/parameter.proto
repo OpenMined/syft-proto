@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pysyft_proto.types.torch.v1;
+
+import "pysyft_proto/generic/v1/tensor.proto";
+
+message Parameter {
+    int32 id = 1;
+    pysyft_proto.generic.v1.Tensor tensor = 2;
+    bool requires_grad = 3;
+    pysyft_proto.generic.v1.Tensor grad = 4;
+}

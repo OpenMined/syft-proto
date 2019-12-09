@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pysyft_proto.workers.v1;
+
+import "pysyft_proto/types/syft/v1/id.proto";
+import "pysyft_proto/generic/v1/tensor.proto";
+
+message Worker {
+    pysyft_proto.types.syft.v1.Id id = 1;
+    repeated pysyft_proto.generic.v1.Tensor objects = 2;
+    bool auto_add = 3;
+}

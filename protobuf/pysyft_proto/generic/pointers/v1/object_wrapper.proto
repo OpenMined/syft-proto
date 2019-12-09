@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package pysyft_proto.generic.pointers.v1;
+
+import "pysyft_proto/types/torch/v1/script_module.proto";
+
+message ObjectWrapper {
+    oneof arg {
+        int32 arg_int = 1;
+        pysyft_proto.types.torch.v1.ScriptModule script_module = 2;
+        // TODO: Cover the case where this contains a Python function
+        // How does/will that work when the workers aren't running Python?
+    }
+}

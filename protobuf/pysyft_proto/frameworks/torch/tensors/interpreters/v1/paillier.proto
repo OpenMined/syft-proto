@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package pysyft_proto.frameworks.torch.tensors.interpreters.v1;
+
+import "pysyft_proto/types/syft/v1/id.proto";
+import "pysyft_proto/generic/v1/tensor.proto";
+
+message PaillierTensor {
+    pysyft_proto.types.syft.v1.Id id = 1;
+    pysyft_proto.generic.v1.Tensor chain = 2;
+}

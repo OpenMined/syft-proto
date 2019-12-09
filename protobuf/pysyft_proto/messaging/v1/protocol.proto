@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package pysyft_proto.messaging.v1;
+
+import "pysyft_proto/types/syft/v1/id.proto";
+import "pysyft_proto/types/syft/v1/plan_reference.proto";
+
+message Protocol {
+    pysyft_proto.types.syft.v1.Id id = 1;
+    repeated pysyft_proto.types.syft.v1.PlanReference plan_references = 2;
+    bool workers_resolved = 3;
+    repeated string tags = 4;
+    string description = 5;
+}

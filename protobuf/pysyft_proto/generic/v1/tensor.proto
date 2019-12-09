@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package pysyft_proto.generic.v1;
+
+import "pysyft_proto/types/syft/v1/id.proto";
+import "pysyft_proto/types/syft/v1/shape.proto";
+
+message Tensor {
+    pysyft_proto.types.syft.v1.Id id = 1;
+    pysyft_proto.types.syft.v1.Shape shape = 2;
+    bytes bin = 3;
+    Tensor chain = 4;
+    Tensor grad_chain = 5;
+    repeated string tags = 6;
+    string description = 7;
+    enum Serializer {
+        SERIALIZER_UNSPECIFIED = 0;
+        SERIALIZER_TORCH = 1;
+        SERIALIZER_NUMPY = 2;
+        SERIALIZER_TF = 3;
+        SERIALIZER_ALL = 4;
+    }
+    Serializer serializer = 8;
+}

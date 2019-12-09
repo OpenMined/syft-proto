@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package pysyft_proto.types.syft.v1;
+
+import "pysyft_proto/generic/pointers/v1/pointer.proto";
+import "pysyft_proto/generic/v1/tensor.proto";
+import "pysyft_proto/types/syft/v1/shape.proto";
+import "pysyft_proto/types/torch/v1/parameter.proto";
+import "pysyft_proto/workers/v1/worker.proto";
+
+message Arg {
+    oneof arg {
+        bool arg_bool = 1;
+        int32 arg_int = 2;
+        float arg_float = 3;
+        string arg_string = 4;
+
+        pysyft_proto.workers.v1.Worker arg_worker = 5;
+        pysyft_proto.types.syft.v1.Shape arg_shape = 6;
+        pysyft_proto.generic.v1.Tensor arg_tensor = 7;
+
+        pysyft_proto.generic.pointers.v1.Pointer arg_pointer = 8;
+        
+        pysyft_proto.types.torch.v1.Parameter arg_torch_param = 9;
+    }
+}

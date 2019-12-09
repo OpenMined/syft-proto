@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package pysyft_proto.types.syft.v1;
+
+import "pysyft_proto/types/syft/v1/id.proto";
+
+message ResponseSignatureError {
+    string traceback = 1;
+    repeated pysyft_proto.types.syft.v1.Id ids_generated = 3;
+}
+
+message SendNotPermittedError {
+    string traceback = 1;
+}
+
+message GetNotPermittedError {
+    string traceback = 1;
+}
+

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package pysyft_proto.generic.pointers.v1;
+
+import "pysyft_proto/types/syft/v1/id.proto";
+import "pysyft_proto/types/syft/v1/shape.proto";
+
+message Pointer {
+    pysyft_proto.types.syft.v1.Id object_id = 1;
+    pysyft_proto.types.syft.v1.Id location_id = 2;
+    pysyft_proto.types.syft.v1.Id object_id_at_location = 3;
+    string point_to_attr = 4;
+    pysyft_proto.types.syft.v1.Shape shape = 5;
+    bool garbage_collect_data = 6;
+    enum ObjectType {
+        OBJECT_TYPE_UNSPECIFIED = 0;
+        OBJECT_TYPE_OBJECT = 1;
+        OBJECT_TYPE_PLAN = 2;
+        OBJECT_TYPE_PROTOCOL = 3;        
+        OBJECT_TYPE_TENSOR = 4;
+    }
+    ObjectType object_type = 7;
+}

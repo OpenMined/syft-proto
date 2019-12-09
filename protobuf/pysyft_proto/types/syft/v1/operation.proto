@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package pysyft_proto.types.syft.v1;
+
+import "pysyft_proto/types/syft/v1/arg.proto";
+import "pysyft_proto/types/syft/v1/id.proto";
+
+message Operation {
+    string command = 1;
+    pysyft_proto.types.syft.v1.Id owner_id = 2;
+    repeated pysyft_proto.types.syft.v1.Arg args = 3;
+    map<string, pysyft_proto.types.syft.v1.Arg> kwargs = 4;
+    repeated int32 return_ids = 5;
+}
