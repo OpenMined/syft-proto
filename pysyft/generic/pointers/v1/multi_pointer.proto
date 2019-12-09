@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package pysyft.generic.pointers.v1;
+
+import "pysyft/generic/pointers/v1/pointer.proto";
+import "pysyft/types/syft/v1/id.proto";
+
+message MultiPointer {
+    pysyft.types.syft.v1.Id object_id = 1;
+    // It would be natural to capture a {location_id->pointer} dictionary
+    // as a map, but the key types of a map can't be messages. The ids
+    // use the Id type because they can be either integers or strings.
+    // Capturing them as two parallel lists/arrays isn't ideal but ought
+    // to work okay (given that constraint.)
+    repeated pysyft.types.syft.v1.Id location_ids = 2;
+    repeated pysyft.generic.pointers.v1.Pointer pointers = 3;
+}
