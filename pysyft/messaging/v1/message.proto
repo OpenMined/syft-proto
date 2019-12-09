@@ -3,9 +3,9 @@ syntax = "proto3";
 package pysyft.messaging.v1;
 
 import "pysyft/generic/pointers/v1/pointer.proto";
+import "pysyft/generic/v1/tensor.proto";
 import "pysyft/types/syft/v1/id.proto";
 import "pysyft/types/syft/v1/operation.proto";
-import "pysyft/types/syft/v1/tensor.proto";
 
 message ForceObjectDeleteMessage {
     pysyft.types.syft.v1.Id object_id = 1;
@@ -20,7 +20,7 @@ message IsNoneMessage {
 }
 
 message ObjectMessage {
-    pysyft.types.syft.v1.Tensor tensor = 1;
+    pysyft.generic.v1.Tensor tensor = 1;
 }
 
 message ObjectRequestMessage {
