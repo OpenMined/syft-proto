@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package pysyft.types.syft.v1;
+package pysyft.generic.pointers.v1;
 
 import "pysyft/types/syft/v1/id.proto";
 import "pysyft/types/syft/v1/shape.proto";

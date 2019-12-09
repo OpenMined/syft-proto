@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package pysyft.types.syft.v1;
+package pysyft.generic.pointers.v1;
 
 import "pysyft/types/torch/v1/script_module.proto";
 
