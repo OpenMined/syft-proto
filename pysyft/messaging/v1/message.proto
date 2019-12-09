@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package pysyft.messaging.v1;
 
-import "pysyft/generic/pointers/v1/pointer_tensor.proto";
+import "pysyft/generic/pointers/v1/pointer.proto";
 import "pysyft/types/syft/v1/id.proto";
 import "pysyft/types/syft/v1/operation.proto";
 import "pysyft/types/syft/v1/tensor.proto";
@@ -12,11 +12,11 @@ message ForceObjectDeleteMessage {
 }
 
 message GetShapeMessage {
-    pysyft.generic.pointers.v1.PointerTensor tensor = 1;
+    pysyft.generic.pointers.v1.Pointer pointer = 1;
 }
 
 message IsNoneMessage {
-    pysyft.generic.pointers.v1.PointerTensor tensor = 1;
+    pysyft.generic.pointers.v1.Pointer pointer = 1;
 }
 
 message ObjectMessage {

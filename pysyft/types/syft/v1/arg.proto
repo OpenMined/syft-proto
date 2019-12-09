@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package pysyft.types.syft.v1;
 
-import "pysyft/generic/pointers/v1/pointer_tensor.proto";
+import "pysyft/generic/pointers/v1/pointer.proto";
 import "pysyft/types/syft/v1/shape.proto";
 import "pysyft/types/syft/v1/worker.proto";
 import "pysyft/types/syft/v1/tensor.proto";
@@ -20,7 +20,7 @@ message Arg {
         pysyft.types.syft.v1.Shape arg_shape = 6;
         pysyft.types.syft.v1.Tensor arg_tensor = 7;
 
-        pysyft.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8;
+        pysyft.generic.pointers.v1.Pointer arg_pointer = 8;
         
         pysyft.types.torch.v1.Parameter arg_torch_param = 9;
     }
