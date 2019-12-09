@@ -5,9 +5,8 @@ package pysyft.types.syft.v1;
 import "pysyft/generic/pointers/v1/pointer.proto";
 import "pysyft/generic/v1/tensor.proto";
 import "pysyft/types/syft/v1/shape.proto";
-import "pysyft/types/syft/v1/worker.proto";
 import "pysyft/types/torch/v1/parameter.proto";
-
+import "pysyft/workers/v1/worker.proto";
 
 message Arg {
     oneof arg {
@@ -16,7 +15,7 @@ message Arg {
         float arg_float = 3;
         string arg_string = 4;
 
-        pysyft.types.syft.v1.Worker arg_worker = 5;
+        pysyft.workers.v1.Worker arg_worker = 5;
         pysyft.types.syft.v1.Shape arg_shape = 6;
         pysyft.generic.v1.Tensor arg_tensor = 7;
 
