@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pysyft.frameworks.torch.tensors.interpreters.v1;
+
+import "pysyft/generic/v1/tensor.proto";
+import "pysyft/types/syft/v1/id.proto";
+
+message AutogradTensor {
+    pysyft.types.syft.v1.Id id = 1;
+    pysyft.types.syft.v1.Id owner_id = 2;
+    pysyft.generic.v1.Tensor chain = 3;
+    bool requires_grad = 4;
+    bool preinitialize_grad = 5;
+    // TODO: Figure out the type of grad_fn
+    // ??? grad_fn = 6;
+    repeated string tags = 7;
+    string description = 8;
+}
