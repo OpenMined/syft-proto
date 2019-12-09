@@ -13,7 +13,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from pysyft.types.syft.v1 import tensor_pb2 as pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2
+from pysyft.generic.v1 import tensor_pb2 as pysyft_dot_generic_dot_v1_dot_tensor__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='pysyft.types.torch.v1',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n%pysyft/types/torch/v1/parameter.proto\x12\x15pysyft.types.torch.v1\x1a!pysyft/types/syft/v1/tensor.proto\"\xa8\x01\n\tParameter\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x34\n\x06tensor\x18\x02 \x01(\x0b\x32\x1c.pysyft.types.syft.v1.TensorR\x06tensor\x12#\n\rrequires_grad\x18\x03 \x01(\x08R\x0crequiresGrad\x12\x30\n\x04grad\x18\x04 \x01(\x0b\x32\x1c.pysyft.types.syft.v1.TensorR\x04gradb\x06proto3')
+  serialized_pb=_b('\n%pysyft/types/torch/v1/parameter.proto\x12\x15pysyft.types.torch.v1\x1a\x1epysyft/generic/v1/tensor.proto\"\xa2\x01\n\tParameter\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x31\n\x06tensor\x18\x02 \x01(\x0b\x32\x19.pysyft.generic.v1.TensorR\x06tensor\x12#\n\rrequires_grad\x18\x03 \x01(\x08R\x0crequiresGrad\x12-\n\x04grad\x18\x04 \x01(\x0b\x32\x19.pysyft.generic.v1.TensorR\x04gradb\x06proto3')
   ,
-  dependencies=[pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
+  dependencies=[pysyft_dot_generic_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
 
 
 
@@ -75,12 +75,12 @@ _PARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=100,
-  serialized_end=268,
+  serialized_start=97,
+  serialized_end=259,
 )
 
-_PARAMETER.fields_by_name['tensor'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2._TENSOR
-_PARAMETER.fields_by_name['grad'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2._TENSOR
+_PARAMETER.fields_by_name['tensor'].message_type = pysyft_dot_generic_dot_v1_dot_tensor__pb2._TENSOR
+_PARAMETER.fields_by_name['grad'].message_type = pysyft_dot_generic_dot_v1_dot_tensor__pb2._TENSOR
 DESCRIPTOR.message_types_by_name['Parameter'] = _PARAMETER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

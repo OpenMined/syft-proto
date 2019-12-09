@@ -13,10 +13,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from pysyft.generic.pointers.v1 import pointer_pb2 as pysyft_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2
+from pysyft.generic.v1 import tensor_pb2 as pysyft_dot_generic_dot_v1_dot_tensor__pb2
 from pysyft.types.syft.v1 import id_pb2 as pysyft_dot_types_dot_syft_dot_v1_dot_id__pb2
 from pysyft.types.syft.v1 import operation_pb2 as pysyft_dot_types_dot_syft_dot_v1_dot_operation__pb2
-from pysyft.types.syft.v1 import pointer_tensor_pb2 as pysyft_dot_types_dot_syft_dot_v1_dot_pointer__tensor__pb2
-from pysyft.types.syft.v1 import tensor_pb2 as pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -24,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='pysyft.messaging.v1',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n!pysyft/messaging/v1/message.proto\x12\x13pysyft.messaging.v1\x1a\x1dpysyft/types/syft/v1/id.proto\x1a$pysyft/types/syft/v1/operation.proto\x1a)pysyft/types/syft/v1/pointer_tensor.proto\x1a!pysyft/types/syft/v1/tensor.proto\"Q\n\x18\x46orceObjectDeleteMessage\x12\x35\n\tobject_id\x18\x01 \x01(\x0b\x32\x18.pysyft.types.syft.v1.IdR\x08objectId\"N\n\x0fGetShapeMessage\x12;\n\x06tensor\x18\x01 \x01(\x0b\x32#.pysyft.types.syft.v1.PointerTensorR\x06tensor\"L\n\rIsNoneMessage\x12;\n\x06tensor\x18\x01 \x01(\x0b\x32#.pysyft.types.syft.v1.PointerTensorR\x06tensor\"E\n\rObjectMessage\x12\x34\n\x06tensor\x18\x01 \x01(\x0b\x32\x1c.pysyft.types.syft.v1.TensorR\x06tensor\"M\n\x14ObjectRequestMessage\x12\x35\n\tobject_id\x18\x01 \x01(\x0b\x32\x18.pysyft.types.syft.v1.IdR\x08objectId\"Q\n\x10OperationMessage\x12=\n\toperation\x18\x01 \x01(\x0b\x32\x1f.pysyft.types.syft.v1.OperationR\toperation\"l\n\x12PlanCommandMessage\x12\x18\n\x07\x63ommand\x18\x01 \x01(\tR\x07\x63ommand\x12(\n\x02id\x18\x02 \x01(\x0b\x32\x18.pysyft.types.syft.v1.IdR\x02id\x12\x12\n\x04\x63opy\x18\x03 \x01(\x08R\x04\x63opy\"0\n\rSearchMessage\x12\x1f\n\x0bquery_terms\x18\x01 \x03(\tR\nqueryTermsb\x06proto3')
+  serialized_pb=_b('\n!pysyft/messaging/v1/message.proto\x12\x13pysyft.messaging.v1\x1a(pysyft/generic/pointers/v1/pointer.proto\x1a\x1epysyft/generic/v1/tensor.proto\x1a\x1dpysyft/types/syft/v1/id.proto\x1a$pysyft/types/syft/v1/operation.proto\"Q\n\x18\x46orceObjectDeleteMessage\x12\x35\n\tobject_id\x18\x01 \x01(\x0b\x32\x18.pysyft.types.syft.v1.IdR\x08objectId\"P\n\x0fGetShapeMessage\x12=\n\x07pointer\x18\x01 \x01(\x0b\x32#.pysyft.generic.pointers.v1.PointerR\x07pointer\"N\n\rIsNoneMessage\x12=\n\x07pointer\x18\x01 \x01(\x0b\x32#.pysyft.generic.pointers.v1.PointerR\x07pointer\"B\n\rObjectMessage\x12\x31\n\x06tensor\x18\x01 \x01(\x0b\x32\x19.pysyft.generic.v1.TensorR\x06tensor\"M\n\x14ObjectRequestMessage\x12\x35\n\tobject_id\x18\x01 \x01(\x0b\x32\x18.pysyft.types.syft.v1.IdR\x08objectId\"Q\n\x10OperationMessage\x12=\n\toperation\x18\x01 \x01(\x0b\x32\x1f.pysyft.types.syft.v1.OperationR\toperation\"l\n\x12PlanCommandMessage\x12\x18\n\x07\x63ommand\x18\x01 \x01(\tR\x07\x63ommand\x12(\n\x02id\x18\x02 \x01(\x0b\x32\x18.pysyft.types.syft.v1.IdR\x02id\x12\x12\n\x04\x63opy\x18\x03 \x01(\x08R\x04\x63opy\"0\n\rSearchMessage\x12\x1f\n\x0bquery_terms\x18\x01 \x03(\tR\nqueryTermsb\x06proto3')
   ,
-  dependencies=[pysyft_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,pysyft_dot_types_dot_syft_dot_v1_dot_operation__pb2.DESCRIPTOR,pysyft_dot_types_dot_syft_dot_v1_dot_pointer__tensor__pb2.DESCRIPTOR,pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
+  dependencies=[pysyft_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2.DESCRIPTOR,pysyft_dot_generic_dot_v1_dot_tensor__pb2.DESCRIPTOR,pysyft_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,pysyft_dot_types_dot_syft_dot_v1_dot_operation__pb2.DESCRIPTOR,])
 
 
 
@@ -57,8 +57,8 @@ _FORCEOBJECTDELETEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=205,
-  serialized_end=286,
+  serialized_start=201,
+  serialized_end=282,
 )
 
 
@@ -70,12 +70,12 @@ _GETSHAPEMESSAGE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='tensor', full_name='pysyft.messaging.v1.GetShapeMessage.tensor', index=0,
+      name='pointer', full_name='pysyft.messaging.v1.GetShapeMessage.pointer', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='tensor', file=DESCRIPTOR),
+      serialized_options=None, json_name='pointer', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -88,8 +88,8 @@ _GETSHAPEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=288,
-  serialized_end=366,
+  serialized_start=284,
+  serialized_end=364,
 )
 
 
@@ -101,12 +101,12 @@ _ISNONEMESSAGE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='tensor', full_name='pysyft.messaging.v1.IsNoneMessage.tensor', index=0,
+      name='pointer', full_name='pysyft.messaging.v1.IsNoneMessage.pointer', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='tensor', file=DESCRIPTOR),
+      serialized_options=None, json_name='pointer', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -119,7 +119,7 @@ _ISNONEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=368,
+  serialized_start=366,
   serialized_end=444,
 )
 
@@ -151,7 +151,7 @@ _OBJECTMESSAGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=446,
-  serialized_end=515,
+  serialized_end=512,
 )
 
 
@@ -181,8 +181,8 @@ _OBJECTREQUESTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=517,
-  serialized_end=594,
+  serialized_start=514,
+  serialized_end=591,
 )
 
 
@@ -212,8 +212,8 @@ _OPERATIONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=596,
-  serialized_end=677,
+  serialized_start=593,
+  serialized_end=674,
 )
 
 
@@ -257,8 +257,8 @@ _PLANCOMMANDMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=679,
-  serialized_end=787,
+  serialized_start=676,
+  serialized_end=784,
 )
 
 
@@ -288,14 +288,14 @@ _SEARCHMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=789,
-  serialized_end=837,
+  serialized_start=786,
+  serialized_end=834,
 )
 
 _FORCEOBJECTDELETEMESSAGE.fields_by_name['object_id'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
-_GETSHAPEMESSAGE.fields_by_name['tensor'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_pointer__tensor__pb2._POINTERTENSOR
-_ISNONEMESSAGE.fields_by_name['tensor'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_pointer__tensor__pb2._POINTERTENSOR
-_OBJECTMESSAGE.fields_by_name['tensor'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2._TENSOR
+_GETSHAPEMESSAGE.fields_by_name['pointer'].message_type = pysyft_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2._POINTER
+_ISNONEMESSAGE.fields_by_name['pointer'].message_type = pysyft_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2._POINTER
+_OBJECTMESSAGE.fields_by_name['tensor'].message_type = pysyft_dot_generic_dot_v1_dot_tensor__pb2._TENSOR
 _OBJECTREQUESTMESSAGE.fields_by_name['object_id'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
 _OPERATIONMESSAGE.fields_by_name['operation'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_operation__pb2._OPERATION
 _PLANCOMMANDMESSAGE.fields_by_name['id'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_id__pb2._ID

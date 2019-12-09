@@ -13,8 +13,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from pysyft.generic.v1 import tensor_pb2 as pysyft_dot_generic_dot_v1_dot_tensor__pb2
 from pysyft.types.syft.v1 import id_pb2 as pysyft_dot_types_dot_syft_dot_v1_dot_id__pb2
-from pysyft.types.syft.v1 import tensor_pb2 as pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='pysyft.messaging.plan.v1',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n$pysyft/messaging/plan/v1/state.proto\x12\x18pysyft.messaging.plan.v1\x1a\x1dpysyft/types/syft/v1/id.proto\x1a!pysyft/types/syft/v1/tensor.proto\"k\n\x05State\x12*\n\x03ids\x18\x01 \x03(\x0b\x32\x18.pysyft.types.syft.v1.IdR\x03ids\x12\x36\n\x07tensors\x18\x02 \x03(\x0b\x32\x1c.pysyft.types.syft.v1.TensorR\x07tensorsb\x06proto3')
+  serialized_pb=_b('\n$pysyft/messaging/plan/v1/state.proto\x12\x18pysyft.messaging.plan.v1\x1a\x1epysyft/generic/v1/tensor.proto\x1a\x1dpysyft/types/syft/v1/id.proto\"h\n\x05State\x12*\n\x03ids\x18\x01 \x03(\x0b\x32\x18.pysyft.types.syft.v1.IdR\x03ids\x12\x33\n\x07tensors\x18\x02 \x03(\x0b\x32\x19.pysyft.generic.v1.TensorR\x07tensorsb\x06proto3')
   ,
-  dependencies=[pysyft_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
+  dependencies=[pysyft_dot_generic_dot_v1_dot_tensor__pb2.DESCRIPTOR,pysyft_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
 
 
 
@@ -62,12 +62,12 @@ _STATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=132,
-  serialized_end=239,
+  serialized_start=129,
+  serialized_end=233,
 )
 
 _STATE.fields_by_name['ids'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
-_STATE.fields_by_name['tensors'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2._TENSOR
+_STATE.fields_by_name['tensors'].message_type = pysyft_dot_generic_dot_v1_dot_tensor__pb2._TENSOR
 DESCRIPTOR.message_types_by_name['State'] = _STATE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

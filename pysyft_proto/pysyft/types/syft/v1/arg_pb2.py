@@ -13,11 +13,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from pysyft.types.syft.v1 import pointer_tensor_pb2 as pysyft_dot_types_dot_syft_dot_v1_dot_pointer__tensor__pb2
+from pysyft.generic.pointers.v1 import pointer_pb2 as pysyft_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2
+from pysyft.generic.v1 import tensor_pb2 as pysyft_dot_generic_dot_v1_dot_tensor__pb2
 from pysyft.types.syft.v1 import shape_pb2 as pysyft_dot_types_dot_syft_dot_v1_dot_shape__pb2
-from pysyft.types.syft.v1 import worker_pb2 as pysyft_dot_types_dot_syft_dot_v1_dot_worker__pb2
-from pysyft.types.syft.v1 import tensor_pb2 as pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2
 from pysyft.types.torch.v1 import parameter_pb2 as pysyft_dot_types_dot_torch_dot_v1_dot_parameter__pb2
+from pysyft.workers.v1 import worker_pb2 as pysyft_dot_workers_dot_v1_dot_worker__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -25,9 +25,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='pysyft.types.syft.v1',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1epysyft/types/syft/v1/arg.proto\x12\x14pysyft.types.syft.v1\x1a)pysyft/types/syft/v1/pointer_tensor.proto\x1a pysyft/types/syft/v1/shape.proto\x1a!pysyft/types/syft/v1/worker.proto\x1a!pysyft/types/syft/v1/tensor.proto\x1a%pysyft/types/torch/v1/parameter.proto\"\xdf\x03\n\x03\x41rg\x12\x1b\n\x08\x61rg_bool\x18\x01 \x01(\x08H\x00R\x07\x61rgBool\x12\x19\n\x07\x61rg_int\x18\x02 \x01(\x05H\x00R\x06\x61rgInt\x12\x1d\n\targ_float\x18\x03 \x01(\x02H\x00R\x08\x61rgFloat\x12\x1f\n\narg_string\x18\x04 \x01(\tH\x00R\targString\x12=\n\narg_worker\x18\x05 \x01(\x0b\x32\x1c.pysyft.types.syft.v1.WorkerH\x00R\targWorker\x12:\n\targ_shape\x18\x06 \x01(\x0b\x32\x1b.pysyft.types.syft.v1.ShapeH\x00R\x08\x61rgShape\x12S\n\x12\x61rg_pointer_tensor\x18\x07 \x01(\x0b\x32#.pysyft.types.syft.v1.PointerTensorH\x00R\x10\x61rgPointerTensor\x12=\n\narg_tensor\x18\x08 \x01(\x0b\x32\x1c.pysyft.types.syft.v1.TensorH\x00R\targTensor\x12J\n\x0f\x61rg_torch_param\x18\t \x01(\x0b\x32 .pysyft.types.torch.v1.ParameterH\x00R\rargTorchParamB\x05\n\x03\x61rgb\x06proto3')
+  serialized_pb=_b('\n\x1epysyft/types/syft/v1/arg.proto\x12\x14pysyft.types.syft.v1\x1a(pysyft/generic/pointers/v1/pointer.proto\x1a\x1epysyft/generic/v1/tensor.proto\x1a pysyft/types/syft/v1/shape.proto\x1a%pysyft/types/torch/v1/parameter.proto\x1a\x1epysyft/workers/v1/worker.proto\"\xcc\x03\n\x03\x41rg\x12\x1b\n\x08\x61rg_bool\x18\x01 \x01(\x08H\x00R\x07\x61rgBool\x12\x19\n\x07\x61rg_int\x18\x02 \x01(\x05H\x00R\x06\x61rgInt\x12\x1d\n\targ_float\x18\x03 \x01(\x02H\x00R\x08\x61rgFloat\x12\x1f\n\narg_string\x18\x04 \x01(\tH\x00R\targString\x12:\n\narg_worker\x18\x05 \x01(\x0b\x32\x19.pysyft.workers.v1.WorkerH\x00R\targWorker\x12:\n\targ_shape\x18\x06 \x01(\x0b\x32\x1b.pysyft.types.syft.v1.ShapeH\x00R\x08\x61rgShape\x12:\n\narg_tensor\x18\x07 \x01(\x0b\x32\x19.pysyft.generic.v1.TensorH\x00R\targTensor\x12\x46\n\x0b\x61rg_pointer\x18\x08 \x01(\x0b\x32#.pysyft.generic.pointers.v1.PointerH\x00R\nargPointer\x12J\n\x0f\x61rg_torch_param\x18\t \x01(\x0b\x32 .pysyft.types.torch.v1.ParameterH\x00R\rargTorchParamB\x05\n\x03\x61rgb\x06proto3')
   ,
-  dependencies=[pysyft_dot_types_dot_syft_dot_v1_dot_pointer__tensor__pb2.DESCRIPTOR,pysyft_dot_types_dot_syft_dot_v1_dot_shape__pb2.DESCRIPTOR,pysyft_dot_types_dot_syft_dot_v1_dot_worker__pb2.DESCRIPTOR,pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2.DESCRIPTOR,pysyft_dot_types_dot_torch_dot_v1_dot_parameter__pb2.DESCRIPTOR,])
+  dependencies=[pysyft_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2.DESCRIPTOR,pysyft_dot_generic_dot_v1_dot_tensor__pb2.DESCRIPTOR,pysyft_dot_types_dot_syft_dot_v1_dot_shape__pb2.DESCRIPTOR,pysyft_dot_types_dot_torch_dot_v1_dot_parameter__pb2.DESCRIPTOR,pysyft_dot_workers_dot_v1_dot_worker__pb2.DESCRIPTOR,])
 
 
 
@@ -82,19 +82,19 @@ _ARG = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='argShape', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='arg_pointer_tensor', full_name='pysyft.types.syft.v1.Arg.arg_pointer_tensor', index=6,
+      name='arg_tensor', full_name='pysyft.types.syft.v1.Arg.arg_tensor', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='argPointerTensor', file=DESCRIPTOR),
+      serialized_options=None, json_name='argTensor', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='arg_tensor', full_name='pysyft.types.syft.v1.Arg.arg_tensor', index=7,
+      name='arg_pointer', full_name='pysyft.types.syft.v1.Arg.arg_pointer', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='argTensor', file=DESCRIPTOR),
+      serialized_options=None, json_name='argPointer', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='arg_torch_param', full_name='pysyft.types.syft.v1.Arg.arg_torch_param', index=8,
       number=9, type=11, cpp_type=10, label=1,
@@ -117,14 +117,14 @@ _ARG = _descriptor.Descriptor(
       name='arg', full_name='pysyft.types.syft.v1.Arg.arg',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=243,
-  serialized_end=722,
+  serialized_start=236,
+  serialized_end=696,
 )
 
-_ARG.fields_by_name['arg_worker'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_worker__pb2._WORKER
+_ARG.fields_by_name['arg_worker'].message_type = pysyft_dot_workers_dot_v1_dot_worker__pb2._WORKER
 _ARG.fields_by_name['arg_shape'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_shape__pb2._SHAPE
-_ARG.fields_by_name['arg_pointer_tensor'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_pointer__tensor__pb2._POINTERTENSOR
-_ARG.fields_by_name['arg_tensor'].message_type = pysyft_dot_types_dot_syft_dot_v1_dot_tensor__pb2._TENSOR
+_ARG.fields_by_name['arg_tensor'].message_type = pysyft_dot_generic_dot_v1_dot_tensor__pb2._TENSOR
+_ARG.fields_by_name['arg_pointer'].message_type = pysyft_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2._POINTER
 _ARG.fields_by_name['arg_torch_param'].message_type = pysyft_dot_types_dot_torch_dot_v1_dot_parameter__pb2._PARAMETER
 _ARG.oneofs_by_name['arg'].fields.append(
   _ARG.fields_by_name['arg_bool'])
@@ -145,11 +145,11 @@ _ARG.oneofs_by_name['arg'].fields.append(
   _ARG.fields_by_name['arg_shape'])
 _ARG.fields_by_name['arg_shape'].containing_oneof = _ARG.oneofs_by_name['arg']
 _ARG.oneofs_by_name['arg'].fields.append(
-  _ARG.fields_by_name['arg_pointer_tensor'])
-_ARG.fields_by_name['arg_pointer_tensor'].containing_oneof = _ARG.oneofs_by_name['arg']
-_ARG.oneofs_by_name['arg'].fields.append(
   _ARG.fields_by_name['arg_tensor'])
 _ARG.fields_by_name['arg_tensor'].containing_oneof = _ARG.oneofs_by_name['arg']
+_ARG.oneofs_by_name['arg'].fields.append(
+  _ARG.fields_by_name['arg_pointer'])
+_ARG.fields_by_name['arg_pointer'].containing_oneof = _ARG.oneofs_by_name['arg']
 _ARG.oneofs_by_name['arg'].fields.append(
   _ARG.fields_by_name['arg_torch_param'])
 _ARG.fields_by_name['arg_torch_param'].containing_oneof = _ARG.oneofs_by_name['arg']
