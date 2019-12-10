@@ -7,6 +7,19 @@ import "pysyft_proto/generic/v1/tensor.proto";
 import "pysyft_proto/types/syft/v1/id.proto";
 import "pysyft_proto/types/syft/v1/operation.proto";
 
+message SyftMessage {
+  oneof contents {
+    ForceObjectDeleteMessage contents_delete_msg = 1;
+    GetShapeMessage contents_get_shape_msg = 2;
+    IsNoneMessage contents_is_none_msg = 3;
+    ObjectMessage contents_object_msg = 4;
+    ObjectRequestMessage contents_object_request_msg = 5;
+    OperationMessage contents_operations_msg = 6;
+    PlanCommandMessage contents_plan_command_msg = 7;
+    SearchMessage contents_search_msg = 8;
+  }
+}
+
 message ForceObjectDeleteMessage {
     pysyft_proto.types.syft.v1.Id object_id = 1;
 }
