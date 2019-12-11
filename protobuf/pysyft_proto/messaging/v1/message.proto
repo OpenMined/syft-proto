@@ -14,7 +14,7 @@ message SyftMessage {
     IsNoneMessage contents_is_none_msg = 3;
     ObjectMessage contents_object_msg = 4;
     ObjectRequestMessage contents_object_request_msg = 5;
-    OperationMessage contents_operations_msg = 6;
+    OperationMessage contents_operation_msg = 6;
     PlanCommandMessage contents_plan_command_msg = 7;
     SearchMessage contents_search_msg = 8;
   }
