@@ -14,7 +14,7 @@ Can be installed with pip:
 Example code:
 
 ```python
-from pysyft_proto import proto_info
+from syft_proto import proto_info
 print(proto_info)
 ```
 
@@ -27,7 +27,7 @@ Can be installed with npm:
 Example code:
 
 ```js
-const proto = require('pysyft-proto').proto_info
+const proto = require('syft-proto').proto_info
 console.log(proto)
 ```
 
