@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.types.syft.v1',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n!syft_proto/types/syft/v1/id.proto\x12\x18syft_proto.types.syft.v1\"<\n\x02Id\x12\x17\n\x06id_int\x18\x01 \x01(\x05H\x00R\x05idInt\x12\x17\n\x06id_str\x18\x02 \x01(\tH\x00R\x05idStrB\x04\n\x02idb\x06proto3')
+  serialized_pb=_b('\n!syft_proto/types/syft/v1/id.proto\x12\x18syft_proto.types.syft.v1\"<\n\x02Id\x12\x17\n\x06id_int\x18\x01 \x01(\x03H\x00R\x05idInt\x12\x17\n\x06id_str\x18\x02 \x01(\tH\x00R\x05idStrB\x04\n\x02idb\x06proto3')
 )
 
 
@@ -35,7 +35,7 @@ _ID = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='id_int', full_name='syft_proto.types.syft.v1.Id.id_int', index=0,
-      number=1, type=5, cpp_type=1, label=1,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

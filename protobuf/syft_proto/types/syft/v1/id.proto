@@ -4,7 +4,7 @@ package syft_proto.types.syft.v1;
 
 message Id {
     oneof id {
-        int32 id_int = 1;
+        int64 id_int = 1;
         string id_str = 2;
     }
 }
