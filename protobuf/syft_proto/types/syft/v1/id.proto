@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package pysyft_proto.types.syft.v1;
+package syft_proto.types.syft.v1;
 
 message Id {
     oneof id {

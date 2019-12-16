@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package pysyft_proto.generic.v1;
+package syft_proto.generic.v1;
 
-import "pysyft_proto/types/syft/v1/id.proto";
-import "pysyft_proto/types/syft/v1/shape.proto";
+import "syft_proto/types/syft/v1/id.proto";
+import "syft_proto/types/syft/v1/shape.proto";
 
 message Tensor {
-    pysyft_proto.types.syft.v1.Id id = 1;
-    pysyft_proto.types.syft.v1.Shape shape = 2;
+    syft_proto.types.syft.v1.Id id = 1;
+    syft_proto.types.syft.v1.Shape shape = 2;
     bytes bin = 3;
     Tensor chain = 4;
     Tensor grad_chain = 5;

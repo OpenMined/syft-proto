@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package pysyft_proto.types.syft.v1;
+package syft_proto.types.syft.v1;
 
-import "pysyft_proto/generic/pointers/v1/pointer.proto";
-import "pysyft_proto/generic/v1/tensor.proto";
-import "pysyft_proto/types/syft/v1/shape.proto";
-import "pysyft_proto/types/torch/v1/parameter.proto";
-import "pysyft_proto/workers/v1/worker.proto";
+import "syft_proto/generic/pointers/v1/pointer.proto";
+import "syft_proto/generic/v1/tensor.proto";
+import "syft_proto/types/syft/v1/shape.proto";
+import "syft_proto/types/torch/v1/parameter.proto";
+import "syft_proto/workers/v1/worker.proto";
 
 message Arg {
     oneof arg {
@@ -15,12 +15,12 @@ message Arg {
         float arg_float = 3;
         string arg_string = 4;
 
-        pysyft_proto.workers.v1.Worker arg_worker = 5;
-        pysyft_proto.types.syft.v1.Shape arg_shape = 6;
-        pysyft_proto.generic.v1.Tensor arg_tensor = 7;
+        syft_proto.workers.v1.Worker arg_worker = 5;
+        syft_proto.types.syft.v1.Shape arg_shape = 6;
+        syft_proto.generic.v1.Tensor arg_tensor = 7;
 
-        pysyft_proto.generic.pointers.v1.Pointer arg_pointer = 8;
+        syft_proto.generic.pointers.v1.Pointer arg_pointer = 8;
         
-        pysyft_proto.types.torch.v1.Parameter arg_torch_param = 9;
+        syft_proto.types.torch.v1.Parameter arg_torch_param = 9;
     }
 }

@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package pysyft_proto.messaging.plan.v1;
+package syft_proto.messaging.plan.v1;
 
-import "pysyft_proto/types/syft/v1/id.proto";
-import "pysyft_proto/types/syft/v1/operation.proto";
+import "syft_proto/types/syft/v1/id.proto";
+import "syft_proto/types/syft/v1/operation.proto";
 
 message Procedure {
-    repeated pysyft_proto.types.syft.v1.Operation operations = 1;
-    repeated pysyft_proto.types.syft.v1.Id arg_ids = 2;
-    repeated pysyft_proto.types.syft.v1.Id result_ids = 3;
-    pysyft_proto.types.syft.v1.Id promise_out_id = 4;
+    repeated syft_proto.types.syft.v1.Operation operations = 1;
+    repeated syft_proto.types.syft.v1.Id arg_ids = 2;
+    repeated syft_proto.types.syft.v1.Id result_ids = 3;
+    syft_proto.types.syft.v1.Id promise_out_id = 4;
 }

@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package pysyft_proto.types.syft.v1;
+package syft_proto.types.syft.v1;
 
-import "pysyft_proto/types/syft/v1/id.proto";
+import "syft_proto/types/syft/v1/id.proto";
 
 message ResponseSignatureError {
     string traceback = 1;
-    repeated pysyft_proto.types.syft.v1.Id ids_generated = 3;
+    repeated syft_proto.types.syft.v1.Id ids_generated = 3;
 }
 
 message SendNotPermittedError {

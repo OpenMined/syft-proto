@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package pysyft_proto.types.torch.v1;
+package syft_proto.types.torch.v1;
 
 // Covers torch.jit.ScriptModule, torch._C.Function, torch.jit.TopLevelTraceModule
 message ScriptModule {

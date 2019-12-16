@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package pysyft_proto.federated.v1;
+package syft_proto.federated.v1;
 
-import "pysyft_proto/types/syft/v1/id.proto";
+import "syft_proto/types/syft/v1/id.proto";
 
 message TrainConfig {
-    pysyft_proto.types.syft.v1.Id config_id = 1;
-    pysyft_proto.types.syft.v1.Id model_id = 2;
-    pysyft_proto.types.syft.v1.Id loss_fn_id = 3;
+    syft_proto.types.syft.v1.Id config_id = 1;
+    syft_proto.types.syft.v1.Id model_id = 2;
+    syft_proto.types.syft.v1.Id loss_fn_id = 3;
     int32 batch_size = 4;
     int32 epochs = 5;
     string optimizer = 6;

@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package pysyft_proto.frameworks.torch.tensors.interpreters.v1;
+package syft_proto.frameworks.torch.tensors.interpreters.v1;
 
-import "pysyft_proto/generic/v1/tensor.proto";
-import "pysyft_proto/types/syft/v1/id.proto";
+import "syft_proto/generic/v1/tensor.proto";
+import "syft_proto/types/syft/v1/id.proto";
 
 message PrivateTensor {
-    pysyft_proto.types.syft.v1.Id id = 1;
+    syft_proto.types.syft.v1.Id id = 1;
     repeated string allowed_users = 2;
-    pysyft_proto.generic.v1.Tensor chain = 3;
+    syft_proto.generic.v1.Tensor chain = 3;
     repeated string tags = 7;
     string description = 8;
 }

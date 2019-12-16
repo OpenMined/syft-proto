@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package pysyft_proto.frameworks.torch.tensors.interpreters.v1;
+package syft_proto.frameworks.torch.tensors.interpreters.v1;
 
-import "pysyft_proto/types/syft/v1/id.proto";
-import "pysyft_proto/types/syft/v1/shape.proto";
-import "pysyft_proto/messaging/plan/v1/plan.proto";
+import "syft_proto/types/syft/v1/id.proto";
+import "syft_proto/types/syft/v1/shape.proto";
+import "syft_proto/messaging/plan/v1/plan.proto";
 
 message PromiseTensor {
-    pysyft_proto.types.syft.v1.Id id = 1;
-    pysyft_proto.types.syft.v1.Shape shape = 2;
-    repeated pysyft_proto.messaging.plan.v1.Plan plans = 3;
+    syft_proto.types.syft.v1.Id id = 1;
+    syft_proto.types.syft.v1.Shape shape = 2;
+    repeated syft_proto.messaging.plan.v1.Plan plans = 3;
     string tensor_type = 4; // the type is unclear, but probably convertible to a string
 }

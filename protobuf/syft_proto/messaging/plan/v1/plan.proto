@@ -1,20 +1,20 @@
 syntax = "proto3";
 
-package pysyft_proto.messaging.plan.v1;
+package syft_proto.messaging.plan.v1;
 
-import "pysyft_proto/types/syft/v1/id.proto";
-import "pysyft_proto/types/syft/v1/shape.proto";
-import "pysyft_proto/messaging/plan/v1/procedure.proto";
-import "pysyft_proto/messaging/plan/v1/state.proto";
+import "syft_proto/types/syft/v1/id.proto";
+import "syft_proto/types/syft/v1/shape.proto";
+import "syft_proto/messaging/plan/v1/procedure.proto";
+import "syft_proto/messaging/plan/v1/state.proto";
 
 message Plan {
-    pysyft_proto.types.syft.v1.Id id = 1;
+    syft_proto.types.syft.v1.Id id = 1;
     Procedure procedure = 2;
     State state = 3;
     bool include_state = 4;
     bool is_built = 5;
-    repeated pysyft_proto.types.syft.v1.Shape input_shapes = 6;
-    pysyft_proto.types.syft.v1.Shape output_shape = 7;
+    repeated syft_proto.types.syft.v1.Shape input_shapes = 6;
+    syft_proto.types.syft.v1.Shape output_shape = 7;
     string name = 8;
     repeated string tags = 9;
     string description = 10;
