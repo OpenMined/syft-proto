@@ -1,6 +1,6 @@
 {
-  "name": "pysyft-proto",
-  "version": "0.0.1",
+  "name": "syft-proto",
+  "version": "0.1.0a1",
   "description": "PySyft protocol constants",
   "main": "js/index.js",
   "scripts": {
@@ -8,6 +8,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OpenMined/proto.git"
+    "url": "git+https://github.com/OpenMined/syft-proto.git"
   }
 }
