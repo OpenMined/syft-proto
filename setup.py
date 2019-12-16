@@ -9,7 +9,7 @@ copyfile(path.join(cwd, 'proto.json'), path.join(cwd, 'syft_proto', 'proto.json'
 
 setup(
     name="syft-proto",
-    version='0.0.1',
+    version='0.1.0a1',
     description='PySyft protocol constants.',
     packages=['syft_proto'],
     package_data={'': ['proto.json']},
