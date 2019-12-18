@@ -2,6 +2,7 @@
 from setuptools import setup, find_packages
 from shutil import copyfile
 from os import path
+import versioneer
 
 # Copy proto.json from root into package, to include it
 cwd = path.dirname(__file__)
@@ -9,7 +10,8 @@ copyfile(path.join(cwd, 'proto.json'), path.join(cwd, 'syft_proto', 'proto.json'
 
 setup(
     name="syft-proto",
-    version='0.0.1',
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     description='PySyft protocol constants.',
     packages=['syft_proto'],
     package_data={'': ['proto.json']},
