@@ -9,7 +9,7 @@ This file is exposed as installable dependency.
 ### Python
 
 Can be installed with pip:
-`pip install git+git://github.com/OpenMined/proto`
+`pip install syft-proto`
 
 Example code:
 
@@ -22,7 +22,7 @@ print(proto_info)
 
 Can be installed with npm:
 
-`npm i --save https://github.com/OpenMined/proto`
+`npm i --save https://github.com/OpenMined/syft-proto`
 
 Example code:
 
