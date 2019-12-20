@@ -10,5 +10,5 @@ message Operation {
     syft_proto.types.syft.v1.Id owner_id = 2;
     repeated syft_proto.types.syft.v1.Arg args = 3;
     map<string, syft_proto.types.syft.v1.Arg> kwargs = 4;
-    repeated int32 return_ids = 5;
+    repeated syft_proto.types.syft.v1.Id return_ids = 5;
 }
