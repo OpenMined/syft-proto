@@ -13,6 +13,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from syft_proto.generic.pointers.v1 import pointer_pb2 as syft__proto_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2
 from syft_proto.generic.v1 import tensor_pb2 as syft__proto_dot_generic_dot_v1_dot_tensor__pb2
 from syft_proto.types.syft.v1 import id_pb2 as syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2
@@ -24,9 +25,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.messaging.v1',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n%syft_proto/messaging/v1/message.proto\x12\x17syft_proto.messaging.v1\x1a,syft_proto/generic/pointers/v1/pointer.proto\x1a\"syft_proto/generic/v1/tensor.proto\x1a!syft_proto/types/syft/v1/id.proto\x1a(syft_proto/types/syft/v1/operation.proto\"\xab\x06\n\x0bSyftMessage\x12\x63\n\x13\x63ontents_delete_msg\x18\x01 \x01(\x0b\x32\x31.syft_proto.messaging.v1.ForceObjectDeleteMessageH\x00R\x11\x63ontentsDeleteMsg\x12_\n\x16\x63ontents_get_shape_msg\x18\x02 \x01(\x0b\x32(.syft_proto.messaging.v1.GetShapeMessageH\x00R\x13\x63ontentsGetShapeMsg\x12Y\n\x14\x63ontents_is_none_msg\x18\x03 \x01(\x0b\x32&.syft_proto.messaging.v1.IsNoneMessageH\x00R\x11\x63ontentsIsNoneMsg\x12X\n\x13\x63ontents_object_msg\x18\x04 \x01(\x0b\x32&.syft_proto.messaging.v1.ObjectMessageH\x00R\x11\x63ontentsObjectMsg\x12n\n\x1b\x63ontents_object_request_msg\x18\x05 \x01(\x0b\x32-.syft_proto.messaging.v1.ObjectRequestMessageH\x00R\x18\x63ontentsObjectRequestMsg\x12\x61\n\x16\x63ontents_operation_msg\x18\x06 \x01(\x0b\x32).syft_proto.messaging.v1.OperationMessageH\x00R\x14\x63ontentsOperationMsg\x12h\n\x19\x63ontents_plan_command_msg\x18\x07 \x01(\x0b\x32+.syft_proto.messaging.v1.PlanCommandMessageH\x00R\x16\x63ontentsPlanCommandMsg\x12X\n\x13\x63ontents_search_msg\x18\x08 \x01(\x0b\x32&.syft_proto.messaging.v1.SearchMessageH\x00R\x11\x63ontentsSearchMsgB\n\n\x08\x63ontents\"U\n\x18\x46orceObjectDeleteMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\"T\n\x0fGetShapeMessage\x12\x41\n\x07pointer\x18\x01 \x01(\x0b\x32\'.syft_proto.generic.pointers.v1.PointerR\x07pointer\"R\n\rIsNoneMessage\x12\x41\n\x07pointer\x18\x01 \x01(\x0b\x32\'.syft_proto.generic.pointers.v1.PointerR\x07pointer\"F\n\rObjectMessage\x12\x35\n\x06tensor\x18\x01 \x01(\x0b\x32\x1d.syft_proto.generic.v1.TensorR\x06tensor\"Q\n\x14ObjectRequestMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\"U\n\x10OperationMessage\x12\x41\n\toperation\x18\x01 \x01(\x0b\x32#.syft_proto.types.syft.v1.OperationR\toperation\"p\n\x12PlanCommandMessage\x12\x18\n\x07\x63ommand\x18\x01 \x01(\tR\x07\x63ommand\x12,\n\x02id\x18\x02 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x12\n\x04\x63opy\x18\x03 \x01(\x08R\x04\x63opy\"0\n\rSearchMessage\x12\x1f\n\x0bquery_terms\x18\x01 \x03(\tR\nqueryTermsb\x06proto3')
+  serialized_pb=_b('\n%syft_proto/messaging/v1/message.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a,syft_proto/generic/pointers/v1/pointer.proto\x1a\"syft_proto/generic/v1/tensor.proto\x1a!syft_proto/types/syft/v1/id.proto\x1a(syft_proto/types/syft/v1/operation.proto\"\xf3\x06\n\x0bSyftMessage\x12\x46\n\x12\x63ontents_empty_msg\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00R\x10\x63ontentsEmptyMsg\x12\x63\n\x13\x63ontents_delete_msg\x18\x02 \x01(\x0b\x32\x31.syft_proto.messaging.v1.ForceObjectDeleteMessageH\x00R\x11\x63ontentsDeleteMsg\x12_\n\x16\x63ontents_get_shape_msg\x18\x03 \x01(\x0b\x32(.syft_proto.messaging.v1.GetShapeMessageH\x00R\x13\x63ontentsGetShapeMsg\x12Y\n\x14\x63ontents_is_none_msg\x18\x04 \x01(\x0b\x32&.syft_proto.messaging.v1.IsNoneMessageH\x00R\x11\x63ontentsIsNoneMsg\x12X\n\x13\x63ontents_object_msg\x18\x05 \x01(\x0b\x32&.syft_proto.messaging.v1.ObjectMessageH\x00R\x11\x63ontentsObjectMsg\x12n\n\x1b\x63ontents_object_request_msg\x18\x06 \x01(\x0b\x32-.syft_proto.messaging.v1.ObjectRequestMessageH\x00R\x18\x63ontentsObjectRequestMsg\x12\x61\n\x16\x63ontents_operation_msg\x18\x07 \x01(\x0b\x32).syft_proto.messaging.v1.OperationMessageH\x00R\x14\x63ontentsOperationMsg\x12h\n\x19\x63ontents_plan_command_msg\x18\x08 \x01(\x0b\x32+.syft_proto.messaging.v1.PlanCommandMessageH\x00R\x16\x63ontentsPlanCommandMsg\x12X\n\x13\x63ontents_search_msg\x18\t \x01(\x0b\x32&.syft_proto.messaging.v1.SearchMessageH\x00R\x11\x63ontentsSearchMsgB\n\n\x08\x63ontents\"U\n\x18\x46orceObjectDeleteMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\"T\n\x0fGetShapeMessage\x12\x41\n\x07pointer\x18\x01 \x01(\x0b\x32\'.syft_proto.generic.pointers.v1.PointerR\x07pointer\"R\n\rIsNoneMessage\x12\x41\n\x07pointer\x18\x01 \x01(\x0b\x32\'.syft_proto.generic.pointers.v1.PointerR\x07pointer\"F\n\rObjectMessage\x12\x35\n\x06tensor\x18\x01 \x01(\x0b\x32\x1d.syft_proto.generic.v1.TensorR\x06tensor\"Q\n\x14ObjectRequestMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\"U\n\x10OperationMessage\x12\x41\n\toperation\x18\x01 \x01(\x0b\x32#.syft_proto.types.syft.v1.OperationR\toperation\"p\n\x12PlanCommandMessage\x12\x18\n\x07\x63ommand\x18\x01 \x01(\tR\x07\x63ommand\x12,\n\x02id\x18\x02 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x12\n\x04\x63opy\x18\x03 \x01(\x08R\x04\x63opy\"0\n\rSearchMessage\x12\x1f\n\x0bquery_terms\x18\x01 \x03(\tR\nqueryTermsb\x06proto3')
   ,
-  dependencies=[syft__proto_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2.DESCRIPTOR,syft__proto_dot_generic_dot_v1_dot_tensor__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_operation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,syft__proto_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2.DESCRIPTOR,syft__proto_dot_generic_dot_v1_dot_tensor__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_operation__pb2.DESCRIPTOR,])
 
 
 
@@ -39,57 +40,64 @@ _SYFTMESSAGE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='contents_delete_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_delete_msg', index=0,
+      name='contents_empty_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_empty_msg', index=0,
       number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='contentsEmptyMsg', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='contents_delete_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_delete_msg', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='contentsDeleteMsg', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='contents_get_shape_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_get_shape_msg', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='contents_get_shape_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_get_shape_msg', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='contentsGetShapeMsg', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='contents_is_none_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_is_none_msg', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='contents_is_none_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_is_none_msg', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='contentsIsNoneMsg', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='contents_object_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_object_msg', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='contents_object_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_object_msg', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='contentsObjectMsg', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='contents_object_request_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_object_request_msg', index=4,
-      number=5, type=11, cpp_type=10, label=1,
+      name='contents_object_request_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_object_request_msg', index=5,
+      number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='contentsObjectRequestMsg', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='contents_operation_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_operation_msg', index=5,
-      number=6, type=11, cpp_type=10, label=1,
+      name='contents_operation_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_operation_msg', index=6,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='contentsOperationMsg', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='contents_plan_command_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_plan_command_msg', index=6,
-      number=7, type=11, cpp_type=10, label=1,
+      name='contents_plan_command_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_plan_command_msg', index=7,
+      number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='contentsPlanCommandMsg', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='contents_search_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_search_msg', index=7,
-      number=8, type=11, cpp_type=10, label=1,
+      name='contents_search_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_search_msg', index=8,
+      number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -109,8 +117,8 @@ _SYFTMESSAGE = _descriptor.Descriptor(
       name='contents', full_name='syft_proto.messaging.v1.SyftMessage.contents',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=226,
-  serialized_end=1037,
+  serialized_start=255,
+  serialized_end=1138,
 )
 
 
@@ -140,8 +148,8 @@ _FORCEOBJECTDELETEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1039,
-  serialized_end=1124,
+  serialized_start=1140,
+  serialized_end=1225,
 )
 
 
@@ -171,8 +179,8 @@ _GETSHAPEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1126,
-  serialized_end=1210,
+  serialized_start=1227,
+  serialized_end=1311,
 )
 
 
@@ -202,8 +210,8 @@ _ISNONEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1212,
-  serialized_end=1294,
+  serialized_start=1313,
+  serialized_end=1395,
 )
 
 
@@ -233,8 +241,8 @@ _OBJECTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1296,
-  serialized_end=1366,
+  serialized_start=1397,
+  serialized_end=1467,
 )
 
 
@@ -264,8 +272,8 @@ _OBJECTREQUESTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1368,
-  serialized_end=1449,
+  serialized_start=1469,
+  serialized_end=1550,
 )
 
 
@@ -295,8 +303,8 @@ _OPERATIONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1451,
-  serialized_end=1536,
+  serialized_start=1552,
+  serialized_end=1637,
 )
 
 
@@ -340,8 +348,8 @@ _PLANCOMMANDMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1538,
-  serialized_end=1650,
+  serialized_start=1639,
+  serialized_end=1751,
 )
 
 
@@ -371,10 +379,11 @@ _SEARCHMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1652,
-  serialized_end=1700,
+  serialized_start=1753,
+  serialized_end=1801,
 )
 
+_SYFTMESSAGE.fields_by_name['contents_empty_msg'].message_type = google_dot_protobuf_dot_empty__pb2._EMPTY
 _SYFTMESSAGE.fields_by_name['contents_delete_msg'].message_type = _FORCEOBJECTDELETEMESSAGE
 _SYFTMESSAGE.fields_by_name['contents_get_shape_msg'].message_type = _GETSHAPEMESSAGE
 _SYFTMESSAGE.fields_by_name['contents_is_none_msg'].message_type = _ISNONEMESSAGE
@@ -383,6 +392,9 @@ _SYFTMESSAGE.fields_by_name['contents_object_request_msg'].message_type = _OBJEC
 _SYFTMESSAGE.fields_by_name['contents_operation_msg'].message_type = _OPERATIONMESSAGE
 _SYFTMESSAGE.fields_by_name['contents_plan_command_msg'].message_type = _PLANCOMMANDMESSAGE
 _SYFTMESSAGE.fields_by_name['contents_search_msg'].message_type = _SEARCHMESSAGE
+_SYFTMESSAGE.oneofs_by_name['contents'].fields.append(
+  _SYFTMESSAGE.fields_by_name['contents_empty_msg'])
+_SYFTMESSAGE.fields_by_name['contents_empty_msg'].containing_oneof = _SYFTMESSAGE.oneofs_by_name['contents']
 _SYFTMESSAGE.oneofs_by_name['contents'].fields.append(
   _SYFTMESSAGE.fields_by_name['contents_delete_msg'])
 _SYFTMESSAGE.fields_by_name['contents_delete_msg'].containing_oneof = _SYFTMESSAGE.oneofs_by_name['contents']
