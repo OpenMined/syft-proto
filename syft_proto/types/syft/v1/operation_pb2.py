@@ -13,6 +13,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from syft_proto.generic.pointers.v1 import pointer_pb2 as syft__proto_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2
 from syft_proto.types.syft.v1 import arg_pb2 as syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2
 from syft_proto.types.syft.v1 import id_pb2 as syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2
 
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.types.syft.v1',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n(syft_proto/types/syft/v1/operation.proto\x12\x18syft_proto.types.syft.v1\x1a\"syft_proto/types/syft/v1/arg.proto\x1a!syft_proto/types/syft/v1/id.proto\"\xf1\x02\n\tOperation\x12\x18\n\x07\x63ommand\x18\x01 \x01(\tR\x07\x63ommand\x12\x37\n\x08owner_id\x18\x02 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x07ownerId\x12\x31\n\x04\x61rgs\x18\x03 \x03(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x04\x61rgs\x12G\n\x06kwargs\x18\x04 \x03(\x0b\x32/.syft_proto.types.syft.v1.Operation.KwargsEntryR\x06kwargs\x12;\n\nreturn_ids\x18\x05 \x03(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\treturnIds\x1aX\n\x0bKwargsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x05value:\x02\x38\x01\x62\x06proto3')
+  serialized_pb=_b('\n(syft_proto/types/syft/v1/operation.proto\x12\x18syft_proto.types.syft.v1\x1a,syft_proto/generic/pointers/v1/pointer.proto\x1a\"syft_proto/types/syft/v1/arg.proto\x1a!syft_proto/types/syft/v1/id.proto\"\xf7\x02\n\tOperation\x12\x18\n\x07\x63ommand\x18\x01 \x01(\tR\x07\x63ommand\x12=\n\x05owner\x18\x02 \x01(\x0b\x32\'.syft_proto.generic.pointers.v1.PointerR\x05owner\x12\x31\n\x04\x61rgs\x18\x03 \x03(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x04\x61rgs\x12G\n\x06kwargs\x18\x04 \x03(\x0b\x32/.syft_proto.types.syft.v1.Operation.KwargsEntryR\x06kwargs\x12;\n\nreturn_ids\x18\x05 \x03(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\treturnIds\x1aX\n\x0bKwargsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x05value:\x02\x38\x01\x62\x06proto3')
   ,
-  dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
+  dependencies=[syft__proto_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
 
 
 
@@ -62,8 +63,8 @@ _OPERATION_KWARGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=423,
-  serialized_end=511,
+  serialized_start=475,
+  serialized_end=563,
 )
 
 _OPERATION = _descriptor.Descriptor(
@@ -81,12 +82,12 @@ _OPERATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='command', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='owner_id', full_name='syft_proto.types.syft.v1.Operation.owner_id', index=1,
+      name='owner', full_name='syft_proto.types.syft.v1.Operation.owner', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='ownerId', file=DESCRIPTOR),
+      serialized_options=None, json_name='owner', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='args', full_name='syft_proto.types.syft.v1.Operation.args', index=2,
       number=3, type=11, cpp_type=10, label=3,
@@ -120,13 +121,13 @@ _OPERATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=142,
-  serialized_end=511,
+  serialized_start=188,
+  serialized_end=563,
 )
 
 _OPERATION_KWARGSENTRY.fields_by_name['value'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2._ARG
 _OPERATION_KWARGSENTRY.containing_type = _OPERATION
-_OPERATION.fields_by_name['owner_id'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
+_OPERATION.fields_by_name['owner'].message_type = syft__proto_dot_generic_dot_pointers_dot_v1_dot_pointer__pb2._POINTER
 _OPERATION.fields_by_name['args'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2._ARG
 _OPERATION.fields_by_name['kwargs'].message_type = _OPERATION_KWARGSENTRY
 _OPERATION.fields_by_name['return_ids'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
