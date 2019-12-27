@@ -1,10 +1,17 @@
 # Syft-Proto
 
+This repo defines the Syft protocol, and contains the information required to serialize Syft messages as either `msgpack` or `protobuf`.
+
+### msgpack
+
 `proto.json` contains constants for encoding PySyft data types.
 
-This file is exposed as installable dependency.
+### Protobuf
 
-## Using proto.json as Dependency
+Schemas are found in `./protobuf`, in a directory structure that roughly matches the package structure of PySyft. To compile new or modified schemas to Python stubs, run
+`./build_stubs.sh`, which uses the [Buf toolchain](https://buf.build/) for working with Protobuf. To install `buf`, follow the instructions [here](https://buf.build/docs/installation).
+
+## Using Syft-Proto as a Dependency
 
 ### Python
 
