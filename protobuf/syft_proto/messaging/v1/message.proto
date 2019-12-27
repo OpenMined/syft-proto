@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package syft_proto.messaging.v1;
+
+import "google/protobuf/empty.proto";
+
+message SyftMessage {
+  oneof contents {
+    google.protobuf.Empty contents_empty_msg = 1;
+  }
+}
