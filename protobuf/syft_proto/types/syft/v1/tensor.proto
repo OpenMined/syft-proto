@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package syft_proto.types.syft.v1;
+
+import "syft_proto/types/syft/v1/id.proto";
+import "syft_proto/types/syft/v1/shape.proto";
+
+message SyftTensor {
+    syft_proto.types.syft.v1.Id id = 1;
+    syft_proto.types.syft.v1.Shape shape = 2;
+
+    // TODO: Enumerate the Torch data types here and line them up with PB data types
+    repeated float contents = 3;
+}
