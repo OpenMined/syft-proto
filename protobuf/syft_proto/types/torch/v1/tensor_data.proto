@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package syft_proto.types.syft.v1;
+package syft_proto.types.torch.v1;
 
 import "syft_proto/types/syft/v1/id.proto";
 import "syft_proto/types/syft/v1/shape.proto";
 
-message SyftTensor {
+message TensorData {
     syft_proto.types.syft.v1.Id id = 1;
     syft_proto.types.syft.v1.Shape shape = 2;
     
@@ -21,7 +21,7 @@ message SyftTensor {
 
     // Only the contents field corresponding to the value of the
     // dtype field should be set, so most of the contents fields
-    // will not be present in any given SyftTensor
+    // will not be present in any given TensorData
 
     // Integer types
     repeated uint32 contents_uint8 = 16;
@@ -38,16 +38,16 @@ message SyftTensor {
     // Boolean types
     repeated bool contents_bool = 24;
 
-    // Complex types
-    // torch.complex32 = 25
-    // torch.complex64 = 26
-    // torch.complex128 = 27
-
     // Quantized types
-    repeated sint32 contents_qint8 = 28;   // 8-bit signed integer
-    repeated uint32 contents_quint8 = 29;  // 8-bit unsigned integer
-    repeated sint32 contents_qint32 = 30;  // 32-bit signed integer
+    repeated sint32 contents_qint8 = 25;   // 8-bit signed integer
+    repeated uint32 contents_quint8 = 26;  // 8-bit unsigned integer
+    repeated sint32 contents_qint32 = 27;  // 32-bit signed integer
 
     // Brain floating point types
-    repeated float contents_bfloat16 = 31; // float32 truncated to first 16 bits 
+    repeated float contents_bfloat16 = 28; // float32 truncated to first 16 bits 
+
+    // Complex types (not yet implemented in PyTorch)
+    // repeated float contents_complex32 = 29;
+    // repeated float contents_complex64 = 30;
+    // repeated double contents_complex128 = 31;
 }

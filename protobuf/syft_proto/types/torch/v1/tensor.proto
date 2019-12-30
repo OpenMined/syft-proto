@@ -4,16 +4,16 @@ package syft_proto.types.torch.v1;
 
 import "syft_proto/types/syft/v1/id.proto";
 import "syft_proto/types/syft/v1/shape.proto";
-import "syft_proto/types/syft/v1/tensor.proto";
+import "syft_proto/types/torch/v1/tensor_data.proto";
 
 message TorchTensor {
     syft_proto.types.syft.v1.Id id = 1;
     syft_proto.types.syft.v1.Shape shape = 2;
     // TODO: Make this a `oneof`
-    syft_proto.types.syft.v1.SyftTensor contents = 3;
+    syft_proto.types.torch.v1.TensorData contents = 3;
     bytes contents_bin = 4;
-    syft_proto.types.syft.v1.SyftTensor chain = 5;
-    syft_proto.types.syft.v1.SyftTensor grad_chain = 6;
+    TorchTensor chain = 5;
+    TorchTensor grad_chain = 6;
     repeated string tags = 7;
     string description = 8;
     enum Serializer {
