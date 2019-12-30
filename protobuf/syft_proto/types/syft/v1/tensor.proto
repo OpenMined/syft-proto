@@ -9,8 +9,11 @@ message SyftTensor {
     syft_proto.types.syft.v1.Id id = 1;
     syft_proto.types.syft.v1.Shape shape = 2;
     
-    // TODO: Convert this to an enumeration?
     string dtype = 3;
+
+    bool is_quantized = 4;
+    float scale = 5;
+    int32 zero_point = 6;
 
     // Field numbers starting at 16 take two bytes to encode,
     // so starting the tensor data at 16 leaves room for more
@@ -18,7 +21,7 @@ message SyftTensor {
 
     // Only the contents field corresponding to the value of the
     // dtype field should be set, so most of the contents fields
-    // will not be present in 
+    // will not be present in any given SyftTensor
 
     // Integer types
     repeated uint32 contents_uint8 = 16;
