@@ -155,6 +155,9 @@
     },
     "syft.frameworks.torch.tensors.interpreters.private.PrivateTensor": {
       "code": 46
+    },
+    "syft.frameworks.torch.tensors.interpreters.gradients_core.GradFunc": {
+      "code": 47
     }
   }
 }
