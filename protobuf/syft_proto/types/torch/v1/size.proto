@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-package syft_proto.types.syft.v1;
+package syft_proto.types.torch.v1;
 
-message Shape {
+message Size {
     repeated int32 dims = 1;
 }
