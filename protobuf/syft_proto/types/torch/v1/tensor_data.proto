@@ -6,14 +6,13 @@ import "syft_proto/types/syft/v1/id.proto";
 import "syft_proto/types/syft/v1/shape.proto";
 
 message TensorData {
-    syft_proto.types.syft.v1.Id id = 1;
-    syft_proto.types.syft.v1.Shape shape = 2;
+    syft_proto.types.syft.v1.Shape shape = 1;
     
-    string dtype = 3;
+    string dtype = 2;
 
-    bool is_quantized = 4;
-    float scale = 5;
-    int32 zero_point = 6;
+    bool is_quantized = 3;
+    float scale = 4;
+    int32 zero_point = 5;
 
     // Field numbers starting at 16 take two bytes to encode,
     // so starting the tensor data at 16 leaves room for more

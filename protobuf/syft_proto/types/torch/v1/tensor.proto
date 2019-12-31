@@ -3,20 +3,18 @@ syntax = "proto3";
 package syft_proto.types.torch.v1;
 
 import "syft_proto/types/syft/v1/id.proto";
-import "syft_proto/types/syft/v1/shape.proto";
 import "syft_proto/types/torch/v1/tensor_data.proto";
 
 message TorchTensor {
     syft_proto.types.syft.v1.Id id = 1;
-    syft_proto.types.syft.v1.Shape shape = 2;
     oneof contents {
-        syft_proto.types.torch.v1.TensorData contents_data = 3;
-        bytes contents_bin = 4;
+        syft_proto.types.torch.v1.TensorData contents_data = 2;
+        bytes contents_bin = 3;
     }
-    TorchTensor chain = 5;
-    TorchTensor grad_chain = 6;
-    repeated string tags = 7;
-    string description = 8;
+    TorchTensor chain = 4;
+    TorchTensor grad_chain = 5;
+    repeated string tags = 6;
+    string description = 7;
     enum Serializer {
         SERIALIZER_UNSPECIFIED = 0;
         SERIALIZER_TORCH = 1;
@@ -24,5 +22,5 @@ message TorchTensor {
         SERIALIZER_TF = 3;
         SERIALIZER_ALL = 4;
     }
-    Serializer serializer = 9;
+    Serializer serializer = 8;
 }
