@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package syft_proto.types.torch.v1;
+
+import "syft_proto/types/syft/v1/id.proto";
+import "syft_proto/types/torch/v1/tensor.proto";
+
+message Parameter {
+    syft_proto.types.syft.v1.Id id = 1;
+    syft_proto.types.torch.v1.TorchTensor tensor = 2;
+    bool requires_grad = 3;
+    syft_proto.types.torch.v1.TorchTensor grad = 4;
+}
