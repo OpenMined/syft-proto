@@ -3,10 +3,10 @@ syntax = "proto3";
 package syft_proto.types.torch.v1;
 
 import "syft_proto/types/syft/v1/id.proto";
-import "syft_proto/types/syft/v1/shape.proto";
+import "syft_proto/types/torch/v1/size.proto";
 
 message TensorData {
-    syft_proto.types.syft.v1.Shape shape = 1;
+    syft_proto.types.torch.v1.Size shape = 1;
     
     string dtype = 2;
 
