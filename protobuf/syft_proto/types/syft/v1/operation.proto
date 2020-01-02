@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package syft_proto.types.syft.v1;
+
+import "syft_proto/generic/pointers/v1/pointer_tensor.proto";
+import "syft_proto/types/syft/v1/arg.proto";
+import "syft_proto/types/syft/v1/id.proto";
+import "syft_proto/types/torch/v1/tensor.proto";
+
+message Operation {
+    string command = 1;
+    oneof owner {
+        syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2;
+        syft_proto.types.torch.v1.TorchTensor owner_tensor = 7;
+    }
+    repeated syft_proto.types.syft.v1.Arg args = 3;
+    map<string, syft_proto.types.syft.v1.Arg> kwargs = 4;
+    repeated syft_proto.types.syft.v1.Id return_ids = 5;
+}
