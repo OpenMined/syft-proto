@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package syft_proto.types.syft.v1;
+
+import "syft_proto/generic/pointers/v1/pointer_tensor.proto";
+import "syft_proto/types/torch/v1/tensor.proto";
+import "syft_proto/types/syft/v1/shape.proto";
+import "syft_proto/types/torch/v1/parameter.proto";
+
+message Arg {
+    oneof arg {
+        bool arg_bool = 1;
+        int32 arg_int = 2;
+        float arg_float = 3;
+        string arg_string = 4;
+
+        syft_proto.types.syft.v1.Shape arg_shape = 5;
+        syft_proto.types.torch.v1.TorchTensor arg_tensor = 6;
+        syft_proto.types.torch.v1.Parameter arg_torch_param = 7;
+
+        syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8;
+    }
+}
