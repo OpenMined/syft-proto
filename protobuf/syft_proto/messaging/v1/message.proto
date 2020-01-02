@@ -10,6 +10,14 @@ import "syft_proto/types/torch/v1/tensor.proto";
 message SyftMessage {
   oneof contents {
     google.protobuf.Empty contents_empty_msg = 1;
+    // ForceObjectDeleteMessage contents_delete_msg = 2;
+    // GetShapeMessage contents_get_shape_msg = 3;
+    // IsNoneMessage contents_is_none_msg = 4;
+    ObjectMessage contents_object_msg = 5;
+    // ObjectRequestMessage contents_object_request_msg = 6;
+    OperationMessage contents_operation_msg = 7;
+    // PlanCommandMessage contents_plan_command_msg = 8;
+    // SearchMessage contents_search_msg = 9;
   }
 }
 
