@@ -55,10 +55,10 @@ export namespace syft_proto {
                             public crypto_provider_id?: (syft_proto.types.syft.v1.IId|null);
 
                             /** AdditiveSharingTensor location_ids. */
-                            public location_ids: [ 'Array' ].<syft_proto.types.syft.v1.IId>;
+                            public location_ids: syft_proto.types.syft.v1.IId[];
 
                             /** AdditiveSharingTensor shares. */
-                            public shares: [ 'Array' ].<syft_proto.generic.pointers.v1.IPointerTensor>;
+                            public shares: syft_proto.generic.pointers.v1.IPointerTensor[];
 
                             /**
                              * Creates a new AdditiveSharingTensor instance using the specified properties.
@@ -107,14 +107,14 @@ export namespace syft_proto {
                              * @param message Plain object to verify
                              * @returns `null` if valid, otherwise the reason why it is not
                              */
-                            public static verify(message: [ 'object' ].<string, any>): (string|null);
+                            public static verify(message: { [k: string]: any }): (string|null);
 
                             /**
                              * Creates an AdditiveSharingTensor message from a plain object. Also converts values to their respective internal types.
                              * @param object Plain object
                              * @returns AdditiveSharingTensor
                              */
-                            public static fromObject(object: [ 'object' ].<string, any>): syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor;
+                            public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor;
 
                             /**
                              * Creates a plain object from an AdditiveSharingTensor message. Also converts values to other types if specified.
@@ -122,13 +122,13 @@ export namespace syft_proto {
                              * @param [options] Conversion options
                              * @returns Plain object
                              */
-                            public static toObject(message: syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                            public static toObject(message: syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                             /**
                              * Converts this AdditiveSharingTensor to JSON.
                              * @returns JSON object
                              */
-                            public toJSON(): [ 'object' ].<string, any>;
+                            public toJSON(): { [k: string]: any };
                         }
                     }
                 }
@@ -241,14 +241,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates a PointerTensor message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns PointerTensor
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.generic.pointers.v1.PointerTensor;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.generic.pointers.v1.PointerTensor;
 
                     /**
                      * Creates a plain object from a PointerTensor message. Also converts values to other types if specified.
@@ -256,13 +256,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.generic.pointers.v1.PointerTensor, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.generic.pointers.v1.PointerTensor, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this PointerTensor to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
             }
         }
@@ -352,14 +352,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates an Id message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns Id
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.syft.v1.Id;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.syft.v1.Id;
 
                     /**
                      * Creates a plain object from an Id message. Also converts values to other types if specified.
@@ -367,13 +367,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.types.syft.v1.Id, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.types.syft.v1.Id, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this Id to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
 
                 /** Properties of a Shape. */
@@ -393,7 +393,7 @@ export namespace syft_proto {
                     constructor(properties?: syft_proto.types.syft.v1.IShape);
 
                     /** Shape dims. */
-                    public dims: [ 'Array' ].<number>;
+                    public dims: number[];
 
                     /**
                      * Creates a new Shape instance using the specified properties.
@@ -442,14 +442,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates a Shape message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns Shape
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.syft.v1.Shape;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.syft.v1.Shape;
 
                     /**
                      * Creates a plain object from a Shape message. Also converts values to other types if specified.
@@ -457,13 +457,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.types.syft.v1.Shape, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.types.syft.v1.Shape, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this Shape to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
 
                 /** Properties of an Operation. */
@@ -507,13 +507,13 @@ export namespace syft_proto {
                     public owner_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
 
                     /** Operation args. */
-                    public args: [ 'Array' ].<syft_proto.types.syft.v1.IArg>;
+                    public args: syft_proto.types.syft.v1.IArg[];
 
                     /** Operation kwargs. */
-                    public kwargs: [ 'object' ].<string, syft_proto.types.syft.v1.IArg>;
+                    public kwargs: { [k: string]: syft_proto.types.syft.v1.IArg };
 
                     /** Operation return_ids. */
-                    public return_ids: [ 'Array' ].<syft_proto.types.syft.v1.IId>;
+                    public return_ids: syft_proto.types.syft.v1.IId[];
 
                     /** Operation owner. */
                     public owner?: ("owner_pointer"|"owner_tensor");
@@ -565,14 +565,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates an Operation message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns Operation
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.syft.v1.Operation;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.syft.v1.Operation;
 
                     /**
                      * Creates a plain object from an Operation message. Also converts values to other types if specified.
@@ -580,13 +580,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.types.syft.v1.Operation, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.types.syft.v1.Operation, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this Operation to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
 
                 /** Properties of an Arg. */
@@ -700,14 +700,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates an Arg message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns Arg
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.syft.v1.Arg;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.syft.v1.Arg;
 
                     /**
                      * Creates a plain object from an Arg message. Also converts values to other types if specified.
@@ -715,103 +715,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.types.syft.v1.Arg, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.types.syft.v1.Arg, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this Arg to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
-                }
-
-                /** Properties of an ObjectWrapper. */
-                interface IObjectWrapper {
-
-                    /** ObjectWrapper id */
-                    id?: (syft_proto.types.syft.v1.IId|null);
-                }
-
-                /** Represents an ObjectWrapper. */
-                class ObjectWrapper implements IObjectWrapper {
-
-                    /**
-                     * Constructs a new ObjectWrapper.
-                     * @param [properties] Properties to set
-                     */
-                    constructor(properties?: syft_proto.types.syft.v1.IObjectWrapper);
-
-                    /** ObjectWrapper id. */
-                    public id?: (syft_proto.types.syft.v1.IId|null);
-
-                    /**
-                     * Creates a new ObjectWrapper instance using the specified properties.
-                     * @param [properties] Properties to set
-                     * @returns ObjectWrapper instance
-                     */
-                    public static create(properties?: syft_proto.types.syft.v1.IObjectWrapper): syft_proto.types.syft.v1.ObjectWrapper;
-
-                    /**
-                     * Encodes the specified ObjectWrapper message. Does not implicitly {@link syft_proto.types.syft.v1.ObjectWrapper.verify|verify} messages.
-                     * @param message ObjectWrapper message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encode(message: syft_proto.types.syft.v1.IObjectWrapper, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Encodes the specified ObjectWrapper message, length delimited. Does not implicitly {@link syft_proto.types.syft.v1.ObjectWrapper.verify|verify} messages.
-                     * @param message ObjectWrapper message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encodeDelimited(message: syft_proto.types.syft.v1.IObjectWrapper, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Decodes an ObjectWrapper message from the specified reader or buffer.
-                     * @param reader Reader or buffer to decode from
-                     * @param [length] Message length if known beforehand
-                     * @returns ObjectWrapper
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.types.syft.v1.ObjectWrapper;
-
-                    /**
-                     * Decodes an ObjectWrapper message from the specified reader or buffer, length delimited.
-                     * @param reader Reader or buffer to decode from
-                     * @returns ObjectWrapper
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.types.syft.v1.ObjectWrapper;
-
-                    /**
-                     * Verifies an ObjectWrapper message.
-                     * @param message Plain object to verify
-                     * @returns `null` if valid, otherwise the reason why it is not
-                     */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
-
-                    /**
-                     * Creates an ObjectWrapper message from a plain object. Also converts values to their respective internal types.
-                     * @param object Plain object
-                     * @returns ObjectWrapper
-                     */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.syft.v1.ObjectWrapper;
-
-                    /**
-                     * Creates a plain object from an ObjectWrapper message. Also converts values to other types if specified.
-                     * @param message ObjectWrapper
-                     * @param [options] Conversion options
-                     * @returns Plain object
-                     */
-                    public static toObject(message: syft_proto.types.syft.v1.ObjectWrapper, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
-
-                    /**
-                     * Converts this ObjectWrapper to JSON.
-                     * @returns JSON object
-                     */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
             }
         }
@@ -875,7 +785,7 @@ export namespace syft_proto {
                     public grad_chain?: (syft_proto.types.torch.v1.ITorchTensor|null);
 
                     /** TorchTensor tags. */
-                    public tags: [ 'Array' ].<string>;
+                    public tags: string[];
 
                     /** TorchTensor description. */
                     public description: string;
@@ -933,14 +843,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates a TorchTensor message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns TorchTensor
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.torch.v1.TorchTensor;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.TorchTensor;
 
                     /**
                      * Creates a plain object from a TorchTensor message. Also converts values to other types if specified.
@@ -948,13 +858,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.types.torch.v1.TorchTensor, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.types.torch.v1.TorchTensor, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this TorchTensor to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
 
                 namespace TorchTensor {
@@ -1052,43 +962,43 @@ export namespace syft_proto {
                     public zero_point: number;
 
                     /** TensorData contents_uint8. */
-                    public contents_uint8: [ 'Array' ].<number>;
+                    public contents_uint8: number[];
 
                     /** TensorData contents_int8. */
-                    public contents_int8: [ 'Array' ].<number>;
+                    public contents_int8: number[];
 
                     /** TensorData contents_int16. */
-                    public contents_int16: [ 'Array' ].<number>;
+                    public contents_int16: number[];
 
                     /** TensorData contents_int32. */
-                    public contents_int32: [ 'Array' ].<number>;
+                    public contents_int32: number[];
 
                     /** TensorData contents_int64. */
-                    public contents_int64: [ 'Array' ].<(number|Long)>;
+                    public contents_int64: (number|Long)[];
 
                     /** TensorData contents_float16. */
-                    public contents_float16: [ 'Array' ].<number>;
+                    public contents_float16: number[];
 
                     /** TensorData contents_float32. */
-                    public contents_float32: [ 'Array' ].<number>;
+                    public contents_float32: number[];
 
                     /** TensorData contents_float64. */
-                    public contents_float64: [ 'Array' ].<number>;
+                    public contents_float64: number[];
 
                     /** TensorData contents_bool. */
-                    public contents_bool: [ 'Array' ].<boolean>;
+                    public contents_bool: boolean[];
 
                     /** TensorData contents_qint8. */
-                    public contents_qint8: [ 'Array' ].<number>;
+                    public contents_qint8: number[];
 
                     /** TensorData contents_quint8. */
-                    public contents_quint8: [ 'Array' ].<number>;
+                    public contents_quint8: number[];
 
                     /** TensorData contents_qint32. */
-                    public contents_qint32: [ 'Array' ].<number>;
+                    public contents_qint32: number[];
 
                     /** TensorData contents_bfloat16. */
-                    public contents_bfloat16: [ 'Array' ].<number>;
+                    public contents_bfloat16: number[];
 
                     /**
                      * Creates a new TensorData instance using the specified properties.
@@ -1137,14 +1047,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates a TensorData message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns TensorData
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.torch.v1.TensorData;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.TensorData;
 
                     /**
                      * Creates a plain object from a TensorData message. Also converts values to other types if specified.
@@ -1152,13 +1062,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.types.torch.v1.TensorData, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.types.torch.v1.TensorData, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this TensorData to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
 
                 /** Properties of a Size. */
@@ -1178,7 +1088,7 @@ export namespace syft_proto {
                     constructor(properties?: syft_proto.types.torch.v1.ISize);
 
                     /** Size dims. */
-                    public dims: [ 'Array' ].<number>;
+                    public dims: number[];
 
                     /**
                      * Creates a new Size instance using the specified properties.
@@ -1227,14 +1137,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates a Size message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns Size
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.torch.v1.Size;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.Size;
 
                     /**
                      * Creates a plain object from a Size message. Also converts values to other types if specified.
@@ -1242,13 +1152,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.types.torch.v1.Size, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.types.torch.v1.Size, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this Size to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
 
                 /** Properties of a Parameter. */
@@ -1335,14 +1245,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates a Parameter message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns Parameter
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.torch.v1.Parameter;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.Parameter;
 
                     /**
                      * Creates a plain object from a Parameter message. Also converts values to other types if specified.
@@ -1350,13 +1260,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.types.torch.v1.Parameter, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.types.torch.v1.Parameter, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this Parameter to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
 
                 /** Properties of a CFunction. */
@@ -1425,14 +1335,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates a CFunction message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns CFunction
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.torch.v1.CFunction;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.CFunction;
 
                     /**
                      * Creates a plain object from a CFunction message. Also converts values to other types if specified.
@@ -1440,13 +1350,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.types.torch.v1.CFunction, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.types.torch.v1.CFunction, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this CFunction to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
 
                 /** Properties of a Device. */
@@ -1515,14 +1425,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates a Device message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns Device
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.torch.v1.Device;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.Device;
 
                     /**
                      * Creates a plain object from a Device message. Also converts values to other types if specified.
@@ -1530,13 +1440,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.types.torch.v1.Device, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.types.torch.v1.Device, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this Device to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
 
                 /** Properties of a ScriptModule. */
@@ -1605,14 +1515,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates a ScriptModule message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns ScriptModule
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.torch.v1.ScriptModule;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.ScriptModule;
 
                     /**
                      * Creates a plain object from a ScriptModule message. Also converts values to other types if specified.
@@ -1620,13 +1530,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.types.torch.v1.ScriptModule, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.types.torch.v1.ScriptModule, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this ScriptModule to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
 
                 /** Properties of a TracedModule. */
@@ -1695,14 +1605,14 @@ export namespace syft_proto {
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
-                    public static verify(message: [ 'object' ].<string, any>): (string|null);
+                    public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
                      * Creates a TracedModule message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
                      * @returns TracedModule
                      */
-                    public static fromObject(object: [ 'object' ].<string, any>): syft_proto.types.torch.v1.TracedModule;
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.TracedModule;
 
                     /**
                      * Creates a plain object from a TracedModule message. Also converts values to other types if specified.
@@ -1710,13 +1620,13 @@ export namespace syft_proto {
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: syft_proto.types.torch.v1.TracedModule, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                    public static toObject(message: syft_proto.types.torch.v1.TracedModule, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
                      * Converts this TracedModule to JSON.
                      * @returns JSON object
                      */
-                    public toJSON(): [ 'object' ].<string, any>;
+                    public toJSON(): { [k: string]: any };
                 }
             }
         }
@@ -1809,14 +1719,14 @@ export namespace syft_proto {
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
-                public static verify(message: [ 'object' ].<string, any>): (string|null);
+                public static verify(message: { [k: string]: any }): (string|null);
 
                 /**
                  * Creates a SyftMessage message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
                  * @returns SyftMessage
                  */
-                public static fromObject(object: [ 'object' ].<string, any>): syft_proto.messaging.v1.SyftMessage;
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.SyftMessage;
 
                 /**
                  * Creates a plain object from a SyftMessage message. Also converts values to other types if specified.
@@ -1824,13 +1734,13 @@ export namespace syft_proto {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: syft_proto.messaging.v1.SyftMessage, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                public static toObject(message: syft_proto.messaging.v1.SyftMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this SyftMessage to JSON.
                  * @returns JSON object
                  */
-                public toJSON(): [ 'object' ].<string, any>;
+                public toJSON(): { [k: string]: any };
             }
 
             /** Properties of an ObjectMessage. */
@@ -1899,14 +1809,14 @@ export namespace syft_proto {
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
-                public static verify(message: [ 'object' ].<string, any>): (string|null);
+                public static verify(message: { [k: string]: any }): (string|null);
 
                 /**
                  * Creates an ObjectMessage message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
                  * @returns ObjectMessage
                  */
-                public static fromObject(object: [ 'object' ].<string, any>): syft_proto.messaging.v1.ObjectMessage;
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.ObjectMessage;
 
                 /**
                  * Creates a plain object from an ObjectMessage message. Also converts values to other types if specified.
@@ -1914,13 +1824,13 @@ export namespace syft_proto {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: syft_proto.messaging.v1.ObjectMessage, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                public static toObject(message: syft_proto.messaging.v1.ObjectMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this ObjectMessage to JSON.
                  * @returns JSON object
                  */
-                public toJSON(): [ 'object' ].<string, any>;
+                public toJSON(): { [k: string]: any };
             }
 
             /** Properties of an OperationMessage. */
@@ -1989,14 +1899,14 @@ export namespace syft_proto {
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
-                public static verify(message: [ 'object' ].<string, any>): (string|null);
+                public static verify(message: { [k: string]: any }): (string|null);
 
                 /**
                  * Creates an OperationMessage message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
                  * @returns OperationMessage
                  */
-                public static fromObject(object: [ 'object' ].<string, any>): syft_proto.messaging.v1.OperationMessage;
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.OperationMessage;
 
                 /**
                  * Creates a plain object from an OperationMessage message. Also converts values to other types if specified.
@@ -2004,13 +1914,13 @@ export namespace syft_proto {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: syft_proto.messaging.v1.OperationMessage, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                public static toObject(message: syft_proto.messaging.v1.OperationMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this OperationMessage to JSON.
                  * @returns JSON object
                  */
-                public toJSON(): [ 'object' ].<string, any>;
+                public toJSON(): { [k: string]: any };
             }
 
             /** Properties of a Protocol. */
@@ -2045,7 +1955,7 @@ export namespace syft_proto {
                 public id?: (syft_proto.types.syft.v1.IId|null);
 
                 /** Protocol tags. */
-                public tags: [ 'Array' ].<string>;
+                public tags: string[];
 
                 /** Protocol description. */
                 public description: string;
@@ -2054,7 +1964,7 @@ export namespace syft_proto {
                 public workers_resolved: boolean;
 
                 /** Protocol plan_assignments. */
-                public plan_assignments: [ 'Array' ].<syft_proto.messaging.v1.IPlanAssignment>;
+                public plan_assignments: syft_proto.messaging.v1.IPlanAssignment[];
 
                 /**
                  * Creates a new Protocol instance using the specified properties.
@@ -2103,14 +2013,14 @@ export namespace syft_proto {
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
-                public static verify(message: [ 'object' ].<string, any>): (string|null);
+                public static verify(message: { [k: string]: any }): (string|null);
 
                 /**
                  * Creates a Protocol message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
                  * @returns Protocol
                  */
-                public static fromObject(object: [ 'object' ].<string, any>): syft_proto.messaging.v1.Protocol;
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.Protocol;
 
                 /**
                  * Creates a plain object from a Protocol message. Also converts values to other types if specified.
@@ -2118,13 +2028,13 @@ export namespace syft_proto {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: syft_proto.messaging.v1.Protocol, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                public static toObject(message: syft_proto.messaging.v1.Protocol, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this Protocol to JSON.
                  * @returns JSON object
                  */
-                public toJSON(): [ 'object' ].<string, any>;
+                public toJSON(): { [k: string]: any };
             }
 
             /** Properties of a PlanAssignment. */
@@ -2199,14 +2109,14 @@ export namespace syft_proto {
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
-                public static verify(message: [ 'object' ].<string, any>): (string|null);
+                public static verify(message: { [k: string]: any }): (string|null);
 
                 /**
                  * Creates a PlanAssignment message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
                  * @returns PlanAssignment
                  */
-                public static fromObject(object: [ 'object' ].<string, any>): syft_proto.messaging.v1.PlanAssignment;
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.PlanAssignment;
 
                 /**
                  * Creates a plain object from a PlanAssignment message. Also converts values to other types if specified.
@@ -2214,13 +2124,13 @@ export namespace syft_proto {
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: syft_proto.messaging.v1.PlanAssignment, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+                public static toObject(message: syft_proto.messaging.v1.PlanAssignment, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
                  * Converts this PlanAssignment to JSON.
                  * @returns JSON object
                  */
-                public toJSON(): [ 'object' ].<string, any>;
+                public toJSON(): { [k: string]: any };
             }
         }
     }
@@ -2292,14 +2202,14 @@ export namespace google {
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: [ 'object' ].<string, any>): (string|null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates an Empty message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
              * @returns Empty
              */
-            public static fromObject(object: [ 'object' ].<string, any>): google.protobuf.Empty;
+            public static fromObject(object: { [k: string]: any }): google.protobuf.Empty;
 
             /**
              * Creates a plain object from an Empty message. Also converts values to other types if specified.
@@ -2307,13 +2217,13 @@ export namespace google {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: google.protobuf.Empty, options?: $protobuf.IConversionOptions): [ 'object' ].<string, any>;
+            public static toObject(message: google.protobuf.Empty, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Empty to JSON.
              * @returns JSON object
              */
-            public toJSON(): [ 'object' ].<string, any>;
+            public toJSON(): { [k: string]: any };
         }
     }
 }
