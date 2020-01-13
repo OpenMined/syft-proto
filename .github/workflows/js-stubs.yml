@@ -1,0 +1,26 @@
+name: Build JS Stubs
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Nodejs
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Build JS Stubs
+        run: |
+          npm i
+          node ./js/bin/build_stubs.js
+
+      - name: Commit to repository
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@users.noreply.github.com"
+          git add js/*
+          git diff --quiet && git diff --staged --quiet || (git commit -m "JS stubs auto-commit"; git push)
