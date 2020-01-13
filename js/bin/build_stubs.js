@@ -2,6 +2,7 @@ const pbjs = require('protobufjs/cli').pbjs;
 const pbts = require('protobufjs/cli').pbts;
 const fs = require('fs');
 const path = require('path');
+const util = require('util');
 
 const find = (dir, filter, fileList = []) => {
     const files = fs.readdirSync(dir);
@@ -47,7 +48,7 @@ const compile = async (type, filename = '') => {
         ...protoFiles
     ];
 
-    return pbjs.main(args);
+    return util.promisify(pbjs.main)(args);
 };
 
 
@@ -55,7 +56,7 @@ const main = async () => {
     await compile('static-module', outStaticFile);
     console.log(`Compiled ${outStaticFile}`);
 
-    await pbts.main(['-o', outTypesFile, outStaticFile]);
+    await util.promisify(pbts.main)(['-o', outTypesFile, outStaticFile]);
     console.log(`Generated ${outTypesFile}`);
 };
 
