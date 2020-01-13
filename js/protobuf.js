@@ -5405,6 +5405,546 @@ $root.syft_proto = (function() {
                 return OperationMessage;
             })();
 
+            v1.Protocol = (function() {
+
+                /**
+                 * Properties of a Protocol.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface IProtocol
+                 * @property {syft_proto.types.syft.v1.IId|null} [id] Protocol id
+                 * @property {Array.<string>|null} [tags] Protocol tags
+                 * @property {string|null} [description] Protocol description
+                 * @property {boolean|null} [workers_resolved] Protocol workers_resolved
+                 * @property {Array.<syft_proto.messaging.v1.IPlanAssignment>|null} [plan_assignments] Protocol plan_assignments
+                 */
+
+                /**
+                 * Constructs a new Protocol.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents a Protocol.
+                 * @implements IProtocol
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.IProtocol=} [properties] Properties to set
+                 */
+                function Protocol(properties) {
+                    this.tags = [];
+                    this.plan_assignments = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * Protocol id.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} id
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @instance
+                 */
+                Protocol.prototype.id = null;
+
+                /**
+                 * Protocol tags.
+                 * @member {Array.<string>} tags
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @instance
+                 */
+                Protocol.prototype.tags = $util.emptyArray;
+
+                /**
+                 * Protocol description.
+                 * @member {string} description
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @instance
+                 */
+                Protocol.prototype.description = "";
+
+                /**
+                 * Protocol workers_resolved.
+                 * @member {boolean} workers_resolved
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @instance
+                 */
+                Protocol.prototype.workers_resolved = false;
+
+                /**
+                 * Protocol plan_assignments.
+                 * @member {Array.<syft_proto.messaging.v1.IPlanAssignment>} plan_assignments
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @instance
+                 */
+                Protocol.prototype.plan_assignments = $util.emptyArray;
+
+                /**
+                 * Creates a new Protocol instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @static
+                 * @param {syft_proto.messaging.v1.IProtocol=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.Protocol} Protocol instance
+                 */
+                Protocol.create = function create(properties) {
+                    return new Protocol(properties);
+                };
+
+                /**
+                 * Encodes the specified Protocol message. Does not implicitly {@link syft_proto.messaging.v1.Protocol.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @static
+                 * @param {syft_proto.messaging.v1.IProtocol} message Protocol message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Protocol.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.tags != null && message.tags.length)
+                        for (var i = 0; i < message.tags.length; ++i)
+                            writer.uint32(/* id 2, wireType 2 =*/18).string(message.tags[i]);
+                    if (message.description != null && message.hasOwnProperty("description"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.description);
+                    if (message.workers_resolved != null && message.hasOwnProperty("workers_resolved"))
+                        writer.uint32(/* id 4, wireType 0 =*/32).bool(message.workers_resolved);
+                    if (message.plan_assignments != null && message.plan_assignments.length)
+                        for (var i = 0; i < message.plan_assignments.length; ++i)
+                            $root.syft_proto.messaging.v1.PlanAssignment.encode(message.plan_assignments[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified Protocol message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.Protocol.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @static
+                 * @param {syft_proto.messaging.v1.IProtocol} message Protocol message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Protocol.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a Protocol message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.Protocol} Protocol
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Protocol.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.Protocol();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            if (!(message.tags && message.tags.length))
+                                message.tags = [];
+                            message.tags.push(reader.string());
+                            break;
+                        case 3:
+                            message.description = reader.string();
+                            break;
+                        case 4:
+                            message.workers_resolved = reader.bool();
+                            break;
+                        case 5:
+                            if (!(message.plan_assignments && message.plan_assignments.length))
+                                message.plan_assignments = [];
+                            message.plan_assignments.push($root.syft_proto.messaging.v1.PlanAssignment.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a Protocol message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.Protocol} Protocol
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Protocol.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a Protocol message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Protocol.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.id != null && message.hasOwnProperty("id")) {
+                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
+                        if (error)
+                            return "id." + error;
+                    }
+                    if (message.tags != null && message.hasOwnProperty("tags")) {
+                        if (!Array.isArray(message.tags))
+                            return "tags: array expected";
+                        for (var i = 0; i < message.tags.length; ++i)
+                            if (!$util.isString(message.tags[i]))
+                                return "tags: string[] expected";
+                    }
+                    if (message.description != null && message.hasOwnProperty("description"))
+                        if (!$util.isString(message.description))
+                            return "description: string expected";
+                    if (message.workers_resolved != null && message.hasOwnProperty("workers_resolved"))
+                        if (typeof message.workers_resolved !== "boolean")
+                            return "workers_resolved: boolean expected";
+                    if (message.plan_assignments != null && message.hasOwnProperty("plan_assignments")) {
+                        if (!Array.isArray(message.plan_assignments))
+                            return "plan_assignments: array expected";
+                        for (var i = 0; i < message.plan_assignments.length; ++i) {
+                            var error = $root.syft_proto.messaging.v1.PlanAssignment.verify(message.plan_assignments[i]);
+                            if (error)
+                                return "plan_assignments." + error;
+                        }
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a Protocol message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.Protocol} Protocol
+                 */
+                Protocol.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.Protocol)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.Protocol();
+                    if (object.id != null) {
+                        if (typeof object.id !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.Protocol.id: object expected");
+                        message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
+                    }
+                    if (object.tags) {
+                        if (!Array.isArray(object.tags))
+                            throw TypeError(".syft_proto.messaging.v1.Protocol.tags: array expected");
+                        message.tags = [];
+                        for (var i = 0; i < object.tags.length; ++i)
+                            message.tags[i] = String(object.tags[i]);
+                    }
+                    if (object.description != null)
+                        message.description = String(object.description);
+                    if (object.workers_resolved != null)
+                        message.workers_resolved = Boolean(object.workers_resolved);
+                    if (object.plan_assignments) {
+                        if (!Array.isArray(object.plan_assignments))
+                            throw TypeError(".syft_proto.messaging.v1.Protocol.plan_assignments: array expected");
+                        message.plan_assignments = [];
+                        for (var i = 0; i < object.plan_assignments.length; ++i) {
+                            if (typeof object.plan_assignments[i] !== "object")
+                                throw TypeError(".syft_proto.messaging.v1.Protocol.plan_assignments: object expected");
+                            message.plan_assignments[i] = $root.syft_proto.messaging.v1.PlanAssignment.fromObject(object.plan_assignments[i]);
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a Protocol message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @static
+                 * @param {syft_proto.messaging.v1.Protocol} message Protocol
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                Protocol.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults) {
+                        object.tags = [];
+                        object.plan_assignments = [];
+                    }
+                    if (options.defaults) {
+                        object.id = null;
+                        object.description = "";
+                        object.workers_resolved = false;
+                    }
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
+                    if (message.tags && message.tags.length) {
+                        object.tags = [];
+                        for (var j = 0; j < message.tags.length; ++j)
+                            object.tags[j] = message.tags[j];
+                    }
+                    if (message.description != null && message.hasOwnProperty("description"))
+                        object.description = message.description;
+                    if (message.workers_resolved != null && message.hasOwnProperty("workers_resolved"))
+                        object.workers_resolved = message.workers_resolved;
+                    if (message.plan_assignments && message.plan_assignments.length) {
+                        object.plan_assignments = [];
+                        for (var j = 0; j < message.plan_assignments.length; ++j)
+                            object.plan_assignments[j] = $root.syft_proto.messaging.v1.PlanAssignment.toObject(message.plan_assignments[j], options);
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this Protocol to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.Protocol
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                Protocol.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return Protocol;
+            })();
+
+            v1.PlanAssignment = (function() {
+
+                /**
+                 * Properties of a PlanAssignment.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface IPlanAssignment
+                 * @property {syft_proto.types.syft.v1.IId|null} [plan_id] PlanAssignment plan_id
+                 * @property {syft_proto.types.syft.v1.IId|null} [worker_id] PlanAssignment worker_id
+                 */
+
+                /**
+                 * Constructs a new PlanAssignment.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents a PlanAssignment.
+                 * @implements IPlanAssignment
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.IPlanAssignment=} [properties] Properties to set
+                 */
+                function PlanAssignment(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * PlanAssignment plan_id.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} plan_id
+                 * @memberof syft_proto.messaging.v1.PlanAssignment
+                 * @instance
+                 */
+                PlanAssignment.prototype.plan_id = null;
+
+                /**
+                 * PlanAssignment worker_id.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} worker_id
+                 * @memberof syft_proto.messaging.v1.PlanAssignment
+                 * @instance
+                 */
+                PlanAssignment.prototype.worker_id = null;
+
+                /**
+                 * Creates a new PlanAssignment instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.PlanAssignment
+                 * @static
+                 * @param {syft_proto.messaging.v1.IPlanAssignment=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.PlanAssignment} PlanAssignment instance
+                 */
+                PlanAssignment.create = function create(properties) {
+                    return new PlanAssignment(properties);
+                };
+
+                /**
+                 * Encodes the specified PlanAssignment message. Does not implicitly {@link syft_proto.messaging.v1.PlanAssignment.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.PlanAssignment
+                 * @static
+                 * @param {syft_proto.messaging.v1.IPlanAssignment} message PlanAssignment message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                PlanAssignment.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.plan_id != null && message.hasOwnProperty("plan_id"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.plan_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.worker_id != null && message.hasOwnProperty("worker_id"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.worker_id, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified PlanAssignment message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.PlanAssignment.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.PlanAssignment
+                 * @static
+                 * @param {syft_proto.messaging.v1.IPlanAssignment} message PlanAssignment message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                PlanAssignment.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a PlanAssignment message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.PlanAssignment
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.PlanAssignment} PlanAssignment
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                PlanAssignment.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.PlanAssignment();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.plan_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.worker_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a PlanAssignment message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.PlanAssignment
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.PlanAssignment} PlanAssignment
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                PlanAssignment.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a PlanAssignment message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.PlanAssignment
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                PlanAssignment.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.plan_id != null && message.hasOwnProperty("plan_id")) {
+                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.plan_id);
+                        if (error)
+                            return "plan_id." + error;
+                    }
+                    if (message.worker_id != null && message.hasOwnProperty("worker_id")) {
+                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.worker_id);
+                        if (error)
+                            return "worker_id." + error;
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a PlanAssignment message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.PlanAssignment
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.PlanAssignment} PlanAssignment
+                 */
+                PlanAssignment.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.PlanAssignment)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.PlanAssignment();
+                    if (object.plan_id != null) {
+                        if (typeof object.plan_id !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.PlanAssignment.plan_id: object expected");
+                        message.plan_id = $root.syft_proto.types.syft.v1.Id.fromObject(object.plan_id);
+                    }
+                    if (object.worker_id != null) {
+                        if (typeof object.worker_id !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.PlanAssignment.worker_id: object expected");
+                        message.worker_id = $root.syft_proto.types.syft.v1.Id.fromObject(object.worker_id);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a PlanAssignment message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.PlanAssignment
+                 * @static
+                 * @param {syft_proto.messaging.v1.PlanAssignment} message PlanAssignment
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                PlanAssignment.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.plan_id = null;
+                        object.worker_id = null;
+                    }
+                    if (message.plan_id != null && message.hasOwnProperty("plan_id"))
+                        object.plan_id = $root.syft_proto.types.syft.v1.Id.toObject(message.plan_id, options);
+                    if (message.worker_id != null && message.hasOwnProperty("worker_id"))
+                        object.worker_id = $root.syft_proto.types.syft.v1.Id.toObject(message.worker_id, options);
+                    return object;
+                };
+
+                /**
+                 * Converts this PlanAssignment to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.PlanAssignment
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                PlanAssignment.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return PlanAssignment;
+            })();
+
             return v1;
         })();
 
