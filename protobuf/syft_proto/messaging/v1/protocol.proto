@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package syft_proto.messaging.v1;
+
+import "google/protobuf/empty.proto";
+import "syft_proto/types/syft/v1/id.proto";
+
+message Protocol {
+    syft_proto.types.syft.v1.Id id = 1;
+    repeated string tags = 2;
+    string description = 3;
+    bool workers_resolved = 4;
+    repeated PlanAssignment plan_assignments = 5;
+}
+
+message PlanAssignment {
+    syft_proto.types.syft.v1.Id plan_id = 1;
+    syft_proto.types.syft.v1.Id worker_id = 2;
+}
