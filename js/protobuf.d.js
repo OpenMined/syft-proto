@@ -1449,6 +1449,96 @@ export namespace syft_proto {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** Properties of a ScriptFunction. */
+                interface IScriptFunction {
+
+                    /** ScriptFunction obj */
+                    obj?: (Uint8Array|null);
+                }
+
+                /** Represents a ScriptFunction. */
+                class ScriptFunction implements IScriptFunction {
+
+                    /**
+                     * Constructs a new ScriptFunction.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.types.torch.v1.IScriptFunction);
+
+                    /** ScriptFunction obj. */
+                    public obj: Uint8Array;
+
+                    /**
+                     * Creates a new ScriptFunction instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns ScriptFunction instance
+                     */
+                    public static create(properties?: syft_proto.types.torch.v1.IScriptFunction): syft_proto.types.torch.v1.ScriptFunction;
+
+                    /**
+                     * Encodes the specified ScriptFunction message. Does not implicitly {@link syft_proto.types.torch.v1.ScriptFunction.verify|verify} messages.
+                     * @param message ScriptFunction message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.types.torch.v1.IScriptFunction, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified ScriptFunction message, length delimited. Does not implicitly {@link syft_proto.types.torch.v1.ScriptFunction.verify|verify} messages.
+                     * @param message ScriptFunction message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.types.torch.v1.IScriptFunction, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a ScriptFunction message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns ScriptFunction
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.types.torch.v1.ScriptFunction;
+
+                    /**
+                     * Decodes a ScriptFunction message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns ScriptFunction
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.types.torch.v1.ScriptFunction;
+
+                    /**
+                     * Verifies a ScriptFunction message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a ScriptFunction message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns ScriptFunction
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.ScriptFunction;
+
+                    /**
+                     * Creates a plain object from a ScriptFunction message. Also converts values to other types if specified.
+                     * @param message ScriptFunction
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.types.torch.v1.ScriptFunction, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this ScriptFunction to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 /** Properties of a ScriptModule. */
                 interface IScriptModule {
 

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package syft_proto.types.torch.v1;
+
+// torch.jit.ScriptFunction
+message ScriptFunction {
+    bytes obj = 1;
+}

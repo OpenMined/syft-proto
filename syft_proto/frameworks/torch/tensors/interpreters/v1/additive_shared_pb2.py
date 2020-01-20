@@ -94,11 +94,11 @@ _ADDITIVESHARINGTENSOR.fields_by_name['shares'].message_type = syft__proto_dot_g
 DESCRIPTOR.message_types_by_name['AdditiveSharingTensor'] = _ADDITIVESHARINGTENSOR
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-AdditiveSharingTensor = _reflection.GeneratedProtocolMessageType('AdditiveSharingTensor', (_message.Message,), {
-  'DESCRIPTOR' : _ADDITIVESHARINGTENSOR,
-  '__module__' : 'syft_proto.frameworks.torch.tensors.interpreters.v1.additive_shared_pb2'
+AdditiveSharingTensor = _reflection.GeneratedProtocolMessageType('AdditiveSharingTensor', (_message.Message,), dict(
+  DESCRIPTOR = _ADDITIVESHARINGTENSOR,
+  __module__ = 'syft_proto.frameworks.torch.tensors.interpreters.v1.additive_shared_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor)
-  })
+  ))
 _sym_db.RegisterMessage(AdditiveSharingTensor)
 
 

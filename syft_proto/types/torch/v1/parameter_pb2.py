@@ -86,11 +86,11 @@ _PARAMETER.fields_by_name['grad'].message_type = syft__proto_dot_types_dot_torch
 DESCRIPTOR.message_types_by_name['Parameter'] = _PARAMETER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Parameter = _reflection.GeneratedProtocolMessageType('Parameter', (_message.Message,), {
-  'DESCRIPTOR' : _PARAMETER,
-  '__module__' : 'syft_proto.types.torch.v1.parameter_pb2'
+Parameter = _reflection.GeneratedProtocolMessageType('Parameter', (_message.Message,), dict(
+  DESCRIPTOR = _PARAMETER,
+  __module__ = 'syft_proto.types.torch.v1.parameter_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.types.torch.v1.Parameter)
-  })
+  ))
 _sym_db.RegisterMessage(Parameter)
 
 

@@ -4323,6 +4323,202 @@ $root.syft_proto = (function() {
                     return Device;
                 })();
 
+                v1.ScriptFunction = (function() {
+
+                    /**
+                     * Properties of a ScriptFunction.
+                     * @memberof syft_proto.types.torch.v1
+                     * @interface IScriptFunction
+                     * @property {Uint8Array|null} [obj] ScriptFunction obj
+                     */
+
+                    /**
+                     * Constructs a new ScriptFunction.
+                     * @memberof syft_proto.types.torch.v1
+                     * @classdesc Represents a ScriptFunction.
+                     * @implements IScriptFunction
+                     * @constructor
+                     * @param {syft_proto.types.torch.v1.IScriptFunction=} [properties] Properties to set
+                     */
+                    function ScriptFunction(properties) {
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * ScriptFunction obj.
+                     * @member {Uint8Array} obj
+                     * @memberof syft_proto.types.torch.v1.ScriptFunction
+                     * @instance
+                     */
+                    ScriptFunction.prototype.obj = $util.newBuffer([]);
+
+                    /**
+                     * Creates a new ScriptFunction instance using the specified properties.
+                     * @function create
+                     * @memberof syft_proto.types.torch.v1.ScriptFunction
+                     * @static
+                     * @param {syft_proto.types.torch.v1.IScriptFunction=} [properties] Properties to set
+                     * @returns {syft_proto.types.torch.v1.ScriptFunction} ScriptFunction instance
+                     */
+                    ScriptFunction.create = function create(properties) {
+                        return new ScriptFunction(properties);
+                    };
+
+                    /**
+                     * Encodes the specified ScriptFunction message. Does not implicitly {@link syft_proto.types.torch.v1.ScriptFunction.verify|verify} messages.
+                     * @function encode
+                     * @memberof syft_proto.types.torch.v1.ScriptFunction
+                     * @static
+                     * @param {syft_proto.types.torch.v1.IScriptFunction} message ScriptFunction message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    ScriptFunction.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.obj != null && message.hasOwnProperty("obj"))
+                            writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.obj);
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified ScriptFunction message, length delimited. Does not implicitly {@link syft_proto.types.torch.v1.ScriptFunction.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof syft_proto.types.torch.v1.ScriptFunction
+                     * @static
+                     * @param {syft_proto.types.torch.v1.IScriptFunction} message ScriptFunction message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    ScriptFunction.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes a ScriptFunction message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof syft_proto.types.torch.v1.ScriptFunction
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {syft_proto.types.torch.v1.ScriptFunction} ScriptFunction
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    ScriptFunction.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.types.torch.v1.ScriptFunction();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                message.obj = reader.bytes();
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes a ScriptFunction message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof syft_proto.types.torch.v1.ScriptFunction
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {syft_proto.types.torch.v1.ScriptFunction} ScriptFunction
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    ScriptFunction.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies a ScriptFunction message.
+                     * @function verify
+                     * @memberof syft_proto.types.torch.v1.ScriptFunction
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    ScriptFunction.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.obj != null && message.hasOwnProperty("obj"))
+                            if (!(message.obj && typeof message.obj.length === "number" || $util.isString(message.obj)))
+                                return "obj: buffer expected";
+                        return null;
+                    };
+
+                    /**
+                     * Creates a ScriptFunction message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof syft_proto.types.torch.v1.ScriptFunction
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {syft_proto.types.torch.v1.ScriptFunction} ScriptFunction
+                     */
+                    ScriptFunction.fromObject = function fromObject(object) {
+                        if (object instanceof $root.syft_proto.types.torch.v1.ScriptFunction)
+                            return object;
+                        var message = new $root.syft_proto.types.torch.v1.ScriptFunction();
+                        if (object.obj != null)
+                            if (typeof object.obj === "string")
+                                $util.base64.decode(object.obj, message.obj = $util.newBuffer($util.base64.length(object.obj)), 0);
+                            else if (object.obj.length)
+                                message.obj = object.obj;
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from a ScriptFunction message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof syft_proto.types.torch.v1.ScriptFunction
+                     * @static
+                     * @param {syft_proto.types.torch.v1.ScriptFunction} message ScriptFunction
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    ScriptFunction.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (options.defaults)
+                            if (options.bytes === String)
+                                object.obj = "";
+                            else {
+                                object.obj = [];
+                                if (options.bytes !== Array)
+                                    object.obj = $util.newBuffer(object.obj);
+                            }
+                        if (message.obj != null && message.hasOwnProperty("obj"))
+                            object.obj = options.bytes === String ? $util.base64.encode(message.obj, 0, message.obj.length) : options.bytes === Array ? Array.prototype.slice.call(message.obj) : message.obj;
+                        return object;
+                    };
+
+                    /**
+                     * Converts this ScriptFunction to JSON.
+                     * @function toJSON
+                     * @memberof syft_proto.types.torch.v1.ScriptFunction
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    ScriptFunction.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return ScriptFunction;
+                })();
+
                 v1.ScriptModule = (function() {
 
                     /**

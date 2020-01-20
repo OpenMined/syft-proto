@@ -59,11 +59,11 @@ _SIZE = _descriptor.Descriptor(
 DESCRIPTOR.message_types_by_name['Size'] = _SIZE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Size = _reflection.GeneratedProtocolMessageType('Size', (_message.Message,), {
-  'DESCRIPTOR' : _SIZE,
-  '__module__' : 'syft_proto.types.torch.v1.size_pb2'
+Size = _reflection.GeneratedProtocolMessageType('Size', (_message.Message,), dict(
+  DESCRIPTOR = _SIZE,
+  __module__ = 'syft_proto.types.torch.v1.size_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.types.torch.v1.Size)
-  })
+  ))
 _sym_db.RegisterMessage(Size)
 
 
