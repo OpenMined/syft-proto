@@ -53,6 +53,9 @@
     "torch._C.Function": {
       "code": 12
     },
+    "torch.jit.ScriptFunction": {
+      "code": 12
+    },
     "torch.jit.TopLevelTracedModule": {
       "code": 12
     },
@@ -161,6 +164,9 @@
     },
     "syft.frameworks.torch.tensors.interpreters.placeholder.PlaceHolder": {
       "code": 48
+    },
+    "torch.memory_format": {
+      "code": 49
     }
   }
 }
