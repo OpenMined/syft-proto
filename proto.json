@@ -168,7 +168,7 @@
     "torch.memory_format": {
       "code": 49
     },
-    "syft.frameworks.torch.fl.BaseDataset": {
+    "syft.frameworks.torch.fl.dataset.BaseDataset": {
       "code": 50
     }
   }
