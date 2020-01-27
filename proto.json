@@ -170,6 +170,6 @@
     },
     "syft.messaging.message.CryptenInit": {
       "code": 50
-    },
+    }
   }
 }
