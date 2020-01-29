@@ -101,11 +101,11 @@ _POINTERTENSOR.fields_by_name['shape'].message_type = syft__proto_dot_types_dot_
 DESCRIPTOR.message_types_by_name['PointerTensor'] = _POINTERTENSOR
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-PointerTensor = _reflection.GeneratedProtocolMessageType('PointerTensor', (_message.Message,), {
-  'DESCRIPTOR' : _POINTERTENSOR,
-  '__module__' : 'syft_proto.generic.pointers.v1.pointer_tensor_pb2'
+PointerTensor = _reflection.GeneratedProtocolMessageType('PointerTensor', (_message.Message,), dict(
+  DESCRIPTOR = _POINTERTENSOR,
+  __module__ = 'syft_proto.generic.pointers.v1.pointer_tensor_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.generic.pointers.v1.PointerTensor)
-  })
+  ))
 _sym_db.RegisterMessage(PointerTensor)
 
 

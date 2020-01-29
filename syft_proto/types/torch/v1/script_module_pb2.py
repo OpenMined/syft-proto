@@ -59,11 +59,11 @@ _SCRIPTMODULE = _descriptor.Descriptor(
 DESCRIPTOR.message_types_by_name['ScriptModule'] = _SCRIPTMODULE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-ScriptModule = _reflection.GeneratedProtocolMessageType('ScriptModule', (_message.Message,), {
-  'DESCRIPTOR' : _SCRIPTMODULE,
-  '__module__' : 'syft_proto.types.torch.v1.script_module_pb2'
+ScriptModule = _reflection.GeneratedProtocolMessageType('ScriptModule', (_message.Message,), dict(
+  DESCRIPTOR = _SCRIPTMODULE,
+  __module__ = 'syft_proto.types.torch.v1.script_module_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.types.torch.v1.ScriptModule)
-  })
+  ))
 _sym_db.RegisterMessage(ScriptModule)
 
 

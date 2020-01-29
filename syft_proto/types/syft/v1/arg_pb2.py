@@ -144,11 +144,11 @@ _ARG.fields_by_name['arg_pointer_tensor'].containing_oneof = _ARG.oneofs_by_name
 DESCRIPTOR.message_types_by_name['Arg'] = _ARG
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Arg = _reflection.GeneratedProtocolMessageType('Arg', (_message.Message,), {
-  'DESCRIPTOR' : _ARG,
-  '__module__' : 'syft_proto.types.syft.v1.arg_pb2'
+Arg = _reflection.GeneratedProtocolMessageType('Arg', (_message.Message,), dict(
+  DESCRIPTOR = _ARG,
+  __module__ = 'syft_proto.types.syft.v1.arg_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.types.syft.v1.Arg)
-  })
+  ))
 _sym_db.RegisterMessage(Arg)
 
 

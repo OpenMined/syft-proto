@@ -161,11 +161,11 @@ _TORCHTENSOR.fields_by_name['contents_bin'].containing_oneof = _TORCHTENSOR.oneo
 DESCRIPTOR.message_types_by_name['TorchTensor'] = _TORCHTENSOR
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-TorchTensor = _reflection.GeneratedProtocolMessageType('TorchTensor', (_message.Message,), {
-  'DESCRIPTOR' : _TORCHTENSOR,
-  '__module__' : 'syft_proto.types.torch.v1.tensor_pb2'
+TorchTensor = _reflection.GeneratedProtocolMessageType('TorchTensor', (_message.Message,), dict(
+  DESCRIPTOR = _TORCHTENSOR,
+  __module__ = 'syft_proto.types.torch.v1.tensor_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.types.torch.v1.TorchTensor)
-  })
+  ))
 _sym_db.RegisterMessage(TorchTensor)
 
 

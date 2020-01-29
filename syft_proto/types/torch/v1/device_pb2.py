@@ -59,11 +59,11 @@ _DEVICE = _descriptor.Descriptor(
 DESCRIPTOR.message_types_by_name['Device'] = _DEVICE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Device = _reflection.GeneratedProtocolMessageType('Device', (_message.Message,), {
-  'DESCRIPTOR' : _DEVICE,
-  '__module__' : 'syft_proto.types.torch.v1.device_pb2'
+Device = _reflection.GeneratedProtocolMessageType('Device', (_message.Message,), dict(
+  DESCRIPTOR = _DEVICE,
+  __module__ = 'syft_proto.types.torch.v1.device_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.types.torch.v1.Device)
-  })
+  ))
 _sym_db.RegisterMessage(Device)
 
 
