@@ -152,18 +152,18 @@ _OPERATION.fields_by_name['owner_tensor'].containing_oneof = _OPERATION.oneofs_b
 DESCRIPTOR.message_types_by_name['Operation'] = _OPERATION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Operation = _reflection.GeneratedProtocolMessageType('Operation', (_message.Message,), dict(
+Operation = _reflection.GeneratedProtocolMessageType('Operation', (_message.Message,), {
 
-  KwargsEntry = _reflection.GeneratedProtocolMessageType('KwargsEntry', (_message.Message,), dict(
-    DESCRIPTOR = _OPERATION_KWARGSENTRY,
-    __module__ = 'syft_proto.types.syft.v1.operation_pb2'
+  'KwargsEntry' : _reflection.GeneratedProtocolMessageType('KwargsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _OPERATION_KWARGSENTRY,
+    '__module__' : 'syft_proto.types.syft.v1.operation_pb2'
     # @@protoc_insertion_point(class_scope:syft_proto.types.syft.v1.Operation.KwargsEntry)
-    ))
+    })
   ,
-  DESCRIPTOR = _OPERATION,
-  __module__ = 'syft_proto.types.syft.v1.operation_pb2'
+  'DESCRIPTOR' : _OPERATION,
+  '__module__' : 'syft_proto.types.syft.v1.operation_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.types.syft.v1.Operation)
-  ))
+  })
 _sym_db.RegisterMessage(Operation)
 _sym_db.RegisterMessage(Operation.KwargsEntry)
 

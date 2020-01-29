@@ -59,11 +59,11 @@ _SHAPE = _descriptor.Descriptor(
 DESCRIPTOR.message_types_by_name['Shape'] = _SHAPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Shape = _reflection.GeneratedProtocolMessageType('Shape', (_message.Message,), dict(
-  DESCRIPTOR = _SHAPE,
-  __module__ = 'syft_proto.types.syft.v1.shape_pb2'
+Shape = _reflection.GeneratedProtocolMessageType('Shape', (_message.Message,), {
+  'DESCRIPTOR' : _SHAPE,
+  '__module__' : 'syft_proto.types.syft.v1.shape_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.types.syft.v1.Shape)
-  ))
+  })
 _sym_db.RegisterMessage(Shape)
 
 
