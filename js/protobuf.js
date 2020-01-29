@@ -407,6 +407,260 @@ $root.syft_proto = (function() {
                             return AdditiveSharingTensor;
                         })();
 
+                        v1.Placeholder = (function() {
+
+                            /**
+                             * Properties of a Placeholder.
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1
+                             * @interface IPlaceholder
+                             * @property {syft_proto.types.syft.v1.IId|null} [id] Placeholder id
+                             * @property {Array.<string>|null} [tags] Placeholder tags
+                             * @property {string|null} [description] Placeholder description
+                             */
+
+                            /**
+                             * Constructs a new Placeholder.
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1
+                             * @classdesc Represents a Placeholder.
+                             * @implements IPlaceholder
+                             * @constructor
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder=} [properties] Properties to set
+                             */
+                            function Placeholder(properties) {
+                                this.tags = [];
+                                if (properties)
+                                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                        if (properties[keys[i]] != null)
+                                            this[keys[i]] = properties[keys[i]];
+                            }
+
+                            /**
+                             * Placeholder id.
+                             * @member {syft_proto.types.syft.v1.IId|null|undefined} id
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder
+                             * @instance
+                             */
+                            Placeholder.prototype.id = null;
+
+                            /**
+                             * Placeholder tags.
+                             * @member {Array.<string>} tags
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder
+                             * @instance
+                             */
+                            Placeholder.prototype.tags = $util.emptyArray;
+
+                            /**
+                             * Placeholder description.
+                             * @member {string} description
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder
+                             * @instance
+                             */
+                            Placeholder.prototype.description = "";
+
+                            /**
+                             * Creates a new Placeholder instance using the specified properties.
+                             * @function create
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder=} [properties] Properties to set
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder} Placeholder instance
+                             */
+                            Placeholder.create = function create(properties) {
+                                return new Placeholder(properties);
+                            };
+
+                            /**
+                             * Encodes the specified Placeholder message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify|verify} messages.
+                             * @function encode
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder} message Placeholder message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            Placeholder.encode = function encode(message, writer) {
+                                if (!writer)
+                                    writer = $Writer.create();
+                                if (message.id != null && message.hasOwnProperty("id"))
+                                    $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                if (message.tags != null && message.tags.length)
+                                    for (var i = 0; i < message.tags.length; ++i)
+                                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.tags[i]);
+                                if (message.description != null && message.hasOwnProperty("description"))
+                                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.description);
+                                return writer;
+                            };
+
+                            /**
+                             * Encodes the specified Placeholder message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify|verify} messages.
+                             * @function encodeDelimited
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder} message Placeholder message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            Placeholder.encodeDelimited = function encodeDelimited(message, writer) {
+                                return this.encode(message, writer).ldelim();
+                            };
+
+                            /**
+                             * Decodes a Placeholder message from the specified reader or buffer.
+                             * @function decode
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @param {number} [length] Message length if known beforehand
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder} Placeholder
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            Placeholder.decode = function decode(reader, length) {
+                                if (!(reader instanceof $Reader))
+                                    reader = $Reader.create(reader);
+                                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder();
+                                while (reader.pos < end) {
+                                    var tag = reader.uint32();
+                                    switch (tag >>> 3) {
+                                    case 1:
+                                        message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                                        break;
+                                    case 2:
+                                        if (!(message.tags && message.tags.length))
+                                            message.tags = [];
+                                        message.tags.push(reader.string());
+                                        break;
+                                    case 3:
+                                        message.description = reader.string();
+                                        break;
+                                    default:
+                                        reader.skipType(tag & 7);
+                                        break;
+                                    }
+                                }
+                                return message;
+                            };
+
+                            /**
+                             * Decodes a Placeholder message from the specified reader or buffer, length delimited.
+                             * @function decodeDelimited
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder} Placeholder
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            Placeholder.decodeDelimited = function decodeDelimited(reader) {
+                                if (!(reader instanceof $Reader))
+                                    reader = new $Reader(reader);
+                                return this.decode(reader, reader.uint32());
+                            };
+
+                            /**
+                             * Verifies a Placeholder message.
+                             * @function verify
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder
+                             * @static
+                             * @param {Object.<string,*>} message Plain object to verify
+                             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                             */
+                            Placeholder.verify = function verify(message) {
+                                if (typeof message !== "object" || message === null)
+                                    return "object expected";
+                                if (message.id != null && message.hasOwnProperty("id")) {
+                                    var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
+                                    if (error)
+                                        return "id." + error;
+                                }
+                                if (message.tags != null && message.hasOwnProperty("tags")) {
+                                    if (!Array.isArray(message.tags))
+                                        return "tags: array expected";
+                                    for (var i = 0; i < message.tags.length; ++i)
+                                        if (!$util.isString(message.tags[i]))
+                                            return "tags: string[] expected";
+                                }
+                                if (message.description != null && message.hasOwnProperty("description"))
+                                    if (!$util.isString(message.description))
+                                        return "description: string expected";
+                                return null;
+                            };
+
+                            /**
+                             * Creates a Placeholder message from a plain object. Also converts values to their respective internal types.
+                             * @function fromObject
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder
+                             * @static
+                             * @param {Object.<string,*>} object Plain object
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder} Placeholder
+                             */
+                            Placeholder.fromObject = function fromObject(object) {
+                                if (object instanceof $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder)
+                                    return object;
+                                var message = new $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder();
+                                if (object.id != null) {
+                                    if (typeof object.id !== "object")
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.id: object expected");
+                                    message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
+                                }
+                                if (object.tags) {
+                                    if (!Array.isArray(object.tags))
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.tags: array expected");
+                                    message.tags = [];
+                                    for (var i = 0; i < object.tags.length; ++i)
+                                        message.tags[i] = String(object.tags[i]);
+                                }
+                                if (object.description != null)
+                                    message.description = String(object.description);
+                                return message;
+                            };
+
+                            /**
+                             * Creates a plain object from a Placeholder message. Also converts values to other types if specified.
+                             * @function toObject
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder} message Placeholder
+                             * @param {$protobuf.IConversionOptions} [options] Conversion options
+                             * @returns {Object.<string,*>} Plain object
+                             */
+                            Placeholder.toObject = function toObject(message, options) {
+                                if (!options)
+                                    options = {};
+                                var object = {};
+                                if (options.arrays || options.defaults)
+                                    object.tags = [];
+                                if (options.defaults) {
+                                    object.id = null;
+                                    object.description = "";
+                                }
+                                if (message.id != null && message.hasOwnProperty("id"))
+                                    object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
+                                if (message.tags && message.tags.length) {
+                                    object.tags = [];
+                                    for (var j = 0; j < message.tags.length; ++j)
+                                        object.tags[j] = message.tags[j];
+                                }
+                                if (message.description != null && message.hasOwnProperty("description"))
+                                    object.description = message.description;
+                                return object;
+                            };
+
+                            /**
+                             * Converts this Placeholder to JSON.
+                             * @function toJSON
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder
+                             * @instance
+                             * @returns {Object.<string,*>} JSON object
+                             */
+                            Placeholder.prototype.toJSON = function toJSON() {
+                                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                            };
+
+                            return Placeholder;
+                        })();
+
                         return v1;
                     })();
 
@@ -1265,10 +1519,12 @@ $root.syft_proto = (function() {
                      * @interface IOperation
                      * @property {string|null} [command] Operation command
                      * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [owner_pointer] Operation owner_pointer
+                     * @property {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null} [owner_placeholder] Operation owner_placeholder
                      * @property {syft_proto.types.torch.v1.ITorchTensor|null} [owner_tensor] Operation owner_tensor
                      * @property {Array.<syft_proto.types.syft.v1.IArg>|null} [args] Operation args
                      * @property {Object.<string,syft_proto.types.syft.v1.IArg>|null} [kwargs] Operation kwargs
                      * @property {Array.<syft_proto.types.syft.v1.IId>|null} [return_ids] Operation return_ids
+                     * @property {Array.<syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder>|null} [return_placeholders] Operation return_placeholders
                      */
 
                     /**
@@ -1283,6 +1539,7 @@ $root.syft_proto = (function() {
                         this.args = [];
                         this.kwargs = {};
                         this.return_ids = [];
+                        this.return_placeholders = [];
                         if (properties)
                             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                                 if (properties[keys[i]] != null)
@@ -1304,6 +1561,14 @@ $root.syft_proto = (function() {
                      * @instance
                      */
                     Operation.prototype.owner_pointer = null;
+
+                    /**
+                     * Operation owner_placeholder.
+                     * @member {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null|undefined} owner_placeholder
+                     * @memberof syft_proto.types.syft.v1.Operation
+                     * @instance
+                     */
+                    Operation.prototype.owner_placeholder = null;
 
                     /**
                      * Operation owner_tensor.
@@ -1337,17 +1602,25 @@ $root.syft_proto = (function() {
                      */
                     Operation.prototype.return_ids = $util.emptyArray;
 
+                    /**
+                     * Operation return_placeholders.
+                     * @member {Array.<syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder>} return_placeholders
+                     * @memberof syft_proto.types.syft.v1.Operation
+                     * @instance
+                     */
+                    Operation.prototype.return_placeholders = $util.emptyArray;
+
                     // OneOf field names bound to virtual getters and setters
                     var $oneOfFields;
 
                     /**
                      * Operation owner.
-                     * @member {"owner_pointer"|"owner_tensor"|undefined} owner
+                     * @member {"owner_pointer"|"owner_placeholder"|"owner_tensor"|undefined} owner
                      * @memberof syft_proto.types.syft.v1.Operation
                      * @instance
                      */
                     Object.defineProperty(Operation.prototype, "owner", {
-                        get: $util.oneOfGetter($oneOfFields = ["owner_pointer", "owner_tensor"]),
+                        get: $util.oneOfGetter($oneOfFields = ["owner_pointer", "owner_placeholder", "owner_tensor"]),
                         set: $util.oneOfSetter($oneOfFields)
                     });
 
@@ -1379,19 +1652,24 @@ $root.syft_proto = (function() {
                             writer.uint32(/* id 1, wireType 2 =*/10).string(message.command);
                         if (message.owner_pointer != null && message.hasOwnProperty("owner_pointer"))
                             $root.syft_proto.generic.pointers.v1.PointerTensor.encode(message.owner_pointer, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                        if (message.owner_placeholder != null && message.hasOwnProperty("owner_placeholder"))
+                            $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.encode(message.owner_placeholder, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        if (message.owner_tensor != null && message.hasOwnProperty("owner_tensor"))
+                            $root.syft_proto.types.torch.v1.TorchTensor.encode(message.owner_tensor, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                         if (message.args != null && message.args.length)
                             for (var i = 0; i < message.args.length; ++i)
-                                $root.syft_proto.types.syft.v1.Arg.encode(message.args[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                                $root.syft_proto.types.syft.v1.Arg.encode(message.args[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                         if (message.kwargs != null && message.hasOwnProperty("kwargs"))
                             for (var keys = Object.keys(message.kwargs), i = 0; i < keys.length; ++i) {
-                                writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                                writer.uint32(/* id 6, wireType 2 =*/50).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
                                 $root.syft_proto.types.syft.v1.Arg.encode(message.kwargs[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
                             }
                         if (message.return_ids != null && message.return_ids.length)
                             for (var i = 0; i < message.return_ids.length; ++i)
-                                $root.syft_proto.types.syft.v1.Id.encode(message.return_ids[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                        if (message.owner_tensor != null && message.hasOwnProperty("owner_tensor"))
-                            $root.syft_proto.types.torch.v1.TorchTensor.encode(message.owner_tensor, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                                $root.syft_proto.types.syft.v1.Id.encode(message.return_ids[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                        if (message.return_placeholders != null && message.return_placeholders.length)
+                            for (var i = 0; i < message.return_placeholders.length; ++i)
+                                $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.encode(message.return_placeholders[i], writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                         return writer;
                     };
 
@@ -1432,15 +1710,18 @@ $root.syft_proto = (function() {
                             case 2:
                                 message.owner_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.decode(reader, reader.uint32());
                                 break;
-                            case 7:
+                            case 3:
+                                message.owner_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.decode(reader, reader.uint32());
+                                break;
+                            case 4:
                                 message.owner_tensor = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
                                 break;
-                            case 3:
+                            case 5:
                                 if (!(message.args && message.args.length))
                                     message.args = [];
                                 message.args.push($root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32()));
                                 break;
-                            case 4:
+                            case 6:
                                 reader.skip().pos++;
                                 if (message.kwargs === $util.emptyObject)
                                     message.kwargs = {};
@@ -1448,10 +1729,15 @@ $root.syft_proto = (function() {
                                 reader.pos++;
                                 message.kwargs[key] = $root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32());
                                 break;
-                            case 5:
+                            case 7:
                                 if (!(message.return_ids && message.return_ids.length))
                                     message.return_ids = [];
                                 message.return_ids.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
+                                break;
+                            case 8:
+                                if (!(message.return_placeholders && message.return_placeholders.length))
+                                    message.return_placeholders = [];
+                                message.return_placeholders.push($root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.decode(reader, reader.uint32()));
                                 break;
                             default:
                                 reader.skipType(tag & 7);
@@ -1500,6 +1786,16 @@ $root.syft_proto = (function() {
                                     return "owner_pointer." + error;
                             }
                         }
+                        if (message.owner_placeholder != null && message.hasOwnProperty("owner_placeholder")) {
+                            if (properties.owner === 1)
+                                return "owner: multiple values";
+                            properties.owner = 1;
+                            {
+                                var error = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify(message.owner_placeholder);
+                                if (error)
+                                    return "owner_placeholder." + error;
+                            }
+                        }
                         if (message.owner_tensor != null && message.hasOwnProperty("owner_tensor")) {
                             if (properties.owner === 1)
                                 return "owner: multiple values";
@@ -1538,6 +1834,15 @@ $root.syft_proto = (function() {
                                     return "return_ids." + error;
                             }
                         }
+                        if (message.return_placeholders != null && message.hasOwnProperty("return_placeholders")) {
+                            if (!Array.isArray(message.return_placeholders))
+                                return "return_placeholders: array expected";
+                            for (var i = 0; i < message.return_placeholders.length; ++i) {
+                                var error = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify(message.return_placeholders[i]);
+                                if (error)
+                                    return "return_placeholders." + error;
+                            }
+                        }
                         return null;
                     };
 
@@ -1559,6 +1864,11 @@ $root.syft_proto = (function() {
                             if (typeof object.owner_pointer !== "object")
                                 throw TypeError(".syft_proto.types.syft.v1.Operation.owner_pointer: object expected");
                             message.owner_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.fromObject(object.owner_pointer);
+                        }
+                        if (object.owner_placeholder != null) {
+                            if (typeof object.owner_placeholder !== "object")
+                                throw TypeError(".syft_proto.types.syft.v1.Operation.owner_placeholder: object expected");
+                            message.owner_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.fromObject(object.owner_placeholder);
                         }
                         if (object.owner_tensor != null) {
                             if (typeof object.owner_tensor !== "object")
@@ -1595,6 +1905,16 @@ $root.syft_proto = (function() {
                                 message.return_ids[i] = $root.syft_proto.types.syft.v1.Id.fromObject(object.return_ids[i]);
                             }
                         }
+                        if (object.return_placeholders) {
+                            if (!Array.isArray(object.return_placeholders))
+                                throw TypeError(".syft_proto.types.syft.v1.Operation.return_placeholders: array expected");
+                            message.return_placeholders = [];
+                            for (var i = 0; i < object.return_placeholders.length; ++i) {
+                                if (typeof object.return_placeholders[i] !== "object")
+                                    throw TypeError(".syft_proto.types.syft.v1.Operation.return_placeholders: object expected");
+                                message.return_placeholders[i] = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.fromObject(object.return_placeholders[i]);
+                            }
+                        }
                         return message;
                     };
 
@@ -1614,6 +1934,7 @@ $root.syft_proto = (function() {
                         if (options.arrays || options.defaults) {
                             object.args = [];
                             object.return_ids = [];
+                            object.return_placeholders = [];
                         }
                         if (options.objects || options.defaults)
                             object.kwargs = {};
@@ -1625,6 +1946,16 @@ $root.syft_proto = (function() {
                             object.owner_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.toObject(message.owner_pointer, options);
                             if (options.oneofs)
                                 object.owner = "owner_pointer";
+                        }
+                        if (message.owner_placeholder != null && message.hasOwnProperty("owner_placeholder")) {
+                            object.owner_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.toObject(message.owner_placeholder, options);
+                            if (options.oneofs)
+                                object.owner = "owner_placeholder";
+                        }
+                        if (message.owner_tensor != null && message.hasOwnProperty("owner_tensor")) {
+                            object.owner_tensor = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.owner_tensor, options);
+                            if (options.oneofs)
+                                object.owner = "owner_tensor";
                         }
                         if (message.args && message.args.length) {
                             object.args = [];
@@ -1642,10 +1973,10 @@ $root.syft_proto = (function() {
                             for (var j = 0; j < message.return_ids.length; ++j)
                                 object.return_ids[j] = $root.syft_proto.types.syft.v1.Id.toObject(message.return_ids[j], options);
                         }
-                        if (message.owner_tensor != null && message.hasOwnProperty("owner_tensor")) {
-                            object.owner_tensor = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.owner_tensor, options);
-                            if (options.oneofs)
-                                object.owner = "owner_tensor";
+                        if (message.return_placeholders && message.return_placeholders.length) {
+                            object.return_placeholders = [];
+                            for (var j = 0; j < message.return_placeholders.length; ++j)
+                                object.return_placeholders[j] = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.toObject(message.return_placeholders[j], options);
                         }
                         return object;
                     };
@@ -1678,6 +2009,7 @@ $root.syft_proto = (function() {
                      * @property {syft_proto.types.torch.v1.ITorchTensor|null} [arg_tensor] Arg arg_tensor
                      * @property {syft_proto.types.torch.v1.IParameter|null} [arg_torch_param] Arg arg_torch_param
                      * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [arg_pointer_tensor] Arg arg_pointer_tensor
+                     * @property {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null} [arg_placeholder] Arg arg_placeholder
                      */
 
                     /**
@@ -1759,17 +2091,25 @@ $root.syft_proto = (function() {
                      */
                     Arg.prototype.arg_pointer_tensor = null;
 
+                    /**
+                     * Arg arg_placeholder.
+                     * @member {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null|undefined} arg_placeholder
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_placeholder = null;
+
                     // OneOf field names bound to virtual getters and setters
                     var $oneOfFields;
 
                     /**
                      * Arg arg.
-                     * @member {"arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|undefined} arg
+                     * @member {"arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|undefined} arg
                      * @memberof syft_proto.types.syft.v1.Arg
                      * @instance
                      */
                     Object.defineProperty(Arg.prototype, "arg", {
-                        get: $util.oneOfGetter($oneOfFields = ["arg_bool", "arg_int", "arg_float", "arg_string", "arg_shape", "arg_tensor", "arg_torch_param", "arg_pointer_tensor"]),
+                        get: $util.oneOfGetter($oneOfFields = ["arg_bool", "arg_int", "arg_float", "arg_string", "arg_shape", "arg_tensor", "arg_torch_param", "arg_pointer_tensor", "arg_placeholder"]),
                         set: $util.oneOfSetter($oneOfFields)
                     });
 
@@ -1813,6 +2153,8 @@ $root.syft_proto = (function() {
                             $root.syft_proto.types.torch.v1.Parameter.encode(message.arg_torch_param, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                         if (message.arg_pointer_tensor != null && message.hasOwnProperty("arg_pointer_tensor"))
                             $root.syft_proto.generic.pointers.v1.PointerTensor.encode(message.arg_pointer_tensor, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                        if (message.arg_placeholder != null && message.hasOwnProperty("arg_placeholder"))
+                            $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.encode(message.arg_placeholder, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                         return writer;
                     };
 
@@ -1870,6 +2212,9 @@ $root.syft_proto = (function() {
                                 break;
                             case 8:
                                 message.arg_pointer_tensor = $root.syft_proto.generic.pointers.v1.PointerTensor.decode(reader, reader.uint32());
+                                break;
+                            case 9:
+                                message.arg_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.decode(reader, reader.uint32());
                                 break;
                             default:
                                 reader.skipType(tag & 7);
@@ -1973,6 +2318,16 @@ $root.syft_proto = (function() {
                                     return "arg_pointer_tensor." + error;
                             }
                         }
+                        if (message.arg_placeholder != null && message.hasOwnProperty("arg_placeholder")) {
+                            if (properties.arg === 1)
+                                return "arg: multiple values";
+                            properties.arg = 1;
+                            {
+                                var error = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify(message.arg_placeholder);
+                                if (error)
+                                    return "arg_placeholder." + error;
+                            }
+                        }
                         return null;
                     };
 
@@ -2015,6 +2370,11 @@ $root.syft_proto = (function() {
                             if (typeof object.arg_pointer_tensor !== "object")
                                 throw TypeError(".syft_proto.types.syft.v1.Arg.arg_pointer_tensor: object expected");
                             message.arg_pointer_tensor = $root.syft_proto.generic.pointers.v1.PointerTensor.fromObject(object.arg_pointer_tensor);
+                        }
+                        if (object.arg_placeholder != null) {
+                            if (typeof object.arg_placeholder !== "object")
+                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_placeholder: object expected");
+                            message.arg_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.fromObject(object.arg_placeholder);
                         }
                         return message;
                     };
@@ -2071,6 +2431,11 @@ $root.syft_proto = (function() {
                             object.arg_pointer_tensor = $root.syft_proto.generic.pointers.v1.PointerTensor.toObject(message.arg_pointer_tensor, options);
                             if (options.oneofs)
                                 object.arg = "arg_pointer_tensor";
+                        }
+                        if (message.arg_placeholder != null && message.hasOwnProperty("arg_placeholder")) {
+                            object.arg_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.toObject(message.arg_placeholder, options);
+                            if (options.oneofs)
+                                object.arg = "arg_placeholder";
                         }
                         return object;
                     };
@@ -5599,6 +5964,937 @@ $root.syft_proto = (function() {
                 };
 
                 return OperationMessage;
+            })();
+
+            v1.Plan = (function() {
+
+                /**
+                 * Properties of a Plan.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface IPlan
+                 * @property {syft_proto.types.syft.v1.IId|null} [id] Plan id
+                 * @property {Array.<syft_proto.types.syft.v1.IOperation>|null} [operations] Plan operations
+                 * @property {syft_proto.messaging.v1.IState|null} [state] Plan state
+                 * @property {boolean|null} [include_state] Plan include_state
+                 * @property {boolean|null} [is_built] Plan is_built
+                 * @property {string|null} [name] Plan name
+                 * @property {Array.<string>|null} [tags] Plan tags
+                 * @property {string|null} [description] Plan description
+                 * @property {Array.<syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder>|null} [placeholders] Plan placeholders
+                 */
+
+                /**
+                 * Constructs a new Plan.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents a Plan.
+                 * @implements IPlan
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.IPlan=} [properties] Properties to set
+                 */
+                function Plan(properties) {
+                    this.operations = [];
+                    this.tags = [];
+                    this.placeholders = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * Plan id.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} id
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @instance
+                 */
+                Plan.prototype.id = null;
+
+                /**
+                 * Plan operations.
+                 * @member {Array.<syft_proto.types.syft.v1.IOperation>} operations
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @instance
+                 */
+                Plan.prototype.operations = $util.emptyArray;
+
+                /**
+                 * Plan state.
+                 * @member {syft_proto.messaging.v1.IState|null|undefined} state
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @instance
+                 */
+                Plan.prototype.state = null;
+
+                /**
+                 * Plan include_state.
+                 * @member {boolean} include_state
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @instance
+                 */
+                Plan.prototype.include_state = false;
+
+                /**
+                 * Plan is_built.
+                 * @member {boolean} is_built
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @instance
+                 */
+                Plan.prototype.is_built = false;
+
+                /**
+                 * Plan name.
+                 * @member {string} name
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @instance
+                 */
+                Plan.prototype.name = "";
+
+                /**
+                 * Plan tags.
+                 * @member {Array.<string>} tags
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @instance
+                 */
+                Plan.prototype.tags = $util.emptyArray;
+
+                /**
+                 * Plan description.
+                 * @member {string} description
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @instance
+                 */
+                Plan.prototype.description = "";
+
+                /**
+                 * Plan placeholders.
+                 * @member {Array.<syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder>} placeholders
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @instance
+                 */
+                Plan.prototype.placeholders = $util.emptyArray;
+
+                /**
+                 * Creates a new Plan instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @static
+                 * @param {syft_proto.messaging.v1.IPlan=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.Plan} Plan instance
+                 */
+                Plan.create = function create(properties) {
+                    return new Plan(properties);
+                };
+
+                /**
+                 * Encodes the specified Plan message. Does not implicitly {@link syft_proto.messaging.v1.Plan.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @static
+                 * @param {syft_proto.messaging.v1.IPlan} message Plan message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Plan.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.operations != null && message.operations.length)
+                        for (var i = 0; i < message.operations.length; ++i)
+                            $root.syft_proto.types.syft.v1.Operation.encode(message.operations[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.state != null && message.hasOwnProperty("state"))
+                        $root.syft_proto.messaging.v1.State.encode(message.state, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.include_state != null && message.hasOwnProperty("include_state"))
+                        writer.uint32(/* id 4, wireType 0 =*/32).bool(message.include_state);
+                    if (message.is_built != null && message.hasOwnProperty("is_built"))
+                        writer.uint32(/* id 5, wireType 0 =*/40).bool(message.is_built);
+                    if (message.name != null && message.hasOwnProperty("name"))
+                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.name);
+                    if (message.tags != null && message.tags.length)
+                        for (var i = 0; i < message.tags.length; ++i)
+                            writer.uint32(/* id 7, wireType 2 =*/58).string(message.tags[i]);
+                    if (message.description != null && message.hasOwnProperty("description"))
+                        writer.uint32(/* id 8, wireType 2 =*/66).string(message.description);
+                    if (message.placeholders != null && message.placeholders.length)
+                        for (var i = 0; i < message.placeholders.length; ++i)
+                            $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.encode(message.placeholders[i], writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified Plan message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.Plan.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @static
+                 * @param {syft_proto.messaging.v1.IPlan} message Plan message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Plan.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a Plan message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.Plan} Plan
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Plan.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.Plan();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            if (!(message.operations && message.operations.length))
+                                message.operations = [];
+                            message.operations.push($root.syft_proto.types.syft.v1.Operation.decode(reader, reader.uint32()));
+                            break;
+                        case 3:
+                            message.state = $root.syft_proto.messaging.v1.State.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            message.include_state = reader.bool();
+                            break;
+                        case 5:
+                            message.is_built = reader.bool();
+                            break;
+                        case 6:
+                            message.name = reader.string();
+                            break;
+                        case 7:
+                            if (!(message.tags && message.tags.length))
+                                message.tags = [];
+                            message.tags.push(reader.string());
+                            break;
+                        case 8:
+                            message.description = reader.string();
+                            break;
+                        case 9:
+                            if (!(message.placeholders && message.placeholders.length))
+                                message.placeholders = [];
+                            message.placeholders.push($root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a Plan message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.Plan} Plan
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Plan.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a Plan message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Plan.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.id != null && message.hasOwnProperty("id")) {
+                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
+                        if (error)
+                            return "id." + error;
+                    }
+                    if (message.operations != null && message.hasOwnProperty("operations")) {
+                        if (!Array.isArray(message.operations))
+                            return "operations: array expected";
+                        for (var i = 0; i < message.operations.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Operation.verify(message.operations[i]);
+                            if (error)
+                                return "operations." + error;
+                        }
+                    }
+                    if (message.state != null && message.hasOwnProperty("state")) {
+                        var error = $root.syft_proto.messaging.v1.State.verify(message.state);
+                        if (error)
+                            return "state." + error;
+                    }
+                    if (message.include_state != null && message.hasOwnProperty("include_state"))
+                        if (typeof message.include_state !== "boolean")
+                            return "include_state: boolean expected";
+                    if (message.is_built != null && message.hasOwnProperty("is_built"))
+                        if (typeof message.is_built !== "boolean")
+                            return "is_built: boolean expected";
+                    if (message.name != null && message.hasOwnProperty("name"))
+                        if (!$util.isString(message.name))
+                            return "name: string expected";
+                    if (message.tags != null && message.hasOwnProperty("tags")) {
+                        if (!Array.isArray(message.tags))
+                            return "tags: array expected";
+                        for (var i = 0; i < message.tags.length; ++i)
+                            if (!$util.isString(message.tags[i]))
+                                return "tags: string[] expected";
+                    }
+                    if (message.description != null && message.hasOwnProperty("description"))
+                        if (!$util.isString(message.description))
+                            return "description: string expected";
+                    if (message.placeholders != null && message.hasOwnProperty("placeholders")) {
+                        if (!Array.isArray(message.placeholders))
+                            return "placeholders: array expected";
+                        for (var i = 0; i < message.placeholders.length; ++i) {
+                            var error = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify(message.placeholders[i]);
+                            if (error)
+                                return "placeholders." + error;
+                        }
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a Plan message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.Plan} Plan
+                 */
+                Plan.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.Plan)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.Plan();
+                    if (object.id != null) {
+                        if (typeof object.id !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.Plan.id: object expected");
+                        message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
+                    }
+                    if (object.operations) {
+                        if (!Array.isArray(object.operations))
+                            throw TypeError(".syft_proto.messaging.v1.Plan.operations: array expected");
+                        message.operations = [];
+                        for (var i = 0; i < object.operations.length; ++i) {
+                            if (typeof object.operations[i] !== "object")
+                                throw TypeError(".syft_proto.messaging.v1.Plan.operations: object expected");
+                            message.operations[i] = $root.syft_proto.types.syft.v1.Operation.fromObject(object.operations[i]);
+                        }
+                    }
+                    if (object.state != null) {
+                        if (typeof object.state !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.Plan.state: object expected");
+                        message.state = $root.syft_proto.messaging.v1.State.fromObject(object.state);
+                    }
+                    if (object.include_state != null)
+                        message.include_state = Boolean(object.include_state);
+                    if (object.is_built != null)
+                        message.is_built = Boolean(object.is_built);
+                    if (object.name != null)
+                        message.name = String(object.name);
+                    if (object.tags) {
+                        if (!Array.isArray(object.tags))
+                            throw TypeError(".syft_proto.messaging.v1.Plan.tags: array expected");
+                        message.tags = [];
+                        for (var i = 0; i < object.tags.length; ++i)
+                            message.tags[i] = String(object.tags[i]);
+                    }
+                    if (object.description != null)
+                        message.description = String(object.description);
+                    if (object.placeholders) {
+                        if (!Array.isArray(object.placeholders))
+                            throw TypeError(".syft_proto.messaging.v1.Plan.placeholders: array expected");
+                        message.placeholders = [];
+                        for (var i = 0; i < object.placeholders.length; ++i) {
+                            if (typeof object.placeholders[i] !== "object")
+                                throw TypeError(".syft_proto.messaging.v1.Plan.placeholders: object expected");
+                            message.placeholders[i] = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.fromObject(object.placeholders[i]);
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a Plan message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @static
+                 * @param {syft_proto.messaging.v1.Plan} message Plan
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                Plan.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults) {
+                        object.operations = [];
+                        object.tags = [];
+                        object.placeholders = [];
+                    }
+                    if (options.defaults) {
+                        object.id = null;
+                        object.state = null;
+                        object.include_state = false;
+                        object.is_built = false;
+                        object.name = "";
+                        object.description = "";
+                    }
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
+                    if (message.operations && message.operations.length) {
+                        object.operations = [];
+                        for (var j = 0; j < message.operations.length; ++j)
+                            object.operations[j] = $root.syft_proto.types.syft.v1.Operation.toObject(message.operations[j], options);
+                    }
+                    if (message.state != null && message.hasOwnProperty("state"))
+                        object.state = $root.syft_proto.messaging.v1.State.toObject(message.state, options);
+                    if (message.include_state != null && message.hasOwnProperty("include_state"))
+                        object.include_state = message.include_state;
+                    if (message.is_built != null && message.hasOwnProperty("is_built"))
+                        object.is_built = message.is_built;
+                    if (message.name != null && message.hasOwnProperty("name"))
+                        object.name = message.name;
+                    if (message.tags && message.tags.length) {
+                        object.tags = [];
+                        for (var j = 0; j < message.tags.length; ++j)
+                            object.tags[j] = message.tags[j];
+                    }
+                    if (message.description != null && message.hasOwnProperty("description"))
+                        object.description = message.description;
+                    if (message.placeholders && message.placeholders.length) {
+                        object.placeholders = [];
+                        for (var j = 0; j < message.placeholders.length; ++j)
+                            object.placeholders[j] = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.toObject(message.placeholders[j], options);
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this Plan to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.Plan
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                Plan.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return Plan;
+            })();
+
+            v1.State = (function() {
+
+                /**
+                 * Properties of a State.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface IState
+                 * @property {Array.<syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder>|null} [placeholders] State placeholders
+                 * @property {Array.<syft_proto.messaging.v1.IStateTensor>|null} [tensors] State tensors
+                 */
+
+                /**
+                 * Constructs a new State.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents a State.
+                 * @implements IState
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.IState=} [properties] Properties to set
+                 */
+                function State(properties) {
+                    this.placeholders = [];
+                    this.tensors = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * State placeholders.
+                 * @member {Array.<syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder>} placeholders
+                 * @memberof syft_proto.messaging.v1.State
+                 * @instance
+                 */
+                State.prototype.placeholders = $util.emptyArray;
+
+                /**
+                 * State tensors.
+                 * @member {Array.<syft_proto.messaging.v1.IStateTensor>} tensors
+                 * @memberof syft_proto.messaging.v1.State
+                 * @instance
+                 */
+                State.prototype.tensors = $util.emptyArray;
+
+                /**
+                 * Creates a new State instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.State
+                 * @static
+                 * @param {syft_proto.messaging.v1.IState=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.State} State instance
+                 */
+                State.create = function create(properties) {
+                    return new State(properties);
+                };
+
+                /**
+                 * Encodes the specified State message. Does not implicitly {@link syft_proto.messaging.v1.State.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.State
+                 * @static
+                 * @param {syft_proto.messaging.v1.IState} message State message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                State.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.placeholders != null && message.placeholders.length)
+                        for (var i = 0; i < message.placeholders.length; ++i)
+                            $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.encode(message.placeholders[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.tensors != null && message.tensors.length)
+                        for (var i = 0; i < message.tensors.length; ++i)
+                            $root.syft_proto.messaging.v1.StateTensor.encode(message.tensors[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified State message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.State.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.State
+                 * @static
+                 * @param {syft_proto.messaging.v1.IState} message State message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                State.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a State message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.State
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.State} State
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                State.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.State();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            if (!(message.placeholders && message.placeholders.length))
+                                message.placeholders = [];
+                            message.placeholders.push($root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.decode(reader, reader.uint32()));
+                            break;
+                        case 2:
+                            if (!(message.tensors && message.tensors.length))
+                                message.tensors = [];
+                            message.tensors.push($root.syft_proto.messaging.v1.StateTensor.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a State message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.State
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.State} State
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                State.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a State message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.State
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                State.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.placeholders != null && message.hasOwnProperty("placeholders")) {
+                        if (!Array.isArray(message.placeholders))
+                            return "placeholders: array expected";
+                        for (var i = 0; i < message.placeholders.length; ++i) {
+                            var error = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify(message.placeholders[i]);
+                            if (error)
+                                return "placeholders." + error;
+                        }
+                    }
+                    if (message.tensors != null && message.hasOwnProperty("tensors")) {
+                        if (!Array.isArray(message.tensors))
+                            return "tensors: array expected";
+                        for (var i = 0; i < message.tensors.length; ++i) {
+                            var error = $root.syft_proto.messaging.v1.StateTensor.verify(message.tensors[i]);
+                            if (error)
+                                return "tensors." + error;
+                        }
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a State message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.State
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.State} State
+                 */
+                State.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.State)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.State();
+                    if (object.placeholders) {
+                        if (!Array.isArray(object.placeholders))
+                            throw TypeError(".syft_proto.messaging.v1.State.placeholders: array expected");
+                        message.placeholders = [];
+                        for (var i = 0; i < object.placeholders.length; ++i) {
+                            if (typeof object.placeholders[i] !== "object")
+                                throw TypeError(".syft_proto.messaging.v1.State.placeholders: object expected");
+                            message.placeholders[i] = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.fromObject(object.placeholders[i]);
+                        }
+                    }
+                    if (object.tensors) {
+                        if (!Array.isArray(object.tensors))
+                            throw TypeError(".syft_proto.messaging.v1.State.tensors: array expected");
+                        message.tensors = [];
+                        for (var i = 0; i < object.tensors.length; ++i) {
+                            if (typeof object.tensors[i] !== "object")
+                                throw TypeError(".syft_proto.messaging.v1.State.tensors: object expected");
+                            message.tensors[i] = $root.syft_proto.messaging.v1.StateTensor.fromObject(object.tensors[i]);
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a State message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.State
+                 * @static
+                 * @param {syft_proto.messaging.v1.State} message State
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                State.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults) {
+                        object.placeholders = [];
+                        object.tensors = [];
+                    }
+                    if (message.placeholders && message.placeholders.length) {
+                        object.placeholders = [];
+                        for (var j = 0; j < message.placeholders.length; ++j)
+                            object.placeholders[j] = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.toObject(message.placeholders[j], options);
+                    }
+                    if (message.tensors && message.tensors.length) {
+                        object.tensors = [];
+                        for (var j = 0; j < message.tensors.length; ++j)
+                            object.tensors[j] = $root.syft_proto.messaging.v1.StateTensor.toObject(message.tensors[j], options);
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this State to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.State
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                State.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return State;
+            })();
+
+            v1.StateTensor = (function() {
+
+                /**
+                 * Properties of a StateTensor.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface IStateTensor
+                 * @property {syft_proto.types.torch.v1.ITorchTensor|null} [torch_tensor] StateTensor torch_tensor
+                 * @property {syft_proto.types.torch.v1.IParameter|null} [torch_param] StateTensor torch_param
+                 */
+
+                /**
+                 * Constructs a new StateTensor.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents a StateTensor.
+                 * @implements IStateTensor
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.IStateTensor=} [properties] Properties to set
+                 */
+                function StateTensor(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * StateTensor torch_tensor.
+                 * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} torch_tensor
+                 * @memberof syft_proto.messaging.v1.StateTensor
+                 * @instance
+                 */
+                StateTensor.prototype.torch_tensor = null;
+
+                /**
+                 * StateTensor torch_param.
+                 * @member {syft_proto.types.torch.v1.IParameter|null|undefined} torch_param
+                 * @memberof syft_proto.messaging.v1.StateTensor
+                 * @instance
+                 */
+                StateTensor.prototype.torch_param = null;
+
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+
+                /**
+                 * StateTensor tensor.
+                 * @member {"torch_tensor"|"torch_param"|undefined} tensor
+                 * @memberof syft_proto.messaging.v1.StateTensor
+                 * @instance
+                 */
+                Object.defineProperty(StateTensor.prototype, "tensor", {
+                    get: $util.oneOfGetter($oneOfFields = ["torch_tensor", "torch_param"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                /**
+                 * Creates a new StateTensor instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.StateTensor
+                 * @static
+                 * @param {syft_proto.messaging.v1.IStateTensor=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.StateTensor} StateTensor instance
+                 */
+                StateTensor.create = function create(properties) {
+                    return new StateTensor(properties);
+                };
+
+                /**
+                 * Encodes the specified StateTensor message. Does not implicitly {@link syft_proto.messaging.v1.StateTensor.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.StateTensor
+                 * @static
+                 * @param {syft_proto.messaging.v1.IStateTensor} message StateTensor message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                StateTensor.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.torch_tensor != null && message.hasOwnProperty("torch_tensor"))
+                        $root.syft_proto.types.torch.v1.TorchTensor.encode(message.torch_tensor, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.torch_param != null && message.hasOwnProperty("torch_param"))
+                        $root.syft_proto.types.torch.v1.Parameter.encode(message.torch_param, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified StateTensor message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.StateTensor.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.StateTensor
+                 * @static
+                 * @param {syft_proto.messaging.v1.IStateTensor} message StateTensor message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                StateTensor.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a StateTensor message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.StateTensor
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.StateTensor} StateTensor
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                StateTensor.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.StateTensor();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.torch_tensor = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.torch_param = $root.syft_proto.types.torch.v1.Parameter.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a StateTensor message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.StateTensor
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.StateTensor} StateTensor
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                StateTensor.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a StateTensor message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.StateTensor
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                StateTensor.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.torch_tensor != null && message.hasOwnProperty("torch_tensor")) {
+                        properties.tensor = 1;
+                        {
+                            var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.torch_tensor);
+                            if (error)
+                                return "torch_tensor." + error;
+                        }
+                    }
+                    if (message.torch_param != null && message.hasOwnProperty("torch_param")) {
+                        if (properties.tensor === 1)
+                            return "tensor: multiple values";
+                        properties.tensor = 1;
+                        {
+                            var error = $root.syft_proto.types.torch.v1.Parameter.verify(message.torch_param);
+                            if (error)
+                                return "torch_param." + error;
+                        }
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a StateTensor message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.StateTensor
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.StateTensor} StateTensor
+                 */
+                StateTensor.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.StateTensor)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.StateTensor();
+                    if (object.torch_tensor != null) {
+                        if (typeof object.torch_tensor !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.StateTensor.torch_tensor: object expected");
+                        message.torch_tensor = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.torch_tensor);
+                    }
+                    if (object.torch_param != null) {
+                        if (typeof object.torch_param !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.StateTensor.torch_param: object expected");
+                        message.torch_param = $root.syft_proto.types.torch.v1.Parameter.fromObject(object.torch_param);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a StateTensor message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.StateTensor
+                 * @static
+                 * @param {syft_proto.messaging.v1.StateTensor} message StateTensor
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                StateTensor.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (message.torch_tensor != null && message.hasOwnProperty("torch_tensor")) {
+                        object.torch_tensor = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.torch_tensor, options);
+                        if (options.oneofs)
+                            object.tensor = "torch_tensor";
+                    }
+                    if (message.torch_param != null && message.hasOwnProperty("torch_param")) {
+                        object.torch_param = $root.syft_proto.types.torch.v1.Parameter.toObject(message.torch_param, options);
+                        if (options.oneofs)
+                            object.tensor = "torch_param";
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this StateTensor to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.StateTensor
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                StateTensor.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return StateTensor;
             })();
 
             v1.Protocol = (function() {
