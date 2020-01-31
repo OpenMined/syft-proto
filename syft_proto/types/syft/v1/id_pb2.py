@@ -75,11 +75,11 @@ _ID.fields_by_name['id_str'].containing_oneof = _ID.oneofs_by_name['id']
 DESCRIPTOR.message_types_by_name['Id'] = _ID
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Id = _reflection.GeneratedProtocolMessageType('Id', (_message.Message,), dict(
-  DESCRIPTOR = _ID,
-  __module__ = 'syft_proto.types.syft.v1.id_pb2'
+Id = _reflection.GeneratedProtocolMessageType('Id', (_message.Message,), {
+  'DESCRIPTOR' : _ID,
+  '__module__' : 'syft_proto.types.syft.v1.id_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.types.syft.v1.Id)
-  ))
+  })
 _sym_db.RegisterMessage(Id)
 
 

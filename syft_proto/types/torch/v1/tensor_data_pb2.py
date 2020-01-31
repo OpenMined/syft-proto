@@ -182,11 +182,11 @@ _TENSORDATA.fields_by_name['shape'].message_type = syft__proto_dot_types_dot_tor
 DESCRIPTOR.message_types_by_name['TensorData'] = _TENSORDATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-TensorData = _reflection.GeneratedProtocolMessageType('TensorData', (_message.Message,), dict(
-  DESCRIPTOR = _TENSORDATA,
-  __module__ = 'syft_proto.types.torch.v1.tensor_data_pb2'
+TensorData = _reflection.GeneratedProtocolMessageType('TensorData', (_message.Message,), {
+  'DESCRIPTOR' : _TENSORDATA,
+  '__module__' : 'syft_proto.types.torch.v1.tensor_data_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.types.torch.v1.TensorData)
-  ))
+  })
 _sym_db.RegisterMessage(TensorData)
 
 

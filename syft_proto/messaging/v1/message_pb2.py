@@ -158,25 +158,25 @@ DESCRIPTOR.message_types_by_name['ObjectMessage'] = _OBJECTMESSAGE
 DESCRIPTOR.message_types_by_name['OperationMessage'] = _OPERATIONMESSAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-SyftMessage = _reflection.GeneratedProtocolMessageType('SyftMessage', (_message.Message,), dict(
-  DESCRIPTOR = _SYFTMESSAGE,
-  __module__ = 'syft_proto.messaging.v1.message_pb2'
+SyftMessage = _reflection.GeneratedProtocolMessageType('SyftMessage', (_message.Message,), {
+  'DESCRIPTOR' : _SYFTMESSAGE,
+  '__module__' : 'syft_proto.messaging.v1.message_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.messaging.v1.SyftMessage)
-  ))
+  })
 _sym_db.RegisterMessage(SyftMessage)
 
-ObjectMessage = _reflection.GeneratedProtocolMessageType('ObjectMessage', (_message.Message,), dict(
-  DESCRIPTOR = _OBJECTMESSAGE,
-  __module__ = 'syft_proto.messaging.v1.message_pb2'
+ObjectMessage = _reflection.GeneratedProtocolMessageType('ObjectMessage', (_message.Message,), {
+  'DESCRIPTOR' : _OBJECTMESSAGE,
+  '__module__' : 'syft_proto.messaging.v1.message_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.messaging.v1.ObjectMessage)
-  ))
+  })
 _sym_db.RegisterMessage(ObjectMessage)
 
-OperationMessage = _reflection.GeneratedProtocolMessageType('OperationMessage', (_message.Message,), dict(
-  DESCRIPTOR = _OPERATIONMESSAGE,
-  __module__ = 'syft_proto.messaging.v1.message_pb2'
+OperationMessage = _reflection.GeneratedProtocolMessageType('OperationMessage', (_message.Message,), {
+  'DESCRIPTOR' : _OPERATIONMESSAGE,
+  '__module__' : 'syft_proto.messaging.v1.message_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.messaging.v1.OperationMessage)
-  ))
+  })
 _sym_db.RegisterMessage(OperationMessage)
 
 
