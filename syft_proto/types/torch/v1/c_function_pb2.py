@@ -59,11 +59,11 @@ _CFUNCTION = _descriptor.Descriptor(
 DESCRIPTOR.message_types_by_name['CFunction'] = _CFUNCTION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-CFunction = _reflection.GeneratedProtocolMessageType('CFunction', (_message.Message,), dict(
-  DESCRIPTOR = _CFUNCTION,
-  __module__ = 'syft_proto.types.torch.v1.c_function_pb2'
+CFunction = _reflection.GeneratedProtocolMessageType('CFunction', (_message.Message,), {
+  'DESCRIPTOR' : _CFUNCTION,
+  '__module__' : 'syft_proto.types.torch.v1.c_function_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.types.torch.v1.CFunction)
-  ))
+  })
 _sym_db.RegisterMessage(CFunction)
 
 
