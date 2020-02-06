@@ -133,18 +133,18 @@ DESCRIPTOR.message_types_by_name['Protocol'] = _PROTOCOL
 DESCRIPTOR.message_types_by_name['PlanAssignment'] = _PLANASSIGNMENT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Protocol = _reflection.GeneratedProtocolMessageType('Protocol', (_message.Message,), dict(
-  DESCRIPTOR = _PROTOCOL,
-  __module__ = 'syft_proto.messaging.v1.protocol_pb2'
+Protocol = _reflection.GeneratedProtocolMessageType('Protocol', (_message.Message,), {
+  'DESCRIPTOR' : _PROTOCOL,
+  '__module__' : 'syft_proto.messaging.v1.protocol_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.messaging.v1.Protocol)
-  ))
+  })
 _sym_db.RegisterMessage(Protocol)
 
-PlanAssignment = _reflection.GeneratedProtocolMessageType('PlanAssignment', (_message.Message,), dict(
-  DESCRIPTOR = _PLANASSIGNMENT,
-  __module__ = 'syft_proto.messaging.v1.protocol_pb2'
+PlanAssignment = _reflection.GeneratedProtocolMessageType('PlanAssignment', (_message.Message,), {
+  'DESCRIPTOR' : _PLANASSIGNMENT,
+  '__module__' : 'syft_proto.messaging.v1.protocol_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.messaging.v1.PlanAssignment)
-  ))
+  })
 _sym_db.RegisterMessage(PlanAssignment)
 
 

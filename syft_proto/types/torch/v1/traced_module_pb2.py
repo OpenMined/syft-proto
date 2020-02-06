@@ -59,11 +59,11 @@ _TRACEDMODULE = _descriptor.Descriptor(
 DESCRIPTOR.message_types_by_name['TracedModule'] = _TRACEDMODULE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-TracedModule = _reflection.GeneratedProtocolMessageType('TracedModule', (_message.Message,), dict(
-  DESCRIPTOR = _TRACEDMODULE,
-  __module__ = 'syft_proto.types.torch.v1.traced_module_pb2'
+TracedModule = _reflection.GeneratedProtocolMessageType('TracedModule', (_message.Message,), {
+  'DESCRIPTOR' : _TRACEDMODULE,
+  '__module__' : 'syft_proto.types.torch.v1.traced_module_pb2'
   # @@protoc_insertion_point(class_scope:syft_proto.types.torch.v1.TracedModule)
-  ))
+  })
 _sym_db.RegisterMessage(TracedModule)
 
 

@@ -130,6 +130,108 @@ export namespace syft_proto {
                              */
                             public toJSON(): { [k: string]: any };
                         }
+
+                        /** Properties of a Placeholder. */
+                        interface IPlaceholder {
+
+                            /** Placeholder id */
+                            id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** Placeholder tags */
+                            tags?: (string[]|null);
+
+                            /** Placeholder description */
+                            description?: (string|null);
+                        }
+
+                        /** Represents a Placeholder. */
+                        class Placeholder implements IPlaceholder {
+
+                            /**
+                             * Constructs a new Placeholder.
+                             * @param [properties] Properties to set
+                             */
+                            constructor(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder);
+
+                            /** Placeholder id. */
+                            public id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** Placeholder tags. */
+                            public tags: string[];
+
+                            /** Placeholder description. */
+                            public description: string;
+
+                            /**
+                             * Creates a new Placeholder instance using the specified properties.
+                             * @param [properties] Properties to set
+                             * @returns Placeholder instance
+                             */
+                            public static create(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder): syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder;
+
+                            /**
+                             * Encodes the specified Placeholder message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify|verify} messages.
+                             * @param message Placeholder message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encode(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Encodes the specified Placeholder message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify|verify} messages.
+                             * @param message Placeholder message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encodeDelimited(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Decodes a Placeholder message from the specified reader or buffer.
+                             * @param reader Reader or buffer to decode from
+                             * @param [length] Message length if known beforehand
+                             * @returns Placeholder
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder;
+
+                            /**
+                             * Decodes a Placeholder message from the specified reader or buffer, length delimited.
+                             * @param reader Reader or buffer to decode from
+                             * @returns Placeholder
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder;
+
+                            /**
+                             * Verifies a Placeholder message.
+                             * @param message Plain object to verify
+                             * @returns `null` if valid, otherwise the reason why it is not
+                             */
+                            public static verify(message: { [k: string]: any }): (string|null);
+
+                            /**
+                             * Creates a Placeholder message from a plain object. Also converts values to their respective internal types.
+                             * @param object Plain object
+                             * @returns Placeholder
+                             */
+                            public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder;
+
+                            /**
+                             * Creates a plain object from a Placeholder message. Also converts values to other types if specified.
+                             * @param message Placeholder
+                             * @param [options] Conversion options
+                             * @returns Plain object
+                             */
+                            public static toObject(message: syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                            /**
+                             * Converts this Placeholder to JSON.
+                             * @returns JSON object
+                             */
+                            public toJSON(): { [k: string]: any };
+                        }
                     }
                 }
             }
@@ -475,6 +577,9 @@ export namespace syft_proto {
                     /** Operation owner_pointer */
                     owner_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
+                    /** Operation owner_placeholder */
+                    owner_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
+
                     /** Operation owner_tensor */
                     owner_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
 
@@ -486,6 +591,9 @@ export namespace syft_proto {
 
                     /** Operation return_ids */
                     return_ids?: (syft_proto.types.syft.v1.IId[]|null);
+
+                    /** Operation return_placeholders */
+                    return_placeholders?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[]|null);
                 }
 
                 /** Represents an Operation. */
@@ -503,6 +611,9 @@ export namespace syft_proto {
                     /** Operation owner_pointer. */
                     public owner_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
+                    /** Operation owner_placeholder. */
+                    public owner_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
+
                     /** Operation owner_tensor. */
                     public owner_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
 
@@ -515,8 +626,11 @@ export namespace syft_proto {
                     /** Operation return_ids. */
                     public return_ids: syft_proto.types.syft.v1.IId[];
 
+                    /** Operation return_placeholders. */
+                    public return_placeholders: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[];
+
                     /** Operation owner. */
-                    public owner?: ("owner_pointer"|"owner_tensor");
+                    public owner?: ("owner_pointer"|"owner_placeholder"|"owner_tensor");
 
                     /**
                      * Creates a new Operation instance using the specified properties.
@@ -615,6 +729,9 @@ export namespace syft_proto {
 
                     /** Arg arg_pointer_tensor */
                     arg_pointer_tensor?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
+
+                    /** Arg arg_placeholder */
+                    arg_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
                 }
 
                 /** Represents an Arg. */
@@ -650,8 +767,11 @@ export namespace syft_proto {
                     /** Arg arg_pointer_tensor. */
                     public arg_pointer_tensor?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
+                    /** Arg arg_placeholder. */
+                    public arg_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
+
                     /** Arg arg. */
-                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor");
+                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder");
 
                     /**
                      * Creates a new Arg instance using the specified properties.
@@ -2008,6 +2128,339 @@ export namespace syft_proto {
 
                 /**
                  * Converts this OperationMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a Plan. */
+            interface IPlan {
+
+                /** Plan id */
+                id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** Plan operations */
+                operations?: (syft_proto.types.syft.v1.IOperation[]|null);
+
+                /** Plan state */
+                state?: (syft_proto.messaging.v1.IState|null);
+
+                /** Plan include_state */
+                include_state?: (boolean|null);
+
+                /** Plan is_built */
+                is_built?: (boolean|null);
+
+                /** Plan name */
+                name?: (string|null);
+
+                /** Plan tags */
+                tags?: (string[]|null);
+
+                /** Plan description */
+                description?: (string|null);
+
+                /** Plan placeholders */
+                placeholders?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[]|null);
+            }
+
+            /** Represents a Plan. */
+            class Plan implements IPlan {
+
+                /**
+                 * Constructs a new Plan.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IPlan);
+
+                /** Plan id. */
+                public id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** Plan operations. */
+                public operations: syft_proto.types.syft.v1.IOperation[];
+
+                /** Plan state. */
+                public state?: (syft_proto.messaging.v1.IState|null);
+
+                /** Plan include_state. */
+                public include_state: boolean;
+
+                /** Plan is_built. */
+                public is_built: boolean;
+
+                /** Plan name. */
+                public name: string;
+
+                /** Plan tags. */
+                public tags: string[];
+
+                /** Plan description. */
+                public description: string;
+
+                /** Plan placeholders. */
+                public placeholders: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[];
+
+                /**
+                 * Creates a new Plan instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns Plan instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IPlan): syft_proto.messaging.v1.Plan;
+
+                /**
+                 * Encodes the specified Plan message. Does not implicitly {@link syft_proto.messaging.v1.Plan.verify|verify} messages.
+                 * @param message Plan message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IPlan, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified Plan message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.Plan.verify|verify} messages.
+                 * @param message Plan message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IPlan, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a Plan message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns Plan
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.Plan;
+
+                /**
+                 * Decodes a Plan message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns Plan
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.Plan;
+
+                /**
+                 * Verifies a Plan message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a Plan message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns Plan
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.Plan;
+
+                /**
+                 * Creates a plain object from a Plan message. Also converts values to other types if specified.
+                 * @param message Plan
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.Plan, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this Plan to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a State. */
+            interface IState {
+
+                /** State placeholders */
+                placeholders?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[]|null);
+
+                /** State tensors */
+                tensors?: (syft_proto.messaging.v1.IStateTensor[]|null);
+            }
+
+            /** Represents a State. */
+            class State implements IState {
+
+                /**
+                 * Constructs a new State.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IState);
+
+                /** State placeholders. */
+                public placeholders: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[];
+
+                /** State tensors. */
+                public tensors: syft_proto.messaging.v1.IStateTensor[];
+
+                /**
+                 * Creates a new State instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns State instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IState): syft_proto.messaging.v1.State;
+
+                /**
+                 * Encodes the specified State message. Does not implicitly {@link syft_proto.messaging.v1.State.verify|verify} messages.
+                 * @param message State message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IState, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified State message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.State.verify|verify} messages.
+                 * @param message State message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IState, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a State message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns State
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.State;
+
+                /**
+                 * Decodes a State message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns State
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.State;
+
+                /**
+                 * Verifies a State message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a State message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns State
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.State;
+
+                /**
+                 * Creates a plain object from a State message. Also converts values to other types if specified.
+                 * @param message State
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.State, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this State to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a StateTensor. */
+            interface IStateTensor {
+
+                /** StateTensor torch_tensor */
+                torch_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** StateTensor torch_param */
+                torch_param?: (syft_proto.types.torch.v1.IParameter|null);
+            }
+
+            /** Represents a StateTensor. */
+            class StateTensor implements IStateTensor {
+
+                /**
+                 * Constructs a new StateTensor.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IStateTensor);
+
+                /** StateTensor torch_tensor. */
+                public torch_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** StateTensor torch_param. */
+                public torch_param?: (syft_proto.types.torch.v1.IParameter|null);
+
+                /** StateTensor tensor. */
+                public tensor?: ("torch_tensor"|"torch_param");
+
+                /**
+                 * Creates a new StateTensor instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns StateTensor instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IStateTensor): syft_proto.messaging.v1.StateTensor;
+
+                /**
+                 * Encodes the specified StateTensor message. Does not implicitly {@link syft_proto.messaging.v1.StateTensor.verify|verify} messages.
+                 * @param message StateTensor message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IStateTensor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified StateTensor message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.StateTensor.verify|verify} messages.
+                 * @param message StateTensor message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IStateTensor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a StateTensor message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns StateTensor
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.StateTensor;
+
+                /**
+                 * Decodes a StateTensor message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns StateTensor
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.StateTensor;
+
+                /**
+                 * Verifies a StateTensor message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a StateTensor message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns StateTensor
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.StateTensor;
+
+                /**
+                 * Creates a plain object from a StateTensor message. Also converts values to other types if specified.
+                 * @param message StateTensor
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.StateTensor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this StateTensor to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
