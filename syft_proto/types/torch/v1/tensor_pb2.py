@@ -21,8 +21,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='syft_proto/types/torch/v1/tensor.proto',
   package='syft_proto.types.torch.v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n&syft_proto/types/torch/v1/tensor.proto\x12\x19syft_proto.types.torch.v1\x1a!syft_proto/types/syft/v1/id.proto\x1a+syft_proto/types/torch/v1/tensor_data.proto\"\xc5\x04\n\x0bTorchTensor\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12L\n\rcontents_data\x18\x02 \x01(\x0b\x32%.syft_proto.types.torch.v1.TensorDataH\x00R\x0c\x63ontentsData\x12#\n\x0c\x63ontents_bin\x18\x03 \x01(\x0cH\x00R\x0b\x63ontentsBin\x12<\n\x05\x63hain\x18\x04 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x05\x63hain\x12\x45\n\ngrad_chain\x18\x05 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\tgradChain\x12\x12\n\x04tags\x18\x06 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x07 \x01(\tR\x0b\x64\x65scription\x12Q\n\nserializer\x18\x08 \x01(\x0e\x32\x31.syft_proto.types.torch.v1.TorchTensor.SerializerR\nserializer\"{\n\nSerializer\x12\x1a\n\x16SERIALIZER_UNSPECIFIED\x10\x00\x12\x14\n\x10SERIALIZER_TORCH\x10\x01\x12\x14\n\x10SERIALIZER_NUMPY\x10\x02\x12\x11\n\rSERIALIZER_TF\x10\x03\x12\x12\n\x0eSERIALIZER_ALL\x10\x04\x42\n\n\x08\x63ontentsb\x06proto3')
+  serialized_options=_b('\n&org.openmined.syftproto.types.torch.v1'),
+  serialized_pb=_b('\n&syft_proto/types/torch/v1/tensor.proto\x12\x19syft_proto.types.torch.v1\x1a!syft_proto/types/syft/v1/id.proto\x1a+syft_proto/types/torch/v1/tensor_data.proto\"\xc5\x04\n\x0bTorchTensor\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12L\n\rcontents_data\x18\x02 \x01(\x0b\x32%.syft_proto.types.torch.v1.TensorDataH\x00R\x0c\x63ontentsData\x12#\n\x0c\x63ontents_bin\x18\x03 \x01(\x0cH\x00R\x0b\x63ontentsBin\x12<\n\x05\x63hain\x18\x04 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x05\x63hain\x12\x45\n\ngrad_chain\x18\x05 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\tgradChain\x12\x12\n\x04tags\x18\x06 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x07 \x01(\tR\x0b\x64\x65scription\x12Q\n\nserializer\x18\x08 \x01(\x0e\x32\x31.syft_proto.types.torch.v1.TorchTensor.SerializerR\nserializer\"{\n\nSerializer\x12\x1a\n\x16SERIALIZER_UNSPECIFIED\x10\x00\x12\x14\n\x10SERIALIZER_TORCH\x10\x01\x12\x14\n\x10SERIALIZER_NUMPY\x10\x02\x12\x11\n\rSERIALIZER_TF\x10\x03\x12\x12\n\x0eSERIALIZER_ALL\x10\x04\x42\n\n\x08\x63ontentsB(\n&org.openmined.syftproto.types.torch.v1b\x06proto3')
   ,
   dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__data__pb2.DESCRIPTOR,])
 
@@ -169,4 +169,5 @@ TorchTensor = _reflection.GeneratedProtocolMessageType('TorchTensor', (_message.
 _sym_db.RegisterMessage(TorchTensor)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

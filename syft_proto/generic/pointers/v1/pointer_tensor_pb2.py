@@ -21,8 +21,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='syft_proto/generic/pointers/v1/pointer_tensor.proto',
   package='syft_proto.generic.pointers.v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n3syft_proto/generic/pointers/v1/pointer_tensor.proto\x12\x1esyft_proto.generic.pointers.v1\x1a!syft_proto/types/syft/v1/id.proto\x1a$syft_proto/types/syft/v1/shape.proto\"\xe7\x02\n\rPointerTensor\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\x12=\n\x0blocation_id\x18\x02 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\nlocationId\x12O\n\x15object_id_at_location\x18\x03 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x12objectIdAtLocation\x12\x35\n\x05shape\x18\x04 \x01(\x0b\x32\x1f.syft_proto.types.syft.v1.ShapeR\x05shape\x12\"\n\rpoint_to_attr\x18\x05 \x01(\tR\x0bpointToAttr\x12\x30\n\x14garbage_collect_data\x18\x06 \x01(\x08R\x12garbageCollectDatab\x06proto3')
+  serialized_options=_b('\n+org.openmined.syftproto.generic.pointers.v1'),
+  serialized_pb=_b('\n3syft_proto/generic/pointers/v1/pointer_tensor.proto\x12\x1esyft_proto.generic.pointers.v1\x1a!syft_proto/types/syft/v1/id.proto\x1a$syft_proto/types/syft/v1/shape.proto\"\xe7\x02\n\rPointerTensor\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\x12=\n\x0blocation_id\x18\x02 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\nlocationId\x12O\n\x15object_id_at_location\x18\x03 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x12objectIdAtLocation\x12\x35\n\x05shape\x18\x04 \x01(\x0b\x32\x1f.syft_proto.types.syft.v1.ShapeR\x05shape\x12\"\n\rpoint_to_attr\x18\x05 \x01(\tR\x0bpointToAttr\x12\x30\n\x14garbage_collect_data\x18\x06 \x01(\x08R\x12garbageCollectDataB-\n+org.openmined.syftproto.generic.pointers.v1b\x06proto3')
   ,
   dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_shape__pb2.DESCRIPTOR,])
 
@@ -109,4 +109,5 @@ PointerTensor = _reflection.GeneratedProtocolMessageType('PointerTensor', (_mess
 _sym_db.RegisterMessage(PointerTensor)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

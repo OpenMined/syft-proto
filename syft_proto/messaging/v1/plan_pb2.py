@@ -23,8 +23,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='syft_proto/messaging/v1/plan.proto',
   package='syft_proto.messaging.v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n\"syft_proto/messaging/v1/plan.proto\x12\x17syft_proto.messaging.v1\x1a!syft_proto/types/syft/v1/id.proto\x1a(syft_proto/types/syft/v1/operation.proto\x1a\x45syft_proto/frameworks/torch/tensors/interpreters/v1/placeholder.proto\x1a#syft_proto/messaging/v1/state.proto\"\x9f\x03\n\x04Plan\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x43\n\noperations\x18\x02 \x03(\x0b\x32#.syft_proto.types.syft.v1.OperationR\noperations\x12\x34\n\x05state\x18\x03 \x01(\x0b\x32\x1e.syft_proto.messaging.v1.StateR\x05state\x12#\n\rinclude_state\x18\x04 \x01(\x08R\x0cincludeState\x12\x19\n\x08is_built\x18\x05 \x01(\x08R\x07isBuilt\x12\x12\n\x04name\x18\x06 \x01(\tR\x04name\x12\x12\n\x04tags\x18\x07 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x08 \x01(\tR\x0b\x64\x65scription\x12\x64\n\x0cplaceholders\x18\t \x03(\x0b\x32@.syft_proto.frameworks.torch.tensors.interpreters.v1.PlaceholderR\x0cplaceholdersb\x06proto3')
+  serialized_options=_b('\n$org.openmined.syftproto.messaging.v1'),
+  serialized_pb=_b('\n\"syft_proto/messaging/v1/plan.proto\x12\x17syft_proto.messaging.v1\x1a!syft_proto/types/syft/v1/id.proto\x1a(syft_proto/types/syft/v1/operation.proto\x1a\x45syft_proto/frameworks/torch/tensors/interpreters/v1/placeholder.proto\x1a#syft_proto/messaging/v1/state.proto\"\x9f\x03\n\x04Plan\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x43\n\noperations\x18\x02 \x03(\x0b\x32#.syft_proto.types.syft.v1.OperationR\noperations\x12\x34\n\x05state\x18\x03 \x01(\x0b\x32\x1e.syft_proto.messaging.v1.StateR\x05state\x12#\n\rinclude_state\x18\x04 \x01(\x08R\x0cincludeState\x12\x19\n\x08is_built\x18\x05 \x01(\x08R\x07isBuilt\x12\x12\n\x04name\x18\x06 \x01(\tR\x04name\x12\x12\n\x04tags\x18\x07 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x08 \x01(\tR\x0b\x64\x65scription\x12\x64\n\x0cplaceholders\x18\t \x03(\x0b\x32@.syft_proto.frameworks.torch.tensors.interpreters.v1.PlaceholderR\x0cplaceholdersB&\n$org.openmined.syftproto.messaging.v1b\x06proto3')
   ,
   dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_operation__pb2.DESCRIPTOR,syft__proto_dot_frameworks_dot_torch_dot_tensors_dot_interpreters_dot_v1_dot_placeholder__pb2.DESCRIPTOR,syft__proto_dot_messaging_dot_v1_dot_state__pb2.DESCRIPTOR,])
 
@@ -132,4 +132,5 @@ Plan = _reflection.GeneratedProtocolMessageType('Plan', (_message.Message,), {
 _sym_db.RegisterMessage(Plan)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

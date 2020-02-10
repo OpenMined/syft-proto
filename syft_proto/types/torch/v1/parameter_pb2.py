@@ -21,8 +21,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='syft_proto/types/torch/v1/parameter.proto',
   package='syft_proto.types.torch.v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n)syft_proto/types/torch/v1/parameter.proto\x12\x19syft_proto.types.torch.v1\x1a!syft_proto/types/syft/v1/id.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\xda\x01\n\tParameter\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12>\n\x06tensor\x18\x02 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x06tensor\x12#\n\rrequires_grad\x18\x03 \x01(\x08R\x0crequiresGrad\x12:\n\x04grad\x18\x04 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x04gradb\x06proto3')
+  serialized_options=_b('\n&org.openmined.syftproto.types.torch.v1'),
+  serialized_pb=_b('\n)syft_proto/types/torch/v1/parameter.proto\x12\x19syft_proto.types.torch.v1\x1a!syft_proto/types/syft/v1/id.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\xda\x01\n\tParameter\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12>\n\x06tensor\x18\x02 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x06tensor\x12#\n\rrequires_grad\x18\x03 \x01(\x08R\x0crequiresGrad\x12:\n\x04grad\x18\x04 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x04gradB(\n&org.openmined.syftproto.types.torch.v1b\x06proto3')
   ,
   dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
 
@@ -94,4 +94,5 @@ Parameter = _reflection.GeneratedProtocolMessageType('Parameter', (_message.Mess
 _sym_db.RegisterMessage(Parameter)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='syft_proto/types/torch/v1/device.proto',
   package='syft_proto.types.torch.v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n&syft_proto/types/torch/v1/device.proto\x12\x19syft_proto.types.torch.v1\"\x1c\n\x06\x44\x65vice\x12\x12\n\x04type\x18\x01 \x01(\tR\x04typeb\x06proto3')
+  serialized_options=_b('\n&org.openmined.syftproto.types.torch.v1'),
+  serialized_pb=_b('\n&syft_proto/types/torch/v1/device.proto\x12\x19syft_proto.types.torch.v1\"\x1c\n\x06\x44\x65vice\x12\x12\n\x04type\x18\x01 \x01(\tR\x04typeB(\n&org.openmined.syftproto.types.torch.v1b\x06proto3')
 )
 
 
@@ -67,4 +67,5 @@ Device = _reflection.GeneratedProtocolMessageType('Device', (_message.Message,),
 _sym_db.RegisterMessage(Device)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

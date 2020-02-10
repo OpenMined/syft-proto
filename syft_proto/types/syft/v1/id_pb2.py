@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='syft_proto/types/syft/v1/id.proto',
   package='syft_proto.types.syft.v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n!syft_proto/types/syft/v1/id.proto\x12\x18syft_proto.types.syft.v1\"<\n\x02Id\x12\x17\n\x06id_int\x18\x01 \x01(\x03H\x00R\x05idInt\x12\x17\n\x06id_str\x18\x02 \x01(\tH\x00R\x05idStrB\x04\n\x02idb\x06proto3')
+  serialized_options=_b('\n%org.openmined.syftproto.types.syft.v1'),
+  serialized_pb=_b('\n!syft_proto/types/syft/v1/id.proto\x12\x18syft_proto.types.syft.v1\"<\n\x02Id\x12\x17\n\x06id_int\x18\x01 \x01(\x03H\x00R\x05idInt\x12\x17\n\x06id_str\x18\x02 \x01(\tH\x00R\x05idStrB\x04\n\x02idB\'\n%org.openmined.syftproto.types.syft.v1b\x06proto3')
 )
 
 
@@ -83,4 +83,5 @@ Id = _reflection.GeneratedProtocolMessageType('Id', (_message.Message,), {
 _sym_db.RegisterMessage(Id)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

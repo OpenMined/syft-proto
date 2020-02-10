@@ -38,3 +38,10 @@ const proto = require('syft-proto').proto_info
 console.log(proto)
 ```
 
+### Kotlin/Java
+
+Using Gradle:
+```groovy
+implementation 'org.openmined.kotlinsyft:syft-proto-jvm:<latest_version>'
+```
+

@@ -1,6 +1,6 @@
 # Build stub from Protobuf schemas
 cd protobuf
-buf check lint && buf image build -o - | protoc --descriptor_set_in=/dev/stdin --python_out=../ $(buf image build -o - | buf ls-files --input -)
+buf check lint && buf image build -o - | protoc --descriptor_set_in=/dev/stdin --python_out=../ --java_out=../jvm/src/main/java $(buf image build -o - | buf ls-files --input -)
 cd ..
 
 # Create Python sub-packages for the stubs
@@ -10,3 +10,6 @@ find syft_proto/ -type d -print0 |
 # Create JS stubs
 npm install
 node ./js/bin/build_stubs.js
+
+# Create JVM stubs
+./jvm/gradlew install bintrayUpload

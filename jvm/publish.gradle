@@ -1,0 +1,68 @@
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+version = '0.0.2'
+group = 'org.openmined.kotlinsyft'
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                groupId 'org.openmined.kotlinsyft'
+                artifactId 'syft-proto-jvm'
+
+                // Add your description here
+                name 'syft-proto-jvm'
+                description "PySyft Protobuf java classes"
+                url "https://github.com/OpenMined/syft-proto"
+
+                // Set your license
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                scm {
+                    connection "https://github.com/OpenMined/syft-proto.git"
+                    developerConnection "https://github.com/OpenMined/syft-proto.git"
+                    url "https://github.com/OpenMined/syft-proto"
+
+                }
+            }
+        }
+    }
+}
+
+// Bintray
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.key")
+
+    configurations = ['archives']
+    dryRun = false
+    pkg {
+        userOrg = "openmined"
+        repo = "KotlinSyft"
+        name = "syft-proto-jvm"
+        desc = "Protobuf Java classes for PySyft"
+        websiteUrl = "https://github.com/OpenMined/syft-proto"
+        vcsUrl = "https://github.com/OpenMined/syft-proto.git"
+        licenses = ["Apache-2.0"]
+        publish = true
+        publicDownloadNumbers = true
+        version {
+            desc = "Protobuf Java classes for PySyft"
+            // Uncomment 4 lines below to enable gpg auto signing
+            //gpg {
+            //    sign = true //Determines whether to GPG sign the files. The default is false
+            //    passphrase = properties.getProperty("bintray.gpg.password")
+            //}
+        }
+    }
+}

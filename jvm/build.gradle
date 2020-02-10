@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath "com.github.dcendents:android-maven-gradle-plugin:2.1"
+    }
+}
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.google.protobuf:protobuf-java:3.11.0'
+}
+
+apply from: 'publish.gradle'
