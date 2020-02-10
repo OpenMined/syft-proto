@@ -9,3 +9,4 @@ node_modules
 
 .gradle
 local.properties
+package-lock.json

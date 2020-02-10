@@ -3,14 +3,13 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath "com.github.dcendents:android-maven-gradle-plugin:2.1"
     }
 }
 plugins {
     id 'java-library'
 }
-
-apply plugin: 'com.jfrog.bintray'
 
 repositories {
     mavenCentral()
@@ -21,32 +20,4 @@ dependencies {
     implementation 'com.google.protobuf:protobuf-java:3.11.0'
 }
 
-version = '0.0.1'
-archivesBaseName = 'syft-proto'
-
-
-Properties properties = new Properties()
-def propertiesFile = project.rootProject.file('local.properties')
-if (propertiesFile.exists()) {
-    properties.load(propertiesFile.newDataInputStream())
-}
-
-def bintrayUser = properties.getProperty('bintray.user')
-def bintrayKey = properties.getProperty('bintray.key')
-
-bintray {
-    user = bintrayUser
-    key = bintrayKey
-    configurations = ['archives']
-    dryRun = true
-    pkg {
-        userOrg = "openmined"
-        repo = "KotlinSyft"
-        name = "syft-proto-jvm"
-        websiteUrl = "https://github.com/OpenMined/syft-proto"
-        issueTrackerUrl = "https://github.com/OpenMined/syft-proto/issues"
-        vcsUrl = "https://github.com/OpenMined/syft-proto.git"
-        licenses = ["Apache-2.0"]
-        labels = ["openmined", "machine learning", "privacy", "pytorch", "protobuf"]
-    }
-}
+apply from: 'publish.gradle'
