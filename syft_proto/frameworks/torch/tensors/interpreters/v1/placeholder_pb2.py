@@ -20,8 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='syft_proto/frameworks/torch/tensors/interpreters/v1/placeholder.proto',
   package='syft_proto.frameworks.torch.tensors.interpreters.v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\nEsyft_proto/frameworks/torch/tensors/interpreters/v1/placeholder.proto\x12\x33syft_proto.frameworks.torch.tensors.interpreters.v1\x1a!syft_proto/types/syft/v1/id.proto\"q\n\x0bPlaceholder\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x12\n\x04tags\x18\x02 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scriptionb\x06proto3')
+  serialized_options=_b('\n@org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1'),
+  serialized_pb=_b('\nEsyft_proto/frameworks/torch/tensors/interpreters/v1/placeholder.proto\x12\x33syft_proto.frameworks.torch.tensors.interpreters.v1\x1a!syft_proto/types/syft/v1/id.proto\"q\n\x0bPlaceholder\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x12\n\x04tags\x18\x02 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scriptionBB\n@org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1b\x06proto3')
   ,
   dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
 
@@ -84,4 +84,5 @@ Placeholder = _reflection.GeneratedProtocolMessageType('Placeholder', (_message.
 _sym_db.RegisterMessage(Placeholder)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

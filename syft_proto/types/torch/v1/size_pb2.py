@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='syft_proto/types/torch/v1/size.proto',
   package='syft_proto.types.torch.v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n$syft_proto/types/torch/v1/size.proto\x12\x19syft_proto.types.torch.v1\"\x1a\n\x04Size\x12\x12\n\x04\x64ims\x18\x01 \x03(\x05R\x04\x64imsb\x06proto3')
+  serialized_options=_b('\n&org.openmined.syftproto.types.torch.v1'),
+  serialized_pb=_b('\n$syft_proto/types/torch/v1/size.proto\x12\x19syft_proto.types.torch.v1\"\x1a\n\x04Size\x12\x12\n\x04\x64ims\x18\x01 \x03(\x05R\x04\x64imsB(\n&org.openmined.syftproto.types.torch.v1b\x06proto3')
 )
 
 
@@ -67,4 +67,5 @@ Size = _reflection.GeneratedProtocolMessageType('Size', (_message.Message,), {
 _sym_db.RegisterMessage(Size)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

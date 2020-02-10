@@ -8,3 +8,4 @@ syft_proto/proto.json
 node_modules
 
 .gradle
+local.properties

@@ -21,8 +21,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='syft_proto/messaging/v1/protocol.proto',
   package='syft_proto.messaging.v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n&syft_proto/messaging/v1/protocol.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a!syft_proto/types/syft/v1/id.proto\"\xed\x01\n\x08Protocol\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x12\n\x04tags\x18\x02 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12)\n\x10workers_resolved\x18\x04 \x01(\x08R\x0fworkersResolved\x12R\n\x10plan_assignments\x18\x05 \x03(\x0b\x32\'.syft_proto.messaging.v1.PlanAssignmentR\x0fplanAssignments\"\x82\x01\n\x0ePlanAssignment\x12\x35\n\x07plan_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x06planId\x12\x39\n\tworker_id\x18\x02 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08workerIdb\x06proto3')
+  serialized_options=_b('\n$org.openmined.syftproto.messaging.v1'),
+  serialized_pb=_b('\n&syft_proto/messaging/v1/protocol.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a!syft_proto/types/syft/v1/id.proto\"\xed\x01\n\x08Protocol\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x12\n\x04tags\x18\x02 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12)\n\x10workers_resolved\x18\x04 \x01(\x08R\x0fworkersResolved\x12R\n\x10plan_assignments\x18\x05 \x03(\x0b\x32\'.syft_proto.messaging.v1.PlanAssignmentR\x0fplanAssignments\"\x82\x01\n\x0ePlanAssignment\x12\x35\n\x07plan_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x06planId\x12\x39\n\tworker_id\x18\x02 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08workerIdB&\n$org.openmined.syftproto.messaging.v1b\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
 
@@ -148,4 +148,5 @@ PlanAssignment = _reflection.GeneratedProtocolMessageType('PlanAssignment', (_me
 _sym_db.RegisterMessage(PlanAssignment)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

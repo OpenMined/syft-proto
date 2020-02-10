@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package syft_proto.messaging.v1;
+option java_package = "org.openmined.syftproto.messaging.v1";
 
 import "google/protobuf/empty.proto";
 import "syft_proto/types/syft/v1/id.proto";

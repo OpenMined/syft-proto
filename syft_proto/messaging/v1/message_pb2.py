@@ -22,8 +22,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='syft_proto/messaging/v1/message.proto',
   package='syft_proto.messaging.v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n%syft_proto/messaging/v1/message.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a(syft_proto/types/syft/v1/operation.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\x9e\x02\n\x0bSyftMessage\x12\x46\n\x12\x63ontents_empty_msg\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00R\x10\x63ontentsEmptyMsg\x12X\n\x13\x63ontents_object_msg\x18\x05 \x01(\x0b\x32&.syft_proto.messaging.v1.ObjectMessageH\x00R\x11\x63ontentsObjectMsg\x12\x61\n\x16\x63ontents_operation_msg\x18\x07 \x01(\x0b\x32).syft_proto.messaging.v1.OperationMessageH\x00R\x14\x63ontentsOperationMsgB\n\n\x08\x63ontents\"O\n\rObjectMessage\x12>\n\x06tensor\x18\x01 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x06tensor\"U\n\x10OperationMessage\x12\x41\n\toperation\x18\x01 \x01(\x0b\x32#.syft_proto.types.syft.v1.OperationR\toperationb\x06proto3')
+  serialized_options=_b('\n$org.openmined.syftproto.messaging.v1'),
+  serialized_pb=_b('\n%syft_proto/messaging/v1/message.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a(syft_proto/types/syft/v1/operation.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\x9e\x02\n\x0bSyftMessage\x12\x46\n\x12\x63ontents_empty_msg\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00R\x10\x63ontentsEmptyMsg\x12X\n\x13\x63ontents_object_msg\x18\x05 \x01(\x0b\x32&.syft_proto.messaging.v1.ObjectMessageH\x00R\x11\x63ontentsObjectMsg\x12\x61\n\x16\x63ontents_operation_msg\x18\x07 \x01(\x0b\x32).syft_proto.messaging.v1.OperationMessageH\x00R\x14\x63ontentsOperationMsgB\n\n\x08\x63ontents\"O\n\rObjectMessage\x12>\n\x06tensor\x18\x01 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x06tensor\"U\n\x10OperationMessage\x12\x41\n\toperation\x18\x01 \x01(\x0b\x32#.syft_proto.types.syft.v1.OperationR\toperationB&\n$org.openmined.syftproto.messaging.v1b\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_operation__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
 
@@ -180,4 +180,5 @@ OperationMessage = _reflection.GeneratedProtocolMessageType('OperationMessage', 
 _sym_db.RegisterMessage(OperationMessage)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='syft_proto/types/torch/v1/traced_module.proto',
   package='syft_proto.types.torch.v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n-syft_proto/types/torch/v1/traced_module.proto\x12\x19syft_proto.types.torch.v1\" \n\x0cTracedModule\x12\x10\n\x03obj\x18\x01 \x01(\x0cR\x03objb\x06proto3')
+  serialized_options=_b('\n&org.openmined.syftproto.types.torch.v1'),
+  serialized_pb=_b('\n-syft_proto/types/torch/v1/traced_module.proto\x12\x19syft_proto.types.torch.v1\" \n\x0cTracedModule\x12\x10\n\x03obj\x18\x01 \x01(\x0cR\x03objB(\n&org.openmined.syftproto.types.torch.v1b\x06proto3')
 )
 
 
@@ -67,4 +67,5 @@ TracedModule = _reflection.GeneratedProtocolMessageType('TracedModule', (_messag
 _sym_db.RegisterMessage(TracedModule)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

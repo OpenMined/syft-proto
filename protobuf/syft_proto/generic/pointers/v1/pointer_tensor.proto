@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package syft_proto.generic.pointers.v1;
+option java_package = "org.openmined.syftproto.generic.pointers.v1";
 
 import "syft_proto/types/syft/v1/id.proto";
 import "syft_proto/types/syft/v1/shape.proto";

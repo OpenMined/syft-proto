@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package syft_proto.frameworks.torch.tensors.interpreters.v1;
+option java_package = "org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1";
 
 import "syft_proto/types/syft/v1/id.proto";
 

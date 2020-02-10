@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='syft_proto/types/syft/v1/shape.proto',
   package='syft_proto.types.syft.v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n$syft_proto/types/syft/v1/shape.proto\x12\x18syft_proto.types.syft.v1\"\x1b\n\x05Shape\x12\x12\n\x04\x64ims\x18\x01 \x03(\x05R\x04\x64imsb\x06proto3')
+  serialized_options=_b('\n%org.openmined.syftproto.types.syft.v1'),
+  serialized_pb=_b('\n$syft_proto/types/syft/v1/shape.proto\x12\x18syft_proto.types.syft.v1\"\x1b\n\x05Shape\x12\x12\n\x04\x64ims\x18\x01 \x03(\x05R\x04\x64imsB\'\n%org.openmined.syftproto.types.syft.v1b\x06proto3')
 )
 
 
@@ -67,4 +67,5 @@ Shape = _reflection.GeneratedProtocolMessageType('Shape', (_message.Message,), {
 _sym_db.RegisterMessage(Shape)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)
