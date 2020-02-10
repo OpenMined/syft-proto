@@ -1,0 +1,14 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.protobuf:protobuf-java:3.11.0'
+}
+
+version = '1.0.0'
+archivesBaseName = 'syft-proto'

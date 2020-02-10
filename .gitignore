@@ -1,8 +1,10 @@
 .idea
-build
+*/build
 dist
 *.egg-info
 __pycache__/
 syft_proto/__pycache__
 syft_proto/proto.json
 node_modules
+
+.gradle
