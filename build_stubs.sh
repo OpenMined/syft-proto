@@ -12,4 +12,4 @@ npm install
 node ./js/bin/build_stubs.js
 
 # Create JVM stubs
-./jvm/gradlew install bintrayUpload
+./jvm/gradlew cleanFiles install bintrayUpload

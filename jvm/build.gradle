@@ -20,4 +20,8 @@ dependencies {
     implementation 'com.google.protobuf:protobuf-java:3.11.0'
 }
 
+task cleanFiles(type: Delete) {
+    project.delete(files('./src/main/java/com'))
+}
+
 apply from: 'publish.gradle'
