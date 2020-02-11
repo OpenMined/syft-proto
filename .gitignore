@@ -6,3 +6,5 @@ __pycache__/
 syft_proto/__pycache__
 syft_proto/proto.json
 node_modules
+
+local.properties
