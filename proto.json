@@ -176,6 +176,9 @@
     },
     "torch.dtype": {
       "code": 52
+    },
+    "syft.messaging.message.ExecuteWorkerFunctionMessage": {
+      "code": 53
     }
   }
 }
