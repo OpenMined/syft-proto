@@ -171,10 +171,10 @@
     "syft.messaging.message.CryptenInit": {
       "code": 50
     },
-    "torch.dtype": {
+    "syft.frameworks.torch.fl.dataset.BaseDataset": {
       "code": 51
     },
-    "syft.frameworks.torch.fl.dataset.BaseDataset": {
+    "torch.dtype": {
       "code": 52
     }
   }
