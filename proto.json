@@ -83,16 +83,16 @@
     "syft.generic.pointers.object_pointer.ObjectPointer": {
       "code": 20
     },
-    "syft.messaging.plan.plan.Plan": {
+    "syft.execution.plan.Plan": {
       "code": 21
     },
-    "syft.messaging.plan.state.State": {
+    "syft.execution.state.State": {
       "code": 22
     },
-    "syft.messaging.plan.procedure.Procedure": {
+    "syft.execution.procedure.Procedure": {
       "code": 23
     },
-    "syft.messaging.protocol.Protocol": {
+    "syft.execution.protocol.Protocol": {
       "code": 24
     },
     "syft.generic.pointers.pointer_tensor.PointerTensor": {

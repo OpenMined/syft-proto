@@ -1918,17 +1918,17 @@ public final class Message {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+     * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
      */
     boolean hasOperation();
     /**
-     * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+     * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
      */
-    org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation getOperation();
+    org.openmined.syftproto.execution.v1.OperationOuterClass.Operation getOperation();
     /**
-     * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+     * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
      */
-    org.openmined.syftproto.types.syft.v1.OperationOuterClass.OperationOrBuilder getOperationOrBuilder();
+    org.openmined.syftproto.execution.v1.OperationOuterClass.OperationOrBuilder getOperationOrBuilder();
   }
   /**
    * Protobuf type {@code syft_proto.messaging.v1.OperationMessage}
@@ -1976,11 +1976,11 @@ public final class Message {
               done = true;
               break;
             case 10: {
-              org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation.Builder subBuilder = null;
+              org.openmined.syftproto.execution.v1.OperationOuterClass.Operation.Builder subBuilder = null;
               if (operation_ != null) {
                 subBuilder = operation_.toBuilder();
               }
-              operation_ = input.readMessage(org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation.parser(), extensionRegistry);
+              operation_ = input.readMessage(org.openmined.syftproto.execution.v1.OperationOuterClass.Operation.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(operation_);
                 operation_ = subBuilder.buildPartial();
@@ -2021,23 +2021,23 @@ public final class Message {
     }
 
     public static final int OPERATION_FIELD_NUMBER = 1;
-    private org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation operation_;
+    private org.openmined.syftproto.execution.v1.OperationOuterClass.Operation operation_;
     /**
-     * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+     * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
      */
     public boolean hasOperation() {
       return operation_ != null;
     }
     /**
-     * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+     * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
      */
-    public org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation getOperation() {
-      return operation_ == null ? org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation.getDefaultInstance() : operation_;
+    public org.openmined.syftproto.execution.v1.OperationOuterClass.Operation getOperation() {
+      return operation_ == null ? org.openmined.syftproto.execution.v1.OperationOuterClass.Operation.getDefaultInstance() : operation_;
     }
     /**
-     * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+     * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
      */
-    public org.openmined.syftproto.types.syft.v1.OperationOuterClass.OperationOrBuilder getOperationOrBuilder() {
+    public org.openmined.syftproto.execution.v1.OperationOuterClass.OperationOrBuilder getOperationOrBuilder() {
       return getOperation();
     }
 
@@ -2356,29 +2356,29 @@ public final class Message {
         return this;
       }
 
-      private org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation operation_;
+      private org.openmined.syftproto.execution.v1.OperationOuterClass.Operation operation_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation, org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation.Builder, org.openmined.syftproto.types.syft.v1.OperationOuterClass.OperationOrBuilder> operationBuilder_;
+          org.openmined.syftproto.execution.v1.OperationOuterClass.Operation, org.openmined.syftproto.execution.v1.OperationOuterClass.Operation.Builder, org.openmined.syftproto.execution.v1.OperationOuterClass.OperationOrBuilder> operationBuilder_;
       /**
-       * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+       * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
        */
       public boolean hasOperation() {
         return operationBuilder_ != null || operation_ != null;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+       * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation getOperation() {
+      public org.openmined.syftproto.execution.v1.OperationOuterClass.Operation getOperation() {
         if (operationBuilder_ == null) {
-          return operation_ == null ? org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation.getDefaultInstance() : operation_;
+          return operation_ == null ? org.openmined.syftproto.execution.v1.OperationOuterClass.Operation.getDefaultInstance() : operation_;
         } else {
           return operationBuilder_.getMessage();
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+       * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
        */
-      public Builder setOperation(org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation value) {
+      public Builder setOperation(org.openmined.syftproto.execution.v1.OperationOuterClass.Operation value) {
         if (operationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2392,10 +2392,10 @@ public final class Message {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+       * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
        */
       public Builder setOperation(
-          org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation.Builder builderForValue) {
+          org.openmined.syftproto.execution.v1.OperationOuterClass.Operation.Builder builderForValue) {
         if (operationBuilder_ == null) {
           operation_ = builderForValue.build();
           onChanged();
@@ -2406,13 +2406,13 @@ public final class Message {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+       * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
        */
-      public Builder mergeOperation(org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation value) {
+      public Builder mergeOperation(org.openmined.syftproto.execution.v1.OperationOuterClass.Operation value) {
         if (operationBuilder_ == null) {
           if (operation_ != null) {
             operation_ =
-              org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation.newBuilder(operation_).mergeFrom(value).buildPartial();
+              org.openmined.syftproto.execution.v1.OperationOuterClass.Operation.newBuilder(operation_).mergeFrom(value).buildPartial();
           } else {
             operation_ = value;
           }
@@ -2424,7 +2424,7 @@ public final class Message {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+       * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
        */
       public Builder clearOperation() {
         if (operationBuilder_ == null) {
@@ -2438,33 +2438,33 @@ public final class Message {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+       * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation.Builder getOperationBuilder() {
+      public org.openmined.syftproto.execution.v1.OperationOuterClass.Operation.Builder getOperationBuilder() {
         
         onChanged();
         return getOperationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+       * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.OperationOuterClass.OperationOrBuilder getOperationOrBuilder() {
+      public org.openmined.syftproto.execution.v1.OperationOuterClass.OperationOrBuilder getOperationOrBuilder() {
         if (operationBuilder_ != null) {
           return operationBuilder_.getMessageOrBuilder();
         } else {
           return operation_ == null ?
-              org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation.getDefaultInstance() : operation_;
+              org.openmined.syftproto.execution.v1.OperationOuterClass.Operation.getDefaultInstance() : operation_;
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Operation operation = 1[json_name = "operation"];</code>
+       * <code>.syft_proto.execution.v1.Operation operation = 1[json_name = "operation"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation, org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation.Builder, org.openmined.syftproto.types.syft.v1.OperationOuterClass.OperationOrBuilder> 
+          org.openmined.syftproto.execution.v1.OperationOuterClass.Operation, org.openmined.syftproto.execution.v1.OperationOuterClass.Operation.Builder, org.openmined.syftproto.execution.v1.OperationOuterClass.OperationOrBuilder> 
           getOperationFieldBuilder() {
         if (operationBuilder_ == null) {
           operationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation, org.openmined.syftproto.types.syft.v1.OperationOuterClass.Operation.Builder, org.openmined.syftproto.types.syft.v1.OperationOuterClass.OperationOrBuilder>(
+              org.openmined.syftproto.execution.v1.OperationOuterClass.Operation, org.openmined.syftproto.execution.v1.OperationOuterClass.Operation.Builder, org.openmined.syftproto.execution.v1.OperationOuterClass.OperationOrBuilder>(
                   getOperation(),
                   getParentForChildren(),
                   isClean());
@@ -2551,27 +2551,27 @@ public final class Message {
     java.lang.String[] descriptorData = {
       "\n%syft_proto/messaging/v1/message.proto\022" +
       "\027syft_proto.messaging.v1\032\033google/protobu" +
-      "f/empty.proto\032(syft_proto/types/syft/v1/" +
-      "operation.proto\032&syft_proto/types/torch/" +
-      "v1/tensor.proto\"\236\002\n\013SyftMessage\022F\n\022conte" +
-      "nts_empty_msg\030\001 \001(\0132\026.google.protobuf.Em" +
-      "ptyH\000R\020contentsEmptyMsg\022X\n\023contents_obje" +
-      "ct_msg\030\005 \001(\0132&.syft_proto.messaging.v1.O" +
-      "bjectMessageH\000R\021contentsObjectMsg\022a\n\026con" +
-      "tents_operation_msg\030\007 \001(\0132).syft_proto.m" +
-      "essaging.v1.OperationMessageH\000R\024contents" +
-      "OperationMsgB\n\n\010contents\"O\n\rObjectMessag" +
-      "e\022>\n\006tensor\030\001 \001(\0132&.syft_proto.types.tor" +
-      "ch.v1.TorchTensorR\006tensor\"U\n\020OperationMe" +
-      "ssage\022A\n\toperation\030\001 \001(\0132#.syft_proto.ty" +
-      "pes.syft.v1.OperationR\toperationB&\n$org." +
-      "openmined.syftproto.messaging.v1b\006proto3"
+      "f/empty.proto\032\'syft_proto/execution/v1/o" +
+      "peration.proto\032&syft_proto/types/torch/v" +
+      "1/tensor.proto\"\236\002\n\013SyftMessage\022F\n\022conten" +
+      "ts_empty_msg\030\001 \001(\0132\026.google.protobuf.Emp" +
+      "tyH\000R\020contentsEmptyMsg\022X\n\023contents_objec" +
+      "t_msg\030\005 \001(\0132&.syft_proto.messaging.v1.Ob" +
+      "jectMessageH\000R\021contentsObjectMsg\022a\n\026cont" +
+      "ents_operation_msg\030\007 \001(\0132).syft_proto.me" +
+      "ssaging.v1.OperationMessageH\000R\024contentsO" +
+      "perationMsgB\n\n\010contents\"O\n\rObjectMessage" +
+      "\022>\n\006tensor\030\001 \001(\0132&.syft_proto.types.torc" +
+      "h.v1.TorchTensorR\006tensor\"T\n\020OperationMes" +
+      "sage\022@\n\toperation\030\001 \001(\0132\".syft_proto.exe" +
+      "cution.v1.OperationR\toperationB&\n$org.op" +
+      "enmined.syftproto.messaging.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
-          org.openmined.syftproto.types.syft.v1.OperationOuterClass.getDescriptor(),
+          org.openmined.syftproto.execution.v1.OperationOuterClass.getDescriptor(),
           org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor(),
         });
     internal_static_syft_proto_messaging_v1_SyftMessage_descriptor =
@@ -2593,7 +2593,7 @@ public final class Message {
         internal_static_syft_proto_messaging_v1_OperationMessage_descriptor,
         new java.lang.String[] { "Operation", });
     com.google.protobuf.EmptyProto.getDescriptor();
-    org.openmined.syftproto.types.syft.v1.OperationOuterClass.getDescriptor();
+    org.openmined.syftproto.execution.v1.OperationOuterClass.getDescriptor();
     org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor();
   }
 
