@@ -179,6 +179,9 @@
     },
     "syft.messaging.message.ExecuteWorkerFunctionMessage": {
       "code": 53
+    },
+    "int": {
+      "code": 54
     }
   }
 }
