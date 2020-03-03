@@ -36,31 +36,31 @@ $root.syft_proto = (function() {
              */
             var v1 = {};
 
-            v1.Operation = (function() {
+            v1.ComputationAction = (function() {
 
                 /**
-                 * Properties of an Operation.
+                 * Properties of a ComputationAction.
                  * @memberof syft_proto.execution.v1
-                 * @interface IOperation
-                 * @property {string|null} [command] Operation command
-                 * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [owner_pointer] Operation owner_pointer
-                 * @property {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null} [owner_placeholder] Operation owner_placeholder
-                 * @property {syft_proto.types.torch.v1.ITorchTensor|null} [owner_tensor] Operation owner_tensor
-                 * @property {Array.<syft_proto.types.syft.v1.IArg>|null} [args] Operation args
-                 * @property {Object.<string,syft_proto.types.syft.v1.IArg>|null} [kwargs] Operation kwargs
-                 * @property {Array.<syft_proto.types.syft.v1.IId>|null} [return_ids] Operation return_ids
-                 * @property {Array.<syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder>|null} [return_placeholders] Operation return_placeholders
+                 * @interface IComputationAction
+                 * @property {string|null} [command] ComputationAction command
+                 * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [owner_pointer] ComputationAction owner_pointer
+                 * @property {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null} [owner_placeholder] ComputationAction owner_placeholder
+                 * @property {syft_proto.types.torch.v1.ITorchTensor|null} [owner_tensor] ComputationAction owner_tensor
+                 * @property {Array.<syft_proto.types.syft.v1.IArg>|null} [args] ComputationAction args
+                 * @property {Object.<string,syft_proto.types.syft.v1.IArg>|null} [kwargs] ComputationAction kwargs
+                 * @property {Array.<syft_proto.types.syft.v1.IId>|null} [return_ids] ComputationAction return_ids
+                 * @property {Array.<syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder>|null} [return_placeholders] ComputationAction return_placeholders
                  */
 
                 /**
-                 * Constructs a new Operation.
+                 * Constructs a new ComputationAction.
                  * @memberof syft_proto.execution.v1
-                 * @classdesc Represents an Operation.
-                 * @implements IOperation
+                 * @classdesc Represents a ComputationAction.
+                 * @implements IComputationAction
                  * @constructor
-                 * @param {syft_proto.execution.v1.IOperation=} [properties] Properties to set
+                 * @param {syft_proto.execution.v1.IComputationAction=} [properties] Properties to set
                  */
-                function Operation(properties) {
+                function ComputationAction(properties) {
                     this.args = [];
                     this.kwargs = {};
                     this.return_ids = [];
@@ -72,105 +72,105 @@ $root.syft_proto = (function() {
                 }
 
                 /**
-                 * Operation command.
+                 * ComputationAction command.
                  * @member {string} command
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                Operation.prototype.command = "";
+                ComputationAction.prototype.command = "";
 
                 /**
-                 * Operation owner_pointer.
+                 * ComputationAction owner_pointer.
                  * @member {syft_proto.generic.pointers.v1.IPointerTensor|null|undefined} owner_pointer
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                Operation.prototype.owner_pointer = null;
+                ComputationAction.prototype.owner_pointer = null;
 
                 /**
-                 * Operation owner_placeholder.
+                 * ComputationAction owner_placeholder.
                  * @member {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null|undefined} owner_placeholder
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                Operation.prototype.owner_placeholder = null;
+                ComputationAction.prototype.owner_placeholder = null;
 
                 /**
-                 * Operation owner_tensor.
+                 * ComputationAction owner_tensor.
                  * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} owner_tensor
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                Operation.prototype.owner_tensor = null;
+                ComputationAction.prototype.owner_tensor = null;
 
                 /**
-                 * Operation args.
+                 * ComputationAction args.
                  * @member {Array.<syft_proto.types.syft.v1.IArg>} args
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                Operation.prototype.args = $util.emptyArray;
+                ComputationAction.prototype.args = $util.emptyArray;
 
                 /**
-                 * Operation kwargs.
+                 * ComputationAction kwargs.
                  * @member {Object.<string,syft_proto.types.syft.v1.IArg>} kwargs
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                Operation.prototype.kwargs = $util.emptyObject;
+                ComputationAction.prototype.kwargs = $util.emptyObject;
 
                 /**
-                 * Operation return_ids.
+                 * ComputationAction return_ids.
                  * @member {Array.<syft_proto.types.syft.v1.IId>} return_ids
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                Operation.prototype.return_ids = $util.emptyArray;
+                ComputationAction.prototype.return_ids = $util.emptyArray;
 
                 /**
-                 * Operation return_placeholders.
+                 * ComputationAction return_placeholders.
                  * @member {Array.<syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder>} return_placeholders
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                Operation.prototype.return_placeholders = $util.emptyArray;
+                ComputationAction.prototype.return_placeholders = $util.emptyArray;
 
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
                 /**
-                 * Operation owner.
+                 * ComputationAction owner.
                  * @member {"owner_pointer"|"owner_placeholder"|"owner_tensor"|undefined} owner
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                Object.defineProperty(Operation.prototype, "owner", {
+                Object.defineProperty(ComputationAction.prototype, "owner", {
                     get: $util.oneOfGetter($oneOfFields = ["owner_pointer", "owner_placeholder", "owner_tensor"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 /**
-                 * Creates a new Operation instance using the specified properties.
+                 * Creates a new ComputationAction instance using the specified properties.
                  * @function create
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @static
-                 * @param {syft_proto.execution.v1.IOperation=} [properties] Properties to set
-                 * @returns {syft_proto.execution.v1.Operation} Operation instance
+                 * @param {syft_proto.execution.v1.IComputationAction=} [properties] Properties to set
+                 * @returns {syft_proto.execution.v1.ComputationAction} ComputationAction instance
                  */
-                Operation.create = function create(properties) {
-                    return new Operation(properties);
+                ComputationAction.create = function create(properties) {
+                    return new ComputationAction(properties);
                 };
 
                 /**
-                 * Encodes the specified Operation message. Does not implicitly {@link syft_proto.execution.v1.Operation.verify|verify} messages.
+                 * Encodes the specified ComputationAction message. Does not implicitly {@link syft_proto.execution.v1.ComputationAction.verify|verify} messages.
                  * @function encode
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @static
-                 * @param {syft_proto.execution.v1.IOperation} message Operation message or plain object to encode
+                 * @param {syft_proto.execution.v1.IComputationAction} message ComputationAction message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                Operation.encode = function encode(message, writer) {
+                ComputationAction.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
                     if (message.command != null && message.hasOwnProperty("command"))
@@ -199,33 +199,33 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Encodes the specified Operation message, length delimited. Does not implicitly {@link syft_proto.execution.v1.Operation.verify|verify} messages.
+                 * Encodes the specified ComputationAction message, length delimited. Does not implicitly {@link syft_proto.execution.v1.ComputationAction.verify|verify} messages.
                  * @function encodeDelimited
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @static
-                 * @param {syft_proto.execution.v1.IOperation} message Operation message or plain object to encode
+                 * @param {syft_proto.execution.v1.IComputationAction} message ComputationAction message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                Operation.encodeDelimited = function encodeDelimited(message, writer) {
+                ComputationAction.encodeDelimited = function encodeDelimited(message, writer) {
                     return this.encode(message, writer).ldelim();
                 };
 
                 /**
-                 * Decodes an Operation message from the specified reader or buffer.
+                 * Decodes a ComputationAction message from the specified reader or buffer.
                  * @function decode
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {syft_proto.execution.v1.Operation} Operation
+                 * @returns {syft_proto.execution.v1.ComputationAction} ComputationAction
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Operation.decode = function decode(reader, length) {
+                ComputationAction.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.Operation(), key;
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.ComputationAction(), key;
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -273,30 +273,30 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Decodes an Operation message from the specified reader or buffer, length delimited.
+                 * Decodes a ComputationAction message from the specified reader or buffer, length delimited.
                  * @function decodeDelimited
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {syft_proto.execution.v1.Operation} Operation
+                 * @returns {syft_proto.execution.v1.ComputationAction} ComputationAction
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Operation.decodeDelimited = function decodeDelimited(reader) {
+                ComputationAction.decodeDelimited = function decodeDelimited(reader) {
                     if (!(reader instanceof $Reader))
                         reader = new $Reader(reader);
                     return this.decode(reader, reader.uint32());
                 };
 
                 /**
-                 * Verifies an Operation message.
+                 * Verifies a ComputationAction message.
                  * @function verify
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                Operation.verify = function verify(message) {
+                ComputationAction.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     var properties = {};
@@ -372,71 +372,71 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Creates an Operation message from a plain object. Also converts values to their respective internal types.
+                 * Creates a ComputationAction message from a plain object. Also converts values to their respective internal types.
                  * @function fromObject
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @static
                  * @param {Object.<string,*>} object Plain object
-                 * @returns {syft_proto.execution.v1.Operation} Operation
+                 * @returns {syft_proto.execution.v1.ComputationAction} ComputationAction
                  */
-                Operation.fromObject = function fromObject(object) {
-                    if (object instanceof $root.syft_proto.execution.v1.Operation)
+                ComputationAction.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.execution.v1.ComputationAction)
                         return object;
-                    var message = new $root.syft_proto.execution.v1.Operation();
+                    var message = new $root.syft_proto.execution.v1.ComputationAction();
                     if (object.command != null)
                         message.command = String(object.command);
                     if (object.owner_pointer != null) {
                         if (typeof object.owner_pointer !== "object")
-                            throw TypeError(".syft_proto.execution.v1.Operation.owner_pointer: object expected");
+                            throw TypeError(".syft_proto.execution.v1.ComputationAction.owner_pointer: object expected");
                         message.owner_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.fromObject(object.owner_pointer);
                     }
                     if (object.owner_placeholder != null) {
                         if (typeof object.owner_placeholder !== "object")
-                            throw TypeError(".syft_proto.execution.v1.Operation.owner_placeholder: object expected");
+                            throw TypeError(".syft_proto.execution.v1.ComputationAction.owner_placeholder: object expected");
                         message.owner_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.fromObject(object.owner_placeholder);
                     }
                     if (object.owner_tensor != null) {
                         if (typeof object.owner_tensor !== "object")
-                            throw TypeError(".syft_proto.execution.v1.Operation.owner_tensor: object expected");
+                            throw TypeError(".syft_proto.execution.v1.ComputationAction.owner_tensor: object expected");
                         message.owner_tensor = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.owner_tensor);
                     }
                     if (object.args) {
                         if (!Array.isArray(object.args))
-                            throw TypeError(".syft_proto.execution.v1.Operation.args: array expected");
+                            throw TypeError(".syft_proto.execution.v1.ComputationAction.args: array expected");
                         message.args = [];
                         for (var i = 0; i < object.args.length; ++i) {
                             if (typeof object.args[i] !== "object")
-                                throw TypeError(".syft_proto.execution.v1.Operation.args: object expected");
+                                throw TypeError(".syft_proto.execution.v1.ComputationAction.args: object expected");
                             message.args[i] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.args[i]);
                         }
                     }
                     if (object.kwargs) {
                         if (typeof object.kwargs !== "object")
-                            throw TypeError(".syft_proto.execution.v1.Operation.kwargs: object expected");
+                            throw TypeError(".syft_proto.execution.v1.ComputationAction.kwargs: object expected");
                         message.kwargs = {};
                         for (var keys = Object.keys(object.kwargs), i = 0; i < keys.length; ++i) {
                             if (typeof object.kwargs[keys[i]] !== "object")
-                                throw TypeError(".syft_proto.execution.v1.Operation.kwargs: object expected");
+                                throw TypeError(".syft_proto.execution.v1.ComputationAction.kwargs: object expected");
                             message.kwargs[keys[i]] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.kwargs[keys[i]]);
                         }
                     }
                     if (object.return_ids) {
                         if (!Array.isArray(object.return_ids))
-                            throw TypeError(".syft_proto.execution.v1.Operation.return_ids: array expected");
+                            throw TypeError(".syft_proto.execution.v1.ComputationAction.return_ids: array expected");
                         message.return_ids = [];
                         for (var i = 0; i < object.return_ids.length; ++i) {
                             if (typeof object.return_ids[i] !== "object")
-                                throw TypeError(".syft_proto.execution.v1.Operation.return_ids: object expected");
+                                throw TypeError(".syft_proto.execution.v1.ComputationAction.return_ids: object expected");
                             message.return_ids[i] = $root.syft_proto.types.syft.v1.Id.fromObject(object.return_ids[i]);
                         }
                     }
                     if (object.return_placeholders) {
                         if (!Array.isArray(object.return_placeholders))
-                            throw TypeError(".syft_proto.execution.v1.Operation.return_placeholders: array expected");
+                            throw TypeError(".syft_proto.execution.v1.ComputationAction.return_placeholders: array expected");
                         message.return_placeholders = [];
                         for (var i = 0; i < object.return_placeholders.length; ++i) {
                             if (typeof object.return_placeholders[i] !== "object")
-                                throw TypeError(".syft_proto.execution.v1.Operation.return_placeholders: object expected");
+                                throw TypeError(".syft_proto.execution.v1.ComputationAction.return_placeholders: object expected");
                             message.return_placeholders[i] = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.fromObject(object.return_placeholders[i]);
                         }
                     }
@@ -444,15 +444,15 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Creates a plain object from an Operation message. Also converts values to other types if specified.
+                 * Creates a plain object from a ComputationAction message. Also converts values to other types if specified.
                  * @function toObject
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @static
-                 * @param {syft_proto.execution.v1.Operation} message Operation
+                 * @param {syft_proto.execution.v1.ComputationAction} message ComputationAction
                  * @param {$protobuf.IConversionOptions} [options] Conversion options
                  * @returns {Object.<string,*>} Plain object
                  */
-                Operation.toObject = function toObject(message, options) {
+                ComputationAction.toObject = function toObject(message, options) {
                     if (!options)
                         options = {};
                     var object = {};
@@ -507,17 +507,17 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Converts this Operation to JSON.
+                 * Converts this ComputationAction to JSON.
                  * @function toJSON
-                 * @memberof syft_proto.execution.v1.Operation
+                 * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  * @returns {Object.<string,*>} JSON object
                  */
-                Operation.prototype.toJSON = function toJSON() {
+                ComputationAction.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
                 };
 
-                return Operation;
+                return ComputationAction;
             })();
 
             v1.Plan = (function() {
@@ -527,7 +527,7 @@ $root.syft_proto = (function() {
                  * @memberof syft_proto.execution.v1
                  * @interface IPlan
                  * @property {syft_proto.types.syft.v1.IId|null} [id] Plan id
-                 * @property {Array.<syft_proto.execution.v1.IOperation>|null} [operations] Plan operations
+                 * @property {Array.<syft_proto.execution.v1.IComputationAction>|null} [operations] Plan operations
                  * @property {syft_proto.execution.v1.IState|null} [state] Plan state
                  * @property {boolean|null} [include_state] Plan include_state
                  * @property {boolean|null} [is_built] Plan is_built
@@ -565,7 +565,7 @@ $root.syft_proto = (function() {
 
                 /**
                  * Plan operations.
-                 * @member {Array.<syft_proto.execution.v1.IOperation>} operations
+                 * @member {Array.<syft_proto.execution.v1.IComputationAction>} operations
                  * @memberof syft_proto.execution.v1.Plan
                  * @instance
                  */
@@ -655,7 +655,7 @@ $root.syft_proto = (function() {
                         $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.operations != null && message.operations.length)
                         for (var i = 0; i < message.operations.length; ++i)
-                            $root.syft_proto.execution.v1.Operation.encode(message.operations[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                            $root.syft_proto.execution.v1.ComputationAction.encode(message.operations[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.state != null && message.hasOwnProperty("state"))
                         $root.syft_proto.execution.v1.State.encode(message.state, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     if (message.include_state != null && message.hasOwnProperty("include_state"))
@@ -712,7 +712,7 @@ $root.syft_proto = (function() {
                         case 2:
                             if (!(message.operations && message.operations.length))
                                 message.operations = [];
-                            message.operations.push($root.syft_proto.execution.v1.Operation.decode(reader, reader.uint32()));
+                            message.operations.push($root.syft_proto.execution.v1.ComputationAction.decode(reader, reader.uint32()));
                             break;
                         case 3:
                             message.state = $root.syft_proto.execution.v1.State.decode(reader, reader.uint32());
@@ -783,7 +783,7 @@ $root.syft_proto = (function() {
                         if (!Array.isArray(message.operations))
                             return "operations: array expected";
                         for (var i = 0; i < message.operations.length; ++i) {
-                            var error = $root.syft_proto.execution.v1.Operation.verify(message.operations[i]);
+                            var error = $root.syft_proto.execution.v1.ComputationAction.verify(message.operations[i]);
                             if (error)
                                 return "operations." + error;
                         }
@@ -848,7 +848,7 @@ $root.syft_proto = (function() {
                         for (var i = 0; i < object.operations.length; ++i) {
                             if (typeof object.operations[i] !== "object")
                                 throw TypeError(".syft_proto.execution.v1.Plan.operations: object expected");
-                            message.operations[i] = $root.syft_proto.execution.v1.Operation.fromObject(object.operations[i]);
+                            message.operations[i] = $root.syft_proto.execution.v1.ComputationAction.fromObject(object.operations[i]);
                         }
                     }
                     if (object.state != null) {
@@ -915,7 +915,7 @@ $root.syft_proto = (function() {
                     if (message.operations && message.operations.length) {
                         object.operations = [];
                         for (var j = 0; j < message.operations.length; ++j)
-                            object.operations[j] = $root.syft_proto.execution.v1.Operation.toObject(message.operations[j], options);
+                            object.operations[j] = $root.syft_proto.execution.v1.ComputationAction.toObject(message.operations[j], options);
                     }
                     if (message.state != null && message.hasOwnProperty("state"))
                         object.state = $root.syft_proto.execution.v1.State.toObject(message.state, options);
@@ -7275,7 +7275,7 @@ $root.syft_proto = (function() {
                  * Properties of an OperationMessage.
                  * @memberof syft_proto.messaging.v1
                  * @interface IOperationMessage
-                 * @property {syft_proto.execution.v1.IOperation|null} [operation] OperationMessage operation
+                 * @property {syft_proto.execution.v1.IComputationAction|null} [action] OperationMessage action
                  */
 
                 /**
@@ -7294,12 +7294,12 @@ $root.syft_proto = (function() {
                 }
 
                 /**
-                 * OperationMessage operation.
-                 * @member {syft_proto.execution.v1.IOperation|null|undefined} operation
+                 * OperationMessage action.
+                 * @member {syft_proto.execution.v1.IComputationAction|null|undefined} action
                  * @memberof syft_proto.messaging.v1.OperationMessage
                  * @instance
                  */
-                OperationMessage.prototype.operation = null;
+                OperationMessage.prototype.action = null;
 
                 /**
                  * Creates a new OperationMessage instance using the specified properties.
@@ -7325,8 +7325,8 @@ $root.syft_proto = (function() {
                 OperationMessage.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.operation != null && message.hasOwnProperty("operation"))
-                        $root.syft_proto.execution.v1.Operation.encode(message.operation, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.action != null && message.hasOwnProperty("action"))
+                        $root.syft_proto.execution.v1.ComputationAction.encode(message.action, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     return writer;
                 };
 
@@ -7362,7 +7362,7 @@ $root.syft_proto = (function() {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.operation = $root.syft_proto.execution.v1.Operation.decode(reader, reader.uint32());
+                            message.action = $root.syft_proto.execution.v1.ComputationAction.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -7399,10 +7399,10 @@ $root.syft_proto = (function() {
                 OperationMessage.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.operation != null && message.hasOwnProperty("operation")) {
-                        var error = $root.syft_proto.execution.v1.Operation.verify(message.operation);
+                    if (message.action != null && message.hasOwnProperty("action")) {
+                        var error = $root.syft_proto.execution.v1.ComputationAction.verify(message.action);
                         if (error)
-                            return "operation." + error;
+                            return "action." + error;
                     }
                     return null;
                 };
@@ -7419,10 +7419,10 @@ $root.syft_proto = (function() {
                     if (object instanceof $root.syft_proto.messaging.v1.OperationMessage)
                         return object;
                     var message = new $root.syft_proto.messaging.v1.OperationMessage();
-                    if (object.operation != null) {
-                        if (typeof object.operation !== "object")
-                            throw TypeError(".syft_proto.messaging.v1.OperationMessage.operation: object expected");
-                        message.operation = $root.syft_proto.execution.v1.Operation.fromObject(object.operation);
+                    if (object.action != null) {
+                        if (typeof object.action !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.OperationMessage.action: object expected");
+                        message.action = $root.syft_proto.execution.v1.ComputationAction.fromObject(object.action);
                     }
                     return message;
                 };
@@ -7441,9 +7441,9 @@ $root.syft_proto = (function() {
                         options = {};
                     var object = {};
                     if (options.defaults)
-                        object.operation = null;
-                    if (message.operation != null && message.hasOwnProperty("operation"))
-                        object.operation = $root.syft_proto.execution.v1.Operation.toObject(message.operation, options);
+                        object.action = null;
+                    if (message.action != null && message.hasOwnProperty("action"))
+                        object.action = $root.syft_proto.execution.v1.ComputationAction.toObject(message.action, options);
                     return object;
                 };
 

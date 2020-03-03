@@ -8,136 +8,136 @@ export namespace syft_proto {
         /** Namespace v1. */
         namespace v1 {
 
-            /** Properties of an Operation. */
-            interface IOperation {
+            /** Properties of a ComputationAction. */
+            interface IComputationAction {
 
-                /** Operation command */
+                /** ComputationAction command */
                 command?: (string|null);
 
-                /** Operation owner_pointer */
+                /** ComputationAction owner_pointer */
                 owner_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
-                /** Operation owner_placeholder */
+                /** ComputationAction owner_placeholder */
                 owner_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
 
-                /** Operation owner_tensor */
+                /** ComputationAction owner_tensor */
                 owner_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
 
-                /** Operation args */
+                /** ComputationAction args */
                 args?: (syft_proto.types.syft.v1.IArg[]|null);
 
-                /** Operation kwargs */
+                /** ComputationAction kwargs */
                 kwargs?: ({ [k: string]: syft_proto.types.syft.v1.IArg }|null);
 
-                /** Operation return_ids */
+                /** ComputationAction return_ids */
                 return_ids?: (syft_proto.types.syft.v1.IId[]|null);
 
-                /** Operation return_placeholders */
+                /** ComputationAction return_placeholders */
                 return_placeholders?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[]|null);
             }
 
-            /** Represents an Operation. */
-            class Operation implements IOperation {
+            /** Represents a ComputationAction. */
+            class ComputationAction implements IComputationAction {
 
                 /**
-                 * Constructs a new Operation.
+                 * Constructs a new ComputationAction.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: syft_proto.execution.v1.IOperation);
+                constructor(properties?: syft_proto.execution.v1.IComputationAction);
 
-                /** Operation command. */
+                /** ComputationAction command. */
                 public command: string;
 
-                /** Operation owner_pointer. */
+                /** ComputationAction owner_pointer. */
                 public owner_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
-                /** Operation owner_placeholder. */
+                /** ComputationAction owner_placeholder. */
                 public owner_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
 
-                /** Operation owner_tensor. */
+                /** ComputationAction owner_tensor. */
                 public owner_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
 
-                /** Operation args. */
+                /** ComputationAction args. */
                 public args: syft_proto.types.syft.v1.IArg[];
 
-                /** Operation kwargs. */
+                /** ComputationAction kwargs. */
                 public kwargs: { [k: string]: syft_proto.types.syft.v1.IArg };
 
-                /** Operation return_ids. */
+                /** ComputationAction return_ids. */
                 public return_ids: syft_proto.types.syft.v1.IId[];
 
-                /** Operation return_placeholders. */
+                /** ComputationAction return_placeholders. */
                 public return_placeholders: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[];
 
-                /** Operation owner. */
+                /** ComputationAction owner. */
                 public owner?: ("owner_pointer"|"owner_placeholder"|"owner_tensor");
 
                 /**
-                 * Creates a new Operation instance using the specified properties.
+                 * Creates a new ComputationAction instance using the specified properties.
                  * @param [properties] Properties to set
-                 * @returns Operation instance
+                 * @returns ComputationAction instance
                  */
-                public static create(properties?: syft_proto.execution.v1.IOperation): syft_proto.execution.v1.Operation;
+                public static create(properties?: syft_proto.execution.v1.IComputationAction): syft_proto.execution.v1.ComputationAction;
 
                 /**
-                 * Encodes the specified Operation message. Does not implicitly {@link syft_proto.execution.v1.Operation.verify|verify} messages.
-                 * @param message Operation message or plain object to encode
+                 * Encodes the specified ComputationAction message. Does not implicitly {@link syft_proto.execution.v1.ComputationAction.verify|verify} messages.
+                 * @param message ComputationAction message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: syft_proto.execution.v1.IOperation, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encode(message: syft_proto.execution.v1.IComputationAction, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Encodes the specified Operation message, length delimited. Does not implicitly {@link syft_proto.execution.v1.Operation.verify|verify} messages.
-                 * @param message Operation message or plain object to encode
+                 * Encodes the specified ComputationAction message, length delimited. Does not implicitly {@link syft_proto.execution.v1.ComputationAction.verify|verify} messages.
+                 * @param message ComputationAction message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: syft_proto.execution.v1.IOperation, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: syft_proto.execution.v1.IComputationAction, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Decodes an Operation message from the specified reader or buffer.
+                 * Decodes a ComputationAction message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns Operation
+                 * @returns ComputationAction
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.Operation;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.ComputationAction;
 
                 /**
-                 * Decodes an Operation message from the specified reader or buffer, length delimited.
+                 * Decodes a ComputationAction message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns Operation
+                 * @returns ComputationAction
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.Operation;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.ComputationAction;
 
                 /**
-                 * Verifies an Operation message.
+                 * Verifies a ComputationAction message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
                 public static verify(message: { [k: string]: any }): (string|null);
 
                 /**
-                 * Creates an Operation message from a plain object. Also converts values to their respective internal types.
+                 * Creates a ComputationAction message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
-                 * @returns Operation
+                 * @returns ComputationAction
                  */
-                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.Operation;
+                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.ComputationAction;
 
                 /**
-                 * Creates a plain object from an Operation message. Also converts values to other types if specified.
-                 * @param message Operation
+                 * Creates a plain object from a ComputationAction message. Also converts values to other types if specified.
+                 * @param message ComputationAction
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: syft_proto.execution.v1.Operation, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public static toObject(message: syft_proto.execution.v1.ComputationAction, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
-                 * Converts this Operation to JSON.
+                 * Converts this ComputationAction to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
@@ -150,7 +150,7 @@ export namespace syft_proto {
                 id?: (syft_proto.types.syft.v1.IId|null);
 
                 /** Plan operations */
-                operations?: (syft_proto.execution.v1.IOperation[]|null);
+                operations?: (syft_proto.execution.v1.IComputationAction[]|null);
 
                 /** Plan state */
                 state?: (syft_proto.execution.v1.IState|null);
@@ -187,7 +187,7 @@ export namespace syft_proto {
                 public id?: (syft_proto.types.syft.v1.IId|null);
 
                 /** Plan operations. */
-                public operations: syft_proto.execution.v1.IOperation[];
+                public operations: syft_proto.execution.v1.IComputationAction[];
 
                 /** Plan state. */
                 public state?: (syft_proto.execution.v1.IState|null);
@@ -2597,8 +2597,8 @@ export namespace syft_proto {
             /** Properties of an OperationMessage. */
             interface IOperationMessage {
 
-                /** OperationMessage operation */
-                operation?: (syft_proto.execution.v1.IOperation|null);
+                /** OperationMessage action */
+                action?: (syft_proto.execution.v1.IComputationAction|null);
             }
 
             /** Represents an OperationMessage. */
@@ -2610,8 +2610,8 @@ export namespace syft_proto {
                  */
                 constructor(properties?: syft_proto.messaging.v1.IOperationMessage);
 
-                /** OperationMessage operation. */
-                public operation?: (syft_proto.execution.v1.IOperation|null);
+                /** OperationMessage action. */
+                public action?: (syft_proto.execution.v1.IComputationAction|null);
 
                 /**
                  * Creates a new OperationMessage instance using the specified properties.

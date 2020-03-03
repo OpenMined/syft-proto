@@ -180,7 +180,7 @@
     "syft.messaging.message.ExecuteWorkerFunctionMessage": {
       "code": 53
     },
-    "syft.execution.operation.Operation": {
+    "syft.execution.computation.ComputationAction": {
       "code": 54
     }
   }

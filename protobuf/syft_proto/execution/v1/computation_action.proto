@@ -9,7 +9,7 @@ import "syft_proto/types/syft/v1/arg.proto";
 import "syft_proto/types/syft/v1/id.proto";
 import "syft_proto/types/torch/v1/tensor.proto";
 
-message Operation {
+message ComputationAction {
     string command = 1;
     oneof owner {
         syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2;
