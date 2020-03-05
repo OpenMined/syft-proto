@@ -1,19 +1,8 @@
 name: Publish PyPI Package
 
 on:
-  push:
-    branches:
-    - master
-    paths:
-    - 'syft_proto/**'
-    - 'proto.json'
-    - 'setup.cfg'
-    - '*.py'
-    - 'LICENSE'
-    - 'README.md'
-
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   build:
