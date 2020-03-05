@@ -180,7 +180,7 @@
     "syft.messaging.message.ExecuteWorkerFunctionMessage": {
       "code": 53
     },
-    "int": {
+    "bigInt": {
       "code": 54
     }
   }
