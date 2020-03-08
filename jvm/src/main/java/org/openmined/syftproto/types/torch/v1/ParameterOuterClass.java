@@ -20,12 +20,10 @@ public final class ParameterOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-     * @return The id.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId();
     /**
@@ -35,12 +33,10 @@ public final class ParameterOuterClass {
 
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 2[json_name = "tensor"];</code>
-     * @return Whether the tensor field is set.
      */
     boolean hasTensor();
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 2[json_name = "tensor"];</code>
-     * @return The tensor.
      */
     org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTensor();
     /**
@@ -50,18 +46,15 @@ public final class ParameterOuterClass {
 
     /**
      * <code>bool requires_grad = 3[json_name = "requiresGrad"];</code>
-     * @return The requiresGrad.
      */
     boolean getRequiresGrad();
 
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor grad = 4[json_name = "grad"];</code>
-     * @return Whether the grad field is set.
      */
     boolean hasGrad();
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor grad = 4[json_name = "grad"];</code>
-     * @return The grad.
      */
     org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getGrad();
     /**
@@ -194,14 +187,12 @@ public final class ParameterOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id id_;
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-     * @return Whether the id field is set.
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-     * @return The id.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
@@ -217,14 +208,12 @@ public final class ParameterOuterClass {
     private org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor tensor_;
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 2[json_name = "tensor"];</code>
-     * @return Whether the tensor field is set.
      */
     public boolean hasTensor() {
       return tensor_ != null;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 2[json_name = "tensor"];</code>
-     * @return The tensor.
      */
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTensor() {
       return tensor_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : tensor_;
@@ -240,7 +229,6 @@ public final class ParameterOuterClass {
     private boolean requiresGrad_;
     /**
      * <code>bool requires_grad = 3[json_name = "requiresGrad"];</code>
-     * @return The requiresGrad.
      */
     public boolean getRequiresGrad() {
       return requiresGrad_;
@@ -250,14 +238,12 @@ public final class ParameterOuterClass {
     private org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor grad_;
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor grad = 4[json_name = "grad"];</code>
-     * @return Whether the grad field is set.
      */
     public boolean hasGrad() {
       return grad_ != null;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor grad = 4[json_name = "grad"];</code>
-     * @return The grad.
      */
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getGrad() {
       return grad_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : grad_;
@@ -667,14 +653,12 @@ public final class ParameterOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> idBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-       * @return Whether the id field is set.
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-       * @return The id.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
         if (idBuilder_ == null) {
@@ -786,14 +770,12 @@ public final class ParameterOuterClass {
           org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> tensorBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 2[json_name = "tensor"];</code>
-       * @return Whether the tensor field is set.
        */
       public boolean hasTensor() {
         return tensorBuilder_ != null || tensor_ != null;
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 2[json_name = "tensor"];</code>
-       * @return The tensor.
        */
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTensor() {
         if (tensorBuilder_ == null) {
@@ -903,15 +885,12 @@ public final class ParameterOuterClass {
       private boolean requiresGrad_ ;
       /**
        * <code>bool requires_grad = 3[json_name = "requiresGrad"];</code>
-       * @return The requiresGrad.
        */
       public boolean getRequiresGrad() {
         return requiresGrad_;
       }
       /**
        * <code>bool requires_grad = 3[json_name = "requiresGrad"];</code>
-       * @param value The requiresGrad to set.
-       * @return This builder for chaining.
        */
       public Builder setRequiresGrad(boolean value) {
         
@@ -921,7 +900,6 @@ public final class ParameterOuterClass {
       }
       /**
        * <code>bool requires_grad = 3[json_name = "requiresGrad"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearRequiresGrad() {
         
@@ -935,14 +913,12 @@ public final class ParameterOuterClass {
           org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> gradBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor grad = 4[json_name = "grad"];</code>
-       * @return Whether the grad field is set.
        */
       public boolean hasGrad() {
         return gradBuilder_ != null || grad_ != null;
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor grad = 4[json_name = "grad"];</code>
-       * @return The grad.
        */
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getGrad() {
         if (gradBuilder_ == null) {

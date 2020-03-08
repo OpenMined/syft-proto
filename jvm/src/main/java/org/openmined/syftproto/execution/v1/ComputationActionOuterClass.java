@@ -20,24 +20,20 @@ public final class ComputationActionOuterClass {
 
     /**
      * <code>string command = 1[json_name = "command"];</code>
-     * @return The command.
      */
     java.lang.String getCommand();
     /**
      * <code>string command = 1[json_name = "command"];</code>
-     * @return The bytes for command.
      */
     com.google.protobuf.ByteString
         getCommandBytes();
 
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
-     * @return Whether the ownerPointer field is set.
      */
     boolean hasOwnerPointer();
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
-     * @return The ownerPointer.
      */
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getOwnerPointer();
     /**
@@ -47,12 +43,10 @@ public final class ComputationActionOuterClass {
 
     /**
      * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
-     * @return Whether the ownerPlaceholder field is set.
      */
     boolean hasOwnerPlaceholder();
     /**
      * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
-     * @return The ownerPlaceholder.
      */
     org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getOwnerPlaceholder();
     /**
@@ -62,12 +56,10 @@ public final class ComputationActionOuterClass {
 
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
-     * @return Whether the ownerTensor field is set.
      */
     boolean hasOwnerTensor();
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
-     * @return The ownerTensor.
      */
     org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getOwnerTensor();
     /**
@@ -377,8 +369,7 @@ public final class ComputationActionOuterClass {
     private int ownerCase_ = 0;
     private java.lang.Object owner_;
     public enum OwnerCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       OWNER_POINTER(2),
       OWNER_PLACEHOLDER(3),
       OWNER_TENSOR(4),
@@ -388,8 +379,6 @@ public final class ComputationActionOuterClass {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -421,7 +410,6 @@ public final class ComputationActionOuterClass {
     private volatile java.lang.Object command_;
     /**
      * <code>string command = 1[json_name = "command"];</code>
-     * @return The command.
      */
     public java.lang.String getCommand() {
       java.lang.Object ref = command_;
@@ -437,7 +425,6 @@ public final class ComputationActionOuterClass {
     }
     /**
      * <code>string command = 1[json_name = "command"];</code>
-     * @return The bytes for command.
      */
     public com.google.protobuf.ByteString
         getCommandBytes() {
@@ -456,14 +443,12 @@ public final class ComputationActionOuterClass {
     public static final int OWNER_POINTER_FIELD_NUMBER = 2;
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
-     * @return Whether the ownerPointer field is set.
      */
     public boolean hasOwnerPointer() {
       return ownerCase_ == 2;
     }
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
-     * @return The ownerPointer.
      */
     public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getOwnerPointer() {
       if (ownerCase_ == 2) {
@@ -484,14 +469,12 @@ public final class ComputationActionOuterClass {
     public static final int OWNER_PLACEHOLDER_FIELD_NUMBER = 3;
     /**
      * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
-     * @return Whether the ownerPlaceholder field is set.
      */
     public boolean hasOwnerPlaceholder() {
       return ownerCase_ == 3;
     }
     /**
      * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
-     * @return The ownerPlaceholder.
      */
     public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getOwnerPlaceholder() {
       if (ownerCase_ == 3) {
@@ -512,14 +495,12 @@ public final class ComputationActionOuterClass {
     public static final int OWNER_TENSOR_FIELD_NUMBER = 4;
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
-     * @return Whether the ownerTensor field is set.
      */
     public boolean hasOwnerTensor() {
       return ownerCase_ == 4;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
-     * @return The ownerTensor.
      */
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getOwnerTensor() {
       if (ownerCase_ == 4) {
@@ -1349,7 +1330,6 @@ public final class ComputationActionOuterClass {
       private java.lang.Object command_ = "";
       /**
        * <code>string command = 1[json_name = "command"];</code>
-       * @return The command.
        */
       public java.lang.String getCommand() {
         java.lang.Object ref = command_;
@@ -1365,7 +1345,6 @@ public final class ComputationActionOuterClass {
       }
       /**
        * <code>string command = 1[json_name = "command"];</code>
-       * @return The bytes for command.
        */
       public com.google.protobuf.ByteString
           getCommandBytes() {
@@ -1382,8 +1361,6 @@ public final class ComputationActionOuterClass {
       }
       /**
        * <code>string command = 1[json_name = "command"];</code>
-       * @param value The command to set.
-       * @return This builder for chaining.
        */
       public Builder setCommand(
           java.lang.String value) {
@@ -1397,7 +1374,6 @@ public final class ComputationActionOuterClass {
       }
       /**
        * <code>string command = 1[json_name = "command"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearCommand() {
         
@@ -1407,8 +1383,6 @@ public final class ComputationActionOuterClass {
       }
       /**
        * <code>string command = 1[json_name = "command"];</code>
-       * @param value The bytes for command to set.
-       * @return This builder for chaining.
        */
       public Builder setCommandBytes(
           com.google.protobuf.ByteString value) {
@@ -1426,14 +1400,12 @@ public final class ComputationActionOuterClass {
           org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder> ownerPointerBuilder_;
       /**
        * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
-       * @return Whether the ownerPointer field is set.
        */
       public boolean hasOwnerPointer() {
         return ownerCase_ == 2;
       }
       /**
        * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
-       * @return The ownerPointer.
        */
       public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getOwnerPointer() {
         if (ownerPointerBuilder_ == null) {
@@ -1564,14 +1536,12 @@ public final class ComputationActionOuterClass {
           org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder> ownerPlaceholderBuilder_;
       /**
        * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
-       * @return Whether the ownerPlaceholder field is set.
        */
       public boolean hasOwnerPlaceholder() {
         return ownerCase_ == 3;
       }
       /**
        * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
-       * @return The ownerPlaceholder.
        */
       public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getOwnerPlaceholder() {
         if (ownerPlaceholderBuilder_ == null) {
@@ -1702,14 +1672,12 @@ public final class ComputationActionOuterClass {
           org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> ownerTensorBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
-       * @return Whether the ownerTensor field is set.
        */
       public boolean hasOwnerTensor() {
         return ownerCase_ == 4;
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
-       * @return The ownerTensor.
        */
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getOwnerTensor() {
         if (ownerTensorBuilder_ == null) {

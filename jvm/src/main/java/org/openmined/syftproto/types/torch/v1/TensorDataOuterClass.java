@@ -20,12 +20,10 @@ public final class TensorDataOuterClass {
 
     /**
      * <code>.syft_proto.types.torch.v1.Size shape = 1[json_name = "shape"];</code>
-     * @return Whether the shape field is set.
      */
     boolean hasShape();
     /**
      * <code>.syft_proto.types.torch.v1.Size shape = 1[json_name = "shape"];</code>
-     * @return The shape.
      */
     org.openmined.syftproto.types.torch.v1.SizeOuterClass.Size getShape();
     /**
@@ -35,31 +33,26 @@ public final class TensorDataOuterClass {
 
     /**
      * <code>string dtype = 2[json_name = "dtype"];</code>
-     * @return The dtype.
      */
     java.lang.String getDtype();
     /**
      * <code>string dtype = 2[json_name = "dtype"];</code>
-     * @return The bytes for dtype.
      */
     com.google.protobuf.ByteString
         getDtypeBytes();
 
     /**
      * <code>bool is_quantized = 3[json_name = "isQuantized"];</code>
-     * @return The isQuantized.
      */
     boolean getIsQuantized();
 
     /**
      * <code>float scale = 4[json_name = "scale"];</code>
-     * @return The scale.
      */
     float getScale();
 
     /**
      * <code>int32 zero_point = 5[json_name = "zeroPoint"];</code>
-     * @return The zeroPoint.
      */
     int getZeroPoint();
 
@@ -69,7 +62,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-     * @return A list containing the contentsUint8.
      */
     java.util.List<java.lang.Integer> getContentsUint8List();
     /**
@@ -78,7 +70,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-     * @return The count of contentsUint8.
      */
     int getContentsUint8Count();
     /**
@@ -87,76 +78,58 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsUint8 at the given index.
      */
     int getContentsUint8(int index);
 
     /**
      * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-     * @return A list containing the contentsInt8.
      */
     java.util.List<java.lang.Integer> getContentsInt8List();
     /**
      * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-     * @return The count of contentsInt8.
      */
     int getContentsInt8Count();
     /**
      * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsInt8 at the given index.
      */
     int getContentsInt8(int index);
 
     /**
      * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-     * @return A list containing the contentsInt16.
      */
     java.util.List<java.lang.Integer> getContentsInt16List();
     /**
      * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-     * @return The count of contentsInt16.
      */
     int getContentsInt16Count();
     /**
      * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsInt16 at the given index.
      */
     int getContentsInt16(int index);
 
     /**
      * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-     * @return A list containing the contentsInt32.
      */
     java.util.List<java.lang.Integer> getContentsInt32List();
     /**
      * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-     * @return The count of contentsInt32.
      */
     int getContentsInt32Count();
     /**
      * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsInt32 at the given index.
      */
     int getContentsInt32(int index);
 
     /**
      * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-     * @return A list containing the contentsInt64.
      */
     java.util.List<java.lang.Long> getContentsInt64List();
     /**
      * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-     * @return The count of contentsInt64.
      */
     int getContentsInt64Count();
     /**
      * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsInt64 at the given index.
      */
     long getContentsInt64(int index);
 
@@ -166,7 +139,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-     * @return A list containing the contentsFloat16.
      */
     java.util.List<java.lang.Float> getContentsFloat16List();
     /**
@@ -175,7 +147,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-     * @return The count of contentsFloat16.
      */
     int getContentsFloat16Count();
     /**
@@ -184,42 +155,32 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsFloat16 at the given index.
      */
     float getContentsFloat16(int index);
 
     /**
      * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-     * @return A list containing the contentsFloat32.
      */
     java.util.List<java.lang.Float> getContentsFloat32List();
     /**
      * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-     * @return The count of contentsFloat32.
      */
     int getContentsFloat32Count();
     /**
      * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsFloat32 at the given index.
      */
     float getContentsFloat32(int index);
 
     /**
      * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-     * @return A list containing the contentsFloat64.
      */
     java.util.List<java.lang.Double> getContentsFloat64List();
     /**
      * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-     * @return The count of contentsFloat64.
      */
     int getContentsFloat64Count();
     /**
      * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsFloat64 at the given index.
      */
     double getContentsFloat64(int index);
 
@@ -229,7 +190,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-     * @return A list containing the contentsBool.
      */
     java.util.List<java.lang.Boolean> getContentsBoolList();
     /**
@@ -238,7 +198,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-     * @return The count of contentsBool.
      */
     int getContentsBoolCount();
     /**
@@ -247,8 +206,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsBool at the given index.
      */
     boolean getContentsBool(int index);
 
@@ -258,7 +215,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-     * @return A list containing the contentsQint8.
      */
     java.util.List<java.lang.Integer> getContentsQint8List();
     /**
@@ -267,7 +223,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-     * @return The count of contentsQint8.
      */
     int getContentsQint8Count();
     /**
@@ -276,8 +231,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsQint8 at the given index.
      */
     int getContentsQint8(int index);
 
@@ -287,7 +240,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-     * @return A list containing the contentsQuint8.
      */
     java.util.List<java.lang.Integer> getContentsQuint8List();
     /**
@@ -296,7 +248,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-     * @return The count of contentsQuint8.
      */
     int getContentsQuint8Count();
     /**
@@ -305,8 +256,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsQuint8 at the given index.
      */
     int getContentsQuint8(int index);
 
@@ -316,7 +265,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-     * @return A list containing the contentsQint32.
      */
     java.util.List<java.lang.Integer> getContentsQint32List();
     /**
@@ -325,7 +273,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-     * @return The count of contentsQint32.
      */
     int getContentsQint32Count();
     /**
@@ -334,8 +281,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsQint32 at the given index.
      */
     int getContentsQint32(int index);
 
@@ -345,7 +290,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-     * @return A list containing the contentsBfloat16.
      */
     java.util.List<java.lang.Float> getContentsBfloat16List();
     /**
@@ -354,7 +298,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-     * @return The count of contentsBfloat16.
      */
     int getContentsBfloat16Count();
     /**
@@ -363,8 +306,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsBfloat16 at the given index.
      */
     float getContentsBfloat16(int index);
   }
@@ -810,14 +751,12 @@ public final class TensorDataOuterClass {
     private org.openmined.syftproto.types.torch.v1.SizeOuterClass.Size shape_;
     /**
      * <code>.syft_proto.types.torch.v1.Size shape = 1[json_name = "shape"];</code>
-     * @return Whether the shape field is set.
      */
     public boolean hasShape() {
       return shape_ != null;
     }
     /**
      * <code>.syft_proto.types.torch.v1.Size shape = 1[json_name = "shape"];</code>
-     * @return The shape.
      */
     public org.openmined.syftproto.types.torch.v1.SizeOuterClass.Size getShape() {
       return shape_ == null ? org.openmined.syftproto.types.torch.v1.SizeOuterClass.Size.getDefaultInstance() : shape_;
@@ -833,7 +772,6 @@ public final class TensorDataOuterClass {
     private volatile java.lang.Object dtype_;
     /**
      * <code>string dtype = 2[json_name = "dtype"];</code>
-     * @return The dtype.
      */
     public java.lang.String getDtype() {
       java.lang.Object ref = dtype_;
@@ -849,7 +787,6 @@ public final class TensorDataOuterClass {
     }
     /**
      * <code>string dtype = 2[json_name = "dtype"];</code>
-     * @return The bytes for dtype.
      */
     public com.google.protobuf.ByteString
         getDtypeBytes() {
@@ -869,7 +806,6 @@ public final class TensorDataOuterClass {
     private boolean isQuantized_;
     /**
      * <code>bool is_quantized = 3[json_name = "isQuantized"];</code>
-     * @return The isQuantized.
      */
     public boolean getIsQuantized() {
       return isQuantized_;
@@ -879,7 +815,6 @@ public final class TensorDataOuterClass {
     private float scale_;
     /**
      * <code>float scale = 4[json_name = "scale"];</code>
-     * @return The scale.
      */
     public float getScale() {
       return scale_;
@@ -889,7 +824,6 @@ public final class TensorDataOuterClass {
     private int zeroPoint_;
     /**
      * <code>int32 zero_point = 5[json_name = "zeroPoint"];</code>
-     * @return The zeroPoint.
      */
     public int getZeroPoint() {
       return zeroPoint_;
@@ -903,7 +837,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-     * @return A list containing the contentsUint8.
      */
     public java.util.List<java.lang.Integer>
         getContentsUint8List() {
@@ -915,7 +848,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-     * @return The count of contentsUint8.
      */
     public int getContentsUint8Count() {
       return contentsUint8_.size();
@@ -926,8 +858,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsUint8 at the given index.
      */
     public int getContentsUint8(int index) {
       return contentsUint8_.getInt(index);
@@ -938,7 +868,6 @@ public final class TensorDataOuterClass {
     private com.google.protobuf.Internal.IntList contentsInt8_;
     /**
      * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-     * @return A list containing the contentsInt8.
      */
     public java.util.List<java.lang.Integer>
         getContentsInt8List() {
@@ -946,15 +875,12 @@ public final class TensorDataOuterClass {
     }
     /**
      * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-     * @return The count of contentsInt8.
      */
     public int getContentsInt8Count() {
       return contentsInt8_.size();
     }
     /**
      * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsInt8 at the given index.
      */
     public int getContentsInt8(int index) {
       return contentsInt8_.getInt(index);
@@ -965,7 +891,6 @@ public final class TensorDataOuterClass {
     private com.google.protobuf.Internal.IntList contentsInt16_;
     /**
      * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-     * @return A list containing the contentsInt16.
      */
     public java.util.List<java.lang.Integer>
         getContentsInt16List() {
@@ -973,15 +898,12 @@ public final class TensorDataOuterClass {
     }
     /**
      * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-     * @return The count of contentsInt16.
      */
     public int getContentsInt16Count() {
       return contentsInt16_.size();
     }
     /**
      * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsInt16 at the given index.
      */
     public int getContentsInt16(int index) {
       return contentsInt16_.getInt(index);
@@ -992,7 +914,6 @@ public final class TensorDataOuterClass {
     private com.google.protobuf.Internal.IntList contentsInt32_;
     /**
      * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-     * @return A list containing the contentsInt32.
      */
     public java.util.List<java.lang.Integer>
         getContentsInt32List() {
@@ -1000,15 +921,12 @@ public final class TensorDataOuterClass {
     }
     /**
      * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-     * @return The count of contentsInt32.
      */
     public int getContentsInt32Count() {
       return contentsInt32_.size();
     }
     /**
      * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsInt32 at the given index.
      */
     public int getContentsInt32(int index) {
       return contentsInt32_.getInt(index);
@@ -1019,7 +937,6 @@ public final class TensorDataOuterClass {
     private com.google.protobuf.Internal.LongList contentsInt64_;
     /**
      * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-     * @return A list containing the contentsInt64.
      */
     public java.util.List<java.lang.Long>
         getContentsInt64List() {
@@ -1027,15 +944,12 @@ public final class TensorDataOuterClass {
     }
     /**
      * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-     * @return The count of contentsInt64.
      */
     public int getContentsInt64Count() {
       return contentsInt64_.size();
     }
     /**
      * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsInt64 at the given index.
      */
     public long getContentsInt64(int index) {
       return contentsInt64_.getLong(index);
@@ -1050,7 +964,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-     * @return A list containing the contentsFloat16.
      */
     public java.util.List<java.lang.Float>
         getContentsFloat16List() {
@@ -1062,7 +975,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-     * @return The count of contentsFloat16.
      */
     public int getContentsFloat16Count() {
       return contentsFloat16_.size();
@@ -1073,8 +985,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsFloat16 at the given index.
      */
     public float getContentsFloat16(int index) {
       return contentsFloat16_.getFloat(index);
@@ -1085,7 +995,6 @@ public final class TensorDataOuterClass {
     private com.google.protobuf.Internal.FloatList contentsFloat32_;
     /**
      * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-     * @return A list containing the contentsFloat32.
      */
     public java.util.List<java.lang.Float>
         getContentsFloat32List() {
@@ -1093,15 +1002,12 @@ public final class TensorDataOuterClass {
     }
     /**
      * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-     * @return The count of contentsFloat32.
      */
     public int getContentsFloat32Count() {
       return contentsFloat32_.size();
     }
     /**
      * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsFloat32 at the given index.
      */
     public float getContentsFloat32(int index) {
       return contentsFloat32_.getFloat(index);
@@ -1112,7 +1018,6 @@ public final class TensorDataOuterClass {
     private com.google.protobuf.Internal.DoubleList contentsFloat64_;
     /**
      * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-     * @return A list containing the contentsFloat64.
      */
     public java.util.List<java.lang.Double>
         getContentsFloat64List() {
@@ -1120,15 +1025,12 @@ public final class TensorDataOuterClass {
     }
     /**
      * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-     * @return The count of contentsFloat64.
      */
     public int getContentsFloat64Count() {
       return contentsFloat64_.size();
     }
     /**
      * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsFloat64 at the given index.
      */
     public double getContentsFloat64(int index) {
       return contentsFloat64_.getDouble(index);
@@ -1143,7 +1045,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-     * @return A list containing the contentsBool.
      */
     public java.util.List<java.lang.Boolean>
         getContentsBoolList() {
@@ -1155,7 +1056,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-     * @return The count of contentsBool.
      */
     public int getContentsBoolCount() {
       return contentsBool_.size();
@@ -1166,8 +1066,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsBool at the given index.
      */
     public boolean getContentsBool(int index) {
       return contentsBool_.getBoolean(index);
@@ -1182,7 +1080,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-     * @return A list containing the contentsQint8.
      */
     public java.util.List<java.lang.Integer>
         getContentsQint8List() {
@@ -1194,7 +1091,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-     * @return The count of contentsQint8.
      */
     public int getContentsQint8Count() {
       return contentsQint8_.size();
@@ -1205,8 +1101,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsQint8 at the given index.
      */
     public int getContentsQint8(int index) {
       return contentsQint8_.getInt(index);
@@ -1221,7 +1115,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-     * @return A list containing the contentsQuint8.
      */
     public java.util.List<java.lang.Integer>
         getContentsQuint8List() {
@@ -1233,7 +1126,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-     * @return The count of contentsQuint8.
      */
     public int getContentsQuint8Count() {
       return contentsQuint8_.size();
@@ -1244,8 +1136,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsQuint8 at the given index.
      */
     public int getContentsQuint8(int index) {
       return contentsQuint8_.getInt(index);
@@ -1260,7 +1150,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-     * @return A list containing the contentsQint32.
      */
     public java.util.List<java.lang.Integer>
         getContentsQint32List() {
@@ -1272,7 +1161,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-     * @return The count of contentsQint32.
      */
     public int getContentsQint32Count() {
       return contentsQint32_.size();
@@ -1283,8 +1171,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsQint32 at the given index.
      */
     public int getContentsQint32(int index) {
       return contentsQint32_.getInt(index);
@@ -1299,7 +1185,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-     * @return A list containing the contentsBfloat16.
      */
     public java.util.List<java.lang.Float>
         getContentsBfloat16List() {
@@ -1311,7 +1196,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-     * @return The count of contentsBfloat16.
      */
     public int getContentsBfloat16Count() {
       return contentsBfloat16_.size();
@@ -1322,8 +1206,6 @@ public final class TensorDataOuterClass {
      * </pre>
      *
      * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-     * @param index The index of the element to return.
-     * @return The contentsBfloat16 at the given index.
      */
     public float getContentsBfloat16(int index) {
       return contentsBfloat16_.getFloat(index);
@@ -2281,14 +2163,12 @@ public final class TensorDataOuterClass {
           org.openmined.syftproto.types.torch.v1.SizeOuterClass.Size, org.openmined.syftproto.types.torch.v1.SizeOuterClass.Size.Builder, org.openmined.syftproto.types.torch.v1.SizeOuterClass.SizeOrBuilder> shapeBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.Size shape = 1[json_name = "shape"];</code>
-       * @return Whether the shape field is set.
        */
       public boolean hasShape() {
         return shapeBuilder_ != null || shape_ != null;
       }
       /**
        * <code>.syft_proto.types.torch.v1.Size shape = 1[json_name = "shape"];</code>
-       * @return The shape.
        */
       public org.openmined.syftproto.types.torch.v1.SizeOuterClass.Size getShape() {
         if (shapeBuilder_ == null) {
@@ -2398,7 +2278,6 @@ public final class TensorDataOuterClass {
       private java.lang.Object dtype_ = "";
       /**
        * <code>string dtype = 2[json_name = "dtype"];</code>
-       * @return The dtype.
        */
       public java.lang.String getDtype() {
         java.lang.Object ref = dtype_;
@@ -2414,7 +2293,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>string dtype = 2[json_name = "dtype"];</code>
-       * @return The bytes for dtype.
        */
       public com.google.protobuf.ByteString
           getDtypeBytes() {
@@ -2431,8 +2309,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>string dtype = 2[json_name = "dtype"];</code>
-       * @param value The dtype to set.
-       * @return This builder for chaining.
        */
       public Builder setDtype(
           java.lang.String value) {
@@ -2446,7 +2322,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>string dtype = 2[json_name = "dtype"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearDtype() {
         
@@ -2456,8 +2331,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>string dtype = 2[json_name = "dtype"];</code>
-       * @param value The bytes for dtype to set.
-       * @return This builder for chaining.
        */
       public Builder setDtypeBytes(
           com.google.protobuf.ByteString value) {
@@ -2474,15 +2347,12 @@ public final class TensorDataOuterClass {
       private boolean isQuantized_ ;
       /**
        * <code>bool is_quantized = 3[json_name = "isQuantized"];</code>
-       * @return The isQuantized.
        */
       public boolean getIsQuantized() {
         return isQuantized_;
       }
       /**
        * <code>bool is_quantized = 3[json_name = "isQuantized"];</code>
-       * @param value The isQuantized to set.
-       * @return This builder for chaining.
        */
       public Builder setIsQuantized(boolean value) {
         
@@ -2492,7 +2362,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>bool is_quantized = 3[json_name = "isQuantized"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearIsQuantized() {
         
@@ -2504,15 +2373,12 @@ public final class TensorDataOuterClass {
       private float scale_ ;
       /**
        * <code>float scale = 4[json_name = "scale"];</code>
-       * @return The scale.
        */
       public float getScale() {
         return scale_;
       }
       /**
        * <code>float scale = 4[json_name = "scale"];</code>
-       * @param value The scale to set.
-       * @return This builder for chaining.
        */
       public Builder setScale(float value) {
         
@@ -2522,7 +2388,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>float scale = 4[json_name = "scale"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearScale() {
         
@@ -2534,15 +2399,12 @@ public final class TensorDataOuterClass {
       private int zeroPoint_ ;
       /**
        * <code>int32 zero_point = 5[json_name = "zeroPoint"];</code>
-       * @return The zeroPoint.
        */
       public int getZeroPoint() {
         return zeroPoint_;
       }
       /**
        * <code>int32 zero_point = 5[json_name = "zeroPoint"];</code>
-       * @param value The zeroPoint to set.
-       * @return This builder for chaining.
        */
       public Builder setZeroPoint(int value) {
         
@@ -2552,7 +2414,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>int32 zero_point = 5[json_name = "zeroPoint"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearZeroPoint() {
         
@@ -2574,7 +2435,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-       * @return A list containing the contentsUint8.
        */
       public java.util.List<java.lang.Integer>
           getContentsUint8List() {
@@ -2587,7 +2447,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-       * @return The count of contentsUint8.
        */
       public int getContentsUint8Count() {
         return contentsUint8_.size();
@@ -2598,8 +2457,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsUint8 at the given index.
        */
       public int getContentsUint8(int index) {
         return contentsUint8_.getInt(index);
@@ -2610,9 +2467,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsUint8 to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsUint8(
           int index, int value) {
@@ -2627,8 +2481,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-       * @param value The contentsUint8 to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsUint8(int value) {
         ensureContentsUint8IsMutable();
@@ -2642,8 +2494,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-       * @param values The contentsUint8 to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsUint8(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -2659,7 +2509,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsUint8() {
         contentsUint8_ = emptyIntList();
@@ -2677,7 +2526,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-       * @return A list containing the contentsInt8.
        */
       public java.util.List<java.lang.Integer>
           getContentsInt8List() {
@@ -2686,24 +2534,18 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-       * @return The count of contentsInt8.
        */
       public int getContentsInt8Count() {
         return contentsInt8_.size();
       }
       /**
        * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsInt8 at the given index.
        */
       public int getContentsInt8(int index) {
         return contentsInt8_.getInt(index);
       }
       /**
        * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsInt8 to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsInt8(
           int index, int value) {
@@ -2714,8 +2556,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-       * @param value The contentsInt8 to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsInt8(int value) {
         ensureContentsInt8IsMutable();
@@ -2725,8 +2565,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-       * @param values The contentsInt8 to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsInt8(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -2738,7 +2576,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsInt8() {
         contentsInt8_ = emptyIntList();
@@ -2756,7 +2593,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-       * @return A list containing the contentsInt16.
        */
       public java.util.List<java.lang.Integer>
           getContentsInt16List() {
@@ -2765,24 +2601,18 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-       * @return The count of contentsInt16.
        */
       public int getContentsInt16Count() {
         return contentsInt16_.size();
       }
       /**
        * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsInt16 at the given index.
        */
       public int getContentsInt16(int index) {
         return contentsInt16_.getInt(index);
       }
       /**
        * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsInt16 to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsInt16(
           int index, int value) {
@@ -2793,8 +2623,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-       * @param value The contentsInt16 to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsInt16(int value) {
         ensureContentsInt16IsMutable();
@@ -2804,8 +2632,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-       * @param values The contentsInt16 to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsInt16(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -2817,7 +2643,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsInt16() {
         contentsInt16_ = emptyIntList();
@@ -2835,7 +2660,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-       * @return A list containing the contentsInt32.
        */
       public java.util.List<java.lang.Integer>
           getContentsInt32List() {
@@ -2844,24 +2668,18 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-       * @return The count of contentsInt32.
        */
       public int getContentsInt32Count() {
         return contentsInt32_.size();
       }
       /**
        * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsInt32 at the given index.
        */
       public int getContentsInt32(int index) {
         return contentsInt32_.getInt(index);
       }
       /**
        * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsInt32 to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsInt32(
           int index, int value) {
@@ -2872,8 +2690,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-       * @param value The contentsInt32 to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsInt32(int value) {
         ensureContentsInt32IsMutable();
@@ -2883,8 +2699,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-       * @param values The contentsInt32 to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsInt32(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -2896,7 +2710,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsInt32() {
         contentsInt32_ = emptyIntList();
@@ -2914,7 +2727,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-       * @return A list containing the contentsInt64.
        */
       public java.util.List<java.lang.Long>
           getContentsInt64List() {
@@ -2923,24 +2735,18 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-       * @return The count of contentsInt64.
        */
       public int getContentsInt64Count() {
         return contentsInt64_.size();
       }
       /**
        * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsInt64 at the given index.
        */
       public long getContentsInt64(int index) {
         return contentsInt64_.getLong(index);
       }
       /**
        * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsInt64 to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsInt64(
           int index, long value) {
@@ -2951,8 +2757,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-       * @param value The contentsInt64 to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsInt64(long value) {
         ensureContentsInt64IsMutable();
@@ -2962,8 +2766,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-       * @param values The contentsInt64 to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsInt64(
           java.lang.Iterable<? extends java.lang.Long> values) {
@@ -2975,7 +2777,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsInt64() {
         contentsInt64_ = emptyLongList();
@@ -2997,7 +2798,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-       * @return A list containing the contentsFloat16.
        */
       public java.util.List<java.lang.Float>
           getContentsFloat16List() {
@@ -3010,7 +2810,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-       * @return The count of contentsFloat16.
        */
       public int getContentsFloat16Count() {
         return contentsFloat16_.size();
@@ -3021,8 +2820,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsFloat16 at the given index.
        */
       public float getContentsFloat16(int index) {
         return contentsFloat16_.getFloat(index);
@@ -3033,9 +2830,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsFloat16 to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsFloat16(
           int index, float value) {
@@ -3050,8 +2844,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-       * @param value The contentsFloat16 to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsFloat16(float value) {
         ensureContentsFloat16IsMutable();
@@ -3065,8 +2857,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-       * @param values The contentsFloat16 to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsFloat16(
           java.lang.Iterable<? extends java.lang.Float> values) {
@@ -3082,7 +2872,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsFloat16() {
         contentsFloat16_ = emptyFloatList();
@@ -3100,7 +2889,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-       * @return A list containing the contentsFloat32.
        */
       public java.util.List<java.lang.Float>
           getContentsFloat32List() {
@@ -3109,24 +2897,18 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-       * @return The count of contentsFloat32.
        */
       public int getContentsFloat32Count() {
         return contentsFloat32_.size();
       }
       /**
        * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsFloat32 at the given index.
        */
       public float getContentsFloat32(int index) {
         return contentsFloat32_.getFloat(index);
       }
       /**
        * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsFloat32 to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsFloat32(
           int index, float value) {
@@ -3137,8 +2919,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-       * @param value The contentsFloat32 to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsFloat32(float value) {
         ensureContentsFloat32IsMutable();
@@ -3148,8 +2928,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-       * @param values The contentsFloat32 to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsFloat32(
           java.lang.Iterable<? extends java.lang.Float> values) {
@@ -3161,7 +2939,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsFloat32() {
         contentsFloat32_ = emptyFloatList();
@@ -3179,7 +2956,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-       * @return A list containing the contentsFloat64.
        */
       public java.util.List<java.lang.Double>
           getContentsFloat64List() {
@@ -3188,24 +2964,18 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-       * @return The count of contentsFloat64.
        */
       public int getContentsFloat64Count() {
         return contentsFloat64_.size();
       }
       /**
        * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsFloat64 at the given index.
        */
       public double getContentsFloat64(int index) {
         return contentsFloat64_.getDouble(index);
       }
       /**
        * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsFloat64 to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsFloat64(
           int index, double value) {
@@ -3216,8 +2986,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-       * @param value The contentsFloat64 to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsFloat64(double value) {
         ensureContentsFloat64IsMutable();
@@ -3227,8 +2995,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-       * @param values The contentsFloat64 to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsFloat64(
           java.lang.Iterable<? extends java.lang.Double> values) {
@@ -3240,7 +3006,6 @@ public final class TensorDataOuterClass {
       }
       /**
        * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsFloat64() {
         contentsFloat64_ = emptyDoubleList();
@@ -3262,7 +3027,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-       * @return A list containing the contentsBool.
        */
       public java.util.List<java.lang.Boolean>
           getContentsBoolList() {
@@ -3275,7 +3039,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-       * @return The count of contentsBool.
        */
       public int getContentsBoolCount() {
         return contentsBool_.size();
@@ -3286,8 +3049,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsBool at the given index.
        */
       public boolean getContentsBool(int index) {
         return contentsBool_.getBoolean(index);
@@ -3298,9 +3059,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsBool to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsBool(
           int index, boolean value) {
@@ -3315,8 +3073,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-       * @param value The contentsBool to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsBool(boolean value) {
         ensureContentsBoolIsMutable();
@@ -3330,8 +3086,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-       * @param values The contentsBool to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsBool(
           java.lang.Iterable<? extends java.lang.Boolean> values) {
@@ -3347,7 +3101,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsBool() {
         contentsBool_ = emptyBooleanList();
@@ -3369,7 +3122,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-       * @return A list containing the contentsQint8.
        */
       public java.util.List<java.lang.Integer>
           getContentsQint8List() {
@@ -3382,7 +3134,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-       * @return The count of contentsQint8.
        */
       public int getContentsQint8Count() {
         return contentsQint8_.size();
@@ -3393,8 +3144,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsQint8 at the given index.
        */
       public int getContentsQint8(int index) {
         return contentsQint8_.getInt(index);
@@ -3405,9 +3154,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsQint8 to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsQint8(
           int index, int value) {
@@ -3422,8 +3168,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-       * @param value The contentsQint8 to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsQint8(int value) {
         ensureContentsQint8IsMutable();
@@ -3437,8 +3181,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-       * @param values The contentsQint8 to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsQint8(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -3454,7 +3196,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsQint8() {
         contentsQint8_ = emptyIntList();
@@ -3476,7 +3217,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-       * @return A list containing the contentsQuint8.
        */
       public java.util.List<java.lang.Integer>
           getContentsQuint8List() {
@@ -3489,7 +3229,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-       * @return The count of contentsQuint8.
        */
       public int getContentsQuint8Count() {
         return contentsQuint8_.size();
@@ -3500,8 +3239,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsQuint8 at the given index.
        */
       public int getContentsQuint8(int index) {
         return contentsQuint8_.getInt(index);
@@ -3512,9 +3249,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsQuint8 to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsQuint8(
           int index, int value) {
@@ -3529,8 +3263,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-       * @param value The contentsQuint8 to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsQuint8(int value) {
         ensureContentsQuint8IsMutable();
@@ -3544,8 +3276,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-       * @param values The contentsQuint8 to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsQuint8(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -3561,7 +3291,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsQuint8() {
         contentsQuint8_ = emptyIntList();
@@ -3583,7 +3312,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-       * @return A list containing the contentsQint32.
        */
       public java.util.List<java.lang.Integer>
           getContentsQint32List() {
@@ -3596,7 +3324,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-       * @return The count of contentsQint32.
        */
       public int getContentsQint32Count() {
         return contentsQint32_.size();
@@ -3607,8 +3334,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsQint32 at the given index.
        */
       public int getContentsQint32(int index) {
         return contentsQint32_.getInt(index);
@@ -3619,9 +3344,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsQint32 to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsQint32(
           int index, int value) {
@@ -3636,8 +3358,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-       * @param value The contentsQint32 to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsQint32(int value) {
         ensureContentsQint32IsMutable();
@@ -3651,8 +3371,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-       * @param values The contentsQint32 to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsQint32(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -3668,7 +3386,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsQint32() {
         contentsQint32_ = emptyIntList();
@@ -3690,7 +3407,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-       * @return A list containing the contentsBfloat16.
        */
       public java.util.List<java.lang.Float>
           getContentsBfloat16List() {
@@ -3703,7 +3419,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-       * @return The count of contentsBfloat16.
        */
       public int getContentsBfloat16Count() {
         return contentsBfloat16_.size();
@@ -3714,8 +3429,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-       * @param index The index of the element to return.
-       * @return The contentsBfloat16 at the given index.
        */
       public float getContentsBfloat16(int index) {
         return contentsBfloat16_.getFloat(index);
@@ -3726,9 +3439,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-       * @param index The index to set the value at.
-       * @param value The contentsBfloat16 to set.
-       * @return This builder for chaining.
        */
       public Builder setContentsBfloat16(
           int index, float value) {
@@ -3743,8 +3453,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-       * @param value The contentsBfloat16 to add.
-       * @return This builder for chaining.
        */
       public Builder addContentsBfloat16(float value) {
         ensureContentsBfloat16IsMutable();
@@ -3758,8 +3466,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-       * @param values The contentsBfloat16 to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContentsBfloat16(
           java.lang.Iterable<? extends java.lang.Float> values) {
@@ -3775,7 +3481,6 @@ public final class TensorDataOuterClass {
        * </pre>
        *
        * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearContentsBfloat16() {
         contentsBfloat16_ = emptyFloatList();

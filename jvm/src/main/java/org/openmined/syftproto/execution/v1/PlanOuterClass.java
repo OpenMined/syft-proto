@@ -20,12 +20,10 @@ public final class PlanOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-     * @return The id.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId();
     /**
@@ -34,37 +32,35 @@ public final class PlanOuterClass {
     org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder();
 
     /**
-     * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+     * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
     java.util.List<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction> 
-        getOperationsList();
+        getActionsList();
     /**
-     * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+     * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
-    org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction getOperations(int index);
+    org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction getActions(int index);
     /**
-     * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+     * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
-    int getOperationsCount();
+    int getActionsCount();
     /**
-     * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+     * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
     java.util.List<? extends org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder> 
-        getOperationsOrBuilderList();
+        getActionsOrBuilderList();
     /**
-     * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+     * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
-    org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder getOperationsOrBuilder(
+    org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder getActionsOrBuilder(
         int index);
 
     /**
      * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
-     * @return Whether the state field is set.
      */
     boolean hasState();
     /**
      * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
-     * @return The state.
      */
     org.openmined.syftproto.execution.v1.StateOuterClass.State getState();
     /**
@@ -74,61 +70,49 @@ public final class PlanOuterClass {
 
     /**
      * <code>bool include_state = 4[json_name = "includeState"];</code>
-     * @return The includeState.
      */
     boolean getIncludeState();
 
     /**
      * <code>bool is_built = 5[json_name = "isBuilt"];</code>
-     * @return The isBuilt.
      */
     boolean getIsBuilt();
 
     /**
      * <code>string name = 6[json_name = "name"];</code>
-     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 6[json_name = "name"];</code>
-     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
-     * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
-     * @return The count of tags.
      */
     int getTagsCount();
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
-     * @param index The index of the element to return.
-     * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the tags at the given index.
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
 
     /**
      * <code>string description = 8[json_name = "description"];</code>
-     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 8[json_name = "description"];</code>
-     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
@@ -170,7 +154,7 @@ public final class PlanOuterClass {
       super(builder);
     }
     private Plan() {
-      operations_ = java.util.Collections.emptyList();
+      actions_ = java.util.Collections.emptyList();
       name_ = "";
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
@@ -223,10 +207,10 @@ public final class PlanOuterClass {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                operations_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction>();
+                actions_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              operations_.add(
+              actions_.add(
                   input.readMessage(org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.parser(), extensionRegistry));
               break;
             }
@@ -299,7 +283,7 @@ public final class PlanOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          operations_ = java.util.Collections.unmodifiableList(operations_);
+          actions_ = java.util.Collections.unmodifiableList(actions_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           tags_ = tags_.getUnmodifiableView();
@@ -328,14 +312,12 @@ public final class PlanOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id id_;
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-     * @return Whether the id field is set.
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-     * @return The id.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
@@ -347,53 +329,51 @@ public final class PlanOuterClass {
       return getId();
     }
 
-    public static final int OPERATIONS_FIELD_NUMBER = 2;
-    private java.util.List<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction> operations_;
+    public static final int ACTIONS_FIELD_NUMBER = 2;
+    private java.util.List<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction> actions_;
     /**
-     * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+     * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
-    public java.util.List<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction> getOperationsList() {
-      return operations_;
+    public java.util.List<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction> getActionsList() {
+      return actions_;
     }
     /**
-     * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+     * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
     public java.util.List<? extends org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder> 
-        getOperationsOrBuilderList() {
-      return operations_;
+        getActionsOrBuilderList() {
+      return actions_;
     }
     /**
-     * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+     * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
-    public int getOperationsCount() {
-      return operations_.size();
+    public int getActionsCount() {
+      return actions_.size();
     }
     /**
-     * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+     * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
-    public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction getOperations(int index) {
-      return operations_.get(index);
+    public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction getActions(int index) {
+      return actions_.get(index);
     }
     /**
-     * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+     * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
-    public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder getOperationsOrBuilder(
+    public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder getActionsOrBuilder(
         int index) {
-      return operations_.get(index);
+      return actions_.get(index);
     }
 
     public static final int STATE_FIELD_NUMBER = 3;
     private org.openmined.syftproto.execution.v1.StateOuterClass.State state_;
     /**
      * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
-     * @return Whether the state field is set.
      */
     public boolean hasState() {
       return state_ != null;
     }
     /**
      * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
-     * @return The state.
      */
     public org.openmined.syftproto.execution.v1.StateOuterClass.State getState() {
       return state_ == null ? org.openmined.syftproto.execution.v1.StateOuterClass.State.getDefaultInstance() : state_;
@@ -409,7 +389,6 @@ public final class PlanOuterClass {
     private boolean includeState_;
     /**
      * <code>bool include_state = 4[json_name = "includeState"];</code>
-     * @return The includeState.
      */
     public boolean getIncludeState() {
       return includeState_;
@@ -419,7 +398,6 @@ public final class PlanOuterClass {
     private boolean isBuilt_;
     /**
      * <code>bool is_built = 5[json_name = "isBuilt"];</code>
-     * @return The isBuilt.
      */
     public boolean getIsBuilt() {
       return isBuilt_;
@@ -429,7 +407,6 @@ public final class PlanOuterClass {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 6[json_name = "name"];</code>
-     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -445,7 +422,6 @@ public final class PlanOuterClass {
     }
     /**
      * <code>string name = 6[json_name = "name"];</code>
-     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -465,7 +441,6 @@ public final class PlanOuterClass {
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
-     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -473,23 +448,18 @@ public final class PlanOuterClass {
     }
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
-     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
-     * @param index The index of the element to return.
-     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -500,7 +470,6 @@ public final class PlanOuterClass {
     private volatile java.lang.Object description_;
     /**
      * <code>string description = 8[json_name = "description"];</code>
-     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -516,7 +485,6 @@ public final class PlanOuterClass {
     }
     /**
      * <code>string description = 8[json_name = "description"];</code>
-     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -584,8 +552,8 @@ public final class PlanOuterClass {
       if (id_ != null) {
         output.writeMessage(1, getId());
       }
-      for (int i = 0; i < operations_.size(); i++) {
-        output.writeMessage(2, operations_.get(i));
+      for (int i = 0; i < actions_.size(); i++) {
+        output.writeMessage(2, actions_.get(i));
       }
       if (state_ != null) {
         output.writeMessage(3, getState());
@@ -621,9 +589,9 @@ public final class PlanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getId());
       }
-      for (int i = 0; i < operations_.size(); i++) {
+      for (int i = 0; i < actions_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, operations_.get(i));
+          .computeMessageSize(2, actions_.get(i));
       }
       if (state_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -675,8 +643,8 @@ public final class PlanOuterClass {
         if (!getId()
             .equals(other.getId())) return false;
       }
-      if (!getOperationsList()
-          .equals(other.getOperationsList())) return false;
+      if (!getActionsList()
+          .equals(other.getActionsList())) return false;
       if (hasState() != other.hasState()) return false;
       if (hasState()) {
         if (!getState()
@@ -709,9 +677,9 @@ public final class PlanOuterClass {
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId().hashCode();
       }
-      if (getOperationsCount() > 0) {
-        hash = (37 * hash) + OPERATIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getOperationsList().hashCode();
+      if (getActionsCount() > 0) {
+        hash = (37 * hash) + ACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getActionsList().hashCode();
       }
       if (hasState()) {
         hash = (37 * hash) + STATE_FIELD_NUMBER;
@@ -863,7 +831,7 @@ public final class PlanOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getOperationsFieldBuilder();
+          getActionsFieldBuilder();
           getPlaceholdersFieldBuilder();
         }
       }
@@ -876,11 +844,11 @@ public final class PlanOuterClass {
           id_ = null;
           idBuilder_ = null;
         }
-        if (operationsBuilder_ == null) {
-          operations_ = java.util.Collections.emptyList();
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          operationsBuilder_.clear();
+          actionsBuilder_.clear();
         }
         if (stateBuilder_ == null) {
           state_ = null;
@@ -936,14 +904,14 @@ public final class PlanOuterClass {
         } else {
           result.id_ = idBuilder_.build();
         }
-        if (operationsBuilder_ == null) {
+        if (actionsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            operations_ = java.util.Collections.unmodifiableList(operations_);
+            actions_ = java.util.Collections.unmodifiableList(actions_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.operations_ = operations_;
+          result.actions_ = actions_;
         } else {
-          result.operations_ = operationsBuilder_.build();
+          result.actions_ = actionsBuilder_.build();
         }
         if (stateBuilder_ == null) {
           result.state_ = state_;
@@ -1019,29 +987,29 @@ public final class PlanOuterClass {
         if (other.hasId()) {
           mergeId(other.getId());
         }
-        if (operationsBuilder_ == null) {
-          if (!other.operations_.isEmpty()) {
-            if (operations_.isEmpty()) {
-              operations_ = other.operations_;
+        if (actionsBuilder_ == null) {
+          if (!other.actions_.isEmpty()) {
+            if (actions_.isEmpty()) {
+              actions_ = other.actions_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureOperationsIsMutable();
-              operations_.addAll(other.operations_);
+              ensureActionsIsMutable();
+              actions_.addAll(other.actions_);
             }
             onChanged();
           }
         } else {
-          if (!other.operations_.isEmpty()) {
-            if (operationsBuilder_.isEmpty()) {
-              operationsBuilder_.dispose();
-              operationsBuilder_ = null;
-              operations_ = other.operations_;
+          if (!other.actions_.isEmpty()) {
+            if (actionsBuilder_.isEmpty()) {
+              actionsBuilder_.dispose();
+              actionsBuilder_ = null;
+              actions_ = other.actions_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              operationsBuilder_ = 
+              actionsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOperationsFieldBuilder() : null;
+                   getActionsFieldBuilder() : null;
             } else {
-              operationsBuilder_.addAllMessages(other.operations_);
+              actionsBuilder_.addAllMessages(other.actions_);
             }
           }
         }
@@ -1133,14 +1101,12 @@ public final class PlanOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> idBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-       * @return Whether the id field is set.
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-       * @return The id.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
         if (idBuilder_ == null) {
@@ -1247,244 +1213,244 @@ public final class PlanOuterClass {
         return idBuilder_;
       }
 
-      private java.util.List<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction> operations_ =
+      private java.util.List<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction> actions_ =
         java.util.Collections.emptyList();
-      private void ensureOperationsIsMutable() {
+      private void ensureActionsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          operations_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction>(operations_);
+          actions_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction>(actions_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder> operationsBuilder_;
+          org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder> actionsBuilder_;
 
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public java.util.List<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction> getOperationsList() {
-        if (operationsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(operations_);
+      public java.util.List<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction> getActionsList() {
+        if (actionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(actions_);
         } else {
-          return operationsBuilder_.getMessageList();
+          return actionsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public int getOperationsCount() {
-        if (operationsBuilder_ == null) {
-          return operations_.size();
+      public int getActionsCount() {
+        if (actionsBuilder_ == null) {
+          return actions_.size();
         } else {
-          return operationsBuilder_.getCount();
+          return actionsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction getOperations(int index) {
-        if (operationsBuilder_ == null) {
-          return operations_.get(index);
+      public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction getActions(int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);
         } else {
-          return operationsBuilder_.getMessage(index);
+          return actionsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public Builder setOperations(
+      public Builder setActions(
           int index, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction value) {
-        if (operationsBuilder_ == null) {
+        if (actionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOperationsIsMutable();
-          operations_.set(index, value);
+          ensureActionsIsMutable();
+          actions_.set(index, value);
           onChanged();
         } else {
-          operationsBuilder_.setMessage(index, value);
+          actionsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public Builder setOperations(
+      public Builder setActions(
           int index, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder builderForValue) {
-        if (operationsBuilder_ == null) {
-          ensureOperationsIsMutable();
-          operations_.set(index, builderForValue.build());
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.set(index, builderForValue.build());
           onChanged();
         } else {
-          operationsBuilder_.setMessage(index, builderForValue.build());
+          actionsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public Builder addOperations(org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction value) {
-        if (operationsBuilder_ == null) {
+      public Builder addActions(org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction value) {
+        if (actionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOperationsIsMutable();
-          operations_.add(value);
+          ensureActionsIsMutable();
+          actions_.add(value);
           onChanged();
         } else {
-          operationsBuilder_.addMessage(value);
+          actionsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public Builder addOperations(
+      public Builder addActions(
           int index, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction value) {
-        if (operationsBuilder_ == null) {
+        if (actionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOperationsIsMutable();
-          operations_.add(index, value);
+          ensureActionsIsMutable();
+          actions_.add(index, value);
           onChanged();
         } else {
-          operationsBuilder_.addMessage(index, value);
+          actionsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public Builder addOperations(
+      public Builder addActions(
           org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder builderForValue) {
-        if (operationsBuilder_ == null) {
-          ensureOperationsIsMutable();
-          operations_.add(builderForValue.build());
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(builderForValue.build());
           onChanged();
         } else {
-          operationsBuilder_.addMessage(builderForValue.build());
+          actionsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public Builder addOperations(
+      public Builder addActions(
           int index, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder builderForValue) {
-        if (operationsBuilder_ == null) {
-          ensureOperationsIsMutable();
-          operations_.add(index, builderForValue.build());
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(index, builderForValue.build());
           onChanged();
         } else {
-          operationsBuilder_.addMessage(index, builderForValue.build());
+          actionsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public Builder addAllOperations(
+      public Builder addAllActions(
           java.lang.Iterable<? extends org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction> values) {
-        if (operationsBuilder_ == null) {
-          ensureOperationsIsMutable();
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, operations_);
+              values, actions_);
           onChanged();
         } else {
-          operationsBuilder_.addAllMessages(values);
+          actionsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public Builder clearOperations() {
-        if (operationsBuilder_ == null) {
-          operations_ = java.util.Collections.emptyList();
+      public Builder clearActions() {
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          operationsBuilder_.clear();
+          actionsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public Builder removeOperations(int index) {
-        if (operationsBuilder_ == null) {
-          ensureOperationsIsMutable();
-          operations_.remove(index);
+      public Builder removeActions(int index) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.remove(index);
           onChanged();
         } else {
-          operationsBuilder_.remove(index);
+          actionsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder getOperationsBuilder(
+      public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder getActionsBuilder(
           int index) {
-        return getOperationsFieldBuilder().getBuilder(index);
+        return getActionsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder getOperationsOrBuilder(
+      public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder getActionsOrBuilder(
           int index) {
-        if (operationsBuilder_ == null) {
-          return operations_.get(index);  } else {
-          return operationsBuilder_.getMessageOrBuilder(index);
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);  } else {
+          return actionsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
       public java.util.List<? extends org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder> 
-           getOperationsOrBuilderList() {
-        if (operationsBuilder_ != null) {
-          return operationsBuilder_.getMessageOrBuilderList();
+           getActionsOrBuilderList() {
+        if (actionsBuilder_ != null) {
+          return actionsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(operations_);
+          return java.util.Collections.unmodifiableList(actions_);
         }
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder addOperationsBuilder() {
-        return getOperationsFieldBuilder().addBuilder(
+      public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder addActionsBuilder() {
+        return getActionsFieldBuilder().addBuilder(
             org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.getDefaultInstance());
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
-      public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder addOperationsBuilder(
+      public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder addActionsBuilder(
           int index) {
-        return getOperationsFieldBuilder().addBuilder(
+        return getActionsFieldBuilder().addBuilder(
             index, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.getDefaultInstance());
       }
       /**
-       * <code>repeated .syft_proto.execution.v1.ComputationAction operations = 2[json_name = "operations"];</code>
+       * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
        */
       public java.util.List<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder> 
-           getOperationsBuilderList() {
-        return getOperationsFieldBuilder().getBuilderList();
+           getActionsBuilderList() {
+        return getActionsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder> 
-          getOperationsFieldBuilder() {
-        if (operationsBuilder_ == null) {
-          operationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getActionsFieldBuilder() {
+        if (actionsBuilder_ == null) {
+          actionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder>(
-                  operations_,
+                  actions_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          operations_ = null;
+          actions_ = null;
         }
-        return operationsBuilder_;
+        return actionsBuilder_;
       }
 
       private org.openmined.syftproto.execution.v1.StateOuterClass.State state_;
@@ -1492,14 +1458,12 @@ public final class PlanOuterClass {
           org.openmined.syftproto.execution.v1.StateOuterClass.State, org.openmined.syftproto.execution.v1.StateOuterClass.State.Builder, org.openmined.syftproto.execution.v1.StateOuterClass.StateOrBuilder> stateBuilder_;
       /**
        * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
-       * @return Whether the state field is set.
        */
       public boolean hasState() {
         return stateBuilder_ != null || state_ != null;
       }
       /**
        * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
-       * @return The state.
        */
       public org.openmined.syftproto.execution.v1.StateOuterClass.State getState() {
         if (stateBuilder_ == null) {
@@ -1609,15 +1573,12 @@ public final class PlanOuterClass {
       private boolean includeState_ ;
       /**
        * <code>bool include_state = 4[json_name = "includeState"];</code>
-       * @return The includeState.
        */
       public boolean getIncludeState() {
         return includeState_;
       }
       /**
        * <code>bool include_state = 4[json_name = "includeState"];</code>
-       * @param value The includeState to set.
-       * @return This builder for chaining.
        */
       public Builder setIncludeState(boolean value) {
         
@@ -1627,7 +1588,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>bool include_state = 4[json_name = "includeState"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearIncludeState() {
         
@@ -1639,15 +1599,12 @@ public final class PlanOuterClass {
       private boolean isBuilt_ ;
       /**
        * <code>bool is_built = 5[json_name = "isBuilt"];</code>
-       * @return The isBuilt.
        */
       public boolean getIsBuilt() {
         return isBuilt_;
       }
       /**
        * <code>bool is_built = 5[json_name = "isBuilt"];</code>
-       * @param value The isBuilt to set.
-       * @return This builder for chaining.
        */
       public Builder setIsBuilt(boolean value) {
         
@@ -1657,7 +1614,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>bool is_built = 5[json_name = "isBuilt"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearIsBuilt() {
         
@@ -1669,7 +1625,6 @@ public final class PlanOuterClass {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 6[json_name = "name"];</code>
-       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1685,7 +1640,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string name = 6[json_name = "name"];</code>
-       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1702,8 +1656,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string name = 6[json_name = "name"];</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1717,7 +1669,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string name = 6[json_name = "name"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1727,8 +1678,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string name = 6[json_name = "name"];</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1751,7 +1700,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
-       * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
@@ -1759,23 +1707,18 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
-       * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
-       * @param index The index of the element to return.
-       * @return The tags at the given index.
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the tags at the given index.
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -1783,9 +1726,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
-       * @param index The index to set the value at.
-       * @param value The tags to set.
-       * @return This builder for chaining.
        */
       public Builder setTags(
           int index, java.lang.String value) {
@@ -1799,8 +1739,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
-       * @param value The tags to add.
-       * @return This builder for chaining.
        */
       public Builder addTags(
           java.lang.String value) {
@@ -1814,8 +1752,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
-       * @param values The tags to add.
-       * @return This builder for chaining.
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
@@ -1827,7 +1763,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1837,8 +1772,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
-       * @param value The bytes of the tags to add.
-       * @return This builder for chaining.
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -1855,7 +1788,6 @@ public final class PlanOuterClass {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 8[json_name = "description"];</code>
-       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -1871,7 +1803,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string description = 8[json_name = "description"];</code>
-       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -1888,8 +1819,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string description = 8[json_name = "description"];</code>
-       * @param value The description to set.
-       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -1903,7 +1832,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string description = 8[json_name = "description"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -1913,8 +1841,6 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string description = 8[json_name = "description"];</code>
-       * @param value The bytes for description to set.
-       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -2240,19 +2166,19 @@ public final class PlanOuterClass {
       "oto/execution/v1/state.proto\032Esyft_proto" +
       "/frameworks/torch/tensors/interpreters/v" +
       "1/placeholder.proto\032!syft_proto/types/sy" +
-      "ft/v1/id.proto\"\246\003\n\004Plan\022,\n\002id\030\001 \001(\0132\034.sy" +
-      "ft_proto.types.syft.v1.IdR\002id\022J\n\noperati" +
-      "ons\030\002 \003(\0132*.syft_proto.execution.v1.Comp" +
-      "utationActionR\noperations\0224\n\005state\030\003 \001(\013" +
-      "2\036.syft_proto.execution.v1.StateR\005state\022" +
-      "#\n\rinclude_state\030\004 \001(\010R\014includeState\022\031\n\010" +
-      "is_built\030\005 \001(\010R\007isBuilt\022\022\n\004name\030\006 \001(\tR\004n" +
-      "ame\022\022\n\004tags\030\007 \003(\tR\004tags\022 \n\013description\030\010" +
-      " \001(\tR\013description\022d\n\014placeholders\030\t \003(\0132" +
-      "@.syft_proto.frameworks.torch.tensors.in" +
-      "terpreters.v1.PlaceholderR\014placeholdersB" +
-      "&\n$org.openmined.syftproto.execution.v1b" +
-      "\006proto3"
+      "ft/v1/id.proto\"\240\003\n\004Plan\022,\n\002id\030\001 \001(\0132\034.sy" +
+      "ft_proto.types.syft.v1.IdR\002id\022D\n\007actions" +
+      "\030\002 \003(\0132*.syft_proto.execution.v1.Computa" +
+      "tionActionR\007actions\0224\n\005state\030\003 \001(\0132\036.syf" +
+      "t_proto.execution.v1.StateR\005state\022#\n\rinc" +
+      "lude_state\030\004 \001(\010R\014includeState\022\031\n\010is_bui" +
+      "lt\030\005 \001(\010R\007isBuilt\022\022\n\004name\030\006 \001(\tR\004name\022\022\n" +
+      "\004tags\030\007 \003(\tR\004tags\022 \n\013description\030\010 \001(\tR\013" +
+      "description\022d\n\014placeholders\030\t \003(\0132@.syft" +
+      "_proto.frameworks.torch.tensors.interpre" +
+      "ters.v1.PlaceholderR\014placeholdersB&\n$org" +
+      ".openmined.syftproto.execution.v1b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2267,7 +2193,7 @@ public final class PlanOuterClass {
     internal_static_syft_proto_execution_v1_Plan_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_Plan_descriptor,
-        new java.lang.String[] { "Id", "Operations", "State", "IncludeState", "IsBuilt", "Name", "Tags", "Description", "Placeholders", });
+        new java.lang.String[] { "Id", "Actions", "State", "IncludeState", "IsBuilt", "Name", "Tags", "Description", "Placeholders", });
     org.openmined.syftproto.execution.v1.ComputationActionOuterClass.getDescriptor();
     org.openmined.syftproto.execution.v1.StateOuterClass.getDescriptor();
     org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.getDescriptor();
