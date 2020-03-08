@@ -43,9 +43,9 @@ $root.syft_proto = (function() {
                  * @memberof syft_proto.execution.v1
                  * @interface IComputationAction
                  * @property {string|null} [command] ComputationAction command
-                 * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [owner_pointer] ComputationAction owner_pointer
-                 * @property {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null} [owner_placeholder] ComputationAction owner_placeholder
-                 * @property {syft_proto.types.torch.v1.ITorchTensor|null} [owner_tensor] ComputationAction owner_tensor
+                 * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [target_pointer] ComputationAction target_pointer
+                 * @property {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null} [target_placeholder] ComputationAction target_placeholder
+                 * @property {syft_proto.types.torch.v1.ITorchTensor|null} [target_tensor] ComputationAction target_tensor
                  * @property {Array.<syft_proto.types.syft.v1.IArg>|null} [args] ComputationAction args
                  * @property {Object.<string,syft_proto.types.syft.v1.IArg>|null} [kwargs] ComputationAction kwargs
                  * @property {Array.<syft_proto.types.syft.v1.IId>|null} [return_ids] ComputationAction return_ids
@@ -80,28 +80,28 @@ $root.syft_proto = (function() {
                 ComputationAction.prototype.command = "";
 
                 /**
-                 * ComputationAction owner_pointer.
-                 * @member {syft_proto.generic.pointers.v1.IPointerTensor|null|undefined} owner_pointer
+                 * ComputationAction target_pointer.
+                 * @member {syft_proto.generic.pointers.v1.IPointerTensor|null|undefined} target_pointer
                  * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                ComputationAction.prototype.owner_pointer = null;
+                ComputationAction.prototype.target_pointer = null;
 
                 /**
-                 * ComputationAction owner_placeholder.
-                 * @member {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null|undefined} owner_placeholder
+                 * ComputationAction target_placeholder.
+                 * @member {syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null|undefined} target_placeholder
                  * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                ComputationAction.prototype.owner_placeholder = null;
+                ComputationAction.prototype.target_placeholder = null;
 
                 /**
-                 * ComputationAction owner_tensor.
-                 * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} owner_tensor
+                 * ComputationAction target_tensor.
+                 * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} target_tensor
                  * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                ComputationAction.prototype.owner_tensor = null;
+                ComputationAction.prototype.target_tensor = null;
 
                 /**
                  * ComputationAction args.
@@ -139,13 +139,13 @@ $root.syft_proto = (function() {
                 var $oneOfFields;
 
                 /**
-                 * ComputationAction owner.
-                 * @member {"owner_pointer"|"owner_placeholder"|"owner_tensor"|undefined} owner
+                 * ComputationAction target.
+                 * @member {"target_pointer"|"target_placeholder"|"target_tensor"|undefined} target
                  * @memberof syft_proto.execution.v1.ComputationAction
                  * @instance
                  */
-                Object.defineProperty(ComputationAction.prototype, "owner", {
-                    get: $util.oneOfGetter($oneOfFields = ["owner_pointer", "owner_placeholder", "owner_tensor"]),
+                Object.defineProperty(ComputationAction.prototype, "target", {
+                    get: $util.oneOfGetter($oneOfFields = ["target_pointer", "target_placeholder", "target_tensor"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
@@ -175,12 +175,12 @@ $root.syft_proto = (function() {
                         writer = $Writer.create();
                     if (message.command != null && message.hasOwnProperty("command"))
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.command);
-                    if (message.owner_pointer != null && message.hasOwnProperty("owner_pointer"))
-                        $root.syft_proto.generic.pointers.v1.PointerTensor.encode(message.owner_pointer, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    if (message.owner_placeholder != null && message.hasOwnProperty("owner_placeholder"))
-                        $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.encode(message.owner_placeholder, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                    if (message.owner_tensor != null && message.hasOwnProperty("owner_tensor"))
-                        $root.syft_proto.types.torch.v1.TorchTensor.encode(message.owner_tensor, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.target_pointer != null && message.hasOwnProperty("target_pointer"))
+                        $root.syft_proto.generic.pointers.v1.PointerTensor.encode(message.target_pointer, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.target_placeholder != null && message.hasOwnProperty("target_placeholder"))
+                        $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.encode(message.target_placeholder, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.target_tensor != null && message.hasOwnProperty("target_tensor"))
+                        $root.syft_proto.types.torch.v1.TorchTensor.encode(message.target_tensor, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.args != null && message.args.length)
                         for (var i = 0; i < message.args.length; ++i)
                             $root.syft_proto.types.syft.v1.Arg.encode(message.args[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
@@ -233,13 +233,13 @@ $root.syft_proto = (function() {
                             message.command = reader.string();
                             break;
                         case 2:
-                            message.owner_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.decode(reader, reader.uint32());
+                            message.target_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.decode(reader, reader.uint32());
                             break;
                         case 3:
-                            message.owner_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.decode(reader, reader.uint32());
+                            message.target_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.decode(reader, reader.uint32());
                             break;
                         case 4:
-                            message.owner_tensor = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
+                            message.target_tensor = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
                             break;
                         case 5:
                             if (!(message.args && message.args.length))
@@ -303,32 +303,32 @@ $root.syft_proto = (function() {
                     if (message.command != null && message.hasOwnProperty("command"))
                         if (!$util.isString(message.command))
                             return "command: string expected";
-                    if (message.owner_pointer != null && message.hasOwnProperty("owner_pointer")) {
-                        properties.owner = 1;
+                    if (message.target_pointer != null && message.hasOwnProperty("target_pointer")) {
+                        properties.target = 1;
                         {
-                            var error = $root.syft_proto.generic.pointers.v1.PointerTensor.verify(message.owner_pointer);
+                            var error = $root.syft_proto.generic.pointers.v1.PointerTensor.verify(message.target_pointer);
                             if (error)
-                                return "owner_pointer." + error;
+                                return "target_pointer." + error;
                         }
                     }
-                    if (message.owner_placeholder != null && message.hasOwnProperty("owner_placeholder")) {
-                        if (properties.owner === 1)
-                            return "owner: multiple values";
-                        properties.owner = 1;
+                    if (message.target_placeholder != null && message.hasOwnProperty("target_placeholder")) {
+                        if (properties.target === 1)
+                            return "target: multiple values";
+                        properties.target = 1;
                         {
-                            var error = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify(message.owner_placeholder);
+                            var error = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify(message.target_placeholder);
                             if (error)
-                                return "owner_placeholder." + error;
+                                return "target_placeholder." + error;
                         }
                     }
-                    if (message.owner_tensor != null && message.hasOwnProperty("owner_tensor")) {
-                        if (properties.owner === 1)
-                            return "owner: multiple values";
-                        properties.owner = 1;
+                    if (message.target_tensor != null && message.hasOwnProperty("target_tensor")) {
+                        if (properties.target === 1)
+                            return "target: multiple values";
+                        properties.target = 1;
                         {
-                            var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.owner_tensor);
+                            var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.target_tensor);
                             if (error)
-                                return "owner_tensor." + error;
+                                return "target_tensor." + error;
                         }
                     }
                     if (message.args != null && message.hasOwnProperty("args")) {
@@ -385,20 +385,20 @@ $root.syft_proto = (function() {
                     var message = new $root.syft_proto.execution.v1.ComputationAction();
                     if (object.command != null)
                         message.command = String(object.command);
-                    if (object.owner_pointer != null) {
-                        if (typeof object.owner_pointer !== "object")
-                            throw TypeError(".syft_proto.execution.v1.ComputationAction.owner_pointer: object expected");
-                        message.owner_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.fromObject(object.owner_pointer);
+                    if (object.target_pointer != null) {
+                        if (typeof object.target_pointer !== "object")
+                            throw TypeError(".syft_proto.execution.v1.ComputationAction.target_pointer: object expected");
+                        message.target_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.fromObject(object.target_pointer);
                     }
-                    if (object.owner_placeholder != null) {
-                        if (typeof object.owner_placeholder !== "object")
-                            throw TypeError(".syft_proto.execution.v1.ComputationAction.owner_placeholder: object expected");
-                        message.owner_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.fromObject(object.owner_placeholder);
+                    if (object.target_placeholder != null) {
+                        if (typeof object.target_placeholder !== "object")
+                            throw TypeError(".syft_proto.execution.v1.ComputationAction.target_placeholder: object expected");
+                        message.target_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.fromObject(object.target_placeholder);
                     }
-                    if (object.owner_tensor != null) {
-                        if (typeof object.owner_tensor !== "object")
-                            throw TypeError(".syft_proto.execution.v1.ComputationAction.owner_tensor: object expected");
-                        message.owner_tensor = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.owner_tensor);
+                    if (object.target_tensor != null) {
+                        if (typeof object.target_tensor !== "object")
+                            throw TypeError(".syft_proto.execution.v1.ComputationAction.target_tensor: object expected");
+                        message.target_tensor = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.target_tensor);
                     }
                     if (object.args) {
                         if (!Array.isArray(object.args))
@@ -467,20 +467,20 @@ $root.syft_proto = (function() {
                         object.command = "";
                     if (message.command != null && message.hasOwnProperty("command"))
                         object.command = message.command;
-                    if (message.owner_pointer != null && message.hasOwnProperty("owner_pointer")) {
-                        object.owner_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.toObject(message.owner_pointer, options);
+                    if (message.target_pointer != null && message.hasOwnProperty("target_pointer")) {
+                        object.target_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.toObject(message.target_pointer, options);
                         if (options.oneofs)
-                            object.owner = "owner_pointer";
+                            object.target = "target_pointer";
                     }
-                    if (message.owner_placeholder != null && message.hasOwnProperty("owner_placeholder")) {
-                        object.owner_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.toObject(message.owner_placeholder, options);
+                    if (message.target_placeholder != null && message.hasOwnProperty("target_placeholder")) {
+                        object.target_placeholder = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.toObject(message.target_placeholder, options);
                         if (options.oneofs)
-                            object.owner = "owner_placeholder";
+                            object.target = "target_placeholder";
                     }
-                    if (message.owner_tensor != null && message.hasOwnProperty("owner_tensor")) {
-                        object.owner_tensor = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.owner_tensor, options);
+                    if (message.target_tensor != null && message.hasOwnProperty("target_tensor")) {
+                        object.target_tensor = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.target_tensor, options);
                         if (options.oneofs)
-                            object.owner = "owner_tensor";
+                            object.target = "target_tensor";
                     }
                     if (message.args && message.args.length) {
                         object.args = [];

@@ -14,14 +14,14 @@ export namespace syft_proto {
                 /** ComputationAction command */
                 command?: (string|null);
 
-                /** ComputationAction owner_pointer */
-                owner_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
+                /** ComputationAction target_pointer */
+                target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
-                /** ComputationAction owner_placeholder */
-                owner_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
+                /** ComputationAction target_placeholder */
+                target_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
 
-                /** ComputationAction owner_tensor */
-                owner_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+                /** ComputationAction target_tensor */
+                target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
 
                 /** ComputationAction args */
                 args?: (syft_proto.types.syft.v1.IArg[]|null);
@@ -48,14 +48,14 @@ export namespace syft_proto {
                 /** ComputationAction command. */
                 public command: string;
 
-                /** ComputationAction owner_pointer. */
-                public owner_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
+                /** ComputationAction target_pointer. */
+                public target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
-                /** ComputationAction owner_placeholder. */
-                public owner_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
+                /** ComputationAction target_placeholder. */
+                public target_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
 
-                /** ComputationAction owner_tensor. */
-                public owner_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+                /** ComputationAction target_tensor. */
+                public target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
 
                 /** ComputationAction args. */
                 public args: syft_proto.types.syft.v1.IArg[];
@@ -69,8 +69,8 @@ export namespace syft_proto {
                 /** ComputationAction return_placeholders. */
                 public return_placeholders: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[];
 
-                /** ComputationAction owner. */
-                public owner?: ("owner_pointer"|"owner_placeholder"|"owner_tensor");
+                /** ComputationAction target. */
+                public target?: ("target_pointer"|"target_placeholder"|"target_tensor");
 
                 /**
                  * Creates a new ComputationAction instance using the specified properties.

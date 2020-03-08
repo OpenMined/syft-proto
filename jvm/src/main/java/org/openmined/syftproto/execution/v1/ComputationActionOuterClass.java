@@ -29,43 +29,43 @@ public final class ComputationActionOuterClass {
         getCommandBytes();
 
     /**
-     * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+     * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
      */
-    boolean hasOwnerPointer();
+    boolean hasTargetPointer();
     /**
-     * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+     * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
      */
-    org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getOwnerPointer();
+    org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getTargetPointer();
     /**
-     * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+     * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
      */
-    org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getOwnerPointerOrBuilder();
+    org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getTargetPointerOrBuilder();
 
     /**
-     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
      */
-    boolean hasOwnerPlaceholder();
+    boolean hasTargetPlaceholder();
     /**
-     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
      */
-    org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getOwnerPlaceholder();
+    org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getTargetPlaceholder();
     /**
-     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
      */
-    org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder getOwnerPlaceholderOrBuilder();
+    org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder getTargetPlaceholderOrBuilder();
 
     /**
-     * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+     * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
      */
-    boolean hasOwnerTensor();
+    boolean hasTargetTensor();
     /**
-     * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+     * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
      */
-    org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getOwnerTensor();
+    org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTargetTensor();
     /**
-     * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+     * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
      */
-    org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getOwnerTensorOrBuilder();
+    org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getTargetTensorOrBuilder();
 
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
@@ -173,7 +173,7 @@ public final class ComputationActionOuterClass {
     org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder getReturnPlaceholdersOrBuilder(
         int index);
 
-    public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.OwnerCase getOwnerCase();
+    public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.TargetCase getTargetCase();
   }
   /**
    * Protobuf type {@code syft_proto.execution.v1.ComputationAction}
@@ -233,44 +233,44 @@ public final class ComputationActionOuterClass {
             }
             case 18: {
               org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder subBuilder = null;
-              if (ownerCase_ == 2) {
-                subBuilder = ((org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) owner_).toBuilder();
+              if (targetCase_ == 2) {
+                subBuilder = ((org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_).toBuilder();
               }
-              owner_ =
+              target_ =
                   input.readMessage(org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) owner_);
-                owner_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_);
+                target_ = subBuilder.buildPartial();
               }
-              ownerCase_ = 2;
+              targetCase_ = 2;
               break;
             }
             case 26: {
               org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder subBuilder = null;
-              if (ownerCase_ == 3) {
-                subBuilder = ((org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) owner_).toBuilder();
+              if (targetCase_ == 3) {
+                subBuilder = ((org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) target_).toBuilder();
               }
-              owner_ =
+              target_ =
                   input.readMessage(org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) owner_);
-                owner_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) target_);
+                target_ = subBuilder.buildPartial();
               }
-              ownerCase_ = 3;
+              targetCase_ = 3;
               break;
             }
             case 34: {
               org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder subBuilder = null;
-              if (ownerCase_ == 4) {
-                subBuilder = ((org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) owner_).toBuilder();
+              if (targetCase_ == 4) {
+                subBuilder = ((org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_).toBuilder();
               }
-              owner_ =
+              target_ =
                   input.readMessage(org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) owner_);
-                owner_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_);
+                target_ = subBuilder.buildPartial();
               }
-              ownerCase_ = 4;
+              targetCase_ = 4;
               break;
             }
             case 42: {
@@ -366,32 +366,32 @@ public final class ComputationActionOuterClass {
               org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.class, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder.class);
     }
 
-    private int ownerCase_ = 0;
-    private java.lang.Object owner_;
-    public enum OwnerCase
+    private int targetCase_ = 0;
+    private java.lang.Object target_;
+    public enum TargetCase
         implements com.google.protobuf.Internal.EnumLite {
-      OWNER_POINTER(2),
-      OWNER_PLACEHOLDER(3),
-      OWNER_TENSOR(4),
-      OWNER_NOT_SET(0);
+      TARGET_POINTER(2),
+      TARGET_PLACEHOLDER(3),
+      TARGET_TENSOR(4),
+      TARGET_NOT_SET(0);
       private final int value;
-      private OwnerCase(int value) {
+      private TargetCase(int value) {
         this.value = value;
       }
       /**
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static OwnerCase valueOf(int value) {
+      public static TargetCase valueOf(int value) {
         return forNumber(value);
       }
 
-      public static OwnerCase forNumber(int value) {
+      public static TargetCase forNumber(int value) {
         switch (value) {
-          case 2: return OWNER_POINTER;
-          case 3: return OWNER_PLACEHOLDER;
-          case 4: return OWNER_TENSOR;
-          case 0: return OWNER_NOT_SET;
+          case 2: return TARGET_POINTER;
+          case 3: return TARGET_PLACEHOLDER;
+          case 4: return TARGET_TENSOR;
+          case 0: return TARGET_NOT_SET;
           default: return null;
         }
       }
@@ -400,10 +400,10 @@ public final class ComputationActionOuterClass {
       }
     };
 
-    public OwnerCase
-    getOwnerCase() {
-      return OwnerCase.forNumber(
-          ownerCase_);
+    public TargetCase
+    getTargetCase() {
+      return TargetCase.forNumber(
+          targetCase_);
     }
 
     public static final int COMMAND_FIELD_NUMBER = 1;
@@ -440,80 +440,80 @@ public final class ComputationActionOuterClass {
       }
     }
 
-    public static final int OWNER_POINTER_FIELD_NUMBER = 2;
+    public static final int TARGET_POINTER_FIELD_NUMBER = 2;
     /**
-     * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+     * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
      */
-    public boolean hasOwnerPointer() {
-      return ownerCase_ == 2;
+    public boolean hasTargetPointer() {
+      return targetCase_ == 2;
     }
     /**
-     * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+     * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
      */
-    public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getOwnerPointer() {
-      if (ownerCase_ == 2) {
-         return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) owner_;
+    public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getTargetPointer() {
+      if (targetCase_ == 2) {
+         return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_;
       }
       return org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
     }
     /**
-     * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+     * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
      */
-    public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getOwnerPointerOrBuilder() {
-      if (ownerCase_ == 2) {
-         return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) owner_;
+    public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getTargetPointerOrBuilder() {
+      if (targetCase_ == 2) {
+         return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_;
       }
       return org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
     }
 
-    public static final int OWNER_PLACEHOLDER_FIELD_NUMBER = 3;
+    public static final int TARGET_PLACEHOLDER_FIELD_NUMBER = 3;
     /**
-     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
      */
-    public boolean hasOwnerPlaceholder() {
-      return ownerCase_ == 3;
+    public boolean hasTargetPlaceholder() {
+      return targetCase_ == 3;
     }
     /**
-     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
      */
-    public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getOwnerPlaceholder() {
-      if (ownerCase_ == 3) {
-         return (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) owner_;
+    public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getTargetPlaceholder() {
+      if (targetCase_ == 3) {
+         return (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) target_;
       }
       return org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
     }
     /**
-     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
      */
-    public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder getOwnerPlaceholderOrBuilder() {
-      if (ownerCase_ == 3) {
-         return (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) owner_;
+    public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder getTargetPlaceholderOrBuilder() {
+      if (targetCase_ == 3) {
+         return (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) target_;
       }
       return org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
     }
 
-    public static final int OWNER_TENSOR_FIELD_NUMBER = 4;
+    public static final int TARGET_TENSOR_FIELD_NUMBER = 4;
     /**
-     * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+     * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
      */
-    public boolean hasOwnerTensor() {
-      return ownerCase_ == 4;
+    public boolean hasTargetTensor() {
+      return targetCase_ == 4;
     }
     /**
-     * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+     * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
      */
-    public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getOwnerTensor() {
-      if (ownerCase_ == 4) {
-         return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) owner_;
+    public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTargetTensor() {
+      if (targetCase_ == 4) {
+         return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_;
       }
       return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
     }
     /**
-     * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+     * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
      */
-    public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getOwnerTensorOrBuilder() {
-      if (ownerCase_ == 4) {
-         return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) owner_;
+    public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getTargetTensorOrBuilder() {
+      if (targetCase_ == 4) {
+         return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_;
       }
       return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
     }
@@ -716,14 +716,14 @@ public final class ComputationActionOuterClass {
       if (!getCommandBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, command_);
       }
-      if (ownerCase_ == 2) {
-        output.writeMessage(2, (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) owner_);
+      if (targetCase_ == 2) {
+        output.writeMessage(2, (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_);
       }
-      if (ownerCase_ == 3) {
-        output.writeMessage(3, (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) owner_);
+      if (targetCase_ == 3) {
+        output.writeMessage(3, (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) target_);
       }
-      if (ownerCase_ == 4) {
-        output.writeMessage(4, (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) owner_);
+      if (targetCase_ == 4) {
+        output.writeMessage(4, (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_);
       }
       for (int i = 0; i < args_.size(); i++) {
         output.writeMessage(5, args_.get(i));
@@ -752,17 +752,17 @@ public final class ComputationActionOuterClass {
       if (!getCommandBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, command_);
       }
-      if (ownerCase_ == 2) {
+      if (targetCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) owner_);
+          .computeMessageSize(2, (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_);
       }
-      if (ownerCase_ == 3) {
+      if (targetCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) owner_);
+          .computeMessageSize(3, (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) target_);
       }
-      if (ownerCase_ == 4) {
+      if (targetCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) owner_);
+          .computeMessageSize(4, (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_);
       }
       for (int i = 0; i < args_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -811,19 +811,19 @@ public final class ComputationActionOuterClass {
           .equals(other.getReturnIdsList())) return false;
       if (!getReturnPlaceholdersList()
           .equals(other.getReturnPlaceholdersList())) return false;
-      if (!getOwnerCase().equals(other.getOwnerCase())) return false;
-      switch (ownerCase_) {
+      if (!getTargetCase().equals(other.getTargetCase())) return false;
+      switch (targetCase_) {
         case 2:
-          if (!getOwnerPointer()
-              .equals(other.getOwnerPointer())) return false;
+          if (!getTargetPointer()
+              .equals(other.getTargetPointer())) return false;
           break;
         case 3:
-          if (!getOwnerPlaceholder()
-              .equals(other.getOwnerPlaceholder())) return false;
+          if (!getTargetPlaceholder()
+              .equals(other.getTargetPlaceholder())) return false;
           break;
         case 4:
-          if (!getOwnerTensor()
-              .equals(other.getOwnerTensor())) return false;
+          if (!getTargetTensor()
+              .equals(other.getTargetTensor())) return false;
           break;
         case 0:
         default:
@@ -857,18 +857,18 @@ public final class ComputationActionOuterClass {
         hash = (37 * hash) + RETURN_PLACEHOLDERS_FIELD_NUMBER;
         hash = (53 * hash) + getReturnPlaceholdersList().hashCode();
       }
-      switch (ownerCase_) {
+      switch (targetCase_) {
         case 2:
-          hash = (37 * hash) + OWNER_POINTER_FIELD_NUMBER;
-          hash = (53 * hash) + getOwnerPointer().hashCode();
+          hash = (37 * hash) + TARGET_POINTER_FIELD_NUMBER;
+          hash = (53 * hash) + getTargetPointer().hashCode();
           break;
         case 3:
-          hash = (37 * hash) + OWNER_PLACEHOLDER_FIELD_NUMBER;
-          hash = (53 * hash) + getOwnerPlaceholder().hashCode();
+          hash = (37 * hash) + TARGET_PLACEHOLDER_FIELD_NUMBER;
+          hash = (53 * hash) + getTargetPlaceholder().hashCode();
           break;
         case 4:
-          hash = (37 * hash) + OWNER_TENSOR_FIELD_NUMBER;
-          hash = (53 * hash) + getOwnerTensor().hashCode();
+          hash = (37 * hash) + TARGET_TENSOR_FIELD_NUMBER;
+          hash = (53 * hash) + getTargetTensor().hashCode();
           break;
         case 0:
         default:
@@ -1052,8 +1052,8 @@ public final class ComputationActionOuterClass {
         } else {
           returnPlaceholdersBuilder_.clear();
         }
-        ownerCase_ = 0;
-        owner_ = null;
+        targetCase_ = 0;
+        target_ = null;
         return this;
       }
 
@@ -1082,25 +1082,25 @@ public final class ComputationActionOuterClass {
         org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction result = new org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction(this);
         int from_bitField0_ = bitField0_;
         result.command_ = command_;
-        if (ownerCase_ == 2) {
-          if (ownerPointerBuilder_ == null) {
-            result.owner_ = owner_;
+        if (targetCase_ == 2) {
+          if (targetPointerBuilder_ == null) {
+            result.target_ = target_;
           } else {
-            result.owner_ = ownerPointerBuilder_.build();
+            result.target_ = targetPointerBuilder_.build();
           }
         }
-        if (ownerCase_ == 3) {
-          if (ownerPlaceholderBuilder_ == null) {
-            result.owner_ = owner_;
+        if (targetCase_ == 3) {
+          if (targetPlaceholderBuilder_ == null) {
+            result.target_ = target_;
           } else {
-            result.owner_ = ownerPlaceholderBuilder_.build();
+            result.target_ = targetPlaceholderBuilder_.build();
           }
         }
-        if (ownerCase_ == 4) {
-          if (ownerTensorBuilder_ == null) {
-            result.owner_ = owner_;
+        if (targetCase_ == 4) {
+          if (targetTensorBuilder_ == null) {
+            result.target_ = target_;
           } else {
-            result.owner_ = ownerTensorBuilder_.build();
+            result.target_ = targetTensorBuilder_.build();
           }
         }
         if (argsBuilder_ == null) {
@@ -1132,7 +1132,7 @@ public final class ComputationActionOuterClass {
         } else {
           result.returnPlaceholders_ = returnPlaceholdersBuilder_.build();
         }
-        result.ownerCase_ = ownerCase_;
+        result.targetCase_ = targetCase_;
         onBuilt();
         return result;
       }
@@ -1265,20 +1265,20 @@ public final class ComputationActionOuterClass {
             }
           }
         }
-        switch (other.getOwnerCase()) {
-          case OWNER_POINTER: {
-            mergeOwnerPointer(other.getOwnerPointer());
+        switch (other.getTargetCase()) {
+          case TARGET_POINTER: {
+            mergeTargetPointer(other.getTargetPointer());
             break;
           }
-          case OWNER_PLACEHOLDER: {
-            mergeOwnerPlaceholder(other.getOwnerPlaceholder());
+          case TARGET_PLACEHOLDER: {
+            mergeTargetPlaceholder(other.getTargetPlaceholder());
             break;
           }
-          case OWNER_TENSOR: {
-            mergeOwnerTensor(other.getOwnerTensor());
+          case TARGET_TENSOR: {
+            mergeTargetTensor(other.getTargetTensor());
             break;
           }
-          case OWNER_NOT_SET: {
+          case TARGET_NOT_SET: {
             break;
           }
         }
@@ -1310,17 +1310,17 @@ public final class ComputationActionOuterClass {
         }
         return this;
       }
-      private int ownerCase_ = 0;
-      private java.lang.Object owner_;
-      public OwnerCase
-          getOwnerCase() {
-        return OwnerCase.forNumber(
-            ownerCase_);
+      private int targetCase_ = 0;
+      private java.lang.Object target_;
+      public TargetCase
+          getTargetCase() {
+        return TargetCase.forNumber(
+            targetCase_);
       }
 
-      public Builder clearOwner() {
-        ownerCase_ = 0;
-        owner_ = null;
+      public Builder clearTarget() {
+        targetCase_ = 0;
+        target_ = null;
         onChanged();
         return this;
       }
@@ -1397,411 +1397,411 @@ public final class ComputationActionOuterClass {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder> ownerPointerBuilder_;
+          org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder> targetPointerBuilder_;
       /**
-       * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public boolean hasOwnerPointer() {
-        return ownerCase_ == 2;
+      public boolean hasTargetPointer() {
+        return targetCase_ == 2;
       }
       /**
-       * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getOwnerPointer() {
-        if (ownerPointerBuilder_ == null) {
-          if (ownerCase_ == 2) {
-            return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) owner_;
+      public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getTargetPointer() {
+        if (targetPointerBuilder_ == null) {
+          if (targetCase_ == 2) {
+            return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_;
           }
           return org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
         } else {
-          if (ownerCase_ == 2) {
-            return ownerPointerBuilder_.getMessage();
+          if (targetCase_ == 2) {
+            return targetPointerBuilder_.getMessage();
           }
           return org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public Builder setOwnerPointer(org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor value) {
-        if (ownerPointerBuilder_ == null) {
+      public Builder setTargetPointer(org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor value) {
+        if (targetPointerBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          owner_ = value;
+          target_ = value;
           onChanged();
         } else {
-          ownerPointerBuilder_.setMessage(value);
+          targetPointerBuilder_.setMessage(value);
         }
-        ownerCase_ = 2;
+        targetCase_ = 2;
         return this;
       }
       /**
-       * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public Builder setOwnerPointer(
+      public Builder setTargetPointer(
           org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder builderForValue) {
-        if (ownerPointerBuilder_ == null) {
-          owner_ = builderForValue.build();
+        if (targetPointerBuilder_ == null) {
+          target_ = builderForValue.build();
           onChanged();
         } else {
-          ownerPointerBuilder_.setMessage(builderForValue.build());
+          targetPointerBuilder_.setMessage(builderForValue.build());
         }
-        ownerCase_ = 2;
+        targetCase_ = 2;
         return this;
       }
       /**
-       * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public Builder mergeOwnerPointer(org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor value) {
-        if (ownerPointerBuilder_ == null) {
-          if (ownerCase_ == 2 &&
-              owner_ != org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance()) {
-            owner_ = org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.newBuilder((org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) owner_)
+      public Builder mergeTargetPointer(org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor value) {
+        if (targetPointerBuilder_ == null) {
+          if (targetCase_ == 2 &&
+              target_ != org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance()) {
+            target_ = org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.newBuilder((org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_)
                 .mergeFrom(value).buildPartial();
           } else {
-            owner_ = value;
+            target_ = value;
           }
           onChanged();
         } else {
-          if (ownerCase_ == 2) {
-            ownerPointerBuilder_.mergeFrom(value);
+          if (targetCase_ == 2) {
+            targetPointerBuilder_.mergeFrom(value);
           }
-          ownerPointerBuilder_.setMessage(value);
+          targetPointerBuilder_.setMessage(value);
         }
-        ownerCase_ = 2;
+        targetCase_ = 2;
         return this;
       }
       /**
-       * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public Builder clearOwnerPointer() {
-        if (ownerPointerBuilder_ == null) {
-          if (ownerCase_ == 2) {
-            ownerCase_ = 0;
-            owner_ = null;
+      public Builder clearTargetPointer() {
+        if (targetPointerBuilder_ == null) {
+          if (targetCase_ == 2) {
+            targetCase_ = 0;
+            target_ = null;
             onChanged();
           }
         } else {
-          if (ownerCase_ == 2) {
-            ownerCase_ = 0;
-            owner_ = null;
+          if (targetCase_ == 2) {
+            targetCase_ = 0;
+            target_ = null;
           }
-          ownerPointerBuilder_.clear();
+          targetPointerBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder getOwnerPointerBuilder() {
-        return getOwnerPointerFieldBuilder().getBuilder();
+      public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder getTargetPointerBuilder() {
+        return getTargetPointerFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getOwnerPointerOrBuilder() {
-        if ((ownerCase_ == 2) && (ownerPointerBuilder_ != null)) {
-          return ownerPointerBuilder_.getMessageOrBuilder();
+      public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getTargetPointerOrBuilder() {
+        if ((targetCase_ == 2) && (targetPointerBuilder_ != null)) {
+          return targetPointerBuilder_.getMessageOrBuilder();
         } else {
-          if (ownerCase_ == 2) {
-            return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) owner_;
+          if (targetCase_ == 2) {
+            return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_;
           }
           return org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.generic.pointers.v1.PointerTensor owner_pointer = 2[json_name = "ownerPointer"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder> 
-          getOwnerPointerFieldBuilder() {
-        if (ownerPointerBuilder_ == null) {
-          if (!(ownerCase_ == 2)) {
-            owner_ = org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
+          getTargetPointerFieldBuilder() {
+        if (targetPointerBuilder_ == null) {
+          if (!(targetCase_ == 2)) {
+            target_ = org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
           }
-          ownerPointerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          targetPointerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder>(
-                  (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) owner_,
+                  (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_,
                   getParentForChildren(),
                   isClean());
-          owner_ = null;
+          target_ = null;
         }
-        ownerCase_ = 2;
+        targetCase_ = 2;
         onChanged();;
-        return ownerPointerBuilder_;
+        return targetPointerBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder> ownerPlaceholderBuilder_;
+          org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder> targetPlaceholderBuilder_;
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
        */
-      public boolean hasOwnerPlaceholder() {
-        return ownerCase_ == 3;
+      public boolean hasTargetPlaceholder() {
+        return targetCase_ == 3;
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
        */
-      public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getOwnerPlaceholder() {
-        if (ownerPlaceholderBuilder_ == null) {
-          if (ownerCase_ == 3) {
-            return (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) owner_;
+      public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getTargetPlaceholder() {
+        if (targetPlaceholderBuilder_ == null) {
+          if (targetCase_ == 3) {
+            return (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) target_;
           }
           return org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
         } else {
-          if (ownerCase_ == 3) {
-            return ownerPlaceholderBuilder_.getMessage();
+          if (targetCase_ == 3) {
+            return targetPlaceholderBuilder_.getMessage();
           }
           return org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
        */
-      public Builder setOwnerPlaceholder(org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder value) {
-        if (ownerPlaceholderBuilder_ == null) {
+      public Builder setTargetPlaceholder(org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder value) {
+        if (targetPlaceholderBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          owner_ = value;
+          target_ = value;
           onChanged();
         } else {
-          ownerPlaceholderBuilder_.setMessage(value);
+          targetPlaceholderBuilder_.setMessage(value);
         }
-        ownerCase_ = 3;
+        targetCase_ = 3;
         return this;
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
        */
-      public Builder setOwnerPlaceholder(
+      public Builder setTargetPlaceholder(
           org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder builderForValue) {
-        if (ownerPlaceholderBuilder_ == null) {
-          owner_ = builderForValue.build();
+        if (targetPlaceholderBuilder_ == null) {
+          target_ = builderForValue.build();
           onChanged();
         } else {
-          ownerPlaceholderBuilder_.setMessage(builderForValue.build());
+          targetPlaceholderBuilder_.setMessage(builderForValue.build());
         }
-        ownerCase_ = 3;
+        targetCase_ = 3;
         return this;
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
        */
-      public Builder mergeOwnerPlaceholder(org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder value) {
-        if (ownerPlaceholderBuilder_ == null) {
-          if (ownerCase_ == 3 &&
-              owner_ != org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance()) {
-            owner_ = org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.newBuilder((org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) owner_)
+      public Builder mergeTargetPlaceholder(org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder value) {
+        if (targetPlaceholderBuilder_ == null) {
+          if (targetCase_ == 3 &&
+              target_ != org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance()) {
+            target_ = org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.newBuilder((org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) target_)
                 .mergeFrom(value).buildPartial();
           } else {
-            owner_ = value;
+            target_ = value;
           }
           onChanged();
         } else {
-          if (ownerCase_ == 3) {
-            ownerPlaceholderBuilder_.mergeFrom(value);
+          if (targetCase_ == 3) {
+            targetPlaceholderBuilder_.mergeFrom(value);
           }
-          ownerPlaceholderBuilder_.setMessage(value);
+          targetPlaceholderBuilder_.setMessage(value);
         }
-        ownerCase_ = 3;
+        targetCase_ = 3;
         return this;
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
        */
-      public Builder clearOwnerPlaceholder() {
-        if (ownerPlaceholderBuilder_ == null) {
-          if (ownerCase_ == 3) {
-            ownerCase_ = 0;
-            owner_ = null;
+      public Builder clearTargetPlaceholder() {
+        if (targetPlaceholderBuilder_ == null) {
+          if (targetCase_ == 3) {
+            targetCase_ = 0;
+            target_ = null;
             onChanged();
           }
         } else {
-          if (ownerCase_ == 3) {
-            ownerCase_ = 0;
-            owner_ = null;
+          if (targetCase_ == 3) {
+            targetCase_ = 0;
+            target_ = null;
           }
-          ownerPlaceholderBuilder_.clear();
+          targetPlaceholderBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
        */
-      public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder getOwnerPlaceholderBuilder() {
-        return getOwnerPlaceholderFieldBuilder().getBuilder();
+      public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder getTargetPlaceholderBuilder() {
+        return getTargetPlaceholderFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
        */
-      public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder getOwnerPlaceholderOrBuilder() {
-        if ((ownerCase_ == 3) && (ownerPlaceholderBuilder_ != null)) {
-          return ownerPlaceholderBuilder_.getMessageOrBuilder();
+      public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder getTargetPlaceholderOrBuilder() {
+        if ((targetCase_ == 3) && (targetPlaceholderBuilder_ != null)) {
+          return targetPlaceholderBuilder_.getMessageOrBuilder();
         } else {
-          if (ownerCase_ == 3) {
-            return (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) owner_;
+          if (targetCase_ == 3) {
+            return (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) target_;
           }
           return org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder owner_placeholder = 3[json_name = "ownerPlaceholder"];</code>
+       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder> 
-          getOwnerPlaceholderFieldBuilder() {
-        if (ownerPlaceholderBuilder_ == null) {
-          if (!(ownerCase_ == 3)) {
-            owner_ = org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
+          getTargetPlaceholderFieldBuilder() {
+        if (targetPlaceholderBuilder_ == null) {
+          if (!(targetCase_ == 3)) {
+            target_ = org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
           }
-          ownerPlaceholderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          targetPlaceholderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder>(
-                  (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) owner_,
+                  (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) target_,
                   getParentForChildren(),
                   isClean());
-          owner_ = null;
+          target_ = null;
         }
-        ownerCase_ = 3;
+        targetCase_ = 3;
         onChanged();;
-        return ownerPlaceholderBuilder_;
+        return targetPlaceholderBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> ownerTensorBuilder_;
+          org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> targetTensorBuilder_;
       /**
-       * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
        */
-      public boolean hasOwnerTensor() {
-        return ownerCase_ == 4;
+      public boolean hasTargetTensor() {
+        return targetCase_ == 4;
       }
       /**
-       * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
        */
-      public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getOwnerTensor() {
-        if (ownerTensorBuilder_ == null) {
-          if (ownerCase_ == 4) {
-            return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) owner_;
+      public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTargetTensor() {
+        if (targetTensorBuilder_ == null) {
+          if (targetCase_ == 4) {
+            return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_;
           }
           return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
         } else {
-          if (ownerCase_ == 4) {
-            return ownerTensorBuilder_.getMessage();
+          if (targetCase_ == 4) {
+            return targetTensorBuilder_.getMessage();
           }
           return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
        */
-      public Builder setOwnerTensor(org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor value) {
-        if (ownerTensorBuilder_ == null) {
+      public Builder setTargetTensor(org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor value) {
+        if (targetTensorBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          owner_ = value;
+          target_ = value;
           onChanged();
         } else {
-          ownerTensorBuilder_.setMessage(value);
+          targetTensorBuilder_.setMessage(value);
         }
-        ownerCase_ = 4;
+        targetCase_ = 4;
         return this;
       }
       /**
-       * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
        */
-      public Builder setOwnerTensor(
+      public Builder setTargetTensor(
           org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder builderForValue) {
-        if (ownerTensorBuilder_ == null) {
-          owner_ = builderForValue.build();
+        if (targetTensorBuilder_ == null) {
+          target_ = builderForValue.build();
           onChanged();
         } else {
-          ownerTensorBuilder_.setMessage(builderForValue.build());
+          targetTensorBuilder_.setMessage(builderForValue.build());
         }
-        ownerCase_ = 4;
+        targetCase_ = 4;
         return this;
       }
       /**
-       * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
        */
-      public Builder mergeOwnerTensor(org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor value) {
-        if (ownerTensorBuilder_ == null) {
-          if (ownerCase_ == 4 &&
-              owner_ != org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance()) {
-            owner_ = org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.newBuilder((org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) owner_)
+      public Builder mergeTargetTensor(org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor value) {
+        if (targetTensorBuilder_ == null) {
+          if (targetCase_ == 4 &&
+              target_ != org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance()) {
+            target_ = org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.newBuilder((org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_)
                 .mergeFrom(value).buildPartial();
           } else {
-            owner_ = value;
+            target_ = value;
           }
           onChanged();
         } else {
-          if (ownerCase_ == 4) {
-            ownerTensorBuilder_.mergeFrom(value);
+          if (targetCase_ == 4) {
+            targetTensorBuilder_.mergeFrom(value);
           }
-          ownerTensorBuilder_.setMessage(value);
+          targetTensorBuilder_.setMessage(value);
         }
-        ownerCase_ = 4;
+        targetCase_ = 4;
         return this;
       }
       /**
-       * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
        */
-      public Builder clearOwnerTensor() {
-        if (ownerTensorBuilder_ == null) {
-          if (ownerCase_ == 4) {
-            ownerCase_ = 0;
-            owner_ = null;
+      public Builder clearTargetTensor() {
+        if (targetTensorBuilder_ == null) {
+          if (targetCase_ == 4) {
+            targetCase_ = 0;
+            target_ = null;
             onChanged();
           }
         } else {
-          if (ownerCase_ == 4) {
-            ownerCase_ = 0;
-            owner_ = null;
+          if (targetCase_ == 4) {
+            targetCase_ = 0;
+            target_ = null;
           }
-          ownerTensorBuilder_.clear();
+          targetTensorBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
        */
-      public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder getOwnerTensorBuilder() {
-        return getOwnerTensorFieldBuilder().getBuilder();
+      public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder getTargetTensorBuilder() {
+        return getTargetTensorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
        */
-      public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getOwnerTensorOrBuilder() {
-        if ((ownerCase_ == 4) && (ownerTensorBuilder_ != null)) {
-          return ownerTensorBuilder_.getMessageOrBuilder();
+      public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getTargetTensorOrBuilder() {
+        if ((targetCase_ == 4) && (targetTensorBuilder_ != null)) {
+          return targetTensorBuilder_.getMessageOrBuilder();
         } else {
-          if (ownerCase_ == 4) {
-            return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) owner_;
+          if (targetCase_ == 4) {
+            return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_;
           }
           return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.types.torch.v1.TorchTensor owner_tensor = 4[json_name = "ownerTensor"];</code>
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> 
-          getOwnerTensorFieldBuilder() {
-        if (ownerTensorBuilder_ == null) {
-          if (!(ownerCase_ == 4)) {
-            owner_ = org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+          getTargetTensorFieldBuilder() {
+        if (targetTensorBuilder_ == null) {
+          if (!(targetCase_ == 4)) {
+            target_ = org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
           }
-          ownerTensorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          targetTensorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder>(
-                  (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) owner_,
+                  (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_,
                   getParentForChildren(),
                   isClean());
-          owner_ = null;
+          target_ = null;
         }
-        ownerCase_ = 4;
+        targetCase_ = 4;
         onChanged();;
-        return ownerTensorBuilder_;
+        return targetTensorBuilder_;
       }
 
       private java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> args_ =
@@ -2725,27 +2725,27 @@ public final class ComputationActionOuterClass {
       "eneric/pointers/v1/pointer_tensor.proto\032" +
       "\"syft_proto/types/syft/v1/arg.proto\032!syf" +
       "t_proto/types/syft/v1/id.proto\032&syft_pro" +
-      "to/types/torch/v1/tensor.proto\"\327\005\n\021Compu" +
-      "tationAction\022\030\n\007command\030\001 \001(\tR\007command\022T" +
-      "\n\rowner_pointer\030\002 \001(\0132-.syft_proto.gener" +
-      "ic.pointers.v1.PointerTensorH\000R\014ownerPoi" +
-      "nter\022o\n\021owner_placeholder\030\003 \001(\0132@.syft_p" +
-      "roto.frameworks.torch.tensors.interprete" +
-      "rs.v1.PlaceholderH\000R\020ownerPlaceholder\022K\n" +
-      "\014owner_tensor\030\004 \001(\0132&.syft_proto.types.t" +
-      "orch.v1.TorchTensorH\000R\013ownerTensor\0221\n\004ar" +
-      "gs\030\005 \003(\0132\035.syft_proto.types.syft.v1.ArgR" +
-      "\004args\022N\n\006kwargs\030\006 \003(\01326.syft_proto.execu" +
-      "tion.v1.ComputationAction.KwargsEntryR\006k" +
-      "wargs\022;\n\nreturn_ids\030\007 \003(\0132\034.syft_proto.t" +
-      "ypes.syft.v1.IdR\treturnIds\022q\n\023return_pla" +
-      "ceholders\030\010 \003(\0132@.syft_proto.frameworks." +
-      "torch.tensors.interpreters.v1.Placeholde" +
-      "rR\022returnPlaceholders\032X\n\013KwargsEntry\022\020\n\003" +
-      "key\030\001 \001(\tR\003key\0223\n\005value\030\002 \001(\0132\035.syft_pro" +
-      "to.types.syft.v1.ArgR\005value:\0028\001B\007\n\005owner" +
-      "B&\n$org.openmined.syftproto.execution.v1" +
-      "b\006proto3"
+      "to/types/torch/v1/tensor.proto\"\336\005\n\021Compu" +
+      "tationAction\022\030\n\007command\030\001 \001(\tR\007command\022V" +
+      "\n\016target_pointer\030\002 \001(\0132-.syft_proto.gene" +
+      "ric.pointers.v1.PointerTensorH\000R\rtargetP" +
+      "ointer\022q\n\022target_placeholder\030\003 \001(\0132@.syf" +
+      "t_proto.frameworks.torch.tensors.interpr" +
+      "eters.v1.PlaceholderH\000R\021targetPlaceholde" +
+      "r\022M\n\rtarget_tensor\030\004 \001(\0132&.syft_proto.ty" +
+      "pes.torch.v1.TorchTensorH\000R\014targetTensor" +
+      "\0221\n\004args\030\005 \003(\0132\035.syft_proto.types.syft.v" +
+      "1.ArgR\004args\022N\n\006kwargs\030\006 \003(\01326.syft_proto" +
+      ".execution.v1.ComputationAction.KwargsEn" +
+      "tryR\006kwargs\022;\n\nreturn_ids\030\007 \003(\0132\034.syft_p" +
+      "roto.types.syft.v1.IdR\treturnIds\022q\n\023retu" +
+      "rn_placeholders\030\010 \003(\0132@.syft_proto.frame" +
+      "works.torch.tensors.interpreters.v1.Plac" +
+      "eholderR\022returnPlaceholders\032X\n\013KwargsEnt" +
+      "ry\022\020\n\003key\030\001 \001(\tR\003key\0223\n\005value\030\002 \001(\0132\035.sy" +
+      "ft_proto.types.syft.v1.ArgR\005value:\0028\001B\010\n" +
+      "\006targetB&\n$org.openmined.syftproto.execu" +
+      "tion.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2761,7 +2761,7 @@ public final class ComputationActionOuterClass {
     internal_static_syft_proto_execution_v1_ComputationAction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_ComputationAction_descriptor,
-        new java.lang.String[] { "Command", "OwnerPointer", "OwnerPlaceholder", "OwnerTensor", "Args", "Kwargs", "ReturnIds", "ReturnPlaceholders", "Owner", });
+        new java.lang.String[] { "Command", "TargetPointer", "TargetPlaceholder", "TargetTensor", "Args", "Kwargs", "ReturnIds", "ReturnPlaceholders", "Target", });
     internal_static_syft_proto_execution_v1_ComputationAction_KwargsEntry_descriptor =
       internal_static_syft_proto_execution_v1_ComputationAction_descriptor.getNestedTypes().get(0);
     internal_static_syft_proto_execution_v1_ComputationAction_KwargsEntry_fieldAccessorTable = new
