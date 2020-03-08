@@ -11,7 +11,7 @@ import "syft_proto/types/syft/v1/id.proto";
 
 message Plan {
     syft_proto.types.syft.v1.Id id = 1;
-    repeated syft_proto.execution.v1.ComputationAction operations = 2;
+    repeated syft_proto.execution.v1.ComputationAction actions = 2;
     syft_proto.execution.v1.State state = 3;
     bool include_state = 4;
     bool is_built = 5;
