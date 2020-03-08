@@ -16,7 +16,7 @@ message SyftMessage {
     // IsNoneMessage contents_is_none_msg = 4;
     ObjectMessage contents_object_msg = 5;
     // ObjectRequestMessage contents_object_request_msg = 6;
-    OperationMessage contents_operation_msg = 7;
+    ActionMessage contents_action_msg = 7;
     // PlanCommandMessage contents_plan_command_msg = 8;
     // SearchMessage contents_search_msg = 9;
   }
@@ -26,6 +26,6 @@ message ObjectMessage {
   syft_proto.types.torch.v1.TorchTensor tensor = 1;
 }
 
-message OperationMessage {
+message ActionMessage {
   syft_proto.execution.v1.ComputationAction action = 1;
 }

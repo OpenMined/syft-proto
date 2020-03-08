@@ -2408,8 +2408,8 @@ export namespace syft_proto {
                 /** SyftMessage contents_object_msg */
                 contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
-                /** SyftMessage contents_operation_msg */
-                contents_operation_msg?: (syft_proto.messaging.v1.IOperationMessage|null);
+                /** SyftMessage contents_action_msg */
+                contents_action_msg?: (syft_proto.messaging.v1.IActionMessage|null);
             }
 
             /** Represents a SyftMessage. */
@@ -2427,11 +2427,11 @@ export namespace syft_proto {
                 /** SyftMessage contents_object_msg. */
                 public contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
-                /** SyftMessage contents_operation_msg. */
-                public contents_operation_msg?: (syft_proto.messaging.v1.IOperationMessage|null);
+                /** SyftMessage contents_action_msg. */
+                public contents_action_msg?: (syft_proto.messaging.v1.IActionMessage|null);
 
                 /** SyftMessage contents. */
-                public contents?: ("contents_empty_msg"|"contents_object_msg"|"contents_operation_msg");
+                public contents?: ("contents_empty_msg"|"contents_object_msg"|"contents_action_msg");
 
                 /**
                  * Creates a new SyftMessage instance using the specified properties.
@@ -2594,91 +2594,91 @@ export namespace syft_proto {
                 public toJSON(): { [k: string]: any };
             }
 
-            /** Properties of an OperationMessage. */
-            interface IOperationMessage {
+            /** Properties of an ActionMessage. */
+            interface IActionMessage {
 
-                /** OperationMessage action */
+                /** ActionMessage action */
                 action?: (syft_proto.execution.v1.IComputationAction|null);
             }
 
-            /** Represents an OperationMessage. */
-            class OperationMessage implements IOperationMessage {
+            /** Represents an ActionMessage. */
+            class ActionMessage implements IActionMessage {
 
                 /**
-                 * Constructs a new OperationMessage.
+                 * Constructs a new ActionMessage.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: syft_proto.messaging.v1.IOperationMessage);
+                constructor(properties?: syft_proto.messaging.v1.IActionMessage);
 
-                /** OperationMessage action. */
+                /** ActionMessage action. */
                 public action?: (syft_proto.execution.v1.IComputationAction|null);
 
                 /**
-                 * Creates a new OperationMessage instance using the specified properties.
+                 * Creates a new ActionMessage instance using the specified properties.
                  * @param [properties] Properties to set
-                 * @returns OperationMessage instance
+                 * @returns ActionMessage instance
                  */
-                public static create(properties?: syft_proto.messaging.v1.IOperationMessage): syft_proto.messaging.v1.OperationMessage;
+                public static create(properties?: syft_proto.messaging.v1.IActionMessage): syft_proto.messaging.v1.ActionMessage;
 
                 /**
-                 * Encodes the specified OperationMessage message. Does not implicitly {@link syft_proto.messaging.v1.OperationMessage.verify|verify} messages.
-                 * @param message OperationMessage message or plain object to encode
+                 * Encodes the specified ActionMessage message. Does not implicitly {@link syft_proto.messaging.v1.ActionMessage.verify|verify} messages.
+                 * @param message ActionMessage message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: syft_proto.messaging.v1.IOperationMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encode(message: syft_proto.messaging.v1.IActionMessage, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Encodes the specified OperationMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.OperationMessage.verify|verify} messages.
-                 * @param message OperationMessage message or plain object to encode
+                 * Encodes the specified ActionMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.ActionMessage.verify|verify} messages.
+                 * @param message ActionMessage message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: syft_proto.messaging.v1.IOperationMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: syft_proto.messaging.v1.IActionMessage, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Decodes an OperationMessage message from the specified reader or buffer.
+                 * Decodes an ActionMessage message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns OperationMessage
+                 * @returns ActionMessage
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.OperationMessage;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.ActionMessage;
 
                 /**
-                 * Decodes an OperationMessage message from the specified reader or buffer, length delimited.
+                 * Decodes an ActionMessage message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns OperationMessage
+                 * @returns ActionMessage
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.OperationMessage;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.ActionMessage;
 
                 /**
-                 * Verifies an OperationMessage message.
+                 * Verifies an ActionMessage message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
                 public static verify(message: { [k: string]: any }): (string|null);
 
                 /**
-                 * Creates an OperationMessage message from a plain object. Also converts values to their respective internal types.
+                 * Creates an ActionMessage message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
-                 * @returns OperationMessage
+                 * @returns ActionMessage
                  */
-                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.OperationMessage;
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.ActionMessage;
 
                 /**
-                 * Creates a plain object from an OperationMessage message. Also converts values to other types if specified.
-                 * @param message OperationMessage
+                 * Creates a plain object from an ActionMessage message. Also converts values to other types if specified.
+                 * @param message ActionMessage
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: syft_proto.messaging.v1.OperationMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public static toObject(message: syft_proto.messaging.v1.ActionMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
-                 * Converts this OperationMessage to JSON.
+                 * Converts this ActionMessage to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
