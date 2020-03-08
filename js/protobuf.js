@@ -527,7 +527,7 @@ $root.syft_proto = (function() {
                  * @memberof syft_proto.execution.v1
                  * @interface IPlan
                  * @property {syft_proto.types.syft.v1.IId|null} [id] Plan id
-                 * @property {Array.<syft_proto.execution.v1.IComputationAction>|null} [operations] Plan operations
+                 * @property {Array.<syft_proto.execution.v1.IComputationAction>|null} [actions] Plan actions
                  * @property {syft_proto.execution.v1.IState|null} [state] Plan state
                  * @property {boolean|null} [include_state] Plan include_state
                  * @property {boolean|null} [is_built] Plan is_built
@@ -546,7 +546,7 @@ $root.syft_proto = (function() {
                  * @param {syft_proto.execution.v1.IPlan=} [properties] Properties to set
                  */
                 function Plan(properties) {
-                    this.operations = [];
+                    this.actions = [];
                     this.tags = [];
                     this.placeholders = [];
                     if (properties)
@@ -564,12 +564,12 @@ $root.syft_proto = (function() {
                 Plan.prototype.id = null;
 
                 /**
-                 * Plan operations.
-                 * @member {Array.<syft_proto.execution.v1.IComputationAction>} operations
+                 * Plan actions.
+                 * @member {Array.<syft_proto.execution.v1.IComputationAction>} actions
                  * @memberof syft_proto.execution.v1.Plan
                  * @instance
                  */
-                Plan.prototype.operations = $util.emptyArray;
+                Plan.prototype.actions = $util.emptyArray;
 
                 /**
                  * Plan state.
@@ -653,9 +653,9 @@ $root.syft_proto = (function() {
                         writer = $Writer.create();
                     if (message.id != null && message.hasOwnProperty("id"))
                         $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.operations != null && message.operations.length)
-                        for (var i = 0; i < message.operations.length; ++i)
-                            $root.syft_proto.execution.v1.ComputationAction.encode(message.operations[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.actions != null && message.actions.length)
+                        for (var i = 0; i < message.actions.length; ++i)
+                            $root.syft_proto.execution.v1.ComputationAction.encode(message.actions[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.state != null && message.hasOwnProperty("state"))
                         $root.syft_proto.execution.v1.State.encode(message.state, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     if (message.include_state != null && message.hasOwnProperty("include_state"))
@@ -710,9 +710,9 @@ $root.syft_proto = (function() {
                             message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            if (!(message.operations && message.operations.length))
-                                message.operations = [];
-                            message.operations.push($root.syft_proto.execution.v1.ComputationAction.decode(reader, reader.uint32()));
+                            if (!(message.actions && message.actions.length))
+                                message.actions = [];
+                            message.actions.push($root.syft_proto.execution.v1.ComputationAction.decode(reader, reader.uint32()));
                             break;
                         case 3:
                             message.state = $root.syft_proto.execution.v1.State.decode(reader, reader.uint32());
@@ -779,13 +779,13 @@ $root.syft_proto = (function() {
                         if (error)
                             return "id." + error;
                     }
-                    if (message.operations != null && message.hasOwnProperty("operations")) {
-                        if (!Array.isArray(message.operations))
-                            return "operations: array expected";
-                        for (var i = 0; i < message.operations.length; ++i) {
-                            var error = $root.syft_proto.execution.v1.ComputationAction.verify(message.operations[i]);
+                    if (message.actions != null && message.hasOwnProperty("actions")) {
+                        if (!Array.isArray(message.actions))
+                            return "actions: array expected";
+                        for (var i = 0; i < message.actions.length; ++i) {
+                            var error = $root.syft_proto.execution.v1.ComputationAction.verify(message.actions[i]);
                             if (error)
-                                return "operations." + error;
+                                return "actions." + error;
                         }
                     }
                     if (message.state != null && message.hasOwnProperty("state")) {
@@ -841,14 +841,14 @@ $root.syft_proto = (function() {
                             throw TypeError(".syft_proto.execution.v1.Plan.id: object expected");
                         message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
                     }
-                    if (object.operations) {
-                        if (!Array.isArray(object.operations))
-                            throw TypeError(".syft_proto.execution.v1.Plan.operations: array expected");
-                        message.operations = [];
-                        for (var i = 0; i < object.operations.length; ++i) {
-                            if (typeof object.operations[i] !== "object")
-                                throw TypeError(".syft_proto.execution.v1.Plan.operations: object expected");
-                            message.operations[i] = $root.syft_proto.execution.v1.ComputationAction.fromObject(object.operations[i]);
+                    if (object.actions) {
+                        if (!Array.isArray(object.actions))
+                            throw TypeError(".syft_proto.execution.v1.Plan.actions: array expected");
+                        message.actions = [];
+                        for (var i = 0; i < object.actions.length; ++i) {
+                            if (typeof object.actions[i] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.Plan.actions: object expected");
+                            message.actions[i] = $root.syft_proto.execution.v1.ComputationAction.fromObject(object.actions[i]);
                         }
                     }
                     if (object.state != null) {
@@ -898,7 +898,7 @@ $root.syft_proto = (function() {
                         options = {};
                     var object = {};
                     if (options.arrays || options.defaults) {
-                        object.operations = [];
+                        object.actions = [];
                         object.tags = [];
                         object.placeholders = [];
                     }
@@ -912,10 +912,10 @@ $root.syft_proto = (function() {
                     }
                     if (message.id != null && message.hasOwnProperty("id"))
                         object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
-                    if (message.operations && message.operations.length) {
-                        object.operations = [];
-                        for (var j = 0; j < message.operations.length; ++j)
-                            object.operations[j] = $root.syft_proto.execution.v1.ComputationAction.toObject(message.operations[j], options);
+                    if (message.actions && message.actions.length) {
+                        object.actions = [];
+                        for (var j = 0; j < message.actions.length; ++j)
+                            object.actions[j] = $root.syft_proto.execution.v1.ComputationAction.toObject(message.actions[j], options);
                     }
                     if (message.state != null && message.hasOwnProperty("state"))
                         object.state = $root.syft_proto.execution.v1.State.toObject(message.state, options);

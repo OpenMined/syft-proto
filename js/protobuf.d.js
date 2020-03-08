@@ -149,8 +149,8 @@ export namespace syft_proto {
                 /** Plan id */
                 id?: (syft_proto.types.syft.v1.IId|null);
 
-                /** Plan operations */
-                operations?: (syft_proto.execution.v1.IComputationAction[]|null);
+                /** Plan actions */
+                actions?: (syft_proto.execution.v1.IComputationAction[]|null);
 
                 /** Plan state */
                 state?: (syft_proto.execution.v1.IState|null);
@@ -186,8 +186,8 @@ export namespace syft_proto {
                 /** Plan id. */
                 public id?: (syft_proto.types.syft.v1.IId|null);
 
-                /** Plan operations. */
-                public operations: syft_proto.execution.v1.IComputationAction[];
+                /** Plan actions. */
+                public actions: syft_proto.execution.v1.IComputationAction[];
 
                 /** Plan state. */
                 public state?: (syft_proto.execution.v1.IState|null);
