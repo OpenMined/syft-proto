@@ -2408,8 +2408,8 @@ export namespace syft_proto {
                 /** SyftMessage contents_object_msg */
                 contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
-                /** SyftMessage contents_action_msg */
-                contents_action_msg?: (syft_proto.messaging.v1.IActionMessage|null);
+                /** SyftMessage contents_command_msg */
+                contents_command_msg?: (syft_proto.messaging.v1.ICommandMessage|null);
             }
 
             /** Represents a SyftMessage. */
@@ -2427,11 +2427,11 @@ export namespace syft_proto {
                 /** SyftMessage contents_object_msg. */
                 public contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
-                /** SyftMessage contents_action_msg. */
-                public contents_action_msg?: (syft_proto.messaging.v1.IActionMessage|null);
+                /** SyftMessage contents_command_msg. */
+                public contents_command_msg?: (syft_proto.messaging.v1.ICommandMessage|null);
 
                 /** SyftMessage contents. */
-                public contents?: ("contents_empty_msg"|"contents_object_msg"|"contents_action_msg");
+                public contents?: ("contents_empty_msg"|"contents_object_msg"|"contents_command_msg");
 
                 /**
                  * Creates a new SyftMessage instance using the specified properties.
@@ -2594,91 +2594,91 @@ export namespace syft_proto {
                 public toJSON(): { [k: string]: any };
             }
 
-            /** Properties of an ActionMessage. */
-            interface IActionMessage {
+            /** Properties of a CommandMessage. */
+            interface ICommandMessage {
 
-                /** ActionMessage action */
+                /** CommandMessage action */
                 action?: (syft_proto.execution.v1.IComputationAction|null);
             }
 
-            /** Represents an ActionMessage. */
-            class ActionMessage implements IActionMessage {
+            /** Represents a CommandMessage. */
+            class CommandMessage implements ICommandMessage {
 
                 /**
-                 * Constructs a new ActionMessage.
+                 * Constructs a new CommandMessage.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: syft_proto.messaging.v1.IActionMessage);
+                constructor(properties?: syft_proto.messaging.v1.ICommandMessage);
 
-                /** ActionMessage action. */
+                /** CommandMessage action. */
                 public action?: (syft_proto.execution.v1.IComputationAction|null);
 
                 /**
-                 * Creates a new ActionMessage instance using the specified properties.
+                 * Creates a new CommandMessage instance using the specified properties.
                  * @param [properties] Properties to set
-                 * @returns ActionMessage instance
+                 * @returns CommandMessage instance
                  */
-                public static create(properties?: syft_proto.messaging.v1.IActionMessage): syft_proto.messaging.v1.ActionMessage;
+                public static create(properties?: syft_proto.messaging.v1.ICommandMessage): syft_proto.messaging.v1.CommandMessage;
 
                 /**
-                 * Encodes the specified ActionMessage message. Does not implicitly {@link syft_proto.messaging.v1.ActionMessage.verify|verify} messages.
-                 * @param message ActionMessage message or plain object to encode
+                 * Encodes the specified CommandMessage message. Does not implicitly {@link syft_proto.messaging.v1.CommandMessage.verify|verify} messages.
+                 * @param message CommandMessage message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: syft_proto.messaging.v1.IActionMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encode(message: syft_proto.messaging.v1.ICommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Encodes the specified ActionMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.ActionMessage.verify|verify} messages.
-                 * @param message ActionMessage message or plain object to encode
+                 * Encodes the specified CommandMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.CommandMessage.verify|verify} messages.
+                 * @param message CommandMessage message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: syft_proto.messaging.v1.IActionMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: syft_proto.messaging.v1.ICommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Decodes an ActionMessage message from the specified reader or buffer.
+                 * Decodes a CommandMessage message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns ActionMessage
+                 * @returns CommandMessage
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.ActionMessage;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.CommandMessage;
 
                 /**
-                 * Decodes an ActionMessage message from the specified reader or buffer, length delimited.
+                 * Decodes a CommandMessage message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns ActionMessage
+                 * @returns CommandMessage
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.ActionMessage;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.CommandMessage;
 
                 /**
-                 * Verifies an ActionMessage message.
+                 * Verifies a CommandMessage message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
                 public static verify(message: { [k: string]: any }): (string|null);
 
                 /**
-                 * Creates an ActionMessage message from a plain object. Also converts values to their respective internal types.
+                 * Creates a CommandMessage message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
-                 * @returns ActionMessage
+                 * @returns CommandMessage
                  */
-                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.ActionMessage;
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.CommandMessage;
 
                 /**
-                 * Creates a plain object from an ActionMessage message. Also converts values to other types if specified.
-                 * @param message ActionMessage
+                 * Creates a plain object from a CommandMessage message. Also converts values to other types if specified.
+                 * @param message CommandMessage
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: syft_proto.messaging.v1.ActionMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public static toObject(message: syft_proto.messaging.v1.CommandMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
-                 * Converts this ActionMessage to JSON.
+                 * Converts this CommandMessage to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };

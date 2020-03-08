@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.messaging.v1',
   syntax='proto3',
   serialized_options=_b('\n$org.openmined.syftproto.messaging.v1'),
-  serialized_pb=_b('\n%syft_proto/messaging/v1/message.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x30syft_proto/execution/v1/computation_action.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\x95\x02\n\x0bSyftMessage\x12\x46\n\x12\x63ontents_empty_msg\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00R\x10\x63ontentsEmptyMsg\x12X\n\x13\x63ontents_object_msg\x18\x05 \x01(\x0b\x32&.syft_proto.messaging.v1.ObjectMessageH\x00R\x11\x63ontentsObjectMsg\x12X\n\x13\x63ontents_action_msg\x18\x07 \x01(\x0b\x32&.syft_proto.messaging.v1.ActionMessageH\x00R\x11\x63ontentsActionMsgB\n\n\x08\x63ontents\"O\n\rObjectMessage\x12>\n\x06tensor\x18\x01 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x06tensor\"S\n\rActionMessage\x12\x42\n\x06\x61\x63tion\x18\x01 \x01(\x0b\x32*.syft_proto.execution.v1.ComputationActionR\x06\x61\x63tionB&\n$org.openmined.syftproto.messaging.v1b\x06proto3')
+  serialized_pb=_b('\n%syft_proto/messaging/v1/message.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x30syft_proto/execution/v1/computation_action.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\x98\x02\n\x0bSyftMessage\x12\x46\n\x12\x63ontents_empty_msg\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00R\x10\x63ontentsEmptyMsg\x12X\n\x13\x63ontents_object_msg\x18\x05 \x01(\x0b\x32&.syft_proto.messaging.v1.ObjectMessageH\x00R\x11\x63ontentsObjectMsg\x12[\n\x14\x63ontents_command_msg\x18\x07 \x01(\x0b\x32\'.syft_proto.messaging.v1.CommandMessageH\x00R\x12\x63ontentsCommandMsgB\n\n\x08\x63ontents\"O\n\rObjectMessage\x12>\n\x06tensor\x18\x01 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x06tensor\"T\n\x0e\x43ommandMessage\x12\x42\n\x06\x61\x63tion\x18\x01 \x01(\x0b\x32*.syft_proto.execution.v1.ComputationActionR\x06\x61\x63tionB&\n$org.openmined.syftproto.messaging.v1b\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_computation__action__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
 
@@ -52,12 +52,12 @@ _SYFTMESSAGE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='contentsObjectMsg', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='contents_action_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_action_msg', index=2,
+      name='contents_command_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_command_msg', index=2,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='contentsActionMsg', file=DESCRIPTOR),
+      serialized_options=None, json_name='contentsCommandMsg', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -74,7 +74,7 @@ _SYFTMESSAGE = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=186,
-  serialized_end=463,
+  serialized_end=466,
 )
 
 
@@ -104,20 +104,20 @@ _OBJECTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=465,
-  serialized_end=544,
+  serialized_start=468,
+  serialized_end=547,
 )
 
 
-_ACTIONMESSAGE = _descriptor.Descriptor(
-  name='ActionMessage',
-  full_name='syft_proto.messaging.v1.ActionMessage',
+_COMMANDMESSAGE = _descriptor.Descriptor(
+  name='CommandMessage',
+  full_name='syft_proto.messaging.v1.CommandMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='action', full_name='syft_proto.messaging.v1.ActionMessage.action', index=0,
+      name='action', full_name='syft_proto.messaging.v1.CommandMessage.action', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -135,13 +135,13 @@ _ACTIONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=546,
-  serialized_end=629,
+  serialized_start=549,
+  serialized_end=633,
 )
 
 _SYFTMESSAGE.fields_by_name['contents_empty_msg'].message_type = google_dot_protobuf_dot_empty__pb2._EMPTY
 _SYFTMESSAGE.fields_by_name['contents_object_msg'].message_type = _OBJECTMESSAGE
-_SYFTMESSAGE.fields_by_name['contents_action_msg'].message_type = _ACTIONMESSAGE
+_SYFTMESSAGE.fields_by_name['contents_command_msg'].message_type = _COMMANDMESSAGE
 _SYFTMESSAGE.oneofs_by_name['contents'].fields.append(
   _SYFTMESSAGE.fields_by_name['contents_empty_msg'])
 _SYFTMESSAGE.fields_by_name['contents_empty_msg'].containing_oneof = _SYFTMESSAGE.oneofs_by_name['contents']
@@ -149,13 +149,13 @@ _SYFTMESSAGE.oneofs_by_name['contents'].fields.append(
   _SYFTMESSAGE.fields_by_name['contents_object_msg'])
 _SYFTMESSAGE.fields_by_name['contents_object_msg'].containing_oneof = _SYFTMESSAGE.oneofs_by_name['contents']
 _SYFTMESSAGE.oneofs_by_name['contents'].fields.append(
-  _SYFTMESSAGE.fields_by_name['contents_action_msg'])
-_SYFTMESSAGE.fields_by_name['contents_action_msg'].containing_oneof = _SYFTMESSAGE.oneofs_by_name['contents']
+  _SYFTMESSAGE.fields_by_name['contents_command_msg'])
+_SYFTMESSAGE.fields_by_name['contents_command_msg'].containing_oneof = _SYFTMESSAGE.oneofs_by_name['contents']
 _OBJECTMESSAGE.fields_by_name['tensor'].message_type = syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2._TORCHTENSOR
-_ACTIONMESSAGE.fields_by_name['action'].message_type = syft__proto_dot_execution_dot_v1_dot_computation__action__pb2._COMPUTATIONACTION
+_COMMANDMESSAGE.fields_by_name['action'].message_type = syft__proto_dot_execution_dot_v1_dot_computation__action__pb2._COMPUTATIONACTION
 DESCRIPTOR.message_types_by_name['SyftMessage'] = _SYFTMESSAGE
 DESCRIPTOR.message_types_by_name['ObjectMessage'] = _OBJECTMESSAGE
-DESCRIPTOR.message_types_by_name['ActionMessage'] = _ACTIONMESSAGE
+DESCRIPTOR.message_types_by_name['CommandMessage'] = _COMMANDMESSAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 SyftMessage = _reflection.GeneratedProtocolMessageType('SyftMessage', (_message.Message,), {
@@ -172,12 +172,12 @@ ObjectMessage = _reflection.GeneratedProtocolMessageType('ObjectMessage', (_mess
   })
 _sym_db.RegisterMessage(ObjectMessage)
 
-ActionMessage = _reflection.GeneratedProtocolMessageType('ActionMessage', (_message.Message,), {
-  'DESCRIPTOR' : _ACTIONMESSAGE,
+CommandMessage = _reflection.GeneratedProtocolMessageType('CommandMessage', (_message.Message,), {
+  'DESCRIPTOR' : _COMMANDMESSAGE,
   '__module__' : 'syft_proto.messaging.v1.message_pb2'
-  # @@protoc_insertion_point(class_scope:syft_proto.messaging.v1.ActionMessage)
+  # @@protoc_insertion_point(class_scope:syft_proto.messaging.v1.CommandMessage)
   })
-_sym_db.RegisterMessage(ActionMessage)
+_sym_db.RegisterMessage(CommandMessage)
 
 
 DESCRIPTOR._options = None

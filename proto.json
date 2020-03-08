@@ -120,7 +120,7 @@
     "syft.messaging.message.Message": {
       "code": 32
     },
-    "syft.messaging.message.ActionMessage": {
+    "syft.messaging.message.CommandMessage": {
       "code": 33
     },
     "syft.messaging.message.ObjectMessage": {
