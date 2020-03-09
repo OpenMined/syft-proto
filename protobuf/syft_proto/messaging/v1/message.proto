@@ -29,9 +29,8 @@ message ObjectMessage {
 }
 
 message CommandMessage {
-  syft_proto.execution.v1.ComputationAction action = 1;
-}
-
-message CommunicationMessage {
-  syft_proto.execution.v1.CommunicationAction action = 1;
+  oneof action {
+    syft_proto.execution.v1.ComputationAction computation = 1;
+    syft_proto.execution.v1.CommunicationAction communication = 2;
+  }
 }
