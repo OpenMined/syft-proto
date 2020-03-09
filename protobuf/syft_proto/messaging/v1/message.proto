@@ -33,5 +33,5 @@ message CommandMessage {
 }
 
 message CommunicationMessage {
-  syft_proto.execution.v1.CommunicationAction communication = 1;
+  syft_proto.execution.v1.CommunicationAction action = 1;
 }
