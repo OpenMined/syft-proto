@@ -4,7 +4,7 @@ package syft_proto.messaging.v1;
 option java_package = "org.openmined.syftproto.messaging.v1";
 
 import "google/protobuf/empty.proto";
-import "syft_proto/execution/v1/operation.proto";
+import "syft_proto/execution/v1/computation_action.proto";
 import "syft_proto/types/torch/v1/tensor.proto";
 
 
@@ -16,7 +16,7 @@ message SyftMessage {
     // IsNoneMessage contents_is_none_msg = 4;
     ObjectMessage contents_object_msg = 5;
     // ObjectRequestMessage contents_object_request_msg = 6;
-    OperationMessage contents_operation_msg = 7;
+    CommandMessage contents_command_msg = 7;
     // PlanCommandMessage contents_plan_command_msg = 8;
     // SearchMessage contents_search_msg = 9;
   }
@@ -26,6 +26,6 @@ message ObjectMessage {
   syft_proto.types.torch.v1.TorchTensor tensor = 1;
 }
 
-message OperationMessage {
-  syft_proto.execution.v1.Operation operation = 1;
+message CommandMessage {
+  syft_proto.execution.v1.ComputationAction action = 1;
 }
