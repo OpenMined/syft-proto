@@ -19,24 +19,28 @@ public final class CommunicationActionOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+     * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
+     * @return Whether the obj field is set.
      */
     boolean hasObj();
     /**
-     * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+     * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
+     * @return The obj.
      */
-    org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getObj();
+    org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObj();
     /**
-     * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+     * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
      */
-    org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder getObjOrBuilder();
+    org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjOrBuilder();
 
     /**
      * <code>.syft_proto.types.syft.v1.Id source = 2[json_name = "source"];</code>
+     * @return Whether the source field is set.
      */
     boolean hasSource();
     /**
      * <code>.syft_proto.types.syft.v1.Id source = 2[json_name = "source"];</code>
+     * @return The source.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getSource();
     /**
@@ -150,11 +154,11 @@ public final class CommunicationActionOuterClass {
               done = true;
               break;
             case 10: {
-              org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder subBuilder = null;
+              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder subBuilder = null;
               if (obj_ != null) {
                 subBuilder = obj_.toBuilder();
               }
-              obj_ = input.readMessage(org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.parser(), extensionRegistry);
+              obj_ = input.readMessage(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(obj_);
                 obj_ = subBuilder.buildPartial();
@@ -245,23 +249,25 @@ public final class CommunicationActionOuterClass {
     }
 
     public static final int OBJ_FIELD_NUMBER = 1;
-    private org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg obj_;
+    private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id obj_;
     /**
-     * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+     * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
+     * @return Whether the obj field is set.
      */
     public boolean hasObj() {
       return obj_ != null;
     }
     /**
-     * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+     * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
+     * @return The obj.
      */
-    public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getObj() {
-      return obj_ == null ? org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.getDefaultInstance() : obj_;
+    public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObj() {
+      return obj_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : obj_;
     }
     /**
-     * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+     * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
      */
-    public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder getObjOrBuilder() {
+    public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjOrBuilder() {
       return getObj();
     }
 
@@ -269,12 +275,14 @@ public final class CommunicationActionOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id source_;
     /**
      * <code>.syft_proto.types.syft.v1.Id source = 2[json_name = "source"];</code>
+     * @return Whether the source field is set.
      */
     public boolean hasSource() {
       return source_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id source = 2[json_name = "source"];</code>
+     * @return The source.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getSource() {
       return source_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : source_;
@@ -848,29 +856,31 @@ public final class CommunicationActionOuterClass {
       }
       private int bitField0_;
 
-      private org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg obj_;
+      private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id obj_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> objBuilder_;
+          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> objBuilder_;
       /**
-       * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+       * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
+       * @return Whether the obj field is set.
        */
       public boolean hasObj() {
         return objBuilder_ != null || obj_ != null;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+       * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
+       * @return The obj.
        */
-      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getObj() {
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObj() {
         if (objBuilder_ == null) {
-          return obj_ == null ? org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.getDefaultInstance() : obj_;
+          return obj_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : obj_;
         } else {
           return objBuilder_.getMessage();
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+       * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
        */
-      public Builder setObj(org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg value) {
+      public Builder setObj(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
         if (objBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -884,10 +894,10 @@ public final class CommunicationActionOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+       * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
        */
       public Builder setObj(
-          org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder builderForValue) {
+          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
         if (objBuilder_ == null) {
           obj_ = builderForValue.build();
           onChanged();
@@ -898,13 +908,13 @@ public final class CommunicationActionOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+       * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
        */
-      public Builder mergeObj(org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg value) {
+      public Builder mergeObj(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
         if (objBuilder_ == null) {
           if (obj_ != null) {
             obj_ =
-              org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.newBuilder(obj_).mergeFrom(value).buildPartial();
+              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.newBuilder(obj_).mergeFrom(value).buildPartial();
           } else {
             obj_ = value;
           }
@@ -916,7 +926,7 @@ public final class CommunicationActionOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+       * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
        */
       public Builder clearObj() {
         if (objBuilder_ == null) {
@@ -930,33 +940,33 @@ public final class CommunicationActionOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+       * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder getObjBuilder() {
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getObjBuilder() {
         
         onChanged();
         return getObjFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+       * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder getObjOrBuilder() {
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjOrBuilder() {
         if (objBuilder_ != null) {
           return objBuilder_.getMessageOrBuilder();
         } else {
           return obj_ == null ?
-              org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.getDefaultInstance() : obj_;
+              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : obj_;
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Arg obj = 1[json_name = "obj"];</code>
+       * <code>.syft_proto.types.syft.v1.Id obj = 1[json_name = "obj"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> 
+          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
           getObjFieldBuilder() {
         if (objBuilder_ == null) {
           objBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder>(
+              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder>(
                   getObj(),
                   getParentForChildren(),
                   isClean());
@@ -970,12 +980,14 @@ public final class CommunicationActionOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> sourceBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id source = 2[json_name = "source"];</code>
+       * @return Whether the source field is set.
        */
       public boolean hasSource() {
         return sourceBuilder_ != null || source_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id source = 2[json_name = "source"];</code>
+       * @return The source.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getSource() {
         if (sourceBuilder_ == null) {
@@ -1519,18 +1531,17 @@ public final class CommunicationActionOuterClass {
       "\n2syft_proto/execution/v1/communication_" +
       "action.proto\022\027syft_proto.execution.v1\032\"s" +
       "yft_proto/types/syft/v1/arg.proto\032!syft_" +
-      "proto/types/syft/v1/id.proto\"\352\002\n\023Communi" +
-      "cationAction\022/\n\003obj\030\001 \001(\0132\035.syft_proto.t" +
-      "ypes.syft.v1.ArgR\003obj\0224\n\006source\030\002 \001(\0132\034." +
-      "syft_proto.types.syft.v1.IdR\006source\022@\n\014d" +
-      "estinations\030\003 \003(\0132\034.syft_proto.types.syf" +
-      "t.v1.IdR\014destinations\022P\n\006kwargs\030\004 \003(\01328." +
-      "syft_proto.execution.v1.CommunicationAct" +
-      "ion.KwargsEntryR\006kwargs\032X\n\013KwargsEntry\022\020" +
-      "\n\003key\030\001 \001(\tR\003key\0223\n\005value\030\002 \001(\0132\035.syft_p" +
-      "roto.types.syft.v1.ArgR\005value:\0028\001B&\n$org" +
-      ".openmined.syftproto.execution.v1b\006proto" +
-      "3"
+      "proto/types/syft/v1/id.proto\"\351\002\n\023Communi" +
+      "cationAction\022.\n\003obj\030\001 \001(\0132\034.syft_proto.t" +
+      "ypes.syft.v1.IdR\003obj\0224\n\006source\030\002 \001(\0132\034.s" +
+      "yft_proto.types.syft.v1.IdR\006source\022@\n\014de" +
+      "stinations\030\003 \003(\0132\034.syft_proto.types.syft" +
+      ".v1.IdR\014destinations\022P\n\006kwargs\030\004 \003(\01328.s" +
+      "yft_proto.execution.v1.CommunicationActi" +
+      "on.KwargsEntryR\006kwargs\032X\n\013KwargsEntry\022\020\n" +
+      "\003key\030\001 \001(\tR\003key\0223\n\005value\030\002 \001(\0132\035.syft_pr" +
+      "oto.types.syft.v1.ArgR\005value:\0028\001B&\n$org." +
+      "openmined.syftproto.execution.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

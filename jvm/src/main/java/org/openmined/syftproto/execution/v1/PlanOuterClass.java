@@ -20,10 +20,12 @@ public final class PlanOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return The id.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId();
     /**
@@ -57,10 +59,12 @@ public final class PlanOuterClass {
 
     /**
      * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
+     * @return Whether the state field is set.
      */
     boolean hasState();
     /**
      * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
+     * @return The state.
      */
     org.openmined.syftproto.execution.v1.StateOuterClass.State getState();
     /**
@@ -70,49 +74,61 @@ public final class PlanOuterClass {
 
     /**
      * <code>bool include_state = 4[json_name = "includeState"];</code>
+     * @return The includeState.
      */
     boolean getIncludeState();
 
     /**
      * <code>bool is_built = 5[json_name = "isBuilt"];</code>
+     * @return The isBuilt.
      */
     boolean getIsBuilt();
 
     /**
      * <code>string name = 6[json_name = "name"];</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 6[json_name = "name"];</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
+     * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
+     * @return The count of tags.
      */
     int getTagsCount();
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
 
     /**
      * <code>string description = 8[json_name = "description"];</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 8[json_name = "description"];</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
@@ -312,12 +328,14 @@ public final class PlanOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id id_;
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return Whether the id field is set.
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return The id.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
@@ -368,12 +386,14 @@ public final class PlanOuterClass {
     private org.openmined.syftproto.execution.v1.StateOuterClass.State state_;
     /**
      * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
+     * @return Whether the state field is set.
      */
     public boolean hasState() {
       return state_ != null;
     }
     /**
      * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
+     * @return The state.
      */
     public org.openmined.syftproto.execution.v1.StateOuterClass.State getState() {
       return state_ == null ? org.openmined.syftproto.execution.v1.StateOuterClass.State.getDefaultInstance() : state_;
@@ -389,6 +409,7 @@ public final class PlanOuterClass {
     private boolean includeState_;
     /**
      * <code>bool include_state = 4[json_name = "includeState"];</code>
+     * @return The includeState.
      */
     public boolean getIncludeState() {
       return includeState_;
@@ -398,6 +419,7 @@ public final class PlanOuterClass {
     private boolean isBuilt_;
     /**
      * <code>bool is_built = 5[json_name = "isBuilt"];</code>
+     * @return The isBuilt.
      */
     public boolean getIsBuilt() {
       return isBuilt_;
@@ -407,6 +429,7 @@ public final class PlanOuterClass {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 6[json_name = "name"];</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -422,6 +445,7 @@ public final class PlanOuterClass {
     }
     /**
      * <code>string name = 6[json_name = "name"];</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -441,6 +465,7 @@ public final class PlanOuterClass {
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
+     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -448,18 +473,23 @@ public final class PlanOuterClass {
     }
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
+     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
     /**
      * <code>repeated string tags = 7[json_name = "tags"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -470,6 +500,7 @@ public final class PlanOuterClass {
     private volatile java.lang.Object description_;
     /**
      * <code>string description = 8[json_name = "description"];</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -485,6 +516,7 @@ public final class PlanOuterClass {
     }
     /**
      * <code>string description = 8[json_name = "description"];</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -1101,12 +1133,14 @@ public final class PlanOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> idBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * @return Whether the id field is set.
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * @return The id.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
         if (idBuilder_ == null) {
@@ -1458,12 +1492,14 @@ public final class PlanOuterClass {
           org.openmined.syftproto.execution.v1.StateOuterClass.State, org.openmined.syftproto.execution.v1.StateOuterClass.State.Builder, org.openmined.syftproto.execution.v1.StateOuterClass.StateOrBuilder> stateBuilder_;
       /**
        * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
+       * @return Whether the state field is set.
        */
       public boolean hasState() {
         return stateBuilder_ != null || state_ != null;
       }
       /**
        * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
+       * @return The state.
        */
       public org.openmined.syftproto.execution.v1.StateOuterClass.State getState() {
         if (stateBuilder_ == null) {
@@ -1573,12 +1609,15 @@ public final class PlanOuterClass {
       private boolean includeState_ ;
       /**
        * <code>bool include_state = 4[json_name = "includeState"];</code>
+       * @return The includeState.
        */
       public boolean getIncludeState() {
         return includeState_;
       }
       /**
        * <code>bool include_state = 4[json_name = "includeState"];</code>
+       * @param value The includeState to set.
+       * @return This builder for chaining.
        */
       public Builder setIncludeState(boolean value) {
         
@@ -1588,6 +1627,7 @@ public final class PlanOuterClass {
       }
       /**
        * <code>bool include_state = 4[json_name = "includeState"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearIncludeState() {
         
@@ -1599,12 +1639,15 @@ public final class PlanOuterClass {
       private boolean isBuilt_ ;
       /**
        * <code>bool is_built = 5[json_name = "isBuilt"];</code>
+       * @return The isBuilt.
        */
       public boolean getIsBuilt() {
         return isBuilt_;
       }
       /**
        * <code>bool is_built = 5[json_name = "isBuilt"];</code>
+       * @param value The isBuilt to set.
+       * @return This builder for chaining.
        */
       public Builder setIsBuilt(boolean value) {
         
@@ -1614,6 +1657,7 @@ public final class PlanOuterClass {
       }
       /**
        * <code>bool is_built = 5[json_name = "isBuilt"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearIsBuilt() {
         
@@ -1625,6 +1669,7 @@ public final class PlanOuterClass {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 6[json_name = "name"];</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1640,6 +1685,7 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string name = 6[json_name = "name"];</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1656,6 +1702,8 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string name = 6[json_name = "name"];</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1669,6 +1717,7 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string name = 6[json_name = "name"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1678,6 +1727,8 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string name = 6[json_name = "name"];</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1700,6 +1751,7 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
+       * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
@@ -1707,18 +1759,23 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
+       * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -1726,6 +1783,9 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
        */
       public Builder setTags(
           int index, java.lang.String value) {
@@ -1739,6 +1799,8 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTags(
           java.lang.String value) {
@@ -1752,6 +1814,8 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
@@ -1763,6 +1827,7 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1772,6 +1837,8 @@ public final class PlanOuterClass {
       }
       /**
        * <code>repeated string tags = 7[json_name = "tags"];</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -1788,6 +1855,7 @@ public final class PlanOuterClass {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 8[json_name = "description"];</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -1803,6 +1871,7 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string description = 8[json_name = "description"];</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -1819,6 +1888,8 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string description = 8[json_name = "description"];</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -1832,6 +1903,7 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string description = 8[json_name = "description"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -1841,6 +1913,8 @@ public final class PlanOuterClass {
       }
       /**
        * <code>string description = 8[json_name = "description"];</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {

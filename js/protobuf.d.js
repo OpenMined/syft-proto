@@ -12,7 +12,7 @@ export namespace syft_proto {
             interface ICommunicationAction {
 
                 /** CommunicationAction obj */
-                obj?: (syft_proto.types.syft.v1.IArg|null);
+                obj?: (syft_proto.types.syft.v1.IId|null);
 
                 /** CommunicationAction source */
                 source?: (syft_proto.types.syft.v1.IId|null);
@@ -34,7 +34,7 @@ export namespace syft_proto {
                 constructor(properties?: syft_proto.execution.v1.ICommunicationAction);
 
                 /** CommunicationAction obj. */
-                public obj?: (syft_proto.types.syft.v1.IArg|null);
+                public obj?: (syft_proto.types.syft.v1.IId|null);
 
                 /** CommunicationAction source. */
                 public source?: (syft_proto.types.syft.v1.IId|null);
@@ -2711,8 +2711,11 @@ export namespace syft_proto {
             /** Properties of a CommandMessage. */
             interface ICommandMessage {
 
-                /** CommandMessage action */
-                action?: (syft_proto.execution.v1.IComputationAction|null);
+                /** CommandMessage computation */
+                computation?: (syft_proto.execution.v1.IComputationAction|null);
+
+                /** CommandMessage communication */
+                communication?: (syft_proto.execution.v1.ICommunicationAction|null);
             }
 
             /** Represents a CommandMessage. */
@@ -2724,8 +2727,14 @@ export namespace syft_proto {
                  */
                 constructor(properties?: syft_proto.messaging.v1.ICommandMessage);
 
+                /** CommandMessage computation. */
+                public computation?: (syft_proto.execution.v1.IComputationAction|null);
+
+                /** CommandMessage communication. */
+                public communication?: (syft_proto.execution.v1.ICommunicationAction|null);
+
                 /** CommandMessage action. */
-                public action?: (syft_proto.execution.v1.IComputationAction|null);
+                public action?: ("computation"|"communication");
 
                 /**
                  * Creates a new CommandMessage instance using the specified properties.
@@ -2793,96 +2802,6 @@ export namespace syft_proto {
 
                 /**
                  * Converts this CommandMessage to JSON.
-                 * @returns JSON object
-                 */
-                public toJSON(): { [k: string]: any };
-            }
-
-            /** Properties of a CommunicationMessage. */
-            interface ICommunicationMessage {
-
-                /** CommunicationMessage action */
-                action?: (syft_proto.execution.v1.ICommunicationAction|null);
-            }
-
-            /** Represents a CommunicationMessage. */
-            class CommunicationMessage implements ICommunicationMessage {
-
-                /**
-                 * Constructs a new CommunicationMessage.
-                 * @param [properties] Properties to set
-                 */
-                constructor(properties?: syft_proto.messaging.v1.ICommunicationMessage);
-
-                /** CommunicationMessage action. */
-                public action?: (syft_proto.execution.v1.ICommunicationAction|null);
-
-                /**
-                 * Creates a new CommunicationMessage instance using the specified properties.
-                 * @param [properties] Properties to set
-                 * @returns CommunicationMessage instance
-                 */
-                public static create(properties?: syft_proto.messaging.v1.ICommunicationMessage): syft_proto.messaging.v1.CommunicationMessage;
-
-                /**
-                 * Encodes the specified CommunicationMessage message. Does not implicitly {@link syft_proto.messaging.v1.CommunicationMessage.verify|verify} messages.
-                 * @param message CommunicationMessage message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encode(message: syft_proto.messaging.v1.ICommunicationMessage, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Encodes the specified CommunicationMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.CommunicationMessage.verify|verify} messages.
-                 * @param message CommunicationMessage message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encodeDelimited(message: syft_proto.messaging.v1.ICommunicationMessage, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Decodes a CommunicationMessage message from the specified reader or buffer.
-                 * @param reader Reader or buffer to decode from
-                 * @param [length] Message length if known beforehand
-                 * @returns CommunicationMessage
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.CommunicationMessage;
-
-                /**
-                 * Decodes a CommunicationMessage message from the specified reader or buffer, length delimited.
-                 * @param reader Reader or buffer to decode from
-                 * @returns CommunicationMessage
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.CommunicationMessage;
-
-                /**
-                 * Verifies a CommunicationMessage message.
-                 * @param message Plain object to verify
-                 * @returns `null` if valid, otherwise the reason why it is not
-                 */
-                public static verify(message: { [k: string]: any }): (string|null);
-
-                /**
-                 * Creates a CommunicationMessage message from a plain object. Also converts values to their respective internal types.
-                 * @param object Plain object
-                 * @returns CommunicationMessage
-                 */
-                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.CommunicationMessage;
-
-                /**
-                 * Creates a plain object from a CommunicationMessage message. Also converts values to other types if specified.
-                 * @param message CommunicationMessage
-                 * @param [options] Conversion options
-                 * @returns Plain object
-                 */
-                public static toObject(message: syft_proto.messaging.v1.CommunicationMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                /**
-                 * Converts this CommunicationMessage to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
