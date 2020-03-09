@@ -30,10 +30,18 @@ public final class ComputationActionOuterClass {
 
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
+<<<<<<< HEAD
+=======
+     * @return Whether the targetPointer field is set.
+>>>>>>> add communication_action and communication_message
      */
     boolean hasTargetPointer();
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
+<<<<<<< HEAD
+=======
+     * @return The targetPointer.
+>>>>>>> add communication_action and communication_message
      */
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getTargetPointer();
     /**
@@ -43,10 +51,18 @@ public final class ComputationActionOuterClass {
 
     /**
      * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
+<<<<<<< HEAD
+=======
+     * @return Whether the targetPlaceholder field is set.
+>>>>>>> add communication_action and communication_message
      */
     boolean hasTargetPlaceholder();
     /**
      * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
+<<<<<<< HEAD
+=======
+     * @return The targetPlaceholder.
+>>>>>>> add communication_action and communication_message
      */
     org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getTargetPlaceholder();
     /**
@@ -56,10 +72,18 @@ public final class ComputationActionOuterClass {
 
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+<<<<<<< HEAD
+=======
+     * @return Whether the targetTensor field is set.
+>>>>>>> add communication_action and communication_message
      */
     boolean hasTargetTensor();
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+<<<<<<< HEAD
+=======
+     * @return The targetTensor.
+>>>>>>> add communication_action and communication_message
      */
     org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTargetTensor();
     /**
@@ -369,7 +393,12 @@ public final class ComputationActionOuterClass {
     private int targetCase_ = 0;
     private java.lang.Object target_;
     public enum TargetCase
+<<<<<<< HEAD
         implements com.google.protobuf.Internal.EnumLite {
+=======
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+>>>>>>> add communication_action and communication_message
       TARGET_POINTER(2),
       TARGET_PLACEHOLDER(3),
       TARGET_TENSOR(4),
@@ -443,12 +472,20 @@ public final class ComputationActionOuterClass {
     public static final int TARGET_POINTER_FIELD_NUMBER = 2;
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
+<<<<<<< HEAD
+=======
+     * @return Whether the targetPointer field is set.
+>>>>>>> add communication_action and communication_message
      */
     public boolean hasTargetPointer() {
       return targetCase_ == 2;
     }
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
+<<<<<<< HEAD
+=======
+     * @return The targetPointer.
+>>>>>>> add communication_action and communication_message
      */
     public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getTargetPointer() {
       if (targetCase_ == 2) {
@@ -469,12 +506,20 @@ public final class ComputationActionOuterClass {
     public static final int TARGET_PLACEHOLDER_FIELD_NUMBER = 3;
     /**
      * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
+<<<<<<< HEAD
+=======
+     * @return Whether the targetPlaceholder field is set.
+>>>>>>> add communication_action and communication_message
      */
     public boolean hasTargetPlaceholder() {
       return targetCase_ == 3;
     }
     /**
      * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
+<<<<<<< HEAD
+=======
+     * @return The targetPlaceholder.
+>>>>>>> add communication_action and communication_message
      */
     public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getTargetPlaceholder() {
       if (targetCase_ == 3) {
@@ -495,12 +540,20 @@ public final class ComputationActionOuterClass {
     public static final int TARGET_TENSOR_FIELD_NUMBER = 4;
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+<<<<<<< HEAD
+=======
+     * @return Whether the targetTensor field is set.
+>>>>>>> add communication_action and communication_message
      */
     public boolean hasTargetTensor() {
       return targetCase_ == 4;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+<<<<<<< HEAD
+=======
+     * @return The targetTensor.
+>>>>>>> add communication_action and communication_message
      */
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTargetTensor() {
       if (targetCase_ == 4) {
@@ -1400,12 +1453,20 @@ public final class ComputationActionOuterClass {
           org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder> targetPointerBuilder_;
       /**
        * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
+<<<<<<< HEAD
+=======
+       * @return Whether the targetPointer field is set.
+>>>>>>> add communication_action and communication_message
        */
       public boolean hasTargetPointer() {
         return targetCase_ == 2;
       }
       /**
        * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
+<<<<<<< HEAD
+=======
+       * @return The targetPointer.
+>>>>>>> add communication_action and communication_message
        */
       public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getTargetPointer() {
         if (targetPointerBuilder_ == null) {
@@ -1536,12 +1597,20 @@ public final class ComputationActionOuterClass {
           org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder> targetPlaceholderBuilder_;
       /**
        * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
+<<<<<<< HEAD
+=======
+       * @return Whether the targetPlaceholder field is set.
+>>>>>>> add communication_action and communication_message
        */
       public boolean hasTargetPlaceholder() {
         return targetCase_ == 3;
       }
       /**
        * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder target_placeholder = 3[json_name = "targetPlaceholder"];</code>
+<<<<<<< HEAD
+=======
+       * @return The targetPlaceholder.
+>>>>>>> add communication_action and communication_message
        */
       public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getTargetPlaceholder() {
         if (targetPlaceholderBuilder_ == null) {
@@ -1672,12 +1741,20 @@ public final class ComputationActionOuterClass {
           org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> targetTensorBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+<<<<<<< HEAD
+=======
+       * @return Whether the targetTensor field is set.
+>>>>>>> add communication_action and communication_message
        */
       public boolean hasTargetTensor() {
         return targetCase_ == 4;
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+<<<<<<< HEAD
+=======
+       * @return The targetTensor.
+>>>>>>> add communication_action and communication_message
        */
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTargetTensor() {
         if (targetTensorBuilder_ == null) {

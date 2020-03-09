@@ -182,6 +182,12 @@
     },
     "syft.execution.computation.ComputationAction": {
       "code": 54
+    },
+    "syft.execution.communication.CommunicationAction": {
+      "code": 55
+    },
+    "syft.messaging.message.CommunicationMessage": {
+      "code": 56
     }
   }
 }

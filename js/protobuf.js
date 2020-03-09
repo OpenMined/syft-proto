@@ -36,6 +36,321 @@ $root.syft_proto = (function() {
              */
             var v1 = {};
 
+            v1.CommunicationAction = (function() {
+
+                /**
+                 * Properties of a CommunicationAction.
+                 * @memberof syft_proto.execution.v1
+                 * @interface ICommunicationAction
+                 * @property {syft_proto.types.syft.v1.IArg|null} [obj] CommunicationAction obj
+                 * @property {syft_proto.types.syft.v1.IId|null} [source] CommunicationAction source
+                 * @property {Array.<syft_proto.types.syft.v1.IId>|null} [destinations] CommunicationAction destinations
+                 * @property {Object.<string,syft_proto.types.syft.v1.IArg>|null} [kwargs] CommunicationAction kwargs
+                 */
+
+                /**
+                 * Constructs a new CommunicationAction.
+                 * @memberof syft_proto.execution.v1
+                 * @classdesc Represents a CommunicationAction.
+                 * @implements ICommunicationAction
+                 * @constructor
+                 * @param {syft_proto.execution.v1.ICommunicationAction=} [properties] Properties to set
+                 */
+                function CommunicationAction(properties) {
+                    this.destinations = [];
+                    this.kwargs = {};
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * CommunicationAction obj.
+                 * @member {syft_proto.types.syft.v1.IArg|null|undefined} obj
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @instance
+                 */
+                CommunicationAction.prototype.obj = null;
+
+                /**
+                 * CommunicationAction source.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} source
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @instance
+                 */
+                CommunicationAction.prototype.source = null;
+
+                /**
+                 * CommunicationAction destinations.
+                 * @member {Array.<syft_proto.types.syft.v1.IId>} destinations
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @instance
+                 */
+                CommunicationAction.prototype.destinations = $util.emptyArray;
+
+                /**
+                 * CommunicationAction kwargs.
+                 * @member {Object.<string,syft_proto.types.syft.v1.IArg>} kwargs
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @instance
+                 */
+                CommunicationAction.prototype.kwargs = $util.emptyObject;
+
+                /**
+                 * Creates a new CommunicationAction instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @static
+                 * @param {syft_proto.execution.v1.ICommunicationAction=} [properties] Properties to set
+                 * @returns {syft_proto.execution.v1.CommunicationAction} CommunicationAction instance
+                 */
+                CommunicationAction.create = function create(properties) {
+                    return new CommunicationAction(properties);
+                };
+
+                /**
+                 * Encodes the specified CommunicationAction message. Does not implicitly {@link syft_proto.execution.v1.CommunicationAction.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @static
+                 * @param {syft_proto.execution.v1.ICommunicationAction} message CommunicationAction message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                CommunicationAction.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.obj != null && message.hasOwnProperty("obj"))
+                        $root.syft_proto.types.syft.v1.Arg.encode(message.obj, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.source != null && message.hasOwnProperty("source"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.source, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.destinations != null && message.destinations.length)
+                        for (var i = 0; i < message.destinations.length; ++i)
+                            $root.syft_proto.types.syft.v1.Id.encode(message.destinations[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.kwargs != null && message.hasOwnProperty("kwargs"))
+                        for (var keys = Object.keys(message.kwargs), i = 0; i < keys.length; ++i) {
+                            writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                            $root.syft_proto.types.syft.v1.Arg.encode(message.kwargs[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                        }
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified CommunicationAction message, length delimited. Does not implicitly {@link syft_proto.execution.v1.CommunicationAction.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @static
+                 * @param {syft_proto.execution.v1.ICommunicationAction} message CommunicationAction message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                CommunicationAction.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a CommunicationAction message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.execution.v1.CommunicationAction} CommunicationAction
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                CommunicationAction.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.CommunicationAction(), key;
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.obj = $root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.source = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            if (!(message.destinations && message.destinations.length))
+                                message.destinations = [];
+                            message.destinations.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
+                            break;
+                        case 4:
+                            reader.skip().pos++;
+                            if (message.kwargs === $util.emptyObject)
+                                message.kwargs = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.kwargs[key] = $root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a CommunicationAction message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.execution.v1.CommunicationAction} CommunicationAction
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                CommunicationAction.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a CommunicationAction message.
+                 * @function verify
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                CommunicationAction.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.obj != null && message.hasOwnProperty("obj")) {
+                        var error = $root.syft_proto.types.syft.v1.Arg.verify(message.obj);
+                        if (error)
+                            return "obj." + error;
+                    }
+                    if (message.source != null && message.hasOwnProperty("source")) {
+                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.source);
+                        if (error)
+                            return "source." + error;
+                    }
+                    if (message.destinations != null && message.hasOwnProperty("destinations")) {
+                        if (!Array.isArray(message.destinations))
+                            return "destinations: array expected";
+                        for (var i = 0; i < message.destinations.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.destinations[i]);
+                            if (error)
+                                return "destinations." + error;
+                        }
+                    }
+                    if (message.kwargs != null && message.hasOwnProperty("kwargs")) {
+                        if (!$util.isObject(message.kwargs))
+                            return "kwargs: object expected";
+                        var key = Object.keys(message.kwargs);
+                        for (var i = 0; i < key.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Arg.verify(message.kwargs[key[i]]);
+                            if (error)
+                                return "kwargs." + error;
+                        }
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a CommunicationAction message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.execution.v1.CommunicationAction} CommunicationAction
+                 */
+                CommunicationAction.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.execution.v1.CommunicationAction)
+                        return object;
+                    var message = new $root.syft_proto.execution.v1.CommunicationAction();
+                    if (object.obj != null) {
+                        if (typeof object.obj !== "object")
+                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.obj: object expected");
+                        message.obj = $root.syft_proto.types.syft.v1.Arg.fromObject(object.obj);
+                    }
+                    if (object.source != null) {
+                        if (typeof object.source !== "object")
+                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.source: object expected");
+                        message.source = $root.syft_proto.types.syft.v1.Id.fromObject(object.source);
+                    }
+                    if (object.destinations) {
+                        if (!Array.isArray(object.destinations))
+                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.destinations: array expected");
+                        message.destinations = [];
+                        for (var i = 0; i < object.destinations.length; ++i) {
+                            if (typeof object.destinations[i] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.CommunicationAction.destinations: object expected");
+                            message.destinations[i] = $root.syft_proto.types.syft.v1.Id.fromObject(object.destinations[i]);
+                        }
+                    }
+                    if (object.kwargs) {
+                        if (typeof object.kwargs !== "object")
+                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.kwargs: object expected");
+                        message.kwargs = {};
+                        for (var keys = Object.keys(object.kwargs), i = 0; i < keys.length; ++i) {
+                            if (typeof object.kwargs[keys[i]] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.CommunicationAction.kwargs: object expected");
+                            message.kwargs[keys[i]] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.kwargs[keys[i]]);
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a CommunicationAction message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @static
+                 * @param {syft_proto.execution.v1.CommunicationAction} message CommunicationAction
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                CommunicationAction.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults)
+                        object.destinations = [];
+                    if (options.objects || options.defaults)
+                        object.kwargs = {};
+                    if (options.defaults) {
+                        object.obj = null;
+                        object.source = null;
+                    }
+                    if (message.obj != null && message.hasOwnProperty("obj"))
+                        object.obj = $root.syft_proto.types.syft.v1.Arg.toObject(message.obj, options);
+                    if (message.source != null && message.hasOwnProperty("source"))
+                        object.source = $root.syft_proto.types.syft.v1.Id.toObject(message.source, options);
+                    if (message.destinations && message.destinations.length) {
+                        object.destinations = [];
+                        for (var j = 0; j < message.destinations.length; ++j)
+                            object.destinations[j] = $root.syft_proto.types.syft.v1.Id.toObject(message.destinations[j], options);
+                    }
+                    var keys2;
+                    if (message.kwargs && (keys2 = Object.keys(message.kwargs)).length) {
+                        object.kwargs = {};
+                        for (var j = 0; j < keys2.length; ++j)
+                            object.kwargs[keys2[j]] = $root.syft_proto.types.syft.v1.Arg.toObject(message.kwargs[keys2[j]], options);
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this CommunicationAction to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                CommunicationAction.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return CommunicationAction;
+            })();
+
             v1.ComputationAction = (function() {
 
                 /**
@@ -6806,7 +7121,12 @@ $root.syft_proto = (function() {
                  * @interface ISyftMessage
                  * @property {google.protobuf.IEmpty|null} [contents_empty_msg] SyftMessage contents_empty_msg
                  * @property {syft_proto.messaging.v1.IObjectMessage|null} [contents_object_msg] SyftMessage contents_object_msg
+<<<<<<< HEAD
                  * @property {syft_proto.messaging.v1.ICommandMessage|null} [contents_command_msg] SyftMessage contents_command_msg
+=======
+                 * @property {syft_proto.messaging.v1.IOperationMessage|null} [contents_operation_msg] SyftMessage contents_operation_msg
+                 * @property {syft_proto.messaging.v1.IOperationMessage|null} [contents_communication_msg] SyftMessage contents_communication_msg
+>>>>>>> add communication_action and communication_message
                  */
 
                 /**
@@ -6848,17 +7168,33 @@ $root.syft_proto = (function() {
                  */
                 SyftMessage.prototype.contents_command_msg = null;
 
+                /**
+                 * SyftMessage contents_communication_msg.
+                 * @member {syft_proto.messaging.v1.IOperationMessage|null|undefined} contents_communication_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_communication_msg = null;
+
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
                 /**
                  * SyftMessage contents.
+<<<<<<< HEAD
                  * @member {"contents_empty_msg"|"contents_object_msg"|"contents_command_msg"|undefined} contents
+=======
+                 * @member {"contents_empty_msg"|"contents_object_msg"|"contents_operation_msg"|"contents_communication_msg"|undefined} contents
+>>>>>>> add communication_action and communication_message
                  * @memberof syft_proto.messaging.v1.SyftMessage
                  * @instance
                  */
                 Object.defineProperty(SyftMessage.prototype, "contents", {
+<<<<<<< HEAD
                     get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_object_msg", "contents_command_msg"]),
+=======
+                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_object_msg", "contents_operation_msg", "contents_communication_msg"]),
+>>>>>>> add communication_action and communication_message
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
@@ -6890,8 +7226,15 @@ $root.syft_proto = (function() {
                         $root.google.protobuf.Empty.encode(message.contents_empty_msg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.contents_object_msg != null && message.hasOwnProperty("contents_object_msg"))
                         $root.syft_proto.messaging.v1.ObjectMessage.encode(message.contents_object_msg, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+<<<<<<< HEAD
                     if (message.contents_command_msg != null && message.hasOwnProperty("contents_command_msg"))
                         $root.syft_proto.messaging.v1.CommandMessage.encode(message.contents_command_msg, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+=======
+                    if (message.contents_operation_msg != null && message.hasOwnProperty("contents_operation_msg"))
+                        $root.syft_proto.messaging.v1.OperationMessage.encode(message.contents_operation_msg, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    if (message.contents_communication_msg != null && message.hasOwnProperty("contents_communication_msg"))
+                        $root.syft_proto.messaging.v1.OperationMessage.encode(message.contents_communication_msg, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+>>>>>>> add communication_action and communication_message
                     return writer;
                 };
 
@@ -6934,6 +7277,9 @@ $root.syft_proto = (function() {
                             break;
                         case 7:
                             message.contents_command_msg = $root.syft_proto.messaging.v1.CommandMessage.decode(reader, reader.uint32());
+                            break;
+                        case 10:
+                            message.contents_communication_msg = $root.syft_proto.messaging.v1.OperationMessage.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -6999,6 +7345,16 @@ $root.syft_proto = (function() {
                                 return "contents_command_msg." + error;
                         }
                     }
+                    if (message.contents_communication_msg != null && message.hasOwnProperty("contents_communication_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.OperationMessage.verify(message.contents_communication_msg);
+                            if (error)
+                                return "contents_communication_msg." + error;
+                        }
+                    }
                     return null;
                 };
 
@@ -7028,6 +7384,11 @@ $root.syft_proto = (function() {
                         if (typeof object.contents_command_msg !== "object")
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_command_msg: object expected");
                         message.contents_command_msg = $root.syft_proto.messaging.v1.CommandMessage.fromObject(object.contents_command_msg);
+                    }
+                    if (object.contents_communication_msg != null) {
+                        if (typeof object.contents_communication_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_communication_msg: object expected");
+                        message.contents_communication_msg = $root.syft_proto.messaging.v1.OperationMessage.fromObject(object.contents_communication_msg);
                     }
                     return message;
                 };
@@ -7059,6 +7420,11 @@ $root.syft_proto = (function() {
                         object.contents_command_msg = $root.syft_proto.messaging.v1.CommandMessage.toObject(message.contents_command_msg, options);
                         if (options.oneofs)
                             object.contents = "contents_command_msg";
+                    }
+                    if (message.contents_communication_msg != null && message.hasOwnProperty("contents_communication_msg")) {
+                        object.contents_communication_msg = $root.syft_proto.messaging.v1.OperationMessage.toObject(message.contents_communication_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_communication_msg";
                     }
                     return object;
                 };
@@ -7459,6 +7825,198 @@ $root.syft_proto = (function() {
                 };
 
                 return CommandMessage;
+            })();
+
+            v1.CommunicationMessage = (function() {
+
+                /**
+                 * Properties of a CommunicationMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface ICommunicationMessage
+                 * @property {syft_proto.execution.v1.ICommunicationAction|null} [communication] CommunicationMessage communication
+                 */
+
+                /**
+                 * Constructs a new CommunicationMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents a CommunicationMessage.
+                 * @implements ICommunicationMessage
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.ICommunicationMessage=} [properties] Properties to set
+                 */
+                function CommunicationMessage(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * CommunicationMessage communication.
+                 * @member {syft_proto.execution.v1.ICommunicationAction|null|undefined} communication
+                 * @memberof syft_proto.messaging.v1.CommunicationMessage
+                 * @instance
+                 */
+                CommunicationMessage.prototype.communication = null;
+
+                /**
+                 * Creates a new CommunicationMessage instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.CommunicationMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.ICommunicationMessage=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.CommunicationMessage} CommunicationMessage instance
+                 */
+                CommunicationMessage.create = function create(properties) {
+                    return new CommunicationMessage(properties);
+                };
+
+                /**
+                 * Encodes the specified CommunicationMessage message. Does not implicitly {@link syft_proto.messaging.v1.CommunicationMessage.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.CommunicationMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.ICommunicationMessage} message CommunicationMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                CommunicationMessage.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.communication != null && message.hasOwnProperty("communication"))
+                        $root.syft_proto.execution.v1.CommunicationAction.encode(message.communication, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified CommunicationMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.CommunicationMessage.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.CommunicationMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.ICommunicationMessage} message CommunicationMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                CommunicationMessage.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a CommunicationMessage message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.CommunicationMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.CommunicationMessage} CommunicationMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                CommunicationMessage.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.CommunicationMessage();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.communication = $root.syft_proto.execution.v1.CommunicationAction.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a CommunicationMessage message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.CommunicationMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.CommunicationMessage} CommunicationMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                CommunicationMessage.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a CommunicationMessage message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.CommunicationMessage
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                CommunicationMessage.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.communication != null && message.hasOwnProperty("communication")) {
+                        var error = $root.syft_proto.execution.v1.CommunicationAction.verify(message.communication);
+                        if (error)
+                            return "communication." + error;
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a CommunicationMessage message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.CommunicationMessage
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.CommunicationMessage} CommunicationMessage
+                 */
+                CommunicationMessage.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.CommunicationMessage)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.CommunicationMessage();
+                    if (object.communication != null) {
+                        if (typeof object.communication !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.CommunicationMessage.communication: object expected");
+                        message.communication = $root.syft_proto.execution.v1.CommunicationAction.fromObject(object.communication);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a CommunicationMessage message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.CommunicationMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.CommunicationMessage} message CommunicationMessage
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                CommunicationMessage.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.communication = null;
+                    if (message.communication != null && message.hasOwnProperty("communication"))
+                        object.communication = $root.syft_proto.execution.v1.CommunicationAction.toObject(message.communication, options);
+                    return object;
+                };
+
+                /**
+                 * Converts this CommunicationMessage to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.CommunicationMessage
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                CommunicationMessage.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return CommunicationMessage;
             })();
 
             return v1;
