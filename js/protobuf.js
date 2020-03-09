@@ -7121,7 +7121,7 @@ $root.syft_proto = (function() {
                  * @interface ISyftMessage
                  * @property {google.protobuf.IEmpty|null} [contents_empty_msg] SyftMessage contents_empty_msg
                  * @property {syft_proto.messaging.v1.IObjectMessage|null} [contents_object_msg] SyftMessage contents_object_msg
-                 * @property {syft_proto.messaging.v1.ICommandMessage|null} [contents_operation_msg] SyftMessage contents_operation_msg
+                 * @property {syft_proto.messaging.v1.ICommandMessage|null} [contents_command_msg] SyftMessage contents_command_msg
                  * @property {syft_proto.messaging.v1.ICommandMessage|null} [contents_communication_msg] SyftMessage contents_communication_msg
                  */
 
@@ -7157,12 +7157,12 @@ $root.syft_proto = (function() {
                 SyftMessage.prototype.contents_object_msg = null;
 
                 /**
-                 * SyftMessage contents_operation_msg.
-                 * @member {syft_proto.messaging.v1.ICommandMessage|null|undefined} contents_operation_msg
+                 * SyftMessage contents_command_msg.
+                 * @member {syft_proto.messaging.v1.ICommandMessage|null|undefined} contents_command_msg
                  * @memberof syft_proto.messaging.v1.SyftMessage
                  * @instance
                  */
-                SyftMessage.prototype.contents_operation_msg = null;
+                SyftMessage.prototype.contents_command_msg = null;
 
                 /**
                  * SyftMessage contents_communication_msg.
@@ -7177,12 +7177,12 @@ $root.syft_proto = (function() {
 
                 /**
                  * SyftMessage contents.
-                 * @member {"contents_empty_msg"|"contents_object_msg"|"contents_operation_msg"|"contents_communication_msg"|undefined} contents
+                 * @member {"contents_empty_msg"|"contents_object_msg"|"contents_command_msg"|"contents_communication_msg"|undefined} contents
                  * @memberof syft_proto.messaging.v1.SyftMessage
                  * @instance
                  */
                 Object.defineProperty(SyftMessage.prototype, "contents", {
-                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_object_msg", "contents_operation_msg", "contents_communication_msg"]),
+                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_object_msg", "contents_command_msg", "contents_communication_msg"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
@@ -7214,8 +7214,8 @@ $root.syft_proto = (function() {
                         $root.google.protobuf.Empty.encode(message.contents_empty_msg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.contents_object_msg != null && message.hasOwnProperty("contents_object_msg"))
                         $root.syft_proto.messaging.v1.ObjectMessage.encode(message.contents_object_msg, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                    if (message.contents_operation_msg != null && message.hasOwnProperty("contents_operation_msg"))
-                        $root.syft_proto.messaging.v1.CommandMessage.encode(message.contents_operation_msg, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    if (message.contents_command_msg != null && message.hasOwnProperty("contents_command_msg"))
+                        $root.syft_proto.messaging.v1.CommandMessage.encode(message.contents_command_msg, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                     if (message.contents_communication_msg != null && message.hasOwnProperty("contents_communication_msg"))
                         $root.syft_proto.messaging.v1.CommandMessage.encode(message.contents_communication_msg, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                     return writer;
@@ -7259,7 +7259,7 @@ $root.syft_proto = (function() {
                             message.contents_object_msg = $root.syft_proto.messaging.v1.ObjectMessage.decode(reader, reader.uint32());
                             break;
                         case 7:
-                            message.contents_operation_msg = $root.syft_proto.messaging.v1.CommandMessage.decode(reader, reader.uint32());
+                            message.contents_command_msg = $root.syft_proto.messaging.v1.CommandMessage.decode(reader, reader.uint32());
                             break;
                         case 10:
                             message.contents_communication_msg = $root.syft_proto.messaging.v1.CommandMessage.decode(reader, reader.uint32());
@@ -7318,14 +7318,14 @@ $root.syft_proto = (function() {
                                 return "contents_object_msg." + error;
                         }
                     }
-                    if (message.contents_operation_msg != null && message.hasOwnProperty("contents_operation_msg")) {
+                    if (message.contents_command_msg != null && message.hasOwnProperty("contents_command_msg")) {
                         if (properties.contents === 1)
                             return "contents: multiple values";
                         properties.contents = 1;
                         {
-                            var error = $root.syft_proto.messaging.v1.CommandMessage.verify(message.contents_operation_msg);
+                            var error = $root.syft_proto.messaging.v1.CommandMessage.verify(message.contents_command_msg);
                             if (error)
-                                return "contents_operation_msg." + error;
+                                return "contents_command_msg." + error;
                         }
                     }
                     if (message.contents_communication_msg != null && message.hasOwnProperty("contents_communication_msg")) {
@@ -7363,10 +7363,10 @@ $root.syft_proto = (function() {
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_object_msg: object expected");
                         message.contents_object_msg = $root.syft_proto.messaging.v1.ObjectMessage.fromObject(object.contents_object_msg);
                     }
-                    if (object.contents_operation_msg != null) {
-                        if (typeof object.contents_operation_msg !== "object")
-                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_operation_msg: object expected");
-                        message.contents_operation_msg = $root.syft_proto.messaging.v1.CommandMessage.fromObject(object.contents_operation_msg);
+                    if (object.contents_command_msg != null) {
+                        if (typeof object.contents_command_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_command_msg: object expected");
+                        message.contents_command_msg = $root.syft_proto.messaging.v1.CommandMessage.fromObject(object.contents_command_msg);
                     }
                     if (object.contents_communication_msg != null) {
                         if (typeof object.contents_communication_msg !== "object")
@@ -7399,10 +7399,10 @@ $root.syft_proto = (function() {
                         if (options.oneofs)
                             object.contents = "contents_object_msg";
                     }
-                    if (message.contents_operation_msg != null && message.hasOwnProperty("contents_operation_msg")) {
-                        object.contents_operation_msg = $root.syft_proto.messaging.v1.CommandMessage.toObject(message.contents_operation_msg, options);
+                    if (message.contents_command_msg != null && message.hasOwnProperty("contents_command_msg")) {
+                        object.contents_command_msg = $root.syft_proto.messaging.v1.CommandMessage.toObject(message.contents_command_msg, options);
                         if (options.oneofs)
-                            object.contents = "contents_operation_msg";
+                            object.contents = "contents_command_msg";
                     }
                     if (message.contents_communication_msg != null && message.hasOwnProperty("contents_communication_msg")) {
                         object.contents_communication_msg = $root.syft_proto.messaging.v1.CommandMessage.toObject(message.contents_communication_msg, options);
