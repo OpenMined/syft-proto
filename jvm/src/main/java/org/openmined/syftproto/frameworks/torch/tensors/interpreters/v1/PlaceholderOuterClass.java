@@ -20,12 +20,10 @@ public final class PlaceholderOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-     * @return The id.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId();
     /**
@@ -35,37 +33,29 @@ public final class PlaceholderOuterClass {
 
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
-     * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
-     * @return The count of tags.
      */
     int getTagsCount();
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
-     * @param index The index of the element to return.
-     * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the tags at the given index.
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
 
     /**
      * <code>string description = 3[json_name = "description"];</code>
-     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 3[json_name = "description"];</code>
-     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
@@ -185,14 +175,12 @@ public final class PlaceholderOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id id_;
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-     * @return Whether the id field is set.
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-     * @return The id.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
@@ -208,7 +196,6 @@ public final class PlaceholderOuterClass {
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
-     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -216,23 +203,18 @@ public final class PlaceholderOuterClass {
     }
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
-     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
-     * @param index The index of the element to return.
-     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -243,7 +225,6 @@ public final class PlaceholderOuterClass {
     private volatile java.lang.Object description_;
     /**
      * <code>string description = 3[json_name = "description"];</code>
-     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -259,7 +240,6 @@ public final class PlaceholderOuterClass {
     }
     /**
      * <code>string description = 3[json_name = "description"];</code>
-     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -648,14 +628,12 @@ public final class PlaceholderOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> idBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-       * @return Whether the id field is set.
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
-       * @return The id.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
         if (idBuilder_ == null) {
@@ -771,7 +749,6 @@ public final class PlaceholderOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
-       * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
@@ -779,23 +756,18 @@ public final class PlaceholderOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
-       * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
-       * @param index The index of the element to return.
-       * @return The tags at the given index.
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the tags at the given index.
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -803,9 +775,6 @@ public final class PlaceholderOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
-       * @param index The index to set the value at.
-       * @param value The tags to set.
-       * @return This builder for chaining.
        */
       public Builder setTags(
           int index, java.lang.String value) {
@@ -819,8 +788,6 @@ public final class PlaceholderOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
-       * @param value The tags to add.
-       * @return This builder for chaining.
        */
       public Builder addTags(
           java.lang.String value) {
@@ -834,8 +801,6 @@ public final class PlaceholderOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
-       * @param values The tags to add.
-       * @return This builder for chaining.
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
@@ -847,7 +812,6 @@ public final class PlaceholderOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -857,8 +821,6 @@ public final class PlaceholderOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
-       * @param value The bytes of the tags to add.
-       * @return This builder for chaining.
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -875,7 +837,6 @@ public final class PlaceholderOuterClass {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 3[json_name = "description"];</code>
-       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -891,7 +852,6 @@ public final class PlaceholderOuterClass {
       }
       /**
        * <code>string description = 3[json_name = "description"];</code>
-       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -908,8 +868,6 @@ public final class PlaceholderOuterClass {
       }
       /**
        * <code>string description = 3[json_name = "description"];</code>
-       * @param value The description to set.
-       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -923,7 +881,6 @@ public final class PlaceholderOuterClass {
       }
       /**
        * <code>string description = 3[json_name = "description"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -933,8 +890,6 @@ public final class PlaceholderOuterClass {
       }
       /**
        * <code>string description = 3[json_name = "description"];</code>
-       * @param value The bytes for description to set.
-       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {

@@ -20,12 +20,10 @@ public final class PointerTensorOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
-     * @return Whether the objectId field is set.
      */
     boolean hasObjectId();
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
-     * @return The objectId.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectId();
     /**
@@ -35,12 +33,10 @@ public final class PointerTensorOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id location_id = 2[json_name = "locationId"];</code>
-     * @return Whether the locationId field is set.
      */
     boolean hasLocationId();
     /**
      * <code>.syft_proto.types.syft.v1.Id location_id = 2[json_name = "locationId"];</code>
-     * @return The locationId.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getLocationId();
     /**
@@ -50,12 +46,10 @@ public final class PointerTensorOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id_at_location = 3[json_name = "objectIdAtLocation"];</code>
-     * @return Whether the objectIdAtLocation field is set.
      */
     boolean hasObjectIdAtLocation();
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id_at_location = 3[json_name = "objectIdAtLocation"];</code>
-     * @return The objectIdAtLocation.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectIdAtLocation();
     /**
@@ -65,12 +59,10 @@ public final class PointerTensorOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Shape shape = 4[json_name = "shape"];</code>
-     * @return Whether the shape field is set.
      */
     boolean hasShape();
     /**
      * <code>.syft_proto.types.syft.v1.Shape shape = 4[json_name = "shape"];</code>
-     * @return The shape.
      */
     org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getShape();
     /**
@@ -80,19 +72,16 @@ public final class PointerTensorOuterClass {
 
     /**
      * <code>string point_to_attr = 5[json_name = "pointToAttr"];</code>
-     * @return The pointToAttr.
      */
     java.lang.String getPointToAttr();
     /**
      * <code>string point_to_attr = 5[json_name = "pointToAttr"];</code>
-     * @return The bytes for pointToAttr.
      */
     com.google.protobuf.ByteString
         getPointToAttrBytes();
 
     /**
      * <code>bool garbage_collect_data = 6[json_name = "garbageCollectData"];</code>
-     * @return The garbageCollectData.
      */
     boolean getGarbageCollectData();
   }
@@ -241,14 +230,12 @@ public final class PointerTensorOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id objectId_;
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
-     * @return Whether the objectId field is set.
      */
     public boolean hasObjectId() {
       return objectId_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
-     * @return The objectId.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectId() {
       return objectId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectId_;
@@ -264,14 +251,12 @@ public final class PointerTensorOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id locationId_;
     /**
      * <code>.syft_proto.types.syft.v1.Id location_id = 2[json_name = "locationId"];</code>
-     * @return Whether the locationId field is set.
      */
     public boolean hasLocationId() {
       return locationId_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id location_id = 2[json_name = "locationId"];</code>
-     * @return The locationId.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getLocationId() {
       return locationId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : locationId_;
@@ -287,14 +272,12 @@ public final class PointerTensorOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id objectIdAtLocation_;
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id_at_location = 3[json_name = "objectIdAtLocation"];</code>
-     * @return Whether the objectIdAtLocation field is set.
      */
     public boolean hasObjectIdAtLocation() {
       return objectIdAtLocation_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id_at_location = 3[json_name = "objectIdAtLocation"];</code>
-     * @return The objectIdAtLocation.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectIdAtLocation() {
       return objectIdAtLocation_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectIdAtLocation_;
@@ -310,14 +293,12 @@ public final class PointerTensorOuterClass {
     private org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape shape_;
     /**
      * <code>.syft_proto.types.syft.v1.Shape shape = 4[json_name = "shape"];</code>
-     * @return Whether the shape field is set.
      */
     public boolean hasShape() {
       return shape_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Shape shape = 4[json_name = "shape"];</code>
-     * @return The shape.
      */
     public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getShape() {
       return shape_ == null ? org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.getDefaultInstance() : shape_;
@@ -333,7 +314,6 @@ public final class PointerTensorOuterClass {
     private volatile java.lang.Object pointToAttr_;
     /**
      * <code>string point_to_attr = 5[json_name = "pointToAttr"];</code>
-     * @return The pointToAttr.
      */
     public java.lang.String getPointToAttr() {
       java.lang.Object ref = pointToAttr_;
@@ -349,7 +329,6 @@ public final class PointerTensorOuterClass {
     }
     /**
      * <code>string point_to_attr = 5[json_name = "pointToAttr"];</code>
-     * @return The bytes for pointToAttr.
      */
     public com.google.protobuf.ByteString
         getPointToAttrBytes() {
@@ -369,7 +348,6 @@ public final class PointerTensorOuterClass {
     private boolean garbageCollectData_;
     /**
      * <code>bool garbage_collect_data = 6[json_name = "garbageCollectData"];</code>
-     * @return The garbageCollectData.
      */
     public boolean getGarbageCollectData() {
       return garbageCollectData_;
@@ -820,14 +798,12 @@ public final class PointerTensorOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> objectIdBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
-       * @return Whether the objectId field is set.
        */
       public boolean hasObjectId() {
         return objectIdBuilder_ != null || objectId_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
-       * @return The objectId.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectId() {
         if (objectIdBuilder_ == null) {
@@ -939,14 +915,12 @@ public final class PointerTensorOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> locationIdBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id location_id = 2[json_name = "locationId"];</code>
-       * @return Whether the locationId field is set.
        */
       public boolean hasLocationId() {
         return locationIdBuilder_ != null || locationId_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id location_id = 2[json_name = "locationId"];</code>
-       * @return The locationId.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getLocationId() {
         if (locationIdBuilder_ == null) {
@@ -1058,14 +1032,12 @@ public final class PointerTensorOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> objectIdAtLocationBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id object_id_at_location = 3[json_name = "objectIdAtLocation"];</code>
-       * @return Whether the objectIdAtLocation field is set.
        */
       public boolean hasObjectIdAtLocation() {
         return objectIdAtLocationBuilder_ != null || objectIdAtLocation_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id object_id_at_location = 3[json_name = "objectIdAtLocation"];</code>
-       * @return The objectIdAtLocation.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectIdAtLocation() {
         if (objectIdAtLocationBuilder_ == null) {
@@ -1177,14 +1149,12 @@ public final class PointerTensorOuterClass {
           org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder> shapeBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Shape shape = 4[json_name = "shape"];</code>
-       * @return Whether the shape field is set.
        */
       public boolean hasShape() {
         return shapeBuilder_ != null || shape_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Shape shape = 4[json_name = "shape"];</code>
-       * @return The shape.
        */
       public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getShape() {
         if (shapeBuilder_ == null) {
@@ -1294,7 +1264,6 @@ public final class PointerTensorOuterClass {
       private java.lang.Object pointToAttr_ = "";
       /**
        * <code>string point_to_attr = 5[json_name = "pointToAttr"];</code>
-       * @return The pointToAttr.
        */
       public java.lang.String getPointToAttr() {
         java.lang.Object ref = pointToAttr_;
@@ -1310,7 +1279,6 @@ public final class PointerTensorOuterClass {
       }
       /**
        * <code>string point_to_attr = 5[json_name = "pointToAttr"];</code>
-       * @return The bytes for pointToAttr.
        */
       public com.google.protobuf.ByteString
           getPointToAttrBytes() {
@@ -1327,8 +1295,6 @@ public final class PointerTensorOuterClass {
       }
       /**
        * <code>string point_to_attr = 5[json_name = "pointToAttr"];</code>
-       * @param value The pointToAttr to set.
-       * @return This builder for chaining.
        */
       public Builder setPointToAttr(
           java.lang.String value) {
@@ -1342,7 +1308,6 @@ public final class PointerTensorOuterClass {
       }
       /**
        * <code>string point_to_attr = 5[json_name = "pointToAttr"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearPointToAttr() {
         
@@ -1352,8 +1317,6 @@ public final class PointerTensorOuterClass {
       }
       /**
        * <code>string point_to_attr = 5[json_name = "pointToAttr"];</code>
-       * @param value The bytes for pointToAttr to set.
-       * @return This builder for chaining.
        */
       public Builder setPointToAttrBytes(
           com.google.protobuf.ByteString value) {
@@ -1370,15 +1333,12 @@ public final class PointerTensorOuterClass {
       private boolean garbageCollectData_ ;
       /**
        * <code>bool garbage_collect_data = 6[json_name = "garbageCollectData"];</code>
-       * @return The garbageCollectData.
        */
       public boolean getGarbageCollectData() {
         return garbageCollectData_;
       }
       /**
        * <code>bool garbage_collect_data = 6[json_name = "garbageCollectData"];</code>
-       * @param value The garbageCollectData to set.
-       * @return This builder for chaining.
        */
       public Builder setGarbageCollectData(boolean value) {
         
@@ -1388,7 +1348,6 @@ public final class PointerTensorOuterClass {
       }
       /**
        * <code>bool garbage_collect_data = 6[json_name = "garbageCollectData"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearGarbageCollectData() {
         
