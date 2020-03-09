@@ -20,6 +20,7 @@ public final class ScriptModuleOuterClass {
 
     /**
      * <code>bytes obj = 1[json_name = "obj"];</code>
+     * @return The obj.
      */
     com.google.protobuf.ByteString getObj();
   }
@@ -114,6 +115,7 @@ public final class ScriptModuleOuterClass {
     private com.google.protobuf.ByteString obj_;
     /**
      * <code>bytes obj = 1[json_name = "obj"];</code>
+     * @return The obj.
      */
     public com.google.protobuf.ByteString getObj() {
       return obj_;
@@ -428,12 +430,15 @@ public final class ScriptModuleOuterClass {
       private com.google.protobuf.ByteString obj_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>bytes obj = 1[json_name = "obj"];</code>
+       * @return The obj.
        */
       public com.google.protobuf.ByteString getObj() {
         return obj_;
       }
       /**
        * <code>bytes obj = 1[json_name = "obj"];</code>
+       * @param value The obj to set.
+       * @return This builder for chaining.
        */
       public Builder setObj(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -446,6 +451,7 @@ public final class ScriptModuleOuterClass {
       }
       /**
        * <code>bytes obj = 1[json_name = "obj"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearObj() {
         

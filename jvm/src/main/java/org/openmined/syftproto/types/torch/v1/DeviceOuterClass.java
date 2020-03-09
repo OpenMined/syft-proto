@@ -20,10 +20,12 @@ public final class DeviceOuterClass {
 
     /**
      * <code>string type = 1[json_name = "type"];</code>
+     * @return The type.
      */
     java.lang.String getType();
     /**
      * <code>string type = 1[json_name = "type"];</code>
+     * @return The bytes for type.
      */
     com.google.protobuf.ByteString
         getTypeBytes();
@@ -116,6 +118,7 @@ public final class DeviceOuterClass {
     private volatile java.lang.Object type_;
     /**
      * <code>string type = 1[json_name = "type"];</code>
+     * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -131,6 +134,7 @@ public final class DeviceOuterClass {
     }
     /**
      * <code>string type = 1[json_name = "type"];</code>
+     * @return The bytes for type.
      */
     public com.google.protobuf.ByteString
         getTypeBytes() {
@@ -451,6 +455,7 @@ public final class DeviceOuterClass {
       private java.lang.Object type_ = "";
       /**
        * <code>string type = 1[json_name = "type"];</code>
+       * @return The type.
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
@@ -466,6 +471,7 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string type = 1[json_name = "type"];</code>
+       * @return The bytes for type.
        */
       public com.google.protobuf.ByteString
           getTypeBytes() {
@@ -482,6 +488,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string type = 1[json_name = "type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(
           java.lang.String value) {
@@ -495,6 +503,7 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string type = 1[json_name = "type"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
         
@@ -504,6 +513,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string type = 1[json_name = "type"];</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeBytes(
           com.google.protobuf.ByteString value) {

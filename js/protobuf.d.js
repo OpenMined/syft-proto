@@ -2516,16 +2516,11 @@ export namespace syft_proto {
                 /** SyftMessage contents_object_msg */
                 contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
-<<<<<<< HEAD
-                /** SyftMessage contents_command_msg */
-                contents_command_msg?: (syft_proto.messaging.v1.ICommandMessage|null);
-=======
                 /** SyftMessage contents_operation_msg */
-                contents_operation_msg?: (syft_proto.messaging.v1.IOperationMessage|null);
+                contents_operation_msg?: (syft_proto.messaging.v1.ICommandMessage|null);
 
                 /** SyftMessage contents_communication_msg */
-                contents_communication_msg?: (syft_proto.messaging.v1.IOperationMessage|null);
->>>>>>> add communication_action and communication_message
+                contents_communication_msg?: (syft_proto.messaging.v1.ICommandMessage|null);
             }
 
             /** Represents a SyftMessage. */
@@ -2543,18 +2538,14 @@ export namespace syft_proto {
                 /** SyftMessage contents_object_msg. */
                 public contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
-                /** SyftMessage contents_command_msg. */
-                public contents_command_msg?: (syft_proto.messaging.v1.ICommandMessage|null);
+                /** SyftMessage contents_operation_msg. */
+                public contents_operation_msg?: (syft_proto.messaging.v1.ICommandMessage|null);
 
                 /** SyftMessage contents_communication_msg. */
-                public contents_communication_msg?: (syft_proto.messaging.v1.IOperationMessage|null);
+                public contents_communication_msg?: (syft_proto.messaging.v1.ICommandMessage|null);
 
                 /** SyftMessage contents. */
-<<<<<<< HEAD
-                public contents?: ("contents_empty_msg"|"contents_object_msg"|"contents_command_msg");
-=======
                 public contents?: ("contents_empty_msg"|"contents_object_msg"|"contents_operation_msg"|"contents_communication_msg");
->>>>>>> add communication_action and communication_message
 
                 /**
                  * Creates a new SyftMessage instance using the specified properties.
