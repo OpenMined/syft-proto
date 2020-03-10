@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install swift 
-      run: brew install swift-protobuf
+      run: brew install swift-protobuf@1.7.0
 
     - name: Build swift stubs
       run: |
