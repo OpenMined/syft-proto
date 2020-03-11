@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
-  serialized_pb=b'\n2syft_proto/execution/v1/communication_action.proto\x12\x17syft_proto.execution.v1\x1a\"syft_proto/types/syft/v1/arg.proto\x1a!syft_proto/types/syft/v1/id.proto\"\xe9\x02\n\x13\x43ommunicationAction\x12.\n\x03obj\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x03obj\x12\x34\n\x06source\x18\x02 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x06source\x12@\n\x0c\x64\x65stinations\x18\x03 \x03(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x0c\x64\x65stinations\x12P\n\x06kwargs\x18\x04 \x03(\x0b\x32\x38.syft_proto.execution.v1.CommunicationAction.KwargsEntryR\x06kwargs\x1aX\n\x0bKwargsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x05value:\x02\x38\x01\x42&\n$org.openmined.syftproto.execution.v1b\x06proto3'
+  serialized_pb=b'\n2syft_proto/execution/v1/communication_action.proto\x12\x17syft_proto.execution.v1\x1a\"syft_proto/types/syft/v1/arg.proto\x1a!syft_proto/types/syft/v1/id.proto\"\xee\x02\n\x13\x43ommunicationAction\x12\x33\n\x06obj_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x05objId\x12\x34\n\x06source\x18\x02 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x06source\x12@\n\x0c\x64\x65stinations\x18\x03 \x03(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x0c\x64\x65stinations\x12P\n\x06kwargs\x18\x04 \x03(\x0b\x32\x38.syft_proto.execution.v1.CommunicationAction.KwargsEntryR\x06kwargs\x1aX\n\x0bKwargsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x05value:\x02\x38\x01\x42&\n$org.openmined.syftproto.execution.v1b\x06proto3'
   ,
   dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
 
@@ -60,8 +60,8 @@ _COMMUNICATIONACTION_KWARGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=424,
-  serialized_end=512,
+  serialized_start=429,
+  serialized_end=517,
 )
 
 _COMMUNICATIONACTION = _descriptor.Descriptor(
@@ -72,12 +72,12 @@ _COMMUNICATIONACTION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='obj', full_name='syft_proto.execution.v1.CommunicationAction.obj', index=0,
+      name='obj_id', full_name='syft_proto.execution.v1.CommunicationAction.obj_id', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='obj', file=DESCRIPTOR),
+      serialized_options=None, json_name='objId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='source', full_name='syft_proto.execution.v1.CommunicationAction.source', index=1,
       number=2, type=11, cpp_type=10, label=1,
@@ -112,12 +112,12 @@ _COMMUNICATIONACTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=151,
-  serialized_end=512,
+  serialized_end=517,
 )
 
 _COMMUNICATIONACTION_KWARGSENTRY.fields_by_name['value'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2._ARG
 _COMMUNICATIONACTION_KWARGSENTRY.containing_type = _COMMUNICATIONACTION
-_COMMUNICATIONACTION.fields_by_name['obj'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
+_COMMUNICATIONACTION.fields_by_name['obj_id'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
 _COMMUNICATIONACTION.fields_by_name['source'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
 _COMMUNICATIONACTION.fields_by_name['destinations'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
 _COMMUNICATIONACTION.fields_by_name['kwargs'].message_type = _COMMUNICATIONACTION_KWARGSENTRY

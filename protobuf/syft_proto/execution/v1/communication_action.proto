@@ -7,7 +7,7 @@ import "syft_proto/types/syft/v1/arg.proto";
 import "syft_proto/types/syft/v1/id.proto";
 
 message CommunicationAction {
-    syft_proto.types.syft.v1.Id obj = 1;
+    syft_proto.types.syft.v1.Id obj_id = 1;
     syft_proto.types.syft.v1.Id source = 2;
     repeated syft_proto.types.syft.v1.Id destinations = 3;
     map<string, syft_proto.types.syft.v1.Arg> kwargs = 4;

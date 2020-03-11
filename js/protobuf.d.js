@@ -11,8 +11,8 @@ export namespace syft_proto {
             /** Properties of a CommunicationAction. */
             interface ICommunicationAction {
 
-                /** CommunicationAction obj */
-                obj?: (syft_proto.types.syft.v1.IId|null);
+                /** CommunicationAction obj_id */
+                obj_id?: (syft_proto.types.syft.v1.IId|null);
 
                 /** CommunicationAction source */
                 source?: (syft_proto.types.syft.v1.IId|null);
@@ -33,8 +33,8 @@ export namespace syft_proto {
                  */
                 constructor(properties?: syft_proto.execution.v1.ICommunicationAction);
 
-                /** CommunicationAction obj. */
-                public obj?: (syft_proto.types.syft.v1.IId|null);
+                /** CommunicationAction obj_id. */
+                public obj_id?: (syft_proto.types.syft.v1.IId|null);
 
                 /** CommunicationAction source. */
                 public source?: (syft_proto.types.syft.v1.IId|null);
