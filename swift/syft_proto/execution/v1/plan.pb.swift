@@ -33,9 +33,9 @@ public struct SyftProto_Execution_V1_Plan {
   /// Clears the value of `id`. Subsequent reads from it will return its default value.
   public mutating func clearID() {_uniqueStorage()._id = nil}
 
-  public var operations: [SyftProto_Execution_V1_Operation] {
-    get {return _storage._operations}
-    set {_uniqueStorage()._operations = newValue}
+  public var actions: [SyftProto_Execution_V1_ComputationAction] {
+    get {return _storage._actions}
+    set {_uniqueStorage()._actions = newValue}
   }
 
   public var state: SyftProto_Execution_V1_State {
@@ -92,7 +92,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
   public static let protoMessageName: String = _protobuf_package + ".Plan"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
-    2: .same(proto: "operations"),
+    2: .same(proto: "actions"),
     3: .same(proto: "state"),
     4: .standard(proto: "include_state"),
     5: .standard(proto: "is_built"),
@@ -104,7 +104,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
 
   fileprivate class _StorageClass {
     var _id: SyftProto_Types_Syft_V1_Id? = nil
-    var _operations: [SyftProto_Execution_V1_Operation] = []
+    var _actions: [SyftProto_Execution_V1_ComputationAction] = []
     var _state: SyftProto_Execution_V1_State? = nil
     var _includeState: Bool = false
     var _isBuilt: Bool = false
@@ -119,7 +119,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
 
     init(copying source: _StorageClass) {
       _id = source._id
-      _operations = source._operations
+      _actions = source._actions
       _state = source._state
       _includeState = source._includeState
       _isBuilt = source._isBuilt
@@ -143,7 +143,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularMessageField(value: &_storage._id)
-        case 2: try decoder.decodeRepeatedMessageField(value: &_storage._operations)
+        case 2: try decoder.decodeRepeatedMessageField(value: &_storage._actions)
         case 3: try decoder.decodeSingularMessageField(value: &_storage._state)
         case 4: try decoder.decodeSingularBoolField(value: &_storage._includeState)
         case 5: try decoder.decodeSingularBoolField(value: &_storage._isBuilt)
@@ -162,8 +162,8 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if let v = _storage._id {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       }
-      if !_storage._operations.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._operations, fieldNumber: 2)
+      if !_storage._actions.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._actions, fieldNumber: 2)
       }
       if let v = _storage._state {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
@@ -196,7 +196,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._id != rhs_storage._id {return false}
-        if _storage._operations != rhs_storage._operations {return false}
+        if _storage._actions != rhs_storage._actions {return false}
         if _storage._state != rhs_storage._state {return false}
         if _storage._includeState != rhs_storage._includeState {return false}
         if _storage._isBuilt != rhs_storage._isBuilt {return false}

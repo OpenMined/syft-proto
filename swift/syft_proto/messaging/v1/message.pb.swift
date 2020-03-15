@@ -49,12 +49,12 @@ public struct SyftProto_Messaging_V1_SyftMessage {
   }
 
   /// ObjectRequestMessage contents_object_request_msg = 6;
-  public var contentsOperationMsg: SyftProto_Messaging_V1_OperationMessage {
+  public var contentsCommandMsg: SyftProto_Messaging_V1_CommandMessage {
     get {
-      if case .contentsOperationMsg(let v)? = _storage._contents {return v}
-      return SyftProto_Messaging_V1_OperationMessage()
+      if case .contentsCommandMsg(let v)? = _storage._contents {return v}
+      return SyftProto_Messaging_V1_CommandMessage()
     }
-    set {_uniqueStorage()._contents = .contentsOperationMsg(newValue)}
+    set {_uniqueStorage()._contents = .contentsCommandMsg(newValue)}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -66,14 +66,14 @@ public struct SyftProto_Messaging_V1_SyftMessage {
     /// IsNoneMessage contents_is_none_msg = 4;
     case contentsObjectMsg(SyftProto_Messaging_V1_ObjectMessage)
     /// ObjectRequestMessage contents_object_request_msg = 6;
-    case contentsOperationMsg(SyftProto_Messaging_V1_OperationMessage)
+    case contentsCommandMsg(SyftProto_Messaging_V1_CommandMessage)
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Messaging_V1_SyftMessage.OneOf_Contents, rhs: SyftProto_Messaging_V1_SyftMessage.OneOf_Contents) -> Bool {
       switch (lhs, rhs) {
       case (.contentsEmptyMsg(let l), .contentsEmptyMsg(let r)): return l == r
       case (.contentsObjectMsg(let l), .contentsObjectMsg(let r)): return l == r
-      case (.contentsOperationMsg(let l), .contentsOperationMsg(let r)): return l == r
+      case (.contentsCommandMsg(let l), .contentsCommandMsg(let r)): return l == r
       default: return false
       }
     }
@@ -106,19 +106,19 @@ public struct SyftProto_Messaging_V1_ObjectMessage {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct SyftProto_Messaging_V1_OperationMessage {
+public struct SyftProto_Messaging_V1_CommandMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var operation: SyftProto_Execution_V1_Operation {
-    get {return _storage._operation ?? SyftProto_Execution_V1_Operation()}
-    set {_uniqueStorage()._operation = newValue}
+  public var action: SyftProto_Execution_V1_ComputationAction {
+    get {return _storage._action ?? SyftProto_Execution_V1_ComputationAction()}
+    set {_uniqueStorage()._action = newValue}
   }
-  /// Returns true if `operation` has been explicitly set.
-  public var hasOperation: Bool {return _storage._operation != nil}
-  /// Clears the value of `operation`. Subsequent reads from it will return its default value.
-  public mutating func clearOperation() {_uniqueStorage()._operation = nil}
+  /// Returns true if `action` has been explicitly set.
+  public var hasAction: Bool {return _storage._action != nil}
+  /// Clears the value of `action`. Subsequent reads from it will return its default value.
+  public mutating func clearAction() {_uniqueStorage()._action = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -136,7 +136,7 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "contents_empty_msg"),
     5: .standard(proto: "contents_object_msg"),
-    7: .standard(proto: "contents_operation_msg"),
+    7: .standard(proto: "contents_command_msg"),
   ]
 
   fileprivate class _StorageClass {
@@ -180,13 +180,13 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._contents = .contentsObjectMsg(v)}
         case 7:
-          var v: SyftProto_Messaging_V1_OperationMessage?
+          var v: SyftProto_Messaging_V1_CommandMessage?
           if let current = _storage._contents {
             try decoder.handleConflictingOneOf()
-            if case .contentsOperationMsg(let m) = current {v = m}
+            if case .contentsCommandMsg(let m) = current {v = m}
           }
           try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._contents = .contentsOperationMsg(v)}
+          if let v = v {_storage._contents = .contentsCommandMsg(v)}
         default: break
         }
       }
@@ -200,7 +200,7 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       case .contentsObjectMsg(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      case .contentsOperationMsg(let v)?:
+      case .contentsCommandMsg(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
       case nil: break
       }
@@ -284,21 +284,21 @@ extension SyftProto_Messaging_V1_ObjectMessage: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension SyftProto_Messaging_V1_OperationMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = _protobuf_package + ".OperationMessage"
+extension SyftProto_Messaging_V1_CommandMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".CommandMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "operation"),
+    1: .same(proto: "action"),
   ]
 
   fileprivate class _StorageClass {
-    var _operation: SyftProto_Execution_V1_Operation? = nil
+    var _action: SyftProto_Execution_V1_ComputationAction? = nil
 
     static let defaultInstance = _StorageClass()
 
     private init() {}
 
     init(copying source: _StorageClass) {
-      _operation = source._operation
+      _action = source._action
     }
   }
 
@@ -314,7 +314,7 @@ extension SyftProto_Messaging_V1_OperationMessage: SwiftProtobuf.Message, SwiftP
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._operation)
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._action)
         default: break
         }
       }
@@ -323,19 +323,19 @@ extension SyftProto_Messaging_V1_OperationMessage: SwiftProtobuf.Message, SwiftP
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._operation {
+      if let v = _storage._action {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: SyftProto_Messaging_V1_OperationMessage, rhs: SyftProto_Messaging_V1_OperationMessage) -> Bool {
+  public static func ==(lhs: SyftProto_Messaging_V1_CommandMessage, rhs: SyftProto_Messaging_V1_CommandMessage) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._operation != rhs_storage._operation {return false}
+        if _storage._action != rhs_storage._action {return false}
         return true
       }
       if !storagesAreEqual {return false}
