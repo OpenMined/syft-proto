@@ -5,6 +5,7 @@ option java_package = "org.openmined.syftproto.messaging.v1";
 
 import "google/protobuf/empty.proto";
 import "syft_proto/execution/v1/computation_action.proto";
+import "syft_proto/execution/v1/communication_action.proto";
 import "syft_proto/types/torch/v1/tensor.proto";
 
 
@@ -27,5 +28,8 @@ message ObjectMessage {
 }
 
 message CommandMessage {
-  syft_proto.execution.v1.ComputationAction action = 1;
+  oneof action {
+    syft_proto.execution.v1.ComputationAction computation = 1;
+    syft_proto.execution.v1.CommunicationAction communication = 2;
+  }
 }

@@ -15,6 +15,7 @@ _sym_db = _symbol_database.Default()
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from syft_proto.execution.v1 import computation_action_pb2 as syft__proto_dot_execution_dot_v1_dot_computation__action__pb2
+from syft_proto.execution.v1 import communication_action_pb2 as syft__proto_dot_execution_dot_v1_dot_communication__action__pb2
 from syft_proto.types.torch.v1 import tensor_pb2 as syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2
 
 
@@ -23,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.messaging.v1',
   syntax='proto3',
   serialized_options=_b('\n$org.openmined.syftproto.messaging.v1'),
-  serialized_pb=_b('\n%syft_proto/messaging/v1/message.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x30syft_proto/execution/v1/computation_action.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\x98\x02\n\x0bSyftMessage\x12\x46\n\x12\x63ontents_empty_msg\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00R\x10\x63ontentsEmptyMsg\x12X\n\x13\x63ontents_object_msg\x18\x05 \x01(\x0b\x32&.syft_proto.messaging.v1.ObjectMessageH\x00R\x11\x63ontentsObjectMsg\x12[\n\x14\x63ontents_command_msg\x18\x07 \x01(\x0b\x32\'.syft_proto.messaging.v1.CommandMessageH\x00R\x12\x63ontentsCommandMsgB\n\n\x08\x63ontents\"O\n\rObjectMessage\x12>\n\x06tensor\x18\x01 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x06tensor\"T\n\x0e\x43ommandMessage\x12\x42\n\x06\x61\x63tion\x18\x01 \x01(\x0b\x32*.syft_proto.execution.v1.ComputationActionR\x06\x61\x63tionB&\n$org.openmined.syftproto.messaging.v1b\x06proto3')
+  serialized_pb=_b('\n%syft_proto/messaging/v1/message.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x30syft_proto/execution/v1/computation_action.proto\x1a\x32syft_proto/execution/v1/communication_action.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\x98\x02\n\x0bSyftMessage\x12\x46\n\x12\x63ontents_empty_msg\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00R\x10\x63ontentsEmptyMsg\x12X\n\x13\x63ontents_object_msg\x18\x05 \x01(\x0b\x32&.syft_proto.messaging.v1.ObjectMessageH\x00R\x11\x63ontentsObjectMsg\x12[\n\x14\x63ontents_command_msg\x18\x07 \x01(\x0b\x32\'.syft_proto.messaging.v1.CommandMessageH\x00R\x12\x63ontentsCommandMsgB\n\n\x08\x63ontents\"O\n\rObjectMessage\x12>\n\x06tensor\x18\x01 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x06tensor\"\xc0\x01\n\x0e\x43ommandMessage\x12N\n\x0b\x63omputation\x18\x01 \x01(\x0b\x32*.syft_proto.execution.v1.ComputationActionH\x00R\x0b\x63omputation\x12T\n\rcommunication\x18\x02 \x01(\x0b\x32,.syft_proto.execution.v1.CommunicationActionH\x00R\rcommunicationB\x08\n\x06\x61\x63tionB&\n$org.openmined.syftproto.messaging.v1b\x06proto3')
   ,
-  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_computation__action__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_computation__action__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_communication__action__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
 
 
 
@@ -73,8 +74,8 @@ _SYFTMESSAGE = _descriptor.Descriptor(
       name='contents', full_name='syft_proto.messaging.v1.SyftMessage.contents',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=186,
-  serialized_end=466,
+  serialized_start=238,
+  serialized_end=518,
 )
 
 
@@ -104,8 +105,8 @@ _OBJECTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=468,
-  serialized_end=547,
+  serialized_start=520,
+  serialized_end=599,
 )
 
 
@@ -117,12 +118,19 @@ _COMMANDMESSAGE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='action', full_name='syft_proto.messaging.v1.CommandMessage.action', index=0,
+      name='computation', full_name='syft_proto.messaging.v1.CommandMessage.computation', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='action', file=DESCRIPTOR),
+      serialized_options=None, json_name='computation', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='communication', full_name='syft_proto.messaging.v1.CommandMessage.communication', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='communication', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -134,9 +142,12 @@ _COMMANDMESSAGE = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
+    _descriptor.OneofDescriptor(
+      name='action', full_name='syft_proto.messaging.v1.CommandMessage.action',
+      index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=549,
-  serialized_end=633,
+  serialized_start=602,
+  serialized_end=794,
 )
 
 _SYFTMESSAGE.fields_by_name['contents_empty_msg'].message_type = google_dot_protobuf_dot_empty__pb2._EMPTY
@@ -152,7 +163,14 @@ _SYFTMESSAGE.oneofs_by_name['contents'].fields.append(
   _SYFTMESSAGE.fields_by_name['contents_command_msg'])
 _SYFTMESSAGE.fields_by_name['contents_command_msg'].containing_oneof = _SYFTMESSAGE.oneofs_by_name['contents']
 _OBJECTMESSAGE.fields_by_name['tensor'].message_type = syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2._TORCHTENSOR
-_COMMANDMESSAGE.fields_by_name['action'].message_type = syft__proto_dot_execution_dot_v1_dot_computation__action__pb2._COMPUTATIONACTION
+_COMMANDMESSAGE.fields_by_name['computation'].message_type = syft__proto_dot_execution_dot_v1_dot_computation__action__pb2._COMPUTATIONACTION
+_COMMANDMESSAGE.fields_by_name['communication'].message_type = syft__proto_dot_execution_dot_v1_dot_communication__action__pb2._COMMUNICATIONACTION
+_COMMANDMESSAGE.oneofs_by_name['action'].fields.append(
+  _COMMANDMESSAGE.fields_by_name['computation'])
+_COMMANDMESSAGE.fields_by_name['computation'].containing_oneof = _COMMANDMESSAGE.oneofs_by_name['action']
+_COMMANDMESSAGE.oneofs_by_name['action'].fields.append(
+  _COMMANDMESSAGE.fields_by_name['communication'])
+_COMMANDMESSAGE.fields_by_name['communication'].containing_oneof = _COMMANDMESSAGE.oneofs_by_name['action']
 DESCRIPTOR.message_types_by_name['SyftMessage'] = _SYFTMESSAGE
 DESCRIPTOR.message_types_by_name['ObjectMessage'] = _OBJECTMESSAGE
 DESCRIPTOR.message_types_by_name['CommandMessage'] = _COMMANDMESSAGE
