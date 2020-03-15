@@ -120,7 +120,7 @@
     "syft.messaging.message.Message": {
       "code": 32
     },
-    "syft.messaging.message.OperationMessage": {
+    "syft.messaging.message.CommandMessage": {
       "code": 33
     },
     "syft.messaging.message.ObjectMessage": {
@@ -179,6 +179,9 @@
     },
     "syft.messaging.message.ExecuteWorkerFunctionMessage": {
       "code": 53
+    },
+    "syft.execution.computation.ComputationAction": {
+      "code": 54
     }
   }
 }

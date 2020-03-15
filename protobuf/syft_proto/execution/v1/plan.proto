@@ -3,7 +3,7 @@ syntax = "proto3";
 package syft_proto.execution.v1;
 option java_package = "org.openmined.syftproto.execution.v1";
 
-import "syft_proto/execution/v1/operation.proto";
+import "syft_proto/execution/v1/computation_action.proto";
 import "syft_proto/execution/v1/state.proto";
 import "syft_proto/frameworks/torch/tensors/interpreters/v1/placeholder.proto";
 import "syft_proto/types/syft/v1/id.proto";
@@ -11,7 +11,7 @@ import "syft_proto/types/syft/v1/id.proto";
 
 message Plan {
     syft_proto.types.syft.v1.Id id = 1;
-    repeated syft_proto.execution.v1.Operation operations = 2;
+    repeated syft_proto.execution.v1.ComputationAction actions = 2;
     syft_proto.execution.v1.State state = 3;
     bool include_state = 4;
     bool is_built = 5;
