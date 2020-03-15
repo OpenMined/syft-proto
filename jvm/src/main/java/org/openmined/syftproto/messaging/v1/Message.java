@@ -87,34 +87,6 @@ public final class Message {
      */
     org.openmined.syftproto.messaging.v1.Message.CommandMessageOrBuilder getContentsCommandMsgOrBuilder();
 
-    /**
-     * <pre>
-     * PlanCommandMessage contents_plan_command_msg = 8;
-     * SearchMessage contents_search_msg = 9;
-     * </pre>
-     *
-     * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-     */
-    boolean hasContentsCommunicationMsg();
-    /**
-     * <pre>
-     * PlanCommandMessage contents_plan_command_msg = 8;
-     * SearchMessage contents_search_msg = 9;
-     * </pre>
-     *
-     * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-     */
-    org.openmined.syftproto.messaging.v1.Message.CommandMessage getContentsCommunicationMsg();
-    /**
-     * <pre>
-     * PlanCommandMessage contents_plan_command_msg = 8;
-     * SearchMessage contents_search_msg = 9;
-     * </pre>
-     *
-     * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-     */
-    org.openmined.syftproto.messaging.v1.Message.CommandMessageOrBuilder getContentsCommunicationMsgOrBuilder();
-
     public org.openmined.syftproto.messaging.v1.Message.SyftMessage.ContentsCase getContentsCase();
   }
   /**
@@ -204,20 +176,6 @@ public final class Message {
               contentsCase_ = 7;
               break;
             }
-            case 82: {
-              org.openmined.syftproto.messaging.v1.Message.CommandMessage.Builder subBuilder = null;
-              if (contentsCase_ == 10) {
-                subBuilder = ((org.openmined.syftproto.messaging.v1.Message.CommandMessage) contents_).toBuilder();
-              }
-              contents_ =
-                  input.readMessage(org.openmined.syftproto.messaging.v1.Message.CommandMessage.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((org.openmined.syftproto.messaging.v1.Message.CommandMessage) contents_);
-                contents_ = subBuilder.buildPartial();
-              }
-              contentsCase_ = 10;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -257,7 +215,6 @@ public final class Message {
       CONTENTS_EMPTY_MSG(1),
       CONTENTS_OBJECT_MSG(5),
       CONTENTS_COMMAND_MSG(7),
-      CONTENTS_COMMUNICATION_MSG(10),
       CONTENTS_NOT_SET(0);
       private final int value;
       private ContentsCase(int value) {
@@ -276,7 +233,6 @@ public final class Message {
           case 1: return CONTENTS_EMPTY_MSG;
           case 5: return CONTENTS_OBJECT_MSG;
           case 7: return CONTENTS_COMMAND_MSG;
-          case 10: return CONTENTS_COMMUNICATION_MSG;
           case 0: return CONTENTS_NOT_SET;
           default: return null;
         }
@@ -400,47 +356,6 @@ public final class Message {
       return org.openmined.syftproto.messaging.v1.Message.CommandMessage.getDefaultInstance();
     }
 
-    public static final int CONTENTS_COMMUNICATION_MSG_FIELD_NUMBER = 10;
-    /**
-     * <pre>
-     * PlanCommandMessage contents_plan_command_msg = 8;
-     * SearchMessage contents_search_msg = 9;
-     * </pre>
-     *
-     * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-     */
-    public boolean hasContentsCommunicationMsg() {
-      return contentsCase_ == 10;
-    }
-    /**
-     * <pre>
-     * PlanCommandMessage contents_plan_command_msg = 8;
-     * SearchMessage contents_search_msg = 9;
-     * </pre>
-     *
-     * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-     */
-    public org.openmined.syftproto.messaging.v1.Message.CommandMessage getContentsCommunicationMsg() {
-      if (contentsCase_ == 10) {
-         return (org.openmined.syftproto.messaging.v1.Message.CommandMessage) contents_;
-      }
-      return org.openmined.syftproto.messaging.v1.Message.CommandMessage.getDefaultInstance();
-    }
-    /**
-     * <pre>
-     * PlanCommandMessage contents_plan_command_msg = 8;
-     * SearchMessage contents_search_msg = 9;
-     * </pre>
-     *
-     * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-     */
-    public org.openmined.syftproto.messaging.v1.Message.CommandMessageOrBuilder getContentsCommunicationMsgOrBuilder() {
-      if (contentsCase_ == 10) {
-         return (org.openmined.syftproto.messaging.v1.Message.CommandMessage) contents_;
-      }
-      return org.openmined.syftproto.messaging.v1.Message.CommandMessage.getDefaultInstance();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -464,9 +379,6 @@ public final class Message {
       if (contentsCase_ == 7) {
         output.writeMessage(7, (org.openmined.syftproto.messaging.v1.Message.CommandMessage) contents_);
       }
-      if (contentsCase_ == 10) {
-        output.writeMessage(10, (org.openmined.syftproto.messaging.v1.Message.CommandMessage) contents_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -487,10 +399,6 @@ public final class Message {
       if (contentsCase_ == 7) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, (org.openmined.syftproto.messaging.v1.Message.CommandMessage) contents_);
-      }
-      if (contentsCase_ == 10) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, (org.openmined.syftproto.messaging.v1.Message.CommandMessage) contents_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -521,10 +429,6 @@ public final class Message {
           if (!getContentsCommandMsg()
               .equals(other.getContentsCommandMsg())) return false;
           break;
-        case 10:
-          if (!getContentsCommunicationMsg()
-              .equals(other.getContentsCommunicationMsg())) return false;
-          break;
         case 0:
         default:
       }
@@ -551,10 +455,6 @@ public final class Message {
         case 7:
           hash = (37 * hash) + CONTENTS_COMMAND_MSG_FIELD_NUMBER;
           hash = (53 * hash) + getContentsCommandMsg().hashCode();
-          break;
-        case 10:
-          hash = (37 * hash) + CONTENTS_COMMUNICATION_MSG_FIELD_NUMBER;
-          hash = (53 * hash) + getContentsCommunicationMsg().hashCode();
           break;
         case 0:
         default:
@@ -741,13 +641,6 @@ public final class Message {
             result.contents_ = contentsCommandMsgBuilder_.build();
           }
         }
-        if (contentsCase_ == 10) {
-          if (contentsCommunicationMsgBuilder_ == null) {
-            result.contents_ = contents_;
-          } else {
-            result.contents_ = contentsCommunicationMsgBuilder_.build();
-          }
-        }
         result.contentsCase_ = contentsCase_;
         onBuilt();
         return result;
@@ -808,10 +701,6 @@ public final class Message {
           }
           case CONTENTS_COMMAND_MSG: {
             mergeContentsCommandMsg(other.getContentsCommandMsg());
-            break;
-          }
-          case CONTENTS_COMMUNICATION_MSG: {
-            mergeContentsCommunicationMsg(other.getContentsCommunicationMsg());
             break;
           }
           case CONTENTS_NOT_SET: {
@@ -1358,187 +1247,6 @@ public final class Message {
         contentsCase_ = 7;
         onChanged();;
         return contentsCommandMsgBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.messaging.v1.Message.CommandMessage, org.openmined.syftproto.messaging.v1.Message.CommandMessage.Builder, org.openmined.syftproto.messaging.v1.Message.CommandMessageOrBuilder> contentsCommunicationMsgBuilder_;
-      /**
-       * <pre>
-       * PlanCommandMessage contents_plan_command_msg = 8;
-       * SearchMessage contents_search_msg = 9;
-       * </pre>
-       *
-       * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-       */
-      public boolean hasContentsCommunicationMsg() {
-        return contentsCase_ == 10;
-      }
-      /**
-       * <pre>
-       * PlanCommandMessage contents_plan_command_msg = 8;
-       * SearchMessage contents_search_msg = 9;
-       * </pre>
-       *
-       * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-       */
-      public org.openmined.syftproto.messaging.v1.Message.CommandMessage getContentsCommunicationMsg() {
-        if (contentsCommunicationMsgBuilder_ == null) {
-          if (contentsCase_ == 10) {
-            return (org.openmined.syftproto.messaging.v1.Message.CommandMessage) contents_;
-          }
-          return org.openmined.syftproto.messaging.v1.Message.CommandMessage.getDefaultInstance();
-        } else {
-          if (contentsCase_ == 10) {
-            return contentsCommunicationMsgBuilder_.getMessage();
-          }
-          return org.openmined.syftproto.messaging.v1.Message.CommandMessage.getDefaultInstance();
-        }
-      }
-      /**
-       * <pre>
-       * PlanCommandMessage contents_plan_command_msg = 8;
-       * SearchMessage contents_search_msg = 9;
-       * </pre>
-       *
-       * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-       */
-      public Builder setContentsCommunicationMsg(org.openmined.syftproto.messaging.v1.Message.CommandMessage value) {
-        if (contentsCommunicationMsgBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          contents_ = value;
-          onChanged();
-        } else {
-          contentsCommunicationMsgBuilder_.setMessage(value);
-        }
-        contentsCase_ = 10;
-        return this;
-      }
-      /**
-       * <pre>
-       * PlanCommandMessage contents_plan_command_msg = 8;
-       * SearchMessage contents_search_msg = 9;
-       * </pre>
-       *
-       * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-       */
-      public Builder setContentsCommunicationMsg(
-          org.openmined.syftproto.messaging.v1.Message.CommandMessage.Builder builderForValue) {
-        if (contentsCommunicationMsgBuilder_ == null) {
-          contents_ = builderForValue.build();
-          onChanged();
-        } else {
-          contentsCommunicationMsgBuilder_.setMessage(builderForValue.build());
-        }
-        contentsCase_ = 10;
-        return this;
-      }
-      /**
-       * <pre>
-       * PlanCommandMessage contents_plan_command_msg = 8;
-       * SearchMessage contents_search_msg = 9;
-       * </pre>
-       *
-       * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-       */
-      public Builder mergeContentsCommunicationMsg(org.openmined.syftproto.messaging.v1.Message.CommandMessage value) {
-        if (contentsCommunicationMsgBuilder_ == null) {
-          if (contentsCase_ == 10 &&
-              contents_ != org.openmined.syftproto.messaging.v1.Message.CommandMessage.getDefaultInstance()) {
-            contents_ = org.openmined.syftproto.messaging.v1.Message.CommandMessage.newBuilder((org.openmined.syftproto.messaging.v1.Message.CommandMessage) contents_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            contents_ = value;
-          }
-          onChanged();
-        } else {
-          if (contentsCase_ == 10) {
-            contentsCommunicationMsgBuilder_.mergeFrom(value);
-          }
-          contentsCommunicationMsgBuilder_.setMessage(value);
-        }
-        contentsCase_ = 10;
-        return this;
-      }
-      /**
-       * <pre>
-       * PlanCommandMessage contents_plan_command_msg = 8;
-       * SearchMessage contents_search_msg = 9;
-       * </pre>
-       *
-       * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-       */
-      public Builder clearContentsCommunicationMsg() {
-        if (contentsCommunicationMsgBuilder_ == null) {
-          if (contentsCase_ == 10) {
-            contentsCase_ = 0;
-            contents_ = null;
-            onChanged();
-          }
-        } else {
-          if (contentsCase_ == 10) {
-            contentsCase_ = 0;
-            contents_ = null;
-          }
-          contentsCommunicationMsgBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * PlanCommandMessage contents_plan_command_msg = 8;
-       * SearchMessage contents_search_msg = 9;
-       * </pre>
-       *
-       * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-       */
-      public org.openmined.syftproto.messaging.v1.Message.CommandMessage.Builder getContentsCommunicationMsgBuilder() {
-        return getContentsCommunicationMsgFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * PlanCommandMessage contents_plan_command_msg = 8;
-       * SearchMessage contents_search_msg = 9;
-       * </pre>
-       *
-       * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-       */
-      public org.openmined.syftproto.messaging.v1.Message.CommandMessageOrBuilder getContentsCommunicationMsgOrBuilder() {
-        if ((contentsCase_ == 10) && (contentsCommunicationMsgBuilder_ != null)) {
-          return contentsCommunicationMsgBuilder_.getMessageOrBuilder();
-        } else {
-          if (contentsCase_ == 10) {
-            return (org.openmined.syftproto.messaging.v1.Message.CommandMessage) contents_;
-          }
-          return org.openmined.syftproto.messaging.v1.Message.CommandMessage.getDefaultInstance();
-        }
-      }
-      /**
-       * <pre>
-       * PlanCommandMessage contents_plan_command_msg = 8;
-       * SearchMessage contents_search_msg = 9;
-       * </pre>
-       *
-       * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.messaging.v1.Message.CommandMessage, org.openmined.syftproto.messaging.v1.Message.CommandMessage.Builder, org.openmined.syftproto.messaging.v1.Message.CommandMessageOrBuilder> 
-          getContentsCommunicationMsgFieldBuilder() {
-        if (contentsCommunicationMsgBuilder_ == null) {
-          if (!(contentsCase_ == 10)) {
-            contents_ = org.openmined.syftproto.messaging.v1.Message.CommandMessage.getDefaultInstance();
-          }
-          contentsCommunicationMsgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openmined.syftproto.messaging.v1.Message.CommandMessage, org.openmined.syftproto.messaging.v1.Message.CommandMessage.Builder, org.openmined.syftproto.messaging.v1.Message.CommandMessageOrBuilder>(
-                  (org.openmined.syftproto.messaging.v1.Message.CommandMessage) contents_,
-                  getParentForChildren(),
-                  isClean());
-          contents_ = null;
-        }
-        contentsCase_ = 10;
-        onChanged();;
-        return contentsCommunicationMsgBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3154,25 +2862,23 @@ public final class Message {
       "f/empty.proto\0320syft_proto/execution/v1/c" +
       "omputation_action.proto\0322syft_proto/exec" +
       "ution/v1/communication_action.proto\032&syf" +
-      "t_proto/types/torch/v1/tensor.proto\"\201\003\n\013" +
+      "t_proto/types/torch/v1/tensor.proto\"\230\002\n\013" +
       "SyftMessage\022F\n\022contents_empty_msg\030\001 \001(\0132" +
       "\026.google.protobuf.EmptyH\000R\020contentsEmpty" +
       "Msg\022X\n\023contents_object_msg\030\005 \001(\0132&.syft_" +
       "proto.messaging.v1.ObjectMessageH\000R\021cont" +
       "entsObjectMsg\022[\n\024contents_command_msg\030\007 " +
       "\001(\0132\'.syft_proto.messaging.v1.CommandMes" +
-      "sageH\000R\022contentsCommandMsg\022g\n\032contents_c" +
-      "ommunication_msg\030\n \001(\0132\'.syft_proto.mess" +
-      "aging.v1.CommandMessageH\000R\030contentsCommu" +
-      "nicationMsgB\n\n\010contents\"O\n\rObjectMessage" +
-      "\022>\n\006tensor\030\001 \001(\0132&.syft_proto.types.torc" +
-      "h.v1.TorchTensorR\006tensor\"\300\001\n\016CommandMess" +
-      "age\022N\n\013computation\030\001 \001(\0132*.syft_proto.ex" +
-      "ecution.v1.ComputationActionH\000R\013computat" +
-      "ion\022T\n\rcommunication\030\002 \001(\0132,.syft_proto." +
-      "execution.v1.CommunicationActionH\000R\rcomm" +
-      "unicationB\010\n\006actionB&\n$org.openmined.syf" +
-      "tproto.messaging.v1b\006proto3"
+      "sageH\000R\022contentsCommandMsgB\n\n\010contents\"O" +
+      "\n\rObjectMessage\022>\n\006tensor\030\001 \001(\0132&.syft_p" +
+      "roto.types.torch.v1.TorchTensorR\006tensor\"" +
+      "\300\001\n\016CommandMessage\022N\n\013computation\030\001 \001(\0132" +
+      "*.syft_proto.execution.v1.ComputationAct" +
+      "ionH\000R\013computation\022T\n\rcommunication\030\002 \001(" +
+      "\0132,.syft_proto.execution.v1.Communicatio" +
+      "nActionH\000R\rcommunicationB\010\n\006actionB&\n$or" +
+      "g.openmined.syftproto.messaging.v1b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3187,7 +2893,7 @@ public final class Message {
     internal_static_syft_proto_messaging_v1_SyftMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_messaging_v1_SyftMessage_descriptor,
-        new java.lang.String[] { "ContentsEmptyMsg", "ContentsObjectMsg", "ContentsCommandMsg", "ContentsCommunicationMsg", "Contents", });
+        new java.lang.String[] { "ContentsEmptyMsg", "ContentsObjectMsg", "ContentsCommandMsg", "Contents", });
     internal_static_syft_proto_messaging_v1_ObjectMessage_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_syft_proto_messaging_v1_ObjectMessage_fieldAccessorTable = new

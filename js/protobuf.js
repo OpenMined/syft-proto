@@ -7122,7 +7122,6 @@ $root.syft_proto = (function() {
                  * @property {google.protobuf.IEmpty|null} [contents_empty_msg] SyftMessage contents_empty_msg
                  * @property {syft_proto.messaging.v1.IObjectMessage|null} [contents_object_msg] SyftMessage contents_object_msg
                  * @property {syft_proto.messaging.v1.ICommandMessage|null} [contents_command_msg] SyftMessage contents_command_msg
-                 * @property {syft_proto.messaging.v1.ICommandMessage|null} [contents_communication_msg] SyftMessage contents_communication_msg
                  */
 
                 /**
@@ -7164,25 +7163,17 @@ $root.syft_proto = (function() {
                  */
                 SyftMessage.prototype.contents_command_msg = null;
 
-                /**
-                 * SyftMessage contents_communication_msg.
-                 * @member {syft_proto.messaging.v1.ICommandMessage|null|undefined} contents_communication_msg
-                 * @memberof syft_proto.messaging.v1.SyftMessage
-                 * @instance
-                 */
-                SyftMessage.prototype.contents_communication_msg = null;
-
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
                 /**
                  * SyftMessage contents.
-                 * @member {"contents_empty_msg"|"contents_object_msg"|"contents_command_msg"|"contents_communication_msg"|undefined} contents
+                 * @member {"contents_empty_msg"|"contents_object_msg"|"contents_command_msg"|undefined} contents
                  * @memberof syft_proto.messaging.v1.SyftMessage
                  * @instance
                  */
                 Object.defineProperty(SyftMessage.prototype, "contents", {
-                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_object_msg", "contents_command_msg", "contents_communication_msg"]),
+                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_object_msg", "contents_command_msg"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
@@ -7216,8 +7207,6 @@ $root.syft_proto = (function() {
                         $root.syft_proto.messaging.v1.ObjectMessage.encode(message.contents_object_msg, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                     if (message.contents_command_msg != null && message.hasOwnProperty("contents_command_msg"))
                         $root.syft_proto.messaging.v1.CommandMessage.encode(message.contents_command_msg, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                    if (message.contents_communication_msg != null && message.hasOwnProperty("contents_communication_msg"))
-                        $root.syft_proto.messaging.v1.CommandMessage.encode(message.contents_communication_msg, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                     return writer;
                 };
 
@@ -7260,9 +7249,6 @@ $root.syft_proto = (function() {
                             break;
                         case 7:
                             message.contents_command_msg = $root.syft_proto.messaging.v1.CommandMessage.decode(reader, reader.uint32());
-                            break;
-                        case 10:
-                            message.contents_communication_msg = $root.syft_proto.messaging.v1.CommandMessage.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -7328,16 +7314,6 @@ $root.syft_proto = (function() {
                                 return "contents_command_msg." + error;
                         }
                     }
-                    if (message.contents_communication_msg != null && message.hasOwnProperty("contents_communication_msg")) {
-                        if (properties.contents === 1)
-                            return "contents: multiple values";
-                        properties.contents = 1;
-                        {
-                            var error = $root.syft_proto.messaging.v1.CommandMessage.verify(message.contents_communication_msg);
-                            if (error)
-                                return "contents_communication_msg." + error;
-                        }
-                    }
                     return null;
                 };
 
@@ -7367,11 +7343,6 @@ $root.syft_proto = (function() {
                         if (typeof object.contents_command_msg !== "object")
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_command_msg: object expected");
                         message.contents_command_msg = $root.syft_proto.messaging.v1.CommandMessage.fromObject(object.contents_command_msg);
-                    }
-                    if (object.contents_communication_msg != null) {
-                        if (typeof object.contents_communication_msg !== "object")
-                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_communication_msg: object expected");
-                        message.contents_communication_msg = $root.syft_proto.messaging.v1.CommandMessage.fromObject(object.contents_communication_msg);
                     }
                     return message;
                 };
@@ -7403,11 +7374,6 @@ $root.syft_proto = (function() {
                         object.contents_command_msg = $root.syft_proto.messaging.v1.CommandMessage.toObject(message.contents_command_msg, options);
                         if (options.oneofs)
                             object.contents = "contents_command_msg";
-                    }
-                    if (message.contents_communication_msg != null && message.hasOwnProperty("contents_communication_msg")) {
-                        object.contents_communication_msg = $root.syft_proto.messaging.v1.CommandMessage.toObject(message.contents_communication_msg, options);
-                        if (options.oneofs)
-                            object.contents = "contents_communication_msg";
                     }
                     return object;
                 };

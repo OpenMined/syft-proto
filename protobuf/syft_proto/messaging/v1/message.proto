@@ -18,7 +18,6 @@ message SyftMessage {
     ObjectMessage contents_object_msg = 5;
     // ObjectRequestMessage contents_object_request_msg = 6;
     CommandMessage contents_command_msg = 7;
-    CommandMessage contents_communication_msg = 10;
     // PlanCommandMessage contents_plan_command_msg = 8;
     // SearchMessage contents_search_msg = 9;
   }

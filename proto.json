@@ -185,9 +185,6 @@
     },
     "syft.execution.communication.CommunicationAction": {
       "code": 55
-    },
-    "syft.messaging.message.CommunicationMessage": {
-      "code": 56
     }
   }
 }
