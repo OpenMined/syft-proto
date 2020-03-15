@@ -111,16 +111,43 @@ public struct SyftProto_Messaging_V1_CommandMessage {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var action: SyftProto_Execution_V1_ComputationAction {
-    get {return _storage._action ?? SyftProto_Execution_V1_ComputationAction()}
+  public var action: OneOf_Action? {
+    get {return _storage._action}
     set {_uniqueStorage()._action = newValue}
   }
-  /// Returns true if `action` has been explicitly set.
-  public var hasAction: Bool {return _storage._action != nil}
-  /// Clears the value of `action`. Subsequent reads from it will return its default value.
-  public mutating func clearAction() {_uniqueStorage()._action = nil}
+
+  public var computation: SyftProto_Execution_V1_ComputationAction {
+    get {
+      if case .computation(let v)? = _storage._action {return v}
+      return SyftProto_Execution_V1_ComputationAction()
+    }
+    set {_uniqueStorage()._action = .computation(newValue)}
+  }
+
+  public var communication: SyftProto_Execution_V1_CommunicationAction {
+    get {
+      if case .communication(let v)? = _storage._action {return v}
+      return SyftProto_Execution_V1_CommunicationAction()
+    }
+    set {_uniqueStorage()._action = .communication(newValue)}
+  }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_Action: Equatable {
+    case computation(SyftProto_Execution_V1_ComputationAction)
+    case communication(SyftProto_Execution_V1_CommunicationAction)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: SyftProto_Messaging_V1_CommandMessage.OneOf_Action, rhs: SyftProto_Messaging_V1_CommandMessage.OneOf_Action) -> Bool {
+      switch (lhs, rhs) {
+      case (.computation(let l), .computation(let r)): return l == r
+      case (.communication(let l), .communication(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
 
   public init() {}
 
@@ -287,11 +314,12 @@ extension SyftProto_Messaging_V1_ObjectMessage: SwiftProtobuf.Message, SwiftProt
 extension SyftProto_Messaging_V1_CommandMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "action"),
+    1: .same(proto: "computation"),
+    2: .same(proto: "communication"),
   ]
 
   fileprivate class _StorageClass {
-    var _action: SyftProto_Execution_V1_ComputationAction? = nil
+    var _action: SyftProto_Messaging_V1_CommandMessage.OneOf_Action?
 
     static let defaultInstance = _StorageClass()
 
@@ -314,7 +342,22 @@ extension SyftProto_Messaging_V1_CommandMessage: SwiftProtobuf.Message, SwiftPro
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._action)
+        case 1:
+          var v: SyftProto_Execution_V1_ComputationAction?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .computation(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .computation(v)}
+        case 2:
+          var v: SyftProto_Execution_V1_CommunicationAction?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .communication(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .communication(v)}
         default: break
         }
       }
@@ -323,8 +366,12 @@ extension SyftProto_Messaging_V1_CommandMessage: SwiftProtobuf.Message, SwiftPro
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._action {
+      switch _storage._action {
+      case .computation(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      case .communication(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      case nil: break
       }
     }
     try unknownFields.traverse(visitor: &visitor)
