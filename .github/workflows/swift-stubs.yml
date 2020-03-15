@@ -1,0 +1,28 @@
+name: Build Swift Stubs
+
+on: [push]
+
+jobs:  
+  build:
+    name: Build swift stubs from protobuf files
+    runs-on: macos-latest
+  
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Install swift 
+      run: brew install swift-protobuf
+
+    - name: Build swift stubs
+      run: |
+        mkdir -p swift
+        protoc -I=protobuf --swift_opt=Visibility=Public --swift_out=swift $(find protobuf -name "*.proto")
+        
+    - name: Commit to repository 
+      run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@users.noreply.github.com"
+          git add swift/*
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Swift stubs auto-commit"; git push)
+
