@@ -20,12 +20,10 @@ public final class CommunicationActionOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id obj_id = 1[json_name = "objId"];</code>
-     * @return Whether the objId field is set.
      */
     boolean hasObjId();
     /**
      * <code>.syft_proto.types.syft.v1.Id obj_id = 1[json_name = "objId"];</code>
-     * @return The objId.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjId();
     /**
@@ -35,12 +33,10 @@ public final class CommunicationActionOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id source = 2[json_name = "source"];</code>
-     * @return Whether the source field is set.
      */
     boolean hasSource();
     /**
      * <code>.syft_proto.types.syft.v1.Id source = 2[json_name = "source"];</code>
-     * @return The source.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getSource();
     /**
@@ -252,14 +248,12 @@ public final class CommunicationActionOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id objId_;
     /**
      * <code>.syft_proto.types.syft.v1.Id obj_id = 1[json_name = "objId"];</code>
-     * @return Whether the objId field is set.
      */
     public boolean hasObjId() {
       return objId_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id obj_id = 1[json_name = "objId"];</code>
-     * @return The objId.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjId() {
       return objId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objId_;
@@ -275,14 +269,12 @@ public final class CommunicationActionOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id source_;
     /**
      * <code>.syft_proto.types.syft.v1.Id source = 2[json_name = "source"];</code>
-     * @return Whether the source field is set.
      */
     public boolean hasSource() {
       return source_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id source = 2[json_name = "source"];</code>
-     * @return The source.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getSource() {
       return source_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : source_;
@@ -861,14 +853,12 @@ public final class CommunicationActionOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> objIdBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id obj_id = 1[json_name = "objId"];</code>
-       * @return Whether the objId field is set.
        */
       public boolean hasObjId() {
         return objIdBuilder_ != null || objId_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id obj_id = 1[json_name = "objId"];</code>
-       * @return The objId.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjId() {
         if (objIdBuilder_ == null) {
@@ -980,14 +970,12 @@ public final class CommunicationActionOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> sourceBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id source = 2[json_name = "source"];</code>
-       * @return Whether the source field is set.
        */
       public boolean hasSource() {
         return sourceBuilder_ != null || source_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id source = 2[json_name = "source"];</code>
-       * @return The source.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getSource() {
         if (sourceBuilder_ == null) {

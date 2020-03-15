@@ -20,18 +20,15 @@ public final class IdOuterClass {
 
     /**
      * <code>int64 id_int = 1[json_name = "idInt"];</code>
-     * @return The idInt.
      */
     long getIdInt();
 
     /**
      * <code>string id_str = 2[json_name = "idStr"];</code>
-     * @return The idStr.
      */
     java.lang.String getIdStr();
     /**
      * <code>string id_str = 2[json_name = "idStr"];</code>
-     * @return The bytes for idStr.
      */
     com.google.protobuf.ByteString
         getIdStrBytes();
@@ -129,8 +126,7 @@ public final class IdOuterClass {
     private int idCase_ = 0;
     private java.lang.Object id_;
     public enum IdCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       ID_INT(1),
       ID_STR(2),
       ID_NOT_SET(0);
@@ -139,8 +135,6 @@ public final class IdOuterClass {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -170,7 +164,6 @@ public final class IdOuterClass {
     public static final int ID_INT_FIELD_NUMBER = 1;
     /**
      * <code>int64 id_int = 1[json_name = "idInt"];</code>
-     * @return The idInt.
      */
     public long getIdInt() {
       if (idCase_ == 1) {
@@ -182,7 +175,6 @@ public final class IdOuterClass {
     public static final int ID_STR_FIELD_NUMBER = 2;
     /**
      * <code>string id_str = 2[json_name = "idStr"];</code>
-     * @return The idStr.
      */
     public java.lang.String getIdStr() {
       java.lang.Object ref = "";
@@ -203,7 +195,6 @@ public final class IdOuterClass {
     }
     /**
      * <code>string id_str = 2[json_name = "idStr"];</code>
-     * @return The bytes for idStr.
      */
     public com.google.protobuf.ByteString
         getIdStrBytes() {
@@ -591,7 +582,6 @@ public final class IdOuterClass {
 
       /**
        * <code>int64 id_int = 1[json_name = "idInt"];</code>
-       * @return The idInt.
        */
       public long getIdInt() {
         if (idCase_ == 1) {
@@ -601,8 +591,6 @@ public final class IdOuterClass {
       }
       /**
        * <code>int64 id_int = 1[json_name = "idInt"];</code>
-       * @param value The idInt to set.
-       * @return This builder for chaining.
        */
       public Builder setIdInt(long value) {
         idCase_ = 1;
@@ -612,7 +600,6 @@ public final class IdOuterClass {
       }
       /**
        * <code>int64 id_int = 1[json_name = "idInt"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearIdInt() {
         if (idCase_ == 1) {
@@ -625,7 +612,6 @@ public final class IdOuterClass {
 
       /**
        * <code>string id_str = 2[json_name = "idStr"];</code>
-       * @return The idStr.
        */
       public java.lang.String getIdStr() {
         java.lang.Object ref = "";
@@ -646,7 +632,6 @@ public final class IdOuterClass {
       }
       /**
        * <code>string id_str = 2[json_name = "idStr"];</code>
-       * @return The bytes for idStr.
        */
       public com.google.protobuf.ByteString
           getIdStrBytes() {
@@ -668,8 +653,6 @@ public final class IdOuterClass {
       }
       /**
        * <code>string id_str = 2[json_name = "idStr"];</code>
-       * @param value The idStr to set.
-       * @return This builder for chaining.
        */
       public Builder setIdStr(
           java.lang.String value) {
@@ -683,7 +666,6 @@ public final class IdOuterClass {
       }
       /**
        * <code>string id_str = 2[json_name = "idStr"];</code>
-       * @return This builder for chaining.
        */
       public Builder clearIdStr() {
         if (idCase_ == 2) {
@@ -695,8 +677,6 @@ public final class IdOuterClass {
       }
       /**
        * <code>string id_str = 2[json_name = "idStr"];</code>
-       * @param value The bytes for idStr to set.
-       * @return This builder for chaining.
        */
       public Builder setIdStrBytes(
           com.google.protobuf.ByteString value) {

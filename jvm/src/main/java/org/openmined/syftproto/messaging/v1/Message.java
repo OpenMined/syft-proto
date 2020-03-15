@@ -20,12 +20,10 @@ public final class Message {
 
     /**
      * <code>.google.protobuf.Empty contents_empty_msg = 1[json_name = "contentsEmptyMsg"];</code>
-     * @return Whether the contentsEmptyMsg field is set.
      */
     boolean hasContentsEmptyMsg();
     /**
      * <code>.google.protobuf.Empty contents_empty_msg = 1[json_name = "contentsEmptyMsg"];</code>
-     * @return The contentsEmptyMsg.
      */
     com.google.protobuf.Empty getContentsEmptyMsg();
     /**
@@ -41,7 +39,6 @@ public final class Message {
      * </pre>
      *
      * <code>.syft_proto.messaging.v1.ObjectMessage contents_object_msg = 5[json_name = "contentsObjectMsg"];</code>
-     * @return Whether the contentsObjectMsg field is set.
      */
     boolean hasContentsObjectMsg();
     /**
@@ -52,7 +49,6 @@ public final class Message {
      * </pre>
      *
      * <code>.syft_proto.messaging.v1.ObjectMessage contents_object_msg = 5[json_name = "contentsObjectMsg"];</code>
-     * @return The contentsObjectMsg.
      */
     org.openmined.syftproto.messaging.v1.Message.ObjectMessage getContentsObjectMsg();
     /**
@@ -72,7 +68,6 @@ public final class Message {
      * </pre>
      *
      * <code>.syft_proto.messaging.v1.CommandMessage contents_command_msg = 7[json_name = "contentsCommandMsg"];</code>
-     * @return Whether the contentsCommandMsg field is set.
      */
     boolean hasContentsCommandMsg();
     /**
@@ -81,7 +76,6 @@ public final class Message {
      * </pre>
      *
      * <code>.syft_proto.messaging.v1.CommandMessage contents_command_msg = 7[json_name = "contentsCommandMsg"];</code>
-     * @return The contentsCommandMsg.
      */
     org.openmined.syftproto.messaging.v1.Message.CommandMessage getContentsCommandMsg();
     /**
@@ -100,7 +94,6 @@ public final class Message {
      * </pre>
      *
      * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-     * @return Whether the contentsCommunicationMsg field is set.
      */
     boolean hasContentsCommunicationMsg();
     /**
@@ -110,7 +103,6 @@ public final class Message {
      * </pre>
      *
      * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-     * @return The contentsCommunicationMsg.
      */
     org.openmined.syftproto.messaging.v1.Message.CommandMessage getContentsCommunicationMsg();
     /**
@@ -261,8 +253,7 @@ public final class Message {
     private int contentsCase_ = 0;
     private java.lang.Object contents_;
     public enum ContentsCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       CONTENTS_EMPTY_MSG(1),
       CONTENTS_OBJECT_MSG(5),
       CONTENTS_COMMAND_MSG(7),
@@ -273,8 +264,6 @@ public final class Message {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -306,14 +295,12 @@ public final class Message {
     public static final int CONTENTS_EMPTY_MSG_FIELD_NUMBER = 1;
     /**
      * <code>.google.protobuf.Empty contents_empty_msg = 1[json_name = "contentsEmptyMsg"];</code>
-     * @return Whether the contentsEmptyMsg field is set.
      */
     public boolean hasContentsEmptyMsg() {
       return contentsCase_ == 1;
     }
     /**
      * <code>.google.protobuf.Empty contents_empty_msg = 1[json_name = "contentsEmptyMsg"];</code>
-     * @return The contentsEmptyMsg.
      */
     public com.google.protobuf.Empty getContentsEmptyMsg() {
       if (contentsCase_ == 1) {
@@ -340,7 +327,6 @@ public final class Message {
      * </pre>
      *
      * <code>.syft_proto.messaging.v1.ObjectMessage contents_object_msg = 5[json_name = "contentsObjectMsg"];</code>
-     * @return Whether the contentsObjectMsg field is set.
      */
     public boolean hasContentsObjectMsg() {
       return contentsCase_ == 5;
@@ -353,7 +339,6 @@ public final class Message {
      * </pre>
      *
      * <code>.syft_proto.messaging.v1.ObjectMessage contents_object_msg = 5[json_name = "contentsObjectMsg"];</code>
-     * @return The contentsObjectMsg.
      */
     public org.openmined.syftproto.messaging.v1.Message.ObjectMessage getContentsObjectMsg() {
       if (contentsCase_ == 5) {
@@ -384,7 +369,6 @@ public final class Message {
      * </pre>
      *
      * <code>.syft_proto.messaging.v1.CommandMessage contents_command_msg = 7[json_name = "contentsCommandMsg"];</code>
-     * @return Whether the contentsCommandMsg field is set.
      */
     public boolean hasContentsCommandMsg() {
       return contentsCase_ == 7;
@@ -395,7 +379,6 @@ public final class Message {
      * </pre>
      *
      * <code>.syft_proto.messaging.v1.CommandMessage contents_command_msg = 7[json_name = "contentsCommandMsg"];</code>
-     * @return The contentsCommandMsg.
      */
     public org.openmined.syftproto.messaging.v1.Message.CommandMessage getContentsCommandMsg() {
       if (contentsCase_ == 7) {
@@ -425,7 +408,6 @@ public final class Message {
      * </pre>
      *
      * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-     * @return Whether the contentsCommunicationMsg field is set.
      */
     public boolean hasContentsCommunicationMsg() {
       return contentsCase_ == 10;
@@ -437,7 +419,6 @@ public final class Message {
      * </pre>
      *
      * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-     * @return The contentsCommunicationMsg.
      */
     public org.openmined.syftproto.messaging.v1.Message.CommandMessage getContentsCommunicationMsg() {
       if (contentsCase_ == 10) {
@@ -885,14 +866,12 @@ public final class Message {
           com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> contentsEmptyMsgBuilder_;
       /**
        * <code>.google.protobuf.Empty contents_empty_msg = 1[json_name = "contentsEmptyMsg"];</code>
-       * @return Whether the contentsEmptyMsg field is set.
        */
       public boolean hasContentsEmptyMsg() {
         return contentsCase_ == 1;
       }
       /**
        * <code>.google.protobuf.Empty contents_empty_msg = 1[json_name = "contentsEmptyMsg"];</code>
-       * @return The contentsEmptyMsg.
        */
       public com.google.protobuf.Empty getContentsEmptyMsg() {
         if (contentsEmptyMsgBuilder_ == null) {
@@ -1029,7 +1008,6 @@ public final class Message {
        * </pre>
        *
        * <code>.syft_proto.messaging.v1.ObjectMessage contents_object_msg = 5[json_name = "contentsObjectMsg"];</code>
-       * @return Whether the contentsObjectMsg field is set.
        */
       public boolean hasContentsObjectMsg() {
         return contentsCase_ == 5;
@@ -1042,7 +1020,6 @@ public final class Message {
        * </pre>
        *
        * <code>.syft_proto.messaging.v1.ObjectMessage contents_object_msg = 5[json_name = "contentsObjectMsg"];</code>
-       * @return The contentsObjectMsg.
        */
       public org.openmined.syftproto.messaging.v1.Message.ObjectMessage getContentsObjectMsg() {
         if (contentsObjectMsgBuilder_ == null) {
@@ -1219,7 +1196,6 @@ public final class Message {
        * </pre>
        *
        * <code>.syft_proto.messaging.v1.CommandMessage contents_command_msg = 7[json_name = "contentsCommandMsg"];</code>
-       * @return Whether the contentsCommandMsg field is set.
        */
       public boolean hasContentsCommandMsg() {
         return contentsCase_ == 7;
@@ -1230,7 +1206,6 @@ public final class Message {
        * </pre>
        *
        * <code>.syft_proto.messaging.v1.CommandMessage contents_command_msg = 7[json_name = "contentsCommandMsg"];</code>
-       * @return The contentsCommandMsg.
        */
       public org.openmined.syftproto.messaging.v1.Message.CommandMessage getContentsCommandMsg() {
         if (contentsCommandMsgBuilder_ == null) {
@@ -1394,7 +1369,6 @@ public final class Message {
        * </pre>
        *
        * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-       * @return Whether the contentsCommunicationMsg field is set.
        */
       public boolean hasContentsCommunicationMsg() {
         return contentsCase_ == 10;
@@ -1406,7 +1380,6 @@ public final class Message {
        * </pre>
        *
        * <code>.syft_proto.messaging.v1.CommandMessage contents_communication_msg = 10[json_name = "contentsCommunicationMsg"];</code>
-       * @return The contentsCommunicationMsg.
        */
       public org.openmined.syftproto.messaging.v1.Message.CommandMessage getContentsCommunicationMsg() {
         if (contentsCommunicationMsgBuilder_ == null) {
@@ -1626,12 +1599,10 @@ public final class Message {
 
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 1[json_name = "tensor"];</code>
-     * @return Whether the tensor field is set.
      */
     boolean hasTensor();
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 1[json_name = "tensor"];</code>
-     * @return The tensor.
      */
     org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTensor();
     /**
@@ -1733,14 +1704,12 @@ public final class Message {
     private org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor tensor_;
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 1[json_name = "tensor"];</code>
-     * @return Whether the tensor field is set.
      */
     public boolean hasTensor() {
       return tensor_ != null;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 1[json_name = "tensor"];</code>
-     * @return The tensor.
      */
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTensor() {
       return tensor_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : tensor_;
@@ -2072,14 +2041,12 @@ public final class Message {
           org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> tensorBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 1[json_name = "tensor"];</code>
-       * @return Whether the tensor field is set.
        */
       public boolean hasTensor() {
         return tensorBuilder_ != null || tensor_ != null;
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 1[json_name = "tensor"];</code>
-       * @return The tensor.
        */
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTensor() {
         if (tensorBuilder_ == null) {
@@ -2244,12 +2211,10 @@ public final class Message {
 
     /**
      * <code>.syft_proto.execution.v1.ComputationAction computation = 1[json_name = "computation"];</code>
-     * @return Whether the computation field is set.
      */
     boolean hasComputation();
     /**
      * <code>.syft_proto.execution.v1.ComputationAction computation = 1[json_name = "computation"];</code>
-     * @return The computation.
      */
     org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction getComputation();
     /**
@@ -2259,12 +2224,10 @@ public final class Message {
 
     /**
      * <code>.syft_proto.execution.v1.CommunicationAction communication = 2[json_name = "communication"];</code>
-     * @return Whether the communication field is set.
      */
     boolean hasCommunication();
     /**
      * <code>.syft_proto.execution.v1.CommunicationAction communication = 2[json_name = "communication"];</code>
-     * @return The communication.
      */
     org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction getCommunication();
     /**
@@ -2382,8 +2345,7 @@ public final class Message {
     private int actionCase_ = 0;
     private java.lang.Object action_;
     public enum ActionCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       COMPUTATION(1),
       COMMUNICATION(2),
       ACTION_NOT_SET(0);
@@ -2392,8 +2354,6 @@ public final class Message {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2423,14 +2383,12 @@ public final class Message {
     public static final int COMPUTATION_FIELD_NUMBER = 1;
     /**
      * <code>.syft_proto.execution.v1.ComputationAction computation = 1[json_name = "computation"];</code>
-     * @return Whether the computation field is set.
      */
     public boolean hasComputation() {
       return actionCase_ == 1;
     }
     /**
      * <code>.syft_proto.execution.v1.ComputationAction computation = 1[json_name = "computation"];</code>
-     * @return The computation.
      */
     public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction getComputation() {
       if (actionCase_ == 1) {
@@ -2451,14 +2409,12 @@ public final class Message {
     public static final int COMMUNICATION_FIELD_NUMBER = 2;
     /**
      * <code>.syft_proto.execution.v1.CommunicationAction communication = 2[json_name = "communication"];</code>
-     * @return Whether the communication field is set.
      */
     public boolean hasCommunication() {
       return actionCase_ == 2;
     }
     /**
      * <code>.syft_proto.execution.v1.CommunicationAction communication = 2[json_name = "communication"];</code>
-     * @return The communication.
      */
     public org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction getCommunication() {
       if (actionCase_ == 2) {
@@ -2849,14 +2805,12 @@ public final class Message {
           org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.Builder, org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder> computationBuilder_;
       /**
        * <code>.syft_proto.execution.v1.ComputationAction computation = 1[json_name = "computation"];</code>
-       * @return Whether the computation field is set.
        */
       public boolean hasComputation() {
         return actionCase_ == 1;
       }
       /**
        * <code>.syft_proto.execution.v1.ComputationAction computation = 1[json_name = "computation"];</code>
-       * @return The computation.
        */
       public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction getComputation() {
         if (computationBuilder_ == null) {
@@ -2987,14 +2941,12 @@ public final class Message {
           org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction, org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction.Builder, org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationActionOrBuilder> communicationBuilder_;
       /**
        * <code>.syft_proto.execution.v1.CommunicationAction communication = 2[json_name = "communication"];</code>
-       * @return Whether the communication field is set.
        */
       public boolean hasCommunication() {
         return actionCase_ == 2;
       }
       /**
        * <code>.syft_proto.execution.v1.CommunicationAction communication = 2[json_name = "communication"];</code>
-       * @return The communication.
        */
       public org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction getCommunication() {
         if (communicationBuilder_ == null) {
