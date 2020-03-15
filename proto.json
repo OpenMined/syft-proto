@@ -120,7 +120,7 @@
     "syft.messaging.message.Message": {
       "code": 32
     },
-    "syft.messaging.message.CommandMessage": {
+    "syft.messaging.message.TensorCommandMessage": {
       "code": 33
     },
     "syft.messaging.message.ObjectMessage": {
@@ -177,7 +177,7 @@
     "torch.dtype": {
       "code": 52
     },
-    "syft.messaging.message.ExecuteWorkerFunctionMessage": {
+    "syft.messaging.message.WorkerCommandMessage": {
       "code": 53
     },
     "syft.execution.computation.ComputationAction": {

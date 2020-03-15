@@ -2516,8 +2516,8 @@ export namespace syft_proto {
                 /** SyftMessage contents_object_msg */
                 contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
-                /** SyftMessage contents_command_msg */
-                contents_command_msg?: (syft_proto.messaging.v1.ICommandMessage|null);
+                /** SyftMessage contents_tensor_cmd_msg */
+                contents_tensor_cmd_msg?: (syft_proto.messaging.v1.ITensorCommandMessage|null);
             }
 
             /** Represents a SyftMessage. */
@@ -2535,11 +2535,11 @@ export namespace syft_proto {
                 /** SyftMessage contents_object_msg. */
                 public contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
-                /** SyftMessage contents_command_msg. */
-                public contents_command_msg?: (syft_proto.messaging.v1.ICommandMessage|null);
+                /** SyftMessage contents_tensor_cmd_msg. */
+                public contents_tensor_cmd_msg?: (syft_proto.messaging.v1.ITensorCommandMessage|null);
 
                 /** SyftMessage contents. */
-                public contents?: ("contents_empty_msg"|"contents_object_msg"|"contents_command_msg");
+                public contents?: ("contents_empty_msg"|"contents_object_msg"|"contents_tensor_cmd_msg");
 
                 /**
                  * Creates a new SyftMessage instance using the specified properties.
@@ -2702,100 +2702,100 @@ export namespace syft_proto {
                 public toJSON(): { [k: string]: any };
             }
 
-            /** Properties of a CommandMessage. */
-            interface ICommandMessage {
+            /** Properties of a TensorCommandMessage. */
+            interface ITensorCommandMessage {
 
-                /** CommandMessage computation */
+                /** TensorCommandMessage computation */
                 computation?: (syft_proto.execution.v1.IComputationAction|null);
 
-                /** CommandMessage communication */
+                /** TensorCommandMessage communication */
                 communication?: (syft_proto.execution.v1.ICommunicationAction|null);
             }
 
-            /** Represents a CommandMessage. */
-            class CommandMessage implements ICommandMessage {
+            /** Represents a TensorCommandMessage. */
+            class TensorCommandMessage implements ITensorCommandMessage {
 
                 /**
-                 * Constructs a new CommandMessage.
+                 * Constructs a new TensorCommandMessage.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: syft_proto.messaging.v1.ICommandMessage);
+                constructor(properties?: syft_proto.messaging.v1.ITensorCommandMessage);
 
-                /** CommandMessage computation. */
+                /** TensorCommandMessage computation. */
                 public computation?: (syft_proto.execution.v1.IComputationAction|null);
 
-                /** CommandMessage communication. */
+                /** TensorCommandMessage communication. */
                 public communication?: (syft_proto.execution.v1.ICommunicationAction|null);
 
-                /** CommandMessage action. */
+                /** TensorCommandMessage action. */
                 public action?: ("computation"|"communication");
 
                 /**
-                 * Creates a new CommandMessage instance using the specified properties.
+                 * Creates a new TensorCommandMessage instance using the specified properties.
                  * @param [properties] Properties to set
-                 * @returns CommandMessage instance
+                 * @returns TensorCommandMessage instance
                  */
-                public static create(properties?: syft_proto.messaging.v1.ICommandMessage): syft_proto.messaging.v1.CommandMessage;
+                public static create(properties?: syft_proto.messaging.v1.ITensorCommandMessage): syft_proto.messaging.v1.TensorCommandMessage;
 
                 /**
-                 * Encodes the specified CommandMessage message. Does not implicitly {@link syft_proto.messaging.v1.CommandMessage.verify|verify} messages.
-                 * @param message CommandMessage message or plain object to encode
+                 * Encodes the specified TensorCommandMessage message. Does not implicitly {@link syft_proto.messaging.v1.TensorCommandMessage.verify|verify} messages.
+                 * @param message TensorCommandMessage message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: syft_proto.messaging.v1.ICommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encode(message: syft_proto.messaging.v1.ITensorCommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Encodes the specified CommandMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.CommandMessage.verify|verify} messages.
-                 * @param message CommandMessage message or plain object to encode
+                 * Encodes the specified TensorCommandMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.TensorCommandMessage.verify|verify} messages.
+                 * @param message TensorCommandMessage message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: syft_proto.messaging.v1.ICommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: syft_proto.messaging.v1.ITensorCommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Decodes a CommandMessage message from the specified reader or buffer.
+                 * Decodes a TensorCommandMessage message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns CommandMessage
+                 * @returns TensorCommandMessage
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.CommandMessage;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.TensorCommandMessage;
 
                 /**
-                 * Decodes a CommandMessage message from the specified reader or buffer, length delimited.
+                 * Decodes a TensorCommandMessage message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns CommandMessage
+                 * @returns TensorCommandMessage
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.CommandMessage;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.TensorCommandMessage;
 
                 /**
-                 * Verifies a CommandMessage message.
+                 * Verifies a TensorCommandMessage message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
                 public static verify(message: { [k: string]: any }): (string|null);
 
                 /**
-                 * Creates a CommandMessage message from a plain object. Also converts values to their respective internal types.
+                 * Creates a TensorCommandMessage message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
-                 * @returns CommandMessage
+                 * @returns TensorCommandMessage
                  */
-                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.CommandMessage;
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.TensorCommandMessage;
 
                 /**
-                 * Creates a plain object from a CommandMessage message. Also converts values to other types if specified.
-                 * @param message CommandMessage
+                 * Creates a plain object from a TensorCommandMessage message. Also converts values to other types if specified.
+                 * @param message TensorCommandMessage
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: syft_proto.messaging.v1.CommandMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public static toObject(message: syft_proto.messaging.v1.TensorCommandMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
-                 * Converts this CommandMessage to JSON.
+                 * Converts this TensorCommandMessage to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
