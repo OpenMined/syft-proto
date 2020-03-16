@@ -49,12 +49,12 @@ public struct SyftProto_Messaging_V1_SyftMessage {
   }
 
   /// ObjectRequestMessage contents_object_request_msg = 6;
-  public var contentsCommandMsg: SyftProto_Messaging_V1_CommandMessage {
+  public var contentsTensorCmdMsg: SyftProto_Messaging_V1_TensorCommandMessage {
     get {
-      if case .contentsCommandMsg(let v)? = _storage._contents {return v}
-      return SyftProto_Messaging_V1_CommandMessage()
+      if case .contentsTensorCmdMsg(let v)? = _storage._contents {return v}
+      return SyftProto_Messaging_V1_TensorCommandMessage()
     }
-    set {_uniqueStorage()._contents = .contentsCommandMsg(newValue)}
+    set {_uniqueStorage()._contents = .contentsTensorCmdMsg(newValue)}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -66,14 +66,14 @@ public struct SyftProto_Messaging_V1_SyftMessage {
     /// IsNoneMessage contents_is_none_msg = 4;
     case contentsObjectMsg(SyftProto_Messaging_V1_ObjectMessage)
     /// ObjectRequestMessage contents_object_request_msg = 6;
-    case contentsCommandMsg(SyftProto_Messaging_V1_CommandMessage)
+    case contentsTensorCmdMsg(SyftProto_Messaging_V1_TensorCommandMessage)
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Messaging_V1_SyftMessage.OneOf_Contents, rhs: SyftProto_Messaging_V1_SyftMessage.OneOf_Contents) -> Bool {
       switch (lhs, rhs) {
       case (.contentsEmptyMsg(let l), .contentsEmptyMsg(let r)): return l == r
       case (.contentsObjectMsg(let l), .contentsObjectMsg(let r)): return l == r
-      case (.contentsCommandMsg(let l), .contentsCommandMsg(let r)): return l == r
+      case (.contentsTensorCmdMsg(let l), .contentsTensorCmdMsg(let r)): return l == r
       default: return false
       }
     }
@@ -106,7 +106,7 @@ public struct SyftProto_Messaging_V1_ObjectMessage {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct SyftProto_Messaging_V1_CommandMessage {
+public struct SyftProto_Messaging_V1_TensorCommandMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -139,7 +139,7 @@ public struct SyftProto_Messaging_V1_CommandMessage {
     case communication(SyftProto_Execution_V1_CommunicationAction)
 
   #if !swift(>=4.1)
-    public static func ==(lhs: SyftProto_Messaging_V1_CommandMessage.OneOf_Action, rhs: SyftProto_Messaging_V1_CommandMessage.OneOf_Action) -> Bool {
+    public static func ==(lhs: SyftProto_Messaging_V1_TensorCommandMessage.OneOf_Action, rhs: SyftProto_Messaging_V1_TensorCommandMessage.OneOf_Action) -> Bool {
       switch (lhs, rhs) {
       case (.computation(let l), .computation(let r)): return l == r
       case (.communication(let l), .communication(let r)): return l == r
@@ -163,7 +163,7 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "contents_empty_msg"),
     5: .standard(proto: "contents_object_msg"),
-    7: .standard(proto: "contents_command_msg"),
+    7: .standard(proto: "contents_tensor_cmd_msg"),
   ]
 
   fileprivate class _StorageClass {
@@ -207,13 +207,13 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._contents = .contentsObjectMsg(v)}
         case 7:
-          var v: SyftProto_Messaging_V1_CommandMessage?
+          var v: SyftProto_Messaging_V1_TensorCommandMessage?
           if let current = _storage._contents {
             try decoder.handleConflictingOneOf()
-            if case .contentsCommandMsg(let m) = current {v = m}
+            if case .contentsTensorCmdMsg(let m) = current {v = m}
           }
           try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._contents = .contentsCommandMsg(v)}
+          if let v = v {_storage._contents = .contentsTensorCmdMsg(v)}
         default: break
         }
       }
@@ -227,7 +227,7 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       case .contentsObjectMsg(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      case .contentsCommandMsg(let v)?:
+      case .contentsTensorCmdMsg(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
       case nil: break
       }
@@ -311,15 +311,15 @@ extension SyftProto_Messaging_V1_ObjectMessage: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension SyftProto_Messaging_V1_CommandMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = _protobuf_package + ".CommandMessage"
+extension SyftProto_Messaging_V1_TensorCommandMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".TensorCommandMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "computation"),
     2: .same(proto: "communication"),
   ]
 
   fileprivate class _StorageClass {
-    var _action: SyftProto_Messaging_V1_CommandMessage.OneOf_Action?
+    var _action: SyftProto_Messaging_V1_TensorCommandMessage.OneOf_Action?
 
     static let defaultInstance = _StorageClass()
 
@@ -377,7 +377,7 @@ extension SyftProto_Messaging_V1_CommandMessage: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: SyftProto_Messaging_V1_CommandMessage, rhs: SyftProto_Messaging_V1_CommandMessage) -> Bool {
+  public static func ==(lhs: SyftProto_Messaging_V1_TensorCommandMessage, rhs: SyftProto_Messaging_V1_TensorCommandMessage) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

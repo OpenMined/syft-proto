@@ -7121,7 +7121,7 @@ $root.syft_proto = (function() {
                  * @interface ISyftMessage
                  * @property {google.protobuf.IEmpty|null} [contents_empty_msg] SyftMessage contents_empty_msg
                  * @property {syft_proto.messaging.v1.IObjectMessage|null} [contents_object_msg] SyftMessage contents_object_msg
-                 * @property {syft_proto.messaging.v1.ICommandMessage|null} [contents_command_msg] SyftMessage contents_command_msg
+                 * @property {syft_proto.messaging.v1.ITensorCommandMessage|null} [contents_tensor_cmd_msg] SyftMessage contents_tensor_cmd_msg
                  */
 
                 /**
@@ -7156,24 +7156,24 @@ $root.syft_proto = (function() {
                 SyftMessage.prototype.contents_object_msg = null;
 
                 /**
-                 * SyftMessage contents_command_msg.
-                 * @member {syft_proto.messaging.v1.ICommandMessage|null|undefined} contents_command_msg
+                 * SyftMessage contents_tensor_cmd_msg.
+                 * @member {syft_proto.messaging.v1.ITensorCommandMessage|null|undefined} contents_tensor_cmd_msg
                  * @memberof syft_proto.messaging.v1.SyftMessage
                  * @instance
                  */
-                SyftMessage.prototype.contents_command_msg = null;
+                SyftMessage.prototype.contents_tensor_cmd_msg = null;
 
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
                 /**
                  * SyftMessage contents.
-                 * @member {"contents_empty_msg"|"contents_object_msg"|"contents_command_msg"|undefined} contents
+                 * @member {"contents_empty_msg"|"contents_object_msg"|"contents_tensor_cmd_msg"|undefined} contents
                  * @memberof syft_proto.messaging.v1.SyftMessage
                  * @instance
                  */
                 Object.defineProperty(SyftMessage.prototype, "contents", {
-                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_object_msg", "contents_command_msg"]),
+                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_object_msg", "contents_tensor_cmd_msg"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
@@ -7205,8 +7205,8 @@ $root.syft_proto = (function() {
                         $root.google.protobuf.Empty.encode(message.contents_empty_msg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.contents_object_msg != null && message.hasOwnProperty("contents_object_msg"))
                         $root.syft_proto.messaging.v1.ObjectMessage.encode(message.contents_object_msg, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                    if (message.contents_command_msg != null && message.hasOwnProperty("contents_command_msg"))
-                        $root.syft_proto.messaging.v1.CommandMessage.encode(message.contents_command_msg, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    if (message.contents_tensor_cmd_msg != null && message.hasOwnProperty("contents_tensor_cmd_msg"))
+                        $root.syft_proto.messaging.v1.TensorCommandMessage.encode(message.contents_tensor_cmd_msg, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                     return writer;
                 };
 
@@ -7248,7 +7248,7 @@ $root.syft_proto = (function() {
                             message.contents_object_msg = $root.syft_proto.messaging.v1.ObjectMessage.decode(reader, reader.uint32());
                             break;
                         case 7:
-                            message.contents_command_msg = $root.syft_proto.messaging.v1.CommandMessage.decode(reader, reader.uint32());
+                            message.contents_tensor_cmd_msg = $root.syft_proto.messaging.v1.TensorCommandMessage.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -7304,14 +7304,14 @@ $root.syft_proto = (function() {
                                 return "contents_object_msg." + error;
                         }
                     }
-                    if (message.contents_command_msg != null && message.hasOwnProperty("contents_command_msg")) {
+                    if (message.contents_tensor_cmd_msg != null && message.hasOwnProperty("contents_tensor_cmd_msg")) {
                         if (properties.contents === 1)
                             return "contents: multiple values";
                         properties.contents = 1;
                         {
-                            var error = $root.syft_proto.messaging.v1.CommandMessage.verify(message.contents_command_msg);
+                            var error = $root.syft_proto.messaging.v1.TensorCommandMessage.verify(message.contents_tensor_cmd_msg);
                             if (error)
-                                return "contents_command_msg." + error;
+                                return "contents_tensor_cmd_msg." + error;
                         }
                     }
                     return null;
@@ -7339,10 +7339,10 @@ $root.syft_proto = (function() {
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_object_msg: object expected");
                         message.contents_object_msg = $root.syft_proto.messaging.v1.ObjectMessage.fromObject(object.contents_object_msg);
                     }
-                    if (object.contents_command_msg != null) {
-                        if (typeof object.contents_command_msg !== "object")
-                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_command_msg: object expected");
-                        message.contents_command_msg = $root.syft_proto.messaging.v1.CommandMessage.fromObject(object.contents_command_msg);
+                    if (object.contents_tensor_cmd_msg != null) {
+                        if (typeof object.contents_tensor_cmd_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_tensor_cmd_msg: object expected");
+                        message.contents_tensor_cmd_msg = $root.syft_proto.messaging.v1.TensorCommandMessage.fromObject(object.contents_tensor_cmd_msg);
                     }
                     return message;
                 };
@@ -7370,10 +7370,10 @@ $root.syft_proto = (function() {
                         if (options.oneofs)
                             object.contents = "contents_object_msg";
                     }
-                    if (message.contents_command_msg != null && message.hasOwnProperty("contents_command_msg")) {
-                        object.contents_command_msg = $root.syft_proto.messaging.v1.CommandMessage.toObject(message.contents_command_msg, options);
+                    if (message.contents_tensor_cmd_msg != null && message.hasOwnProperty("contents_tensor_cmd_msg")) {
+                        object.contents_tensor_cmd_msg = $root.syft_proto.messaging.v1.TensorCommandMessage.toObject(message.contents_tensor_cmd_msg, options);
                         if (options.oneofs)
-                            object.contents = "contents_command_msg";
+                            object.contents = "contents_tensor_cmd_msg";
                     }
                     return object;
                 };
@@ -7584,25 +7584,25 @@ $root.syft_proto = (function() {
                 return ObjectMessage;
             })();
 
-            v1.CommandMessage = (function() {
+            v1.TensorCommandMessage = (function() {
 
                 /**
-                 * Properties of a CommandMessage.
+                 * Properties of a TensorCommandMessage.
                  * @memberof syft_proto.messaging.v1
-                 * @interface ICommandMessage
-                 * @property {syft_proto.execution.v1.IComputationAction|null} [computation] CommandMessage computation
-                 * @property {syft_proto.execution.v1.ICommunicationAction|null} [communication] CommandMessage communication
+                 * @interface ITensorCommandMessage
+                 * @property {syft_proto.execution.v1.IComputationAction|null} [computation] TensorCommandMessage computation
+                 * @property {syft_proto.execution.v1.ICommunicationAction|null} [communication] TensorCommandMessage communication
                  */
 
                 /**
-                 * Constructs a new CommandMessage.
+                 * Constructs a new TensorCommandMessage.
                  * @memberof syft_proto.messaging.v1
-                 * @classdesc Represents a CommandMessage.
-                 * @implements ICommandMessage
+                 * @classdesc Represents a TensorCommandMessage.
+                 * @implements ITensorCommandMessage
                  * @constructor
-                 * @param {syft_proto.messaging.v1.ICommandMessage=} [properties] Properties to set
+                 * @param {syft_proto.messaging.v1.ITensorCommandMessage=} [properties] Properties to set
                  */
-                function CommandMessage(properties) {
+                function TensorCommandMessage(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -7610,57 +7610,57 @@ $root.syft_proto = (function() {
                 }
 
                 /**
-                 * CommandMessage computation.
+                 * TensorCommandMessage computation.
                  * @member {syft_proto.execution.v1.IComputationAction|null|undefined} computation
-                 * @memberof syft_proto.messaging.v1.CommandMessage
+                 * @memberof syft_proto.messaging.v1.TensorCommandMessage
                  * @instance
                  */
-                CommandMessage.prototype.computation = null;
+                TensorCommandMessage.prototype.computation = null;
 
                 /**
-                 * CommandMessage communication.
+                 * TensorCommandMessage communication.
                  * @member {syft_proto.execution.v1.ICommunicationAction|null|undefined} communication
-                 * @memberof syft_proto.messaging.v1.CommandMessage
+                 * @memberof syft_proto.messaging.v1.TensorCommandMessage
                  * @instance
                  */
-                CommandMessage.prototype.communication = null;
+                TensorCommandMessage.prototype.communication = null;
 
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
                 /**
-                 * CommandMessage action.
+                 * TensorCommandMessage action.
                  * @member {"computation"|"communication"|undefined} action
-                 * @memberof syft_proto.messaging.v1.CommandMessage
+                 * @memberof syft_proto.messaging.v1.TensorCommandMessage
                  * @instance
                  */
-                Object.defineProperty(CommandMessage.prototype, "action", {
+                Object.defineProperty(TensorCommandMessage.prototype, "action", {
                     get: $util.oneOfGetter($oneOfFields = ["computation", "communication"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
                 /**
-                 * Creates a new CommandMessage instance using the specified properties.
+                 * Creates a new TensorCommandMessage instance using the specified properties.
                  * @function create
-                 * @memberof syft_proto.messaging.v1.CommandMessage
+                 * @memberof syft_proto.messaging.v1.TensorCommandMessage
                  * @static
-                 * @param {syft_proto.messaging.v1.ICommandMessage=} [properties] Properties to set
-                 * @returns {syft_proto.messaging.v1.CommandMessage} CommandMessage instance
+                 * @param {syft_proto.messaging.v1.ITensorCommandMessage=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.TensorCommandMessage} TensorCommandMessage instance
                  */
-                CommandMessage.create = function create(properties) {
-                    return new CommandMessage(properties);
+                TensorCommandMessage.create = function create(properties) {
+                    return new TensorCommandMessage(properties);
                 };
 
                 /**
-                 * Encodes the specified CommandMessage message. Does not implicitly {@link syft_proto.messaging.v1.CommandMessage.verify|verify} messages.
+                 * Encodes the specified TensorCommandMessage message. Does not implicitly {@link syft_proto.messaging.v1.TensorCommandMessage.verify|verify} messages.
                  * @function encode
-                 * @memberof syft_proto.messaging.v1.CommandMessage
+                 * @memberof syft_proto.messaging.v1.TensorCommandMessage
                  * @static
-                 * @param {syft_proto.messaging.v1.ICommandMessage} message CommandMessage message or plain object to encode
+                 * @param {syft_proto.messaging.v1.ITensorCommandMessage} message TensorCommandMessage message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                CommandMessage.encode = function encode(message, writer) {
+                TensorCommandMessage.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
                     if (message.computation != null && message.hasOwnProperty("computation"))
@@ -7671,33 +7671,33 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Encodes the specified CommandMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.CommandMessage.verify|verify} messages.
+                 * Encodes the specified TensorCommandMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.TensorCommandMessage.verify|verify} messages.
                  * @function encodeDelimited
-                 * @memberof syft_proto.messaging.v1.CommandMessage
+                 * @memberof syft_proto.messaging.v1.TensorCommandMessage
                  * @static
-                 * @param {syft_proto.messaging.v1.ICommandMessage} message CommandMessage message or plain object to encode
+                 * @param {syft_proto.messaging.v1.ITensorCommandMessage} message TensorCommandMessage message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                CommandMessage.encodeDelimited = function encodeDelimited(message, writer) {
+                TensorCommandMessage.encodeDelimited = function encodeDelimited(message, writer) {
                     return this.encode(message, writer).ldelim();
                 };
 
                 /**
-                 * Decodes a CommandMessage message from the specified reader or buffer.
+                 * Decodes a TensorCommandMessage message from the specified reader or buffer.
                  * @function decode
-                 * @memberof syft_proto.messaging.v1.CommandMessage
+                 * @memberof syft_proto.messaging.v1.TensorCommandMessage
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {syft_proto.messaging.v1.CommandMessage} CommandMessage
+                 * @returns {syft_proto.messaging.v1.TensorCommandMessage} TensorCommandMessage
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                CommandMessage.decode = function decode(reader, length) {
+                TensorCommandMessage.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.CommandMessage();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.TensorCommandMessage();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -7716,30 +7716,30 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Decodes a CommandMessage message from the specified reader or buffer, length delimited.
+                 * Decodes a TensorCommandMessage message from the specified reader or buffer, length delimited.
                  * @function decodeDelimited
-                 * @memberof syft_proto.messaging.v1.CommandMessage
+                 * @memberof syft_proto.messaging.v1.TensorCommandMessage
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {syft_proto.messaging.v1.CommandMessage} CommandMessage
+                 * @returns {syft_proto.messaging.v1.TensorCommandMessage} TensorCommandMessage
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                CommandMessage.decodeDelimited = function decodeDelimited(reader) {
+                TensorCommandMessage.decodeDelimited = function decodeDelimited(reader) {
                     if (!(reader instanceof $Reader))
                         reader = new $Reader(reader);
                     return this.decode(reader, reader.uint32());
                 };
 
                 /**
-                 * Verifies a CommandMessage message.
+                 * Verifies a TensorCommandMessage message.
                  * @function verify
-                 * @memberof syft_proto.messaging.v1.CommandMessage
+                 * @memberof syft_proto.messaging.v1.TensorCommandMessage
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                CommandMessage.verify = function verify(message) {
+                TensorCommandMessage.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     var properties = {};
@@ -7765,40 +7765,40 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Creates a CommandMessage message from a plain object. Also converts values to their respective internal types.
+                 * Creates a TensorCommandMessage message from a plain object. Also converts values to their respective internal types.
                  * @function fromObject
-                 * @memberof syft_proto.messaging.v1.CommandMessage
+                 * @memberof syft_proto.messaging.v1.TensorCommandMessage
                  * @static
                  * @param {Object.<string,*>} object Plain object
-                 * @returns {syft_proto.messaging.v1.CommandMessage} CommandMessage
+                 * @returns {syft_proto.messaging.v1.TensorCommandMessage} TensorCommandMessage
                  */
-                CommandMessage.fromObject = function fromObject(object) {
-                    if (object instanceof $root.syft_proto.messaging.v1.CommandMessage)
+                TensorCommandMessage.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.TensorCommandMessage)
                         return object;
-                    var message = new $root.syft_proto.messaging.v1.CommandMessage();
+                    var message = new $root.syft_proto.messaging.v1.TensorCommandMessage();
                     if (object.computation != null) {
                         if (typeof object.computation !== "object")
-                            throw TypeError(".syft_proto.messaging.v1.CommandMessage.computation: object expected");
+                            throw TypeError(".syft_proto.messaging.v1.TensorCommandMessage.computation: object expected");
                         message.computation = $root.syft_proto.execution.v1.ComputationAction.fromObject(object.computation);
                     }
                     if (object.communication != null) {
                         if (typeof object.communication !== "object")
-                            throw TypeError(".syft_proto.messaging.v1.CommandMessage.communication: object expected");
+                            throw TypeError(".syft_proto.messaging.v1.TensorCommandMessage.communication: object expected");
                         message.communication = $root.syft_proto.execution.v1.CommunicationAction.fromObject(object.communication);
                     }
                     return message;
                 };
 
                 /**
-                 * Creates a plain object from a CommandMessage message. Also converts values to other types if specified.
+                 * Creates a plain object from a TensorCommandMessage message. Also converts values to other types if specified.
                  * @function toObject
-                 * @memberof syft_proto.messaging.v1.CommandMessage
+                 * @memberof syft_proto.messaging.v1.TensorCommandMessage
                  * @static
-                 * @param {syft_proto.messaging.v1.CommandMessage} message CommandMessage
+                 * @param {syft_proto.messaging.v1.TensorCommandMessage} message TensorCommandMessage
                  * @param {$protobuf.IConversionOptions} [options] Conversion options
                  * @returns {Object.<string,*>} Plain object
                  */
-                CommandMessage.toObject = function toObject(message, options) {
+                TensorCommandMessage.toObject = function toObject(message, options) {
                     if (!options)
                         options = {};
                     var object = {};
@@ -7816,17 +7816,17 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Converts this CommandMessage to JSON.
+                 * Converts this TensorCommandMessage to JSON.
                  * @function toJSON
-                 * @memberof syft_proto.messaging.v1.CommandMessage
+                 * @memberof syft_proto.messaging.v1.TensorCommandMessage
                  * @instance
                  * @returns {Object.<string,*>} JSON object
                  */
-                CommandMessage.prototype.toJSON = function toJSON() {
+                TensorCommandMessage.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
                 };
 
-                return CommandMessage;
+                return TensorCommandMessage;
             })();
 
             return v1;
