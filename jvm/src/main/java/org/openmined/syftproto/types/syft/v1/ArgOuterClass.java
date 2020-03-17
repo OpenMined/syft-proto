@@ -96,17 +96,17 @@ public final class ArgOuterClass {
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getArgPointerTensorOrBuilder();
 
     /**
-     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+     * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
      */
     boolean hasArgPlaceholder();
     /**
-     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+     * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
      */
-    org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getArgPlaceholder();
+    org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder getArgPlaceholder();
     /**
-     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+     * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
      */
-    org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder getArgPlaceholderOrBuilder();
+    org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder getArgPlaceholderOrBuilder();
 
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.ArgCase getArgCase();
   }
@@ -233,14 +233,14 @@ public final class ArgOuterClass {
               break;
             }
             case 74: {
-              org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder subBuilder = null;
+              org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.Builder subBuilder = null;
               if (argCase_ == 9) {
-                subBuilder = ((org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) arg_).toBuilder();
+                subBuilder = ((org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_).toBuilder();
               }
               arg_ =
-                  input.readMessage(org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.parser(), extensionRegistry);
+                  input.readMessage(org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) arg_);
+                subBuilder.mergeFrom((org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_);
                 arg_ = subBuilder.buildPartial();
               }
               argCase_ = 9;
@@ -512,28 +512,28 @@ public final class ArgOuterClass {
 
     public static final int ARG_PLACEHOLDER_FIELD_NUMBER = 9;
     /**
-     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+     * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
      */
     public boolean hasArgPlaceholder() {
       return argCase_ == 9;
     }
     /**
-     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+     * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
      */
-    public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getArgPlaceholder() {
+    public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder getArgPlaceholder() {
       if (argCase_ == 9) {
-         return (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) arg_;
+         return (org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_;
       }
-      return org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
+      return org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
     }
     /**
-     * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+     * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
      */
-    public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder getArgPlaceholderOrBuilder() {
+    public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder getArgPlaceholderOrBuilder() {
       if (argCase_ == 9) {
-         return (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) arg_;
+         return (org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_;
       }
-      return org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
+      return org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -578,7 +578,7 @@ public final class ArgOuterClass {
         output.writeMessage(8, (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) arg_);
       }
       if (argCase_ == 9) {
-        output.writeMessage(9, (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) arg_);
+        output.writeMessage(9, (org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_);
       }
       unknownFields.writeTo(output);
     }
@@ -625,7 +625,7 @@ public final class ArgOuterClass {
       }
       if (argCase_ == 9) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) arg_);
+          .computeMessageSize(9, (org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1796,33 +1796,33 @@ public final class ArgOuterClass {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder> argPlaceholderBuilder_;
+          org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder> argPlaceholderBuilder_;
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+       * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
        */
       public boolean hasArgPlaceholder() {
         return argCase_ == 9;
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+       * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
        */
-      public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder getArgPlaceholder() {
+      public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder getArgPlaceholder() {
         if (argPlaceholderBuilder_ == null) {
           if (argCase_ == 9) {
-            return (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) arg_;
+            return (org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_;
           }
-          return org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
+          return org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
         } else {
           if (argCase_ == 9) {
             return argPlaceholderBuilder_.getMessage();
           }
-          return org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
+          return org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+       * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
        */
-      public Builder setArgPlaceholder(org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder value) {
+      public Builder setArgPlaceholder(org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder value) {
         if (argPlaceholderBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1836,10 +1836,10 @@ public final class ArgOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+       * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
        */
       public Builder setArgPlaceholder(
-          org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder builderForValue) {
+          org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.Builder builderForValue) {
         if (argPlaceholderBuilder_ == null) {
           arg_ = builderForValue.build();
           onChanged();
@@ -1850,13 +1850,13 @@ public final class ArgOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+       * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
        */
-      public Builder mergeArgPlaceholder(org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder value) {
+      public Builder mergeArgPlaceholder(org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder value) {
         if (argPlaceholderBuilder_ == null) {
           if (argCase_ == 9 &&
-              arg_ != org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance()) {
-            arg_ = org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.newBuilder((org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) arg_)
+              arg_ != org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance()) {
+            arg_ = org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.newBuilder((org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_)
                 .mergeFrom(value).buildPartial();
           } else {
             arg_ = value;
@@ -1872,7 +1872,7 @@ public final class ArgOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+       * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
        */
       public Builder clearArgPlaceholder() {
         if (argPlaceholderBuilder_ == null) {
@@ -1891,37 +1891,37 @@ public final class ArgOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+       * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
        */
-      public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder getArgPlaceholderBuilder() {
+      public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.Builder getArgPlaceholderBuilder() {
         return getArgPlaceholderFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+       * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
        */
-      public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder getArgPlaceholderOrBuilder() {
+      public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder getArgPlaceholderOrBuilder() {
         if ((argCase_ == 9) && (argPlaceholderBuilder_ != null)) {
           return argPlaceholderBuilder_.getMessageOrBuilder();
         } else {
           if (argCase_ == 9) {
-            return (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) arg_;
+            return (org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_;
           }
-          return org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
+          return org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+       * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder> 
+          org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder> 
           getArgPlaceholderFieldBuilder() {
         if (argPlaceholderBuilder_ == null) {
           if (!(argCase_ == 9)) {
-            arg_ = org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
+            arg_ = org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
           }
           argPlaceholderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.PlaceholderOrBuilder>(
-                  (org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.Placeholder) arg_,
+              org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder>(
+                  (org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_,
                   getParentForChildren(),
                   isClean());
           arg_ = null;
@@ -1998,33 +1998,32 @@ public final class ArgOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"syft_proto/types/syft/v1/arg.proto\022\030sy" +
-      "ft_proto.types.syft.v1\032Esyft_proto/frame" +
-      "works/torch/tensors/interpreters/v1/plac" +
-      "eholder.proto\0323syft_proto/generic/pointe" +
-      "rs/v1/pointer_tensor.proto\032&syft_proto/t" +
-      "ypes/torch/v1/tensor.proto\032$syft_proto/t" +
-      "ypes/syft/v1/shape.proto\032)syft_proto/typ" +
-      "es/torch/v1/parameter.proto\"\251\004\n\003Arg\022\033\n\010a" +
-      "rg_bool\030\001 \001(\010H\000R\007argBool\022\031\n\007arg_int\030\002 \001(" +
-      "\005H\000R\006argInt\022\035\n\targ_float\030\003 \001(\002H\000R\010argFlo" +
-      "at\022\037\n\narg_string\030\004 \001(\tH\000R\targString\022>\n\ta" +
-      "rg_shape\030\005 \001(\0132\037.syft_proto.types.syft.v" +
-      "1.ShapeH\000R\010argShape\022G\n\narg_tensor\030\006 \001(\0132" +
-      "&.syft_proto.types.torch.v1.TorchTensorH" +
-      "\000R\targTensor\022N\n\017arg_torch_param\030\007 \001(\0132$." +
-      "syft_proto.types.torch.v1.ParameterH\000R\ra" +
-      "rgTorchParam\022]\n\022arg_pointer_tensor\030\010 \001(\013" +
-      "2-.syft_proto.generic.pointers.v1.Pointe" +
-      "rTensorH\000R\020argPointerTensor\022k\n\017arg_place" +
-      "holder\030\t \001(\0132@.syft_proto.frameworks.tor" +
-      "ch.tensors.interpreters.v1.PlaceholderH\000" +
-      "R\016argPlaceholderB\005\n\003argB\'\n%org.openmined" +
-      ".syftproto.types.syft.v1b\006proto3"
+      "ft_proto.types.syft.v1\032)syft_proto/execu" +
+      "tion/v1/placeholder.proto\0323syft_proto/ge" +
+      "neric/pointers/v1/pointer_tensor.proto\032&" +
+      "syft_proto/types/torch/v1/tensor.proto\032$" +
+      "syft_proto/types/syft/v1/shape.proto\032)sy" +
+      "ft_proto/types/torch/v1/parameter.proto\"" +
+      "\215\004\n\003Arg\022\033\n\010arg_bool\030\001 \001(\010H\000R\007argBool\022\031\n\007" +
+      "arg_int\030\002 \001(\005H\000R\006argInt\022\035\n\targ_float\030\003 \001" +
+      "(\002H\000R\010argFloat\022\037\n\narg_string\030\004 \001(\tH\000R\tar" +
+      "gString\022>\n\targ_shape\030\005 \001(\0132\037.syft_proto." +
+      "types.syft.v1.ShapeH\000R\010argShape\022G\n\narg_t" +
+      "ensor\030\006 \001(\0132&.syft_proto.types.torch.v1." +
+      "TorchTensorH\000R\targTensor\022N\n\017arg_torch_pa" +
+      "ram\030\007 \001(\0132$.syft_proto.types.torch.v1.Pa" +
+      "rameterH\000R\rargTorchParam\022]\n\022arg_pointer_" +
+      "tensor\030\010 \001(\0132-.syft_proto.generic.pointe" +
+      "rs.v1.PointerTensorH\000R\020argPointerTensor\022" +
+      "O\n\017arg_placeholder\030\t \001(\0132$.syft_proto.ex" +
+      "ecution.v1.PlaceholderH\000R\016argPlaceholder" +
+      "B\005\n\003argB\'\n%org.openmined.syftproto.types" +
+      ".syft.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.getDescriptor(),
+          org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor(),
           org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor(),
           org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.ShapeOuterClass.getDescriptor(),
@@ -2036,7 +2035,7 @@ public final class ArgOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_types_syft_v1_Arg_descriptor,
         new java.lang.String[] { "ArgBool", "ArgInt", "ArgFloat", "ArgString", "ArgShape", "ArgTensor", "ArgTorchParam", "ArgPointerTensor", "ArgPlaceholder", "Arg", });
-    org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.getDescriptor();
+    org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor();
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor();
     org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor();
     org.openmined.syftproto.types.syft.v1.ShapeOuterClass.getDescriptor();

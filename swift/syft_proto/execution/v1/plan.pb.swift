@@ -72,7 +72,7 @@ public struct SyftProto_Execution_V1_Plan {
     set {_uniqueStorage()._description_p = newValue}
   }
 
-  public var placeholders: [SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder] {
+  public var placeholders: [SyftProto_Execution_V1_Placeholder] {
     get {return _storage._placeholders}
     set {_uniqueStorage()._placeholders = newValue}
   }
@@ -111,7 +111,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _name: String = String()
     var _tags: [String] = []
     var _description_p: String = String()
-    var _placeholders: [SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder] = []
+    var _placeholders: [SyftProto_Execution_V1_Placeholder] = []
 
     static let defaultInstance = _StorageClass()
 

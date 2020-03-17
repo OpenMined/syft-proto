@@ -162,7 +162,7 @@
     "syft.frameworks.torch.tensors.interpreters.gradients_core.GradFunc": {
       "code": 47
     },
-    "syft.frameworks.torch.tensors.interpreters.placeholder.PlaceHolder": {
+    "syft.execution.placeholder.PlaceHolder": {
       "code": 48
     },
     "torch.memory_format": {

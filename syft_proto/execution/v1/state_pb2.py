@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 from syft_proto.execution.v1 import state_tensor_pb2 as syft__proto_dot_execution_dot_v1_dot_state__tensor__pb2
-from syft_proto.frameworks.torch.tensors.interpreters.v1 import placeholder_pb2 as syft__proto_dot_frameworks_dot_torch_dot_tensors_dot_interpreters_dot_v1_dot_placeholder__pb2
+from syft_proto.execution.v1 import placeholder_pb2 as syft__proto_dot_execution_dot_v1_dot_placeholder__pb2
 from syft_proto.types.torch.v1 import tensor_pb2 as syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2
 
 
@@ -23,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=_b('\n$org.openmined.syftproto.execution.v1'),
-  serialized_pb=_b('\n#syft_proto/execution/v1/state.proto\x12\x17syft_proto.execution.v1\x1a*syft_proto/execution/v1/state_tensor.proto\x1a\x45syft_proto/frameworks/torch/tensors/interpreters/v1/placeholder.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\xad\x01\n\x05State\x12\x64\n\x0cplaceholders\x18\x01 \x03(\x0b\x32@.syft_proto.frameworks.torch.tensors.interpreters.v1.PlaceholderR\x0cplaceholders\x12>\n\x07tensors\x18\x02 \x03(\x0b\x32$.syft_proto.execution.v1.StateTensorR\x07tensorsB&\n$org.openmined.syftproto.execution.v1b\x06proto3')
+  serialized_pb=_b('\n#syft_proto/execution/v1/state.proto\x12\x17syft_proto.execution.v1\x1a*syft_proto/execution/v1/state_tensor.proto\x1a)syft_proto/execution/v1/placeholder.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\x91\x01\n\x05State\x12H\n\x0cplaceholders\x18\x01 \x03(\x0b\x32$.syft_proto.execution.v1.PlaceholderR\x0cplaceholders\x12>\n\x07tensors\x18\x02 \x03(\x0b\x32$.syft_proto.execution.v1.StateTensorR\x07tensorsB&\n$org.openmined.syftproto.execution.v1b\x06proto3')
   ,
-  dependencies=[syft__proto_dot_execution_dot_v1_dot_state__tensor__pb2.DESCRIPTOR,syft__proto_dot_frameworks_dot_torch_dot_tensors_dot_interpreters_dot_v1_dot_placeholder__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
+  dependencies=[syft__proto_dot_execution_dot_v1_dot_state__tensor__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_placeholder__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
 
 
 
@@ -63,11 +63,11 @@ _STATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=220,
-  serialized_end=393,
+  serialized_start=192,
+  serialized_end=337,
 )
 
-_STATE.fields_by_name['placeholders'].message_type = syft__proto_dot_frameworks_dot_torch_dot_tensors_dot_interpreters_dot_v1_dot_placeholder__pb2._PLACEHOLDER
+_STATE.fields_by_name['placeholders'].message_type = syft__proto_dot_execution_dot_v1_dot_placeholder__pb2._PLACEHOLDER
 _STATE.fields_by_name['tensors'].message_type = syft__proto_dot_execution_dot_v1_dot_state__tensor__pb2._STATETENSOR
 DESCRIPTOR.message_types_by_name['State'] = _STATE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)

@@ -24,7 +24,7 @@ public struct SyftProto_Execution_V1_State {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var placeholders: [SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder] = []
+  public var placeholders: [SyftProto_Execution_V1_Placeholder] = []
 
   public var tensors: [SyftProto_Execution_V1_StateTensor] = []
 
