@@ -116,6 +116,108 @@ export namespace syft_proto {
                 public toJSON(): { [k: string]: any };
             }
 
+            /** Properties of a Placeholder. */
+            interface IPlaceholder {
+
+                /** Placeholder id */
+                id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** Placeholder tags */
+                tags?: (string[]|null);
+
+                /** Placeholder description */
+                description?: (string|null);
+            }
+
+            /** Represents a Placeholder. */
+            class Placeholder implements IPlaceholder {
+
+                /**
+                 * Constructs a new Placeholder.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.execution.v1.IPlaceholder);
+
+                /** Placeholder id. */
+                public id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** Placeholder tags. */
+                public tags: string[];
+
+                /** Placeholder description. */
+                public description: string;
+
+                /**
+                 * Creates a new Placeholder instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns Placeholder instance
+                 */
+                public static create(properties?: syft_proto.execution.v1.IPlaceholder): syft_proto.execution.v1.Placeholder;
+
+                /**
+                 * Encodes the specified Placeholder message. Does not implicitly {@link syft_proto.execution.v1.Placeholder.verify|verify} messages.
+                 * @param message Placeholder message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.execution.v1.IPlaceholder, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified Placeholder message, length delimited. Does not implicitly {@link syft_proto.execution.v1.Placeholder.verify|verify} messages.
+                 * @param message Placeholder message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.execution.v1.IPlaceholder, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a Placeholder message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns Placeholder
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.Placeholder;
+
+                /**
+                 * Decodes a Placeholder message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns Placeholder
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.Placeholder;
+
+                /**
+                 * Verifies a Placeholder message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a Placeholder message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns Placeholder
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.Placeholder;
+
+                /**
+                 * Creates a plain object from a Placeholder message. Also converts values to other types if specified.
+                 * @param message Placeholder
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.execution.v1.Placeholder, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this Placeholder to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
             /** Properties of a ComputationAction. */
             interface IComputationAction {
 
@@ -126,7 +228,7 @@ export namespace syft_proto {
                 target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
                 /** ComputationAction target_placeholder */
-                target_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
+                target_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
 
                 /** ComputationAction target_tensor */
                 target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
@@ -141,7 +243,7 @@ export namespace syft_proto {
                 return_ids?: (syft_proto.types.syft.v1.IId[]|null);
 
                 /** ComputationAction return_placeholders */
-                return_placeholders?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[]|null);
+                return_placeholders?: (syft_proto.execution.v1.IPlaceholder[]|null);
             }
 
             /** Represents a ComputationAction. */
@@ -160,7 +262,7 @@ export namespace syft_proto {
                 public target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
                 /** ComputationAction target_placeholder. */
-                public target_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
+                public target_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
 
                 /** ComputationAction target_tensor. */
                 public target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
@@ -175,7 +277,7 @@ export namespace syft_proto {
                 public return_ids: syft_proto.types.syft.v1.IId[];
 
                 /** ComputationAction return_placeholders. */
-                public return_placeholders: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[];
+                public return_placeholders: syft_proto.execution.v1.IPlaceholder[];
 
                 /** ComputationAction target. */
                 public target?: ("target_pointer"|"target_placeholder"|"target_tensor");
@@ -279,7 +381,7 @@ export namespace syft_proto {
                 description?: (string|null);
 
                 /** Plan placeholders */
-                placeholders?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[]|null);
+                placeholders?: (syft_proto.execution.v1.IPlaceholder[]|null);
             }
 
             /** Represents a Plan. */
@@ -316,7 +418,7 @@ export namespace syft_proto {
                 public description: string;
 
                 /** Plan placeholders. */
-                public placeholders: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[];
+                public placeholders: syft_proto.execution.v1.IPlaceholder[];
 
                 /**
                  * Creates a new Plan instance using the specified properties.
@@ -393,7 +495,7 @@ export namespace syft_proto {
             interface IState {
 
                 /** State placeholders */
-                placeholders?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[]|null);
+                placeholders?: (syft_proto.execution.v1.IPlaceholder[]|null);
 
                 /** State tensors */
                 tensors?: (syft_proto.execution.v1.IStateTensor[]|null);
@@ -409,7 +511,7 @@ export namespace syft_proto {
                 constructor(properties?: syft_proto.execution.v1.IState);
 
                 /** State placeholders. */
-                public placeholders: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder[];
+                public placeholders: syft_proto.execution.v1.IPlaceholder[];
 
                 /** State tensors. */
                 public tensors: syft_proto.execution.v1.IStateTensor[];
@@ -833,7 +935,7 @@ export namespace syft_proto {
                     arg_pointer_tensor?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
                     /** Arg arg_placeholder */
-                    arg_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
+                    arg_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
                 }
 
                 /** Represents an Arg. */
@@ -870,7 +972,7 @@ export namespace syft_proto {
                     public arg_pointer_tensor?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
                     /** Arg arg_placeholder. */
-                    public arg_placeholder?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder|null);
+                    public arg_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
 
                     /** Arg arg. */
                     public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder");
@@ -2133,242 +2235,6 @@ export namespace syft_proto {
         }
     }
 
-    /** Namespace frameworks. */
-    namespace frameworks {
-
-        /** Namespace torch. */
-        namespace torch {
-
-            /** Namespace tensors. */
-            namespace tensors {
-
-                /** Namespace interpreters. */
-                namespace interpreters {
-
-                    /** Namespace v1. */
-                    namespace v1 {
-
-                        /** Properties of a Placeholder. */
-                        interface IPlaceholder {
-
-                            /** Placeholder id */
-                            id?: (syft_proto.types.syft.v1.IId|null);
-
-                            /** Placeholder tags */
-                            tags?: (string[]|null);
-
-                            /** Placeholder description */
-                            description?: (string|null);
-                        }
-
-                        /** Represents a Placeholder. */
-                        class Placeholder implements IPlaceholder {
-
-                            /**
-                             * Constructs a new Placeholder.
-                             * @param [properties] Properties to set
-                             */
-                            constructor(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder);
-
-                            /** Placeholder id. */
-                            public id?: (syft_proto.types.syft.v1.IId|null);
-
-                            /** Placeholder tags. */
-                            public tags: string[];
-
-                            /** Placeholder description. */
-                            public description: string;
-
-                            /**
-                             * Creates a new Placeholder instance using the specified properties.
-                             * @param [properties] Properties to set
-                             * @returns Placeholder instance
-                             */
-                            public static create(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder): syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder;
-
-                            /**
-                             * Encodes the specified Placeholder message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify|verify} messages.
-                             * @param message Placeholder message or plain object to encode
-                             * @param [writer] Writer to encode to
-                             * @returns Writer
-                             */
-                            public static encode(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                            /**
-                             * Encodes the specified Placeholder message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder.verify|verify} messages.
-                             * @param message Placeholder message or plain object to encode
-                             * @param [writer] Writer to encode to
-                             * @returns Writer
-                             */
-                            public static encodeDelimited(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IPlaceholder, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                            /**
-                             * Decodes a Placeholder message from the specified reader or buffer.
-                             * @param reader Reader or buffer to decode from
-                             * @param [length] Message length if known beforehand
-                             * @returns Placeholder
-                             * @throws {Error} If the payload is not a reader or valid buffer
-                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                             */
-                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder;
-
-                            /**
-                             * Decodes a Placeholder message from the specified reader or buffer, length delimited.
-                             * @param reader Reader or buffer to decode from
-                             * @returns Placeholder
-                             * @throws {Error} If the payload is not a reader or valid buffer
-                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                             */
-                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder;
-
-                            /**
-                             * Verifies a Placeholder message.
-                             * @param message Plain object to verify
-                             * @returns `null` if valid, otherwise the reason why it is not
-                             */
-                            public static verify(message: { [k: string]: any }): (string|null);
-
-                            /**
-                             * Creates a Placeholder message from a plain object. Also converts values to their respective internal types.
-                             * @param object Plain object
-                             * @returns Placeholder
-                             */
-                            public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder;
-
-                            /**
-                             * Creates a plain object from a Placeholder message. Also converts values to other types if specified.
-                             * @param message Placeholder
-                             * @param [options] Conversion options
-                             * @returns Plain object
-                             */
-                            public static toObject(message: syft_proto.frameworks.torch.tensors.interpreters.v1.Placeholder, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                            /**
-                             * Converts this Placeholder to JSON.
-                             * @returns JSON object
-                             */
-                            public toJSON(): { [k: string]: any };
-                        }
-
-                        /** Properties of an AdditiveSharingTensor. */
-                        interface IAdditiveSharingTensor {
-
-                            /** AdditiveSharingTensor id */
-                            id?: (syft_proto.types.syft.v1.IId|null);
-
-                            /** AdditiveSharingTensor field_size */
-                            field_size?: (number|Long|null);
-
-                            /** AdditiveSharingTensor crypto_provider_id */
-                            crypto_provider_id?: (syft_proto.types.syft.v1.IId|null);
-
-                            /** AdditiveSharingTensor location_ids */
-                            location_ids?: (syft_proto.types.syft.v1.IId[]|null);
-
-                            /** AdditiveSharingTensor shares */
-                            shares?: (syft_proto.generic.pointers.v1.IPointerTensor[]|null);
-                        }
-
-                        /** Represents an AdditiveSharingTensor. */
-                        class AdditiveSharingTensor implements IAdditiveSharingTensor {
-
-                            /**
-                             * Constructs a new AdditiveSharingTensor.
-                             * @param [properties] Properties to set
-                             */
-                            constructor(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor);
-
-                            /** AdditiveSharingTensor id. */
-                            public id?: (syft_proto.types.syft.v1.IId|null);
-
-                            /** AdditiveSharingTensor field_size. */
-                            public field_size: (number|Long);
-
-                            /** AdditiveSharingTensor crypto_provider_id. */
-                            public crypto_provider_id?: (syft_proto.types.syft.v1.IId|null);
-
-                            /** AdditiveSharingTensor location_ids. */
-                            public location_ids: syft_proto.types.syft.v1.IId[];
-
-                            /** AdditiveSharingTensor shares. */
-                            public shares: syft_proto.generic.pointers.v1.IPointerTensor[];
-
-                            /**
-                             * Creates a new AdditiveSharingTensor instance using the specified properties.
-                             * @param [properties] Properties to set
-                             * @returns AdditiveSharingTensor instance
-                             */
-                            public static create(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor): syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor;
-
-                            /**
-                             * Encodes the specified AdditiveSharingTensor message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.verify|verify} messages.
-                             * @param message AdditiveSharingTensor message or plain object to encode
-                             * @param [writer] Writer to encode to
-                             * @returns Writer
-                             */
-                            public static encode(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                            /**
-                             * Encodes the specified AdditiveSharingTensor message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.verify|verify} messages.
-                             * @param message AdditiveSharingTensor message or plain object to encode
-                             * @param [writer] Writer to encode to
-                             * @returns Writer
-                             */
-                            public static encodeDelimited(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                            /**
-                             * Decodes an AdditiveSharingTensor message from the specified reader or buffer.
-                             * @param reader Reader or buffer to decode from
-                             * @param [length] Message length if known beforehand
-                             * @returns AdditiveSharingTensor
-                             * @throws {Error} If the payload is not a reader or valid buffer
-                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                             */
-                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor;
-
-                            /**
-                             * Decodes an AdditiveSharingTensor message from the specified reader or buffer, length delimited.
-                             * @param reader Reader or buffer to decode from
-                             * @returns AdditiveSharingTensor
-                             * @throws {Error} If the payload is not a reader or valid buffer
-                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                             */
-                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor;
-
-                            /**
-                             * Verifies an AdditiveSharingTensor message.
-                             * @param message Plain object to verify
-                             * @returns `null` if valid, otherwise the reason why it is not
-                             */
-                            public static verify(message: { [k: string]: any }): (string|null);
-
-                            /**
-                             * Creates an AdditiveSharingTensor message from a plain object. Also converts values to their respective internal types.
-                             * @param object Plain object
-                             * @returns AdditiveSharingTensor
-                             */
-                            public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor;
-
-                            /**
-                             * Creates a plain object from an AdditiveSharingTensor message. Also converts values to other types if specified.
-                             * @param message AdditiveSharingTensor
-                             * @param [options] Conversion options
-                             * @returns Plain object
-                             */
-                            public static toObject(message: syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                            /**
-                             * Converts this AdditiveSharingTensor to JSON.
-                             * @returns JSON object
-                             */
-                            public toJSON(): { [k: string]: any };
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     /** Namespace generic. */
     namespace generic {
 
@@ -2496,6 +2362,140 @@ export namespace syft_proto {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
+                }
+            }
+        }
+    }
+
+    /** Namespace frameworks. */
+    namespace frameworks {
+
+        /** Namespace torch. */
+        namespace torch {
+
+            /** Namespace tensors. */
+            namespace tensors {
+
+                /** Namespace interpreters. */
+                namespace interpreters {
+
+                    /** Namespace v1. */
+                    namespace v1 {
+
+                        /** Properties of an AdditiveSharingTensor. */
+                        interface IAdditiveSharingTensor {
+
+                            /** AdditiveSharingTensor id */
+                            id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** AdditiveSharingTensor field_size */
+                            field_size?: (number|Long|null);
+
+                            /** AdditiveSharingTensor crypto_provider_id */
+                            crypto_provider_id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** AdditiveSharingTensor location_ids */
+                            location_ids?: (syft_proto.types.syft.v1.IId[]|null);
+
+                            /** AdditiveSharingTensor shares */
+                            shares?: (syft_proto.generic.pointers.v1.IPointerTensor[]|null);
+                        }
+
+                        /** Represents an AdditiveSharingTensor. */
+                        class AdditiveSharingTensor implements IAdditiveSharingTensor {
+
+                            /**
+                             * Constructs a new AdditiveSharingTensor.
+                             * @param [properties] Properties to set
+                             */
+                            constructor(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor);
+
+                            /** AdditiveSharingTensor id. */
+                            public id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** AdditiveSharingTensor field_size. */
+                            public field_size: (number|Long);
+
+                            /** AdditiveSharingTensor crypto_provider_id. */
+                            public crypto_provider_id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** AdditiveSharingTensor location_ids. */
+                            public location_ids: syft_proto.types.syft.v1.IId[];
+
+                            /** AdditiveSharingTensor shares. */
+                            public shares: syft_proto.generic.pointers.v1.IPointerTensor[];
+
+                            /**
+                             * Creates a new AdditiveSharingTensor instance using the specified properties.
+                             * @param [properties] Properties to set
+                             * @returns AdditiveSharingTensor instance
+                             */
+                            public static create(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor): syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor;
+
+                            /**
+                             * Encodes the specified AdditiveSharingTensor message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.verify|verify} messages.
+                             * @param message AdditiveSharingTensor message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encode(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Encodes the specified AdditiveSharingTensor message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.verify|verify} messages.
+                             * @param message AdditiveSharingTensor message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encodeDelimited(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Decodes an AdditiveSharingTensor message from the specified reader or buffer.
+                             * @param reader Reader or buffer to decode from
+                             * @param [length] Message length if known beforehand
+                             * @returns AdditiveSharingTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor;
+
+                            /**
+                             * Decodes an AdditiveSharingTensor message from the specified reader or buffer, length delimited.
+                             * @param reader Reader or buffer to decode from
+                             * @returns AdditiveSharingTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor;
+
+                            /**
+                             * Verifies an AdditiveSharingTensor message.
+                             * @param message Plain object to verify
+                             * @returns `null` if valid, otherwise the reason why it is not
+                             */
+                            public static verify(message: { [k: string]: any }): (string|null);
+
+                            /**
+                             * Creates an AdditiveSharingTensor message from a plain object. Also converts values to their respective internal types.
+                             * @param object Plain object
+                             * @returns AdditiveSharingTensor
+                             */
+                            public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor;
+
+                            /**
+                             * Creates a plain object from an AdditiveSharingTensor message. Also converts values to other types if specified.
+                             * @param message AdditiveSharingTensor
+                             * @param [options] Conversion options
+                             * @returns Plain object
+                             */
+                            public static toObject(message: syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                            /**
+                             * Converts this AdditiveSharingTensor to JSON.
+                             * @returns JSON object
+                             */
+                            public toJSON(): { [k: string]: any };
+                        }
+                    }
                 }
             }
         }
