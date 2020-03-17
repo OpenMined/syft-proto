@@ -93,10 +93,10 @@ public struct SyftProto_Types_Syft_V1_Arg {
     set {_uniqueStorage()._arg = .argPointerTensor(newValue)}
   }
 
-  public var argPlaceholder: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder {
+  public var argPlaceholder: SyftProto_Execution_V1_Placeholder {
     get {
       if case .argPlaceholder(let v)? = _storage._arg {return v}
-      return SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder()
+      return SyftProto_Execution_V1_Placeholder()
     }
     set {_uniqueStorage()._arg = .argPlaceholder(newValue)}
   }
@@ -112,7 +112,7 @@ public struct SyftProto_Types_Syft_V1_Arg {
     case argTensor(SyftProto_Types_Torch_V1_TorchTensor)
     case argTorchParam(SyftProto_Types_Torch_V1_Parameter)
     case argPointerTensor(SyftProto_Generic_Pointers_V1_PointerTensor)
-    case argPlaceholder(SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder)
+    case argPlaceholder(SyftProto_Execution_V1_Placeholder)
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Types_Syft_V1_Arg.OneOf_Arg, rhs: SyftProto_Types_Syft_V1_Arg.OneOf_Arg) -> Bool {
@@ -232,7 +232,7 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._arg = .argPointerTensor(v)}
         case 9:
-          var v: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder?
+          var v: SyftProto_Execution_V1_Placeholder?
           if let current = _storage._arg {
             try decoder.handleConflictingOneOf()
             if case .argPlaceholder(let m) = current {v = m}

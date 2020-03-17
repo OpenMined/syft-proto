@@ -42,10 +42,10 @@ public struct SyftProto_Execution_V1_ComputationAction {
     set {_uniqueStorage()._target = .targetPointer(newValue)}
   }
 
-  public var targetPlaceholder: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder {
+  public var targetPlaceholder: SyftProto_Execution_V1_Placeholder {
     get {
       if case .targetPlaceholder(let v)? = _storage._target {return v}
-      return SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder()
+      return SyftProto_Execution_V1_Placeholder()
     }
     set {_uniqueStorage()._target = .targetPlaceholder(newValue)}
   }
@@ -73,7 +73,7 @@ public struct SyftProto_Execution_V1_ComputationAction {
     set {_uniqueStorage()._returnIds = newValue}
   }
 
-  public var returnPlaceholders: [SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder] {
+  public var returnPlaceholders: [SyftProto_Execution_V1_Placeholder] {
     get {return _storage._returnPlaceholders}
     set {_uniqueStorage()._returnPlaceholders = newValue}
   }
@@ -82,7 +82,7 @@ public struct SyftProto_Execution_V1_ComputationAction {
 
   public enum OneOf_Target: Equatable {
     case targetPointer(SyftProto_Generic_Pointers_V1_PointerTensor)
-    case targetPlaceholder(SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder)
+    case targetPlaceholder(SyftProto_Execution_V1_Placeholder)
     case targetTensor(SyftProto_Types_Torch_V1_TorchTensor)
 
   #if !swift(>=4.1)
@@ -125,7 +125,7 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
     var _args: [SyftProto_Types_Syft_V1_Arg] = []
     var _kwargs: Dictionary<String,SyftProto_Types_Syft_V1_Arg> = [:]
     var _returnIds: [SyftProto_Types_Syft_V1_Id] = []
-    var _returnPlaceholders: [SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder] = []
+    var _returnPlaceholders: [SyftProto_Execution_V1_Placeholder] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -163,7 +163,7 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._target = .targetPointer(v)}
         case 3:
-          var v: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_Placeholder?
+          var v: SyftProto_Execution_V1_Placeholder?
           if let current = _storage._target {
             try decoder.handleConflictingOneOf()
             if case .targetPlaceholder(let m) = current {v = m}
