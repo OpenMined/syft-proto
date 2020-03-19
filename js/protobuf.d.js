@@ -2388,8 +2388,14 @@ export namespace syft_proto {
                             /** AdditiveSharingTensor id */
                             id?: (syft_proto.types.syft.v1.IId|null);
 
-                            /** AdditiveSharingTensor field_size */
-                            field_size?: (number|Long|null);
+                            /** AdditiveSharingTensor field_int */
+                            field_int?: (number|Long|null);
+
+                            /** AdditiveSharingTensor field_str */
+                            field_str?: (string|null);
+
+                            /** AdditiveSharingTensor dtype */
+                            dtype?: (string|null);
 
                             /** AdditiveSharingTensor crypto_provider_id */
                             crypto_provider_id?: (syft_proto.types.syft.v1.IId|null);
@@ -2413,8 +2419,14 @@ export namespace syft_proto {
                             /** AdditiveSharingTensor id. */
                             public id?: (syft_proto.types.syft.v1.IId|null);
 
-                            /** AdditiveSharingTensor field_size. */
-                            public field_size: (number|Long);
+                            /** AdditiveSharingTensor field_int. */
+                            public field_int: (number|Long);
+
+                            /** AdditiveSharingTensor field_str. */
+                            public field_str: string;
+
+                            /** AdditiveSharingTensor dtype. */
+                            public dtype: string;
 
                             /** AdditiveSharingTensor crypto_provider_id. */
                             public crypto_provider_id?: (syft_proto.types.syft.v1.IId|null);
@@ -2424,6 +2436,9 @@ export namespace syft_proto {
 
                             /** AdditiveSharingTensor shares. */
                             public shares: syft_proto.generic.pointers.v1.IPointerTensor[];
+
+                            /** AdditiveSharingTensor field_size. */
+                            public field_size?: ("field_int"|"field_str");
 
                             /**
                              * Creates a new AdditiveSharingTensor instance using the specified properties.
