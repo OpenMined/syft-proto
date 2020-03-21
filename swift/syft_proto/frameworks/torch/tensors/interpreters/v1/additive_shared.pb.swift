@@ -33,7 +33,25 @@ public struct SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharing
   /// Clears the value of `id`. Subsequent reads from it will return its default value.
   public mutating func clearID() {self._id = nil}
 
-  public var fieldSize: Int64 = 0
+  public var fieldSize: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor.OneOf_FieldSize? = nil
+
+  public var fieldInt: Int64 {
+    get {
+      if case .fieldInt(let v)? = fieldSize {return v}
+      return 0
+    }
+    set {fieldSize = .fieldInt(newValue)}
+  }
+
+  public var fieldStr: String {
+    get {
+      if case .fieldStr(let v)? = fieldSize {return v}
+      return String()
+    }
+    set {fieldSize = .fieldStr(newValue)}
+  }
+
+  public var dtype: String = String()
 
   public var cryptoProviderID: SyftProto_Types_Syft_V1_Id {
     get {return _cryptoProviderID ?? SyftProto_Types_Syft_V1_Id()}
@@ -55,6 +73,21 @@ public struct SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharing
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
+  public enum OneOf_FieldSize: Equatable {
+    case fieldInt(Int64)
+    case fieldStr(String)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor.OneOf_FieldSize, rhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor.OneOf_FieldSize) -> Bool {
+      switch (lhs, rhs) {
+      case (.fieldInt(let l), .fieldInt(let r)): return l == r
+      case (.fieldStr(let l), .fieldStr(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
+
   public init() {}
 
   fileprivate var _id: SyftProto_Types_Syft_V1_Id? = nil
@@ -69,20 +102,32 @@ extension SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTens
   public static let protoMessageName: String = _protobuf_package + ".AdditiveSharingTensor"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
-    2: .standard(proto: "field_size"),
-    3: .standard(proto: "crypto_provider_id"),
-    4: .standard(proto: "location_ids"),
-    5: .same(proto: "shares"),
+    2: .standard(proto: "field_int"),
+    3: .standard(proto: "field_str"),
+    4: .same(proto: "dtype"),
+    5: .standard(proto: "crypto_provider_id"),
+    6: .standard(proto: "location_ids"),
+    7: .same(proto: "shares"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularMessageField(value: &self._id)
-      case 2: try decoder.decodeSingularInt64Field(value: &self.fieldSize)
-      case 3: try decoder.decodeSingularMessageField(value: &self._cryptoProviderID)
-      case 4: try decoder.decodeRepeatedMessageField(value: &self.locationIds)
-      case 5: try decoder.decodeRepeatedMessageField(value: &self.shares)
+      case 2:
+        if self.fieldSize != nil {try decoder.handleConflictingOneOf()}
+        var v: Int64?
+        try decoder.decodeSingularInt64Field(value: &v)
+        if let v = v {self.fieldSize = .fieldInt(v)}
+      case 3:
+        if self.fieldSize != nil {try decoder.handleConflictingOneOf()}
+        var v: String?
+        try decoder.decodeSingularStringField(value: &v)
+        if let v = v {self.fieldSize = .fieldStr(v)}
+      case 4: try decoder.decodeSingularStringField(value: &self.dtype)
+      case 5: try decoder.decodeSingularMessageField(value: &self._cryptoProviderID)
+      case 6: try decoder.decodeRepeatedMessageField(value: &self.locationIds)
+      case 7: try decoder.decodeRepeatedMessageField(value: &self.shares)
       default: break
       }
     }
@@ -92,17 +137,24 @@ extension SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTens
     if let v = self._id {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
-    if self.fieldSize != 0 {
-      try visitor.visitSingularInt64Field(value: self.fieldSize, fieldNumber: 2)
+    switch self.fieldSize {
+    case .fieldInt(let v)?:
+      try visitor.visitSingularInt64Field(value: v, fieldNumber: 2)
+    case .fieldStr(let v)?:
+      try visitor.visitSingularStringField(value: v, fieldNumber: 3)
+    case nil: break
+    }
+    if !self.dtype.isEmpty {
+      try visitor.visitSingularStringField(value: self.dtype, fieldNumber: 4)
     }
     if let v = self._cryptoProviderID {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
     }
     if !self.locationIds.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.locationIds, fieldNumber: 4)
+      try visitor.visitRepeatedMessageField(value: self.locationIds, fieldNumber: 6)
     }
     if !self.shares.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.shares, fieldNumber: 5)
+      try visitor.visitRepeatedMessageField(value: self.shares, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -110,6 +162,7 @@ extension SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTens
   public static func ==(lhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor, rhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor) -> Bool {
     if lhs._id != rhs._id {return false}
     if lhs.fieldSize != rhs.fieldSize {return false}
+    if lhs.dtype != rhs.dtype {return false}
     if lhs._cryptoProviderID != rhs._cryptoProviderID {return false}
     if lhs.locationIds != rhs.locationIds {return false}
     if lhs.shares != rhs.shares {return false}
