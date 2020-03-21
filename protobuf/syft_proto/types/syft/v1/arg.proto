@@ -6,6 +6,7 @@ option java_package = "org.openmined.syftproto.types.syft.v1";
 import "syft_proto/execution/v1/placeholder.proto";
 import "syft_proto/generic/pointers/v1/pointer_tensor.proto";
 import "syft_proto/types/torch/v1/tensor.proto";
+import "syft_proto/types/syft/v1/id.proto";
 import "syft_proto/types/syft/v1/shape.proto";
 import "syft_proto/types/torch/v1/parameter.proto";
 
@@ -22,5 +23,6 @@ message Arg {
 
         syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8;
         syft_proto.execution.v1.Placeholder arg_placeholder = 9;
+        syft_proto.types.syft.v1.Id arg_objectid = 10;
     }
 }
