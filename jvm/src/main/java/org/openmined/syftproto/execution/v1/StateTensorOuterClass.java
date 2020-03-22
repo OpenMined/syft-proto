@@ -964,21 +964,19 @@ public final class StateTensorOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n*syft_proto/execution/v1/state_tensor.p" +
-      "roto\022\027syft_proto.execution.v1\032)syft_prot" +
-      "o/execution/v1/placeholder.proto\032&syft_p" +
-      "roto/types/torch/v1/tensor.proto\032)syft_p" +
-      "roto/types/torch/v1/parameter.proto\"\255\001\n\013" +
-      "StateTensor\022K\n\014torch_tensor\030\001 \001(\0132&.syft" +
-      "_proto.types.torch.v1.TorchTensorH\000R\013tor" +
-      "chTensor\022G\n\013torch_param\030\002 \001(\0132$.syft_pro" +
-      "to.types.torch.v1.ParameterH\000R\ntorchPara" +
-      "mB\010\n\006tensorB&\n$org.openmined.syftproto.e" +
-      "xecution.v1b\006proto3"
+      "roto\022\027syft_proto.execution.v1\032&syft_prot" +
+      "o/types/torch/v1/tensor.proto\032)syft_prot" +
+      "o/types/torch/v1/parameter.proto\"\255\001\n\013Sta" +
+      "teTensor\022K\n\014torch_tensor\030\001 \001(\0132&.syft_pr" +
+      "oto.types.torch.v1.TorchTensorH\000R\013torchT" +
+      "ensor\022G\n\013torch_param\030\002 \001(\0132$.syft_proto." +
+      "types.torch.v1.ParameterH\000R\ntorchParamB\010" +
+      "\n\006tensorB&\n$org.openmined.syftproto.exec" +
+      "ution.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor(),
           org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor(),
           org.openmined.syftproto.types.torch.v1.ParameterOuterClass.getDescriptor(),
         });
@@ -988,7 +986,6 @@ public final class StateTensorOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_StateTensor_descriptor,
         new java.lang.String[] { "TorchTensor", "TorchParam", "Tensor", });
-    org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor();
     org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor();
     org.openmined.syftproto.types.torch.v1.ParameterOuterClass.getDescriptor();
   }

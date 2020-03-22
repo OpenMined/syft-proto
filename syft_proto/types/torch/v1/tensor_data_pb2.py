@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from syft_proto.types.syft.v1 import id_pb2 as syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2
 from syft_proto.types.torch.v1 import size_pb2 as syft__proto_dot_types_dot_torch_dot_v1_dot_size__pb2
 
 
@@ -20,9 +19,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.types.torch.v1',
   syntax='proto3',
   serialized_options=b'\n&org.openmined.syftproto.types.torch.v1',
-  serialized_pb=b'\n+syft_proto/types/torch/v1/tensor_data.proto\x12\x19syft_proto.types.torch.v1\x1a!syft_proto/types/syft/v1/id.proto\x1a$syft_proto/types/torch/v1/size.proto\"\xbe\x05\n\nTensorData\x12\x35\n\x05shape\x18\x01 \x01(\x0b\x32\x1f.syft_proto.types.torch.v1.SizeR\x05shape\x12\x14\n\x05\x64type\x18\x02 \x01(\tR\x05\x64type\x12!\n\x0cis_quantized\x18\x03 \x01(\x08R\x0bisQuantized\x12\x14\n\x05scale\x18\x04 \x01(\x02R\x05scale\x12\x1d\n\nzero_point\x18\x05 \x01(\x05R\tzeroPoint\x12%\n\x0e\x63ontents_uint8\x18\x10 \x03(\rR\rcontentsUint8\x12#\n\rcontents_int8\x18\x11 \x03(\x05R\x0c\x63ontentsInt8\x12%\n\x0e\x63ontents_int16\x18\x12 \x03(\x05R\rcontentsInt16\x12%\n\x0e\x63ontents_int32\x18\x13 \x03(\x05R\rcontentsInt32\x12%\n\x0e\x63ontents_int64\x18\x14 \x03(\x03R\rcontentsInt64\x12)\n\x10\x63ontents_float16\x18\x15 \x03(\x02R\x0f\x63ontentsFloat16\x12)\n\x10\x63ontents_float32\x18\x16 \x03(\x02R\x0f\x63ontentsFloat32\x12)\n\x10\x63ontents_float64\x18\x17 \x03(\x01R\x0f\x63ontentsFloat64\x12#\n\rcontents_bool\x18\x18 \x03(\x08R\x0c\x63ontentsBool\x12%\n\x0e\x63ontents_qint8\x18\x19 \x03(\x11R\rcontentsQint8\x12\'\n\x0f\x63ontents_quint8\x18\x1a \x03(\rR\x0e\x63ontentsQuint8\x12\'\n\x0f\x63ontents_qint32\x18\x1b \x03(\x11R\x0e\x63ontentsQint32\x12+\n\x11\x63ontents_bfloat16\x18\x1c \x03(\x02R\x10\x63ontentsBfloat16B(\n&org.openmined.syftproto.types.torch.v1b\x06proto3'
+  serialized_pb=b'\n+syft_proto/types/torch/v1/tensor_data.proto\x12\x19syft_proto.types.torch.v1\x1a$syft_proto/types/torch/v1/size.proto\"\xbe\x05\n\nTensorData\x12\x35\n\x05shape\x18\x01 \x01(\x0b\x32\x1f.syft_proto.types.torch.v1.SizeR\x05shape\x12\x14\n\x05\x64type\x18\x02 \x01(\tR\x05\x64type\x12!\n\x0cis_quantized\x18\x03 \x01(\x08R\x0bisQuantized\x12\x14\n\x05scale\x18\x04 \x01(\x02R\x05scale\x12\x1d\n\nzero_point\x18\x05 \x01(\x05R\tzeroPoint\x12%\n\x0e\x63ontents_uint8\x18\x10 \x03(\rR\rcontentsUint8\x12#\n\rcontents_int8\x18\x11 \x03(\x05R\x0c\x63ontentsInt8\x12%\n\x0e\x63ontents_int16\x18\x12 \x03(\x05R\rcontentsInt16\x12%\n\x0e\x63ontents_int32\x18\x13 \x03(\x05R\rcontentsInt32\x12%\n\x0e\x63ontents_int64\x18\x14 \x03(\x03R\rcontentsInt64\x12)\n\x10\x63ontents_float16\x18\x15 \x03(\x02R\x0f\x63ontentsFloat16\x12)\n\x10\x63ontents_float32\x18\x16 \x03(\x02R\x0f\x63ontentsFloat32\x12)\n\x10\x63ontents_float64\x18\x17 \x03(\x01R\x0f\x63ontentsFloat64\x12#\n\rcontents_bool\x18\x18 \x03(\x08R\x0c\x63ontentsBool\x12%\n\x0e\x63ontents_qint8\x18\x19 \x03(\x11R\rcontentsQint8\x12\'\n\x0f\x63ontents_quint8\x18\x1a \x03(\rR\x0e\x63ontentsQuint8\x12\'\n\x0f\x63ontents_qint32\x18\x1b \x03(\x11R\x0e\x63ontentsQint32\x12+\n\x11\x63ontents_bfloat16\x18\x1c \x03(\x02R\x10\x63ontentsBfloat16B(\n&org.openmined.syftproto.types.torch.v1b\x06proto3'
   ,
-  dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_size__pb2.DESCRIPTOR,])
+  dependencies=[syft__proto_dot_types_dot_torch_dot_v1_dot_size__pb2.DESCRIPTOR,])
 
 
 
@@ -172,8 +171,8 @@ _TENSORDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=148,
-  serialized_end=850,
+  serialized_start=113,
+  serialized_end=815,
 )
 
 _TENSORDATA.fields_by_name['shape'].message_type = syft__proto_dot_types_dot_torch_dot_v1_dot_size__pb2._SIZE
