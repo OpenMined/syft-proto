@@ -28,6 +28,14 @@ public struct SyftProto_Execution_V1_ComputationAction {
 
   public var target: SyftProto_Execution_V1_ComputationAction.OneOf_Target? = nil
 
+  public var targetID: SyftProto_Types_Syft_V1_Id {
+    get {
+      if case .targetID(let v)? = target {return v}
+      return SyftProto_Types_Syft_V1_Id()
+    }
+    set {target = .targetID(newValue)}
+  }
+
   public var targetPointer: SyftProto_Generic_Pointers_V1_PointerTensor {
     get {
       if case .targetPointer(let v)? = target {return v}
@@ -58,11 +66,13 @@ public struct SyftProto_Execution_V1_ComputationAction {
 
   public var returnIds: [SyftProto_Types_Syft_V1_Id] = []
 
-  public var returnPlaceholders: [SyftProto_Execution_V1_Placeholder] = []
+  /// TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
+  public var returnPlaceholders: [SyftProto_Types_Syft_V1_Id] = []
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Target: Equatable {
+    case targetID(SyftProto_Types_Syft_V1_Id)
     case targetPointer(SyftProto_Generic_Pointers_V1_PointerTensor)
     case targetPlaceholder(SyftProto_Execution_V1_Placeholder)
     case targetTensor(SyftProto_Types_Torch_V1_TorchTensor)
@@ -70,6 +80,7 @@ public struct SyftProto_Execution_V1_ComputationAction {
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Execution_V1_ComputationAction.OneOf_Target, rhs: SyftProto_Execution_V1_ComputationAction.OneOf_Target) -> Bool {
       switch (lhs, rhs) {
+      case (.targetID(let l), .targetID(let r)): return l == r
       case (.targetPointer(let l), .targetPointer(let r)): return l == r
       case (.targetPlaceholder(let l), .targetPlaceholder(let r)): return l == r
       case (.targetTensor(let l), .targetTensor(let r)): return l == r
@@ -90,6 +101,7 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
   public static let protoMessageName: String = _protobuf_package + ".ComputationAction"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "command"),
+    9: .standard(proto: "target_id"),
     2: .standard(proto: "target_pointer"),
     3: .standard(proto: "target_placeholder"),
     4: .standard(proto: "target_tensor"),
@@ -131,6 +143,14 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
       case 6: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Types_Syft_V1_Arg>.self, value: &self.kwargs)
       case 7: try decoder.decodeRepeatedMessageField(value: &self.returnIds)
       case 8: try decoder.decodeRepeatedMessageField(value: &self.returnPlaceholders)
+      case 9:
+        var v: SyftProto_Types_Syft_V1_Id?
+        if let current = self.target {
+          try decoder.handleConflictingOneOf()
+          if case .targetID(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.target = .targetID(v)}
       default: break
       }
     }
@@ -148,6 +168,7 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
     case .targetTensor(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
     case nil: break
+    default: break
     }
     if !self.args.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.args, fieldNumber: 5)
@@ -160,6 +181,9 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
     }
     if !self.returnPlaceholders.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.returnPlaceholders, fieldNumber: 8)
+    }
+    if case .targetID(let v)? = self.target {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
