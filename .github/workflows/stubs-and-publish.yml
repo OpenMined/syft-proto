@@ -1,0 +1,216 @@
+name: Build Protobuf stubs (and publish if necessary)
+
+on:
+  push:
+  release:
+    types: [published]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Run Buf linter
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Buf
+        run: |
+          mkdir -p $(HOME)/bin
+          export BUF_PATH=$(HOME)/bin/buf
+          export BUF_VERSION="0.8.0"
+          export UNAME_OS=$(shell uname -s)
+          export UNAME_ARCH=$(shell uname -m)
+          curl -sSL \
+            "https://github.com/bufbuild/buf/releases/download/v$(BUF_VERSION)/buf-$(UNAME_OS)-$(UNAME_ARCH)" \
+            -o "$(BUF_PATH)"
+          chmod +x "$(BUF_PATH)"
+          export PATH=$(abspath $(BUF_PATH)):$(PATH)
+
+      - name: Lint schemas
+        run: |
+          cd protobuf && \
+            buf check lint && \
+            cd ..
+
+  breaking:
+    runs-on: ubuntu-latest
+    name: Run Buf breaking change detection
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Buf
+        run: |
+          mkdir -p $(HOME)/bin
+          export BUF_PATH=$(HOME)/bin/buf
+          export BUF_VERSION="0.8.0"
+          export UNAME_OS=$(shell uname -s)
+          export UNAME_ARCH=$(shell uname -m)
+          curl -sSL \
+            "https://github.com/bufbuild/buf/releases/download/v$(BUF_VERSION)/buf-$(UNAME_OS)-$(UNAME_ARCH)" \
+            -o "$(BUF_PATH)"
+          chmod +x "$(BUF_PATH)"
+          export PATH=$(abspath $(BUF_PATH)):$(PATH)
+
+      - name: Check for breaking changes
+        run: |
+          export HTTPS_GIT="https://github.com/OpenMined/syft-proto.git"
+          cd protobuf && \
+            buf check breaking --against-input "$(HTTPS_GIT)#branch=master" && \
+            cd ..
+
+  python:
+    runs-on: ubuntu-latest
+    name: Build Python stubs
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+
+      - name: Set up Buf
+        run: |
+          mkdir -p $(HOME)/bin
+          export BUF_PATH=$(HOME)/bin/buf
+          export BUF_VERSION="0.8.0"
+          export UNAME_OS=$(shell uname -s)
+          export UNAME_ARCH=$(shell uname -m)
+          curl -sSL \
+            "https://github.com/bufbuild/buf/releases/download/v$(BUF_VERSION)/buf-$(UNAME_OS)-$(UNAME_ARCH)" \
+            -o "$(BUF_PATH)"
+          chmod +x "$(BUF_PATH)"
+          export PATH=$(abspath $(BUF_PATH)):$(PATH)
+
+      - name: Build stubs
+        run: |
+          cd protobuf && \
+            buf image build -o - | protoc --descriptor_set_in=/dev/stdin --python_out=../ $(buf image build -o - | buf ls-files --input -) && \
+            cd ..
+          find syft_proto/ -type d -print0 | \
+            while IFS= read -rd '' dir; do touch "$dir/__init__.py"; done
+
+      - name: Commit to repository
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@users.noreply.github.com"
+          git add syft_proto/*
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Build Python stubs"; git push)
+
+  java:
+    runs-on: ubuntu-latest
+    name: Build JVM stubs
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Set up Buf
+        run: |
+          mkdir -p $(HOME)/bin
+          export BUF_PATH=$(HOME)/bin/buf
+          export BUF_VERSION="0.8.0"
+          export UNAME_OS=$(shell uname -s)
+          export UNAME_ARCH=$(shell uname -m)
+          curl -sSL \
+            "https://github.com/bufbuild/buf/releases/download/v$(BUF_VERSION)/buf-$(UNAME_OS)-$(UNAME_ARCH)" \
+            -o "$(BUF_PATH)"
+          chmod +x "$(BUF_PATH)"
+          export PATH=$(abspath $(BUF_PATH)):$(PATH)
+
+      - name: Build stubs
+        run: |
+          cd protobuf && \
+            buf image build -o - | protoc --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java $(buf image build -o - | buf ls-files --input -) && \
+            cd ..
+          ./jvm/gradlew cleanFiles install
+
+      - name: Commit to repository
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@users.noreply.github.com"
+          git add jvm/*
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Build Java stubs"; git push)
+
+  javascript:
+    needs: lint
+    runs-on: ubuntu-latest
+    name: Build Javascript stubs
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Build JS Stubs
+        run: |
+          npm i
+          node ./js/bin/build_stubs.js
+
+      - name: Commit to repository
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@users.noreply.github.com"
+          git add js/*
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Build Javascript stubs"; git push)
+
+  swift:
+    needs: lint
+    runs-on: macos-latest
+    name: Build Swift stubs
+  
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Swift 
+        run: brew install swift-protobuf
+
+      - name: Build swift stubs
+        run: |
+          mkdir -p swift
+          protoc -I=protobuf --swift_opt=Visibility=Public --swift_out=swift $(find protobuf -name "*.proto")
+          
+      - name: Commit to repository 
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@users.noreply.github.com"
+          git add swift/*
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Build Swift stubs"; git push)
+
+  publish:
+    needs: [python, java, javascript, swift]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'published' && !failure()
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install setuptools wheel twine
+
+      - name: Build
+        run: |
+          python setup.py sdist bdist_wheel
+
+      - name: Publish
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: |
+          twine upload --verbose dist/*
