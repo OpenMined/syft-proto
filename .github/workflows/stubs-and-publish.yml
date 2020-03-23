@@ -99,7 +99,6 @@ jobs:
           git add syft_proto/*
           git diff --quiet && git diff --staged --quiet || (git commit -m "Build Python stubs"; git push)
 
-
   java:
     runs-on: ubuntu-latest
     name: Build JVM stubs
@@ -138,7 +137,6 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add jvm/*
           git diff --quiet && git diff --staged --quiet || (git commit -m "Build Java stubs"; git push)
-
 
   javascript:
     needs: lint
