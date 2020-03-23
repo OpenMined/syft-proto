@@ -32,6 +32,7 @@ jobs:
             cd ..
 
   breaking:
+    needs: lint
     runs-on: ubuntu-latest
     name: Detect breaking changes
 
@@ -58,6 +59,7 @@ jobs:
             cd ..
 
   python:
+    needs: lint
     runs-on: ubuntu-latest
     name: Build Python stubs
 
@@ -97,6 +99,7 @@ jobs:
           git diff --quiet && git diff --staged --quiet || (git commit -m "Build Python stubs"; git push)
 
   java:
+    needs: lint
     runs-on: ubuntu-latest
     name: Build JVM stubs
 
