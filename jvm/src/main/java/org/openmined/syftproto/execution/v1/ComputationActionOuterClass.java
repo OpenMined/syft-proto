@@ -173,47 +173,27 @@ public final class ComputationActionOuterClass {
         int index);
 
     /**
-     * <pre>
-     * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-     * </pre>
-     *
-     * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> 
-        getReturnPlaceholdersList();
+    java.util.List<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId> 
+        getReturnPlaceholderIdsList();
     /**
-     * <pre>
-     * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-     * </pre>
-     *
-     * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getReturnPlaceholders(int index);
+    org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index);
     /**
-     * <pre>
-     * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-     * </pre>
-     *
-     * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    int getReturnPlaceholdersCount();
+    int getReturnPlaceholderIdsCount();
     /**
-     * <pre>
-     * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-     * </pre>
-     *
-     * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
-        getReturnPlaceholdersOrBuilderList();
+    java.util.List<? extends org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+        getReturnPlaceholderIdsOrBuilderList();
     /**
-     * <pre>
-     * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-     * </pre>
-     *
-     * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getReturnPlaceholdersOrBuilder(
+    org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
         int index);
 
     public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.TargetCase getTargetCase();
@@ -234,7 +214,7 @@ public final class ComputationActionOuterClass {
       command_ = "";
       args_ = java.util.Collections.emptyList();
       returnIds_ = java.util.Collections.emptyList();
-      returnPlaceholders_ = java.util.Collections.emptyList();
+      returnPlaceholderIds_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -349,11 +329,11 @@ public final class ComputationActionOuterClass {
             }
             case 66: {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                returnPlaceholders_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id>();
+                returnPlaceholderIds_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId>();
                 mutable_bitField0_ |= 0x00000008;
               }
-              returnPlaceholders_.add(
-                  input.readMessage(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.parser(), extensionRegistry));
+              returnPlaceholderIds_.add(
+                  input.readMessage(org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.parser(), extensionRegistry));
               break;
             }
             case 74: {
@@ -392,7 +372,7 @@ public final class ComputationActionOuterClass {
           returnIds_ = java.util.Collections.unmodifiableList(returnIds_);
         }
         if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          returnPlaceholders_ = java.util.Collections.unmodifiableList(returnPlaceholders_);
+          returnPlaceholderIds_ = java.util.Collections.unmodifiableList(returnPlaceholderIds_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -762,59 +742,39 @@ public final class ComputationActionOuterClass {
       return returnIds_.get(index);
     }
 
-    public static final int RETURN_PLACEHOLDERS_FIELD_NUMBER = 8;
-    private java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> returnPlaceholders_;
+    public static final int RETURN_PLACEHOLDER_IDS_FIELD_NUMBER = 8;
+    private java.util.List<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId> returnPlaceholderIds_;
     /**
-     * <pre>
-     * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-     * </pre>
-     *
-     * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> getReturnPlaceholdersList() {
-      return returnPlaceholders_;
+    public java.util.List<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId> getReturnPlaceholderIdsList() {
+      return returnPlaceholderIds_;
     }
     /**
-     * <pre>
-     * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-     * </pre>
-     *
-     * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    public java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
-        getReturnPlaceholdersOrBuilderList() {
-      return returnPlaceholders_;
+    public java.util.List<? extends org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+        getReturnPlaceholderIdsOrBuilderList() {
+      return returnPlaceholderIds_;
     }
     /**
-     * <pre>
-     * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-     * </pre>
-     *
-     * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    public int getReturnPlaceholdersCount() {
-      return returnPlaceholders_.size();
+    public int getReturnPlaceholderIdsCount() {
+      return returnPlaceholderIds_.size();
     }
     /**
-     * <pre>
-     * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-     * </pre>
-     *
-     * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getReturnPlaceholders(int index) {
-      return returnPlaceholders_.get(index);
+    public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index) {
+      return returnPlaceholderIds_.get(index);
     }
     /**
-     * <pre>
-     * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-     * </pre>
-     *
-     * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getReturnPlaceholdersOrBuilder(
+    public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
         int index) {
-      return returnPlaceholders_.get(index);
+      return returnPlaceholderIds_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -855,8 +815,8 @@ public final class ComputationActionOuterClass {
       for (int i = 0; i < returnIds_.size(); i++) {
         output.writeMessage(7, returnIds_.get(i));
       }
-      for (int i = 0; i < returnPlaceholders_.size(); i++) {
-        output.writeMessage(8, returnPlaceholders_.get(i));
+      for (int i = 0; i < returnPlaceholderIds_.size(); i++) {
+        output.writeMessage(8, returnPlaceholderIds_.get(i));
       }
       if (targetCase_ == 9) {
         output.writeMessage(9, (org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_);
@@ -903,9 +863,9 @@ public final class ComputationActionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, returnIds_.get(i));
       }
-      for (int i = 0; i < returnPlaceholders_.size(); i++) {
+      for (int i = 0; i < returnPlaceholderIds_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, returnPlaceholders_.get(i));
+          .computeMessageSize(8, returnPlaceholderIds_.get(i));
       }
       if (targetCase_ == 9) {
         size += com.google.protobuf.CodedOutputStream
@@ -934,8 +894,8 @@ public final class ComputationActionOuterClass {
           other.internalGetKwargs())) return false;
       if (!getReturnIdsList()
           .equals(other.getReturnIdsList())) return false;
-      if (!getReturnPlaceholdersList()
-          .equals(other.getReturnPlaceholdersList())) return false;
+      if (!getReturnPlaceholderIdsList()
+          .equals(other.getReturnPlaceholderIdsList())) return false;
       if (!getTargetCase().equals(other.getTargetCase())) return false;
       switch (targetCase_) {
         case 9:
@@ -982,9 +942,9 @@ public final class ComputationActionOuterClass {
         hash = (37 * hash) + RETURN_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getReturnIdsList().hashCode();
       }
-      if (getReturnPlaceholdersCount() > 0) {
-        hash = (37 * hash) + RETURN_PLACEHOLDERS_FIELD_NUMBER;
-        hash = (53 * hash) + getReturnPlaceholdersList().hashCode();
+      if (getReturnPlaceholderIdsCount() > 0) {
+        hash = (37 * hash) + RETURN_PLACEHOLDER_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getReturnPlaceholderIdsList().hashCode();
       }
       switch (targetCase_) {
         case 9:
@@ -1158,7 +1118,7 @@ public final class ComputationActionOuterClass {
                 .alwaysUseFieldBuilders) {
           getArgsFieldBuilder();
           getReturnIdsFieldBuilder();
-          getReturnPlaceholdersFieldBuilder();
+          getReturnPlaceholderIdsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -1179,11 +1139,11 @@ public final class ComputationActionOuterClass {
         } else {
           returnIdsBuilder_.clear();
         }
-        if (returnPlaceholdersBuilder_ == null) {
-          returnPlaceholders_ = java.util.Collections.emptyList();
+        if (returnPlaceholderIdsBuilder_ == null) {
+          returnPlaceholderIds_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          returnPlaceholdersBuilder_.clear();
+          returnPlaceholderIdsBuilder_.clear();
         }
         targetCase_ = 0;
         target_ = null;
@@ -1263,14 +1223,14 @@ public final class ComputationActionOuterClass {
         } else {
           result.returnIds_ = returnIdsBuilder_.build();
         }
-        if (returnPlaceholdersBuilder_ == null) {
+        if (returnPlaceholderIdsBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0)) {
-            returnPlaceholders_ = java.util.Collections.unmodifiableList(returnPlaceholders_);
+            returnPlaceholderIds_ = java.util.Collections.unmodifiableList(returnPlaceholderIds_);
             bitField0_ = (bitField0_ & ~0x00000008);
           }
-          result.returnPlaceholders_ = returnPlaceholders_;
+          result.returnPlaceholderIds_ = returnPlaceholderIds_;
         } else {
-          result.returnPlaceholders_ = returnPlaceholdersBuilder_.build();
+          result.returnPlaceholderIds_ = returnPlaceholderIdsBuilder_.build();
         }
         result.targetCase_ = targetCase_;
         onBuilt();
@@ -1379,29 +1339,29 @@ public final class ComputationActionOuterClass {
             }
           }
         }
-        if (returnPlaceholdersBuilder_ == null) {
-          if (!other.returnPlaceholders_.isEmpty()) {
-            if (returnPlaceholders_.isEmpty()) {
-              returnPlaceholders_ = other.returnPlaceholders_;
+        if (returnPlaceholderIdsBuilder_ == null) {
+          if (!other.returnPlaceholderIds_.isEmpty()) {
+            if (returnPlaceholderIds_.isEmpty()) {
+              returnPlaceholderIds_ = other.returnPlaceholderIds_;
               bitField0_ = (bitField0_ & ~0x00000008);
             } else {
-              ensureReturnPlaceholdersIsMutable();
-              returnPlaceholders_.addAll(other.returnPlaceholders_);
+              ensureReturnPlaceholderIdsIsMutable();
+              returnPlaceholderIds_.addAll(other.returnPlaceholderIds_);
             }
             onChanged();
           }
         } else {
-          if (!other.returnPlaceholders_.isEmpty()) {
-            if (returnPlaceholdersBuilder_.isEmpty()) {
-              returnPlaceholdersBuilder_.dispose();
-              returnPlaceholdersBuilder_ = null;
-              returnPlaceholders_ = other.returnPlaceholders_;
+          if (!other.returnPlaceholderIds_.isEmpty()) {
+            if (returnPlaceholderIdsBuilder_.isEmpty()) {
+              returnPlaceholderIdsBuilder_.dispose();
+              returnPlaceholderIdsBuilder_ = null;
+              returnPlaceholderIds_ = other.returnPlaceholderIds_;
               bitField0_ = (bitField0_ & ~0x00000008);
-              returnPlaceholdersBuilder_ = 
+              returnPlaceholderIdsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getReturnPlaceholdersFieldBuilder() : null;
+                   getReturnPlaceholderIdsFieldBuilder() : null;
             } else {
-              returnPlaceholdersBuilder_.addAllMessages(other.returnPlaceholders_);
+              returnPlaceholderIdsBuilder_.addAllMessages(other.returnPlaceholderIds_);
             }
           }
         }
@@ -2702,316 +2662,244 @@ public final class ComputationActionOuterClass {
         return returnIdsBuilder_;
       }
 
-      private java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> returnPlaceholders_ =
+      private java.util.List<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId> returnPlaceholderIds_ =
         java.util.Collections.emptyList();
-      private void ensureReturnPlaceholdersIsMutable() {
+      private void ensureReturnPlaceholderIdsIsMutable() {
         if (!((bitField0_ & 0x00000008) != 0)) {
-          returnPlaceholders_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id>(returnPlaceholders_);
+          returnPlaceholderIds_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId>(returnPlaceholderIds_);
           bitField0_ |= 0x00000008;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> returnPlaceholdersBuilder_;
+          org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> returnPlaceholderIdsBuilder_;
 
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> getReturnPlaceholdersList() {
-        if (returnPlaceholdersBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(returnPlaceholders_);
+      public java.util.List<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId> getReturnPlaceholderIdsList() {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(returnPlaceholderIds_);
         } else {
-          return returnPlaceholdersBuilder_.getMessageList();
+          return returnPlaceholderIdsBuilder_.getMessageList();
         }
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public int getReturnPlaceholdersCount() {
-        if (returnPlaceholdersBuilder_ == null) {
-          return returnPlaceholders_.size();
+      public int getReturnPlaceholderIdsCount() {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          return returnPlaceholderIds_.size();
         } else {
-          return returnPlaceholdersBuilder_.getCount();
+          return returnPlaceholderIdsBuilder_.getCount();
         }
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getReturnPlaceholders(int index) {
-        if (returnPlaceholdersBuilder_ == null) {
-          return returnPlaceholders_.get(index);
+      public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          return returnPlaceholderIds_.get(index);
         } else {
-          return returnPlaceholdersBuilder_.getMessage(index);
+          return returnPlaceholderIdsBuilder_.getMessage(index);
         }
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public Builder setReturnPlaceholders(
-          int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (returnPlaceholdersBuilder_ == null) {
+      public Builder setReturnPlaceholderIds(
+          int index, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+        if (returnPlaceholderIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureReturnPlaceholdersIsMutable();
-          returnPlaceholders_.set(index, value);
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.set(index, value);
           onChanged();
         } else {
-          returnPlaceholdersBuilder_.setMessage(index, value);
+          returnPlaceholderIdsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public Builder setReturnPlaceholders(
-          int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
-        if (returnPlaceholdersBuilder_ == null) {
-          ensureReturnPlaceholdersIsMutable();
-          returnPlaceholders_.set(index, builderForValue.build());
+      public Builder setReturnPlaceholderIds(
+          int index, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.set(index, builderForValue.build());
           onChanged();
         } else {
-          returnPlaceholdersBuilder_.setMessage(index, builderForValue.build());
+          returnPlaceholderIdsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public Builder addReturnPlaceholders(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (returnPlaceholdersBuilder_ == null) {
+      public Builder addReturnPlaceholderIds(org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+        if (returnPlaceholderIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureReturnPlaceholdersIsMutable();
-          returnPlaceholders_.add(value);
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.add(value);
           onChanged();
         } else {
-          returnPlaceholdersBuilder_.addMessage(value);
+          returnPlaceholderIdsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public Builder addReturnPlaceholders(
-          int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (returnPlaceholdersBuilder_ == null) {
+      public Builder addReturnPlaceholderIds(
+          int index, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+        if (returnPlaceholderIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureReturnPlaceholdersIsMutable();
-          returnPlaceholders_.add(index, value);
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.add(index, value);
           onChanged();
         } else {
-          returnPlaceholdersBuilder_.addMessage(index, value);
+          returnPlaceholderIdsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public Builder addReturnPlaceholders(
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
-        if (returnPlaceholdersBuilder_ == null) {
-          ensureReturnPlaceholdersIsMutable();
-          returnPlaceholders_.add(builderForValue.build());
+      public Builder addReturnPlaceholderIds(
+          org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.add(builderForValue.build());
           onChanged();
         } else {
-          returnPlaceholdersBuilder_.addMessage(builderForValue.build());
+          returnPlaceholderIdsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public Builder addReturnPlaceholders(
-          int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
-        if (returnPlaceholdersBuilder_ == null) {
-          ensureReturnPlaceholdersIsMutable();
-          returnPlaceholders_.add(index, builderForValue.build());
+      public Builder addReturnPlaceholderIds(
+          int index, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.add(index, builderForValue.build());
           onChanged();
         } else {
-          returnPlaceholdersBuilder_.addMessage(index, builderForValue.build());
+          returnPlaceholderIdsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public Builder addAllReturnPlaceholders(
-          java.lang.Iterable<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> values) {
-        if (returnPlaceholdersBuilder_ == null) {
-          ensureReturnPlaceholdersIsMutable();
+      public Builder addAllReturnPlaceholderIds(
+          java.lang.Iterable<? extends org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId> values) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          ensureReturnPlaceholderIdsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, returnPlaceholders_);
+              values, returnPlaceholderIds_);
           onChanged();
         } else {
-          returnPlaceholdersBuilder_.addAllMessages(values);
+          returnPlaceholderIdsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public Builder clearReturnPlaceholders() {
-        if (returnPlaceholdersBuilder_ == null) {
-          returnPlaceholders_ = java.util.Collections.emptyList();
+      public Builder clearReturnPlaceholderIds() {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          returnPlaceholderIds_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
-          returnPlaceholdersBuilder_.clear();
+          returnPlaceholderIdsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public Builder removeReturnPlaceholders(int index) {
-        if (returnPlaceholdersBuilder_ == null) {
-          ensureReturnPlaceholdersIsMutable();
-          returnPlaceholders_.remove(index);
+      public Builder removeReturnPlaceholderIds(int index) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.remove(index);
           onChanged();
         } else {
-          returnPlaceholdersBuilder_.remove(index);
+          returnPlaceholderIdsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getReturnPlaceholdersBuilder(
+      public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder getReturnPlaceholderIdsBuilder(
           int index) {
-        return getReturnPlaceholdersFieldBuilder().getBuilder(index);
+        return getReturnPlaceholderIdsFieldBuilder().getBuilder(index);
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getReturnPlaceholdersOrBuilder(
+      public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
           int index) {
-        if (returnPlaceholdersBuilder_ == null) {
-          return returnPlaceholders_.get(index);  } else {
-          return returnPlaceholdersBuilder_.getMessageOrBuilder(index);
+        if (returnPlaceholderIdsBuilder_ == null) {
+          return returnPlaceholderIds_.get(index);  } else {
+          return returnPlaceholderIdsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
-           getReturnPlaceholdersOrBuilderList() {
-        if (returnPlaceholdersBuilder_ != null) {
-          return returnPlaceholdersBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+           getReturnPlaceholderIdsOrBuilderList() {
+        if (returnPlaceholderIdsBuilder_ != null) {
+          return returnPlaceholderIdsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(returnPlaceholders_);
+          return java.util.Collections.unmodifiableList(returnPlaceholderIds_);
         }
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder addReturnPlaceholdersBuilder() {
-        return getReturnPlaceholdersFieldBuilder().addBuilder(
-            org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance());
+      public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder addReturnPlaceholderIdsBuilder() {
+        return getReturnPlaceholderIdsFieldBuilder().addBuilder(
+            org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance());
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder addReturnPlaceholdersBuilder(
+      public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder addReturnPlaceholderIdsBuilder(
           int index) {
-        return getReturnPlaceholdersFieldBuilder().addBuilder(
-            index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance());
+        return getReturnPlaceholderIdsFieldBuilder().addBuilder(
+            index, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance());
       }
       /**
-       * <pre>
-       * TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-       * </pre>
-       *
-       * <code>repeated .syft_proto.types.syft.v1.Id return_placeholders = 8[json_name = "returnPlaceholders"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder> 
-           getReturnPlaceholdersBuilderList() {
-        return getReturnPlaceholdersFieldBuilder().getBuilderList();
+      public java.util.List<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder> 
+           getReturnPlaceholderIdsBuilderList() {
+        return getReturnPlaceholderIdsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
-          getReturnPlaceholdersFieldBuilder() {
-        if (returnPlaceholdersBuilder_ == null) {
-          returnPlaceholdersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder>(
-                  returnPlaceholders_,
+          org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+          getReturnPlaceholderIdsFieldBuilder() {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          returnPlaceholderIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder>(
+                  returnPlaceholderIds_,
                   ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
-          returnPlaceholders_ = null;
+          returnPlaceholderIds_ = null;
         }
-        return returnPlaceholdersBuilder_;
+        return returnPlaceholderIdsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3091,27 +2979,29 @@ public final class ComputationActionOuterClass {
       "syft_proto/generic/pointers/v1/pointer_t" +
       "ensor.proto\032\"syft_proto/types/syft/v1/ar" +
       "g.proto\032!syft_proto/types/syft/v1/id.pro" +
-      "to\032&syft_proto/types/torch/v1/tensor.pro" +
-      "to\"\333\005\n\021ComputationAction\022\030\n\007command\030\001 \001(" +
-      "\tR\007command\022;\n\ttarget_id\030\t \001(\0132\034.syft_pro" +
-      "to.types.syft.v1.IdH\000R\010targetId\022V\n\016targe" +
-      "t_pointer\030\002 \001(\0132-.syft_proto.generic.poi" +
-      "nters.v1.PointerTensorH\000R\rtargetPointer\022" +
-      "U\n\022target_placeholder\030\003 \001(\0132$.syft_proto" +
-      ".execution.v1.PlaceholderH\000R\021targetPlace" +
-      "holder\022M\n\rtarget_tensor\030\004 \001(\0132&.syft_pro" +
-      "to.types.torch.v1.TorchTensorH\000R\014targetT" +
-      "ensor\0221\n\004args\030\005 \003(\0132\035.syft_proto.types.s" +
-      "yft.v1.ArgR\004args\022N\n\006kwargs\030\006 \003(\01326.syft_" +
-      "proto.execution.v1.ComputationAction.Kwa" +
-      "rgsEntryR\006kwargs\022;\n\nreturn_ids\030\007 \003(\0132\034.s" +
-      "yft_proto.types.syft.v1.IdR\treturnIds\022M\n" +
-      "\023return_placeholders\030\010 \003(\0132\034.syft_proto." +
-      "types.syft.v1.IdR\022returnPlaceholders\032X\n\013" +
-      "KwargsEntry\022\020\n\003key\030\001 \001(\tR\003key\0223\n\005value\030\002" +
-      " \001(\0132\035.syft_proto.types.syft.v1.ArgR\005val" +
-      "ue:\0028\001B\010\n\006targetB&\n$org.openmined.syftpr" +
-      "oto.execution.v1b\006proto3"
+      "to\032-syft_proto/types/syft/v1/placeholder" +
+      "_id.proto\032&syft_proto/types/torch/v1/ten" +
+      "sor.proto\"\353\005\n\021ComputationAction\022\030\n\007comma" +
+      "nd\030\001 \001(\tR\007command\022;\n\ttarget_id\030\t \001(\0132\034.s" +
+      "yft_proto.types.syft.v1.IdH\000R\010targetId\022V" +
+      "\n\016target_pointer\030\002 \001(\0132-.syft_proto.gene" +
+      "ric.pointers.v1.PointerTensorH\000R\rtargetP" +
+      "ointer\022U\n\022target_placeholder\030\003 \001(\0132$.syf" +
+      "t_proto.execution.v1.PlaceholderH\000R\021targ" +
+      "etPlaceholder\022M\n\rtarget_tensor\030\004 \001(\0132&.s" +
+      "yft_proto.types.torch.v1.TorchTensorH\000R\014" +
+      "targetTensor\0221\n\004args\030\005 \003(\0132\035.syft_proto." +
+      "types.syft.v1.ArgR\004args\022N\n\006kwargs\030\006 \003(\0132" +
+      "6.syft_proto.execution.v1.ComputationAct" +
+      "ion.KwargsEntryR\006kwargs\022;\n\nreturn_ids\030\007 " +
+      "\003(\0132\034.syft_proto.types.syft.v1.IdR\tretur" +
+      "nIds\022]\n\026return_placeholder_ids\030\010 \003(\0132\'.s" +
+      "yft_proto.types.syft.v1.PlaceholderIdR\024r" +
+      "eturnPlaceholderIds\032X\n\013KwargsEntry\022\020\n\003ke" +
+      "y\030\001 \001(\tR\003key\0223\n\005value\030\002 \001(\0132\035.syft_proto" +
+      ".types.syft.v1.ArgR\005value:\0028\001B\010\n\006targetB" +
+      "&\n$org.openmined.syftproto.execution.v1b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3120,6 +3010,7 @@ public final class ComputationActionOuterClass {
           org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.ArgOuterClass.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor(),
+          org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.getDescriptor(),
           org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor(),
         });
     internal_static_syft_proto_execution_v1_ComputationAction_descriptor =
@@ -3127,7 +3018,7 @@ public final class ComputationActionOuterClass {
     internal_static_syft_proto_execution_v1_ComputationAction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_ComputationAction_descriptor,
-        new java.lang.String[] { "Command", "TargetId", "TargetPointer", "TargetPlaceholder", "TargetTensor", "Args", "Kwargs", "ReturnIds", "ReturnPlaceholders", "Target", });
+        new java.lang.String[] { "Command", "TargetId", "TargetPointer", "TargetPlaceholder", "TargetTensor", "Args", "Kwargs", "ReturnIds", "ReturnPlaceholderIds", "Target", });
     internal_static_syft_proto_execution_v1_ComputationAction_KwargsEntry_descriptor =
       internal_static_syft_proto_execution_v1_ComputationAction_descriptor.getNestedTypes().get(0);
     internal_static_syft_proto_execution_v1_ComputationAction_KwargsEntry_fieldAccessorTable = new
@@ -3138,6 +3029,7 @@ public final class ComputationActionOuterClass {
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.ArgOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
+    org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.getDescriptor();
     org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor();
   }
 

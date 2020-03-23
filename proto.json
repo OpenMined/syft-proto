@@ -186,7 +186,7 @@
     "syft.execution.communication.CommunicationAction": {
       "code": 55
     },
-    "syft.generic.object_id.ObjectId": {
+    "syft.execution.placeholder_id.PlaceholderId": {
       "code": 56
     }
   }
