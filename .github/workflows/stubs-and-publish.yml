@@ -21,8 +21,8 @@ jobs:
             export UNAME_OS=$(shell uname -s)
             export UNAME_ARCH=$(shell uname -m)
           	curl -sSL \
-		          "https://github.com/bufbuild/buf/releases/download/v$(BUF_VERSION)/buf-$(UNAME_OS)-$(UNAME_ARCH)" \
-		          -o "$(BUF_PATH)"
+              "https://github.com/bufbuild/buf/releases/download/v$(BUF_VERSION)/buf-$(UNAME_OS)-$(UNAME_ARCH)" \
+              -o "$(BUF_PATH)"
             chmod +x "$(BUF_PATH)"
             export PATH=$(abspath $(BUF_PATH)):$(PATH)
 
