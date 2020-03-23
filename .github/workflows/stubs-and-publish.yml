@@ -15,16 +15,16 @@ jobs:
 
       - name: Set up Buf
         run: |
-          mkdir -p $(HOME)/bin
-          export BUF_PATH=$(HOME)/bin/buf
+          mkdir -p $HOME/bin
+          export BUF_PATH=$HOME/bin/buf
           export BUF_VERSION="0.8.0"
-          export UNAME_OS=$(shell uname -s)
-          export UNAME_ARCH=$(shell uname -m)
+          export UNAME_OS=$(uname -s)
+          export UNAME_ARCH=$(uname -m)
           curl -sSL \
-            "https://github.com/bufbuild/buf/releases/download/v$(BUF_VERSION)/buf-$(UNAME_OS)-$(UNAME_ARCH)" \
-            -o "$(BUF_PATH)"
-          chmod +x "$(BUF_PATH)"
-          export PATH=$(abspath $(BUF_PATH)):$(PATH)
+            "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
+            -o "$BUF_PATH"
+          chmod +x "$BUF_PATH"
+          export PATH=$(abspath $BUF_PATH):$PATH
 
       - name: Lint schemas
         run: |
@@ -41,22 +41,22 @@ jobs:
 
       - name: Set up Buf
         run: |
-          mkdir -p $(HOME)/bin
-          export BUF_PATH=$(HOME)/bin/buf
+          mkdir -p $HOME/bin
+          export BUF_PATH=$HOME/bin/buf
           export BUF_VERSION="0.8.0"
-          export UNAME_OS=$(shell uname -s)
-          export UNAME_ARCH=$(shell uname -m)
+          export UNAME_OS=$(uname -s)
+          export UNAME_ARCH=$(uname -m)
           curl -sSL \
-            "https://github.com/bufbuild/buf/releases/download/v$(BUF_VERSION)/buf-$(UNAME_OS)-$(UNAME_ARCH)" \
-            -o "$(BUF_PATH)"
-          chmod +x "$(BUF_PATH)"
-          export PATH=$(abspath $(BUF_PATH)):$(PATH)
+            "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
+            -o "$BUF_PATH"
+          chmod +x "$BUF_PATH"
+          export PATH=$(abspath $BUF_PATH):$PATH
 
       - name: Check for breaking changes
         run: |
           export HTTPS_GIT="https://github.com/OpenMined/syft-proto.git"
           cd protobuf && \
-            buf check breaking --against-input "$(HTTPS_GIT)#branch=master" && \
+            buf check breaking --against-input "${HTTPS_GIT}#branch=master" && \
             cd ..
 
   python:
@@ -73,16 +73,16 @@ jobs:
 
       - name: Set up Buf
         run: |
-          mkdir -p $(HOME)/bin
-          export BUF_PATH=$(HOME)/bin/buf
+          mkdir -p $HOME/bin
+          export BUF_PATH=$HOME/bin/buf
           export BUF_VERSION="0.8.0"
-          export UNAME_OS=$(shell uname -s)
-          export UNAME_ARCH=$(shell uname -m)
+          export UNAME_OS=$(uname -s)
+          export UNAME_ARCH=$(uname -m)
           curl -sSL \
-            "https://github.com/bufbuild/buf/releases/download/v$(BUF_VERSION)/buf-$(UNAME_OS)-$(UNAME_ARCH)" \
-            -o "$(BUF_PATH)"
-          chmod +x "$(BUF_PATH)"
-          export PATH=$(abspath $(BUF_PATH)):$(PATH)
+            "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
+            -o "$BUF_PATH"
+          chmod +x "$BUF_PATH"
+          export PATH=$(abspath $BUF_PATH):$PATH
 
       - name: Build stubs
         run: |
@@ -113,16 +113,16 @@ jobs:
 
       - name: Set up Buf
         run: |
-          mkdir -p $(HOME)/bin
-          export BUF_PATH=$(HOME)/bin/buf
+          mkdir -p $HOME/bin
+          export BUF_PATH=$HOME/bin/buf
           export BUF_VERSION="0.8.0"
-          export UNAME_OS=$(shell uname -s)
-          export UNAME_ARCH=$(shell uname -m)
+          export UNAME_OS=$(uname -s)
+          export UNAME_ARCH=$(uname -m)
           curl -sSL \
-            "https://github.com/bufbuild/buf/releases/download/v$(BUF_VERSION)/buf-$(UNAME_OS)-$(UNAME_ARCH)" \
-            -o "$(BUF_PATH)"
-          chmod +x "$(BUF_PATH)"
-          export PATH=$(abspath $(BUF_PATH)):$(PATH)
+            "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
+            -o "$BUF_PATH"
+          chmod +x "$BUF_PATH"
+          export PATH=$(abspath $BUF_PATH):$PATH
 
       - name: Build stubs
         run: |
