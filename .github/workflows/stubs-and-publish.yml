@@ -71,6 +71,14 @@ jobs:
         with:
           python-version: '3.7'
 
+      - name: Set up protoc
+        run: |
+          PROTOC_ZIP=protoc-3.11.4-linux-x86_64.zip
+          curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.11.4/$PROTOC_ZIP
+          sudo unzip -o $PROTOC_ZIP -d /usr/local bin/protoc
+          sudo unzip -o $PROTOC_ZIP -d /usr/local 'include/*'
+          rm -f $PROTOC_ZIP
+
       - name: Set up Buf
         run: |
           mkdir -p $HOME/bin
@@ -110,6 +118,14 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+
+      - name: Set up protoc
+        run: |
+          PROTOC_ZIP=protoc-3.11.4-linux-x86_64.zip
+          curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.11.4/$PROTOC_ZIP
+          sudo unzip -o $PROTOC_ZIP -d /usr/local bin/protoc
+          sudo unzip -o $PROTOC_ZIP -d /usr/local 'include/*'
+          rm -f $PROTOC_ZIP
 
       - name: Set up Buf
         run: |
