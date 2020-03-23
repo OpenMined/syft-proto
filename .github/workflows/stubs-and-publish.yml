@@ -24,7 +24,7 @@ jobs:
             "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
             -o "$BUF_PATH"
           chmod +x "$BUF_PATH"
-          export PATH=$(abspath $BUF_PATH):$PATH
+          export PATH=$BUF_PATH:$PATH
 
       - name: Lint schemas
         run: |
@@ -50,7 +50,7 @@ jobs:
             "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
             -o "$BUF_PATH"
           chmod +x "$BUF_PATH"
-          export PATH=$(abspath $BUF_PATH):$PATH
+          export PATH=$BUF_PATH:$PATH
 
       - name: Check for breaking changes
         run: |
@@ -82,7 +82,7 @@ jobs:
             "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
             -o "$BUF_PATH"
           chmod +x "$BUF_PATH"
-          export PATH=$(abspath $BUF_PATH):$PATH
+          export PATH=$BUF_PATH:$PATH
 
       - name: Build stubs
         run: |
@@ -122,7 +122,7 @@ jobs:
             "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
             -o "$BUF_PATH"
           chmod +x "$BUF_PATH"
-          export PATH=$(abspath $BUF_PATH):$PATH
+          export PATH=$BUF_PATH:$PATH
 
       - name: Build stubs
         run: |
