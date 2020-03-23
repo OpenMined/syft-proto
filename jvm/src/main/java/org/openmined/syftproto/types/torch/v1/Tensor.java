@@ -20,10 +20,12 @@ public final class Tensor {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return The id.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId();
     /**
@@ -33,10 +35,12 @@ public final class Tensor {
 
     /**
      * <code>.syft_proto.types.torch.v1.TensorData contents_data = 2[json_name = "contentsData"];</code>
+     * @return Whether the contentsData field is set.
      */
     boolean hasContentsData();
     /**
      * <code>.syft_proto.types.torch.v1.TensorData contents_data = 2[json_name = "contentsData"];</code>
+     * @return The contentsData.
      */
     org.openmined.syftproto.types.torch.v1.TensorDataOuterClass.TensorData getContentsData();
     /**
@@ -46,15 +50,18 @@ public final class Tensor {
 
     /**
      * <code>bytes contents_bin = 3[json_name = "contentsBin"];</code>
+     * @return The contentsBin.
      */
     com.google.protobuf.ByteString getContentsBin();
 
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor chain = 4[json_name = "chain"];</code>
+     * @return Whether the chain field is set.
      */
     boolean hasChain();
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor chain = 4[json_name = "chain"];</code>
+     * @return The chain.
      */
     org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getChain();
     /**
@@ -64,10 +71,12 @@ public final class Tensor {
 
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor grad_chain = 5[json_name = "gradChain"];</code>
+     * @return Whether the gradChain field is set.
      */
     boolean hasGradChain();
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor grad_chain = 5[json_name = "gradChain"];</code>
+     * @return The gradChain.
      */
     org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getGradChain();
     /**
@@ -77,39 +86,49 @@ public final class Tensor {
 
     /**
      * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
      * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * @return The count of tags.
      */
     int getTagsCount();
     /**
      * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
      * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
 
     /**
      * <code>string description = 7[json_name = "description"];</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 7[json_name = "description"];</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
+     * @return The enum numeric value on the wire for serializer.
      */
     int getSerializerValue();
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
+     * @return The serializer.
      */
     org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Serializer getSerializer();
 
@@ -337,6 +356,8 @@ public final class Tensor {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -344,6 +365,10 @@ public final class Tensor {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Serializer forNumber(int value) {
         switch (value) {
           case 0: return SERIALIZER_UNSPECIFIED;
@@ -406,7 +431,8 @@ public final class Tensor {
     private int contentsCase_ = 0;
     private java.lang.Object contents_;
     public enum ContentsCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       CONTENTS_DATA(2),
       CONTENTS_BIN(3),
       CONTENTS_NOT_SET(0);
@@ -415,6 +441,8 @@ public final class Tensor {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -445,12 +473,14 @@ public final class Tensor {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id id_;
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return Whether the id field is set.
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return The id.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
@@ -465,12 +495,14 @@ public final class Tensor {
     public static final int CONTENTS_DATA_FIELD_NUMBER = 2;
     /**
      * <code>.syft_proto.types.torch.v1.TensorData contents_data = 2[json_name = "contentsData"];</code>
+     * @return Whether the contentsData field is set.
      */
     public boolean hasContentsData() {
       return contentsCase_ == 2;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TensorData contents_data = 2[json_name = "contentsData"];</code>
+     * @return The contentsData.
      */
     public org.openmined.syftproto.types.torch.v1.TensorDataOuterClass.TensorData getContentsData() {
       if (contentsCase_ == 2) {
@@ -491,6 +523,7 @@ public final class Tensor {
     public static final int CONTENTS_BIN_FIELD_NUMBER = 3;
     /**
      * <code>bytes contents_bin = 3[json_name = "contentsBin"];</code>
+     * @return The contentsBin.
      */
     public com.google.protobuf.ByteString getContentsBin() {
       if (contentsCase_ == 3) {
@@ -503,12 +536,14 @@ public final class Tensor {
     private org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor chain_;
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor chain = 4[json_name = "chain"];</code>
+     * @return Whether the chain field is set.
      */
     public boolean hasChain() {
       return chain_ != null;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor chain = 4[json_name = "chain"];</code>
+     * @return The chain.
      */
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getChain() {
       return chain_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : chain_;
@@ -524,12 +559,14 @@ public final class Tensor {
     private org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor gradChain_;
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor grad_chain = 5[json_name = "gradChain"];</code>
+     * @return Whether the gradChain field is set.
      */
     public boolean hasGradChain() {
       return gradChain_ != null;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor grad_chain = 5[json_name = "gradChain"];</code>
+     * @return The gradChain.
      */
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getGradChain() {
       return gradChain_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : gradChain_;
@@ -545,6 +582,7 @@ public final class Tensor {
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -552,18 +590,23 @@ public final class Tensor {
     }
     /**
      * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
      * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
     /**
      * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -574,6 +617,7 @@ public final class Tensor {
     private volatile java.lang.Object description_;
     /**
      * <code>string description = 7[json_name = "description"];</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -589,6 +633,7 @@ public final class Tensor {
     }
     /**
      * <code>string description = 7[json_name = "description"];</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -608,12 +653,14 @@ public final class Tensor {
     private int serializer_;
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
+     * @return The enum numeric value on the wire for serializer.
      */
     public int getSerializerValue() {
       return serializer_;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
+     * @return The serializer.
      */
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Serializer getSerializer() {
       @SuppressWarnings("deprecation")
@@ -1152,12 +1199,14 @@ public final class Tensor {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> idBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * @return Whether the id field is set.
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * @return The id.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
         if (idBuilder_ == null) {
@@ -1268,12 +1317,14 @@ public final class Tensor {
           org.openmined.syftproto.types.torch.v1.TensorDataOuterClass.TensorData, org.openmined.syftproto.types.torch.v1.TensorDataOuterClass.TensorData.Builder, org.openmined.syftproto.types.torch.v1.TensorDataOuterClass.TensorDataOrBuilder> contentsDataBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.TensorData contents_data = 2[json_name = "contentsData"];</code>
+       * @return Whether the contentsData field is set.
        */
       public boolean hasContentsData() {
         return contentsCase_ == 2;
       }
       /**
        * <code>.syft_proto.types.torch.v1.TensorData contents_data = 2[json_name = "contentsData"];</code>
+       * @return The contentsData.
        */
       public org.openmined.syftproto.types.torch.v1.TensorDataOuterClass.TensorData getContentsData() {
         if (contentsDataBuilder_ == null) {
@@ -1402,6 +1453,7 @@ public final class Tensor {
 
       /**
        * <code>bytes contents_bin = 3[json_name = "contentsBin"];</code>
+       * @return The contentsBin.
        */
       public com.google.protobuf.ByteString getContentsBin() {
         if (contentsCase_ == 3) {
@@ -1411,6 +1463,8 @@ public final class Tensor {
       }
       /**
        * <code>bytes contents_bin = 3[json_name = "contentsBin"];</code>
+       * @param value The contentsBin to set.
+       * @return This builder for chaining.
        */
       public Builder setContentsBin(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1423,6 +1477,7 @@ public final class Tensor {
       }
       /**
        * <code>bytes contents_bin = 3[json_name = "contentsBin"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearContentsBin() {
         if (contentsCase_ == 3) {
@@ -1438,12 +1493,14 @@ public final class Tensor {
           org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> chainBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor chain = 4[json_name = "chain"];</code>
+       * @return Whether the chain field is set.
        */
       public boolean hasChain() {
         return chainBuilder_ != null || chain_ != null;
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor chain = 4[json_name = "chain"];</code>
+       * @return The chain.
        */
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getChain() {
         if (chainBuilder_ == null) {
@@ -1555,12 +1612,14 @@ public final class Tensor {
           org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> gradChainBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor grad_chain = 5[json_name = "gradChain"];</code>
+       * @return Whether the gradChain field is set.
        */
       public boolean hasGradChain() {
         return gradChainBuilder_ != null || gradChain_ != null;
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor grad_chain = 5[json_name = "gradChain"];</code>
+       * @return The gradChain.
        */
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getGradChain() {
         if (gradChainBuilder_ == null) {
@@ -1676,6 +1735,7 @@ public final class Tensor {
       }
       /**
        * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
@@ -1683,18 +1743,23 @@ public final class Tensor {
       }
       /**
        * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
        * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
       /**
        * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -1702,6 +1767,9 @@ public final class Tensor {
       }
       /**
        * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
        */
       public Builder setTags(
           int index, java.lang.String value) {
@@ -1715,6 +1783,8 @@ public final class Tensor {
       }
       /**
        * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTags(
           java.lang.String value) {
@@ -1728,6 +1798,8 @@ public final class Tensor {
       }
       /**
        * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
@@ -1739,6 +1811,7 @@ public final class Tensor {
       }
       /**
        * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1748,6 +1821,8 @@ public final class Tensor {
       }
       /**
        * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -1764,6 +1839,7 @@ public final class Tensor {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 7[json_name = "description"];</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -1779,6 +1855,7 @@ public final class Tensor {
       }
       /**
        * <code>string description = 7[json_name = "description"];</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -1795,6 +1872,8 @@ public final class Tensor {
       }
       /**
        * <code>string description = 7[json_name = "description"];</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -1808,6 +1887,7 @@ public final class Tensor {
       }
       /**
        * <code>string description = 7[json_name = "description"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -1817,6 +1897,8 @@ public final class Tensor {
       }
       /**
        * <code>string description = 7[json_name = "description"];</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -1833,12 +1915,15 @@ public final class Tensor {
       private int serializer_ = 0;
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
+       * @return The enum numeric value on the wire for serializer.
        */
       public int getSerializerValue() {
         return serializer_;
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
+       * @param value The enum numeric value on the wire for serializer to set.
+       * @return This builder for chaining.
        */
       public Builder setSerializerValue(int value) {
         serializer_ = value;
@@ -1847,6 +1932,7 @@ public final class Tensor {
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
+       * @return The serializer.
        */
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Serializer getSerializer() {
         @SuppressWarnings("deprecation")
@@ -1855,6 +1941,8 @@ public final class Tensor {
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
+       * @param value The serializer to set.
+       * @return This builder for chaining.
        */
       public Builder setSerializer(org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Serializer value) {
         if (value == null) {
@@ -1867,6 +1955,7 @@ public final class Tensor {
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSerializer() {
         
