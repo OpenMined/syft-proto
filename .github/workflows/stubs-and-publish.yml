@@ -16,20 +16,19 @@ jobs:
       - name: Set up Buf
         run: |
           mkdir -p $HOME/bin
-          export BUF_PATH=$HOME/bin/buf
+          export BUF=$HOME/bin/buf
           export BUF_VERSION="0.8.0"
           export UNAME_OS=$(uname -s)
           export UNAME_ARCH=$(uname -m)
           curl -sSL \
             "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
-            -o "$BUF_PATH"
-          chmod +x "$BUF_PATH"
-          export PATH=$BUF_PATH:$PATH
+            -o "$BUF"
+          chmod +x "$BUF"
 
       - name: Lint schemas
         run: |
           cd protobuf && \
-            buf check lint && \
+            $BUF check lint && \
             cd ..
 
   breaking:
@@ -42,21 +41,21 @@ jobs:
       - name: Set up Buf
         run: |
           mkdir -p $HOME/bin
-          export BUF_PATH=$HOME/bin/buf
+          export BUF=$HOME/bin/buf
           export BUF_VERSION="0.8.0"
           export UNAME_OS=$(uname -s)
           export UNAME_ARCH=$(uname -m)
           curl -sSL \
             "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
-            -o "$BUF_PATH"
-          chmod +x "$BUF_PATH"
-          export PATH=$BUF_PATH:$PATH
+            -o "$BUF"
+          chmod +x "$BUF"
+          export PATH=$BUF:$PATH
 
       - name: Check for breaking changes
         run: |
           export HTTPS_GIT="https://github.com/OpenMined/syft-proto.git"
           cd protobuf && \
-            buf check breaking --against-input "${HTTPS_GIT}#branch=master" && \
+            $BUF check breaking --against-input "${HTTPS_GIT}#branch=master" && \
             cd ..
 
   python:
@@ -74,20 +73,19 @@ jobs:
       - name: Set up Buf
         run: |
           mkdir -p $HOME/bin
-          export BUF_PATH=$HOME/bin/buf
+          export BUF=$HOME/bin/buf
           export BUF_VERSION="0.8.0"
           export UNAME_OS=$(uname -s)
           export UNAME_ARCH=$(uname -m)
           curl -sSL \
             "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
-            -o "$BUF_PATH"
-          chmod +x "$BUF_PATH"
-          export PATH=$BUF_PATH:$PATH
+            -o "$BUF"
+          chmod +x "$BUF"
 
       - name: Build stubs
         run: |
           cd protobuf && \
-            buf image build -o - | protoc --descriptor_set_in=/dev/stdin --python_out=../ $(buf image build -o - | buf ls-files --input -) && \
+            $BUF image build -o - | protoc --descriptor_set_in=/dev/stdin --python_out=../ $($BUF image build -o - | $BUF ls-files --input -) && \
             cd ..
           find syft_proto/ -type d -print0 | \
             while IFS= read -rd '' dir; do touch "$dir/__init__.py"; done
@@ -114,20 +112,19 @@ jobs:
       - name: Set up Buf
         run: |
           mkdir -p $HOME/bin
-          export BUF_PATH=$HOME/bin/buf
+          export BUF=$HOME/bin/buf
           export BUF_VERSION="0.8.0"
           export UNAME_OS=$(uname -s)
           export UNAME_ARCH=$(uname -m)
           curl -sSL \
             "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
-            -o "$BUF_PATH"
-          chmod +x "$BUF_PATH"
-          export PATH=$BUF_PATH:$PATH
+            -o "$BUF"
+          chmod +x "$BUF"
 
       - name: Build stubs
         run: |
           cd protobuf && \
-            buf image build -o - | protoc --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java $(buf image build -o - | buf ls-files --input -) && \
+            $BUF image build -o - | protoc --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java $($BUF image build -o - | $BUF ls-files --input -) && \
             cd ..
           ./jvm/gradlew cleanFiles install
 
