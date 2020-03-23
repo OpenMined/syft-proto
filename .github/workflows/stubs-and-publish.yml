@@ -22,13 +22,13 @@ jobs:
           export UNAME_ARCH=$(uname -m)
           curl -sSL \
             "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
-            -o "$BUF"
-          chmod +x "$BUF"
+            -o "$HOME/bin/buf"
+          chmod +x "$HOME/bin/buf"
 
       - name: Lint schemas
         run: |
           cd protobuf && \
-            $BUF check lint && \
+            $HOME/bin/buf check lint && \
             cd ..
 
   breaking:
@@ -47,15 +47,14 @@ jobs:
           export UNAME_ARCH=$(uname -m)
           curl -sSL \
             "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
-            -o "$BUF"
-          chmod +x "$BUF"
-          export PATH=$BUF:$PATH
+            -o "$HOME/bin/buf"
+          chmod +x "$HOME/bin/buf"
 
       - name: Check for breaking changes
         run: |
           export HTTPS_GIT="https://github.com/OpenMined/syft-proto.git"
           cd protobuf && \
-            $BUF check breaking --against-input "${HTTPS_GIT}#branch=master" && \
+            $HOME/bin/buf check breaking --against-input "${HTTPS_GIT}#branch=master" && \
             cd ..
 
   python:
@@ -79,13 +78,13 @@ jobs:
           export UNAME_ARCH=$(uname -m)
           curl -sSL \
             "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
-            -o "$BUF"
-          chmod +x "$BUF"
+            -o "$HOME/bin/buf"
+          chmod +x "$HOME/bin/buf"
 
       - name: Build stubs
         run: |
           cd protobuf && \
-            $BUF image build -o - | protoc --descriptor_set_in=/dev/stdin --python_out=../ $($BUF image build -o - | $BUF ls-files --input -) && \
+            $HOME/bin/buf image build -o - | protoc --descriptor_set_in=/dev/stdin --python_out=../ $($HOME/bin/buf image build -o - | $HOME/bin/buf ls-files --input -) && \
             cd ..
           find syft_proto/ -type d -print0 | \
             while IFS= read -rd '' dir; do touch "$dir/__init__.py"; done
@@ -118,13 +117,13 @@ jobs:
           export UNAME_ARCH=$(uname -m)
           curl -sSL \
             "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
-            -o "$BUF"
-          chmod +x "$BUF"
+            -o "$HOME/bin/buf"
+          chmod +x "$HOME/bin/buf"
 
       - name: Build stubs
         run: |
           cd protobuf && \
-            $BUF image build -o - | protoc --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java $($BUF image build -o - | $BUF ls-files --input -) && \
+            $HOME/bin/buf image build -o - | protoc --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java $($HOME/bin/buf image build -o - | $HOME/bin/buf ls-files --input -) && \
             cd ..
           ./jvm/gradlew cleanFiles install
 
