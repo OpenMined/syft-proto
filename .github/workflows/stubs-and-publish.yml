@@ -33,7 +33,7 @@ jobs:
 
   breaking:
     runs-on: ubuntu-latest
-    name: Run Buf breaking change detection
+    name: Detect breaking changes
 
     steps:
       - uses: actions/checkout@v2
@@ -50,11 +50,11 @@ jobs:
             -o "$HOME/bin/buf"
           chmod +x "$HOME/bin/buf"
 
-      - name: Check for breaking changes
+      - name: Run breaking change detection
         run: |
           export HTTPS_GIT="https://github.com/OpenMined/syft-proto.git"
           cd protobuf && \
-            $HOME/bin/buf check breaking --against-input "${HTTPS_GIT}#branch=master" && \
+            $HOME/bin/buf check breaking --against-input "${HTTPS_GIT}#branch=master" --against-input-config '{"build":{"roots":["protobuf"]}}' && \
             cd ..
 
   python:
