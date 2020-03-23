@@ -28,7 +28,32 @@ jobs:
 
       - name: Lint Protobuf schemas
         run: |
-          cd protobuf && buf check lint && cd ..          
+          cd protobuf && buf check lint && cd ..
+
+  breaking:
+    runs-on: ubuntu-latest
+    name: Run Buf breaking change detection
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Buf
+        run: |
+            mkdir -p $(HOME)/bin
+            export BUF_PATH=$(HOME)/bin/buf
+            export BUF_VERSION="0.8.0"
+            export UNAME_OS=$(shell uname -s)
+            export UNAME_ARCH=$(shell uname -m)
+          	curl -sSL \
+              "https://github.com/bufbuild/buf/releases/download/v$(BUF_VERSION)/buf-$(UNAME_OS)-$(UNAME_ARCH)" \
+              -o "$(BUF_PATH)"
+            chmod +x "$(BUF_PATH)"
+            export PATH=$(abspath $(BUF_PATH)):$(PATH)
+
+      - name: Check for breaking changes in Protobuf schemas
+        run: |
+          export HTTPS_GIT="https://github.com/OpenMined/syft-proto.git"
+          cd protobuf && buf check breaking --against-input "$(HTTPS_GIT)#branch=master" && cd ..
 
   javascript:
     needs: lint
