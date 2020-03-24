@@ -3,7 +3,6 @@ syntax = "proto3";
 package syft_proto.execution.v1;
 option java_package = "org.openmined.syftproto.execution.v1";
 
-import "syft_proto/execution/v1/placeholder.proto";
 import "syft_proto/execution/v1/placeholder_id.proto";
 import "syft_proto/generic/pointers/v1/pointer_tensor.proto";
 import "syft_proto/types/syft/v1/arg.proto";
