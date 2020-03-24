@@ -13,7 +13,6 @@ _sym_db = _symbol_database.Default()
 
 from syft_proto.execution.v1 import state_tensor_pb2 as syft__proto_dot_execution_dot_v1_dot_state__tensor__pb2
 from syft_proto.execution.v1 import placeholder_pb2 as syft__proto_dot_execution_dot_v1_dot_placeholder__pb2
-from syft_proto.types.torch.v1 import tensor_pb2 as syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
-  serialized_pb=b'\n#syft_proto/execution/v1/state.proto\x12\x17syft_proto.execution.v1\x1a*syft_proto/execution/v1/state_tensor.proto\x1a)syft_proto/execution/v1/placeholder.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\x91\x01\n\x05State\x12H\n\x0cplaceholders\x18\x01 \x03(\x0b\x32$.syft_proto.execution.v1.PlaceholderR\x0cplaceholders\x12>\n\x07tensors\x18\x02 \x03(\x0b\x32$.syft_proto.execution.v1.StateTensorR\x07tensorsB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
+  serialized_pb=b'\n#syft_proto/execution/v1/state.proto\x12\x17syft_proto.execution.v1\x1a*syft_proto/execution/v1/state_tensor.proto\x1a)syft_proto/execution/v1/placeholder.proto\"\x91\x01\n\x05State\x12H\n\x0cplaceholders\x18\x01 \x03(\x0b\x32$.syft_proto.execution.v1.PlaceholderR\x0cplaceholders\x12>\n\x07tensors\x18\x02 \x03(\x0b\x32$.syft_proto.execution.v1.StateTensorR\x07tensorsB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
   ,
-  dependencies=[syft__proto_dot_execution_dot_v1_dot_state__tensor__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_placeholder__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
+  dependencies=[syft__proto_dot_execution_dot_v1_dot_state__tensor__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_placeholder__pb2.DESCRIPTOR,])
 
 
 
@@ -61,8 +60,8 @@ _STATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=192,
-  serialized_end=337,
+  serialized_start=152,
+  serialized_end=297,
 )
 
 _STATE.fields_by_name['placeholders'].message_type = syft__proto_dot_execution_dot_v1_dot_placeholder__pb2._PLACEHOLDER

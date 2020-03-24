@@ -2274,24 +2274,23 @@ public final class ProtocolOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n&syft_proto/execution/v1/protocol.proto" +
-      "\022\027syft_proto.execution.v1\032\033google/protob" +
-      "uf/empty.proto\032!syft_proto/types/syft/v1" +
-      "/id.proto\"\355\001\n\010Protocol\022,\n\002id\030\001 \001(\0132\034.syf" +
-      "t_proto.types.syft.v1.IdR\002id\022\022\n\004tags\030\002 \003" +
-      "(\tR\004tags\022 \n\013description\030\003 \001(\tR\013descripti" +
-      "on\022)\n\020workers_resolved\030\004 \001(\010R\017workersRes" +
-      "olved\022R\n\020plan_assignments\030\005 \003(\0132\'.syft_p" +
-      "roto.execution.v1.PlanAssignmentR\017planAs" +
-      "signments\"\202\001\n\016PlanAssignment\0225\n\007plan_id\030" +
-      "\001 \001(\0132\034.syft_proto.types.syft.v1.IdR\006pla" +
-      "nId\0229\n\tworker_id\030\002 \001(\0132\034.syft_proto.type" +
-      "s.syft.v1.IdR\010workerIdB&\n$org.openmined." +
-      "syftproto.execution.v1b\006proto3"
+      "\022\027syft_proto.execution.v1\032!syft_proto/ty" +
+      "pes/syft/v1/id.proto\"\355\001\n\010Protocol\022,\n\002id\030" +
+      "\001 \001(\0132\034.syft_proto.types.syft.v1.IdR\002id\022" +
+      "\022\n\004tags\030\002 \003(\tR\004tags\022 \n\013description\030\003 \001(\t" +
+      "R\013description\022)\n\020workers_resolved\030\004 \001(\010R" +
+      "\017workersResolved\022R\n\020plan_assignments\030\005 \003" +
+      "(\0132\'.syft_proto.execution.v1.PlanAssignm" +
+      "entR\017planAssignments\"\202\001\n\016PlanAssignment\022" +
+      "5\n\007plan_id\030\001 \001(\0132\034.syft_proto.types.syft" +
+      ".v1.IdR\006planId\0229\n\tworker_id\030\002 \001(\0132\034.syft" +
+      "_proto.types.syft.v1.IdR\010workerIdB&\n$org" +
+      ".openmined.syftproto.execution.v1b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.EmptyProto.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor(),
         });
     internal_static_syft_proto_execution_v1_Protocol_descriptor =
@@ -2306,7 +2305,6 @@ public final class ProtocolOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_PlanAssignment_descriptor,
         new java.lang.String[] { "PlanId", "WorkerId", });
-    com.google.protobuf.EmptyProto.getDescriptor();
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
   }
 

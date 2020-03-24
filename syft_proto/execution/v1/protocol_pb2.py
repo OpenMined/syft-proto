@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from syft_proto.types.syft.v1 import id_pb2 as syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2
 
 
@@ -20,9 +19,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
-  serialized_pb=b'\n&syft_proto/execution/v1/protocol.proto\x12\x17syft_proto.execution.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a!syft_proto/types/syft/v1/id.proto\"\xed\x01\n\x08Protocol\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x12\n\x04tags\x18\x02 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12)\n\x10workers_resolved\x18\x04 \x01(\x08R\x0fworkersResolved\x12R\n\x10plan_assignments\x18\x05 \x03(\x0b\x32\'.syft_proto.execution.v1.PlanAssignmentR\x0fplanAssignments\"\x82\x01\n\x0ePlanAssignment\x12\x35\n\x07plan_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x06planId\x12\x39\n\tworker_id\x18\x02 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08workerIdB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
+  serialized_pb=b'\n&syft_proto/execution/v1/protocol.proto\x12\x17syft_proto.execution.v1\x1a!syft_proto/types/syft/v1/id.proto\"\xed\x01\n\x08Protocol\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x12\n\x04tags\x18\x02 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12)\n\x10workers_resolved\x18\x04 \x01(\x08R\x0fworkersResolved\x12R\n\x10plan_assignments\x18\x05 \x03(\x0b\x32\'.syft_proto.execution.v1.PlanAssignmentR\x0fplanAssignments\"\x82\x01\n\x0ePlanAssignment\x12\x35\n\x07plan_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x06planId\x12\x39\n\tworker_id\x18\x02 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08workerIdB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
+  dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
 
 
 
@@ -81,8 +80,8 @@ _PROTOCOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=132,
-  serialized_end=369,
+  serialized_start=103,
+  serialized_end=340,
 )
 
 
@@ -119,8 +118,8 @@ _PLANASSIGNMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=372,
-  serialized_end=502,
+  serialized_start=343,
+  serialized_end=473,
 )
 
 _PROTOCOL.fields_by_name['id'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID

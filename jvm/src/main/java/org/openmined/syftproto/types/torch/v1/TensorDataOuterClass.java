@@ -3851,33 +3851,31 @@ public final class TensorDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n+syft_proto/types/torch/v1/tensor_data." +
-      "proto\022\031syft_proto.types.torch.v1\032!syft_p" +
-      "roto/types/syft/v1/id.proto\032$syft_proto/" +
-      "types/torch/v1/size.proto\"\276\005\n\nTensorData" +
-      "\0225\n\005shape\030\001 \001(\0132\037.syft_proto.types.torch" +
-      ".v1.SizeR\005shape\022\024\n\005dtype\030\002 \001(\tR\005dtype\022!\n" +
-      "\014is_quantized\030\003 \001(\010R\013isQuantized\022\024\n\005scal" +
-      "e\030\004 \001(\002R\005scale\022\035\n\nzero_point\030\005 \001(\005R\tzero" +
-      "Point\022%\n\016contents_uint8\030\020 \003(\rR\rcontentsU" +
-      "int8\022#\n\rcontents_int8\030\021 \003(\005R\014contentsInt" +
-      "8\022%\n\016contents_int16\030\022 \003(\005R\rcontentsInt16" +
-      "\022%\n\016contents_int32\030\023 \003(\005R\rcontentsInt32\022" +
-      "%\n\016contents_int64\030\024 \003(\003R\rcontentsInt64\022)" +
-      "\n\020contents_float16\030\025 \003(\002R\017contentsFloat1" +
-      "6\022)\n\020contents_float32\030\026 \003(\002R\017contentsFlo" +
-      "at32\022)\n\020contents_float64\030\027 \003(\001R\017contents" +
-      "Float64\022#\n\rcontents_bool\030\030 \003(\010R\014contents" +
-      "Bool\022%\n\016contents_qint8\030\031 \003(\021R\rcontentsQi" +
-      "nt8\022\'\n\017contents_quint8\030\032 \003(\rR\016contentsQu" +
-      "int8\022\'\n\017contents_qint32\030\033 \003(\021R\016contentsQ" +
-      "int32\022+\n\021contents_bfloat16\030\034 \003(\002R\020conten" +
-      "tsBfloat16B(\n&org.openmined.syftproto.ty" +
-      "pes.torch.v1b\006proto3"
+      "proto\022\031syft_proto.types.torch.v1\032$syft_p" +
+      "roto/types/torch/v1/size.proto\"\276\005\n\nTenso" +
+      "rData\0225\n\005shape\030\001 \001(\0132\037.syft_proto.types." +
+      "torch.v1.SizeR\005shape\022\024\n\005dtype\030\002 \001(\tR\005dty" +
+      "pe\022!\n\014is_quantized\030\003 \001(\010R\013isQuantized\022\024\n" +
+      "\005scale\030\004 \001(\002R\005scale\022\035\n\nzero_point\030\005 \001(\005R" +
+      "\tzeroPoint\022%\n\016contents_uint8\030\020 \003(\rR\rcont" +
+      "entsUint8\022#\n\rcontents_int8\030\021 \003(\005R\014conten" +
+      "tsInt8\022%\n\016contents_int16\030\022 \003(\005R\rcontents" +
+      "Int16\022%\n\016contents_int32\030\023 \003(\005R\rcontentsI" +
+      "nt32\022%\n\016contents_int64\030\024 \003(\003R\rcontentsIn" +
+      "t64\022)\n\020contents_float16\030\025 \003(\002R\017contentsF" +
+      "loat16\022)\n\020contents_float32\030\026 \003(\002R\017conten" +
+      "tsFloat32\022)\n\020contents_float64\030\027 \003(\001R\017con" +
+      "tentsFloat64\022#\n\rcontents_bool\030\030 \003(\010R\014con" +
+      "tentsBool\022%\n\016contents_qint8\030\031 \003(\021R\rconte" +
+      "ntsQint8\022\'\n\017contents_quint8\030\032 \003(\rR\016conte" +
+      "ntsQuint8\022\'\n\017contents_qint32\030\033 \003(\021R\016cont" +
+      "entsQint32\022+\n\021contents_bfloat16\030\034 \003(\002R\020c" +
+      "ontentsBfloat16B(\n&org.openmined.syftpro" +
+      "to.types.torch.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor(),
           org.openmined.syftproto.types.torch.v1.SizeOuterClass.getDescriptor(),
         });
     internal_static_syft_proto_types_torch_v1_TensorData_descriptor =
@@ -3886,7 +3884,6 @@ public final class TensorDataOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_types_torch_v1_TensorData_descriptor,
         new java.lang.String[] { "Shape", "Dtype", "IsQuantized", "Scale", "ZeroPoint", "ContentsUint8", "ContentsInt8", "ContentsInt16", "ContentsInt32", "ContentsInt64", "ContentsFloat16", "ContentsFloat32", "ContentsFloat64", "ContentsBool", "ContentsQint8", "ContentsQuint8", "ContentsQint32", "ContentsBfloat16", });
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
     org.openmined.syftproto.types.torch.v1.SizeOuterClass.getDescriptor();
   }
 

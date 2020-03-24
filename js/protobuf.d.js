@@ -218,17 +218,110 @@ export namespace syft_proto {
                 public toJSON(): { [k: string]: any };
             }
 
+            /** Properties of a PlaceholderId. */
+            interface IPlaceholderId {
+
+                /** PlaceholderId id */
+                id?: (syft_proto.types.syft.v1.IId|null);
+            }
+
+            /** Represents a PlaceholderId. */
+            class PlaceholderId implements IPlaceholderId {
+
+                /**
+                 * Constructs a new PlaceholderId.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.execution.v1.IPlaceholderId);
+
+                /** PlaceholderId id. */
+                public id?: (syft_proto.types.syft.v1.IId|null);
+
+                /**
+                 * Creates a new PlaceholderId instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns PlaceholderId instance
+                 */
+                public static create(properties?: syft_proto.execution.v1.IPlaceholderId): syft_proto.execution.v1.PlaceholderId;
+
+                /**
+                 * Encodes the specified PlaceholderId message. Does not implicitly {@link syft_proto.execution.v1.PlaceholderId.verify|verify} messages.
+                 * @param message PlaceholderId message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.execution.v1.IPlaceholderId, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified PlaceholderId message, length delimited. Does not implicitly {@link syft_proto.execution.v1.PlaceholderId.verify|verify} messages.
+                 * @param message PlaceholderId message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.execution.v1.IPlaceholderId, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a PlaceholderId message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns PlaceholderId
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.PlaceholderId;
+
+                /**
+                 * Decodes a PlaceholderId message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns PlaceholderId
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.PlaceholderId;
+
+                /**
+                 * Verifies a PlaceholderId message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a PlaceholderId message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns PlaceholderId
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.PlaceholderId;
+
+                /**
+                 * Creates a plain object from a PlaceholderId message. Also converts values to other types if specified.
+                 * @param message PlaceholderId
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.execution.v1.PlaceholderId, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this PlaceholderId to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
             /** Properties of a ComputationAction. */
             interface IComputationAction {
 
                 /** ComputationAction command */
                 command?: (string|null);
 
+                /** ComputationAction target_id */
+                target_id?: (syft_proto.types.syft.v1.IId|null);
+
                 /** ComputationAction target_pointer */
                 target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
-                /** ComputationAction target_placeholder */
-                target_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
+                /** ComputationAction target_placeholder_id */
+                target_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
 
                 /** ComputationAction target_tensor */
                 target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
@@ -242,8 +335,8 @@ export namespace syft_proto {
                 /** ComputationAction return_ids */
                 return_ids?: (syft_proto.types.syft.v1.IId[]|null);
 
-                /** ComputationAction return_placeholders */
-                return_placeholders?: (syft_proto.execution.v1.IPlaceholder[]|null);
+                /** ComputationAction return_placeholder_ids */
+                return_placeholder_ids?: (syft_proto.execution.v1.IPlaceholderId[]|null);
             }
 
             /** Represents a ComputationAction. */
@@ -258,11 +351,14 @@ export namespace syft_proto {
                 /** ComputationAction command. */
                 public command: string;
 
+                /** ComputationAction target_id. */
+                public target_id?: (syft_proto.types.syft.v1.IId|null);
+
                 /** ComputationAction target_pointer. */
                 public target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
-                /** ComputationAction target_placeholder. */
-                public target_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
+                /** ComputationAction target_placeholder_id. */
+                public target_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
 
                 /** ComputationAction target_tensor. */
                 public target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
@@ -276,11 +372,11 @@ export namespace syft_proto {
                 /** ComputationAction return_ids. */
                 public return_ids: syft_proto.types.syft.v1.IId[];
 
-                /** ComputationAction return_placeholders. */
-                public return_placeholders: syft_proto.execution.v1.IPlaceholder[];
+                /** ComputationAction return_placeholder_ids. */
+                public return_placeholder_ids: syft_proto.execution.v1.IPlaceholderId[];
 
                 /** ComputationAction target. */
-                public target?: ("target_pointer"|"target_placeholder"|"target_tensor");
+                public target?: ("target_id"|"target_pointer"|"target_placeholder_id"|"target_tensor");
 
                 /**
                  * Creates a new ComputationAction instance using the specified properties.
@@ -936,6 +1032,9 @@ export namespace syft_proto {
 
                     /** Arg arg_placeholder */
                     arg_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
+
+                    /** Arg arg_placeholder_id */
+                    arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
                 }
 
                 /** Represents an Arg. */
@@ -974,8 +1073,11 @@ export namespace syft_proto {
                     /** Arg arg_placeholder. */
                     public arg_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
 
+                    /** Arg arg_placeholder_id. */
+                    public arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+
                     /** Arg arg. */
-                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder");
+                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id");
 
                     /**
                      * Creates a new Arg instance using the specified properties.

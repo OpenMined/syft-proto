@@ -1186,8 +1186,7 @@ public final class StateOuterClass {
       "\n#syft_proto/execution/v1/state.proto\022\027s" +
       "yft_proto.execution.v1\032*syft_proto/execu" +
       "tion/v1/state_tensor.proto\032)syft_proto/e" +
-      "xecution/v1/placeholder.proto\032&syft_prot" +
-      "o/types/torch/v1/tensor.proto\"\221\001\n\005State\022" +
+      "xecution/v1/placeholder.proto\"\221\001\n\005State\022" +
       "H\n\014placeholders\030\001 \003(\0132$.syft_proto.execu" +
       "tion.v1.PlaceholderR\014placeholders\022>\n\007ten" +
       "sors\030\002 \003(\0132$.syft_proto.execution.v1.Sta" +
@@ -1199,7 +1198,6 @@ public final class StateOuterClass {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.openmined.syftproto.execution.v1.StateTensorOuterClass.getDescriptor(),
           org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor(),
-          org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor(),
         });
     internal_static_syft_proto_execution_v1_State_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1209,7 +1207,6 @@ public final class StateOuterClass {
         new java.lang.String[] { "Placeholders", "Tensors", });
     org.openmined.syftproto.execution.v1.StateTensorOuterClass.getDescriptor();
     org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor();
-    org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
