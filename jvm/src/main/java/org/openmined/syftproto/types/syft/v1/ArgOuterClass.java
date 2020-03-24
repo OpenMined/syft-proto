@@ -124,19 +124,19 @@ public final class ArgOuterClass {
     org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder getArgPlaceholderOrBuilder();
 
     /**
-     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
-     * @return Whether the argPlaceholderid field is set.
+     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+     * @return Whether the argPlaceholderId field is set.
      */
-    boolean hasArgPlaceholderid();
+    boolean hasArgPlaceholderId();
     /**
-     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
-     * @return The argPlaceholderid.
+     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+     * @return The argPlaceholderId.
      */
-    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getArgPlaceholderid();
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getArgPlaceholderId();
     /**
-     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
+     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
      */
-    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getArgPlaceholderidOrBuilder();
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getArgPlaceholderIdOrBuilder();
 
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.ArgCase getArgCase();
   }
@@ -336,7 +336,7 @@ public final class ArgOuterClass {
       ARG_TORCH_PARAM(7),
       ARG_POINTER_TENSOR(8),
       ARG_PLACEHOLDER(9),
-      ARG_PLACEHOLDERID(10),
+      ARG_PLACEHOLDER_ID(10),
       ARG_NOT_SET(0);
       private final int value;
       private ArgCase(int value) {
@@ -363,7 +363,7 @@ public final class ArgOuterClass {
           case 7: return ARG_TORCH_PARAM;
           case 8: return ARG_POINTER_TENSOR;
           case 9: return ARG_PLACEHOLDER;
-          case 10: return ARG_PLACEHOLDERID;
+          case 10: return ARG_PLACEHOLDER_ID;
           case 0: return ARG_NOT_SET;
           default: return null;
         }
@@ -600,28 +600,28 @@ public final class ArgOuterClass {
       return org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
     }
 
-    public static final int ARG_PLACEHOLDERID_FIELD_NUMBER = 10;
+    public static final int ARG_PLACEHOLDER_ID_FIELD_NUMBER = 10;
     /**
-     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
-     * @return Whether the argPlaceholderid field is set.
+     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+     * @return Whether the argPlaceholderId field is set.
      */
-    public boolean hasArgPlaceholderid() {
+    public boolean hasArgPlaceholderId() {
       return argCase_ == 10;
     }
     /**
-     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
-     * @return The argPlaceholderid.
+     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+     * @return The argPlaceholderId.
      */
-    public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getArgPlaceholderid() {
+    public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getArgPlaceholderId() {
       if (argCase_ == 10) {
          return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_;
       }
       return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
     }
     /**
-     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
+     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
      */
-    public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getArgPlaceholderidOrBuilder() {
+    public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getArgPlaceholderIdOrBuilder() {
       if (argCase_ == 10) {
          return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_;
       }
@@ -781,8 +781,8 @@ public final class ArgOuterClass {
               .equals(other.getArgPlaceholder())) return false;
           break;
         case 10:
-          if (!getArgPlaceholderid()
-              .equals(other.getArgPlaceholderid())) return false;
+          if (!getArgPlaceholderId()
+              .equals(other.getArgPlaceholderId())) return false;
           break;
         case 0:
         default:
@@ -838,8 +838,8 @@ public final class ArgOuterClass {
           hash = (53 * hash) + getArgPlaceholder().hashCode();
           break;
         case 10:
-          hash = (37 * hash) + ARG_PLACEHOLDERID_FIELD_NUMBER;
-          hash = (53 * hash) + getArgPlaceholderid().hashCode();
+          hash = (37 * hash) + ARG_PLACEHOLDER_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getArgPlaceholderId().hashCode();
           break;
         case 0:
         default:
@@ -1053,10 +1053,10 @@ public final class ArgOuterClass {
           }
         }
         if (argCase_ == 10) {
-          if (argPlaceholderidBuilder_ == null) {
+          if (argPlaceholderIdBuilder_ == null) {
             result.arg_ = arg_;
           } else {
-            result.arg_ = argPlaceholderidBuilder_.build();
+            result.arg_ = argPlaceholderIdBuilder_.build();
           }
         }
         result.argCase_ = argCase_;
@@ -1147,8 +1147,8 @@ public final class ArgOuterClass {
             mergeArgPlaceholder(other.getArgPlaceholder());
             break;
           }
-          case ARG_PLACEHOLDERID: {
-            mergeArgPlaceholderid(other.getArgPlaceholderid());
+          case ARG_PLACEHOLDER_ID: {
+            mergeArgPlaceholderId(other.getArgPlaceholderId());
             break;
           }
           case ARG_NOT_SET: {
@@ -2079,66 +2079,66 @@ public final class ArgOuterClass {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> argPlaceholderidBuilder_;
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> argPlaceholderIdBuilder_;
       /**
-       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
-       * @return Whether the argPlaceholderid field is set.
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+       * @return Whether the argPlaceholderId field is set.
        */
-      public boolean hasArgPlaceholderid() {
+      public boolean hasArgPlaceholderId() {
         return argCase_ == 10;
       }
       /**
-       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
-       * @return The argPlaceholderid.
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+       * @return The argPlaceholderId.
        */
-      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getArgPlaceholderid() {
-        if (argPlaceholderidBuilder_ == null) {
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getArgPlaceholderId() {
+        if (argPlaceholderIdBuilder_ == null) {
           if (argCase_ == 10) {
             return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_;
           }
           return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
         } else {
           if (argCase_ == 10) {
-            return argPlaceholderidBuilder_.getMessage();
+            return argPlaceholderIdBuilder_.getMessage();
           }
           return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
        */
-      public Builder setArgPlaceholderid(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
-        if (argPlaceholderidBuilder_ == null) {
+      public Builder setArgPlaceholderId(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+        if (argPlaceholderIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           arg_ = value;
           onChanged();
         } else {
-          argPlaceholderidBuilder_.setMessage(value);
+          argPlaceholderIdBuilder_.setMessage(value);
         }
         argCase_ = 10;
         return this;
       }
       /**
-       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
        */
-      public Builder setArgPlaceholderid(
+      public Builder setArgPlaceholderId(
           org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
-        if (argPlaceholderidBuilder_ == null) {
+        if (argPlaceholderIdBuilder_ == null) {
           arg_ = builderForValue.build();
           onChanged();
         } else {
-          argPlaceholderidBuilder_.setMessage(builderForValue.build());
+          argPlaceholderIdBuilder_.setMessage(builderForValue.build());
         }
         argCase_ = 10;
         return this;
       }
       /**
-       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
        */
-      public Builder mergeArgPlaceholderid(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
-        if (argPlaceholderidBuilder_ == null) {
+      public Builder mergeArgPlaceholderId(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+        if (argPlaceholderIdBuilder_ == null) {
           if (argCase_ == 10 &&
               arg_ != org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance()) {
             arg_ = org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.newBuilder((org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_)
@@ -2149,18 +2149,18 @@ public final class ArgOuterClass {
           onChanged();
         } else {
           if (argCase_ == 10) {
-            argPlaceholderidBuilder_.mergeFrom(value);
+            argPlaceholderIdBuilder_.mergeFrom(value);
           }
-          argPlaceholderidBuilder_.setMessage(value);
+          argPlaceholderIdBuilder_.setMessage(value);
         }
         argCase_ = 10;
         return this;
       }
       /**
-       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
        */
-      public Builder clearArgPlaceholderid() {
-        if (argPlaceholderidBuilder_ == null) {
+      public Builder clearArgPlaceholderId() {
+        if (argPlaceholderIdBuilder_ == null) {
           if (argCase_ == 10) {
             argCase_ = 0;
             arg_ = null;
@@ -2171,22 +2171,22 @@ public final class ArgOuterClass {
             argCase_ = 0;
             arg_ = null;
           }
-          argPlaceholderidBuilder_.clear();
+          argPlaceholderIdBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
        */
-      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder getArgPlaceholderidBuilder() {
-        return getArgPlaceholderidFieldBuilder().getBuilder();
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder getArgPlaceholderIdBuilder() {
+        return getArgPlaceholderIdFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
        */
-      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getArgPlaceholderidOrBuilder() {
-        if ((argCase_ == 10) && (argPlaceholderidBuilder_ != null)) {
-          return argPlaceholderidBuilder_.getMessageOrBuilder();
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getArgPlaceholderIdOrBuilder() {
+        if ((argCase_ == 10) && (argPlaceholderIdBuilder_ != null)) {
+          return argPlaceholderIdBuilder_.getMessageOrBuilder();
         } else {
           if (argCase_ == 10) {
             return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_;
@@ -2195,16 +2195,16 @@ public final class ArgOuterClass {
         }
       }
       /**
-       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10[json_name = "argPlaceholderid"];</code>
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
-          getArgPlaceholderidFieldBuilder() {
-        if (argPlaceholderidBuilder_ == null) {
+          getArgPlaceholderIdFieldBuilder() {
+        if (argPlaceholderIdBuilder_ == null) {
           if (!(argCase_ == 10)) {
             arg_ = org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
           }
-          argPlaceholderidBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          argPlaceholderIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder>(
                   (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_,
                   getParentForChildren(),
@@ -2213,7 +2213,7 @@ public final class ArgOuterClass {
         }
         argCase_ = 10;
         onChanged();;
-        return argPlaceholderidBuilder_;
+        return argPlaceholderIdBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2290,7 +2290,7 @@ public final class ArgOuterClass {
       "roto\032&syft_proto/types/torch/v1/tensor.p" +
       "roto\032$syft_proto/types/syft/v1/shape.pro" +
       "to\032)syft_proto/types/torch/v1/parameter." +
-      "proto\"\344\004\n\003Arg\022\033\n\010arg_bool\030\001 \001(\010H\000R\007argBo" +
+      "proto\"\345\004\n\003Arg\022\033\n\010arg_bool\030\001 \001(\010H\000R\007argBo" +
       "ol\022\031\n\007arg_int\030\002 \001(\005H\000R\006argInt\022\035\n\targ_flo" +
       "at\030\003 \001(\002H\000R\010argFloat\022\037\n\narg_string\030\004 \001(\t" +
       "H\000R\targString\022>\n\targ_shape\030\005 \001(\0132\037.syft_" +
@@ -2303,10 +2303,10 @@ public final class ArgOuterClass {
       "pointers.v1.PointerTensorH\000R\020argPointerT" +
       "ensor\022O\n\017arg_placeholder\030\t \001(\0132$.syft_pr" +
       "oto.execution.v1.PlaceholderH\000R\016argPlace" +
-      "holder\022U\n\021arg_placeholderid\030\n \001(\0132&.syft" +
-      "_proto.execution.v1.PlaceholderIdH\000R\020arg" +
-      "PlaceholderidB\005\n\003argB\'\n%org.openmined.sy" +
-      "ftproto.types.syft.v1b\006proto3"
+      "holder\022V\n\022arg_placeholder_id\030\n \001(\0132&.syf" +
+      "t_proto.execution.v1.PlaceholderIdH\000R\020ar" +
+      "gPlaceholderIdB\005\n\003argB\'\n%org.openmined.s" +
+      "yftproto.types.syft.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2323,7 +2323,7 @@ public final class ArgOuterClass {
     internal_static_syft_proto_types_syft_v1_Arg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_types_syft_v1_Arg_descriptor,
-        new java.lang.String[] { "ArgBool", "ArgInt", "ArgFloat", "ArgString", "ArgShape", "ArgTensor", "ArgTorchParam", "ArgPointerTensor", "ArgPlaceholder", "ArgPlaceholderid", "Arg", });
+        new java.lang.String[] { "ArgBool", "ArgInt", "ArgFloat", "ArgString", "ArgShape", "ArgTensor", "ArgTorchParam", "ArgPointerTensor", "ArgPlaceholder", "ArgPlaceholderId", "Arg", });
     org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor();
     org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.getDescriptor();
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor();

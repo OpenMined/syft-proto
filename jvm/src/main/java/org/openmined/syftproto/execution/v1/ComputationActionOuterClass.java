@@ -2974,39 +2974,37 @@ public final class ComputationActionOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n0syft_proto/execution/v1/computation_ac" +
-      "tion.proto\022\027syft_proto.execution.v1\032)syf" +
-      "t_proto/execution/v1/placeholder.proto\032," +
-      "syft_proto/execution/v1/placeholder_id.p" +
-      "roto\0323syft_proto/generic/pointers/v1/poi" +
-      "nter_tensor.proto\032\"syft_proto/types/syft" +
-      "/v1/arg.proto\032!syft_proto/types/syft/v1/" +
-      "id.proto\032&syft_proto/types/torch/v1/tens" +
-      "or.proto\"\361\005\n\021ComputationAction\022\030\n\007comman" +
-      "d\030\001 \001(\tR\007command\022;\n\ttarget_id\030\t \001(\0132\034.sy" +
-      "ft_proto.types.syft.v1.IdH\000R\010targetId\022V\n" +
-      "\016target_pointer\030\002 \001(\0132-.syft_proto.gener" +
-      "ic.pointers.v1.PointerTensorH\000R\rtargetPo" +
-      "inter\022\\\n\025target_placeholder_id\030\003 \001(\0132&.s" +
-      "yft_proto.execution.v1.PlaceholderIdH\000R\023" +
-      "targetPlaceholderId\022M\n\rtarget_tensor\030\004 \001" +
-      "(\0132&.syft_proto.types.torch.v1.TorchTens" +
-      "orH\000R\014targetTensor\0221\n\004args\030\005 \003(\0132\035.syft_" +
-      "proto.types.syft.v1.ArgR\004args\022N\n\006kwargs\030" +
-      "\006 \003(\01326.syft_proto.execution.v1.Computat" +
-      "ionAction.KwargsEntryR\006kwargs\022;\n\nreturn_" +
-      "ids\030\007 \003(\0132\034.syft_proto.types.syft.v1.IdR" +
-      "\treturnIds\022\\\n\026return_placeholder_ids\030\010 \003" +
-      "(\0132&.syft_proto.execution.v1.Placeholder" +
-      "IdR\024returnPlaceholderIds\032X\n\013KwargsEntry\022" +
-      "\020\n\003key\030\001 \001(\tR\003key\0223\n\005value\030\002 \001(\0132\035.syft_" +
-      "proto.types.syft.v1.ArgR\005value:\0028\001B\010\n\006ta" +
-      "rgetB&\n$org.openmined.syftproto.executio" +
-      "n.v1b\006proto3"
+      "tion.proto\022\027syft_proto.execution.v1\032,syf" +
+      "t_proto/execution/v1/placeholder_id.prot" +
+      "o\0323syft_proto/generic/pointers/v1/pointe" +
+      "r_tensor.proto\032\"syft_proto/types/syft/v1" +
+      "/arg.proto\032!syft_proto/types/syft/v1/id." +
+      "proto\032&syft_proto/types/torch/v1/tensor." +
+      "proto\"\361\005\n\021ComputationAction\022\030\n\007command\030\001" +
+      " \001(\tR\007command\022;\n\ttarget_id\030\t \001(\0132\034.syft_" +
+      "proto.types.syft.v1.IdH\000R\010targetId\022V\n\016ta" +
+      "rget_pointer\030\002 \001(\0132-.syft_proto.generic." +
+      "pointers.v1.PointerTensorH\000R\rtargetPoint" +
+      "er\022\\\n\025target_placeholder_id\030\003 \001(\0132&.syft" +
+      "_proto.execution.v1.PlaceholderIdH\000R\023tar" +
+      "getPlaceholderId\022M\n\rtarget_tensor\030\004 \001(\0132" +
+      "&.syft_proto.types.torch.v1.TorchTensorH" +
+      "\000R\014targetTensor\0221\n\004args\030\005 \003(\0132\035.syft_pro" +
+      "to.types.syft.v1.ArgR\004args\022N\n\006kwargs\030\006 \003" +
+      "(\01326.syft_proto.execution.v1.Computation" +
+      "Action.KwargsEntryR\006kwargs\022;\n\nreturn_ids" +
+      "\030\007 \003(\0132\034.syft_proto.types.syft.v1.IdR\tre" +
+      "turnIds\022\\\n\026return_placeholder_ids\030\010 \003(\0132" +
+      "&.syft_proto.execution.v1.PlaceholderIdR" +
+      "\024returnPlaceholderIds\032X\n\013KwargsEntry\022\020\n\003" +
+      "key\030\001 \001(\tR\003key\0223\n\005value\030\002 \001(\0132\035.syft_pro" +
+      "to.types.syft.v1.ArgR\005value:\0028\001B\010\n\006targe" +
+      "tB&\n$org.openmined.syftproto.execution.v" +
+      "1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor(),
           org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.getDescriptor(),
           org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.ArgOuterClass.getDescriptor(),
@@ -3025,7 +3023,6 @@ public final class ComputationActionOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_ComputationAction_KwargsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor();
     org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.getDescriptor();
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.ArgOuterClass.getDescriptor();
