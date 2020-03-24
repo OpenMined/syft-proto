@@ -4,10 +4,10 @@ package syft_proto.execution.v1;
 option java_package = "org.openmined.syftproto.execution.v1";
 
 import "syft_proto/execution/v1/placeholder.proto";
+import "syft_proto/execution/v1/placeholder_id.proto";
 import "syft_proto/generic/pointers/v1/pointer_tensor.proto";
 import "syft_proto/types/syft/v1/arg.proto";
 import "syft_proto/types/syft/v1/id.proto";
-import "syft_proto/types/syft/v1/placeholder_id.proto";
 import "syft_proto/types/torch/v1/tensor.proto";
 
 message ComputationAction {
@@ -21,5 +21,5 @@ message ComputationAction {
     repeated syft_proto.types.syft.v1.Arg args = 5;
     map<string, syft_proto.types.syft.v1.Arg> kwargs = 6;
     repeated syft_proto.types.syft.v1.Id return_ids = 7;
-    repeated syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8;
+    repeated syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8;
 }

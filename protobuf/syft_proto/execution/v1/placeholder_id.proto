@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package syft_proto.execution.v1;
+option java_package = "org.openmined.syftproto.execution.v1";
+
+import "syft_proto/types/syft/v1/id.proto";
+
+message PlaceholderId {
+    syft_proto.types.syft.v1.Id id = 1;
+}
