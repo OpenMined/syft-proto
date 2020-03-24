@@ -1,4 +1,4 @@
-name: Build Protobuf stubs (and publish if necessary)
+name: Protobuf
 
 on:
   pull_request:
