@@ -98,12 +98,12 @@ public struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argPlaceholder(newValue)}
   }
 
-  public var argObjectid: SyftProto_Types_Syft_V1_Id {
+  public var argPlaceholderID: SyftProto_Execution_V1_PlaceholderId {
     get {
-      if case .argObjectid(let v)? = arg {return v}
-      return SyftProto_Types_Syft_V1_Id()
+      if case .argPlaceholderID(let v)? = arg {return v}
+      return SyftProto_Execution_V1_PlaceholderId()
     }
-    set {arg = .argObjectid(newValue)}
+    set {arg = .argPlaceholderID(newValue)}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -118,7 +118,7 @@ public struct SyftProto_Types_Syft_V1_Arg {
     case argTorchParam(SyftProto_Types_Torch_V1_Parameter)
     case argPointerTensor(SyftProto_Generic_Pointers_V1_PointerTensor)
     case argPlaceholder(SyftProto_Execution_V1_Placeholder)
-    case argObjectid(SyftProto_Types_Syft_V1_Id)
+    case argPlaceholderID(SyftProto_Execution_V1_PlaceholderId)
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Types_Syft_V1_Arg.OneOf_Arg, rhs: SyftProto_Types_Syft_V1_Arg.OneOf_Arg) -> Bool {
@@ -132,7 +132,7 @@ public struct SyftProto_Types_Syft_V1_Arg {
       case (.argTorchParam(let l), .argTorchParam(let r)): return l == r
       case (.argPointerTensor(let l), .argPointerTensor(let r)): return l == r
       case (.argPlaceholder(let l), .argPlaceholder(let r)): return l == r
-      case (.argObjectid(let l), .argObjectid(let r)): return l == r
+      case (.argPlaceholderID(let l), .argPlaceholderID(let r)): return l == r
       default: return false
       }
     }
@@ -158,7 +158,7 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
     7: .standard(proto: "arg_torch_param"),
     8: .standard(proto: "arg_pointer_tensor"),
     9: .standard(proto: "arg_placeholder"),
-    10: .standard(proto: "arg_objectid"),
+    10: .standard(proto: "arg_placeholder_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -225,13 +225,13 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.arg = .argPlaceholder(v)}
       case 10:
-        var v: SyftProto_Types_Syft_V1_Id?
+        var v: SyftProto_Execution_V1_PlaceholderId?
         if let current = self.arg {
           try decoder.handleConflictingOneOf()
-          if case .argObjectid(let m) = current {v = m}
+          if case .argPlaceholderID(let m) = current {v = m}
         }
         try decoder.decodeSingularMessageField(value: &v)
-        if let v = v {self.arg = .argObjectid(v)}
+        if let v = v {self.arg = .argPlaceholderID(v)}
       default: break
       }
     }
@@ -257,7 +257,7 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
     case .argPlaceholder(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-    case .argObjectid(let v)?:
+    case .argPlaceholderID(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
     case nil: break
     }

@@ -66,8 +66,7 @@ public struct SyftProto_Execution_V1_ComputationAction {
 
   public var returnIds: [SyftProto_Types_Syft_V1_Id] = []
 
-  /// TODO not needed anymore, used as a hack to know when it's a real ObjectId in PySyft
-  public var returnPlaceholders: [SyftProto_Types_Syft_V1_Id] = []
+  public var returnPlaceholderIds: [SyftProto_Execution_V1_PlaceholderId] = []
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -108,7 +107,7 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
     5: .same(proto: "args"),
     6: .same(proto: "kwargs"),
     7: .standard(proto: "return_ids"),
-    8: .standard(proto: "return_placeholders"),
+    8: .standard(proto: "return_placeholder_ids"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -142,7 +141,7 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
       case 5: try decoder.decodeRepeatedMessageField(value: &self.args)
       case 6: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Types_Syft_V1_Arg>.self, value: &self.kwargs)
       case 7: try decoder.decodeRepeatedMessageField(value: &self.returnIds)
-      case 8: try decoder.decodeRepeatedMessageField(value: &self.returnPlaceholders)
+      case 8: try decoder.decodeRepeatedMessageField(value: &self.returnPlaceholderIds)
       case 9:
         var v: SyftProto_Types_Syft_V1_Id?
         if let current = self.target {
@@ -179,8 +178,8 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
     if !self.returnIds.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.returnIds, fieldNumber: 7)
     }
-    if !self.returnPlaceholders.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.returnPlaceholders, fieldNumber: 8)
+    if !self.returnPlaceholderIds.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.returnPlaceholderIds, fieldNumber: 8)
     }
     if case .targetID(let v)? = self.target {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
@@ -194,7 +193,7 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
     if lhs.args != rhs.args {return false}
     if lhs.kwargs != rhs.kwargs {return false}
     if lhs.returnIds != rhs.returnIds {return false}
-    if lhs.returnPlaceholders != rhs.returnPlaceholders {return false}
+    if lhs.returnPlaceholderIds != rhs.returnPlaceholderIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
