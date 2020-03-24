@@ -320,8 +320,8 @@ export namespace syft_proto {
                 /** ComputationAction target_pointer */
                 target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
-                /** ComputationAction target_placeholder */
-                target_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
+                /** ComputationAction target_placeholder_id */
+                target_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
 
                 /** ComputationAction target_tensor */
                 target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
@@ -357,8 +357,8 @@ export namespace syft_proto {
                 /** ComputationAction target_pointer. */
                 public target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
-                /** ComputationAction target_placeholder. */
-                public target_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
+                /** ComputationAction target_placeholder_id. */
+                public target_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
 
                 /** ComputationAction target_tensor. */
                 public target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
@@ -376,7 +376,7 @@ export namespace syft_proto {
                 public return_placeholder_ids: syft_proto.execution.v1.IPlaceholderId[];
 
                 /** ComputationAction target. */
-                public target?: ("target_id"|"target_pointer"|"target_placeholder"|"target_tensor");
+                public target?: ("target_id"|"target_pointer"|"target_placeholder_id"|"target_tensor");
 
                 /**
                  * Creates a new ComputationAction instance using the specified properties.
@@ -1033,8 +1033,8 @@ export namespace syft_proto {
                     /** Arg arg_placeholder */
                     arg_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
 
-                    /** Arg arg_placeholder_id */
-                    arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+                    /** Arg arg_placeholderid */
+                    arg_placeholderid?: (syft_proto.execution.v1.IPlaceholderId|null);
                 }
 
                 /** Represents an Arg. */
@@ -1073,11 +1073,11 @@ export namespace syft_proto {
                     /** Arg arg_placeholder. */
                     public arg_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
 
-                    /** Arg arg_placeholder_id. */
-                    public arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+                    /** Arg arg_placeholderid. */
+                    public arg_placeholderid?: (syft_proto.execution.v1.IPlaceholderId|null);
 
                     /** Arg arg. */
-                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id");
+                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholderid");
 
                     /**
                      * Creates a new Arg instance using the specified properties.

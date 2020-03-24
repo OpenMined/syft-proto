@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
-  serialized_pb=b'\n0syft_proto/execution/v1/computation_action.proto\x12\x17syft_proto.execution.v1\x1a)syft_proto/execution/v1/placeholder.proto\x1a,syft_proto/execution/v1/placeholder_id.proto\x1a\x33syft_proto/generic/pointers/v1/pointer_tensor.proto\x1a\"syft_proto/types/syft/v1/arg.proto\x1a!syft_proto/types/syft/v1/id.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\xea\x05\n\x11\x43omputationAction\x12\x18\n\x07\x63ommand\x18\x01 \x01(\tR\x07\x63ommand\x12;\n\ttarget_id\x18\t \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdH\x00R\x08targetId\x12V\n\x0etarget_pointer\x18\x02 \x01(\x0b\x32-.syft_proto.generic.pointers.v1.PointerTensorH\x00R\rtargetPointer\x12U\n\x12target_placeholder\x18\x03 \x01(\x0b\x32$.syft_proto.execution.v1.PlaceholderH\x00R\x11targetPlaceholder\x12M\n\rtarget_tensor\x18\x04 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorH\x00R\x0ctargetTensor\x12\x31\n\x04\x61rgs\x18\x05 \x03(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x04\x61rgs\x12N\n\x06kwargs\x18\x06 \x03(\x0b\x32\x36.syft_proto.execution.v1.ComputationAction.KwargsEntryR\x06kwargs\x12;\n\nreturn_ids\x18\x07 \x03(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\treturnIds\x12\\\n\x16return_placeholder_ids\x18\x08 \x03(\x0b\x32&.syft_proto.execution.v1.PlaceholderIdR\x14returnPlaceholderIds\x1aX\n\x0bKwargsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x05value:\x02\x38\x01\x42\x08\n\x06targetB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
+  serialized_pb=b'\n0syft_proto/execution/v1/computation_action.proto\x12\x17syft_proto.execution.v1\x1a)syft_proto/execution/v1/placeholder.proto\x1a,syft_proto/execution/v1/placeholder_id.proto\x1a\x33syft_proto/generic/pointers/v1/pointer_tensor.proto\x1a\"syft_proto/types/syft/v1/arg.proto\x1a!syft_proto/types/syft/v1/id.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\xf1\x05\n\x11\x43omputationAction\x12\x18\n\x07\x63ommand\x18\x01 \x01(\tR\x07\x63ommand\x12;\n\ttarget_id\x18\t \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdH\x00R\x08targetId\x12V\n\x0etarget_pointer\x18\x02 \x01(\x0b\x32-.syft_proto.generic.pointers.v1.PointerTensorH\x00R\rtargetPointer\x12\\\n\x15target_placeholder_id\x18\x03 \x01(\x0b\x32&.syft_proto.execution.v1.PlaceholderIdH\x00R\x13targetPlaceholderId\x12M\n\rtarget_tensor\x18\x04 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorH\x00R\x0ctargetTensor\x12\x31\n\x04\x61rgs\x18\x05 \x03(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x04\x61rgs\x12N\n\x06kwargs\x18\x06 \x03(\x0b\x32\x36.syft_proto.execution.v1.ComputationAction.KwargsEntryR\x06kwargs\x12;\n\nreturn_ids\x18\x07 \x03(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\treturnIds\x12\\\n\x16return_placeholder_ids\x18\x08 \x03(\x0b\x32&.syft_proto.execution.v1.PlaceholderIdR\x14returnPlaceholderIds\x1aX\n\x0bKwargsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x05value:\x02\x38\x01\x42\x08\n\x06targetB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
   ,
   dependencies=[syft__proto_dot_execution_dot_v1_dot_placeholder__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_placeholder__id__pb2.DESCRIPTOR,syft__proto_dot_generic_dot_pointers_dot_v1_dot_pointer__tensor__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
 
@@ -64,8 +64,8 @@ _COMPUTATIONACTION_KWARGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=979,
-  serialized_end=1067,
+  serialized_start=986,
+  serialized_end=1074,
 )
 
 _COMPUTATIONACTION = _descriptor.Descriptor(
@@ -97,12 +97,12 @@ _COMPUTATIONACTION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='targetPointer', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='target_placeholder', full_name='syft_proto.execution.v1.ComputationAction.target_placeholder', index=3,
+      name='target_placeholder_id', full_name='syft_proto.execution.v1.ComputationAction.target_placeholder_id', index=3,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='targetPlaceholder', file=DESCRIPTOR),
+      serialized_options=None, json_name='targetPlaceholderId', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='target_tensor', full_name='syft_proto.execution.v1.ComputationAction.target_tensor', index=4,
       number=4, type=11, cpp_type=10, label=1,
@@ -154,14 +154,14 @@ _COMPUTATIONACTION = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=331,
-  serialized_end=1077,
+  serialized_end=1084,
 )
 
 _COMPUTATIONACTION_KWARGSENTRY.fields_by_name['value'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2._ARG
 _COMPUTATIONACTION_KWARGSENTRY.containing_type = _COMPUTATIONACTION
 _COMPUTATIONACTION.fields_by_name['target_id'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
 _COMPUTATIONACTION.fields_by_name['target_pointer'].message_type = syft__proto_dot_generic_dot_pointers_dot_v1_dot_pointer__tensor__pb2._POINTERTENSOR
-_COMPUTATIONACTION.fields_by_name['target_placeholder'].message_type = syft__proto_dot_execution_dot_v1_dot_placeholder__pb2._PLACEHOLDER
+_COMPUTATIONACTION.fields_by_name['target_placeholder_id'].message_type = syft__proto_dot_execution_dot_v1_dot_placeholder__id__pb2._PLACEHOLDERID
 _COMPUTATIONACTION.fields_by_name['target_tensor'].message_type = syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2._TORCHTENSOR
 _COMPUTATIONACTION.fields_by_name['args'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2._ARG
 _COMPUTATIONACTION.fields_by_name['kwargs'].message_type = _COMPUTATIONACTION_KWARGSENTRY
@@ -174,8 +174,8 @@ _COMPUTATIONACTION.oneofs_by_name['target'].fields.append(
   _COMPUTATIONACTION.fields_by_name['target_pointer'])
 _COMPUTATIONACTION.fields_by_name['target_pointer'].containing_oneof = _COMPUTATIONACTION.oneofs_by_name['target']
 _COMPUTATIONACTION.oneofs_by_name['target'].fields.append(
-  _COMPUTATIONACTION.fields_by_name['target_placeholder'])
-_COMPUTATIONACTION.fields_by_name['target_placeholder'].containing_oneof = _COMPUTATIONACTION.oneofs_by_name['target']
+  _COMPUTATIONACTION.fields_by_name['target_placeholder_id'])
+_COMPUTATIONACTION.fields_by_name['target_placeholder_id'].containing_oneof = _COMPUTATIONACTION.oneofs_by_name['target']
 _COMPUTATIONACTION.oneofs_by_name['target'].fields.append(
   _COMPUTATIONACTION.fields_by_name['target_tensor'])
 _COMPUTATIONACTION.fields_by_name['target_tensor'].containing_oneof = _COMPUTATIONACTION.oneofs_by_name['target']

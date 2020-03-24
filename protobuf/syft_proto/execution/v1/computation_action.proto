@@ -15,7 +15,7 @@ message ComputationAction {
     oneof target {
         syft_proto.types.syft.v1.Id target_id = 9;
         syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2;
-        syft_proto.execution.v1.Placeholder target_placeholder = 3;
+        syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3;
         syft_proto.types.torch.v1.TorchTensor target_tensor = 4;
     }
     repeated syft_proto.types.syft.v1.Arg args = 5;
