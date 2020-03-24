@@ -44,12 +44,12 @@ public struct SyftProto_Execution_V1_ComputationAction {
     set {target = .targetPointer(newValue)}
   }
 
-  public var targetPlaceholder: SyftProto_Execution_V1_Placeholder {
+  public var targetPlaceholderID: SyftProto_Execution_V1_PlaceholderId {
     get {
-      if case .targetPlaceholder(let v)? = target {return v}
-      return SyftProto_Execution_V1_Placeholder()
+      if case .targetPlaceholderID(let v)? = target {return v}
+      return SyftProto_Execution_V1_PlaceholderId()
     }
-    set {target = .targetPlaceholder(newValue)}
+    set {target = .targetPlaceholderID(newValue)}
   }
 
   public var targetTensor: SyftProto_Types_Torch_V1_TorchTensor {
@@ -73,7 +73,7 @@ public struct SyftProto_Execution_V1_ComputationAction {
   public enum OneOf_Target: Equatable {
     case targetID(SyftProto_Types_Syft_V1_Id)
     case targetPointer(SyftProto_Generic_Pointers_V1_PointerTensor)
-    case targetPlaceholder(SyftProto_Execution_V1_Placeholder)
+    case targetPlaceholderID(SyftProto_Execution_V1_PlaceholderId)
     case targetTensor(SyftProto_Types_Torch_V1_TorchTensor)
 
   #if !swift(>=4.1)
@@ -81,7 +81,7 @@ public struct SyftProto_Execution_V1_ComputationAction {
       switch (lhs, rhs) {
       case (.targetID(let l), .targetID(let r)): return l == r
       case (.targetPointer(let l), .targetPointer(let r)): return l == r
-      case (.targetPlaceholder(let l), .targetPlaceholder(let r)): return l == r
+      case (.targetPlaceholderID(let l), .targetPlaceholderID(let r)): return l == r
       case (.targetTensor(let l), .targetTensor(let r)): return l == r
       default: return false
       }
@@ -102,7 +102,7 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
     1: .same(proto: "command"),
     9: .standard(proto: "target_id"),
     2: .standard(proto: "target_pointer"),
-    3: .standard(proto: "target_placeholder"),
+    3: .standard(proto: "target_placeholder_id"),
     4: .standard(proto: "target_tensor"),
     5: .same(proto: "args"),
     6: .same(proto: "kwargs"),
@@ -123,13 +123,13 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.target = .targetPointer(v)}
       case 3:
-        var v: SyftProto_Execution_V1_Placeholder?
+        var v: SyftProto_Execution_V1_PlaceholderId?
         if let current = self.target {
           try decoder.handleConflictingOneOf()
-          if case .targetPlaceholder(let m) = current {v = m}
+          if case .targetPlaceholderID(let m) = current {v = m}
         }
         try decoder.decodeSingularMessageField(value: &v)
-        if let v = v {self.target = .targetPlaceholder(v)}
+        if let v = v {self.target = .targetPlaceholderID(v)}
       case 4:
         var v: SyftProto_Types_Torch_V1_TorchTensor?
         if let current = self.target {
@@ -162,7 +162,7 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
     switch self.target {
     case .targetPointer(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    case .targetPlaceholder(let v)?:
+    case .targetPlaceholderID(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
     case .targetTensor(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
