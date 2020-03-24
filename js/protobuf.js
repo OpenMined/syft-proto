@@ -2834,7 +2834,7 @@ $root.syft_proto = (function() {
                      * @property {syft_proto.types.torch.v1.IParameter|null} [arg_torch_param] Arg arg_torch_param
                      * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [arg_pointer_tensor] Arg arg_pointer_tensor
                      * @property {syft_proto.execution.v1.IPlaceholder|null} [arg_placeholder] Arg arg_placeholder
-                     * @property {syft_proto.execution.v1.IPlaceholderId|null} [arg_placeholderid] Arg arg_placeholderid
+                     * @property {syft_proto.execution.v1.IPlaceholderId|null} [arg_placeholder_id] Arg arg_placeholder_id
                      */
 
                     /**
@@ -2925,24 +2925,24 @@ $root.syft_proto = (function() {
                     Arg.prototype.arg_placeholder = null;
 
                     /**
-                     * Arg arg_placeholderid.
-                     * @member {syft_proto.execution.v1.IPlaceholderId|null|undefined} arg_placeholderid
+                     * Arg arg_placeholder_id.
+                     * @member {syft_proto.execution.v1.IPlaceholderId|null|undefined} arg_placeholder_id
                      * @memberof syft_proto.types.syft.v1.Arg
                      * @instance
                      */
-                    Arg.prototype.arg_placeholderid = null;
+                    Arg.prototype.arg_placeholder_id = null;
 
                     // OneOf field names bound to virtual getters and setters
                     var $oneOfFields;
 
                     /**
                      * Arg arg.
-                     * @member {"arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholderid"|undefined} arg
+                     * @member {"arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id"|undefined} arg
                      * @memberof syft_proto.types.syft.v1.Arg
                      * @instance
                      */
                     Object.defineProperty(Arg.prototype, "arg", {
-                        get: $util.oneOfGetter($oneOfFields = ["arg_bool", "arg_int", "arg_float", "arg_string", "arg_shape", "arg_tensor", "arg_torch_param", "arg_pointer_tensor", "arg_placeholder", "arg_placeholderid"]),
+                        get: $util.oneOfGetter($oneOfFields = ["arg_bool", "arg_int", "arg_float", "arg_string", "arg_shape", "arg_tensor", "arg_torch_param", "arg_pointer_tensor", "arg_placeholder", "arg_placeholder_id"]),
                         set: $util.oneOfSetter($oneOfFields)
                     });
 
@@ -2988,8 +2988,8 @@ $root.syft_proto = (function() {
                             $root.syft_proto.generic.pointers.v1.PointerTensor.encode(message.arg_pointer_tensor, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                         if (message.arg_placeholder != null && message.hasOwnProperty("arg_placeholder"))
                             $root.syft_proto.execution.v1.Placeholder.encode(message.arg_placeholder, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-                        if (message.arg_placeholderid != null && message.hasOwnProperty("arg_placeholderid"))
-                            $root.syft_proto.execution.v1.PlaceholderId.encode(message.arg_placeholderid, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                        if (message.arg_placeholder_id != null && message.hasOwnProperty("arg_placeholder_id"))
+                            $root.syft_proto.execution.v1.PlaceholderId.encode(message.arg_placeholder_id, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                         return writer;
                     };
 
@@ -3052,7 +3052,7 @@ $root.syft_proto = (function() {
                                 message.arg_placeholder = $root.syft_proto.execution.v1.Placeholder.decode(reader, reader.uint32());
                                 break;
                             case 10:
-                                message.arg_placeholderid = $root.syft_proto.execution.v1.PlaceholderId.decode(reader, reader.uint32());
+                                message.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.decode(reader, reader.uint32());
                                 break;
                             default:
                                 reader.skipType(tag & 7);
@@ -3166,14 +3166,14 @@ $root.syft_proto = (function() {
                                     return "arg_placeholder." + error;
                             }
                         }
-                        if (message.arg_placeholderid != null && message.hasOwnProperty("arg_placeholderid")) {
+                        if (message.arg_placeholder_id != null && message.hasOwnProperty("arg_placeholder_id")) {
                             if (properties.arg === 1)
                                 return "arg: multiple values";
                             properties.arg = 1;
                             {
-                                var error = $root.syft_proto.execution.v1.PlaceholderId.verify(message.arg_placeholderid);
+                                var error = $root.syft_proto.execution.v1.PlaceholderId.verify(message.arg_placeholder_id);
                                 if (error)
-                                    return "arg_placeholderid." + error;
+                                    return "arg_placeholder_id." + error;
                             }
                         }
                         return null;
@@ -3224,10 +3224,10 @@ $root.syft_proto = (function() {
                                 throw TypeError(".syft_proto.types.syft.v1.Arg.arg_placeholder: object expected");
                             message.arg_placeholder = $root.syft_proto.execution.v1.Placeholder.fromObject(object.arg_placeholder);
                         }
-                        if (object.arg_placeholderid != null) {
-                            if (typeof object.arg_placeholderid !== "object")
-                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_placeholderid: object expected");
-                            message.arg_placeholderid = $root.syft_proto.execution.v1.PlaceholderId.fromObject(object.arg_placeholderid);
+                        if (object.arg_placeholder_id != null) {
+                            if (typeof object.arg_placeholder_id !== "object")
+                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_placeholder_id: object expected");
+                            message.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.fromObject(object.arg_placeholder_id);
                         }
                         return message;
                     };
@@ -3290,10 +3290,10 @@ $root.syft_proto = (function() {
                             if (options.oneofs)
                                 object.arg = "arg_placeholder";
                         }
-                        if (message.arg_placeholderid != null && message.hasOwnProperty("arg_placeholderid")) {
-                            object.arg_placeholderid = $root.syft_proto.execution.v1.PlaceholderId.toObject(message.arg_placeholderid, options);
+                        if (message.arg_placeholder_id != null && message.hasOwnProperty("arg_placeholder_id")) {
+                            object.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.toObject(message.arg_placeholder_id, options);
                             if (options.oneofs)
-                                object.arg = "arg_placeholderid";
+                                object.arg = "arg_placeholder_id";
                         }
                         return object;
                     };

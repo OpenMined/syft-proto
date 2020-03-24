@@ -1033,8 +1033,8 @@ export namespace syft_proto {
                     /** Arg arg_placeholder */
                     arg_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
 
-                    /** Arg arg_placeholderid */
-                    arg_placeholderid?: (syft_proto.execution.v1.IPlaceholderId|null);
+                    /** Arg arg_placeholder_id */
+                    arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
                 }
 
                 /** Represents an Arg. */
@@ -1073,11 +1073,11 @@ export namespace syft_proto {
                     /** Arg arg_placeholder. */
                     public arg_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
 
-                    /** Arg arg_placeholderid. */
-                    public arg_placeholderid?: (syft_proto.execution.v1.IPlaceholderId|null);
+                    /** Arg arg_placeholder_id. */
+                    public arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
 
                     /** Arg arg. */
-                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholderid");
+                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id");
 
                     /**
                      * Creates a new Arg instance using the specified properties.
