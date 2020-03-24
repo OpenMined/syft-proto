@@ -1,7 +1,11 @@
 name: Build Protobuf stubs (and publish if necessary)
 
 on:
+  pull_request:
+    types: [opened, synchronize, reopened]
   push:
+    branches:
+    - master
   release:
     types: [published]
 
