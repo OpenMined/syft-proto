@@ -23,6 +23,6 @@ message Arg {
 
         syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8;
         syft_proto.execution.v1.Placeholder arg_placeholder = 9;
-        syft_proto.execution.v1.PlaceholderId arg_placeholderid = 10;
+        syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10;
     }
 }
