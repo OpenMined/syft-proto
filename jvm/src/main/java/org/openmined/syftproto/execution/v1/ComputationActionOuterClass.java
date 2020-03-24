@@ -173,27 +173,27 @@ public final class ComputationActionOuterClass {
         int index);
 
     /**
-     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    java.util.List<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId> 
+    java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> 
         getReturnPlaceholderIdsList();
     /**
-     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index);
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index);
     /**
-     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
     int getReturnPlaceholderIdsCount();
     /**
-     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    java.util.List<? extends org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+    java.util.List<? extends org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
         getReturnPlaceholderIdsOrBuilderList();
     /**
-     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
         int index);
 
     public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction.TargetCase getTargetCase();
@@ -329,11 +329,11 @@ public final class ComputationActionOuterClass {
             }
             case 66: {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                returnPlaceholderIds_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId>();
+                returnPlaceholderIds_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId>();
                 mutable_bitField0_ |= 0x00000008;
               }
               returnPlaceholderIds_.add(
-                  input.readMessage(org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.parser(), extensionRegistry));
+                  input.readMessage(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.parser(), extensionRegistry));
               break;
             }
             case 74: {
@@ -743,36 +743,36 @@ public final class ComputationActionOuterClass {
     }
 
     public static final int RETURN_PLACEHOLDER_IDS_FIELD_NUMBER = 8;
-    private java.util.List<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId> returnPlaceholderIds_;
+    private java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> returnPlaceholderIds_;
     /**
-     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    public java.util.List<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId> getReturnPlaceholderIdsList() {
+    public java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> getReturnPlaceholderIdsList() {
       return returnPlaceholderIds_;
     }
     /**
-     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    public java.util.List<? extends org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+    public java.util.List<? extends org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
         getReturnPlaceholderIdsOrBuilderList() {
       return returnPlaceholderIds_;
     }
     /**
-     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
     public int getReturnPlaceholderIdsCount() {
       return returnPlaceholderIds_.size();
     }
     /**
-     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index) {
+    public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index) {
       return returnPlaceholderIds_.get(index);
     }
     /**
-     * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
-    public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
+    public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
         int index) {
       return returnPlaceholderIds_.get(index);
     }
@@ -2662,22 +2662,22 @@ public final class ComputationActionOuterClass {
         return returnIdsBuilder_;
       }
 
-      private java.util.List<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId> returnPlaceholderIds_ =
+      private java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> returnPlaceholderIds_ =
         java.util.Collections.emptyList();
       private void ensureReturnPlaceholderIdsIsMutable() {
         if (!((bitField0_ & 0x00000008) != 0)) {
-          returnPlaceholderIds_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId>(returnPlaceholderIds_);
+          returnPlaceholderIds_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId>(returnPlaceholderIds_);
           bitField0_ |= 0x00000008;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> returnPlaceholderIdsBuilder_;
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> returnPlaceholderIdsBuilder_;
 
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public java.util.List<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId> getReturnPlaceholderIdsList() {
+      public java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> getReturnPlaceholderIdsList() {
         if (returnPlaceholderIdsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(returnPlaceholderIds_);
         } else {
@@ -2685,7 +2685,7 @@ public final class ComputationActionOuterClass {
         }
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
       public int getReturnPlaceholderIdsCount() {
         if (returnPlaceholderIdsBuilder_ == null) {
@@ -2695,9 +2695,9 @@ public final class ComputationActionOuterClass {
         }
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index) {
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index) {
         if (returnPlaceholderIdsBuilder_ == null) {
           return returnPlaceholderIds_.get(index);
         } else {
@@ -2705,10 +2705,10 @@ public final class ComputationActionOuterClass {
         }
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
       public Builder setReturnPlaceholderIds(
-          int index, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+          int index, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
         if (returnPlaceholderIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2722,10 +2722,10 @@ public final class ComputationActionOuterClass {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
       public Builder setReturnPlaceholderIds(
-          int index, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
+          int index, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
         if (returnPlaceholderIdsBuilder_ == null) {
           ensureReturnPlaceholderIdsIsMutable();
           returnPlaceholderIds_.set(index, builderForValue.build());
@@ -2736,9 +2736,9 @@ public final class ComputationActionOuterClass {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public Builder addReturnPlaceholderIds(org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+      public Builder addReturnPlaceholderIds(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
         if (returnPlaceholderIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2752,10 +2752,10 @@ public final class ComputationActionOuterClass {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
       public Builder addReturnPlaceholderIds(
-          int index, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+          int index, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
         if (returnPlaceholderIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2769,10 +2769,10 @@ public final class ComputationActionOuterClass {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
       public Builder addReturnPlaceholderIds(
-          org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
         if (returnPlaceholderIdsBuilder_ == null) {
           ensureReturnPlaceholderIdsIsMutable();
           returnPlaceholderIds_.add(builderForValue.build());
@@ -2783,10 +2783,10 @@ public final class ComputationActionOuterClass {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
       public Builder addReturnPlaceholderIds(
-          int index, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
+          int index, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
         if (returnPlaceholderIdsBuilder_ == null) {
           ensureReturnPlaceholderIdsIsMutable();
           returnPlaceholderIds_.add(index, builderForValue.build());
@@ -2797,10 +2797,10 @@ public final class ComputationActionOuterClass {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
       public Builder addAllReturnPlaceholderIds(
-          java.lang.Iterable<? extends org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId> values) {
+          java.lang.Iterable<? extends org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> values) {
         if (returnPlaceholderIdsBuilder_ == null) {
           ensureReturnPlaceholderIdsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2812,7 +2812,7 @@ public final class ComputationActionOuterClass {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
       public Builder clearReturnPlaceholderIds() {
         if (returnPlaceholderIdsBuilder_ == null) {
@@ -2825,7 +2825,7 @@ public final class ComputationActionOuterClass {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
       public Builder removeReturnPlaceholderIds(int index) {
         if (returnPlaceholderIdsBuilder_ == null) {
@@ -2838,16 +2838,16 @@ public final class ComputationActionOuterClass {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder getReturnPlaceholderIdsBuilder(
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder getReturnPlaceholderIdsBuilder(
           int index) {
         return getReturnPlaceholderIdsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
           int index) {
         if (returnPlaceholderIdsBuilder_ == null) {
           return returnPlaceholderIds_.get(index);  } else {
@@ -2855,9 +2855,9 @@ public final class ComputationActionOuterClass {
         }
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public java.util.List<? extends org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+      public java.util.List<? extends org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
            getReturnPlaceholderIdsOrBuilderList() {
         if (returnPlaceholderIdsBuilder_ != null) {
           return returnPlaceholderIdsBuilder_.getMessageOrBuilderList();
@@ -2866,33 +2866,33 @@ public final class ComputationActionOuterClass {
         }
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder addReturnPlaceholderIdsBuilder() {
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder addReturnPlaceholderIdsBuilder() {
         return getReturnPlaceholderIdsFieldBuilder().addBuilder(
-            org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance());
+            org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance());
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder addReturnPlaceholderIdsBuilder(
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder addReturnPlaceholderIdsBuilder(
           int index) {
         return getReturnPlaceholderIdsFieldBuilder().addBuilder(
-            index, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance());
+            index, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance());
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
        */
-      public java.util.List<org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder> 
+      public java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder> 
            getReturnPlaceholderIdsBuilderList() {
         return getReturnPlaceholderIdsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
           getReturnPlaceholderIdsFieldBuilder() {
         if (returnPlaceholderIdsBuilder_ == null) {
           returnPlaceholderIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder>(
+              org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder>(
                   returnPlaceholderIds_,
                   ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
@@ -2975,42 +2975,42 @@ public final class ComputationActionOuterClass {
     java.lang.String[] descriptorData = {
       "\n0syft_proto/execution/v1/computation_ac" +
       "tion.proto\022\027syft_proto.execution.v1\032)syf" +
-      "t_proto/execution/v1/placeholder.proto\0323" +
-      "syft_proto/generic/pointers/v1/pointer_t" +
-      "ensor.proto\032\"syft_proto/types/syft/v1/ar" +
-      "g.proto\032!syft_proto/types/syft/v1/id.pro" +
-      "to\032-syft_proto/types/syft/v1/placeholder" +
-      "_id.proto\032&syft_proto/types/torch/v1/ten" +
-      "sor.proto\"\353\005\n\021ComputationAction\022\030\n\007comma" +
-      "nd\030\001 \001(\tR\007command\022;\n\ttarget_id\030\t \001(\0132\034.s" +
-      "yft_proto.types.syft.v1.IdH\000R\010targetId\022V" +
-      "\n\016target_pointer\030\002 \001(\0132-.syft_proto.gene" +
-      "ric.pointers.v1.PointerTensorH\000R\rtargetP" +
-      "ointer\022U\n\022target_placeholder\030\003 \001(\0132$.syf" +
-      "t_proto.execution.v1.PlaceholderH\000R\021targ" +
-      "etPlaceholder\022M\n\rtarget_tensor\030\004 \001(\0132&.s" +
-      "yft_proto.types.torch.v1.TorchTensorH\000R\014" +
-      "targetTensor\0221\n\004args\030\005 \003(\0132\035.syft_proto." +
-      "types.syft.v1.ArgR\004args\022N\n\006kwargs\030\006 \003(\0132" +
-      "6.syft_proto.execution.v1.ComputationAct" +
-      "ion.KwargsEntryR\006kwargs\022;\n\nreturn_ids\030\007 " +
-      "\003(\0132\034.syft_proto.types.syft.v1.IdR\tretur" +
-      "nIds\022]\n\026return_placeholder_ids\030\010 \003(\0132\'.s" +
-      "yft_proto.types.syft.v1.PlaceholderIdR\024r" +
-      "eturnPlaceholderIds\032X\n\013KwargsEntry\022\020\n\003ke" +
-      "y\030\001 \001(\tR\003key\0223\n\005value\030\002 \001(\0132\035.syft_proto" +
-      ".types.syft.v1.ArgR\005value:\0028\001B\010\n\006targetB" +
-      "&\n$org.openmined.syftproto.execution.v1b" +
-      "\006proto3"
+      "t_proto/execution/v1/placeholder.proto\032," +
+      "syft_proto/execution/v1/placeholder_id.p" +
+      "roto\0323syft_proto/generic/pointers/v1/poi" +
+      "nter_tensor.proto\032\"syft_proto/types/syft" +
+      "/v1/arg.proto\032!syft_proto/types/syft/v1/" +
+      "id.proto\032&syft_proto/types/torch/v1/tens" +
+      "or.proto\"\352\005\n\021ComputationAction\022\030\n\007comman" +
+      "d\030\001 \001(\tR\007command\022;\n\ttarget_id\030\t \001(\0132\034.sy" +
+      "ft_proto.types.syft.v1.IdH\000R\010targetId\022V\n" +
+      "\016target_pointer\030\002 \001(\0132-.syft_proto.gener" +
+      "ic.pointers.v1.PointerTensorH\000R\rtargetPo" +
+      "inter\022U\n\022target_placeholder\030\003 \001(\0132$.syft" +
+      "_proto.execution.v1.PlaceholderH\000R\021targe" +
+      "tPlaceholder\022M\n\rtarget_tensor\030\004 \001(\0132&.sy" +
+      "ft_proto.types.torch.v1.TorchTensorH\000R\014t" +
+      "argetTensor\0221\n\004args\030\005 \003(\0132\035.syft_proto.t" +
+      "ypes.syft.v1.ArgR\004args\022N\n\006kwargs\030\006 \003(\01326" +
+      ".syft_proto.execution.v1.ComputationActi" +
+      "on.KwargsEntryR\006kwargs\022;\n\nreturn_ids\030\007 \003" +
+      "(\0132\034.syft_proto.types.syft.v1.IdR\treturn" +
+      "Ids\022\\\n\026return_placeholder_ids\030\010 \003(\0132&.sy" +
+      "ft_proto.execution.v1.PlaceholderIdR\024ret" +
+      "urnPlaceholderIds\032X\n\013KwargsEntry\022\020\n\003key\030" +
+      "\001 \001(\tR\003key\0223\n\005value\030\002 \001(\0132\035.syft_proto.t" +
+      "ypes.syft.v1.ArgR\005value:\0028\001B\010\n\006targetB&\n" +
+      "$org.openmined.syftproto.execution.v1b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor(),
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.getDescriptor(),
           org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.ArgOuterClass.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor(),
-          org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.getDescriptor(),
           org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor(),
         });
     internal_static_syft_proto_execution_v1_ComputationAction_descriptor =
@@ -3026,10 +3026,10 @@ public final class ComputationActionOuterClass {
         internal_static_syft_proto_execution_v1_ComputationAction_KwargsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor();
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.getDescriptor();
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.ArgOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
-    org.openmined.syftproto.types.syft.v1.PlaceholderIdOuterClass.getDescriptor();
     org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor();
   }
 
