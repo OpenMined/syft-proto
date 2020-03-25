@@ -208,7 +208,7 @@ jobs:
   publish:
     needs: [python, java, javascript, swift]
     runs-on: ubuntu-latest
-    if: github.event_name == 'published' && !failure()
+    if: github.event_name == 'release' && !failure()
 
     steps:
       - uses: actions/checkout@v1
