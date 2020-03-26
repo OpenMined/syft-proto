@@ -7003,7 +7003,9 @@ $root.syft_proto = (function() {
                              * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1
                              * @interface IAdditiveSharingTensor
                              * @property {syft_proto.types.syft.v1.IId|null} [id] AdditiveSharingTensor id
-                             * @property {number|Long|null} [field_size] AdditiveSharingTensor field_size
+                             * @property {number|Long|null} [field_int] AdditiveSharingTensor field_int
+                             * @property {string|null} [field_str] AdditiveSharingTensor field_str
+                             * @property {string|null} [dtype] AdditiveSharingTensor dtype
                              * @property {syft_proto.types.syft.v1.IId|null} [crypto_provider_id] AdditiveSharingTensor crypto_provider_id
                              * @property {Array.<syft_proto.types.syft.v1.IId>|null} [location_ids] AdditiveSharingTensor location_ids
                              * @property {Array.<syft_proto.generic.pointers.v1.IPointerTensor>|null} [shares] AdditiveSharingTensor shares
@@ -7035,12 +7037,28 @@ $root.syft_proto = (function() {
                             AdditiveSharingTensor.prototype.id = null;
 
                             /**
-                             * AdditiveSharingTensor field_size.
-                             * @member {number|Long} field_size
+                             * AdditiveSharingTensor field_int.
+                             * @member {number|Long} field_int
                              * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor
                              * @instance
                              */
-                            AdditiveSharingTensor.prototype.field_size = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+                            AdditiveSharingTensor.prototype.field_int = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+                            /**
+                             * AdditiveSharingTensor field_str.
+                             * @member {string} field_str
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor
+                             * @instance
+                             */
+                            AdditiveSharingTensor.prototype.field_str = "";
+
+                            /**
+                             * AdditiveSharingTensor dtype.
+                             * @member {string} dtype
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor
+                             * @instance
+                             */
+                            AdditiveSharingTensor.prototype.dtype = "";
 
                             /**
                              * AdditiveSharingTensor crypto_provider_id.
@@ -7065,6 +7083,20 @@ $root.syft_proto = (function() {
                              * @instance
                              */
                             AdditiveSharingTensor.prototype.shares = $util.emptyArray;
+
+                            // OneOf field names bound to virtual getters and setters
+                            var $oneOfFields;
+
+                            /**
+                             * AdditiveSharingTensor field_size.
+                             * @member {"field_int"|"field_str"|undefined} field_size
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor
+                             * @instance
+                             */
+                            Object.defineProperty(AdditiveSharingTensor.prototype, "field_size", {
+                                get: $util.oneOfGetter($oneOfFields = ["field_int", "field_str"]),
+                                set: $util.oneOfSetter($oneOfFields)
+                            });
 
                             /**
                              * Creates a new AdditiveSharingTensor instance using the specified properties.
@@ -7092,16 +7124,20 @@ $root.syft_proto = (function() {
                                     writer = $Writer.create();
                                 if (message.id != null && message.hasOwnProperty("id"))
                                     $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                                if (message.field_size != null && message.hasOwnProperty("field_size"))
-                                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.field_size);
+                                if (message.field_int != null && message.hasOwnProperty("field_int"))
+                                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.field_int);
+                                if (message.field_str != null && message.hasOwnProperty("field_str"))
+                                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.field_str);
+                                if (message.dtype != null && message.hasOwnProperty("dtype"))
+                                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.dtype);
                                 if (message.crypto_provider_id != null && message.hasOwnProperty("crypto_provider_id"))
-                                    $root.syft_proto.types.syft.v1.Id.encode(message.crypto_provider_id, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                                    $root.syft_proto.types.syft.v1.Id.encode(message.crypto_provider_id, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                                 if (message.location_ids != null && message.location_ids.length)
                                     for (var i = 0; i < message.location_ids.length; ++i)
-                                        $root.syft_proto.types.syft.v1.Id.encode(message.location_ids[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                                        $root.syft_proto.types.syft.v1.Id.encode(message.location_ids[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                                 if (message.shares != null && message.shares.length)
                                     for (var i = 0; i < message.shares.length; ++i)
-                                        $root.syft_proto.generic.pointers.v1.PointerTensor.encode(message.shares[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                                        $root.syft_proto.generic.pointers.v1.PointerTensor.encode(message.shares[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                                 return writer;
                             };
 
@@ -7140,17 +7176,23 @@ $root.syft_proto = (function() {
                                         message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
                                         break;
                                     case 2:
-                                        message.field_size = reader.int64();
+                                        message.field_int = reader.int64();
                                         break;
                                     case 3:
-                                        message.crypto_provider_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                                        message.field_str = reader.string();
                                         break;
                                     case 4:
+                                        message.dtype = reader.string();
+                                        break;
+                                    case 5:
+                                        message.crypto_provider_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                                        break;
+                                    case 6:
                                         if (!(message.location_ids && message.location_ids.length))
                                             message.location_ids = [];
                                         message.location_ids.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
                                         break;
-                                    case 5:
+                                    case 7:
                                         if (!(message.shares && message.shares.length))
                                             message.shares = [];
                                         message.shares.push($root.syft_proto.generic.pointers.v1.PointerTensor.decode(reader, reader.uint32()));
@@ -7190,14 +7232,27 @@ $root.syft_proto = (function() {
                             AdditiveSharingTensor.verify = function verify(message) {
                                 if (typeof message !== "object" || message === null)
                                     return "object expected";
+                                var properties = {};
                                 if (message.id != null && message.hasOwnProperty("id")) {
                                     var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
                                     if (error)
                                         return "id." + error;
                                 }
-                                if (message.field_size != null && message.hasOwnProperty("field_size"))
-                                    if (!$util.isInteger(message.field_size) && !(message.field_size && $util.isInteger(message.field_size.low) && $util.isInteger(message.field_size.high)))
-                                        return "field_size: integer|Long expected";
+                                if (message.field_int != null && message.hasOwnProperty("field_int")) {
+                                    properties.field_size = 1;
+                                    if (!$util.isInteger(message.field_int) && !(message.field_int && $util.isInteger(message.field_int.low) && $util.isInteger(message.field_int.high)))
+                                        return "field_int: integer|Long expected";
+                                }
+                                if (message.field_str != null && message.hasOwnProperty("field_str")) {
+                                    if (properties.field_size === 1)
+                                        return "field_size: multiple values";
+                                    properties.field_size = 1;
+                                    if (!$util.isString(message.field_str))
+                                        return "field_str: string expected";
+                                }
+                                if (message.dtype != null && message.hasOwnProperty("dtype"))
+                                    if (!$util.isString(message.dtype))
+                                        return "dtype: string expected";
                                 if (message.crypto_provider_id != null && message.hasOwnProperty("crypto_provider_id")) {
                                     var error = $root.syft_proto.types.syft.v1.Id.verify(message.crypto_provider_id);
                                     if (error)
@@ -7241,15 +7296,19 @@ $root.syft_proto = (function() {
                                         throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.id: object expected");
                                     message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
                                 }
-                                if (object.field_size != null)
+                                if (object.field_int != null)
                                     if ($util.Long)
-                                        (message.field_size = $util.Long.fromValue(object.field_size)).unsigned = false;
-                                    else if (typeof object.field_size === "string")
-                                        message.field_size = parseInt(object.field_size, 10);
-                                    else if (typeof object.field_size === "number")
-                                        message.field_size = object.field_size;
-                                    else if (typeof object.field_size === "object")
-                                        message.field_size = new $util.LongBits(object.field_size.low >>> 0, object.field_size.high >>> 0).toNumber();
+                                        (message.field_int = $util.Long.fromValue(object.field_int)).unsigned = false;
+                                    else if (typeof object.field_int === "string")
+                                        message.field_int = parseInt(object.field_int, 10);
+                                    else if (typeof object.field_int === "number")
+                                        message.field_int = object.field_int;
+                                    else if (typeof object.field_int === "object")
+                                        message.field_int = new $util.LongBits(object.field_int.low >>> 0, object.field_int.high >>> 0).toNumber();
+                                if (object.field_str != null)
+                                    message.field_str = String(object.field_str);
+                                if (object.dtype != null)
+                                    message.dtype = String(object.dtype);
                                 if (object.crypto_provider_id != null) {
                                     if (typeof object.crypto_provider_id !== "object")
                                         throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.crypto_provider_id: object expected");
@@ -7297,20 +7356,26 @@ $root.syft_proto = (function() {
                                 }
                                 if (options.defaults) {
                                     object.id = null;
-                                    if ($util.Long) {
-                                        var long = new $util.Long(0, 0, false);
-                                        object.field_size = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
-                                    } else
-                                        object.field_size = options.longs === String ? "0" : 0;
+                                    object.dtype = "";
                                     object.crypto_provider_id = null;
                                 }
                                 if (message.id != null && message.hasOwnProperty("id"))
                                     object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
-                                if (message.field_size != null && message.hasOwnProperty("field_size"))
-                                    if (typeof message.field_size === "number")
-                                        object.field_size = options.longs === String ? String(message.field_size) : message.field_size;
+                                if (message.field_int != null && message.hasOwnProperty("field_int")) {
+                                    if (typeof message.field_int === "number")
+                                        object.field_int = options.longs === String ? String(message.field_int) : message.field_int;
                                     else
-                                        object.field_size = options.longs === String ? $util.Long.prototype.toString.call(message.field_size) : options.longs === Number ? new $util.LongBits(message.field_size.low >>> 0, message.field_size.high >>> 0).toNumber() : message.field_size;
+                                        object.field_int = options.longs === String ? $util.Long.prototype.toString.call(message.field_int) : options.longs === Number ? new $util.LongBits(message.field_int.low >>> 0, message.field_int.high >>> 0).toNumber() : message.field_int;
+                                    if (options.oneofs)
+                                        object.field_size = "field_int";
+                                }
+                                if (message.field_str != null && message.hasOwnProperty("field_str")) {
+                                    object.field_str = message.field_str;
+                                    if (options.oneofs)
+                                        object.field_size = "field_str";
+                                }
+                                if (message.dtype != null && message.hasOwnProperty("dtype"))
+                                    object.dtype = message.dtype;
                                 if (message.crypto_provider_id != null && message.hasOwnProperty("crypto_provider_id"))
                                     object.crypto_provider_id = $root.syft_proto.types.syft.v1.Id.toObject(message.crypto_provider_id, options);
                                 if (message.location_ids && message.location_ids.length) {

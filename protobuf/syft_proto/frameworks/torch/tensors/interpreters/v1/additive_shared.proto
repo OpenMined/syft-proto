@@ -8,13 +8,17 @@ import "syft_proto/types/syft/v1/id.proto";
 
 message AdditiveSharingTensor {
     syft_proto.types.syft.v1.Id id = 1;
-    int64 field_size = 2;
-    syft_proto.types.syft.v1.Id crypto_provider_id = 3;
+    oneof field_size {
+        int64 field_int = 2;
+        string field_str = 3;
+    }
+    string dtype = 4;
+    syft_proto.types.syft.v1.Id crypto_provider_id = 5;
     // It would be natural to capture a {location_id->share} dictionary
     // as a map, but the key types of a map can't be messages. The ids
     // use the Id type because they can be either integers or strings.
     // Capturing them as two parallel lists/arrays isn't ideal but ought
     // to work okay (given that constraint.)
-    repeated syft_proto.types.syft.v1.Id location_ids = 4;
-    repeated syft_proto.generic.pointers.v1.PointerTensor shares = 5;
+    repeated syft_proto.types.syft.v1.Id location_ids = 6;
+    repeated syft_proto.generic.pointers.v1.PointerTensor shares = 7;
 }
