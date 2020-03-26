@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 BUF_VERSION := 0.8.0
 UNAME_OS := $(shell uname -s)
 UNAME_ARCH := $(shell uname -m)
@@ -30,17 +32,20 @@ else
 endif
 
 buf-lint: buf
+	set -o pipefail
 	cd protobuf && \
 	../buf check lint 2>&1 | tee ../buf-lint && \
 	cd ..
 
 buf-check-breaking: buf
+	set -o pipefail
 	cd protobuf && \
 		../buf check breaking --against-input "${HTTPS_GIT}#branch=master" \
 			--against-input-config '{"build":{"roots":["protobuf"]}}' 2>&1 | tee ../buf-check-breaking && \
 		cd ..
 
 python: buf-lint protoc
+	set -o pipefail
 	cd protobuf && \
 		../buf image build -o - | \
 			protoc --descriptor_set_in=/dev/stdin --python_out=../ \
@@ -50,6 +55,7 @@ python: buf-lint protoc
 			while IFS= read -rd '' dir; do touch "$$dir/__init__.py"; done
 
 java: buf-lint protoc
+	set -o pipefail
 	cd protobuf && \
 		../buf image build -o - | \
 			protoc --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java \
