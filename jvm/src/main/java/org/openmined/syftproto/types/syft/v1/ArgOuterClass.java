@@ -20,35 +20,42 @@ public final class ArgOuterClass {
 
     /**
      * <code>bool arg_bool = 1[json_name = "argBool"];</code>
+     * @return The argBool.
      */
     boolean getArgBool();
 
     /**
      * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+     * @return The argInt.
      */
     int getArgInt();
 
     /**
      * <code>float arg_float = 3[json_name = "argFloat"];</code>
+     * @return The argFloat.
      */
     float getArgFloat();
 
     /**
      * <code>string arg_string = 4[json_name = "argString"];</code>
+     * @return The argString.
      */
     java.lang.String getArgString();
     /**
      * <code>string arg_string = 4[json_name = "argString"];</code>
+     * @return The bytes for argString.
      */
     com.google.protobuf.ByteString
         getArgStringBytes();
 
     /**
      * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
+     * @return Whether the argShape field is set.
      */
     boolean hasArgShape();
     /**
      * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
+     * @return The argShape.
      */
     org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getArgShape();
     /**
@@ -58,10 +65,12 @@ public final class ArgOuterClass {
 
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor arg_tensor = 6[json_name = "argTensor"];</code>
+     * @return Whether the argTensor field is set.
      */
     boolean hasArgTensor();
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor arg_tensor = 6[json_name = "argTensor"];</code>
+     * @return The argTensor.
      */
     org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getArgTensor();
     /**
@@ -71,10 +80,12 @@ public final class ArgOuterClass {
 
     /**
      * <code>.syft_proto.types.torch.v1.Parameter arg_torch_param = 7[json_name = "argTorchParam"];</code>
+     * @return Whether the argTorchParam field is set.
      */
     boolean hasArgTorchParam();
     /**
      * <code>.syft_proto.types.torch.v1.Parameter arg_torch_param = 7[json_name = "argTorchParam"];</code>
+     * @return The argTorchParam.
      */
     org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getArgTorchParam();
     /**
@@ -84,10 +95,12 @@ public final class ArgOuterClass {
 
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8[json_name = "argPointerTensor"];</code>
+     * @return Whether the argPointerTensor field is set.
      */
     boolean hasArgPointerTensor();
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8[json_name = "argPointerTensor"];</code>
+     * @return The argPointerTensor.
      */
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getArgPointerTensor();
     /**
@@ -97,16 +110,33 @@ public final class ArgOuterClass {
 
     /**
      * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+     * @return Whether the argPlaceholder field is set.
      */
     boolean hasArgPlaceholder();
     /**
      * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+     * @return The argPlaceholder.
      */
     org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder getArgPlaceholder();
     /**
      * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
      */
     org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder getArgPlaceholderOrBuilder();
+
+    /**
+     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+     * @return Whether the argPlaceholderId field is set.
+     */
+    boolean hasArgPlaceholderId();
+    /**
+     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+     * @return The argPlaceholderId.
+     */
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getArgPlaceholderId();
+    /**
+     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+     */
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getArgPlaceholderIdOrBuilder();
 
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.ArgCase getArgCase();
   }
@@ -246,6 +276,20 @@ public final class ArgOuterClass {
               argCase_ = 9;
               break;
             }
+            case 82: {
+              org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder subBuilder = null;
+              if (argCase_ == 10) {
+                subBuilder = ((org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_).toBuilder();
+              }
+              arg_ =
+                  input.readMessage(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_);
+                arg_ = subBuilder.buildPartial();
+              }
+              argCase_ = 10;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -281,7 +325,8 @@ public final class ArgOuterClass {
     private int argCase_ = 0;
     private java.lang.Object arg_;
     public enum ArgCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       ARG_BOOL(1),
       ARG_INT(2),
       ARG_FLOAT(3),
@@ -291,12 +336,15 @@ public final class ArgOuterClass {
       ARG_TORCH_PARAM(7),
       ARG_POINTER_TENSOR(8),
       ARG_PLACEHOLDER(9),
+      ARG_PLACEHOLDER_ID(10),
       ARG_NOT_SET(0);
       private final int value;
       private ArgCase(int value) {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -315,6 +363,7 @@ public final class ArgOuterClass {
           case 7: return ARG_TORCH_PARAM;
           case 8: return ARG_POINTER_TENSOR;
           case 9: return ARG_PLACEHOLDER;
+          case 10: return ARG_PLACEHOLDER_ID;
           case 0: return ARG_NOT_SET;
           default: return null;
         }
@@ -333,6 +382,7 @@ public final class ArgOuterClass {
     public static final int ARG_BOOL_FIELD_NUMBER = 1;
     /**
      * <code>bool arg_bool = 1[json_name = "argBool"];</code>
+     * @return The argBool.
      */
     public boolean getArgBool() {
       if (argCase_ == 1) {
@@ -344,6 +394,7 @@ public final class ArgOuterClass {
     public static final int ARG_INT_FIELD_NUMBER = 2;
     /**
      * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+     * @return The argInt.
      */
     public int getArgInt() {
       if (argCase_ == 2) {
@@ -355,6 +406,7 @@ public final class ArgOuterClass {
     public static final int ARG_FLOAT_FIELD_NUMBER = 3;
     /**
      * <code>float arg_float = 3[json_name = "argFloat"];</code>
+     * @return The argFloat.
      */
     public float getArgFloat() {
       if (argCase_ == 3) {
@@ -366,6 +418,7 @@ public final class ArgOuterClass {
     public static final int ARG_STRING_FIELD_NUMBER = 4;
     /**
      * <code>string arg_string = 4[json_name = "argString"];</code>
+     * @return The argString.
      */
     public java.lang.String getArgString() {
       java.lang.Object ref = "";
@@ -386,6 +439,7 @@ public final class ArgOuterClass {
     }
     /**
      * <code>string arg_string = 4[json_name = "argString"];</code>
+     * @return The bytes for argString.
      */
     public com.google.protobuf.ByteString
         getArgStringBytes() {
@@ -409,12 +463,14 @@ public final class ArgOuterClass {
     public static final int ARG_SHAPE_FIELD_NUMBER = 5;
     /**
      * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
+     * @return Whether the argShape field is set.
      */
     public boolean hasArgShape() {
       return argCase_ == 5;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
+     * @return The argShape.
      */
     public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getArgShape() {
       if (argCase_ == 5) {
@@ -435,12 +491,14 @@ public final class ArgOuterClass {
     public static final int ARG_TENSOR_FIELD_NUMBER = 6;
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor arg_tensor = 6[json_name = "argTensor"];</code>
+     * @return Whether the argTensor field is set.
      */
     public boolean hasArgTensor() {
       return argCase_ == 6;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor arg_tensor = 6[json_name = "argTensor"];</code>
+     * @return The argTensor.
      */
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getArgTensor() {
       if (argCase_ == 6) {
@@ -461,12 +519,14 @@ public final class ArgOuterClass {
     public static final int ARG_TORCH_PARAM_FIELD_NUMBER = 7;
     /**
      * <code>.syft_proto.types.torch.v1.Parameter arg_torch_param = 7[json_name = "argTorchParam"];</code>
+     * @return Whether the argTorchParam field is set.
      */
     public boolean hasArgTorchParam() {
       return argCase_ == 7;
     }
     /**
      * <code>.syft_proto.types.torch.v1.Parameter arg_torch_param = 7[json_name = "argTorchParam"];</code>
+     * @return The argTorchParam.
      */
     public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getArgTorchParam() {
       if (argCase_ == 7) {
@@ -487,12 +547,14 @@ public final class ArgOuterClass {
     public static final int ARG_POINTER_TENSOR_FIELD_NUMBER = 8;
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8[json_name = "argPointerTensor"];</code>
+     * @return Whether the argPointerTensor field is set.
      */
     public boolean hasArgPointerTensor() {
       return argCase_ == 8;
     }
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8[json_name = "argPointerTensor"];</code>
+     * @return The argPointerTensor.
      */
     public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getArgPointerTensor() {
       if (argCase_ == 8) {
@@ -513,12 +575,14 @@ public final class ArgOuterClass {
     public static final int ARG_PLACEHOLDER_FIELD_NUMBER = 9;
     /**
      * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+     * @return Whether the argPlaceholder field is set.
      */
     public boolean hasArgPlaceholder() {
       return argCase_ == 9;
     }
     /**
      * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+     * @return The argPlaceholder.
      */
     public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder getArgPlaceholder() {
       if (argCase_ == 9) {
@@ -534,6 +598,34 @@ public final class ArgOuterClass {
          return (org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_;
       }
       return org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.getDefaultInstance();
+    }
+
+    public static final int ARG_PLACEHOLDER_ID_FIELD_NUMBER = 10;
+    /**
+     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+     * @return Whether the argPlaceholderId field is set.
+     */
+    public boolean hasArgPlaceholderId() {
+      return argCase_ == 10;
+    }
+    /**
+     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+     * @return The argPlaceholderId.
+     */
+    public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getArgPlaceholderId() {
+      if (argCase_ == 10) {
+         return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_;
+      }
+      return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
+    }
+    /**
+     * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+     */
+    public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getArgPlaceholderIdOrBuilder() {
+      if (argCase_ == 10) {
+         return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_;
+      }
+      return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -579,6 +671,9 @@ public final class ArgOuterClass {
       }
       if (argCase_ == 9) {
         output.writeMessage(9, (org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_);
+      }
+      if (argCase_ == 10) {
+        output.writeMessage(10, (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_);
       }
       unknownFields.writeTo(output);
     }
@@ -626,6 +721,10 @@ public final class ArgOuterClass {
       if (argCase_ == 9) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, (org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_);
+      }
+      if (argCase_ == 10) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -681,6 +780,10 @@ public final class ArgOuterClass {
           if (!getArgPlaceholder()
               .equals(other.getArgPlaceholder())) return false;
           break;
+        case 10:
+          if (!getArgPlaceholderId()
+              .equals(other.getArgPlaceholderId())) return false;
+          break;
         case 0:
         default:
       }
@@ -733,6 +836,10 @@ public final class ArgOuterClass {
         case 9:
           hash = (37 * hash) + ARG_PLACEHOLDER_FIELD_NUMBER;
           hash = (53 * hash) + getArgPlaceholder().hashCode();
+          break;
+        case 10:
+          hash = (37 * hash) + ARG_PLACEHOLDER_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getArgPlaceholderId().hashCode();
           break;
         case 0:
         default:
@@ -945,6 +1052,13 @@ public final class ArgOuterClass {
             result.arg_ = argPlaceholderBuilder_.build();
           }
         }
+        if (argCase_ == 10) {
+          if (argPlaceholderIdBuilder_ == null) {
+            result.arg_ = arg_;
+          } else {
+            result.arg_ = argPlaceholderIdBuilder_.build();
+          }
+        }
         result.argCase_ = argCase_;
         onBuilt();
         return result;
@@ -1033,6 +1147,10 @@ public final class ArgOuterClass {
             mergeArgPlaceholder(other.getArgPlaceholder());
             break;
           }
+          case ARG_PLACEHOLDER_ID: {
+            mergeArgPlaceholderId(other.getArgPlaceholderId());
+            break;
+          }
           case ARG_NOT_SET: {
             break;
           }
@@ -1083,6 +1201,7 @@ public final class ArgOuterClass {
 
       /**
        * <code>bool arg_bool = 1[json_name = "argBool"];</code>
+       * @return The argBool.
        */
       public boolean getArgBool() {
         if (argCase_ == 1) {
@@ -1092,6 +1211,8 @@ public final class ArgOuterClass {
       }
       /**
        * <code>bool arg_bool = 1[json_name = "argBool"];</code>
+       * @param value The argBool to set.
+       * @return This builder for chaining.
        */
       public Builder setArgBool(boolean value) {
         argCase_ = 1;
@@ -1101,6 +1222,7 @@ public final class ArgOuterClass {
       }
       /**
        * <code>bool arg_bool = 1[json_name = "argBool"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearArgBool() {
         if (argCase_ == 1) {
@@ -1113,6 +1235,7 @@ public final class ArgOuterClass {
 
       /**
        * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+       * @return The argInt.
        */
       public int getArgInt() {
         if (argCase_ == 2) {
@@ -1122,6 +1245,8 @@ public final class ArgOuterClass {
       }
       /**
        * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+       * @param value The argInt to set.
+       * @return This builder for chaining.
        */
       public Builder setArgInt(int value) {
         argCase_ = 2;
@@ -1131,6 +1256,7 @@ public final class ArgOuterClass {
       }
       /**
        * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearArgInt() {
         if (argCase_ == 2) {
@@ -1143,6 +1269,7 @@ public final class ArgOuterClass {
 
       /**
        * <code>float arg_float = 3[json_name = "argFloat"];</code>
+       * @return The argFloat.
        */
       public float getArgFloat() {
         if (argCase_ == 3) {
@@ -1152,6 +1279,8 @@ public final class ArgOuterClass {
       }
       /**
        * <code>float arg_float = 3[json_name = "argFloat"];</code>
+       * @param value The argFloat to set.
+       * @return This builder for chaining.
        */
       public Builder setArgFloat(float value) {
         argCase_ = 3;
@@ -1161,6 +1290,7 @@ public final class ArgOuterClass {
       }
       /**
        * <code>float arg_float = 3[json_name = "argFloat"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearArgFloat() {
         if (argCase_ == 3) {
@@ -1173,6 +1303,7 @@ public final class ArgOuterClass {
 
       /**
        * <code>string arg_string = 4[json_name = "argString"];</code>
+       * @return The argString.
        */
       public java.lang.String getArgString() {
         java.lang.Object ref = "";
@@ -1193,6 +1324,7 @@ public final class ArgOuterClass {
       }
       /**
        * <code>string arg_string = 4[json_name = "argString"];</code>
+       * @return The bytes for argString.
        */
       public com.google.protobuf.ByteString
           getArgStringBytes() {
@@ -1214,6 +1346,8 @@ public final class ArgOuterClass {
       }
       /**
        * <code>string arg_string = 4[json_name = "argString"];</code>
+       * @param value The argString to set.
+       * @return This builder for chaining.
        */
       public Builder setArgString(
           java.lang.String value) {
@@ -1227,6 +1361,7 @@ public final class ArgOuterClass {
       }
       /**
        * <code>string arg_string = 4[json_name = "argString"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearArgString() {
         if (argCase_ == 4) {
@@ -1238,6 +1373,8 @@ public final class ArgOuterClass {
       }
       /**
        * <code>string arg_string = 4[json_name = "argString"];</code>
+       * @param value The bytes for argString to set.
+       * @return This builder for chaining.
        */
       public Builder setArgStringBytes(
           com.google.protobuf.ByteString value) {
@@ -1255,12 +1392,14 @@ public final class ArgOuterClass {
           org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder> argShapeBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
+       * @return Whether the argShape field is set.
        */
       public boolean hasArgShape() {
         return argCase_ == 5;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
+       * @return The argShape.
        */
       public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getArgShape() {
         if (argShapeBuilder_ == null) {
@@ -1391,12 +1530,14 @@ public final class ArgOuterClass {
           org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> argTensorBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor arg_tensor = 6[json_name = "argTensor"];</code>
+       * @return Whether the argTensor field is set.
        */
       public boolean hasArgTensor() {
         return argCase_ == 6;
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor arg_tensor = 6[json_name = "argTensor"];</code>
+       * @return The argTensor.
        */
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getArgTensor() {
         if (argTensorBuilder_ == null) {
@@ -1527,12 +1668,14 @@ public final class ArgOuterClass {
           org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter, org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.Builder, org.openmined.syftproto.types.torch.v1.ParameterOuterClass.ParameterOrBuilder> argTorchParamBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.Parameter arg_torch_param = 7[json_name = "argTorchParam"];</code>
+       * @return Whether the argTorchParam field is set.
        */
       public boolean hasArgTorchParam() {
         return argCase_ == 7;
       }
       /**
        * <code>.syft_proto.types.torch.v1.Parameter arg_torch_param = 7[json_name = "argTorchParam"];</code>
+       * @return The argTorchParam.
        */
       public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getArgTorchParam() {
         if (argTorchParamBuilder_ == null) {
@@ -1663,12 +1806,14 @@ public final class ArgOuterClass {
           org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder> argPointerTensorBuilder_;
       /**
        * <code>.syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8[json_name = "argPointerTensor"];</code>
+       * @return Whether the argPointerTensor field is set.
        */
       public boolean hasArgPointerTensor() {
         return argCase_ == 8;
       }
       /**
        * <code>.syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8[json_name = "argPointerTensor"];</code>
+       * @return The argPointerTensor.
        */
       public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getArgPointerTensor() {
         if (argPointerTensorBuilder_ == null) {
@@ -1799,12 +1944,14 @@ public final class ArgOuterClass {
           org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder, org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.Builder, org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder> argPlaceholderBuilder_;
       /**
        * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+       * @return Whether the argPlaceholder field is set.
        */
       public boolean hasArgPlaceholder() {
         return argCase_ == 9;
       }
       /**
        * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
+       * @return The argPlaceholder.
        */
       public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder getArgPlaceholder() {
         if (argPlaceholderBuilder_ == null) {
@@ -1930,6 +2077,144 @@ public final class ArgOuterClass {
         onChanged();;
         return argPlaceholderBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> argPlaceholderIdBuilder_;
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+       * @return Whether the argPlaceholderId field is set.
+       */
+      public boolean hasArgPlaceholderId() {
+        return argCase_ == 10;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+       * @return The argPlaceholderId.
+       */
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getArgPlaceholderId() {
+        if (argPlaceholderIdBuilder_ == null) {
+          if (argCase_ == 10) {
+            return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_;
+          }
+          return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
+        } else {
+          if (argCase_ == 10) {
+            return argPlaceholderIdBuilder_.getMessage();
+          }
+          return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+       */
+      public Builder setArgPlaceholderId(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+        if (argPlaceholderIdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          arg_ = value;
+          onChanged();
+        } else {
+          argPlaceholderIdBuilder_.setMessage(value);
+        }
+        argCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+       */
+      public Builder setArgPlaceholderId(
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
+        if (argPlaceholderIdBuilder_ == null) {
+          arg_ = builderForValue.build();
+          onChanged();
+        } else {
+          argPlaceholderIdBuilder_.setMessage(builderForValue.build());
+        }
+        argCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+       */
+      public Builder mergeArgPlaceholderId(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+        if (argPlaceholderIdBuilder_ == null) {
+          if (argCase_ == 10 &&
+              arg_ != org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance()) {
+            arg_ = org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.newBuilder((org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            arg_ = value;
+          }
+          onChanged();
+        } else {
+          if (argCase_ == 10) {
+            argPlaceholderIdBuilder_.mergeFrom(value);
+          }
+          argPlaceholderIdBuilder_.setMessage(value);
+        }
+        argCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+       */
+      public Builder clearArgPlaceholderId() {
+        if (argPlaceholderIdBuilder_ == null) {
+          if (argCase_ == 10) {
+            argCase_ = 0;
+            arg_ = null;
+            onChanged();
+          }
+        } else {
+          if (argCase_ == 10) {
+            argCase_ = 0;
+            arg_ = null;
+          }
+          argPlaceholderIdBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder getArgPlaceholderIdBuilder() {
+        return getArgPlaceholderIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getArgPlaceholderIdOrBuilder() {
+        if ((argCase_ == 10) && (argPlaceholderIdBuilder_ != null)) {
+          return argPlaceholderIdBuilder_.getMessageOrBuilder();
+        } else {
+          if (argCase_ == 10) {
+            return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_;
+          }
+          return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+          getArgPlaceholderIdFieldBuilder() {
+        if (argPlaceholderIdBuilder_ == null) {
+          if (!(argCase_ == 10)) {
+            arg_ = org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
+          }
+          argPlaceholderIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder>(
+                  (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_,
+                  getParentForChildren(),
+                  isClean());
+          arg_ = null;
+        }
+        argCase_ = 10;
+        onChanged();;
+        return argPlaceholderIdBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1999,31 +2284,35 @@ public final class ArgOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"syft_proto/types/syft/v1/arg.proto\022\030sy" +
       "ft_proto.types.syft.v1\032)syft_proto/execu" +
-      "tion/v1/placeholder.proto\0323syft_proto/ge" +
-      "neric/pointers/v1/pointer_tensor.proto\032&" +
-      "syft_proto/types/torch/v1/tensor.proto\032$" +
-      "syft_proto/types/syft/v1/shape.proto\032)sy" +
-      "ft_proto/types/torch/v1/parameter.proto\"" +
-      "\215\004\n\003Arg\022\033\n\010arg_bool\030\001 \001(\010H\000R\007argBool\022\031\n\007" +
-      "arg_int\030\002 \001(\005H\000R\006argInt\022\035\n\targ_float\030\003 \001" +
-      "(\002H\000R\010argFloat\022\037\n\narg_string\030\004 \001(\tH\000R\tar" +
-      "gString\022>\n\targ_shape\030\005 \001(\0132\037.syft_proto." +
-      "types.syft.v1.ShapeH\000R\010argShape\022G\n\narg_t" +
-      "ensor\030\006 \001(\0132&.syft_proto.types.torch.v1." +
-      "TorchTensorH\000R\targTensor\022N\n\017arg_torch_pa" +
-      "ram\030\007 \001(\0132$.syft_proto.types.torch.v1.Pa" +
-      "rameterH\000R\rargTorchParam\022]\n\022arg_pointer_" +
-      "tensor\030\010 \001(\0132-.syft_proto.generic.pointe" +
-      "rs.v1.PointerTensorH\000R\020argPointerTensor\022" +
-      "O\n\017arg_placeholder\030\t \001(\0132$.syft_proto.ex" +
-      "ecution.v1.PlaceholderH\000R\016argPlaceholder" +
-      "B\005\n\003argB\'\n%org.openmined.syftproto.types" +
-      ".syft.v1b\006proto3"
+      "tion/v1/placeholder.proto\032,syft_proto/ex" +
+      "ecution/v1/placeholder_id.proto\0323syft_pr" +
+      "oto/generic/pointers/v1/pointer_tensor.p" +
+      "roto\032&syft_proto/types/torch/v1/tensor.p" +
+      "roto\032$syft_proto/types/syft/v1/shape.pro" +
+      "to\032)syft_proto/types/torch/v1/parameter." +
+      "proto\"\345\004\n\003Arg\022\033\n\010arg_bool\030\001 \001(\010H\000R\007argBo" +
+      "ol\022\031\n\007arg_int\030\002 \001(\005H\000R\006argInt\022\035\n\targ_flo" +
+      "at\030\003 \001(\002H\000R\010argFloat\022\037\n\narg_string\030\004 \001(\t" +
+      "H\000R\targString\022>\n\targ_shape\030\005 \001(\0132\037.syft_" +
+      "proto.types.syft.v1.ShapeH\000R\010argShape\022G\n" +
+      "\narg_tensor\030\006 \001(\0132&.syft_proto.types.tor" +
+      "ch.v1.TorchTensorH\000R\targTensor\022N\n\017arg_to" +
+      "rch_param\030\007 \001(\0132$.syft_proto.types.torch" +
+      ".v1.ParameterH\000R\rargTorchParam\022]\n\022arg_po" +
+      "inter_tensor\030\010 \001(\0132-.syft_proto.generic." +
+      "pointers.v1.PointerTensorH\000R\020argPointerT" +
+      "ensor\022O\n\017arg_placeholder\030\t \001(\0132$.syft_pr" +
+      "oto.execution.v1.PlaceholderH\000R\016argPlace" +
+      "holder\022V\n\022arg_placeholder_id\030\n \001(\0132&.syf" +
+      "t_proto.execution.v1.PlaceholderIdH\000R\020ar" +
+      "gPlaceholderIdB\005\n\003argB\'\n%org.openmined.s" +
+      "yftproto.types.syft.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor(),
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.getDescriptor(),
           org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor(),
           org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.ShapeOuterClass.getDescriptor(),
@@ -2034,8 +2323,9 @@ public final class ArgOuterClass {
     internal_static_syft_proto_types_syft_v1_Arg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_types_syft_v1_Arg_descriptor,
-        new java.lang.String[] { "ArgBool", "ArgInt", "ArgFloat", "ArgString", "ArgShape", "ArgTensor", "ArgTorchParam", "ArgPointerTensor", "ArgPlaceholder", "Arg", });
+        new java.lang.String[] { "ArgBool", "ArgInt", "ArgFloat", "ArgString", "ArgShape", "ArgTensor", "ArgTorchParam", "ArgPointerTensor", "ArgPlaceholder", "ArgPlaceholderId", "Arg", });
     org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor();
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.getDescriptor();
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor();
     org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor();
     org.openmined.syftproto.types.syft.v1.ShapeOuterClass.getDescriptor();

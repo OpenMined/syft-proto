@@ -28,6 +28,14 @@ public struct SyftProto_Execution_V1_ComputationAction {
 
   public var target: SyftProto_Execution_V1_ComputationAction.OneOf_Target? = nil
 
+  public var targetID: SyftProto_Types_Syft_V1_Id {
+    get {
+      if case .targetID(let v)? = target {return v}
+      return SyftProto_Types_Syft_V1_Id()
+    }
+    set {target = .targetID(newValue)}
+  }
+
   public var targetPointer: SyftProto_Generic_Pointers_V1_PointerTensor {
     get {
       if case .targetPointer(let v)? = target {return v}
@@ -36,12 +44,12 @@ public struct SyftProto_Execution_V1_ComputationAction {
     set {target = .targetPointer(newValue)}
   }
 
-  public var targetPlaceholder: SyftProto_Execution_V1_Placeholder {
+  public var targetPlaceholderID: SyftProto_Execution_V1_PlaceholderId {
     get {
-      if case .targetPlaceholder(let v)? = target {return v}
-      return SyftProto_Execution_V1_Placeholder()
+      if case .targetPlaceholderID(let v)? = target {return v}
+      return SyftProto_Execution_V1_PlaceholderId()
     }
-    set {target = .targetPlaceholder(newValue)}
+    set {target = .targetPlaceholderID(newValue)}
   }
 
   public var targetTensor: SyftProto_Types_Torch_V1_TorchTensor {
@@ -58,20 +66,22 @@ public struct SyftProto_Execution_V1_ComputationAction {
 
   public var returnIds: [SyftProto_Types_Syft_V1_Id] = []
 
-  public var returnPlaceholders: [SyftProto_Execution_V1_Placeholder] = []
+  public var returnPlaceholderIds: [SyftProto_Execution_V1_PlaceholderId] = []
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Target: Equatable {
+    case targetID(SyftProto_Types_Syft_V1_Id)
     case targetPointer(SyftProto_Generic_Pointers_V1_PointerTensor)
-    case targetPlaceholder(SyftProto_Execution_V1_Placeholder)
+    case targetPlaceholderID(SyftProto_Execution_V1_PlaceholderId)
     case targetTensor(SyftProto_Types_Torch_V1_TorchTensor)
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Execution_V1_ComputationAction.OneOf_Target, rhs: SyftProto_Execution_V1_ComputationAction.OneOf_Target) -> Bool {
       switch (lhs, rhs) {
+      case (.targetID(let l), .targetID(let r)): return l == r
       case (.targetPointer(let l), .targetPointer(let r)): return l == r
-      case (.targetPlaceholder(let l), .targetPlaceholder(let r)): return l == r
+      case (.targetPlaceholderID(let l), .targetPlaceholderID(let r)): return l == r
       case (.targetTensor(let l), .targetTensor(let r)): return l == r
       default: return false
       }
@@ -90,13 +100,14 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
   public static let protoMessageName: String = _protobuf_package + ".ComputationAction"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "command"),
+    9: .standard(proto: "target_id"),
     2: .standard(proto: "target_pointer"),
-    3: .standard(proto: "target_placeholder"),
+    3: .standard(proto: "target_placeholder_id"),
     4: .standard(proto: "target_tensor"),
     5: .same(proto: "args"),
     6: .same(proto: "kwargs"),
     7: .standard(proto: "return_ids"),
-    8: .standard(proto: "return_placeholders"),
+    8: .standard(proto: "return_placeholder_ids"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -112,13 +123,13 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.target = .targetPointer(v)}
       case 3:
-        var v: SyftProto_Execution_V1_Placeholder?
+        var v: SyftProto_Execution_V1_PlaceholderId?
         if let current = self.target {
           try decoder.handleConflictingOneOf()
-          if case .targetPlaceholder(let m) = current {v = m}
+          if case .targetPlaceholderID(let m) = current {v = m}
         }
         try decoder.decodeSingularMessageField(value: &v)
-        if let v = v {self.target = .targetPlaceholder(v)}
+        if let v = v {self.target = .targetPlaceholderID(v)}
       case 4:
         var v: SyftProto_Types_Torch_V1_TorchTensor?
         if let current = self.target {
@@ -130,7 +141,15 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
       case 5: try decoder.decodeRepeatedMessageField(value: &self.args)
       case 6: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Types_Syft_V1_Arg>.self, value: &self.kwargs)
       case 7: try decoder.decodeRepeatedMessageField(value: &self.returnIds)
-      case 8: try decoder.decodeRepeatedMessageField(value: &self.returnPlaceholders)
+      case 8: try decoder.decodeRepeatedMessageField(value: &self.returnPlaceholderIds)
+      case 9:
+        var v: SyftProto_Types_Syft_V1_Id?
+        if let current = self.target {
+          try decoder.handleConflictingOneOf()
+          if case .targetID(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.target = .targetID(v)}
       default: break
       }
     }
@@ -143,11 +162,12 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
     switch self.target {
     case .targetPointer(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    case .targetPlaceholder(let v)?:
+    case .targetPlaceholderID(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
     case .targetTensor(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
     case nil: break
+    default: break
     }
     if !self.args.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.args, fieldNumber: 5)
@@ -158,8 +178,11 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
     if !self.returnIds.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.returnIds, fieldNumber: 7)
     }
-    if !self.returnPlaceholders.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.returnPlaceholders, fieldNumber: 8)
+    if !self.returnPlaceholderIds.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.returnPlaceholderIds, fieldNumber: 8)
+    }
+    if case .targetID(let v)? = self.target {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -170,7 +193,7 @@ extension SyftProto_Execution_V1_ComputationAction: SwiftProtobuf.Message, Swift
     if lhs.args != rhs.args {return false}
     if lhs.kwargs != rhs.kwargs {return false}
     if lhs.returnIds != rhs.returnIds {return false}
-    if lhs.returnPlaceholders != rhs.returnPlaceholders {return false}
+    if lhs.returnPlaceholderIds != rhs.returnPlaceholderIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

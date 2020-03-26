@@ -20,10 +20,12 @@ public final class ProtocolOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return The id.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId();
     /**
@@ -33,35 +35,44 @@ public final class ProtocolOuterClass {
 
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * @return The count of tags.
      */
     int getTagsCount();
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
 
     /**
      * <code>string description = 3[json_name = "description"];</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 3[json_name = "description"];</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
      * <code>bool workers_resolved = 4[json_name = "workersResolved"];</code>
+     * @return The workersResolved.
      */
     boolean getWorkersResolved();
 
@@ -222,12 +233,14 @@ public final class ProtocolOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id id_;
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return Whether the id field is set.
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return The id.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
@@ -243,6 +256,7 @@ public final class ProtocolOuterClass {
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -250,18 +264,23 @@ public final class ProtocolOuterClass {
     }
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
     /**
      * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -272,6 +291,7 @@ public final class ProtocolOuterClass {
     private volatile java.lang.Object description_;
     /**
      * <code>string description = 3[json_name = "description"];</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -287,6 +307,7 @@ public final class ProtocolOuterClass {
     }
     /**
      * <code>string description = 3[json_name = "description"];</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -306,6 +327,7 @@ public final class ProtocolOuterClass {
     private boolean workersResolved_;
     /**
      * <code>bool workers_resolved = 4[json_name = "workersResolved"];</code>
+     * @return The workersResolved.
      */
     public boolean getWorkersResolved() {
       return workersResolved_;
@@ -792,12 +814,14 @@ public final class ProtocolOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> idBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * @return Whether the id field is set.
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * @return The id.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
         if (idBuilder_ == null) {
@@ -913,6 +937,7 @@ public final class ProtocolOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
@@ -920,18 +945,23 @@ public final class ProtocolOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -939,6 +969,9 @@ public final class ProtocolOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
        */
       public Builder setTags(
           int index, java.lang.String value) {
@@ -952,6 +985,8 @@ public final class ProtocolOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTags(
           java.lang.String value) {
@@ -965,6 +1000,8 @@ public final class ProtocolOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
@@ -976,6 +1013,7 @@ public final class ProtocolOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -985,6 +1023,8 @@ public final class ProtocolOuterClass {
       }
       /**
        * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -1001,6 +1041,7 @@ public final class ProtocolOuterClass {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 3[json_name = "description"];</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -1016,6 +1057,7 @@ public final class ProtocolOuterClass {
       }
       /**
        * <code>string description = 3[json_name = "description"];</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -1032,6 +1074,8 @@ public final class ProtocolOuterClass {
       }
       /**
        * <code>string description = 3[json_name = "description"];</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -1045,6 +1089,7 @@ public final class ProtocolOuterClass {
       }
       /**
        * <code>string description = 3[json_name = "description"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -1054,6 +1099,8 @@ public final class ProtocolOuterClass {
       }
       /**
        * <code>string description = 3[json_name = "description"];</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -1070,12 +1117,15 @@ public final class ProtocolOuterClass {
       private boolean workersResolved_ ;
       /**
        * <code>bool workers_resolved = 4[json_name = "workersResolved"];</code>
+       * @return The workersResolved.
        */
       public boolean getWorkersResolved() {
         return workersResolved_;
       }
       /**
        * <code>bool workers_resolved = 4[json_name = "workersResolved"];</code>
+       * @param value The workersResolved to set.
+       * @return This builder for chaining.
        */
       public Builder setWorkersResolved(boolean value) {
         
@@ -1085,6 +1135,7 @@ public final class ProtocolOuterClass {
       }
       /**
        * <code>bool workers_resolved = 4[json_name = "workersResolved"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearWorkersResolved() {
         
@@ -1391,10 +1442,12 @@ public final class ProtocolOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
+     * @return Whether the planId field is set.
      */
     boolean hasPlanId();
     /**
      * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
+     * @return The planId.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getPlanId();
     /**
@@ -1404,10 +1457,12 @@ public final class ProtocolOuterClass {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
+     * @return Whether the workerId field is set.
      */
     boolean hasWorkerId();
     /**
      * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
+     * @return The workerId.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getWorkerId();
     /**
@@ -1522,12 +1577,14 @@ public final class ProtocolOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id planId_;
     /**
      * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
+     * @return Whether the planId field is set.
      */
     public boolean hasPlanId() {
       return planId_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
+     * @return The planId.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getPlanId() {
       return planId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : planId_;
@@ -1543,12 +1600,14 @@ public final class ProtocolOuterClass {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id workerId_;
     /**
      * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
+     * @return Whether the workerId field is set.
      */
     public boolean hasWorkerId() {
       return workerId_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
+     * @return The workerId.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getWorkerId() {
       return workerId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : workerId_;
@@ -1910,12 +1969,14 @@ public final class ProtocolOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> planIdBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
+       * @return Whether the planId field is set.
        */
       public boolean hasPlanId() {
         return planIdBuilder_ != null || planId_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
+       * @return The planId.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getPlanId() {
         if (planIdBuilder_ == null) {
@@ -2027,12 +2088,14 @@ public final class ProtocolOuterClass {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> workerIdBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
+       * @return Whether the workerId field is set.
        */
       public boolean hasWorkerId() {
         return workerIdBuilder_ != null || workerId_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
+       * @return The workerId.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getWorkerId() {
         if (workerIdBuilder_ == null) {
@@ -2211,24 +2274,23 @@ public final class ProtocolOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n&syft_proto/execution/v1/protocol.proto" +
-      "\022\027syft_proto.execution.v1\032\033google/protob" +
-      "uf/empty.proto\032!syft_proto/types/syft/v1" +
-      "/id.proto\"\355\001\n\010Protocol\022,\n\002id\030\001 \001(\0132\034.syf" +
-      "t_proto.types.syft.v1.IdR\002id\022\022\n\004tags\030\002 \003" +
-      "(\tR\004tags\022 \n\013description\030\003 \001(\tR\013descripti" +
-      "on\022)\n\020workers_resolved\030\004 \001(\010R\017workersRes" +
-      "olved\022R\n\020plan_assignments\030\005 \003(\0132\'.syft_p" +
-      "roto.execution.v1.PlanAssignmentR\017planAs" +
-      "signments\"\202\001\n\016PlanAssignment\0225\n\007plan_id\030" +
-      "\001 \001(\0132\034.syft_proto.types.syft.v1.IdR\006pla" +
-      "nId\0229\n\tworker_id\030\002 \001(\0132\034.syft_proto.type" +
-      "s.syft.v1.IdR\010workerIdB&\n$org.openmined." +
-      "syftproto.execution.v1b\006proto3"
+      "\022\027syft_proto.execution.v1\032!syft_proto/ty" +
+      "pes/syft/v1/id.proto\"\355\001\n\010Protocol\022,\n\002id\030" +
+      "\001 \001(\0132\034.syft_proto.types.syft.v1.IdR\002id\022" +
+      "\022\n\004tags\030\002 \003(\tR\004tags\022 \n\013description\030\003 \001(\t" +
+      "R\013description\022)\n\020workers_resolved\030\004 \001(\010R" +
+      "\017workersResolved\022R\n\020plan_assignments\030\005 \003" +
+      "(\0132\'.syft_proto.execution.v1.PlanAssignm" +
+      "entR\017planAssignments\"\202\001\n\016PlanAssignment\022" +
+      "5\n\007plan_id\030\001 \001(\0132\034.syft_proto.types.syft" +
+      ".v1.IdR\006planId\0229\n\tworker_id\030\002 \001(\0132\034.syft" +
+      "_proto.types.syft.v1.IdR\010workerIdB&\n$org" +
+      ".openmined.syftproto.execution.v1b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.EmptyProto.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor(),
         });
     internal_static_syft_proto_execution_v1_Protocol_descriptor =
@@ -2243,7 +2305,6 @@ public final class ProtocolOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_PlanAssignment_descriptor,
         new java.lang.String[] { "PlanId", "WorkerId", });
-    com.google.protobuf.EmptyProto.getDescriptor();
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
   }
 

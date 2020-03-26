@@ -1,0 +1,235 @@
+name: Protobuf
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches:
+    - master
+  release:
+    types: [published]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Run Buf linter
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Buf
+        run: |
+          mkdir -p $HOME/bin
+          export BUF=$HOME/bin/buf
+          export BUF_VERSION="0.8.0"
+          export UNAME_OS=$(uname -s)
+          export UNAME_ARCH=$(uname -m)
+          curl -sSL \
+            "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
+            -o "$HOME/bin/buf"
+          chmod +x "$HOME/bin/buf"
+
+      - name: Lint schemas
+        run: |
+          cd protobuf && \
+            $HOME/bin/buf check lint && \
+            cd ..
+
+  breaking:
+    needs: lint
+    runs-on: ubuntu-latest
+    name: Detect breaking changes
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Buf
+        run: |
+          mkdir -p $HOME/bin
+          export BUF=$HOME/bin/buf
+          export BUF_VERSION="0.8.0"
+          export UNAME_OS=$(uname -s)
+          export UNAME_ARCH=$(uname -m)
+          curl -sSL \
+            "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
+            -o "$HOME/bin/buf"
+          chmod +x "$HOME/bin/buf"
+
+      - name: Run breaking change detection
+        run: |
+          export HTTPS_GIT="https://github.com/OpenMined/syft-proto.git"
+          cd protobuf && \
+            $HOME/bin/buf check breaking --against-input "${HTTPS_GIT}#branch=master" --against-input-config '{"build":{"roots":["protobuf"]}}' && \
+            cd ..
+
+  python:
+    needs: lint
+    runs-on: ubuntu-latest
+    name: Build Python stubs
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+
+      - name: Set up protoc
+        run: |
+          PROTOC_ZIP=protoc-3.11.4-linux-x86_64.zip
+          curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.11.4/$PROTOC_ZIP
+          sudo unzip -o $PROTOC_ZIP -d /usr/local bin/protoc
+          sudo unzip -o $PROTOC_ZIP -d /usr/local 'include/*'
+          rm -f $PROTOC_ZIP
+
+      - name: Set up Buf
+        run: |
+          mkdir -p $HOME/bin
+          export BUF=$HOME/bin/buf
+          export BUF_VERSION="0.8.0"
+          export UNAME_OS=$(uname -s)
+          export UNAME_ARCH=$(uname -m)
+          curl -sSL \
+            "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
+            -o "$HOME/bin/buf"
+          chmod +x "$HOME/bin/buf"
+
+      - name: Build stubs
+        run: |
+          cd protobuf && \
+            $HOME/bin/buf image build -o - | protoc --descriptor_set_in=/dev/stdin --python_out=../ $($HOME/bin/buf image build -o - | $HOME/bin/buf ls-files --input -) && \
+            cd ..
+          find syft_proto/ -type d -print0 | \
+            while IFS= read -rd '' dir; do touch "$dir/__init__.py"; done
+
+      - name: Commit to repository
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@users.noreply.github.com"
+          git add syft_proto/*
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Build Python stubs"; git push)
+
+  java:
+    needs: lint
+    runs-on: ubuntu-latest
+    name: Build JVM stubs
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Set up protoc
+        run: |
+          PROTOC_ZIP=protoc-3.11.4-linux-x86_64.zip
+          curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.11.4/$PROTOC_ZIP
+          sudo unzip -o $PROTOC_ZIP -d /usr/local bin/protoc
+          sudo unzip -o $PROTOC_ZIP -d /usr/local 'include/*'
+          rm -f $PROTOC_ZIP
+
+      - name: Set up Buf
+        run: |
+          mkdir -p $HOME/bin
+          export BUF=$HOME/bin/buf
+          export BUF_VERSION="0.8.0"
+          export UNAME_OS=$(uname -s)
+          export UNAME_ARCH=$(uname -m)
+          curl -sSL \
+            "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
+            -o "$HOME/bin/buf"
+          chmod +x "$HOME/bin/buf"
+
+      - name: Build stubs
+        run: |
+          cd protobuf && \
+            $HOME/bin/buf image build -o - | protoc --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java $($HOME/bin/buf image build -o - | $HOME/bin/buf ls-files --input -) && \
+            cd ..
+          ./jvm/gradlew cleanFiles install
+
+      - name: Commit to repository
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@users.noreply.github.com"
+          git add jvm/src/*
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Build Java stubs"; git push)
+
+  javascript:
+    needs: lint
+    runs-on: ubuntu-latest
+    name: Build Javascript stubs
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Build JS Stubs
+        run: |
+          npm i
+          node ./js/bin/build_stubs.js
+
+      - name: Commit to repository
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@users.noreply.github.com"
+          git add js/*
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Build Javascript stubs"; git push)
+
+  swift:
+    needs: lint
+    runs-on: macos-latest
+    name: Build Swift stubs
+  
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Swift 
+        run: brew install swift-protobuf
+
+      - name: Build swift stubs
+        run: |
+          mkdir -p swift
+          protoc -I=protobuf --swift_opt=Visibility=Public --swift_out=swift $(find protobuf -name "*.proto")
+          
+      - name: Commit to repository 
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@users.noreply.github.com"
+          git add swift/*
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Build Swift stubs"; git push)
+
+  publish:
+    needs: [python, java, javascript, swift]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release' && !failure()
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install setuptools wheel twine
+
+      - name: Build
+        run: |
+          python setup.py sdist bdist_wheel
+
+      - name: Publish
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: |
+          twine upload --verbose dist/*

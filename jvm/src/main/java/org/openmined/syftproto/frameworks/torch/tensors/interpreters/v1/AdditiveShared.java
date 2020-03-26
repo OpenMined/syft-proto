@@ -20,10 +20,12 @@ public final class AdditiveShared {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return The id.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId();
     /**
@@ -349,12 +351,14 @@ public final class AdditiveShared {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id id_;
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return Whether the id field is set.
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return The id.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
@@ -1144,12 +1148,14 @@ public final class AdditiveShared {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> idBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * @return Whether the id field is set.
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * @return The id.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
         if (idBuilder_ == null) {
