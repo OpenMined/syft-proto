@@ -29,18 +29,18 @@ else
 	ln -s /usr/local/bin/protoc protoc
 endif
 
-lint: buf
+buf-lint: buf
 	cd protobuf && \
-	../buf check lint 2>&1 | tee ../lint && \
+	../buf check lint 2>&1 | tee ../buf-lint && \
 	cd ..
 
-detect-breaking: buf
+buf-check-breaking: buf
 	cd protobuf && \
 		../buf check breaking --against-input "${HTTPS_GIT}#branch=master" \
-			--against-input-config '{"build":{"roots":["protobuf"]}}' 2>&1 | tee ../detect-breaking && \
+			--against-input-config '{"build":{"roots":["protobuf"]}}' 2>&1 | tee ../buf-check-breaking && \
 		cd ..
 
-python: lint protoc
+python: buf-lint protoc
 	cd protobuf && \
 		../buf image build -o - | \
 			protoc --descriptor_set_in=/dev/stdin --python_out=../ \
@@ -49,7 +49,7 @@ python: lint protoc
 		find syft_proto/ -type d -print0 | \
 			while IFS= read -rd '' dir; do touch "$$dir/__init__.py"; done
 
-java: lint protoc
+java: buf-lint protoc
 	cd protobuf && \
 		../buf image build -o - | \
 			protoc --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java \
@@ -57,17 +57,17 @@ java: lint protoc
 		cd .. && \
 		./jvm/gradlew cleanFiles install
 
-javascript: lint
+javascript: buf-lint
 	npm i
 	node ./js/bin/build_stubs.js
 
-swift: lint
+swift: buf-lint
 	mkdir -p swift
 	protoc -I=protobuf --swift_opt=Visibility=Public --swift_out=swift $(shell find protobuf -name "*.proto")
 
 clean:
-	rm lint
-	rm detect-breaking
+	rm -f buf-lint
+	rm -f buf-check-breaking
 
 commit: python java javascript swift
 	git config user.name "GitHub Action"
