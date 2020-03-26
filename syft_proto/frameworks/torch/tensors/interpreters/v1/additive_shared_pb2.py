@@ -51,14 +51,14 @@ _ADDITIVESHARINGTENSOR = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='field_str', full_name='syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.field_str', index=2,
       number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='fieldStr', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dtype', full_name='syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.dtype', index=3,
       number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='dtype', file=DESCRIPTOR),
