@@ -66,8 +66,8 @@ swift: buf-lint
 	protoc -I=protobuf --swift_opt=Visibility=Public --swift_out=swift $(shell find protobuf -name "*.proto")
 
 clean:
-	rm -f buf-lint
-	rm -f buf-check-breaking
+	rm -rf buf-lint
+	rm -rf buf-check-breaking
 
 commit: python java javascript swift
 	git config user.name "GitHub Action"
