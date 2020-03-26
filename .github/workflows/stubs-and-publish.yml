@@ -83,7 +83,7 @@ jobs:
 
       - name: Build stubs
         run: |
-          make stubs
+          make push
 
   publish:
     needs: stubs

@@ -69,7 +69,9 @@ clean:
 	rm -rf buf-lint
 	rm -rf buf-check-breaking
 
-commit: python java javascript swift
+stubs: clean python java javascript swift
+
+commit: stubs
 	git config user.name "GitHub Action"
 	git config user.email "actions@users.noreply.github.com"
 	git add syft_proto/*
@@ -78,7 +80,7 @@ commit: python java javascript swift
 	git add swift/*
 	git diff --quiet && git diff --staged --quiet || (git commit -m "Build Protobuf stubs")
 
-stubs: clean commit
+push: commit
 	git push
 
 .PHONY: clean commit stubs
