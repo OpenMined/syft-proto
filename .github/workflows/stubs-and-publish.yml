@@ -19,13 +19,13 @@ jobs:
 
       - name: Lint the schemas
         run: |
-          make lint
+          make buf-lint
 
       - name: Upload output
         uses: actions/upload-artifact@v1
         with:
-          name: lint
-          path: lint
+          name: buf-lint
+          path: buf-lint
 
   breaking:
     needs: lint
@@ -38,17 +38,17 @@ jobs:
       - name: Download linter output
         uses: actions/download-artifact@v1
         with:
-          name: lint
+          name: buf-lint
 
       - name: Run breaking change detection
         run: |
-          make detect-breaking
+          make buf-check-breaking
 
       - name: Upload output
         uses: actions/upload-artifact@v1
         with:
-          name: detect-breaking
-          path: detect-breaking
+          name: buf-check-breaking
+          path: buf-check-breaking
 
   stubs:
     needs: lint
@@ -61,7 +61,7 @@ jobs:
       - name: Download linter output
         uses: actions/download-artifact@v1
         with:
-          name: lint
+          name: buf-lint
 
       - name: Set up Python
         uses: actions/setup-python@v1
