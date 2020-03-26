@@ -53,7 +53,7 @@ jobs:
   stubs:
     needs: lint
     runs-on: macos-latest
-    name: Build Protobuf stubs
+    name: Check stubs are up-to-date
 
     steps:
       - uses: actions/checkout@v2
@@ -83,7 +83,7 @@ jobs:
 
       - name: Build stubs
         run: |
-          make push
+          make stubs
 
   publish:
     needs: stubs
