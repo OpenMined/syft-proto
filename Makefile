@@ -44,7 +44,7 @@ python: buf-lint protoc
 	cd protobuf && \
 		../buf image build -o - | \
 			protoc --descriptor_set_in=/dev/stdin --python_out=../ \
-			$(shell cd protobuf && buf image build -o - | buf ls-files --input -) && \
+			$(shell cd protobuf && ../buf image build -o - | ../buf ls-files --input -) && \
 		cd .. && \
 		find syft_proto/ -type d -print0 | \
 			while IFS= read -rd '' dir; do touch "$$dir/__init__.py"; done
@@ -53,7 +53,7 @@ java: buf-lint protoc
 	cd protobuf && \
 		../buf image build -o - | \
 			protoc --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java \
-			$(shell cd protobuf && buf image build -o - | buf ls-files --input -) && \
+			$(shell cd protobuf && ../buf image build -o - | ../buf ls-files --input -) && \
 		cd .. && \
 		./jvm/gradlew cleanFiles install
 
