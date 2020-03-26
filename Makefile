@@ -72,6 +72,7 @@ clean:
 stubs: clean python java javascript swift
 
 stage: stubs
+	git add protobuf/*
 	git add syft_proto/*
 	git add jvm/src/*
 	git add js/*
