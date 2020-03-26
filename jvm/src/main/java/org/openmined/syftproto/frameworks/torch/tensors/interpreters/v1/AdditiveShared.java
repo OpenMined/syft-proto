@@ -35,35 +35,42 @@ public final class AdditiveShared {
 
     /**
      * <code>int64 field_int = 2[json_name = "fieldInt"];</code>
+     * @return The fieldInt.
      */
     long getFieldInt();
 
     /**
      * <code>string field_str = 3[json_name = "fieldStr"];</code>
+     * @return The fieldStr.
      */
     java.lang.String getFieldStr();
     /**
      * <code>string field_str = 3[json_name = "fieldStr"];</code>
+     * @return The bytes for fieldStr.
      */
     com.google.protobuf.ByteString
         getFieldStrBytes();
 
     /**
      * <code>string dtype = 4[json_name = "dtype"];</code>
+     * @return The dtype.
      */
     java.lang.String getDtype();
     /**
      * <code>string dtype = 4[json_name = "dtype"];</code>
+     * @return The bytes for dtype.
      */
     com.google.protobuf.ByteString
         getDtypeBytes();
 
     /**
      * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
+     * @return Whether the cryptoProviderId field is set.
      */
     boolean hasCryptoProviderId();
     /**
      * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
+     * @return The cryptoProviderId.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getCryptoProviderId();
     /**
@@ -312,7 +319,8 @@ public final class AdditiveShared {
     private int fieldSizeCase_ = 0;
     private java.lang.Object fieldSize_;
     public enum FieldSizeCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       FIELD_INT(2),
       FIELD_STR(3),
       FIELDSIZE_NOT_SET(0);
@@ -321,6 +329,8 @@ public final class AdditiveShared {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -373,6 +383,7 @@ public final class AdditiveShared {
     public static final int FIELD_INT_FIELD_NUMBER = 2;
     /**
      * <code>int64 field_int = 2[json_name = "fieldInt"];</code>
+     * @return The fieldInt.
      */
     public long getFieldInt() {
       if (fieldSizeCase_ == 2) {
@@ -384,6 +395,7 @@ public final class AdditiveShared {
     public static final int FIELD_STR_FIELD_NUMBER = 3;
     /**
      * <code>string field_str = 3[json_name = "fieldStr"];</code>
+     * @return The fieldStr.
      */
     public java.lang.String getFieldStr() {
       java.lang.Object ref = "";
@@ -404,6 +416,7 @@ public final class AdditiveShared {
     }
     /**
      * <code>string field_str = 3[json_name = "fieldStr"];</code>
+     * @return The bytes for fieldStr.
      */
     public com.google.protobuf.ByteString
         getFieldStrBytes() {
@@ -428,6 +441,7 @@ public final class AdditiveShared {
     private volatile java.lang.Object dtype_;
     /**
      * <code>string dtype = 4[json_name = "dtype"];</code>
+     * @return The dtype.
      */
     public java.lang.String getDtype() {
       java.lang.Object ref = dtype_;
@@ -443,6 +457,7 @@ public final class AdditiveShared {
     }
     /**
      * <code>string dtype = 4[json_name = "dtype"];</code>
+     * @return The bytes for dtype.
      */
     public com.google.protobuf.ByteString
         getDtypeBytes() {
@@ -462,12 +477,14 @@ public final class AdditiveShared {
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id cryptoProviderId_;
     /**
      * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
+     * @return Whether the cryptoProviderId field is set.
      */
     public boolean hasCryptoProviderId() {
       return cryptoProviderId_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
+     * @return The cryptoProviderId.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getCryptoProviderId() {
       return cryptoProviderId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : cryptoProviderId_;
@@ -1264,6 +1281,7 @@ public final class AdditiveShared {
 
       /**
        * <code>int64 field_int = 2[json_name = "fieldInt"];</code>
+       * @return The fieldInt.
        */
       public long getFieldInt() {
         if (fieldSizeCase_ == 2) {
@@ -1273,6 +1291,8 @@ public final class AdditiveShared {
       }
       /**
        * <code>int64 field_int = 2[json_name = "fieldInt"];</code>
+       * @param value The fieldInt to set.
+       * @return This builder for chaining.
        */
       public Builder setFieldInt(long value) {
         fieldSizeCase_ = 2;
@@ -1282,6 +1302,7 @@ public final class AdditiveShared {
       }
       /**
        * <code>int64 field_int = 2[json_name = "fieldInt"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearFieldInt() {
         if (fieldSizeCase_ == 2) {
@@ -1294,6 +1315,7 @@ public final class AdditiveShared {
 
       /**
        * <code>string field_str = 3[json_name = "fieldStr"];</code>
+       * @return The fieldStr.
        */
       public java.lang.String getFieldStr() {
         java.lang.Object ref = "";
@@ -1314,6 +1336,7 @@ public final class AdditiveShared {
       }
       /**
        * <code>string field_str = 3[json_name = "fieldStr"];</code>
+       * @return The bytes for fieldStr.
        */
       public com.google.protobuf.ByteString
           getFieldStrBytes() {
@@ -1335,6 +1358,8 @@ public final class AdditiveShared {
       }
       /**
        * <code>string field_str = 3[json_name = "fieldStr"];</code>
+       * @param value The fieldStr to set.
+       * @return This builder for chaining.
        */
       public Builder setFieldStr(
           java.lang.String value) {
@@ -1348,6 +1373,7 @@ public final class AdditiveShared {
       }
       /**
        * <code>string field_str = 3[json_name = "fieldStr"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearFieldStr() {
         if (fieldSizeCase_ == 3) {
@@ -1359,6 +1385,8 @@ public final class AdditiveShared {
       }
       /**
        * <code>string field_str = 3[json_name = "fieldStr"];</code>
+       * @param value The bytes for fieldStr to set.
+       * @return This builder for chaining.
        */
       public Builder setFieldStrBytes(
           com.google.protobuf.ByteString value) {
@@ -1375,6 +1403,7 @@ public final class AdditiveShared {
       private java.lang.Object dtype_ = "";
       /**
        * <code>string dtype = 4[json_name = "dtype"];</code>
+       * @return The dtype.
        */
       public java.lang.String getDtype() {
         java.lang.Object ref = dtype_;
@@ -1390,6 +1419,7 @@ public final class AdditiveShared {
       }
       /**
        * <code>string dtype = 4[json_name = "dtype"];</code>
+       * @return The bytes for dtype.
        */
       public com.google.protobuf.ByteString
           getDtypeBytes() {
@@ -1406,6 +1436,8 @@ public final class AdditiveShared {
       }
       /**
        * <code>string dtype = 4[json_name = "dtype"];</code>
+       * @param value The dtype to set.
+       * @return This builder for chaining.
        */
       public Builder setDtype(
           java.lang.String value) {
@@ -1419,6 +1451,7 @@ public final class AdditiveShared {
       }
       /**
        * <code>string dtype = 4[json_name = "dtype"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearDtype() {
         
@@ -1428,6 +1461,8 @@ public final class AdditiveShared {
       }
       /**
        * <code>string dtype = 4[json_name = "dtype"];</code>
+       * @param value The bytes for dtype to set.
+       * @return This builder for chaining.
        */
       public Builder setDtypeBytes(
           com.google.protobuf.ByteString value) {
@@ -1446,12 +1481,14 @@ public final class AdditiveShared {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> cryptoProviderIdBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
+       * @return Whether the cryptoProviderId field is set.
        */
       public boolean hasCryptoProviderId() {
         return cryptoProviderIdBuilder_ != null || cryptoProviderId_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
+       * @return The cryptoProviderId.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getCryptoProviderId() {
         if (cryptoProviderIdBuilder_ == null) {
