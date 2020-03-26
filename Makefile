@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 BUF_VERSION := 0.8.0
 UNAME_OS := $(shell uname -s)
 UNAME_ARCH := $(shell uname -m)
