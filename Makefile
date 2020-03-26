@@ -1,4 +1,4 @@
-BUF_VERSION := "0.8.0"
+BUF_VERSION := 0.8.0
 UNAME_OS := $(shell uname -s)
 UNAME_ARCH := $(shell uname -m)
 HTTPS_GIT := "https://github.com/OpenMined/syft-proto.git"
