@@ -83,5 +83,5 @@ commit: stubs
 push: commit
 	git push
 
-.PHONY: clean commit stubs
+.PHONY: python java javascript swift clean commit stubs push
 
