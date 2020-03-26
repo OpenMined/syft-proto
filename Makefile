@@ -72,18 +72,22 @@ clean:
 stubs: clean python java javascript swift
 
 stage: stubs
-	git config user.name "GitHub Action"
-	git config user.email "actions@users.noreply.github.com"
 	git add syft_proto/*
 	git add jvm/src/*
 	git add js/*
 	git add swift/* 
 
 commit: stage
-	git diff --quiet && git diff --staged --quiet || (git commit -m "Build Protobuf stubs")
+	git diff --quiet && git diff --staged --quiet || \
+		(git -c "user.name=Github Action" -c "user.email=actions@users.noreply.github.com" \
+			commit -m "Build Protobuf stubs")
 
 push: stage
-	git diff --quiet && git diff --staged --quiet || (git commit -m "Build Protobuf stubs"; git push)
+	git diff --quiet && git diff --staged --quiet || \
+		(git -c "user.name=Github Action" -c "user.email=actions@users.noreply.github.com" \
+			commit -m "Build Protobuf stubs"; \
+				git push)
+
 
 .PHONY: python java javascript swift clean stubs stage commit push
 
