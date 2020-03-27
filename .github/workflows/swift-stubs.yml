@@ -17,7 +17,7 @@ jobs:
     - name: Build swift stubs
       run: |
         mkdir -p swift
-        protoc -I=protobuf --swift_opt=Visibility=Public --swift_out=swift $(find protobuf -name "*.proto")
+        protoc -I=protobuf --swift_opt=FileNaming=PathToUnderscores --swift_opt=Visibility=Public --swift_out=swift $(find protobuf -name "*.proto")
         
     - name: Commit to repository 
       run: |
