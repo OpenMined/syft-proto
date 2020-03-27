@@ -188,6 +188,9 @@
     },
     "syft.execution.placeholder_id.PlaceholderId": {
       "code": 56
+    },
+    "syft.execution.role.Role": {
+      "code": 57
     }
   }
 }
