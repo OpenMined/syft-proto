@@ -20,10 +20,12 @@ public final class StateTensorOuterClass {
 
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor torch_tensor = 1[json_name = "torchTensor"];</code>
+     * @return Whether the torchTensor field is set.
      */
     boolean hasTorchTensor();
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor torch_tensor = 1[json_name = "torchTensor"];</code>
+     * @return The torchTensor.
      */
     org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTorchTensor();
     /**
@@ -33,10 +35,12 @@ public final class StateTensorOuterClass {
 
     /**
      * <code>.syft_proto.types.torch.v1.Parameter torch_param = 2[json_name = "torchParam"];</code>
+     * @return Whether the torchParam field is set.
      */
     boolean hasTorchParam();
     /**
      * <code>.syft_proto.types.torch.v1.Parameter torch_param = 2[json_name = "torchParam"];</code>
+     * @return The torchParam.
      */
     org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getTorchParam();
     /**
@@ -154,7 +158,8 @@ public final class StateTensorOuterClass {
     private int tensorCase_ = 0;
     private java.lang.Object tensor_;
     public enum TensorCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       TORCH_TENSOR(1),
       TORCH_PARAM(2),
       TENSOR_NOT_SET(0);
@@ -163,6 +168,8 @@ public final class StateTensorOuterClass {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -192,12 +199,14 @@ public final class StateTensorOuterClass {
     public static final int TORCH_TENSOR_FIELD_NUMBER = 1;
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor torch_tensor = 1[json_name = "torchTensor"];</code>
+     * @return Whether the torchTensor field is set.
      */
     public boolean hasTorchTensor() {
       return tensorCase_ == 1;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor torch_tensor = 1[json_name = "torchTensor"];</code>
+     * @return The torchTensor.
      */
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTorchTensor() {
       if (tensorCase_ == 1) {
@@ -218,12 +227,14 @@ public final class StateTensorOuterClass {
     public static final int TORCH_PARAM_FIELD_NUMBER = 2;
     /**
      * <code>.syft_proto.types.torch.v1.Parameter torch_param = 2[json_name = "torchParam"];</code>
+     * @return Whether the torchParam field is set.
      */
     public boolean hasTorchParam() {
       return tensorCase_ == 2;
     }
     /**
      * <code>.syft_proto.types.torch.v1.Parameter torch_param = 2[json_name = "torchParam"];</code>
+     * @return The torchParam.
      */
     public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getTorchParam() {
       if (tensorCase_ == 2) {
@@ -614,12 +625,14 @@ public final class StateTensorOuterClass {
           org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> torchTensorBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor torch_tensor = 1[json_name = "torchTensor"];</code>
+       * @return Whether the torchTensor field is set.
        */
       public boolean hasTorchTensor() {
         return tensorCase_ == 1;
       }
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor torch_tensor = 1[json_name = "torchTensor"];</code>
+       * @return The torchTensor.
        */
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTorchTensor() {
         if (torchTensorBuilder_ == null) {
@@ -750,12 +763,14 @@ public final class StateTensorOuterClass {
           org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter, org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.Builder, org.openmined.syftproto.types.torch.v1.ParameterOuterClass.ParameterOrBuilder> torchParamBuilder_;
       /**
        * <code>.syft_proto.types.torch.v1.Parameter torch_param = 2[json_name = "torchParam"];</code>
+       * @return Whether the torchParam field is set.
        */
       public boolean hasTorchParam() {
         return tensorCase_ == 2;
       }
       /**
        * <code>.syft_proto.types.torch.v1.Parameter torch_param = 2[json_name = "torchParam"];</code>
+       * @return The torchParam.
        */
       public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getTorchParam() {
         if (torchParamBuilder_ == null) {
@@ -949,22 +964,19 @@ public final class StateTensorOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n*syft_proto/execution/v1/state_tensor.p" +
-      "roto\022\027syft_proto.execution.v1\032Esyft_prot" +
-      "o/frameworks/torch/tensors/interpreters/" +
-      "v1/placeholder.proto\032&syft_proto/types/t" +
-      "orch/v1/tensor.proto\032)syft_proto/types/t" +
-      "orch/v1/parameter.proto\"\255\001\n\013StateTensor\022" +
-      "K\n\014torch_tensor\030\001 \001(\0132&.syft_proto.types" +
-      ".torch.v1.TorchTensorH\000R\013torchTensor\022G\n\013" +
-      "torch_param\030\002 \001(\0132$.syft_proto.types.tor" +
-      "ch.v1.ParameterH\000R\ntorchParamB\010\n\006tensorB" +
-      "&\n$org.openmined.syftproto.execution.v1b" +
-      "\006proto3"
+      "roto\022\027syft_proto.execution.v1\032&syft_prot" +
+      "o/types/torch/v1/tensor.proto\032)syft_prot" +
+      "o/types/torch/v1/parameter.proto\"\255\001\n\013Sta" +
+      "teTensor\022K\n\014torch_tensor\030\001 \001(\0132&.syft_pr" +
+      "oto.types.torch.v1.TorchTensorH\000R\013torchT" +
+      "ensor\022G\n\013torch_param\030\002 \001(\0132$.syft_proto." +
+      "types.torch.v1.ParameterH\000R\ntorchParamB\010" +
+      "\n\006tensorB&\n$org.openmined.syftproto.exec" +
+      "ution.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.getDescriptor(),
           org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor(),
           org.openmined.syftproto.types.torch.v1.ParameterOuterClass.getDescriptor(),
         });
@@ -974,7 +986,6 @@ public final class StateTensorOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_StateTensor_descriptor,
         new java.lang.String[] { "TorchTensor", "TorchParam", "Tensor", });
-    org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.PlaceholderOuterClass.getDescriptor();
     org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor();
     org.openmined.syftproto.types.torch.v1.ParameterOuterClass.getDescriptor();
   }

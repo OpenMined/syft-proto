@@ -3,7 +3,6 @@ syntax = "proto3";
 package syft_proto.execution.v1;
 option java_package = "org.openmined.syftproto.execution.v1";
 
-import "syft_proto/frameworks/torch/tensors/interpreters/v1/placeholder.proto";
 import "syft_proto/types/torch/v1/tensor.proto";
 import "syft_proto/types/torch/v1/parameter.proto";
 

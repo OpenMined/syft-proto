@@ -20,14 +20,18 @@ public final class ShapeOuterClass {
 
     /**
      * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+     * @return A list containing the dims.
      */
     java.util.List<java.lang.Integer> getDimsList();
     /**
      * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+     * @return The count of dims.
      */
     int getDimsCount();
     /**
      * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+     * @param index The index of the element to return.
+     * @return The dims at the given index.
      */
     int getDims(int index);
   }
@@ -138,6 +142,7 @@ public final class ShapeOuterClass {
     private com.google.protobuf.Internal.IntList dims_;
     /**
      * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+     * @return A list containing the dims.
      */
     public java.util.List<java.lang.Integer>
         getDimsList() {
@@ -145,12 +150,15 @@ public final class ShapeOuterClass {
     }
     /**
      * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+     * @return The count of dims.
      */
     public int getDimsCount() {
       return dims_.size();
     }
     /**
      * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+     * @param index The index of the element to return.
+     * @return The dims at the given index.
      */
     public int getDims(int index) {
       return dims_.getInt(index);
@@ -498,6 +506,7 @@ public final class ShapeOuterClass {
       }
       /**
        * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+       * @return A list containing the dims.
        */
       public java.util.List<java.lang.Integer>
           getDimsList() {
@@ -506,18 +515,24 @@ public final class ShapeOuterClass {
       }
       /**
        * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+       * @return The count of dims.
        */
       public int getDimsCount() {
         return dims_.size();
       }
       /**
        * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+       * @param index The index of the element to return.
+       * @return The dims at the given index.
        */
       public int getDims(int index) {
         return dims_.getInt(index);
       }
       /**
        * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+       * @param index The index to set the value at.
+       * @param value The dims to set.
+       * @return This builder for chaining.
        */
       public Builder setDims(
           int index, int value) {
@@ -528,6 +543,8 @@ public final class ShapeOuterClass {
       }
       /**
        * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+       * @param value The dims to add.
+       * @return This builder for chaining.
        */
       public Builder addDims(int value) {
         ensureDimsIsMutable();
@@ -537,6 +554,8 @@ public final class ShapeOuterClass {
       }
       /**
        * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+       * @param values The dims to add.
+       * @return This builder for chaining.
        */
       public Builder addAllDims(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -548,6 +567,7 @@ public final class ShapeOuterClass {
       }
       /**
        * <code>repeated int32 dims = 1[json_name = "dims"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearDims() {
         dims_ = emptyIntList();

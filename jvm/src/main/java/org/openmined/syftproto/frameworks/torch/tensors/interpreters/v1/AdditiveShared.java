@@ -20,10 +20,12 @@ public final class AdditiveShared {
 
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return The id.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId();
     /**
@@ -32,20 +34,47 @@ public final class AdditiveShared {
     org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder();
 
     /**
-     * <code>int64 field_size = 2[json_name = "fieldSize"];</code>
+     * <code>int64 field_int = 2[json_name = "fieldInt"];</code>
+     * @return The fieldInt.
      */
-    long getFieldSize();
+    long getFieldInt();
 
     /**
-     * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+     * <code>string field_str = 3[json_name = "fieldStr"];</code>
+     * @return The fieldStr.
+     */
+    java.lang.String getFieldStr();
+    /**
+     * <code>string field_str = 3[json_name = "fieldStr"];</code>
+     * @return The bytes for fieldStr.
+     */
+    com.google.protobuf.ByteString
+        getFieldStrBytes();
+
+    /**
+     * <code>string dtype = 4[json_name = "dtype"];</code>
+     * @return The dtype.
+     */
+    java.lang.String getDtype();
+    /**
+     * <code>string dtype = 4[json_name = "dtype"];</code>
+     * @return The bytes for dtype.
+     */
+    com.google.protobuf.ByteString
+        getDtypeBytes();
+
+    /**
+     * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
+     * @return Whether the cryptoProviderId field is set.
      */
     boolean hasCryptoProviderId();
     /**
-     * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+     * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
+     * @return The cryptoProviderId.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getCryptoProviderId();
     /**
-     * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+     * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getCryptoProviderIdOrBuilder();
 
@@ -58,7 +87,7 @@ public final class AdditiveShared {
      * to work okay (given that constraint.)
      * </pre>
      *
-     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
      */
     java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> 
         getLocationIdsList();
@@ -71,7 +100,7 @@ public final class AdditiveShared {
      * to work okay (given that constraint.)
      * </pre>
      *
-     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getLocationIds(int index);
     /**
@@ -83,7 +112,7 @@ public final class AdditiveShared {
      * to work okay (given that constraint.)
      * </pre>
      *
-     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
      */
     int getLocationIdsCount();
     /**
@@ -95,7 +124,7 @@ public final class AdditiveShared {
      * to work okay (given that constraint.)
      * </pre>
      *
-     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
      */
     java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
         getLocationIdsOrBuilderList();
@@ -108,34 +137,36 @@ public final class AdditiveShared {
      * to work okay (given that constraint.)
      * </pre>
      *
-     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getLocationIdsOrBuilder(
         int index);
 
     /**
-     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
      */
     java.util.List<org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor> 
         getSharesList();
     /**
-     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
      */
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getShares(int index);
     /**
-     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
      */
     int getSharesCount();
     /**
-     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
      */
     java.util.List<? extends org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder> 
         getSharesOrBuilderList();
     /**
-     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
      */
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getSharesOrBuilder(
         int index);
+
+    public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.AdditiveShared.AdditiveSharingTensor.FieldSizeCase getFieldSizeCase();
   }
   /**
    * Protobuf type {@code syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor}
@@ -150,6 +181,7 @@ public final class AdditiveShared {
       super(builder);
     }
     private AdditiveSharingTensor() {
+      dtype_ = "";
       locationIds_ = java.util.Collections.emptyList();
       shares_ = java.util.Collections.emptyList();
     }
@@ -199,11 +231,23 @@ public final class AdditiveShared {
               break;
             }
             case 16: {
-
+              fieldSizeCase_ = 2;
               fieldSize_ = input.readInt64();
               break;
             }
             case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              fieldSizeCase_ = 3;
+              fieldSize_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              dtype_ = s;
+              break;
+            }
+            case 42: {
               org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder subBuilder = null;
               if (cryptoProviderId_ != null) {
                 subBuilder = cryptoProviderId_.toBuilder();
@@ -216,7 +260,7 @@ public final class AdditiveShared {
 
               break;
             }
-            case 34: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 locationIds_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id>();
                 mutable_bitField0_ |= 0x00000001;
@@ -225,7 +269,7 @@ public final class AdditiveShared {
                   input.readMessage(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.parser(), extensionRegistry));
               break;
             }
-            case 42: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 shares_ = new java.util.ArrayList<org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor>();
                 mutable_bitField0_ |= 0x00000002;
@@ -272,16 +316,59 @@ public final class AdditiveShared {
               org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.AdditiveShared.AdditiveSharingTensor.class, org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.AdditiveShared.AdditiveSharingTensor.Builder.class);
     }
 
+    private int fieldSizeCase_ = 0;
+    private java.lang.Object fieldSize_;
+    public enum FieldSizeCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      FIELD_INT(2),
+      FIELD_STR(3),
+      FIELDSIZE_NOT_SET(0);
+      private final int value;
+      private FieldSizeCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static FieldSizeCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static FieldSizeCase forNumber(int value) {
+        switch (value) {
+          case 2: return FIELD_INT;
+          case 3: return FIELD_STR;
+          case 0: return FIELDSIZE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public FieldSizeCase
+    getFieldSizeCase() {
+      return FieldSizeCase.forNumber(
+          fieldSizeCase_);
+    }
+
     public static final int ID_FIELD_NUMBER = 1;
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id id_;
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return Whether the id field is set.
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * @return The id.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
@@ -293,37 +380,123 @@ public final class AdditiveShared {
       return getId();
     }
 
-    public static final int FIELD_SIZE_FIELD_NUMBER = 2;
-    private long fieldSize_;
+    public static final int FIELD_INT_FIELD_NUMBER = 2;
     /**
-     * <code>int64 field_size = 2[json_name = "fieldSize"];</code>
+     * <code>int64 field_int = 2[json_name = "fieldInt"];</code>
+     * @return The fieldInt.
      */
-    public long getFieldSize() {
-      return fieldSize_;
+    public long getFieldInt() {
+      if (fieldSizeCase_ == 2) {
+        return (java.lang.Long) fieldSize_;
+      }
+      return 0L;
     }
 
-    public static final int CRYPTO_PROVIDER_ID_FIELD_NUMBER = 3;
+    public static final int FIELD_STR_FIELD_NUMBER = 3;
+    /**
+     * <code>string field_str = 3[json_name = "fieldStr"];</code>
+     * @return The fieldStr.
+     */
+    public java.lang.String getFieldStr() {
+      java.lang.Object ref = "";
+      if (fieldSizeCase_ == 3) {
+        ref = fieldSize_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (fieldSizeCase_ == 3) {
+          fieldSize_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>string field_str = 3[json_name = "fieldStr"];</code>
+     * @return The bytes for fieldStr.
+     */
+    public com.google.protobuf.ByteString
+        getFieldStrBytes() {
+      java.lang.Object ref = "";
+      if (fieldSizeCase_ == 3) {
+        ref = fieldSize_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (fieldSizeCase_ == 3) {
+          fieldSize_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DTYPE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object dtype_;
+    /**
+     * <code>string dtype = 4[json_name = "dtype"];</code>
+     * @return The dtype.
+     */
+    public java.lang.String getDtype() {
+      java.lang.Object ref = dtype_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dtype_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string dtype = 4[json_name = "dtype"];</code>
+     * @return The bytes for dtype.
+     */
+    public com.google.protobuf.ByteString
+        getDtypeBytes() {
+      java.lang.Object ref = dtype_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dtype_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CRYPTO_PROVIDER_ID_FIELD_NUMBER = 5;
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id cryptoProviderId_;
     /**
-     * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+     * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
+     * @return Whether the cryptoProviderId field is set.
      */
     public boolean hasCryptoProviderId() {
       return cryptoProviderId_ != null;
     }
     /**
-     * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+     * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
+     * @return The cryptoProviderId.
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getCryptoProviderId() {
       return cryptoProviderId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : cryptoProviderId_;
     }
     /**
-     * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+     * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getCryptoProviderIdOrBuilder() {
       return getCryptoProviderId();
     }
 
-    public static final int LOCATION_IDS_FIELD_NUMBER = 4;
+    public static final int LOCATION_IDS_FIELD_NUMBER = 6;
     private java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> locationIds_;
     /**
      * <pre>
@@ -334,7 +507,7 @@ public final class AdditiveShared {
      * to work okay (given that constraint.)
      * </pre>
      *
-     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
      */
     public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> getLocationIdsList() {
       return locationIds_;
@@ -348,7 +521,7 @@ public final class AdditiveShared {
      * to work okay (given that constraint.)
      * </pre>
      *
-     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
      */
     public java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
         getLocationIdsOrBuilderList() {
@@ -363,7 +536,7 @@ public final class AdditiveShared {
      * to work okay (given that constraint.)
      * </pre>
      *
-     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
      */
     public int getLocationIdsCount() {
       return locationIds_.size();
@@ -377,7 +550,7 @@ public final class AdditiveShared {
      * to work okay (given that constraint.)
      * </pre>
      *
-     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getLocationIds(int index) {
       return locationIds_.get(index);
@@ -391,42 +564,42 @@ public final class AdditiveShared {
      * to work okay (given that constraint.)
      * </pre>
      *
-     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+     * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
      */
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getLocationIdsOrBuilder(
         int index) {
       return locationIds_.get(index);
     }
 
-    public static final int SHARES_FIELD_NUMBER = 5;
+    public static final int SHARES_FIELD_NUMBER = 7;
     private java.util.List<org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor> shares_;
     /**
-     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
      */
     public java.util.List<org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor> getSharesList() {
       return shares_;
     }
     /**
-     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
      */
     public java.util.List<? extends org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder> 
         getSharesOrBuilderList() {
       return shares_;
     }
     /**
-     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
      */
     public int getSharesCount() {
       return shares_.size();
     }
     /**
-     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
      */
     public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getShares(int index) {
       return shares_.get(index);
     }
     /**
-     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+     * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
      */
     public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getSharesOrBuilder(
         int index) {
@@ -450,17 +623,24 @@ public final class AdditiveShared {
       if (id_ != null) {
         output.writeMessage(1, getId());
       }
-      if (fieldSize_ != 0L) {
-        output.writeInt64(2, fieldSize_);
+      if (fieldSizeCase_ == 2) {
+        output.writeInt64(
+            2, (long)((java.lang.Long) fieldSize_));
+      }
+      if (fieldSizeCase_ == 3) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fieldSize_);
+      }
+      if (!getDtypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, dtype_);
       }
       if (cryptoProviderId_ != null) {
-        output.writeMessage(3, getCryptoProviderId());
+        output.writeMessage(5, getCryptoProviderId());
       }
       for (int i = 0; i < locationIds_.size(); i++) {
-        output.writeMessage(4, locationIds_.get(i));
+        output.writeMessage(6, locationIds_.get(i));
       }
       for (int i = 0; i < shares_.size(); i++) {
-        output.writeMessage(5, shares_.get(i));
+        output.writeMessage(7, shares_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -475,21 +655,28 @@ public final class AdditiveShared {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getId());
       }
-      if (fieldSize_ != 0L) {
+      if (fieldSizeCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, fieldSize_);
+          .computeInt64Size(
+              2, (long)((java.lang.Long) fieldSize_));
+      }
+      if (fieldSizeCase_ == 3) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fieldSize_);
+      }
+      if (!getDtypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, dtype_);
       }
       if (cryptoProviderId_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getCryptoProviderId());
+          .computeMessageSize(5, getCryptoProviderId());
       }
       for (int i = 0; i < locationIds_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, locationIds_.get(i));
+          .computeMessageSize(6, locationIds_.get(i));
       }
       for (int i = 0; i < shares_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, shares_.get(i));
+          .computeMessageSize(7, shares_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -511,8 +698,8 @@ public final class AdditiveShared {
         if (!getId()
             .equals(other.getId())) return false;
       }
-      if (getFieldSize()
-          != other.getFieldSize()) return false;
+      if (!getDtype()
+          .equals(other.getDtype())) return false;
       if (hasCryptoProviderId() != other.hasCryptoProviderId()) return false;
       if (hasCryptoProviderId()) {
         if (!getCryptoProviderId()
@@ -522,6 +709,19 @@ public final class AdditiveShared {
           .equals(other.getLocationIdsList())) return false;
       if (!getSharesList()
           .equals(other.getSharesList())) return false;
+      if (!getFieldSizeCase().equals(other.getFieldSizeCase())) return false;
+      switch (fieldSizeCase_) {
+        case 2:
+          if (getFieldInt()
+              != other.getFieldInt()) return false;
+          break;
+        case 3:
+          if (!getFieldStr()
+              .equals(other.getFieldStr())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -537,9 +737,8 @@ public final class AdditiveShared {
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId().hashCode();
       }
-      hash = (37 * hash) + FIELD_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getFieldSize());
+      hash = (37 * hash) + DTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getDtype().hashCode();
       if (hasCryptoProviderId()) {
         hash = (37 * hash) + CRYPTO_PROVIDER_ID_FIELD_NUMBER;
         hash = (53 * hash) + getCryptoProviderId().hashCode();
@@ -551,6 +750,19 @@ public final class AdditiveShared {
       if (getSharesCount() > 0) {
         hash = (37 * hash) + SHARES_FIELD_NUMBER;
         hash = (53 * hash) + getSharesList().hashCode();
+      }
+      switch (fieldSizeCase_) {
+        case 2:
+          hash = (37 * hash) + FIELD_INT_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getFieldInt());
+          break;
+        case 3:
+          hash = (37 * hash) + FIELD_STR_FIELD_NUMBER;
+          hash = (53 * hash) + getFieldStr().hashCode();
+          break;
+        case 0:
+        default:
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -693,7 +905,7 @@ public final class AdditiveShared {
           id_ = null;
           idBuilder_ = null;
         }
-        fieldSize_ = 0L;
+        dtype_ = "";
 
         if (cryptoProviderIdBuilder_ == null) {
           cryptoProviderId_ = null;
@@ -713,6 +925,8 @@ public final class AdditiveShared {
         } else {
           sharesBuilder_.clear();
         }
+        fieldSizeCase_ = 0;
+        fieldSize_ = null;
         return this;
       }
 
@@ -745,7 +959,13 @@ public final class AdditiveShared {
         } else {
           result.id_ = idBuilder_.build();
         }
-        result.fieldSize_ = fieldSize_;
+        if (fieldSizeCase_ == 2) {
+          result.fieldSize_ = fieldSize_;
+        }
+        if (fieldSizeCase_ == 3) {
+          result.fieldSize_ = fieldSize_;
+        }
+        result.dtype_ = dtype_;
         if (cryptoProviderIdBuilder_ == null) {
           result.cryptoProviderId_ = cryptoProviderId_;
         } else {
@@ -769,6 +989,7 @@ public final class AdditiveShared {
         } else {
           result.shares_ = sharesBuilder_.build();
         }
+        result.fieldSizeCase_ = fieldSizeCase_;
         onBuilt();
         return result;
       }
@@ -820,8 +1041,9 @@ public final class AdditiveShared {
         if (other.hasId()) {
           mergeId(other.getId());
         }
-        if (other.getFieldSize() != 0L) {
-          setFieldSize(other.getFieldSize());
+        if (!other.getDtype().isEmpty()) {
+          dtype_ = other.dtype_;
+          onChanged();
         }
         if (other.hasCryptoProviderId()) {
           mergeCryptoProviderId(other.getCryptoProviderId());
@@ -878,6 +1100,21 @@ public final class AdditiveShared {
             }
           }
         }
+        switch (other.getFieldSizeCase()) {
+          case FIELD_INT: {
+            setFieldInt(other.getFieldInt());
+            break;
+          }
+          case FIELD_STR: {
+            fieldSizeCase_ = 3;
+            fieldSize_ = other.fieldSize_;
+            onChanged();
+            break;
+          }
+          case FIELDSIZE_NOT_SET: {
+            break;
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -906,6 +1143,21 @@ public final class AdditiveShared {
         }
         return this;
       }
+      private int fieldSizeCase_ = 0;
+      private java.lang.Object fieldSize_;
+      public FieldSizeCase
+          getFieldSizeCase() {
+        return FieldSizeCase.forNumber(
+            fieldSizeCase_);
+      }
+
+      public Builder clearFieldSize() {
+        fieldSizeCase_ = 0;
+        fieldSize_ = null;
+        onChanged();
+        return this;
+      }
+
       private int bitField0_;
 
       private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id id_;
@@ -913,12 +1165,14 @@ public final class AdditiveShared {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> idBuilder_;
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * @return Whether the id field is set.
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
        * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * @return The id.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
         if (idBuilder_ == null) {
@@ -1025,28 +1279,199 @@ public final class AdditiveShared {
         return idBuilder_;
       }
 
-      private long fieldSize_ ;
       /**
-       * <code>int64 field_size = 2[json_name = "fieldSize"];</code>
+       * <code>int64 field_int = 2[json_name = "fieldInt"];</code>
+       * @return The fieldInt.
        */
-      public long getFieldSize() {
-        return fieldSize_;
+      public long getFieldInt() {
+        if (fieldSizeCase_ == 2) {
+          return (java.lang.Long) fieldSize_;
+        }
+        return 0L;
       }
       /**
-       * <code>int64 field_size = 2[json_name = "fieldSize"];</code>
+       * <code>int64 field_int = 2[json_name = "fieldInt"];</code>
+       * @param value The fieldInt to set.
+       * @return This builder for chaining.
        */
-      public Builder setFieldSize(long value) {
-        
+      public Builder setFieldInt(long value) {
+        fieldSizeCase_ = 2;
         fieldSize_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 field_size = 2[json_name = "fieldSize"];</code>
+       * <code>int64 field_int = 2[json_name = "fieldInt"];</code>
+       * @return This builder for chaining.
        */
-      public Builder clearFieldSize() {
+      public Builder clearFieldInt() {
+        if (fieldSizeCase_ == 2) {
+          fieldSizeCase_ = 0;
+          fieldSize_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <code>string field_str = 3[json_name = "fieldStr"];</code>
+       * @return The fieldStr.
+       */
+      public java.lang.String getFieldStr() {
+        java.lang.Object ref = "";
+        if (fieldSizeCase_ == 3) {
+          ref = fieldSize_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (fieldSizeCase_ == 3) {
+            fieldSize_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string field_str = 3[json_name = "fieldStr"];</code>
+       * @return The bytes for fieldStr.
+       */
+      public com.google.protobuf.ByteString
+          getFieldStrBytes() {
+        java.lang.Object ref = "";
+        if (fieldSizeCase_ == 3) {
+          ref = fieldSize_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (fieldSizeCase_ == 3) {
+            fieldSize_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string field_str = 3[json_name = "fieldStr"];</code>
+       * @param value The fieldStr to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldStr(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  fieldSizeCase_ = 3;
+        fieldSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string field_str = 3[json_name = "fieldStr"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFieldStr() {
+        if (fieldSizeCase_ == 3) {
+          fieldSizeCase_ = 0;
+          fieldSize_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>string field_str = 3[json_name = "fieldStr"];</code>
+       * @param value The bytes for fieldStr to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldStrBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        fieldSizeCase_ = 3;
+        fieldSize_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object dtype_ = "";
+      /**
+       * <code>string dtype = 4[json_name = "dtype"];</code>
+       * @return The dtype.
+       */
+      public java.lang.String getDtype() {
+        java.lang.Object ref = dtype_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dtype_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string dtype = 4[json_name = "dtype"];</code>
+       * @return The bytes for dtype.
+       */
+      public com.google.protobuf.ByteString
+          getDtypeBytes() {
+        java.lang.Object ref = dtype_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          dtype_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string dtype = 4[json_name = "dtype"];</code>
+       * @param value The dtype to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDtype(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        dtype_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string dtype = 4[json_name = "dtype"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDtype() {
         
-        fieldSize_ = 0L;
+        dtype_ = getDefaultInstance().getDtype();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string dtype = 4[json_name = "dtype"];</code>
+       * @param value The bytes for dtype to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDtypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        dtype_ = value;
         onChanged();
         return this;
       }
@@ -1055,13 +1480,15 @@ public final class AdditiveShared {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> cryptoProviderIdBuilder_;
       /**
-       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
+       * @return Whether the cryptoProviderId field is set.
        */
       public boolean hasCryptoProviderId() {
         return cryptoProviderIdBuilder_ != null || cryptoProviderId_ != null;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
+       * @return The cryptoProviderId.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getCryptoProviderId() {
         if (cryptoProviderIdBuilder_ == null) {
@@ -1071,7 +1498,7 @@ public final class AdditiveShared {
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
        */
       public Builder setCryptoProviderId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
         if (cryptoProviderIdBuilder_ == null) {
@@ -1087,7 +1514,7 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
        */
       public Builder setCryptoProviderId(
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
@@ -1101,7 +1528,7 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
        */
       public Builder mergeCryptoProviderId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
         if (cryptoProviderIdBuilder_ == null) {
@@ -1119,7 +1546,7 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
        */
       public Builder clearCryptoProviderId() {
         if (cryptoProviderIdBuilder_ == null) {
@@ -1133,7 +1560,7 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getCryptoProviderIdBuilder() {
         
@@ -1141,7 +1568,7 @@ public final class AdditiveShared {
         return getCryptoProviderIdFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getCryptoProviderIdOrBuilder() {
         if (cryptoProviderIdBuilder_ != null) {
@@ -1152,7 +1579,7 @@ public final class AdditiveShared {
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 3[json_name = "cryptoProviderId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id crypto_provider_id = 5[json_name = "cryptoProviderId"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
@@ -1189,7 +1616,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> getLocationIdsList() {
         if (locationIdsBuilder_ == null) {
@@ -1207,7 +1634,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public int getLocationIdsCount() {
         if (locationIdsBuilder_ == null) {
@@ -1225,7 +1652,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getLocationIds(int index) {
         if (locationIdsBuilder_ == null) {
@@ -1243,7 +1670,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public Builder setLocationIds(
           int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
@@ -1268,7 +1695,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public Builder setLocationIds(
           int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
@@ -1290,7 +1717,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public Builder addLocationIds(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
         if (locationIdsBuilder_ == null) {
@@ -1314,7 +1741,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public Builder addLocationIds(
           int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
@@ -1339,7 +1766,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public Builder addLocationIds(
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
@@ -1361,7 +1788,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public Builder addLocationIds(
           int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
@@ -1383,7 +1810,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public Builder addAllLocationIds(
           java.lang.Iterable<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> values) {
@@ -1406,7 +1833,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public Builder clearLocationIds() {
         if (locationIdsBuilder_ == null) {
@@ -1427,7 +1854,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public Builder removeLocationIds(int index) {
         if (locationIdsBuilder_ == null) {
@@ -1448,7 +1875,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getLocationIdsBuilder(
           int index) {
@@ -1463,7 +1890,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getLocationIdsOrBuilder(
           int index) {
@@ -1481,7 +1908,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
            getLocationIdsOrBuilderList() {
@@ -1500,7 +1927,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder addLocationIdsBuilder() {
         return getLocationIdsFieldBuilder().addBuilder(
@@ -1515,7 +1942,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder addLocationIdsBuilder(
           int index) {
@@ -1531,7 +1958,7 @@ public final class AdditiveShared {
        * to work okay (given that constraint.)
        * </pre>
        *
-       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 4[json_name = "locationIds"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Id location_ids = 6[json_name = "locationIds"];</code>
        */
       public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder> 
            getLocationIdsBuilderList() {
@@ -1565,7 +1992,7 @@ public final class AdditiveShared {
           org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder> sharesBuilder_;
 
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public java.util.List<org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor> getSharesList() {
         if (sharesBuilder_ == null) {
@@ -1575,7 +2002,7 @@ public final class AdditiveShared {
         }
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public int getSharesCount() {
         if (sharesBuilder_ == null) {
@@ -1585,7 +2012,7 @@ public final class AdditiveShared {
         }
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getShares(int index) {
         if (sharesBuilder_ == null) {
@@ -1595,7 +2022,7 @@ public final class AdditiveShared {
         }
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public Builder setShares(
           int index, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor value) {
@@ -1612,7 +2039,7 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public Builder setShares(
           int index, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder builderForValue) {
@@ -1626,7 +2053,7 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public Builder addShares(org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor value) {
         if (sharesBuilder_ == null) {
@@ -1642,7 +2069,7 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public Builder addShares(
           int index, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor value) {
@@ -1659,7 +2086,7 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public Builder addShares(
           org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder builderForValue) {
@@ -1673,7 +2100,7 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public Builder addShares(
           int index, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder builderForValue) {
@@ -1687,7 +2114,7 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public Builder addAllShares(
           java.lang.Iterable<? extends org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor> values) {
@@ -1702,7 +2129,7 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public Builder clearShares() {
         if (sharesBuilder_ == null) {
@@ -1715,7 +2142,7 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public Builder removeShares(int index) {
         if (sharesBuilder_ == null) {
@@ -1728,14 +2155,14 @@ public final class AdditiveShared {
         return this;
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder getSharesBuilder(
           int index) {
         return getSharesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getSharesOrBuilder(
           int index) {
@@ -1745,7 +2172,7 @@ public final class AdditiveShared {
         }
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public java.util.List<? extends org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder> 
            getSharesOrBuilderList() {
@@ -1756,14 +2183,14 @@ public final class AdditiveShared {
         }
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder addSharesBuilder() {
         return getSharesFieldBuilder().addBuilder(
             org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance());
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder addSharesBuilder(
           int index) {
@@ -1771,7 +2198,7 @@ public final class AdditiveShared {
             index, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance());
       }
       /**
-       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 5[json_name = "shares"];</code>
+       * <code>repeated .syft_proto.generic.pointers.v1.PointerTensor shares = 7[json_name = "shares"];</code>
        */
       public java.util.List<org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder> 
            getSharesBuilderList() {
@@ -1863,17 +2290,18 @@ public final class AdditiveShared {
       "t_proto.frameworks.torch.tensors.interpr" +
       "eters.v1\0323syft_proto/generic/pointers/v1" +
       "/pointer_tensor.proto\032!syft_proto/types/" +
-      "syft/v1/id.proto\"\270\002\n\025AdditiveSharingTens" +
+      "syft/v1/id.proto\"\373\002\n\025AdditiveSharingTens" +
       "or\022,\n\002id\030\001 \001(\0132\034.syft_proto.types.syft.v" +
-      "1.IdR\002id\022\035\n\nfield_size\030\002 \001(\003R\tfieldSize\022" +
-      "J\n\022crypto_provider_id\030\003 \001(\0132\034.syft_proto" +
-      ".types.syft.v1.IdR\020cryptoProviderId\022?\n\014l" +
-      "ocation_ids\030\004 \003(\0132\034.syft_proto.types.syf" +
-      "t.v1.IdR\013locationIds\022E\n\006shares\030\005 \003(\0132-.s" +
-      "yft_proto.generic.pointers.v1.PointerTen" +
-      "sorR\006sharesBB\n@org.openmined.syftproto.f" +
-      "rameworks.torch.tensors.interpreters.v1b" +
-      "\006proto3"
+      "1.IdR\002id\022\035\n\tfield_int\030\002 \001(\003H\000R\010fieldInt\022" +
+      "\035\n\tfield_str\030\003 \001(\tH\000R\010fieldStr\022\024\n\005dtype\030" +
+      "\004 \001(\tR\005dtype\022J\n\022crypto_provider_id\030\005 \001(\013" +
+      "2\034.syft_proto.types.syft.v1.IdR\020cryptoPr" +
+      "oviderId\022?\n\014location_ids\030\006 \003(\0132\034.syft_pr" +
+      "oto.types.syft.v1.IdR\013locationIds\022E\n\006sha" +
+      "res\030\007 \003(\0132-.syft_proto.generic.pointers." +
+      "v1.PointerTensorR\006sharesB\014\n\nfield_sizeBB" +
+      "\n@org.openmined.syftproto.frameworks.tor" +
+      "ch.tensors.interpreters.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1886,7 +2314,7 @@ public final class AdditiveShared {
     internal_static_syft_proto_frameworks_torch_tensors_interpreters_v1_AdditiveSharingTensor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_frameworks_torch_tensors_interpreters_v1_AdditiveSharingTensor_descriptor,
-        new java.lang.String[] { "Id", "FieldSize", "CryptoProviderId", "LocationIds", "Shares", });
+        new java.lang.String[] { "Id", "FieldInt", "FieldStr", "Dtype", "CryptoProviderId", "LocationIds", "Shares", "FieldSize", });
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
   }

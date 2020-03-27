@@ -120,7 +120,7 @@
     "syft.messaging.message.Message": {
       "code": 32
     },
-    "syft.messaging.message.OperationMessage": {
+    "syft.messaging.message.TensorCommandMessage": {
       "code": 33
     },
     "syft.messaging.message.ObjectMessage": {
@@ -162,7 +162,7 @@
     "syft.frameworks.torch.tensors.interpreters.gradients_core.GradFunc": {
       "code": 47
     },
-    "syft.frameworks.torch.tensors.interpreters.placeholder.PlaceHolder": {
+    "syft.execution.placeholder.PlaceHolder": {
       "code": 48
     },
     "torch.memory_format": {
@@ -177,8 +177,17 @@
     "torch.dtype": {
       "code": 52
     },
-    "syft.messaging.message.ExecuteWorkerFunctionMessage": {
+    "syft.messaging.message.WorkerCommandMessage": {
       "code": 53
+    },
+    "syft.execution.computation.ComputationAction": {
+      "code": 54
+    },
+    "syft.execution.communication.CommunicationAction": {
+      "code": 55
+    },
+    "syft.execution.placeholder_id.PlaceholderId": {
+      "code": 56
     }
   }
 }
