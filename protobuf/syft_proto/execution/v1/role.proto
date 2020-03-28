@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package syft_proto.execution.v1;
+option java_package = "org.openmined.syftproto.execution.v1";
+
+import "syft_proto/execution/v1/computation_action.proto";
+import "syft_proto/execution/v1/state.proto";
+import "syft_proto/execution/v1/placeholder.proto";
+import "syft_proto/types/syft/v1/id.proto";
+
+
+message Role {
+    syft_proto.types.syft.v1.Id id = 1;
+    repeated syft_proto.execution.v1.ComputationAction actions = 2;
+    syft_proto.execution.v1.State state = 3;
+    repeated syft_proto.execution.v1.Placeholder placeholders = 4;
+    repeated syft_proto.types.syft.v1.Id input_placeholder_ids = 5;
+    repeated syft_proto.types.syft.v1.Id output_placeholder_ids = 6;
+    repeated string tags = 7;
+    string description = 8;
+}
