@@ -19,4 +19,5 @@ message Plan {
     repeated string tags = 7;
     string description = 8;
     repeated syft_proto.execution.v1.Placeholder placeholders = 9;
+    bytes torchscript = 10;
 }
