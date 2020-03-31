@@ -188,6 +188,9 @@
     },
     "syft.execution.placeholder_id.PlaceholderId": {
       "code": 56
+    },
+    "syft.generic.pointers.pointer_dataset.PointerDataset": {
+      "code": 57
     }
   }
 }
