@@ -1,7 +1,7 @@
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
-version = '0.0.7'
+version = '0.0.8'
 group = 'org.openmined.kotlinsyft'
 
 install {
@@ -41,8 +41,8 @@ Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.key")
+    user = System.getenv("BINTRAY_USERNAME")
+    key = System.getenv("BINTRAY_KEY")
 
     configurations = ['archives']
     dryRun = false
