@@ -68,6 +68,7 @@ javascript: buf-lint
 	node ./js/bin/build_stubs.js
 
 swift: buf-lint
+	rm -rf swift
 	mkdir -p swift
 	protoc -I=protobuf --swift_opt=Visibility=Public --swift_out=swift $(shell find protobuf -name "*.proto")
 
