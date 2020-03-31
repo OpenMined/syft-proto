@@ -455,11 +455,8 @@ export namespace syft_proto {
                 /** Plan id */
                 id?: (syft_proto.types.syft.v1.IId|null);
 
-                /** Plan actions */
-                actions?: (syft_proto.execution.v1.IComputationAction[]|null);
-
-                /** Plan state */
-                state?: (syft_proto.execution.v1.IState|null);
+                /** Plan role */
+                role?: (syft_proto.execution.v1.IRole|null);
 
                 /** Plan include_state */
                 include_state?: (boolean|null);
@@ -476,8 +473,8 @@ export namespace syft_proto {
                 /** Plan description */
                 description?: (string|null);
 
-                /** Plan placeholders */
-                placeholders?: (syft_proto.execution.v1.IPlaceholder[]|null);
+                /** Plan torchscript */
+                torchscript?: (Uint8Array|null);
             }
 
             /** Represents a Plan. */
@@ -492,11 +489,8 @@ export namespace syft_proto {
                 /** Plan id. */
                 public id?: (syft_proto.types.syft.v1.IId|null);
 
-                /** Plan actions. */
-                public actions: syft_proto.execution.v1.IComputationAction[];
-
-                /** Plan state. */
-                public state?: (syft_proto.execution.v1.IState|null);
+                /** Plan role. */
+                public role?: (syft_proto.execution.v1.IRole|null);
 
                 /** Plan include_state. */
                 public include_state: boolean;
@@ -513,8 +507,8 @@ export namespace syft_proto {
                 /** Plan description. */
                 public description: string;
 
-                /** Plan placeholders. */
-                public placeholders: syft_proto.execution.v1.IPlaceholder[];
+                /** Plan torchscript. */
+                public torchscript: Uint8Array;
 
                 /**
                  * Creates a new Plan instance using the specified properties.
@@ -582,6 +576,138 @@ export namespace syft_proto {
 
                 /**
                  * Converts this Plan to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a Role. */
+            interface IRole {
+
+                /** Role id */
+                id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** Role actions */
+                actions?: (syft_proto.execution.v1.IComputationAction[]|null);
+
+                /** Role state */
+                state?: (syft_proto.execution.v1.IState|null);
+
+                /** Role placeholders */
+                placeholders?: (syft_proto.execution.v1.IPlaceholder[]|null);
+
+                /** Role input_placeholder_ids */
+                input_placeholder_ids?: (syft_proto.types.syft.v1.IId[]|null);
+
+                /** Role output_placeholder_ids */
+                output_placeholder_ids?: (syft_proto.types.syft.v1.IId[]|null);
+
+                /** Role tags */
+                tags?: (string[]|null);
+
+                /** Role description */
+                description?: (string|null);
+            }
+
+            /** Represents a Role. */
+            class Role implements IRole {
+
+                /**
+                 * Constructs a new Role.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.execution.v1.IRole);
+
+                /** Role id. */
+                public id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** Role actions. */
+                public actions: syft_proto.execution.v1.IComputationAction[];
+
+                /** Role state. */
+                public state?: (syft_proto.execution.v1.IState|null);
+
+                /** Role placeholders. */
+                public placeholders: syft_proto.execution.v1.IPlaceholder[];
+
+                /** Role input_placeholder_ids. */
+                public input_placeholder_ids: syft_proto.types.syft.v1.IId[];
+
+                /** Role output_placeholder_ids. */
+                public output_placeholder_ids: syft_proto.types.syft.v1.IId[];
+
+                /** Role tags. */
+                public tags: string[];
+
+                /** Role description. */
+                public description: string;
+
+                /**
+                 * Creates a new Role instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns Role instance
+                 */
+                public static create(properties?: syft_proto.execution.v1.IRole): syft_proto.execution.v1.Role;
+
+                /**
+                 * Encodes the specified Role message. Does not implicitly {@link syft_proto.execution.v1.Role.verify|verify} messages.
+                 * @param message Role message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.execution.v1.IRole, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified Role message, length delimited. Does not implicitly {@link syft_proto.execution.v1.Role.verify|verify} messages.
+                 * @param message Role message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.execution.v1.IRole, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a Role message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns Role
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.Role;
+
+                /**
+                 * Decodes a Role message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns Role
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.Role;
+
+                /**
+                 * Verifies a Role message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a Role message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns Role
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.Role;
+
+                /**
+                 * Creates a plain object from a Role message. Also converts values to other types if specified.
+                 * @param message Role
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.execution.v1.Role, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this Role to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };

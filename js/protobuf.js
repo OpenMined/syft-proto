@@ -1322,14 +1322,13 @@ $root.syft_proto = (function() {
                  * @memberof syft_proto.execution.v1
                  * @interface IPlan
                  * @property {syft_proto.types.syft.v1.IId|null} [id] Plan id
-                 * @property {Array.<syft_proto.execution.v1.IComputationAction>|null} [actions] Plan actions
-                 * @property {syft_proto.execution.v1.IState|null} [state] Plan state
+                 * @property {syft_proto.execution.v1.IRole|null} [role] Plan role
                  * @property {boolean|null} [include_state] Plan include_state
                  * @property {boolean|null} [is_built] Plan is_built
                  * @property {string|null} [name] Plan name
                  * @property {Array.<string>|null} [tags] Plan tags
                  * @property {string|null} [description] Plan description
-                 * @property {Array.<syft_proto.execution.v1.IPlaceholder>|null} [placeholders] Plan placeholders
+                 * @property {Uint8Array|null} [torchscript] Plan torchscript
                  */
 
                 /**
@@ -1341,9 +1340,7 @@ $root.syft_proto = (function() {
                  * @param {syft_proto.execution.v1.IPlan=} [properties] Properties to set
                  */
                 function Plan(properties) {
-                    this.actions = [];
                     this.tags = [];
-                    this.placeholders = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -1359,20 +1356,12 @@ $root.syft_proto = (function() {
                 Plan.prototype.id = null;
 
                 /**
-                 * Plan actions.
-                 * @member {Array.<syft_proto.execution.v1.IComputationAction>} actions
+                 * Plan role.
+                 * @member {syft_proto.execution.v1.IRole|null|undefined} role
                  * @memberof syft_proto.execution.v1.Plan
                  * @instance
                  */
-                Plan.prototype.actions = $util.emptyArray;
-
-                /**
-                 * Plan state.
-                 * @member {syft_proto.execution.v1.IState|null|undefined} state
-                 * @memberof syft_proto.execution.v1.Plan
-                 * @instance
-                 */
-                Plan.prototype.state = null;
+                Plan.prototype.role = null;
 
                 /**
                  * Plan include_state.
@@ -1415,12 +1404,12 @@ $root.syft_proto = (function() {
                 Plan.prototype.description = "";
 
                 /**
-                 * Plan placeholders.
-                 * @member {Array.<syft_proto.execution.v1.IPlaceholder>} placeholders
+                 * Plan torchscript.
+                 * @member {Uint8Array} torchscript
                  * @memberof syft_proto.execution.v1.Plan
                  * @instance
                  */
-                Plan.prototype.placeholders = $util.emptyArray;
+                Plan.prototype.torchscript = $util.newBuffer([]);
 
                 /**
                  * Creates a new Plan instance using the specified properties.
@@ -1448,25 +1437,21 @@ $root.syft_proto = (function() {
                         writer = $Writer.create();
                     if (message.id != null && message.hasOwnProperty("id"))
                         $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.actions != null && message.actions.length)
-                        for (var i = 0; i < message.actions.length; ++i)
-                            $root.syft_proto.execution.v1.ComputationAction.encode(message.actions[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    if (message.state != null && message.hasOwnProperty("state"))
-                        $root.syft_proto.execution.v1.State.encode(message.state, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.role != null && message.hasOwnProperty("role"))
+                        $root.syft_proto.execution.v1.Role.encode(message.role, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.include_state != null && message.hasOwnProperty("include_state"))
-                        writer.uint32(/* id 4, wireType 0 =*/32).bool(message.include_state);
+                        writer.uint32(/* id 3, wireType 0 =*/24).bool(message.include_state);
                     if (message.is_built != null && message.hasOwnProperty("is_built"))
-                        writer.uint32(/* id 5, wireType 0 =*/40).bool(message.is_built);
+                        writer.uint32(/* id 4, wireType 0 =*/32).bool(message.is_built);
                     if (message.name != null && message.hasOwnProperty("name"))
-                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.name);
+                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.name);
                     if (message.tags != null && message.tags.length)
                         for (var i = 0; i < message.tags.length; ++i)
-                            writer.uint32(/* id 7, wireType 2 =*/58).string(message.tags[i]);
+                            writer.uint32(/* id 6, wireType 2 =*/50).string(message.tags[i]);
                     if (message.description != null && message.hasOwnProperty("description"))
-                        writer.uint32(/* id 8, wireType 2 =*/66).string(message.description);
-                    if (message.placeholders != null && message.placeholders.length)
-                        for (var i = 0; i < message.placeholders.length; ++i)
-                            $root.syft_proto.execution.v1.Placeholder.encode(message.placeholders[i], writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                        writer.uint32(/* id 7, wireType 2 =*/58).string(message.description);
+                    if (message.torchscript != null && message.hasOwnProperty("torchscript"))
+                        writer.uint32(/* id 8, wireType 2 =*/66).bytes(message.torchscript);
                     return writer;
                 };
 
@@ -1505,34 +1490,27 @@ $root.syft_proto = (function() {
                             message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            if (!(message.actions && message.actions.length))
-                                message.actions = [];
-                            message.actions.push($root.syft_proto.execution.v1.ComputationAction.decode(reader, reader.uint32()));
+                            message.role = $root.syft_proto.execution.v1.Role.decode(reader, reader.uint32());
                             break;
                         case 3:
-                            message.state = $root.syft_proto.execution.v1.State.decode(reader, reader.uint32());
-                            break;
-                        case 4:
                             message.include_state = reader.bool();
                             break;
-                        case 5:
+                        case 4:
                             message.is_built = reader.bool();
                             break;
-                        case 6:
+                        case 5:
                             message.name = reader.string();
                             break;
-                        case 7:
+                        case 6:
                             if (!(message.tags && message.tags.length))
                                 message.tags = [];
                             message.tags.push(reader.string());
                             break;
-                        case 8:
+                        case 7:
                             message.description = reader.string();
                             break;
-                        case 9:
-                            if (!(message.placeholders && message.placeholders.length))
-                                message.placeholders = [];
-                            message.placeholders.push($root.syft_proto.execution.v1.Placeholder.decode(reader, reader.uint32()));
+                        case 8:
+                            message.torchscript = reader.bytes();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -1574,19 +1552,10 @@ $root.syft_proto = (function() {
                         if (error)
                             return "id." + error;
                     }
-                    if (message.actions != null && message.hasOwnProperty("actions")) {
-                        if (!Array.isArray(message.actions))
-                            return "actions: array expected";
-                        for (var i = 0; i < message.actions.length; ++i) {
-                            var error = $root.syft_proto.execution.v1.ComputationAction.verify(message.actions[i]);
-                            if (error)
-                                return "actions." + error;
-                        }
-                    }
-                    if (message.state != null && message.hasOwnProperty("state")) {
-                        var error = $root.syft_proto.execution.v1.State.verify(message.state);
+                    if (message.role != null && message.hasOwnProperty("role")) {
+                        var error = $root.syft_proto.execution.v1.Role.verify(message.role);
                         if (error)
-                            return "state." + error;
+                            return "role." + error;
                     }
                     if (message.include_state != null && message.hasOwnProperty("include_state"))
                         if (typeof message.include_state !== "boolean")
@@ -1607,15 +1576,9 @@ $root.syft_proto = (function() {
                     if (message.description != null && message.hasOwnProperty("description"))
                         if (!$util.isString(message.description))
                             return "description: string expected";
-                    if (message.placeholders != null && message.hasOwnProperty("placeholders")) {
-                        if (!Array.isArray(message.placeholders))
-                            return "placeholders: array expected";
-                        for (var i = 0; i < message.placeholders.length; ++i) {
-                            var error = $root.syft_proto.execution.v1.Placeholder.verify(message.placeholders[i]);
-                            if (error)
-                                return "placeholders." + error;
-                        }
-                    }
+                    if (message.torchscript != null && message.hasOwnProperty("torchscript"))
+                        if (!(message.torchscript && typeof message.torchscript.length === "number" || $util.isString(message.torchscript)))
+                            return "torchscript: buffer expected";
                     return null;
                 };
 
@@ -1636,20 +1599,10 @@ $root.syft_proto = (function() {
                             throw TypeError(".syft_proto.execution.v1.Plan.id: object expected");
                         message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
                     }
-                    if (object.actions) {
-                        if (!Array.isArray(object.actions))
-                            throw TypeError(".syft_proto.execution.v1.Plan.actions: array expected");
-                        message.actions = [];
-                        for (var i = 0; i < object.actions.length; ++i) {
-                            if (typeof object.actions[i] !== "object")
-                                throw TypeError(".syft_proto.execution.v1.Plan.actions: object expected");
-                            message.actions[i] = $root.syft_proto.execution.v1.ComputationAction.fromObject(object.actions[i]);
-                        }
-                    }
-                    if (object.state != null) {
-                        if (typeof object.state !== "object")
-                            throw TypeError(".syft_proto.execution.v1.Plan.state: object expected");
-                        message.state = $root.syft_proto.execution.v1.State.fromObject(object.state);
+                    if (object.role != null) {
+                        if (typeof object.role !== "object")
+                            throw TypeError(".syft_proto.execution.v1.Plan.role: object expected");
+                        message.role = $root.syft_proto.execution.v1.Role.fromObject(object.role);
                     }
                     if (object.include_state != null)
                         message.include_state = Boolean(object.include_state);
@@ -1666,16 +1619,11 @@ $root.syft_proto = (function() {
                     }
                     if (object.description != null)
                         message.description = String(object.description);
-                    if (object.placeholders) {
-                        if (!Array.isArray(object.placeholders))
-                            throw TypeError(".syft_proto.execution.v1.Plan.placeholders: array expected");
-                        message.placeholders = [];
-                        for (var i = 0; i < object.placeholders.length; ++i) {
-                            if (typeof object.placeholders[i] !== "object")
-                                throw TypeError(".syft_proto.execution.v1.Plan.placeholders: object expected");
-                            message.placeholders[i] = $root.syft_proto.execution.v1.Placeholder.fromObject(object.placeholders[i]);
-                        }
-                    }
+                    if (object.torchscript != null)
+                        if (typeof object.torchscript === "string")
+                            $util.base64.decode(object.torchscript, message.torchscript = $util.newBuffer($util.base64.length(object.torchscript)), 0);
+                        else if (object.torchscript.length)
+                            message.torchscript = object.torchscript;
                     return message;
                 };
 
@@ -1692,28 +1640,27 @@ $root.syft_proto = (function() {
                     if (!options)
                         options = {};
                     var object = {};
-                    if (options.arrays || options.defaults) {
-                        object.actions = [];
+                    if (options.arrays || options.defaults)
                         object.tags = [];
-                        object.placeholders = [];
-                    }
                     if (options.defaults) {
                         object.id = null;
-                        object.state = null;
+                        object.role = null;
                         object.include_state = false;
                         object.is_built = false;
                         object.name = "";
                         object.description = "";
+                        if (options.bytes === String)
+                            object.torchscript = "";
+                        else {
+                            object.torchscript = [];
+                            if (options.bytes !== Array)
+                                object.torchscript = $util.newBuffer(object.torchscript);
+                        }
                     }
                     if (message.id != null && message.hasOwnProperty("id"))
                         object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
-                    if (message.actions && message.actions.length) {
-                        object.actions = [];
-                        for (var j = 0; j < message.actions.length; ++j)
-                            object.actions[j] = $root.syft_proto.execution.v1.ComputationAction.toObject(message.actions[j], options);
-                    }
-                    if (message.state != null && message.hasOwnProperty("state"))
-                        object.state = $root.syft_proto.execution.v1.State.toObject(message.state, options);
+                    if (message.role != null && message.hasOwnProperty("role"))
+                        object.role = $root.syft_proto.execution.v1.Role.toObject(message.role, options);
                     if (message.include_state != null && message.hasOwnProperty("include_state"))
                         object.include_state = message.include_state;
                     if (message.is_built != null && message.hasOwnProperty("is_built"))
@@ -1727,11 +1674,8 @@ $root.syft_proto = (function() {
                     }
                     if (message.description != null && message.hasOwnProperty("description"))
                         object.description = message.description;
-                    if (message.placeholders && message.placeholders.length) {
-                        object.placeholders = [];
-                        for (var j = 0; j < message.placeholders.length; ++j)
-                            object.placeholders[j] = $root.syft_proto.execution.v1.Placeholder.toObject(message.placeholders[j], options);
-                    }
+                    if (message.torchscript != null && message.hasOwnProperty("torchscript"))
+                        object.torchscript = options.bytes === String ? $util.base64.encode(message.torchscript, 0, message.torchscript.length) : options.bytes === Array ? Array.prototype.slice.call(message.torchscript) : message.torchscript;
                     return object;
                 };
 
@@ -1747,6 +1691,460 @@ $root.syft_proto = (function() {
                 };
 
                 return Plan;
+            })();
+
+            v1.Role = (function() {
+
+                /**
+                 * Properties of a Role.
+                 * @memberof syft_proto.execution.v1
+                 * @interface IRole
+                 * @property {syft_proto.types.syft.v1.IId|null} [id] Role id
+                 * @property {Array.<syft_proto.execution.v1.IComputationAction>|null} [actions] Role actions
+                 * @property {syft_proto.execution.v1.IState|null} [state] Role state
+                 * @property {Array.<syft_proto.execution.v1.IPlaceholder>|null} [placeholders] Role placeholders
+                 * @property {Array.<syft_proto.types.syft.v1.IId>|null} [input_placeholder_ids] Role input_placeholder_ids
+                 * @property {Array.<syft_proto.types.syft.v1.IId>|null} [output_placeholder_ids] Role output_placeholder_ids
+                 * @property {Array.<string>|null} [tags] Role tags
+                 * @property {string|null} [description] Role description
+                 */
+
+                /**
+                 * Constructs a new Role.
+                 * @memberof syft_proto.execution.v1
+                 * @classdesc Represents a Role.
+                 * @implements IRole
+                 * @constructor
+                 * @param {syft_proto.execution.v1.IRole=} [properties] Properties to set
+                 */
+                function Role(properties) {
+                    this.actions = [];
+                    this.placeholders = [];
+                    this.input_placeholder_ids = [];
+                    this.output_placeholder_ids = [];
+                    this.tags = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * Role id.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} id
+                 * @memberof syft_proto.execution.v1.Role
+                 * @instance
+                 */
+                Role.prototype.id = null;
+
+                /**
+                 * Role actions.
+                 * @member {Array.<syft_proto.execution.v1.IComputationAction>} actions
+                 * @memberof syft_proto.execution.v1.Role
+                 * @instance
+                 */
+                Role.prototype.actions = $util.emptyArray;
+
+                /**
+                 * Role state.
+                 * @member {syft_proto.execution.v1.IState|null|undefined} state
+                 * @memberof syft_proto.execution.v1.Role
+                 * @instance
+                 */
+                Role.prototype.state = null;
+
+                /**
+                 * Role placeholders.
+                 * @member {Array.<syft_proto.execution.v1.IPlaceholder>} placeholders
+                 * @memberof syft_proto.execution.v1.Role
+                 * @instance
+                 */
+                Role.prototype.placeholders = $util.emptyArray;
+
+                /**
+                 * Role input_placeholder_ids.
+                 * @member {Array.<syft_proto.types.syft.v1.IId>} input_placeholder_ids
+                 * @memberof syft_proto.execution.v1.Role
+                 * @instance
+                 */
+                Role.prototype.input_placeholder_ids = $util.emptyArray;
+
+                /**
+                 * Role output_placeholder_ids.
+                 * @member {Array.<syft_proto.types.syft.v1.IId>} output_placeholder_ids
+                 * @memberof syft_proto.execution.v1.Role
+                 * @instance
+                 */
+                Role.prototype.output_placeholder_ids = $util.emptyArray;
+
+                /**
+                 * Role tags.
+                 * @member {Array.<string>} tags
+                 * @memberof syft_proto.execution.v1.Role
+                 * @instance
+                 */
+                Role.prototype.tags = $util.emptyArray;
+
+                /**
+                 * Role description.
+                 * @member {string} description
+                 * @memberof syft_proto.execution.v1.Role
+                 * @instance
+                 */
+                Role.prototype.description = "";
+
+                /**
+                 * Creates a new Role instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.execution.v1.Role
+                 * @static
+                 * @param {syft_proto.execution.v1.IRole=} [properties] Properties to set
+                 * @returns {syft_proto.execution.v1.Role} Role instance
+                 */
+                Role.create = function create(properties) {
+                    return new Role(properties);
+                };
+
+                /**
+                 * Encodes the specified Role message. Does not implicitly {@link syft_proto.execution.v1.Role.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.execution.v1.Role
+                 * @static
+                 * @param {syft_proto.execution.v1.IRole} message Role message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Role.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.actions != null && message.actions.length)
+                        for (var i = 0; i < message.actions.length; ++i)
+                            $root.syft_proto.execution.v1.ComputationAction.encode(message.actions[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.state != null && message.hasOwnProperty("state"))
+                        $root.syft_proto.execution.v1.State.encode(message.state, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.placeholders != null && message.placeholders.length)
+                        for (var i = 0; i < message.placeholders.length; ++i)
+                            $root.syft_proto.execution.v1.Placeholder.encode(message.placeholders[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.input_placeholder_ids != null && message.input_placeholder_ids.length)
+                        for (var i = 0; i < message.input_placeholder_ids.length; ++i)
+                            $root.syft_proto.types.syft.v1.Id.encode(message.input_placeholder_ids[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.output_placeholder_ids != null && message.output_placeholder_ids.length)
+                        for (var i = 0; i < message.output_placeholder_ids.length; ++i)
+                            $root.syft_proto.types.syft.v1.Id.encode(message.output_placeholder_ids[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                    if (message.tags != null && message.tags.length)
+                        for (var i = 0; i < message.tags.length; ++i)
+                            writer.uint32(/* id 7, wireType 2 =*/58).string(message.tags[i]);
+                    if (message.description != null && message.hasOwnProperty("description"))
+                        writer.uint32(/* id 8, wireType 2 =*/66).string(message.description);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified Role message, length delimited. Does not implicitly {@link syft_proto.execution.v1.Role.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.execution.v1.Role
+                 * @static
+                 * @param {syft_proto.execution.v1.IRole} message Role message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Role.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a Role message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.execution.v1.Role
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.execution.v1.Role} Role
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Role.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.Role();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            if (!(message.actions && message.actions.length))
+                                message.actions = [];
+                            message.actions.push($root.syft_proto.execution.v1.ComputationAction.decode(reader, reader.uint32()));
+                            break;
+                        case 3:
+                            message.state = $root.syft_proto.execution.v1.State.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            if (!(message.placeholders && message.placeholders.length))
+                                message.placeholders = [];
+                            message.placeholders.push($root.syft_proto.execution.v1.Placeholder.decode(reader, reader.uint32()));
+                            break;
+                        case 5:
+                            if (!(message.input_placeholder_ids && message.input_placeholder_ids.length))
+                                message.input_placeholder_ids = [];
+                            message.input_placeholder_ids.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
+                            break;
+                        case 6:
+                            if (!(message.output_placeholder_ids && message.output_placeholder_ids.length))
+                                message.output_placeholder_ids = [];
+                            message.output_placeholder_ids.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
+                            break;
+                        case 7:
+                            if (!(message.tags && message.tags.length))
+                                message.tags = [];
+                            message.tags.push(reader.string());
+                            break;
+                        case 8:
+                            message.description = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a Role message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.execution.v1.Role
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.execution.v1.Role} Role
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Role.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a Role message.
+                 * @function verify
+                 * @memberof syft_proto.execution.v1.Role
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Role.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.id != null && message.hasOwnProperty("id")) {
+                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
+                        if (error)
+                            return "id." + error;
+                    }
+                    if (message.actions != null && message.hasOwnProperty("actions")) {
+                        if (!Array.isArray(message.actions))
+                            return "actions: array expected";
+                        for (var i = 0; i < message.actions.length; ++i) {
+                            var error = $root.syft_proto.execution.v1.ComputationAction.verify(message.actions[i]);
+                            if (error)
+                                return "actions." + error;
+                        }
+                    }
+                    if (message.state != null && message.hasOwnProperty("state")) {
+                        var error = $root.syft_proto.execution.v1.State.verify(message.state);
+                        if (error)
+                            return "state." + error;
+                    }
+                    if (message.placeholders != null && message.hasOwnProperty("placeholders")) {
+                        if (!Array.isArray(message.placeholders))
+                            return "placeholders: array expected";
+                        for (var i = 0; i < message.placeholders.length; ++i) {
+                            var error = $root.syft_proto.execution.v1.Placeholder.verify(message.placeholders[i]);
+                            if (error)
+                                return "placeholders." + error;
+                        }
+                    }
+                    if (message.input_placeholder_ids != null && message.hasOwnProperty("input_placeholder_ids")) {
+                        if (!Array.isArray(message.input_placeholder_ids))
+                            return "input_placeholder_ids: array expected";
+                        for (var i = 0; i < message.input_placeholder_ids.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.input_placeholder_ids[i]);
+                            if (error)
+                                return "input_placeholder_ids." + error;
+                        }
+                    }
+                    if (message.output_placeholder_ids != null && message.hasOwnProperty("output_placeholder_ids")) {
+                        if (!Array.isArray(message.output_placeholder_ids))
+                            return "output_placeholder_ids: array expected";
+                        for (var i = 0; i < message.output_placeholder_ids.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.output_placeholder_ids[i]);
+                            if (error)
+                                return "output_placeholder_ids." + error;
+                        }
+                    }
+                    if (message.tags != null && message.hasOwnProperty("tags")) {
+                        if (!Array.isArray(message.tags))
+                            return "tags: array expected";
+                        for (var i = 0; i < message.tags.length; ++i)
+                            if (!$util.isString(message.tags[i]))
+                                return "tags: string[] expected";
+                    }
+                    if (message.description != null && message.hasOwnProperty("description"))
+                        if (!$util.isString(message.description))
+                            return "description: string expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a Role message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.execution.v1.Role
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.execution.v1.Role} Role
+                 */
+                Role.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.execution.v1.Role)
+                        return object;
+                    var message = new $root.syft_proto.execution.v1.Role();
+                    if (object.id != null) {
+                        if (typeof object.id !== "object")
+                            throw TypeError(".syft_proto.execution.v1.Role.id: object expected");
+                        message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
+                    }
+                    if (object.actions) {
+                        if (!Array.isArray(object.actions))
+                            throw TypeError(".syft_proto.execution.v1.Role.actions: array expected");
+                        message.actions = [];
+                        for (var i = 0; i < object.actions.length; ++i) {
+                            if (typeof object.actions[i] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.Role.actions: object expected");
+                            message.actions[i] = $root.syft_proto.execution.v1.ComputationAction.fromObject(object.actions[i]);
+                        }
+                    }
+                    if (object.state != null) {
+                        if (typeof object.state !== "object")
+                            throw TypeError(".syft_proto.execution.v1.Role.state: object expected");
+                        message.state = $root.syft_proto.execution.v1.State.fromObject(object.state);
+                    }
+                    if (object.placeholders) {
+                        if (!Array.isArray(object.placeholders))
+                            throw TypeError(".syft_proto.execution.v1.Role.placeholders: array expected");
+                        message.placeholders = [];
+                        for (var i = 0; i < object.placeholders.length; ++i) {
+                            if (typeof object.placeholders[i] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.Role.placeholders: object expected");
+                            message.placeholders[i] = $root.syft_proto.execution.v1.Placeholder.fromObject(object.placeholders[i]);
+                        }
+                    }
+                    if (object.input_placeholder_ids) {
+                        if (!Array.isArray(object.input_placeholder_ids))
+                            throw TypeError(".syft_proto.execution.v1.Role.input_placeholder_ids: array expected");
+                        message.input_placeholder_ids = [];
+                        for (var i = 0; i < object.input_placeholder_ids.length; ++i) {
+                            if (typeof object.input_placeholder_ids[i] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.Role.input_placeholder_ids: object expected");
+                            message.input_placeholder_ids[i] = $root.syft_proto.types.syft.v1.Id.fromObject(object.input_placeholder_ids[i]);
+                        }
+                    }
+                    if (object.output_placeholder_ids) {
+                        if (!Array.isArray(object.output_placeholder_ids))
+                            throw TypeError(".syft_proto.execution.v1.Role.output_placeholder_ids: array expected");
+                        message.output_placeholder_ids = [];
+                        for (var i = 0; i < object.output_placeholder_ids.length; ++i) {
+                            if (typeof object.output_placeholder_ids[i] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.Role.output_placeholder_ids: object expected");
+                            message.output_placeholder_ids[i] = $root.syft_proto.types.syft.v1.Id.fromObject(object.output_placeholder_ids[i]);
+                        }
+                    }
+                    if (object.tags) {
+                        if (!Array.isArray(object.tags))
+                            throw TypeError(".syft_proto.execution.v1.Role.tags: array expected");
+                        message.tags = [];
+                        for (var i = 0; i < object.tags.length; ++i)
+                            message.tags[i] = String(object.tags[i]);
+                    }
+                    if (object.description != null)
+                        message.description = String(object.description);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a Role message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.execution.v1.Role
+                 * @static
+                 * @param {syft_proto.execution.v1.Role} message Role
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                Role.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults) {
+                        object.actions = [];
+                        object.placeholders = [];
+                        object.input_placeholder_ids = [];
+                        object.output_placeholder_ids = [];
+                        object.tags = [];
+                    }
+                    if (options.defaults) {
+                        object.id = null;
+                        object.state = null;
+                        object.description = "";
+                    }
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
+                    if (message.actions && message.actions.length) {
+                        object.actions = [];
+                        for (var j = 0; j < message.actions.length; ++j)
+                            object.actions[j] = $root.syft_proto.execution.v1.ComputationAction.toObject(message.actions[j], options);
+                    }
+                    if (message.state != null && message.hasOwnProperty("state"))
+                        object.state = $root.syft_proto.execution.v1.State.toObject(message.state, options);
+                    if (message.placeholders && message.placeholders.length) {
+                        object.placeholders = [];
+                        for (var j = 0; j < message.placeholders.length; ++j)
+                            object.placeholders[j] = $root.syft_proto.execution.v1.Placeholder.toObject(message.placeholders[j], options);
+                    }
+                    if (message.input_placeholder_ids && message.input_placeholder_ids.length) {
+                        object.input_placeholder_ids = [];
+                        for (var j = 0; j < message.input_placeholder_ids.length; ++j)
+                            object.input_placeholder_ids[j] = $root.syft_proto.types.syft.v1.Id.toObject(message.input_placeholder_ids[j], options);
+                    }
+                    if (message.output_placeholder_ids && message.output_placeholder_ids.length) {
+                        object.output_placeholder_ids = [];
+                        for (var j = 0; j < message.output_placeholder_ids.length; ++j)
+                            object.output_placeholder_ids[j] = $root.syft_proto.types.syft.v1.Id.toObject(message.output_placeholder_ids[j], options);
+                    }
+                    if (message.tags && message.tags.length) {
+                        object.tags = [];
+                        for (var j = 0; j < message.tags.length; ++j)
+                            object.tags[j] = message.tags[j];
+                    }
+                    if (message.description != null && message.hasOwnProperty("description"))
+                        object.description = message.description;
+                    return object;
+                };
+
+                /**
+                 * Converts this Role to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.execution.v1.Role
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                Role.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return Role;
             })();
 
             v1.State = (function() {
