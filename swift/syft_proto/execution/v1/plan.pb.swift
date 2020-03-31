@@ -33,16 +33,14 @@ public struct SyftProto_Execution_V1_Plan {
   /// Clears the value of `id`. Subsequent reads from it will return its default value.
   public mutating func clearID() {self._id = nil}
 
-  public var actions: [SyftProto_Execution_V1_ComputationAction] = []
-
-  public var state: SyftProto_Execution_V1_State {
-    get {return _state ?? SyftProto_Execution_V1_State()}
-    set {_state = newValue}
+  public var role: SyftProto_Execution_V1_Role {
+    get {return _role ?? SyftProto_Execution_V1_Role()}
+    set {_role = newValue}
   }
-  /// Returns true if `state` has been explicitly set.
-  public var hasState: Bool {return self._state != nil}
-  /// Clears the value of `state`. Subsequent reads from it will return its default value.
-  public mutating func clearState() {self._state = nil}
+  /// Returns true if `role` has been explicitly set.
+  public var hasRole: Bool {return self._role != nil}
+  /// Clears the value of `role`. Subsequent reads from it will return its default value.
+  public mutating func clearRole() {self._role = nil}
 
   public var includeState: Bool = false
 
@@ -54,14 +52,14 @@ public struct SyftProto_Execution_V1_Plan {
 
   public var description_p: String = String()
 
-  public var placeholders: [SyftProto_Execution_V1_Placeholder] = []
+  public var torchscript: Data = SwiftProtobuf.Internal.emptyData
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
 
   fileprivate var _id: SyftProto_Types_Syft_V1_Id? = nil
-  fileprivate var _state: SyftProto_Execution_V1_State? = nil
+  fileprivate var _role: SyftProto_Execution_V1_Role? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -72,28 +70,26 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
   public static let protoMessageName: String = _protobuf_package + ".Plan"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
-    2: .same(proto: "actions"),
-    3: .same(proto: "state"),
-    4: .standard(proto: "include_state"),
-    5: .standard(proto: "is_built"),
-    6: .same(proto: "name"),
-    7: .same(proto: "tags"),
-    8: .same(proto: "description"),
-    9: .same(proto: "placeholders"),
+    2: .same(proto: "role"),
+    3: .standard(proto: "include_state"),
+    4: .standard(proto: "is_built"),
+    5: .same(proto: "name"),
+    6: .same(proto: "tags"),
+    7: .same(proto: "description"),
+    8: .same(proto: "torchscript"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularMessageField(value: &self._id)
-      case 2: try decoder.decodeRepeatedMessageField(value: &self.actions)
-      case 3: try decoder.decodeSingularMessageField(value: &self._state)
-      case 4: try decoder.decodeSingularBoolField(value: &self.includeState)
-      case 5: try decoder.decodeSingularBoolField(value: &self.isBuilt)
-      case 6: try decoder.decodeSingularStringField(value: &self.name)
-      case 7: try decoder.decodeRepeatedStringField(value: &self.tags)
-      case 8: try decoder.decodeSingularStringField(value: &self.description_p)
-      case 9: try decoder.decodeRepeatedMessageField(value: &self.placeholders)
+      case 2: try decoder.decodeSingularMessageField(value: &self._role)
+      case 3: try decoder.decodeSingularBoolField(value: &self.includeState)
+      case 4: try decoder.decodeSingularBoolField(value: &self.isBuilt)
+      case 5: try decoder.decodeSingularStringField(value: &self.name)
+      case 6: try decoder.decodeRepeatedStringField(value: &self.tags)
+      case 7: try decoder.decodeSingularStringField(value: &self.description_p)
+      case 8: try decoder.decodeSingularBytesField(value: &self.torchscript)
       default: break
       }
     }
@@ -103,43 +99,39 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if let v = self._id {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
-    if !self.actions.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.actions, fieldNumber: 2)
-    }
-    if let v = self._state {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    if let v = self._role {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     }
     if self.includeState != false {
-      try visitor.visitSingularBoolField(value: self.includeState, fieldNumber: 4)
+      try visitor.visitSingularBoolField(value: self.includeState, fieldNumber: 3)
     }
     if self.isBuilt != false {
-      try visitor.visitSingularBoolField(value: self.isBuilt, fieldNumber: 5)
+      try visitor.visitSingularBoolField(value: self.isBuilt, fieldNumber: 4)
     }
     if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 6)
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 5)
     }
     if !self.tags.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.tags, fieldNumber: 7)
+      try visitor.visitRepeatedStringField(value: self.tags, fieldNumber: 6)
     }
     if !self.description_p.isEmpty {
-      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 8)
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 7)
     }
-    if !self.placeholders.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.placeholders, fieldNumber: 9)
+    if !self.torchscript.isEmpty {
+      try visitor.visitSingularBytesField(value: self.torchscript, fieldNumber: 8)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: SyftProto_Execution_V1_Plan, rhs: SyftProto_Execution_V1_Plan) -> Bool {
     if lhs._id != rhs._id {return false}
-    if lhs.actions != rhs.actions {return false}
-    if lhs._state != rhs._state {return false}
+    if lhs._role != rhs._role {return false}
     if lhs.includeState != rhs.includeState {return false}
     if lhs.isBuilt != rhs.isBuilt {return false}
     if lhs.name != rhs.name {return false}
     if lhs.tags != rhs.tags {return false}
     if lhs.description_p != rhs.description_p {return false}
-    if lhs.placeholders != rhs.placeholders {return false}
+    if lhs.torchscript != rhs.torchscript {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

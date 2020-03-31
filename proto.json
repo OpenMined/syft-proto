@@ -191,6 +191,9 @@
     },
     "syft.generic.pointers.pointer_dataset.PointerDataset": {
       "code": 57
+    },
+    "syft.execution.role.Role": {
+      "code": 58
     }
   }
 }
