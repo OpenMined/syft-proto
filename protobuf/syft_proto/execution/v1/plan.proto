@@ -10,12 +10,10 @@ import "syft_proto/types/syft/v1/id.proto";
 message Plan {
     syft_proto.types.syft.v1.Id id = 1;
     syft_proto.execution.v1.Role role = 2;
-    // repeated syft_proto.execution.v1.ComputationAction actions = 2;
-    // syft_proto.execution.v1.State state = 3;
-    // repeated syft_proto.execution.v1.Placeholder placeholders = 9;
     bool include_state = 3;
     bool is_built = 4;
     string name = 5;
     repeated string tags = 6;
     string description = 7;
+    bytes torchscript = 8;
 }

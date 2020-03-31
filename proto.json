@@ -189,8 +189,11 @@
     "syft.execution.placeholder_id.PlaceholderId": {
       "code": 56
     },
-    "syft.execution.role.Role": {
+    "syft.generic.pointers.pointer_dataset.PointerDataset": {
       "code": 57
+    },
+    "syft.execution.role.Role": {
+      "code": 58
     }
   }
 }
