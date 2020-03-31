@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
-  serialized_pb=b'\n\"syft_proto/execution/v1/plan.proto\x12\x17syft_proto.execution.v1\x1a\x30syft_proto/execution/v1/computation_action.proto\x1a#syft_proto/execution/v1/state.proto\x1a)syft_proto/execution/v1/placeholder.proto\x1a!syft_proto/types/syft/v1/id.proto\"\x84\x03\n\x04Plan\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x44\n\x07\x61\x63tions\x18\x02 \x03(\x0b\x32*.syft_proto.execution.v1.ComputationActionR\x07\x61\x63tions\x12\x34\n\x05state\x18\x03 \x01(\x0b\x32\x1e.syft_proto.execution.v1.StateR\x05state\x12#\n\rinclude_state\x18\x04 \x01(\x08R\x0cincludeState\x12\x19\n\x08is_built\x18\x05 \x01(\x08R\x07isBuilt\x12\x12\n\x04name\x18\x06 \x01(\tR\x04name\x12\x12\n\x04tags\x18\x07 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x08 \x01(\tR\x0b\x64\x65scription\x12H\n\x0cplaceholders\x18\t \x03(\x0b\x32$.syft_proto.execution.v1.PlaceholderR\x0cplaceholdersB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
+  serialized_pb=b'\n\"syft_proto/execution/v1/plan.proto\x12\x17syft_proto.execution.v1\x1a\x30syft_proto/execution/v1/computation_action.proto\x1a#syft_proto/execution/v1/state.proto\x1a)syft_proto/execution/v1/placeholder.proto\x1a!syft_proto/types/syft/v1/id.proto\"\xa6\x03\n\x04Plan\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x44\n\x07\x61\x63tions\x18\x02 \x03(\x0b\x32*.syft_proto.execution.v1.ComputationActionR\x07\x61\x63tions\x12\x34\n\x05state\x18\x03 \x01(\x0b\x32\x1e.syft_proto.execution.v1.StateR\x05state\x12#\n\rinclude_state\x18\x04 \x01(\x08R\x0cincludeState\x12\x19\n\x08is_built\x18\x05 \x01(\x08R\x07isBuilt\x12\x12\n\x04name\x18\x06 \x01(\tR\x04name\x12\x12\n\x04tags\x18\x07 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x08 \x01(\tR\x0b\x64\x65scription\x12H\n\x0cplaceholders\x18\t \x03(\x0b\x32$.syft_proto.execution.v1.PlaceholderR\x0cplaceholders\x12 \n\x0btorchscript\x18\n \x01(\x0cR\x0btorchscriptB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
   ,
   dependencies=[syft__proto_dot_execution_dot_v1_dot_computation__action__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_state__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_placeholder__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
 
@@ -99,6 +99,13 @@ _PLAN = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='placeholders', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='torchscript', full_name='syft_proto.execution.v1.Plan.torchscript', index=9,
+      number=10, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='torchscript', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -112,7 +119,7 @@ _PLAN = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=229,
-  serialized_end=617,
+  serialized_end=651,
 )
 
 _PLAN.fields_by_name['id'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
