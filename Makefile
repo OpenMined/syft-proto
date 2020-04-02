@@ -70,7 +70,7 @@ javascript: buf-lint
 swift: buf-lint
 	rm -rf swift
 	mkdir -p swift
-	protoc -I=protobuf --swift_opt=Visibility=Public --swift_out=swift $(shell find protobuf -name "*.proto")
+	protoc -I=protobuf --swift_out=swift $(shell find protobuf -name "*.proto")
 
 clean:
 	rm -rf buf-lint
