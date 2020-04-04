@@ -12,6 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from syft_proto.types.syft.v1 import id_pb2 as syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2
+from syft_proto.types.syft.v1 import shape_pb2 as syft__proto_dot_types_dot_syft_dot_v1_dot_shape__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -19,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
-  serialized_pb=b'\n)syft_proto/execution/v1/placeholder.proto\x12\x17syft_proto.execution.v1\x1a!syft_proto/types/syft/v1/id.proto\"q\n\x0bPlaceholder\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x12\n\x04tags\x18\x02 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scriptionB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
+  serialized_pb=b'\n)syft_proto/execution/v1/placeholder.proto\x12\x17syft_proto.execution.v1\x1a!syft_proto/types/syft/v1/id.proto\x1a$syft_proto/types/syft/v1/shape.proto\"\xb9\x01\n\x0bPlaceholder\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x12\n\x04tags\x18\x02 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x46\n\x0e\x65xpected_shape\x18\x04 \x01(\x0b\x32\x1f.syft_proto.types.syft.v1.ShapeR\rexpectedShapeB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
   ,
-  dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
+  dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_shape__pb2.DESCRIPTOR,])
 
 
 
@@ -54,6 +55,13 @@ _PLACEHOLDER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='description', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='expected_shape', full_name='syft_proto.execution.v1.Placeholder.expected_shape', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='expectedShape', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -66,11 +74,12 @@ _PLACEHOLDER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=105,
-  serialized_end=218,
+  serialized_start=144,
+  serialized_end=329,
 )
 
 _PLACEHOLDER.fields_by_name['id'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
+_PLACEHOLDER.fields_by_name['expected_shape'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_shape__pb2._SHAPE
 DESCRIPTOR.message_types_by_name['Placeholder'] = _PLACEHOLDER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
