@@ -19,44 +19,44 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-public struct SyftProto_Execution_V1_Plan {
+struct SyftProto_Execution_V1_Plan {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var id: SyftProto_Types_Syft_V1_Id {
+  var id: SyftProto_Types_Syft_V1_Id {
     get {return _id ?? SyftProto_Types_Syft_V1_Id()}
     set {_id = newValue}
   }
   /// Returns true if `id` has been explicitly set.
-  public var hasID: Bool {return self._id != nil}
+  var hasID: Bool {return self._id != nil}
   /// Clears the value of `id`. Subsequent reads from it will return its default value.
-  public mutating func clearID() {self._id = nil}
+  mutating func clearID() {self._id = nil}
 
-  public var role: SyftProto_Execution_V1_Role {
+  var role: SyftProto_Execution_V1_Role {
     get {return _role ?? SyftProto_Execution_V1_Role()}
     set {_role = newValue}
   }
   /// Returns true if `role` has been explicitly set.
-  public var hasRole: Bool {return self._role != nil}
+  var hasRole: Bool {return self._role != nil}
   /// Clears the value of `role`. Subsequent reads from it will return its default value.
-  public mutating func clearRole() {self._role = nil}
+  mutating func clearRole() {self._role = nil}
 
-  public var includeState: Bool = false
+  var includeState: Bool = false
 
-  public var isBuilt: Bool = false
+  var isBuilt: Bool = false
 
-  public var name: String = String()
+  var name: String = String()
 
-  public var tags: [String] = []
+  var tags: [String] = []
 
-  public var description_p: String = String()
+  var description_p: String = String()
 
-  public var torchscript: Data = SwiftProtobuf.Internal.emptyData
+  var torchscript: Data = SwiftProtobuf.Internal.emptyData
 
-  public var unknownFields = SwiftProtobuf.UnknownStorage()
+  var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public init() {}
+  init() {}
 
   fileprivate var _id: SyftProto_Types_Syft_V1_Id? = nil
   fileprivate var _role: SyftProto_Execution_V1_Role? = nil
@@ -67,8 +67,8 @@ public struct SyftProto_Execution_V1_Plan {
 fileprivate let _protobuf_package = "syft_proto.execution.v1"
 
 extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = _protobuf_package + ".Plan"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  static let protoMessageName: String = _protobuf_package + ".Plan"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .same(proto: "role"),
     3: .standard(proto: "include_state"),
@@ -79,7 +79,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     8: .same(proto: "torchscript"),
   ]
 
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularMessageField(value: &self._id)
@@ -95,7 +95,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     }
   }
 
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._id {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
@@ -123,7 +123,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: SyftProto_Execution_V1_Plan, rhs: SyftProto_Execution_V1_Plan) -> Bool {
+  static func ==(lhs: SyftProto_Execution_V1_Plan, rhs: SyftProto_Execution_V1_Plan) -> Bool {
     if lhs._id != rhs._id {return false}
     if lhs._role != rhs._role {return false}
     if lhs.includeState != rhs.includeState {return false}

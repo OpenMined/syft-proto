@@ -19,23 +19,23 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-public struct SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor {
+struct SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var id: SyftProto_Types_Syft_V1_Id {
+  var id: SyftProto_Types_Syft_V1_Id {
     get {return _id ?? SyftProto_Types_Syft_V1_Id()}
     set {_id = newValue}
   }
   /// Returns true if `id` has been explicitly set.
-  public var hasID: Bool {return self._id != nil}
+  var hasID: Bool {return self._id != nil}
   /// Clears the value of `id`. Subsequent reads from it will return its default value.
-  public mutating func clearID() {self._id = nil}
+  mutating func clearID() {self._id = nil}
 
-  public var fieldSize: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor.OneOf_FieldSize? = nil
+  var fieldSize: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor.OneOf_FieldSize? = nil
 
-  public var fieldInt: Int64 {
+  var fieldInt: Int64 {
     get {
       if case .fieldInt(let v)? = fieldSize {return v}
       return 0
@@ -43,7 +43,7 @@ public struct SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharing
     set {fieldSize = .fieldInt(newValue)}
   }
 
-  public var fieldStr: String {
+  var fieldStr: String {
     get {
       if case .fieldStr(let v)? = fieldSize {return v}
       return String()
@@ -51,34 +51,34 @@ public struct SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharing
     set {fieldSize = .fieldStr(newValue)}
   }
 
-  public var dtype: String = String()
+  var dtype: String = String()
 
-  public var cryptoProviderID: SyftProto_Types_Syft_V1_Id {
+  var cryptoProviderID: SyftProto_Types_Syft_V1_Id {
     get {return _cryptoProviderID ?? SyftProto_Types_Syft_V1_Id()}
     set {_cryptoProviderID = newValue}
   }
   /// Returns true if `cryptoProviderID` has been explicitly set.
-  public var hasCryptoProviderID: Bool {return self._cryptoProviderID != nil}
+  var hasCryptoProviderID: Bool {return self._cryptoProviderID != nil}
   /// Clears the value of `cryptoProviderID`. Subsequent reads from it will return its default value.
-  public mutating func clearCryptoProviderID() {self._cryptoProviderID = nil}
+  mutating func clearCryptoProviderID() {self._cryptoProviderID = nil}
 
   /// It would be natural to capture a {location_id->share} dictionary
   /// as a map, but the key types of a map can't be messages. The ids
   /// use the Id type because they can be either integers or strings.
   /// Capturing them as two parallel lists/arrays isn't ideal but ought
   /// to work okay (given that constraint.)
-  public var locationIds: [SyftProto_Types_Syft_V1_Id] = []
+  var locationIds: [SyftProto_Types_Syft_V1_Id] = []
 
-  public var shares: [SyftProto_Generic_Pointers_V1_PointerTensor] = []
+  var shares: [SyftProto_Generic_Pointers_V1_PointerTensor] = []
 
-  public var unknownFields = SwiftProtobuf.UnknownStorage()
+  var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum OneOf_FieldSize: Equatable {
+  enum OneOf_FieldSize: Equatable {
     case fieldInt(Int64)
     case fieldStr(String)
 
   #if !swift(>=4.1)
-    public static func ==(lhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor.OneOf_FieldSize, rhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor.OneOf_FieldSize) -> Bool {
+    static func ==(lhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor.OneOf_FieldSize, rhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor.OneOf_FieldSize) -> Bool {
       switch (lhs, rhs) {
       case (.fieldInt(let l), .fieldInt(let r)): return l == r
       case (.fieldStr(let l), .fieldStr(let r)): return l == r
@@ -88,7 +88,7 @@ public struct SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharing
   #endif
   }
 
-  public init() {}
+  init() {}
 
   fileprivate var _id: SyftProto_Types_Syft_V1_Id? = nil
   fileprivate var _cryptoProviderID: SyftProto_Types_Syft_V1_Id? = nil
@@ -99,8 +99,8 @@ public struct SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharing
 fileprivate let _protobuf_package = "syft_proto.frameworks.torch.tensors.interpreters.v1"
 
 extension SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = _protobuf_package + ".AdditiveSharingTensor"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  static let protoMessageName: String = _protobuf_package + ".AdditiveSharingTensor"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .standard(proto: "field_int"),
     3: .standard(proto: "field_str"),
@@ -110,7 +110,7 @@ extension SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTens
     7: .same(proto: "shares"),
   ]
 
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularMessageField(value: &self._id)
@@ -133,7 +133,7 @@ extension SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTens
     }
   }
 
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._id {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
@@ -159,7 +159,7 @@ extension SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTens
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor, rhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor) -> Bool {
+  static func ==(lhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor, rhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor) -> Bool {
     if lhs._id != rhs._id {return false}
     if lhs.fieldSize != rhs.fieldSize {return false}
     if lhs.dtype != rhs.dtype {return false}
