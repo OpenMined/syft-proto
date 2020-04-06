@@ -19,23 +19,23 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-public struct SyftProto_Execution_V1_PlaceholderId {
+struct SyftProto_Execution_V1_PlaceholderId {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var id: SyftProto_Types_Syft_V1_Id {
+  var id: SyftProto_Types_Syft_V1_Id {
     get {return _id ?? SyftProto_Types_Syft_V1_Id()}
     set {_id = newValue}
   }
   /// Returns true if `id` has been explicitly set.
-  public var hasID: Bool {return self._id != nil}
+  var hasID: Bool {return self._id != nil}
   /// Clears the value of `id`. Subsequent reads from it will return its default value.
-  public mutating func clearID() {self._id = nil}
+  mutating func clearID() {self._id = nil}
 
-  public var unknownFields = SwiftProtobuf.UnknownStorage()
+  var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public init() {}
+  init() {}
 
   fileprivate var _id: SyftProto_Types_Syft_V1_Id? = nil
 }
@@ -45,12 +45,12 @@ public struct SyftProto_Execution_V1_PlaceholderId {
 fileprivate let _protobuf_package = "syft_proto.execution.v1"
 
 extension SyftProto_Execution_V1_PlaceholderId: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = _protobuf_package + ".PlaceholderId"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  static let protoMessageName: String = _protobuf_package + ".PlaceholderId"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
   ]
 
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularMessageField(value: &self._id)
@@ -59,14 +59,14 @@ extension SyftProto_Execution_V1_PlaceholderId: SwiftProtobuf.Message, SwiftProt
     }
   }
 
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._id {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: SyftProto_Execution_V1_PlaceholderId, rhs: SyftProto_Execution_V1_PlaceholderId) -> Bool {
+  static func ==(lhs: SyftProto_Execution_V1_PlaceholderId, rhs: SyftProto_Execution_V1_PlaceholderId) -> Bool {
     if lhs._id != rhs._id {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

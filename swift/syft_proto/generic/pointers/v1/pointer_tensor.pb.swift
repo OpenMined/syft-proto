@@ -19,54 +19,54 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-public struct SyftProto_Generic_Pointers_V1_PointerTensor {
+struct SyftProto_Generic_Pointers_V1_PointerTensor {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var objectID: SyftProto_Types_Syft_V1_Id {
+  var objectID: SyftProto_Types_Syft_V1_Id {
     get {return _objectID ?? SyftProto_Types_Syft_V1_Id()}
     set {_objectID = newValue}
   }
   /// Returns true if `objectID` has been explicitly set.
-  public var hasObjectID: Bool {return self._objectID != nil}
+  var hasObjectID: Bool {return self._objectID != nil}
   /// Clears the value of `objectID`. Subsequent reads from it will return its default value.
-  public mutating func clearObjectID() {self._objectID = nil}
+  mutating func clearObjectID() {self._objectID = nil}
 
-  public var locationID: SyftProto_Types_Syft_V1_Id {
+  var locationID: SyftProto_Types_Syft_V1_Id {
     get {return _locationID ?? SyftProto_Types_Syft_V1_Id()}
     set {_locationID = newValue}
   }
   /// Returns true if `locationID` has been explicitly set.
-  public var hasLocationID: Bool {return self._locationID != nil}
+  var hasLocationID: Bool {return self._locationID != nil}
   /// Clears the value of `locationID`. Subsequent reads from it will return its default value.
-  public mutating func clearLocationID() {self._locationID = nil}
+  mutating func clearLocationID() {self._locationID = nil}
 
-  public var objectIDAtLocation: SyftProto_Types_Syft_V1_Id {
+  var objectIDAtLocation: SyftProto_Types_Syft_V1_Id {
     get {return _objectIDAtLocation ?? SyftProto_Types_Syft_V1_Id()}
     set {_objectIDAtLocation = newValue}
   }
   /// Returns true if `objectIDAtLocation` has been explicitly set.
-  public var hasObjectIDAtLocation: Bool {return self._objectIDAtLocation != nil}
+  var hasObjectIDAtLocation: Bool {return self._objectIDAtLocation != nil}
   /// Clears the value of `objectIDAtLocation`. Subsequent reads from it will return its default value.
-  public mutating func clearObjectIDAtLocation() {self._objectIDAtLocation = nil}
+  mutating func clearObjectIDAtLocation() {self._objectIDAtLocation = nil}
 
-  public var shape: SyftProto_Types_Syft_V1_Shape {
+  var shape: SyftProto_Types_Syft_V1_Shape {
     get {return _shape ?? SyftProto_Types_Syft_V1_Shape()}
     set {_shape = newValue}
   }
   /// Returns true if `shape` has been explicitly set.
-  public var hasShape: Bool {return self._shape != nil}
+  var hasShape: Bool {return self._shape != nil}
   /// Clears the value of `shape`. Subsequent reads from it will return its default value.
-  public mutating func clearShape() {self._shape = nil}
+  mutating func clearShape() {self._shape = nil}
 
-  public var pointToAttr: String = String()
+  var pointToAttr: String = String()
 
-  public var garbageCollectData: Bool = false
+  var garbageCollectData: Bool = false
 
-  public var unknownFields = SwiftProtobuf.UnknownStorage()
+  var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public init() {}
+  init() {}
 
   fileprivate var _objectID: SyftProto_Types_Syft_V1_Id? = nil
   fileprivate var _locationID: SyftProto_Types_Syft_V1_Id? = nil
@@ -79,8 +79,8 @@ public struct SyftProto_Generic_Pointers_V1_PointerTensor {
 fileprivate let _protobuf_package = "syft_proto.generic.pointers.v1"
 
 extension SyftProto_Generic_Pointers_V1_PointerTensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = _protobuf_package + ".PointerTensor"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  static let protoMessageName: String = _protobuf_package + ".PointerTensor"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "object_id"),
     2: .standard(proto: "location_id"),
     3: .standard(proto: "object_id_at_location"),
@@ -89,7 +89,7 @@ extension SyftProto_Generic_Pointers_V1_PointerTensor: SwiftProtobuf.Message, Sw
     6: .standard(proto: "garbage_collect_data"),
   ]
 
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularMessageField(value: &self._objectID)
@@ -103,7 +103,7 @@ extension SyftProto_Generic_Pointers_V1_PointerTensor: SwiftProtobuf.Message, Sw
     }
   }
 
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._objectID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
@@ -125,7 +125,7 @@ extension SyftProto_Generic_Pointers_V1_PointerTensor: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: SyftProto_Generic_Pointers_V1_PointerTensor, rhs: SyftProto_Generic_Pointers_V1_PointerTensor) -> Bool {
+  static func ==(lhs: SyftProto_Generic_Pointers_V1_PointerTensor, rhs: SyftProto_Generic_Pointers_V1_PointerTensor) -> Bool {
     if lhs._objectID != rhs._objectID {return false}
     if lhs._locationID != rhs._locationID {return false}
     if lhs._objectIDAtLocation != rhs._objectIDAtLocation {return false}

@@ -69,6 +69,21 @@ public final class PlaceholderOuterClass {
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
+
+    /**
+     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+     * @return Whether the expectedShape field is set.
+     */
+    boolean hasExpectedShape();
+    /**
+     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+     * @return The expectedShape.
+     */
+    org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getExpectedShape();
+    /**
+     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+     */
+    org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder getExpectedShapeOrBuilder();
   }
   /**
    * Protobuf type {@code syft_proto.execution.v1.Placeholder}
@@ -144,6 +159,19 @@ public final class PlaceholderOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
+              break;
+            }
+            case 34: {
+              org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder subBuilder = null;
+              if (expectedShape_ != null) {
+                subBuilder = expectedShape_.toBuilder();
+              }
+              expectedShape_ = input.readMessage(org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(expectedShape_);
+                expectedShape_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -275,6 +303,29 @@ public final class PlaceholderOuterClass {
       }
     }
 
+    public static final int EXPECTED_SHAPE_FIELD_NUMBER = 4;
+    private org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape expectedShape_;
+    /**
+     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+     * @return Whether the expectedShape field is set.
+     */
+    public boolean hasExpectedShape() {
+      return expectedShape_ != null;
+    }
+    /**
+     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+     * @return The expectedShape.
+     */
+    public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getExpectedShape() {
+      return expectedShape_ == null ? org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.getDefaultInstance() : expectedShape_;
+    }
+    /**
+     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+     */
+    public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder getExpectedShapeOrBuilder() {
+      return getExpectedShape();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -297,6 +348,9 @@ public final class PlaceholderOuterClass {
       }
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
+      }
+      if (expectedShape_ != null) {
+        output.writeMessage(4, getExpectedShape());
       }
       unknownFields.writeTo(output);
     }
@@ -322,6 +376,10 @@ public final class PlaceholderOuterClass {
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
       }
+      if (expectedShape_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getExpectedShape());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -346,6 +404,11 @@ public final class PlaceholderOuterClass {
           .equals(other.getTagsList())) return false;
       if (!getDescription()
           .equals(other.getDescription())) return false;
+      if (hasExpectedShape() != other.hasExpectedShape()) return false;
+      if (hasExpectedShape()) {
+        if (!getExpectedShape()
+            .equals(other.getExpectedShape())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -367,6 +430,10 @@ public final class PlaceholderOuterClass {
       }
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+      if (hasExpectedShape()) {
+        hash = (37 * hash) + EXPECTED_SHAPE_FIELD_NUMBER;
+        hash = (53 * hash) + getExpectedShape().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -510,6 +577,12 @@ public final class PlaceholderOuterClass {
         bitField0_ = (bitField0_ & ~0x00000001);
         description_ = "";
 
+        if (expectedShapeBuilder_ == null) {
+          expectedShape_ = null;
+        } else {
+          expectedShape_ = null;
+          expectedShapeBuilder_ = null;
+        }
         return this;
       }
 
@@ -548,6 +621,11 @@ public final class PlaceholderOuterClass {
         }
         result.tags_ = tags_;
         result.description_ = description_;
+        if (expectedShapeBuilder_ == null) {
+          result.expectedShape_ = expectedShape_;
+        } else {
+          result.expectedShape_ = expectedShapeBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -612,6 +690,9 @@ public final class PlaceholderOuterClass {
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
           onChanged();
+        }
+        if (other.hasExpectedShape()) {
+          mergeExpectedShape(other.getExpectedShape());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -947,6 +1028,125 @@ public final class PlaceholderOuterClass {
         onChanged();
         return this;
       }
+
+      private org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape expectedShape_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder> expectedShapeBuilder_;
+      /**
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       * @return Whether the expectedShape field is set.
+       */
+      public boolean hasExpectedShape() {
+        return expectedShapeBuilder_ != null || expectedShape_ != null;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       * @return The expectedShape.
+       */
+      public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getExpectedShape() {
+        if (expectedShapeBuilder_ == null) {
+          return expectedShape_ == null ? org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.getDefaultInstance() : expectedShape_;
+        } else {
+          return expectedShapeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       */
+      public Builder setExpectedShape(org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape value) {
+        if (expectedShapeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          expectedShape_ = value;
+          onChanged();
+        } else {
+          expectedShapeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       */
+      public Builder setExpectedShape(
+          org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder builderForValue) {
+        if (expectedShapeBuilder_ == null) {
+          expectedShape_ = builderForValue.build();
+          onChanged();
+        } else {
+          expectedShapeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       */
+      public Builder mergeExpectedShape(org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape value) {
+        if (expectedShapeBuilder_ == null) {
+          if (expectedShape_ != null) {
+            expectedShape_ =
+              org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.newBuilder(expectedShape_).mergeFrom(value).buildPartial();
+          } else {
+            expectedShape_ = value;
+          }
+          onChanged();
+        } else {
+          expectedShapeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       */
+      public Builder clearExpectedShape() {
+        if (expectedShapeBuilder_ == null) {
+          expectedShape_ = null;
+          onChanged();
+        } else {
+          expectedShape_ = null;
+          expectedShapeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder getExpectedShapeBuilder() {
+        
+        onChanged();
+        return getExpectedShapeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder getExpectedShapeOrBuilder() {
+        if (expectedShapeBuilder_ != null) {
+          return expectedShapeBuilder_.getMessageOrBuilder();
+        } else {
+          return expectedShape_ == null ?
+              org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.getDefaultInstance() : expectedShape_;
+        }
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder> 
+          getExpectedShapeFieldBuilder() {
+        if (expectedShapeBuilder_ == null) {
+          expectedShapeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder>(
+                  getExpectedShape(),
+                  getParentForChildren(),
+                  isClean());
+          expectedShape_ = null;
+        }
+        return expectedShapeBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1016,24 +1216,29 @@ public final class PlaceholderOuterClass {
     java.lang.String[] descriptorData = {
       "\n)syft_proto/execution/v1/placeholder.pr" +
       "oto\022\027syft_proto.execution.v1\032!syft_proto" +
-      "/types/syft/v1/id.proto\"q\n\013Placeholder\022," +
-      "\n\002id\030\001 \001(\0132\034.syft_proto.types.syft.v1.Id" +
-      "R\002id\022\022\n\004tags\030\002 \003(\tR\004tags\022 \n\013description\030" +
-      "\003 \001(\tR\013descriptionB&\n$org.openmined.syft" +
-      "proto.execution.v1b\006proto3"
+      "/types/syft/v1/id.proto\032$syft_proto/type" +
+      "s/syft/v1/shape.proto\"\271\001\n\013Placeholder\022,\n" +
+      "\002id\030\001 \001(\0132\034.syft_proto.types.syft.v1.IdR" +
+      "\002id\022\022\n\004tags\030\002 \003(\tR\004tags\022 \n\013description\030\003" +
+      " \001(\tR\013description\022F\n\016expected_shape\030\004 \001(" +
+      "\0132\037.syft_proto.types.syft.v1.ShapeR\rexpe" +
+      "ctedShapeB&\n$org.openmined.syftproto.exe" +
+      "cution.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor(),
+          org.openmined.syftproto.types.syft.v1.ShapeOuterClass.getDescriptor(),
         });
     internal_static_syft_proto_execution_v1_Placeholder_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_syft_proto_execution_v1_Placeholder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_Placeholder_descriptor,
-        new java.lang.String[] { "Id", "Tags", "Description", });
+        new java.lang.String[] { "Id", "Tags", "Description", "ExpectedShape", });
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
+    org.openmined.syftproto.types.syft.v1.ShapeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

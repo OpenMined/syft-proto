@@ -360,6 +360,7 @@ $root.syft_proto = (function() {
                  * @property {syft_proto.types.syft.v1.IId|null} [id] Placeholder id
                  * @property {Array.<string>|null} [tags] Placeholder tags
                  * @property {string|null} [description] Placeholder description
+                 * @property {syft_proto.types.syft.v1.IShape|null} [expected_shape] Placeholder expected_shape
                  */
 
                 /**
@@ -403,6 +404,14 @@ $root.syft_proto = (function() {
                 Placeholder.prototype.description = "";
 
                 /**
+                 * Placeholder expected_shape.
+                 * @member {syft_proto.types.syft.v1.IShape|null|undefined} expected_shape
+                 * @memberof syft_proto.execution.v1.Placeholder
+                 * @instance
+                 */
+                Placeholder.prototype.expected_shape = null;
+
+                /**
                  * Creates a new Placeholder instance using the specified properties.
                  * @function create
                  * @memberof syft_proto.execution.v1.Placeholder
@@ -433,6 +442,8 @@ $root.syft_proto = (function() {
                             writer.uint32(/* id 2, wireType 2 =*/18).string(message.tags[i]);
                     if (message.description != null && message.hasOwnProperty("description"))
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.description);
+                    if (message.expected_shape != null && message.hasOwnProperty("expected_shape"))
+                        $root.syft_proto.types.syft.v1.Shape.encode(message.expected_shape, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     return writer;
                 };
 
@@ -477,6 +488,9 @@ $root.syft_proto = (function() {
                             break;
                         case 3:
                             message.description = reader.string();
+                            break;
+                        case 4:
+                            message.expected_shape = $root.syft_proto.types.syft.v1.Shape.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -528,6 +542,11 @@ $root.syft_proto = (function() {
                     if (message.description != null && message.hasOwnProperty("description"))
                         if (!$util.isString(message.description))
                             return "description: string expected";
+                    if (message.expected_shape != null && message.hasOwnProperty("expected_shape")) {
+                        var error = $root.syft_proto.types.syft.v1.Shape.verify(message.expected_shape);
+                        if (error)
+                            return "expected_shape." + error;
+                    }
                     return null;
                 };
 
@@ -557,6 +576,11 @@ $root.syft_proto = (function() {
                     }
                     if (object.description != null)
                         message.description = String(object.description);
+                    if (object.expected_shape != null) {
+                        if (typeof object.expected_shape !== "object")
+                            throw TypeError(".syft_proto.execution.v1.Placeholder.expected_shape: object expected");
+                        message.expected_shape = $root.syft_proto.types.syft.v1.Shape.fromObject(object.expected_shape);
+                    }
                     return message;
                 };
 
@@ -578,6 +602,7 @@ $root.syft_proto = (function() {
                     if (options.defaults) {
                         object.id = null;
                         object.description = "";
+                        object.expected_shape = null;
                     }
                     if (message.id != null && message.hasOwnProperty("id"))
                         object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
@@ -588,6 +613,8 @@ $root.syft_proto = (function() {
                     }
                     if (message.description != null && message.hasOwnProperty("description"))
                         object.description = message.description;
+                    if (message.expected_shape != null && message.hasOwnProperty("expected_shape"))
+                        object.expected_shape = $root.syft_proto.types.syft.v1.Shape.toObject(message.expected_shape, options);
                     return object;
                 };
 

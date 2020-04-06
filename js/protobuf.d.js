@@ -127,6 +127,9 @@ export namespace syft_proto {
 
                 /** Placeholder description */
                 description?: (string|null);
+
+                /** Placeholder expected_shape */
+                expected_shape?: (syft_proto.types.syft.v1.IShape|null);
             }
 
             /** Represents a Placeholder. */
@@ -146,6 +149,9 @@ export namespace syft_proto {
 
                 /** Placeholder description. */
                 public description: string;
+
+                /** Placeholder expected_shape. */
+                public expected_shape?: (syft_proto.types.syft.v1.IShape|null);
 
                 /**
                  * Creates a new Placeholder instance using the specified properties.

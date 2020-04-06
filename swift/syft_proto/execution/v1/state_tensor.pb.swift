@@ -19,14 +19,14 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-public struct SyftProto_Execution_V1_StateTensor {
+struct SyftProto_Execution_V1_StateTensor {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var tensor: SyftProto_Execution_V1_StateTensor.OneOf_Tensor? = nil
+  var tensor: SyftProto_Execution_V1_StateTensor.OneOf_Tensor? = nil
 
-  public var torchTensor: SyftProto_Types_Torch_V1_TorchTensor {
+  var torchTensor: SyftProto_Types_Torch_V1_TorchTensor {
     get {
       if case .torchTensor(let v)? = tensor {return v}
       return SyftProto_Types_Torch_V1_TorchTensor()
@@ -34,7 +34,7 @@ public struct SyftProto_Execution_V1_StateTensor {
     set {tensor = .torchTensor(newValue)}
   }
 
-  public var torchParam: SyftProto_Types_Torch_V1_Parameter {
+  var torchParam: SyftProto_Types_Torch_V1_Parameter {
     get {
       if case .torchParam(let v)? = tensor {return v}
       return SyftProto_Types_Torch_V1_Parameter()
@@ -42,14 +42,14 @@ public struct SyftProto_Execution_V1_StateTensor {
     set {tensor = .torchParam(newValue)}
   }
 
-  public var unknownFields = SwiftProtobuf.UnknownStorage()
+  var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum OneOf_Tensor: Equatable {
+  enum OneOf_Tensor: Equatable {
     case torchTensor(SyftProto_Types_Torch_V1_TorchTensor)
     case torchParam(SyftProto_Types_Torch_V1_Parameter)
 
   #if !swift(>=4.1)
-    public static func ==(lhs: SyftProto_Execution_V1_StateTensor.OneOf_Tensor, rhs: SyftProto_Execution_V1_StateTensor.OneOf_Tensor) -> Bool {
+    static func ==(lhs: SyftProto_Execution_V1_StateTensor.OneOf_Tensor, rhs: SyftProto_Execution_V1_StateTensor.OneOf_Tensor) -> Bool {
       switch (lhs, rhs) {
       case (.torchTensor(let l), .torchTensor(let r)): return l == r
       case (.torchParam(let l), .torchParam(let r)): return l == r
@@ -59,7 +59,7 @@ public struct SyftProto_Execution_V1_StateTensor {
   #endif
   }
 
-  public init() {}
+  init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -67,13 +67,13 @@ public struct SyftProto_Execution_V1_StateTensor {
 fileprivate let _protobuf_package = "syft_proto.execution.v1"
 
 extension SyftProto_Execution_V1_StateTensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = _protobuf_package + ".StateTensor"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  static let protoMessageName: String = _protobuf_package + ".StateTensor"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "torch_tensor"),
     2: .standard(proto: "torch_param"),
   ]
 
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1:
@@ -97,7 +97,7 @@ extension SyftProto_Execution_V1_StateTensor: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     switch self.tensor {
     case .torchTensor(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -108,7 +108,7 @@ extension SyftProto_Execution_V1_StateTensor: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: SyftProto_Execution_V1_StateTensor, rhs: SyftProto_Execution_V1_StateTensor) -> Bool {
+  static func ==(lhs: SyftProto_Execution_V1_StateTensor, rhs: SyftProto_Execution_V1_StateTensor) -> Bool {
     if lhs.tensor != rhs.tensor {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
