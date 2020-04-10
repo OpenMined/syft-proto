@@ -196,6 +196,7 @@
       "code": 58
     },
     "syft.frameworks.torch.tensors.interpreters.paillier.PaillierTensor": {
+    "type": {
       "code": 59
     }
   }
