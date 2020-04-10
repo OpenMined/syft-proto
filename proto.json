@@ -194,6 +194,9 @@
     },
     "syft.execution.role.Role": {
       "code": 58
+    },
+    "type": {
+      "code": 59
     }
   }
 }
