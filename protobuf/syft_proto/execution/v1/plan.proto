@@ -16,4 +16,5 @@ message Plan {
     repeated string tags = 6;
     string description = 7;
     bytes torchscript = 8;
+    repeated type serialized_input = 9;
 }
