@@ -115,3 +115,4 @@ jobs:
           BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}
         run: |
           twine upload --verbose dist/*
+          ./jvm/gradlew cleanFiles install bintrayUpload
