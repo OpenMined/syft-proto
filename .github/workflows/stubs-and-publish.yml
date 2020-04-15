@@ -115,4 +115,4 @@ jobs:
           BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}
         run: |
           twine upload --verbose dist/*
-          ./jvm/gradlew bintrayUpload
+          ./jvm/gradlew bintray
