@@ -197,6 +197,9 @@
     },
     "type": {
       "code": 59
+    },
+    "syft.execution.plan.NestedTypeWrapper": {
+      "code": 60
     }
   }
 }
