@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package syft_proto.execution.v1;
+option java_package = "org.openmined.syftproto.execution.v1";
+
+message type {
+    /*
+        A type contains the serialization id and string bytes.
+    */
+    int32 id = 1;
+    bytes type = 2;
+}
+
+message NestedTypeWrapper {
+    /*
+    In a nested type we can have 4 scenarios:
+        1. A type.
+        2. A list of types.
+        3. A tuple of types.
+        4. A dict of types.
+    As fields are all optionals in proto3, only one field  from this message should exist.
+    */
+
+    // Message defined to simulate the behavior of a generic map.
+    message key_value {
+        bytes key = 1;
+        NestedTypeWrapper value = 2;
+    }
+
+
+    // First case, our message contains a type.
+    type nested_type = 1;
+
+    // Second case, our message contains a list of nested types.
+    repeated NestedTypeWrapper nested_type_list = 2;
+
+    // Third case, our message contains a tuple of nested types.
+    repeated NestedTypeWrapper nested_type_tuple = 3;
+
+    // Fourth case, our message contains a dict of nested types.
+   repeated key_value nested_type_dict = 4;
+}
