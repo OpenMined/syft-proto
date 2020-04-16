@@ -198,7 +198,7 @@
     "type": {
       "code": 59
     },
-    "syft.execution.plan.NestedTypeWrapper": {
+    "syft.execution.type_wrapper.NestedTypeWrapper": {
       "code": 60
     }
   }
