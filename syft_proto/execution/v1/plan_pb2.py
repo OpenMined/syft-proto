@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from syft_proto.execution.v1 import role_pb2 as syft__proto_dot_execution_dot_v1_dot_role__pb2
 from syft_proto.types.syft.v1 import id_pb2 as syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2
+from syft_proto.execution.v1 import type_wrapper_pb2 as syft__proto_dot_execution_dot_v1_dot_type__wrapper__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
-  serialized_pb=b'\n\"syft_proto/execution/v1/plan.proto\x12\x17syft_proto.execution.v1\x1a\"syft_proto/execution/v1/role.proto\x1a!syft_proto/types/syft/v1/id.proto\"\x93\x02\n\x04Plan\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x31\n\x04role\x18\x02 \x01(\x0b\x32\x1d.syft_proto.execution.v1.RoleR\x04role\x12#\n\rinclude_state\x18\x03 \x01(\x08R\x0cincludeState\x12\x19\n\x08is_built\x18\x04 \x01(\x08R\x07isBuilt\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\x12\x12\n\x04tags\x18\x06 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x07 \x01(\tR\x0b\x64\x65scription\x12 \n\x0btorchscript\x18\x08 \x01(\x0cR\x0btorchscriptB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
+  serialized_pb=b'\n\"syft_proto/execution/v1/plan.proto\x12\x17syft_proto.execution.v1\x1a\"syft_proto/execution/v1/role.proto\x1a!syft_proto/types/syft/v1/id.proto\x1a*syft_proto/execution/v1/type_wrapper.proto\"\xea\x02\n\x04Plan\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x31\n\x04role\x18\x02 \x01(\x0b\x32\x1d.syft_proto.execution.v1.RoleR\x04role\x12#\n\rinclude_state\x18\x03 \x01(\x08R\x0cincludeState\x12\x19\n\x08is_built\x18\x04 \x01(\x08R\x07isBuilt\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\x12\x12\n\x04tags\x18\x06 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x07 \x01(\tR\x0b\x64\x65scription\x12 \n\x0btorchscript\x18\x08 \x01(\x0cR\x0btorchscript\x12U\n\x10serialized_input\x18\t \x01(\x0b\x32*.syft_proto.execution.v1.NestedTypeWrapperR\x0fserializedInputB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
   ,
-  dependencies=[syft__proto_dot_execution_dot_v1_dot_role__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
+  dependencies=[syft__proto_dot_execution_dot_v1_dot_role__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_type__wrapper__pb2.DESCRIPTOR,])
 
 
 
@@ -90,6 +91,13 @@ _PLAN = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='torchscript', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='serialized_input', full_name='syft_proto.execution.v1.Plan.serialized_input', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='serializedInput', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -102,12 +110,13 @@ _PLAN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=135,
-  serialized_end=410,
+  serialized_start=179,
+  serialized_end=541,
 )
 
 _PLAN.fields_by_name['id'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
 _PLAN.fields_by_name['role'].message_type = syft__proto_dot_execution_dot_v1_dot_role__pb2._ROLE
+_PLAN.fields_by_name['serialized_input'].message_type = syft__proto_dot_execution_dot_v1_dot_type__wrapper__pb2._NESTEDTYPEWRAPPER
 DESCRIPTOR.message_types_by_name['Plan'] = _PLAN
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

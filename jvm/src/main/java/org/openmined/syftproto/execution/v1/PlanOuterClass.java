@@ -114,6 +114,21 @@ public final class PlanOuterClass {
      * @return The torchscript.
      */
     com.google.protobuf.ByteString getTorchscript();
+
+    /**
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+     * @return Whether the serializedInput field is set.
+     */
+    boolean hasSerializedInput();
+    /**
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+     * @return The serializedInput.
+     */
+    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getSerializedInput();
+    /**
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+     */
+    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getSerializedInputOrBuilder();
   }
   /**
    * Protobuf type {@code syft_proto.execution.v1.Plan}
@@ -225,6 +240,19 @@ public final class PlanOuterClass {
             case 66: {
 
               torchscript_ = input.readBytes();
+              break;
+            }
+            case 74: {
+              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder subBuilder = null;
+              if (serializedInput_ != null) {
+                subBuilder = serializedInput_.toBuilder();
+              }
+              serializedInput_ = input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(serializedInput_);
+                serializedInput_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -445,6 +473,29 @@ public final class PlanOuterClass {
       return torchscript_;
     }
 
+    public static final int SERIALIZED_INPUT_FIELD_NUMBER = 9;
+    private org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper serializedInput_;
+    /**
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+     * @return Whether the serializedInput field is set.
+     */
+    public boolean hasSerializedInput() {
+      return serializedInput_ != null;
+    }
+    /**
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+     * @return The serializedInput.
+     */
+    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getSerializedInput() {
+      return serializedInput_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : serializedInput_;
+    }
+    /**
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+     */
+    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getSerializedInputOrBuilder() {
+      return getSerializedInput();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -482,6 +533,9 @@ public final class PlanOuterClass {
       }
       if (!torchscript_.isEmpty()) {
         output.writeBytes(8, torchscript_);
+      }
+      if (serializedInput_ != null) {
+        output.writeMessage(9, getSerializedInput());
       }
       unknownFields.writeTo(output);
     }
@@ -526,6 +580,10 @@ public final class PlanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(8, torchscript_);
       }
+      if (serializedInput_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getSerializedInput());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -563,6 +621,11 @@ public final class PlanOuterClass {
           .equals(other.getDescription())) return false;
       if (!getTorchscript()
           .equals(other.getTorchscript())) return false;
+      if (hasSerializedInput() != other.hasSerializedInput()) return false;
+      if (hasSerializedInput()) {
+        if (!getSerializedInput()
+            .equals(other.getSerializedInput())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -598,6 +661,10 @@ public final class PlanOuterClass {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + TORCHSCRIPT_FIELD_NUMBER;
       hash = (53 * hash) + getTorchscript().hashCode();
+      if (hasSerializedInput()) {
+        hash = (37 * hash) + SERIALIZED_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getSerializedInput().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -755,6 +822,12 @@ public final class PlanOuterClass {
 
         torchscript_ = com.google.protobuf.ByteString.EMPTY;
 
+        if (serializedInputBuilder_ == null) {
+          serializedInput_ = null;
+        } else {
+          serializedInput_ = null;
+          serializedInputBuilder_ = null;
+        }
         return this;
       }
 
@@ -802,6 +875,11 @@ public final class PlanOuterClass {
         result.tags_ = tags_;
         result.description_ = description_;
         result.torchscript_ = torchscript_;
+        if (serializedInputBuilder_ == null) {
+          result.serializedInput_ = serializedInput_;
+        } else {
+          result.serializedInput_ = serializedInputBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -882,6 +960,9 @@ public final class PlanOuterClass {
         }
         if (other.getTorchscript() != com.google.protobuf.ByteString.EMPTY) {
           setTorchscript(other.getTorchscript());
+        }
+        if (other.hasSerializedInput()) {
+          mergeSerializedInput(other.getSerializedInput());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1505,6 +1586,125 @@ public final class PlanOuterClass {
         onChanged();
         return this;
       }
+
+      private org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper serializedInput_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> serializedInputBuilder_;
+      /**
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       * @return Whether the serializedInput field is set.
+       */
+      public boolean hasSerializedInput() {
+        return serializedInputBuilder_ != null || serializedInput_ != null;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       * @return The serializedInput.
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getSerializedInput() {
+        if (serializedInputBuilder_ == null) {
+          return serializedInput_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : serializedInput_;
+        } else {
+          return serializedInputBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       */
+      public Builder setSerializedInput(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
+        if (serializedInputBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          serializedInput_ = value;
+          onChanged();
+        } else {
+          serializedInputBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       */
+      public Builder setSerializedInput(
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
+        if (serializedInputBuilder_ == null) {
+          serializedInput_ = builderForValue.build();
+          onChanged();
+        } else {
+          serializedInputBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       */
+      public Builder mergeSerializedInput(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
+        if (serializedInputBuilder_ == null) {
+          if (serializedInput_ != null) {
+            serializedInput_ =
+              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.newBuilder(serializedInput_).mergeFrom(value).buildPartial();
+          } else {
+            serializedInput_ = value;
+          }
+          onChanged();
+        } else {
+          serializedInputBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       */
+      public Builder clearSerializedInput() {
+        if (serializedInputBuilder_ == null) {
+          serializedInput_ = null;
+          onChanged();
+        } else {
+          serializedInput_ = null;
+          serializedInputBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder getSerializedInputBuilder() {
+        
+        onChanged();
+        return getSerializedInputFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getSerializedInputOrBuilder() {
+        if (serializedInputBuilder_ != null) {
+          return serializedInputBuilder_.getMessageOrBuilder();
+        } else {
+          return serializedInput_ == null ?
+              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : serializedInput_;
+        }
+      }
+      /**
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
+          getSerializedInputFieldBuilder() {
+        if (serializedInputBuilder_ == null) {
+          serializedInputBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder>(
+                  getSerializedInput(),
+                  getParentForChildren(),
+                  isClean());
+          serializedInput_ = null;
+        }
+        return serializedInputBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1575,30 +1775,35 @@ public final class PlanOuterClass {
       "\n\"syft_proto/execution/v1/plan.proto\022\027sy" +
       "ft_proto.execution.v1\032\"syft_proto/execut" +
       "ion/v1/role.proto\032!syft_proto/types/syft" +
-      "/v1/id.proto\"\223\002\n\004Plan\022,\n\002id\030\001 \001(\0132\034.syft" +
-      "_proto.types.syft.v1.IdR\002id\0221\n\004role\030\002 \001(" +
-      "\0132\035.syft_proto.execution.v1.RoleR\004role\022#" +
-      "\n\rinclude_state\030\003 \001(\010R\014includeState\022\031\n\010i" +
-      "s_built\030\004 \001(\010R\007isBuilt\022\022\n\004name\030\005 \001(\tR\004na" +
-      "me\022\022\n\004tags\030\006 \003(\tR\004tags\022 \n\013description\030\007 " +
-      "\001(\tR\013description\022 \n\013torchscript\030\010 \001(\014R\013t" +
-      "orchscriptB&\n$org.openmined.syftproto.ex" +
-      "ecution.v1b\006proto3"
+      "/v1/id.proto\032*syft_proto/execution/v1/ty" +
+      "pe_wrapper.proto\"\352\002\n\004Plan\022,\n\002id\030\001 \001(\0132\034." +
+      "syft_proto.types.syft.v1.IdR\002id\0221\n\004role\030" +
+      "\002 \001(\0132\035.syft_proto.execution.v1.RoleR\004ro" +
+      "le\022#\n\rinclude_state\030\003 \001(\010R\014includeState\022" +
+      "\031\n\010is_built\030\004 \001(\010R\007isBuilt\022\022\n\004name\030\005 \001(\t" +
+      "R\004name\022\022\n\004tags\030\006 \003(\tR\004tags\022 \n\013descriptio" +
+      "n\030\007 \001(\tR\013description\022 \n\013torchscript\030\010 \001(" +
+      "\014R\013torchscript\022U\n\020serialized_input\030\t \001(\013" +
+      "2*.syft_proto.execution.v1.NestedTypeWra" +
+      "pperR\017serializedInputB&\n$org.openmined.s" +
+      "yftproto.execution.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.openmined.syftproto.execution.v1.RoleOuterClass.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor(),
+          org.openmined.syftproto.execution.v1.TypeWrapper.getDescriptor(),
         });
     internal_static_syft_proto_execution_v1_Plan_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_syft_proto_execution_v1_Plan_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_Plan_descriptor,
-        new java.lang.String[] { "Id", "Role", "IncludeState", "IsBuilt", "Name", "Tags", "Description", "Torchscript", });
+        new java.lang.String[] { "Id", "Role", "IncludeState", "IsBuilt", "Name", "Tags", "Description", "Torchscript", "SerializedInput", });
     org.openmined.syftproto.execution.v1.RoleOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
+    org.openmined.syftproto.execution.v1.TypeWrapper.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
