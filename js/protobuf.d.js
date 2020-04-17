@@ -487,6 +487,9 @@ export namespace syft_proto {
 
                 /** Plan torchscript */
                 torchscript?: (Uint8Array|null);
+
+                /** Plan serialized_input */
+                serialized_input?: (syft_proto.execution.v1.INestedTypeWrapper|null);
             }
 
             /** Represents a Plan. */
@@ -521,6 +524,9 @@ export namespace syft_proto {
 
                 /** Plan torchscript. */
                 public torchscript: Uint8Array;
+
+                /** Plan serialized_input. */
+                public serialized_input?: (syft_proto.execution.v1.INestedTypeWrapper|null);
 
                 /**
                  * Creates a new Plan instance using the specified properties.
@@ -918,6 +924,309 @@ export namespace syft_proto {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a type. */
+            interface Itype {
+
+                /** type id */
+                id?: (number|null);
+
+                /** type type */
+                type?: (Uint8Array|null);
+            }
+
+            /** Represents a type. */
+            class type implements Itype {
+
+                /**
+                 * Constructs a new type.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.execution.v1.Itype);
+
+                /** type id. */
+                public id: number;
+
+                /** type type. */
+                public type: Uint8Array;
+
+                /**
+                 * Creates a new type instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns type instance
+                 */
+                public static create(properties?: syft_proto.execution.v1.Itype): syft_proto.execution.v1.type;
+
+                /**
+                 * Encodes the specified type message. Does not implicitly {@link syft_proto.execution.v1.type.verify|verify} messages.
+                 * @param message type message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.execution.v1.Itype, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified type message, length delimited. Does not implicitly {@link syft_proto.execution.v1.type.verify|verify} messages.
+                 * @param message type message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.execution.v1.Itype, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a type message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns type
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.type;
+
+                /**
+                 * Decodes a type message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns type
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.type;
+
+                /**
+                 * Verifies a type message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a type message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns type
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.type;
+
+                /**
+                 * Creates a plain object from a type message. Also converts values to other types if specified.
+                 * @param message type
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.execution.v1.type, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this type to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a NestedTypeWrapper. */
+            interface INestedTypeWrapper {
+
+                /** NestedTypeWrapper nested_type */
+                nested_type?: (syft_proto.execution.v1.Itype|null);
+
+                /** NestedTypeWrapper nested_type_list */
+                nested_type_list?: (syft_proto.execution.v1.INestedTypeWrapper[]|null);
+
+                /** NestedTypeWrapper nested_type_tuple */
+                nested_type_tuple?: (syft_proto.execution.v1.INestedTypeWrapper[]|null);
+
+                /** NestedTypeWrapper nested_type_dict */
+                nested_type_dict?: (syft_proto.execution.v1.NestedTypeWrapper.Ikey_value[]|null);
+            }
+
+            /** Represents a NestedTypeWrapper. */
+            class NestedTypeWrapper implements INestedTypeWrapper {
+
+                /**
+                 * Constructs a new NestedTypeWrapper.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.execution.v1.INestedTypeWrapper);
+
+                /** NestedTypeWrapper nested_type. */
+                public nested_type?: (syft_proto.execution.v1.Itype|null);
+
+                /** NestedTypeWrapper nested_type_list. */
+                public nested_type_list: syft_proto.execution.v1.INestedTypeWrapper[];
+
+                /** NestedTypeWrapper nested_type_tuple. */
+                public nested_type_tuple: syft_proto.execution.v1.INestedTypeWrapper[];
+
+                /** NestedTypeWrapper nested_type_dict. */
+                public nested_type_dict: syft_proto.execution.v1.NestedTypeWrapper.Ikey_value[];
+
+                /**
+                 * Creates a new NestedTypeWrapper instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns NestedTypeWrapper instance
+                 */
+                public static create(properties?: syft_proto.execution.v1.INestedTypeWrapper): syft_proto.execution.v1.NestedTypeWrapper;
+
+                /**
+                 * Encodes the specified NestedTypeWrapper message. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.verify|verify} messages.
+                 * @param message NestedTypeWrapper message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.execution.v1.INestedTypeWrapper, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified NestedTypeWrapper message, length delimited. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.verify|verify} messages.
+                 * @param message NestedTypeWrapper message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.execution.v1.INestedTypeWrapper, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a NestedTypeWrapper message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns NestedTypeWrapper
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.NestedTypeWrapper;
+
+                /**
+                 * Decodes a NestedTypeWrapper message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns NestedTypeWrapper
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.NestedTypeWrapper;
+
+                /**
+                 * Verifies a NestedTypeWrapper message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a NestedTypeWrapper message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns NestedTypeWrapper
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.NestedTypeWrapper;
+
+                /**
+                 * Creates a plain object from a NestedTypeWrapper message. Also converts values to other types if specified.
+                 * @param message NestedTypeWrapper
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.execution.v1.NestedTypeWrapper, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this NestedTypeWrapper to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            namespace NestedTypeWrapper {
+
+                /** Properties of a key_value. */
+                interface Ikey_value {
+
+                    /** key_value key */
+                    key?: (Uint8Array|null);
+
+                    /** key_value value */
+                    value?: (syft_proto.execution.v1.INestedTypeWrapper|null);
+                }
+
+                /** Represents a key_value. */
+                class key_value implements Ikey_value {
+
+                    /**
+                     * Constructs a new key_value.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.execution.v1.NestedTypeWrapper.Ikey_value);
+
+                    /** key_value key. */
+                    public key: Uint8Array;
+
+                    /** key_value value. */
+                    public value?: (syft_proto.execution.v1.INestedTypeWrapper|null);
+
+                    /**
+                     * Creates a new key_value instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns key_value instance
+                     */
+                    public static create(properties?: syft_proto.execution.v1.NestedTypeWrapper.Ikey_value): syft_proto.execution.v1.NestedTypeWrapper.key_value;
+
+                    /**
+                     * Encodes the specified key_value message. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.key_value.verify|verify} messages.
+                     * @param message key_value message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.execution.v1.NestedTypeWrapper.Ikey_value, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified key_value message, length delimited. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.key_value.verify|verify} messages.
+                     * @param message key_value message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.execution.v1.NestedTypeWrapper.Ikey_value, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a key_value message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns key_value
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.NestedTypeWrapper.key_value;
+
+                    /**
+                     * Decodes a key_value message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns key_value
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.NestedTypeWrapper.key_value;
+
+                    /**
+                     * Verifies a key_value message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a key_value message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns key_value
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.NestedTypeWrapper.key_value;
+
+                    /**
+                     * Creates a plain object from a key_value message. Also converts values to other types if specified.
+                     * @param message key_value
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.execution.v1.NestedTypeWrapper.key_value, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this key_value to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
             }
 
             /** Properties of a Protocol. */

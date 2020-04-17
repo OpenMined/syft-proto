@@ -54,12 +54,22 @@ struct SyftProto_Execution_V1_Plan {
 
   var torchscript: Data = SwiftProtobuf.Internal.emptyData
 
+  var serializedInput: SyftProto_Execution_V1_NestedTypeWrapper {
+    get {return _serializedInput ?? SyftProto_Execution_V1_NestedTypeWrapper()}
+    set {_serializedInput = newValue}
+  }
+  /// Returns true if `serializedInput` has been explicitly set.
+  var hasSerializedInput: Bool {return self._serializedInput != nil}
+  /// Clears the value of `serializedInput`. Subsequent reads from it will return its default value.
+  mutating func clearSerializedInput() {self._serializedInput = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _id: SyftProto_Types_Syft_V1_Id? = nil
   fileprivate var _role: SyftProto_Execution_V1_Role? = nil
+  fileprivate var _serializedInput: SyftProto_Execution_V1_NestedTypeWrapper? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -77,6 +87,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     6: .same(proto: "tags"),
     7: .same(proto: "description"),
     8: .same(proto: "torchscript"),
+    9: .standard(proto: "serialized_input"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -90,6 +101,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 6: try decoder.decodeRepeatedStringField(value: &self.tags)
       case 7: try decoder.decodeSingularStringField(value: &self.description_p)
       case 8: try decoder.decodeSingularBytesField(value: &self.torchscript)
+      case 9: try decoder.decodeSingularMessageField(value: &self._serializedInput)
       default: break
       }
     }
@@ -120,6 +132,9 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.torchscript.isEmpty {
       try visitor.visitSingularBytesField(value: self.torchscript, fieldNumber: 8)
     }
+    if let v = self._serializedInput {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -132,6 +147,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs.tags != rhs.tags {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.torchscript != rhs.torchscript {return false}
+    if lhs._serializedInput != rhs._serializedInput {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
