@@ -3,7 +3,7 @@ syntax = "proto3";
 package syft_proto.execution.v1;
 option java_package = "org.openmined.syftproto.execution.v1";
 
-message type {
+message ClassType {
     /*
         A type contains the serialization id and string bytes.
     */
@@ -13,30 +13,37 @@ message type {
 
 message NestedTypeWrapper {
     /*
-    In a nested type we can have 4 scenarios:
+    Message to bufferize a nested type. In a nested type we can have:
         1. A type.
-        2. A list of types.
-        3. A tuple of types.
-        4. A dict of types.
-    As fields are all optionals in proto3, only one field  from this message should exist.
+        2. A list of nested types.
+        3. A tuple of nested types.
+        4. A dict of nested types.
     */
 
     // Message defined to simulate the behavior of a generic map.
-    message key_value {
+    message KeyValue {
+        // bytes to serialize the key, currently only str is supported.
         bytes key = 1;
         NestedTypeWrapper value = 2;
     }
 
+    // To create the behavior described above, we need a new message, as
+    // oneof will not permit repeated fields.
+    message TypeContainer {
+        oneof nested_container {
+            // First scenario, acts like a list with one element, the type.
+            ClassType nested_type = 1;
 
-    // First case, our message contains a type.
-    type nested_type = 1;
+            // Second scenario, a list of possibly nested elements.
+            NestedTypeWrapper nested_type_list = 2;
 
-    // Second case, our message contains a list of nested types.
-    repeated NestedTypeWrapper nested_type_list = 2;
+            // Third scenario, a tuple of possibly nested elements.
+            NestedTypeWrapper nested_type_tuple = 3;
 
-    // Third case, our message contains a tuple of nested types.
-    repeated NestedTypeWrapper nested_type_tuple = 3;
+            // Last scenario, a dict of possible nested elements.
+            KeyValue nested_type_dict = 4;
+        }
+    }
 
-    // Fourth case, our message contains a dict of nested types.
-   repeated key_value nested_type_dict = 4;
+    repeated TypeContainer nested_types = 1;
 }
