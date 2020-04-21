@@ -7,8 +7,7 @@ message ClassType {
     /*
         A type contains the serialization id and string bytes.
     */
-    int32 id = 1;
-    bytes type = 2;
+    string type_name = 1;
 }
 
 message NestedTypeWrapper {
@@ -22,8 +21,8 @@ message NestedTypeWrapper {
 
     // Message defined to simulate the behavior of a generic map.
     message KeyValue {
-        // bytes to serialize the key, currently only str is supported.
-        bytes key = 1;
+        // currently only str is supported, this should generalize for any type
+        string key = 1;
         NestedTypeWrapper value = 2;
     }
 
