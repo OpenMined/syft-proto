@@ -196,11 +196,13 @@
       "code": 58
     },
     "syft.frameworks.torch.tensors.interpreters.paillier.PaillierTensor": {
-    "type": {
       "code": 59
     },
-    "syft.execution.type_wrapper.NestedTypeWrapper": {
+    "type": {
       "code": 60
+    },
+    "syft.execution.type_wrapper.NestedTypeWrapper": {
+      "code": 61
     }
   }
 }
