@@ -14,8 +14,8 @@ public final class TypeWrapper {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface typeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:syft_proto.execution.v1.type)
+  public interface ClassTypeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:syft_proto.execution.v1.ClassType)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -23,38 +23,42 @@ public final class TypeWrapper {
      * A type contains the serialization id and string bytes.
      * </pre>
      *
-     * <code>int32 id = 1[json_name = "id"];</code>
-     * @return The id.
+     * <code>string type_name = 1[json_name = "typeName"];</code>
+     * @return The typeName.
      */
-    int getId();
-
+    java.lang.String getTypeName();
     /**
-     * <code>bytes type = 2[json_name = "type"];</code>
-     * @return The type.
+     * <pre>
+     * A type contains the serialization id and string bytes.
+     * </pre>
+     *
+     * <code>string type_name = 1[json_name = "typeName"];</code>
+     * @return The bytes for typeName.
      */
-    com.google.protobuf.ByteString getType();
+    com.google.protobuf.ByteString
+        getTypeNameBytes();
   }
   /**
-   * Protobuf type {@code syft_proto.execution.v1.type}
+   * Protobuf type {@code syft_proto.execution.v1.ClassType}
    */
-  public  static final class type extends
+  public  static final class ClassType extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.type)
-      typeOrBuilder {
+      // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.ClassType)
+      ClassTypeOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use type.newBuilder() to construct.
-    private type(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ClassType.newBuilder() to construct.
+    private ClassType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private type() {
-      type_ = com.google.protobuf.ByteString.EMPTY;
+    private ClassType() {
+      typeName_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new type();
+      return new ClassType();
     }
 
     @java.lang.Override
@@ -62,7 +66,7 @@ public final class TypeWrapper {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private type(
+    private ClassType(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -80,14 +84,10 @@ public final class TypeWrapper {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = input.readInt32();
-              break;
-            }
-            case 18: {
-
-              type_ = input.readBytes();
+              typeName_ = s;
               break;
             }
             default: {
@@ -111,39 +111,59 @@ public final class TypeWrapper {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_type_descriptor;
+      return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_ClassType_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_type_fieldAccessorTable
+      return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_ClassType_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.openmined.syftproto.execution.v1.TypeWrapper.type.class, org.openmined.syftproto.execution.v1.TypeWrapper.type.Builder.class);
+              org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.class, org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    public static final int TYPE_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object typeName_;
     /**
      * <pre>
      * A type contains the serialization id and string bytes.
      * </pre>
      *
-     * <code>int32 id = 1[json_name = "id"];</code>
-     * @return The id.
+     * <code>string type_name = 1[json_name = "typeName"];</code>
+     * @return The typeName.
      */
-    public int getId() {
-      return id_;
+    public java.lang.String getTypeName() {
+      java.lang.Object ref = typeName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        typeName_ = s;
+        return s;
+      }
     }
-
-    public static final int TYPE_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString type_;
     /**
-     * <code>bytes type = 2[json_name = "type"];</code>
-     * @return The type.
+     * <pre>
+     * A type contains the serialization id and string bytes.
+     * </pre>
+     *
+     * <code>string type_name = 1[json_name = "typeName"];</code>
+     * @return The bytes for typeName.
      */
-    public com.google.protobuf.ByteString getType() {
-      return type_;
+    public com.google.protobuf.ByteString
+        getTypeNameBytes() {
+      java.lang.Object ref = typeName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        typeName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -160,11 +180,8 @@ public final class TypeWrapper {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeInt32(1, id_);
-      }
-      if (!type_.isEmpty()) {
-        output.writeBytes(2, type_);
+      if (!getTypeNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, typeName_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,13 +192,8 @@ public final class TypeWrapper {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
-      }
-      if (!type_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, type_);
+      if (!getTypeNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, typeName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -193,15 +205,13 @@ public final class TypeWrapper {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.openmined.syftproto.execution.v1.TypeWrapper.type)) {
+      if (!(obj instanceof org.openmined.syftproto.execution.v1.TypeWrapper.ClassType)) {
         return super.equals(obj);
       }
-      org.openmined.syftproto.execution.v1.TypeWrapper.type other = (org.openmined.syftproto.execution.v1.TypeWrapper.type) obj;
+      org.openmined.syftproto.execution.v1.TypeWrapper.ClassType other = (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) obj;
 
-      if (getId()
-          != other.getId()) return false;
-      if (!getType()
-          .equals(other.getType())) return false;
+      if (!getTypeName()
+          .equals(other.getTypeName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -213,78 +223,76 @@ public final class TypeWrapper {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + TYPE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getTypeName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type parseFrom(byte[] data)
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type parseFrom(java.io.InputStream input)
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type parseDelimitedFrom(java.io.InputStream input)
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type parseDelimitedFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -297,7 +305,7 @@ public final class TypeWrapper {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.openmined.syftproto.execution.v1.TypeWrapper.type prototype) {
+    public static Builder newBuilder(org.openmined.syftproto.execution.v1.TypeWrapper.ClassType prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -313,26 +321,26 @@ public final class TypeWrapper {
       return builder;
     }
     /**
-     * Protobuf type {@code syft_proto.execution.v1.type}
+     * Protobuf type {@code syft_proto.execution.v1.ClassType}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:syft_proto.execution.v1.type)
-        org.openmined.syftproto.execution.v1.TypeWrapper.typeOrBuilder {
+        // @@protoc_insertion_point(builder_implements:syft_proto.execution.v1.ClassType)
+        org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_type_descriptor;
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_ClassType_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_type_fieldAccessorTable
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_ClassType_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.openmined.syftproto.execution.v1.TypeWrapper.type.class, org.openmined.syftproto.execution.v1.TypeWrapper.type.Builder.class);
+                org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.class, org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder.class);
       }
 
-      // Construct using org.openmined.syftproto.execution.v1.TypeWrapper.type.newBuilder()
+      // Construct using org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -350,9 +358,7 @@ public final class TypeWrapper {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
-
-        type_ = com.google.protobuf.ByteString.EMPTY;
+        typeName_ = "";
 
         return this;
       }
@@ -360,17 +366,17 @@ public final class TypeWrapper {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_type_descriptor;
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_ClassType_descriptor;
       }
 
       @java.lang.Override
-      public org.openmined.syftproto.execution.v1.TypeWrapper.type getDefaultInstanceForType() {
-        return org.openmined.syftproto.execution.v1.TypeWrapper.type.getDefaultInstance();
+      public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType getDefaultInstanceForType() {
+        return org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.openmined.syftproto.execution.v1.TypeWrapper.type build() {
-        org.openmined.syftproto.execution.v1.TypeWrapper.type result = buildPartial();
+      public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType build() {
+        org.openmined.syftproto.execution.v1.TypeWrapper.ClassType result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -378,10 +384,9 @@ public final class TypeWrapper {
       }
 
       @java.lang.Override
-      public org.openmined.syftproto.execution.v1.TypeWrapper.type buildPartial() {
-        org.openmined.syftproto.execution.v1.TypeWrapper.type result = new org.openmined.syftproto.execution.v1.TypeWrapper.type(this);
-        result.id_ = id_;
-        result.type_ = type_;
+      public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType buildPartial() {
+        org.openmined.syftproto.execution.v1.TypeWrapper.ClassType result = new org.openmined.syftproto.execution.v1.TypeWrapper.ClassType(this);
+        result.typeName_ = typeName_;
         onBuilt();
         return result;
       }
@@ -420,21 +425,19 @@ public final class TypeWrapper {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.openmined.syftproto.execution.v1.TypeWrapper.type) {
-          return mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.type)other);
+        if (other instanceof org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) {
+          return mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.ClassType)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.openmined.syftproto.execution.v1.TypeWrapper.type other) {
-        if (other == org.openmined.syftproto.execution.v1.TypeWrapper.type.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
-        }
-        if (other.getType() != com.google.protobuf.ByteString.EMPTY) {
-          setType(other.getType());
+      public Builder mergeFrom(org.openmined.syftproto.execution.v1.TypeWrapper.ClassType other) {
+        if (other == org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance()) return this;
+        if (!other.getTypeName().isEmpty()) {
+          typeName_ = other.typeName_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -451,11 +454,11 @@ public final class TypeWrapper {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.openmined.syftproto.execution.v1.TypeWrapper.type parsedMessage = null;
+        org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.openmined.syftproto.execution.v1.TypeWrapper.type) e.getUnfinishedMessage();
+          parsedMessage = (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -465,77 +468,98 @@ public final class TypeWrapper {
         return this;
       }
 
-      private int id_ ;
+      private java.lang.Object typeName_ = "";
       /**
        * <pre>
        * A type contains the serialization id and string bytes.
        * </pre>
        *
-       * <code>int32 id = 1[json_name = "id"];</code>
-       * @return The id.
+       * <code>string type_name = 1[json_name = "typeName"];</code>
+       * @return The typeName.
        */
-      public int getId() {
-        return id_;
-      }
-      /**
-       * <pre>
-       * A type contains the serialization id and string bytes.
-       * </pre>
-       *
-       * <code>int32 id = 1[json_name = "id"];</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(int value) {
-        
-        id_ = value;
-        onChanged();
-        return this;
+      public java.lang.String getTypeName() {
+        java.lang.Object ref = typeName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          typeName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * A type contains the serialization id and string bytes.
        * </pre>
        *
-       * <code>int32 id = 1[json_name = "id"];</code>
-       * @return This builder for chaining.
+       * <code>string type_name = 1[json_name = "typeName"];</code>
+       * @return The bytes for typeName.
        */
-      public Builder clearId() {
-        
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString type_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes type = 2[json_name = "type"];</code>
-       * @return The type.
-       */
-      public com.google.protobuf.ByteString getType() {
-        return type_;
+      public com.google.protobuf.ByteString
+          getTypeNameBytes() {
+        java.lang.Object ref = typeName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          typeName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>bytes type = 2[json_name = "type"];</code>
-       * @param value The type to set.
+       * <pre>
+       * A type contains the serialization id and string bytes.
+       * </pre>
+       *
+       * <code>string type_name = 1[json_name = "typeName"];</code>
+       * @param value The typeName to set.
        * @return This builder for chaining.
        */
-      public Builder setType(com.google.protobuf.ByteString value) {
+      public Builder setTypeName(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        type_ = value;
+        typeName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes type = 2[json_name = "type"];</code>
+       * <pre>
+       * A type contains the serialization id and string bytes.
+       * </pre>
+       *
+       * <code>string type_name = 1[json_name = "typeName"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearType() {
+      public Builder clearTypeName() {
         
-        type_ = getDefaultInstance().getType();
+        typeName_ = getDefaultInstance().getTypeName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A type contains the serialization id and string bytes.
+       * </pre>
+       *
+       * <code>string type_name = 1[json_name = "typeName"];</code>
+       * @param value The bytes for typeName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        typeName_ = value;
         onChanged();
         return this;
       }
@@ -552,41 +576,41 @@ public final class TypeWrapper {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:syft_proto.execution.v1.type)
+      // @@protoc_insertion_point(builder_scope:syft_proto.execution.v1.ClassType)
     }
 
-    // @@protoc_insertion_point(class_scope:syft_proto.execution.v1.type)
-    private static final org.openmined.syftproto.execution.v1.TypeWrapper.type DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:syft_proto.execution.v1.ClassType)
+    private static final org.openmined.syftproto.execution.v1.TypeWrapper.ClassType DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.openmined.syftproto.execution.v1.TypeWrapper.type();
+      DEFAULT_INSTANCE = new org.openmined.syftproto.execution.v1.TypeWrapper.ClassType();
     }
 
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.type getDefaultInstance() {
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<type>
-        PARSER = new com.google.protobuf.AbstractParser<type>() {
+    private static final com.google.protobuf.Parser<ClassType>
+        PARSER = new com.google.protobuf.AbstractParser<ClassType>() {
       @java.lang.Override
-      public type parsePartialFrom(
+      public ClassType parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new type(input, extensionRegistry);
+        return new ClassType(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<type> parser() {
+    public static com.google.protobuf.Parser<ClassType> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<type> getParserForType() {
+    public com.google.protobuf.Parser<ClassType> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.openmined.syftproto.execution.v1.TypeWrapper.type getDefaultInstanceForType() {
+    public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -597,163 +621,19 @@ public final class TypeWrapper {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * First case, our message contains a type.
-     * </pre>
-     *
-     * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
-     * @return Whether the nestedType field is set.
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
+     * @return Whether the nestedTypes field is set.
      */
-    boolean hasNestedType();
+    boolean hasNestedTypes();
     /**
-     * <pre>
-     * First case, our message contains a type.
-     * </pre>
-     *
-     * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
-     * @return The nestedType.
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
+     * @return The nestedTypes.
      */
-    org.openmined.syftproto.execution.v1.TypeWrapper.type getNestedType();
+    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer getNestedTypes();
     /**
-     * <pre>
-     * First case, our message contains a type.
-     * </pre>
-     *
-     * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
      */
-    org.openmined.syftproto.execution.v1.TypeWrapper.typeOrBuilder getNestedTypeOrBuilder();
-
-    /**
-     * <pre>
-     * Second case, our message contains a list of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-     */
-    java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> 
-        getNestedTypeListList();
-    /**
-     * <pre>
-     * Second case, our message contains a list of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-     */
-    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypeList(int index);
-    /**
-     * <pre>
-     * Second case, our message contains a list of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-     */
-    int getNestedTypeListCount();
-    /**
-     * <pre>
-     * Second case, our message contains a list of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-     */
-    java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
-        getNestedTypeListOrBuilderList();
-    /**
-     * <pre>
-     * Second case, our message contains a list of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-     */
-    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getNestedTypeListOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * Third case, our message contains a tuple of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-     */
-    java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> 
-        getNestedTypeTupleList();
-    /**
-     * <pre>
-     * Third case, our message contains a tuple of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-     */
-    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypeTuple(int index);
-    /**
-     * <pre>
-     * Third case, our message contains a tuple of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-     */
-    int getNestedTypeTupleCount();
-    /**
-     * <pre>
-     * Third case, our message contains a tuple of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-     */
-    java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
-        getNestedTypeTupleOrBuilderList();
-    /**
-     * <pre>
-     * Third case, our message contains a tuple of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-     */
-    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getNestedTypeTupleOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * Fourth case, our message contains a dict of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-     */
-    java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value> 
-        getNestedTypeDictList();
-    /**
-     * <pre>
-     * Fourth case, our message contains a dict of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-     */
-    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value getNestedTypeDict(int index);
-    /**
-     * <pre>
-     * Fourth case, our message contains a dict of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-     */
-    int getNestedTypeDictCount();
-    /**
-     * <pre>
-     * Fourth case, our message contains a dict of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-     */
-    java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_valueOrBuilder> 
-        getNestedTypeDictOrBuilderList();
-    /**
-     * <pre>
-     * Fourth case, our message contains a dict of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-     */
-    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_valueOrBuilder getNestedTypeDictOrBuilder(
-        int index);
+    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainerOrBuilder getNestedTypesOrBuilder();
   }
   /**
    * Protobuf type {@code syft_proto.execution.v1.NestedTypeWrapper}
@@ -768,9 +648,6 @@ public final class TypeWrapper {
       super(builder);
     }
     private NestedTypeWrapper() {
-      nestedTypeList_ = java.util.Collections.emptyList();
-      nestedTypeTuple_ = java.util.Collections.emptyList();
-      nestedTypeDict_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -793,7 +670,6 @@ public final class TypeWrapper {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -805,43 +681,16 @@ public final class TypeWrapper {
               done = true;
               break;
             case 10: {
-              org.openmined.syftproto.execution.v1.TypeWrapper.type.Builder subBuilder = null;
-              if (nestedType_ != null) {
-                subBuilder = nestedType_.toBuilder();
+              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.Builder subBuilder = null;
+              if (nestedTypes_ != null) {
+                subBuilder = nestedTypes_.toBuilder();
               }
-              nestedType_ = input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.type.parser(), extensionRegistry);
+              nestedTypes_ = input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(nestedType_);
-                nestedType_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(nestedTypes_);
+                nestedTypes_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                nestedTypeList_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              nestedTypeList_.add(
-                  input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                nestedTypeTuple_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              nestedTypeTuple_.add(
-                  input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                nestedTypeDict_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              nestedTypeDict_.add(
-                  input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -859,15 +708,6 @@ public final class TypeWrapper {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          nestedTypeList_ = java.util.Collections.unmodifiableList(nestedTypeList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          nestedTypeTuple_ = java.util.Collections.unmodifiableList(nestedTypeTuple_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          nestedTypeDict_ = java.util.Collections.unmodifiableList(nestedTypeDict_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -885,56 +725,59 @@ public final class TypeWrapper {
               org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.class, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder.class);
     }
 
-    public interface key_valueOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:syft_proto.execution.v1.NestedTypeWrapper.key_value)
+    public interface TypeListOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:syft_proto.execution.v1.NestedTypeWrapper.TypeList)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>bytes key = 1[json_name = "key"];</code>
-       * @return The key.
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      com.google.protobuf.ByteString getKey();
-
+      java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> 
+          getNestedTypesList();
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
-       * @return Whether the value field is set.
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      boolean hasValue();
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypes(int index);
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
-       * @return The value.
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getValue();
+      int getNestedTypesCount();
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getValueOrBuilder();
+      java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
+          getNestedTypesOrBuilderList();
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getNestedTypesOrBuilder(
+          int index);
     }
     /**
      * <pre>
-     * Message defined to simulate the behavior of a generic map.
+     *Wrapper to simulate the behavior of a list in oneof.
      * </pre>
      *
-     * Protobuf type {@code syft_proto.execution.v1.NestedTypeWrapper.key_value}
+     * Protobuf type {@code syft_proto.execution.v1.NestedTypeWrapper.TypeList}
      */
-    public  static final class key_value extends
+    public  static final class TypeList extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.NestedTypeWrapper.key_value)
-        key_valueOrBuilder {
+        // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.NestedTypeWrapper.TypeList)
+        TypeListOrBuilder {
     private static final long serialVersionUID = 0L;
-      // Use key_value.newBuilder() to construct.
-      private key_value(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // Use TypeList.newBuilder() to construct.
+      private TypeList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
-      private key_value() {
-        key_ = com.google.protobuf.ByteString.EMPTY;
+      private TypeList() {
+        nestedTypes_ = java.util.Collections.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(
           UnusedPrivateParameter unused) {
-        return new key_value();
+        return new TypeList();
       }
 
       @java.lang.Override
@@ -942,7 +785,7 @@ public final class TypeWrapper {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private key_value(
+      private TypeList(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -950,6 +793,7 @@ public final class TypeWrapper {
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
+        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -961,21 +805,12 @@ public final class TypeWrapper {
                 done = true;
                 break;
               case 10: {
-
-                key_ = input.readBytes();
-                break;
-              }
-              case 18: {
-                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder subBuilder = null;
-                if (value_ != null) {
-                  subBuilder = value_.toBuilder();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  nestedTypes_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>();
+                  mutable_bitField0_ |= 0x00000001;
                 }
-                value_ = input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(value_);
-                  value_ = subBuilder.buildPartial();
-                }
-
+                nestedTypes_.add(
+                    input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.parser(), extensionRegistry));
                 break;
               }
               default: {
@@ -993,54 +828,59 @@ public final class TypeWrapper {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
+            nestedTypes_ = java.util.Collections.unmodifiableList(nestedTypes_);
+          }
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_key_value_descriptor;
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeList_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_key_value_fieldAccessorTable
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeList_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.class, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.Builder.class);
+                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.class, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.Builder.class);
       }
 
-      public static final int KEY_FIELD_NUMBER = 1;
-      private com.google.protobuf.ByteString key_;
+      public static final int NESTED_TYPES_FIELD_NUMBER = 1;
+      private java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> nestedTypes_;
       /**
-       * <code>bytes key = 1[json_name = "key"];</code>
-       * @return The key.
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      public com.google.protobuf.ByteString getKey() {
-        return key_;
-      }
-
-      public static final int VALUE_FIELD_NUMBER = 2;
-      private org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value_;
-      /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
-       * @return Whether the value field is set.
-       */
-      public boolean hasValue() {
-        return value_ != null;
+      public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getNestedTypesList() {
+        return nestedTypes_;
       }
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
-       * @return The value.
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getValue() {
-        return value_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : value_;
+      public java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
+          getNestedTypesOrBuilderList() {
+        return nestedTypes_;
       }
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getValueOrBuilder() {
-        return getValue();
+      public int getNestedTypesCount() {
+        return nestedTypes_.size();
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypes(int index) {
+        return nestedTypes_.get(index);
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getNestedTypesOrBuilder(
+          int index) {
+        return nestedTypes_.get(index);
       }
 
       private byte memoizedIsInitialized = -1;
@@ -1057,11 +897,8 @@ public final class TypeWrapper {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!key_.isEmpty()) {
-          output.writeBytes(1, key_);
-        }
-        if (value_ != null) {
-          output.writeMessage(2, getValue());
+        for (int i = 0; i < nestedTypes_.size(); i++) {
+          output.writeMessage(1, nestedTypes_.get(i));
         }
         unknownFields.writeTo(output);
       }
@@ -1072,13 +909,9 @@ public final class TypeWrapper {
         if (size != -1) return size;
 
         size = 0;
-        if (!key_.isEmpty()) {
+        for (int i = 0; i < nestedTypes_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(1, key_);
-        }
-        if (value_ != null) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, getValue());
+            .computeMessageSize(1, nestedTypes_.get(i));
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -1090,18 +923,13 @@ public final class TypeWrapper {
         if (obj == this) {
          return true;
         }
-        if (!(obj instanceof org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value)) {
+        if (!(obj instanceof org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList)) {
           return super.equals(obj);
         }
-        org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value other = (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value) obj;
+        org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList other = (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) obj;
 
-        if (!getKey()
-            .equals(other.getKey())) return false;
-        if (hasValue() != other.hasValue()) return false;
-        if (hasValue()) {
-          if (!getValue()
-              .equals(other.getValue())) return false;
-        }
+        if (!getNestedTypesList()
+            .equals(other.getNestedTypesList())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -1113,80 +941,78 @@ public final class TypeWrapper {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + KEY_FIELD_NUMBER;
-        hash = (53 * hash) + getKey().hashCode();
-        if (hasValue()) {
-          hash = (37 * hash) + VALUE_FIELD_NUMBER;
-          hash = (53 * hash) + getValue().hashCode();
+        if (getNestedTypesCount() > 0) {
+          hash = (37 * hash) + NESTED_TYPES_FIELD_NUMBER;
+          hash = (53 * hash) + getNestedTypesList().hashCode();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
 
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parseFrom(
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parseFrom(
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parseFrom(
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parseFrom(
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parseFrom(
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parseFrom(byte[] data)
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parseFrom(
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parseFrom(java.io.InputStream input)
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parseFrom(
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parseDelimitedFrom(java.io.InputStream input)
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parseDelimitedFrom(
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parseFrom(
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parseFrom(
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -1199,7 +1025,7 @@ public final class TypeWrapper {
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value prototype) {
+      public static Builder newBuilder(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
       @java.lang.Override
@@ -1216,29 +1042,29 @@ public final class TypeWrapper {
       }
       /**
        * <pre>
-       * Message defined to simulate the behavior of a generic map.
+       *Wrapper to simulate the behavior of a list in oneof.
        * </pre>
        *
-       * Protobuf type {@code syft_proto.execution.v1.NestedTypeWrapper.key_value}
+       * Protobuf type {@code syft_proto.execution.v1.NestedTypeWrapper.TypeList}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:syft_proto.execution.v1.NestedTypeWrapper.key_value)
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_valueOrBuilder {
+          // @@protoc_insertion_point(builder_implements:syft_proto.execution.v1.NestedTypeWrapper.TypeList)
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeListOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_key_value_descriptor;
+          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeList_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_key_value_fieldAccessorTable
+          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeList_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.class, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.Builder.class);
+                  org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.class, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.Builder.class);
         }
 
-        // Construct using org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.newBuilder()
+        // Construct using org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -1251,18 +1077,17 @@ public final class TypeWrapper {
         private void maybeForceBuilderInitialization() {
           if (com.google.protobuf.GeneratedMessageV3
                   .alwaysUseFieldBuilders) {
+            getNestedTypesFieldBuilder();
           }
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          key_ = com.google.protobuf.ByteString.EMPTY;
-
-          if (valueBuilder_ == null) {
-            value_ = null;
+          if (nestedTypesBuilder_ == null) {
+            nestedTypes_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            value_ = null;
-            valueBuilder_ = null;
+            nestedTypesBuilder_.clear();
           }
           return this;
         }
@@ -1270,17 +1095,17 @@ public final class TypeWrapper {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_key_value_descriptor;
+          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeList_descriptor;
         }
 
         @java.lang.Override
-        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value getDefaultInstanceForType() {
-          return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.getDefaultInstance();
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList getDefaultInstanceForType() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.getDefaultInstance();
         }
 
         @java.lang.Override
-        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value build() {
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value result = buildPartial();
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList build() {
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -1288,13 +1113,17 @@ public final class TypeWrapper {
         }
 
         @java.lang.Override
-        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value buildPartial() {
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value result = new org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value(this);
-          result.key_ = key_;
-          if (valueBuilder_ == null) {
-            result.value_ = value_;
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList buildPartial() {
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList result = new org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList(this);
+          int from_bitField0_ = bitField0_;
+          if (nestedTypesBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
+              nestedTypes_ = java.util.Collections.unmodifiableList(nestedTypes_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.nestedTypes_ = nestedTypes_;
           } else {
-            result.value_ = valueBuilder_.build();
+            result.nestedTypes_ = nestedTypesBuilder_.build();
           }
           onBuilt();
           return result;
@@ -1334,21 +1163,41 @@ public final class TypeWrapper {
         }
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value) {
-            return mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value)other);
+          if (other instanceof org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) {
+            return mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value other) {
-          if (other == org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.getDefaultInstance()) return this;
-          if (other.getKey() != com.google.protobuf.ByteString.EMPTY) {
-            setKey(other.getKey());
-          }
-          if (other.hasValue()) {
-            mergeValue(other.getValue());
+        public Builder mergeFrom(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList other) {
+          if (other == org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.getDefaultInstance()) return this;
+          if (nestedTypesBuilder_ == null) {
+            if (!other.nestedTypes_.isEmpty()) {
+              if (nestedTypes_.isEmpty()) {
+                nestedTypes_ = other.nestedTypes_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureNestedTypesIsMutable();
+                nestedTypes_.addAll(other.nestedTypes_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.nestedTypes_.isEmpty()) {
+              if (nestedTypesBuilder_.isEmpty()) {
+                nestedTypesBuilder_.dispose();
+                nestedTypesBuilder_ = null;
+                nestedTypes_ = other.nestedTypes_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                nestedTypesBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getNestedTypesFieldBuilder() : null;
+              } else {
+                nestedTypesBuilder_.addAllMessages(other.nestedTypes_);
+              }
+            }
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -1365,11 +1214,11 @@ public final class TypeWrapper {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value parsedMessage = null;
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value) e.getUnfinishedMessage();
+            parsedMessage = (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -1378,157 +1227,246 @@ public final class TypeWrapper {
           }
           return this;
         }
+        private int bitField0_;
 
-        private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
-        /**
-         * <code>bytes key = 1[json_name = "key"];</code>
-         * @return The key.
-         */
-        public com.google.protobuf.ByteString getKey() {
-          return key_;
-        }
-        /**
-         * <code>bytes key = 1[json_name = "key"];</code>
-         * @param value The key to set.
-         * @return This builder for chaining.
-         */
-        public Builder setKey(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          key_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>bytes key = 1[json_name = "key"];</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearKey() {
-          
-          key_ = getDefaultInstance().getKey();
-          onChanged();
-          return this;
+        private java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> nestedTypes_ =
+          java.util.Collections.emptyList();
+        private void ensureNestedTypesIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            nestedTypes_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>(nestedTypes_);
+            bitField0_ |= 0x00000001;
+           }
         }
 
-        private org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value_;
-        private com.google.protobuf.SingleFieldBuilderV3<
-            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> valueBuilder_;
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> nestedTypesBuilder_;
+
         /**
-         * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
-         * @return Whether the value field is set.
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
          */
-        public boolean hasValue() {
-          return valueBuilder_ != null || value_ != null;
-        }
-        /**
-         * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
-         * @return The value.
-         */
-        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getValue() {
-          if (valueBuilder_ == null) {
-            return value_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : value_;
+        public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getNestedTypesList() {
+          if (nestedTypesBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(nestedTypes_);
           } else {
-            return valueBuilder_.getMessage();
+            return nestedTypesBuilder_.getMessageList();
           }
         }
         /**
-         * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
          */
-        public Builder setValue(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
-          if (valueBuilder_ == null) {
+        public int getNestedTypesCount() {
+          if (nestedTypesBuilder_ == null) {
+            return nestedTypes_.size();
+          } else {
+            return nestedTypesBuilder_.getCount();
+          }
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypes(int index) {
+          if (nestedTypesBuilder_ == null) {
+            return nestedTypes_.get(index);
+          } else {
+            return nestedTypesBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder setNestedTypes(
+            int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
+          if (nestedTypesBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
             }
-            value_ = value;
+            ensureNestedTypesIsMutable();
+            nestedTypes_.set(index, value);
             onChanged();
           } else {
-            valueBuilder_.setMessage(value);
+            nestedTypesBuilder_.setMessage(index, value);
           }
-
           return this;
         }
         /**
-         * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
          */
-        public Builder setValue(
-            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
-          if (valueBuilder_ == null) {
-            value_ = builderForValue.build();
+        public Builder setNestedTypes(
+            int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
+          if (nestedTypesBuilder_ == null) {
+            ensureNestedTypesIsMutable();
+            nestedTypes_.set(index, builderForValue.build());
             onChanged();
           } else {
-            valueBuilder_.setMessage(builderForValue.build());
+            nestedTypesBuilder_.setMessage(index, builderForValue.build());
           }
-
           return this;
         }
         /**
-         * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
          */
-        public Builder mergeValue(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
-          if (valueBuilder_ == null) {
-            if (value_ != null) {
-              value_ =
-                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.newBuilder(value_).mergeFrom(value).buildPartial();
-            } else {
-              value_ = value;
+        public Builder addNestedTypes(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
+          if (nestedTypesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
             }
+            ensureNestedTypesIsMutable();
+            nestedTypes_.add(value);
             onChanged();
           } else {
-            valueBuilder_.mergeFrom(value);
+            nestedTypesBuilder_.addMessage(value);
           }
-
           return this;
         }
         /**
-         * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
          */
-        public Builder clearValue() {
-          if (valueBuilder_ == null) {
-            value_ = null;
+        public Builder addNestedTypes(
+            int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
+          if (nestedTypesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureNestedTypesIsMutable();
+            nestedTypes_.add(index, value);
             onChanged();
           } else {
-            value_ = null;
-            valueBuilder_ = null;
+            nestedTypesBuilder_.addMessage(index, value);
           }
-
           return this;
         }
         /**
-         * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
          */
-        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder getValueBuilder() {
-          
-          onChanged();
-          return getValueFieldBuilder().getBuilder();
+        public Builder addNestedTypes(
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
+          if (nestedTypesBuilder_ == null) {
+            ensureNestedTypesIsMutable();
+            nestedTypes_.add(builderForValue.build());
+            onChanged();
+          } else {
+            nestedTypesBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
         }
         /**
-         * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
          */
-        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getValueOrBuilder() {
-          if (valueBuilder_ != null) {
-            return valueBuilder_.getMessageOrBuilder();
+        public Builder addNestedTypes(
+            int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
+          if (nestedTypesBuilder_ == null) {
+            ensureNestedTypesIsMutable();
+            nestedTypes_.add(index, builderForValue.build());
+            onChanged();
           } else {
-            return value_ == null ?
-                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : value_;
+            nestedTypesBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder addAllNestedTypes(
+            java.lang.Iterable<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> values) {
+          if (nestedTypesBuilder_ == null) {
+            ensureNestedTypesIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, nestedTypes_);
+            onChanged();
+          } else {
+            nestedTypesBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder clearNestedTypes() {
+          if (nestedTypesBuilder_ == null) {
+            nestedTypes_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            nestedTypesBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder removeNestedTypes(int index) {
+          if (nestedTypesBuilder_ == null) {
+            ensureNestedTypesIsMutable();
+            nestedTypes_.remove(index);
+            onChanged();
+          } else {
+            nestedTypesBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder getNestedTypesBuilder(
+            int index) {
+          return getNestedTypesFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getNestedTypesOrBuilder(
+            int index) {
+          if (nestedTypesBuilder_ == null) {
+            return nestedTypes_.get(index);  } else {
+            return nestedTypesBuilder_.getMessageOrBuilder(index);
           }
         }
         /**
-         * <code>.syft_proto.execution.v1.NestedTypeWrapper value = 2[json_name = "value"];</code>
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
          */
-        private com.google.protobuf.SingleFieldBuilderV3<
+        public java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
+             getNestedTypesOrBuilderList() {
+          if (nestedTypesBuilder_ != null) {
+            return nestedTypesBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(nestedTypes_);
+          }
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder addNestedTypesBuilder() {
+          return getNestedTypesFieldBuilder().addBuilder(
+              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder addNestedTypesBuilder(
+            int index) {
+          return getNestedTypesFieldBuilder().addBuilder(
+              index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder> 
+             getNestedTypesBuilderList() {
+          return getNestedTypesFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
             org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
-            getValueFieldBuilder() {
-          if (valueBuilder_ == null) {
-            valueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            getNestedTypesFieldBuilder() {
+          if (nestedTypesBuilder_ == null) {
+            nestedTypesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder>(
-                    getValue(),
+                    nestedTypes_,
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
-            value_ = null;
+            nestedTypes_ = null;
           }
-          return valueBuilder_;
+          return nestedTypesBuilder_;
         }
         @java.lang.Override
         public final Builder setUnknownFields(
@@ -1543,244 +1481,3230 @@ public final class TypeWrapper {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:syft_proto.execution.v1.NestedTypeWrapper.key_value)
+        // @@protoc_insertion_point(builder_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeList)
       }
 
-      // @@protoc_insertion_point(class_scope:syft_proto.execution.v1.NestedTypeWrapper.key_value)
-      private static final org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value DEFAULT_INSTANCE;
+      // @@protoc_insertion_point(class_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeList)
+      private static final org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value();
+        DEFAULT_INSTANCE = new org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList();
       }
 
-      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value getDefaultInstance() {
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<key_value>
-          PARSER = new com.google.protobuf.AbstractParser<key_value>() {
+      private static final com.google.protobuf.Parser<TypeList>
+          PARSER = new com.google.protobuf.AbstractParser<TypeList>() {
         @java.lang.Override
-        public key_value parsePartialFrom(
+        public TypeList parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new key_value(input, extensionRegistry);
+          return new TypeList(input, extensionRegistry);
         }
       };
 
-      public static com.google.protobuf.Parser<key_value> parser() {
+      public static com.google.protobuf.Parser<TypeList> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Parser<key_value> getParserForType() {
+      public com.google.protobuf.Parser<TypeList> getParserForType() {
         return PARSER;
       }
 
       @java.lang.Override
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value getDefaultInstanceForType() {
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
 
     }
 
-    public static final int NESTED_TYPE_FIELD_NUMBER = 1;
-    private org.openmined.syftproto.execution.v1.TypeWrapper.type nestedType_;
-    /**
-     * <pre>
-     * First case, our message contains a type.
-     * </pre>
-     *
-     * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
-     * @return Whether the nestedType field is set.
-     */
-    public boolean hasNestedType() {
-      return nestedType_ != null;
+    public interface TypeTupleOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:syft_proto.execution.v1.NestedTypeWrapper.TypeTuple)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> 
+          getNestedTypesList();
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypes(int index);
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      int getNestedTypesCount();
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
+          getNestedTypesOrBuilderList();
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getNestedTypesOrBuilder(
+          int index);
     }
     /**
      * <pre>
-     * First case, our message contains a type.
+     *Wrapper to simulate the behavior of a tuple in oneof.
      * </pre>
      *
-     * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
-     * @return The nestedType.
+     * Protobuf type {@code syft_proto.execution.v1.NestedTypeWrapper.TypeTuple}
      */
-    public org.openmined.syftproto.execution.v1.TypeWrapper.type getNestedType() {
-      return nestedType_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.type.getDefaultInstance() : nestedType_;
-    }
-    /**
-     * <pre>
-     * First case, our message contains a type.
-     * </pre>
-     *
-     * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
-     */
-    public org.openmined.syftproto.execution.v1.TypeWrapper.typeOrBuilder getNestedTypeOrBuilder() {
-      return getNestedType();
+    public  static final class TypeTuple extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.NestedTypeWrapper.TypeTuple)
+        TypeTupleOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use TypeTuple.newBuilder() to construct.
+      private TypeTuple(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private TypeTuple() {
+        nestedTypes_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new TypeTuple();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private TypeTuple(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  nestedTypes_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                nestedTypes_.add(
+                    input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.parser(), extensionRegistry));
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
+            nestedTypes_ = java.util.Collections.unmodifiableList(nestedTypes_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeTuple_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeTuple_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.class, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.Builder.class);
+      }
+
+      public static final int NESTED_TYPES_FIELD_NUMBER = 1;
+      private java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> nestedTypes_;
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getNestedTypesList() {
+        return nestedTypes_;
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      public java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
+          getNestedTypesOrBuilderList() {
+        return nestedTypes_;
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      public int getNestedTypesCount() {
+        return nestedTypes_.size();
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypes(int index) {
+        return nestedTypes_.get(index);
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getNestedTypesOrBuilder(
+          int index) {
+        return nestedTypes_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        for (int i = 0; i < nestedTypes_.size(); i++) {
+          output.writeMessage(1, nestedTypes_.get(i));
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (int i = 0; i < nestedTypes_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, nestedTypes_.get(i));
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple)) {
+          return super.equals(obj);
+        }
+        org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple other = (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) obj;
+
+        if (!getNestedTypesList()
+            .equals(other.getNestedTypesList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getNestedTypesCount() > 0) {
+          hash = (37 * hash) + NESTED_TYPES_FIELD_NUMBER;
+          hash = (53 * hash) + getNestedTypesList().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       *Wrapper to simulate the behavior of a tuple in oneof.
+       * </pre>
+       *
+       * Protobuf type {@code syft_proto.execution.v1.NestedTypeWrapper.TypeTuple}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:syft_proto.execution.v1.NestedTypeWrapper.TypeTuple)
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTupleOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeTuple_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeTuple_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.class, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.Builder.class);
+        }
+
+        // Construct using org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+            getNestedTypesFieldBuilder();
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          if (nestedTypesBuilder_ == null) {
+            nestedTypes_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            nestedTypesBuilder_.clear();
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeTuple_descriptor;
+        }
+
+        @java.lang.Override
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple getDefaultInstanceForType() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple build() {
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple buildPartial() {
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple result = new org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple(this);
+          int from_bitField0_ = bitField0_;
+          if (nestedTypesBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
+              nestedTypes_ = java.util.Collections.unmodifiableList(nestedTypes_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.nestedTypes_ = nestedTypes_;
+          } else {
+            result.nestedTypes_ = nestedTypesBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) {
+            return mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple other) {
+          if (other == org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.getDefaultInstance()) return this;
+          if (nestedTypesBuilder_ == null) {
+            if (!other.nestedTypes_.isEmpty()) {
+              if (nestedTypes_.isEmpty()) {
+                nestedTypes_ = other.nestedTypes_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureNestedTypesIsMutable();
+                nestedTypes_.addAll(other.nestedTypes_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.nestedTypes_.isEmpty()) {
+              if (nestedTypesBuilder_.isEmpty()) {
+                nestedTypesBuilder_.dispose();
+                nestedTypesBuilder_ = null;
+                nestedTypes_ = other.nestedTypes_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                nestedTypesBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getNestedTypesFieldBuilder() : null;
+              } else {
+                nestedTypesBuilder_.addAllMessages(other.nestedTypes_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> nestedTypes_ =
+          java.util.Collections.emptyList();
+        private void ensureNestedTypesIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            nestedTypes_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>(nestedTypes_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> nestedTypesBuilder_;
+
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getNestedTypesList() {
+          if (nestedTypesBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(nestedTypes_);
+          } else {
+            return nestedTypesBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public int getNestedTypesCount() {
+          if (nestedTypesBuilder_ == null) {
+            return nestedTypes_.size();
+          } else {
+            return nestedTypesBuilder_.getCount();
+          }
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypes(int index) {
+          if (nestedTypesBuilder_ == null) {
+            return nestedTypes_.get(index);
+          } else {
+            return nestedTypesBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder setNestedTypes(
+            int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
+          if (nestedTypesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureNestedTypesIsMutable();
+            nestedTypes_.set(index, value);
+            onChanged();
+          } else {
+            nestedTypesBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder setNestedTypes(
+            int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
+          if (nestedTypesBuilder_ == null) {
+            ensureNestedTypesIsMutable();
+            nestedTypes_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            nestedTypesBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder addNestedTypes(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
+          if (nestedTypesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureNestedTypesIsMutable();
+            nestedTypes_.add(value);
+            onChanged();
+          } else {
+            nestedTypesBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder addNestedTypes(
+            int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
+          if (nestedTypesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureNestedTypesIsMutable();
+            nestedTypes_.add(index, value);
+            onChanged();
+          } else {
+            nestedTypesBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder addNestedTypes(
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
+          if (nestedTypesBuilder_ == null) {
+            ensureNestedTypesIsMutable();
+            nestedTypes_.add(builderForValue.build());
+            onChanged();
+          } else {
+            nestedTypesBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder addNestedTypes(
+            int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
+          if (nestedTypesBuilder_ == null) {
+            ensureNestedTypesIsMutable();
+            nestedTypes_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            nestedTypesBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder addAllNestedTypes(
+            java.lang.Iterable<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> values) {
+          if (nestedTypesBuilder_ == null) {
+            ensureNestedTypesIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, nestedTypes_);
+            onChanged();
+          } else {
+            nestedTypesBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder clearNestedTypes() {
+          if (nestedTypesBuilder_ == null) {
+            nestedTypes_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            nestedTypesBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public Builder removeNestedTypes(int index) {
+          if (nestedTypesBuilder_ == null) {
+            ensureNestedTypesIsMutable();
+            nestedTypes_.remove(index);
+            onChanged();
+          } else {
+            nestedTypesBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder getNestedTypesBuilder(
+            int index) {
+          return getNestedTypesFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getNestedTypesOrBuilder(
+            int index) {
+          if (nestedTypesBuilder_ == null) {
+            return nestedTypes_.get(index);  } else {
+            return nestedTypesBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
+             getNestedTypesOrBuilderList() {
+          if (nestedTypesBuilder_ != null) {
+            return nestedTypesBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(nestedTypes_);
+          }
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder addNestedTypesBuilder() {
+          return getNestedTypesFieldBuilder().addBuilder(
+              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder addNestedTypesBuilder(
+            int index) {
+          return getNestedTypesFieldBuilder().addBuilder(
+              index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_types = 1[json_name = "nestedTypes"];</code>
+         */
+        public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder> 
+             getNestedTypesBuilderList() {
+          return getNestedTypesFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
+            getNestedTypesFieldBuilder() {
+          if (nestedTypesBuilder_ == null) {
+            nestedTypesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder>(
+                    nestedTypes_,
+                    ((bitField0_ & 0x00000001) != 0),
+                    getParentForChildren(),
+                    isClean());
+            nestedTypes_ = null;
+          }
+          return nestedTypesBuilder_;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeTuple)
+      }
+
+      // @@protoc_insertion_point(class_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeTuple)
+      private static final org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple();
+      }
+
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TypeTuple>
+          PARSER = new com.google.protobuf.AbstractParser<TypeTuple>() {
+        @java.lang.Override
+        public TypeTuple parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TypeTuple(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<TypeTuple> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TypeTuple> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
-    public static final int NESTED_TYPE_LIST_FIELD_NUMBER = 2;
-    private java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> nestedTypeList_;
-    /**
-     * <pre>
-     * Second case, our message contains a list of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-     */
-    public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getNestedTypeListList() {
-      return nestedTypeList_;
+    public interface TypeMapOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:syft_proto.execution.v1.NestedTypeWrapper.TypeMap)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       */
+      int getTypeMapCount();
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       */
+      boolean containsTypeMap(
+          java.lang.String key);
+      /**
+       * Use {@link #getTypeMapMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
+      getTypeMap();
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       */
+      java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
+      getTypeMapMap();
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       */
+
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getTypeMapOrDefault(
+          java.lang.String key,
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper defaultValue);
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       */
+
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getTypeMapOrThrow(
+          java.lang.String key);
     }
     /**
      * <pre>
-     * Second case, our message contains a list of nested types.
+     *Wrapper to simulate the behavior of a map in oneof.
      * </pre>
      *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
+     * Protobuf type {@code syft_proto.execution.v1.NestedTypeWrapper.TypeMap}
      */
-    public java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
-        getNestedTypeListOrBuilderList() {
-      return nestedTypeList_;
-    }
-    /**
-     * <pre>
-     * Second case, our message contains a list of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-     */
-    public int getNestedTypeListCount() {
-      return nestedTypeList_.size();
-    }
-    /**
-     * <pre>
-     * Second case, our message contains a list of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-     */
-    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypeList(int index) {
-      return nestedTypeList_.get(index);
-    }
-    /**
-     * <pre>
-     * Second case, our message contains a list of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-     */
-    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getNestedTypeListOrBuilder(
-        int index) {
-      return nestedTypeList_.get(index);
+    public  static final class TypeMap extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.NestedTypeWrapper.TypeMap)
+        TypeMapOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use TypeMap.newBuilder() to construct.
+      private TypeMap(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private TypeMap() {
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new TypeMap();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private TypeMap(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  typeMap_ = com.google.protobuf.MapField.newMapField(
+                      TypeMapDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
+                typeMap__ = input.readMessage(
+                    TypeMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                typeMap_.getMutableMap().put(
+                    typeMap__.getKey(), typeMap__.getValue());
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      @java.lang.Override
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetTypeMap();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.class, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.Builder.class);
+      }
+
+      public static final int TYPE_MAP_FIELD_NUMBER = 1;
+      private static final class TypeMapDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>newDefaultInstance(
+                    org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_TypeMapEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance());
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> typeMap_;
+      private com.google.protobuf.MapField<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
+      internalGetTypeMap() {
+        if (typeMap_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              TypeMapDefaultEntryHolder.defaultEntry);
+        }
+        return typeMap_;
+      }
+
+      public int getTypeMapCount() {
+        return internalGetTypeMap().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       */
+
+      public boolean containsTypeMap(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetTypeMap().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getTypeMapMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getTypeMap() {
+        return getTypeMapMap();
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       */
+
+      public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getTypeMapMap() {
+        return internalGetTypeMap().getMap();
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       */
+
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getTypeMapOrDefault(
+          java.lang.String key,
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> map =
+            internalGetTypeMap().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       */
+
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getTypeMapOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> map =
+            internalGetTypeMap().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetTypeMap(),
+            TypeMapDefaultEntryHolder.defaultEntry,
+            1);
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (java.util.Map.Entry<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> entry
+             : internalGetTypeMap().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
+          typeMap__ = TypeMapDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(1, typeMap__);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap)) {
+          return super.equals(obj);
+        }
+        org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap other = (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) obj;
+
+        if (!internalGetTypeMap().equals(
+            other.internalGetTypeMap())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (!internalGetTypeMap().getMap().isEmpty()) {
+          hash = (37 * hash) + TYPE_MAP_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetTypeMap().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       *Wrapper to simulate the behavior of a map in oneof.
+       * </pre>
+       *
+       * Protobuf type {@code syft_proto.execution.v1.NestedTypeWrapper.TypeMap}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:syft_proto.execution.v1.NestedTypeWrapper.TypeMap)
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMapOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_descriptor;
+        }
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMapField(
+            int number) {
+          switch (number) {
+            case 1:
+              return internalGetTypeMap();
+            default:
+              throw new RuntimeException(
+                  "Invalid map field number: " + number);
+          }
+        }
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMutableMapField(
+            int number) {
+          switch (number) {
+            case 1:
+              return internalGetMutableTypeMap();
+            default:
+              throw new RuntimeException(
+                  "Invalid map field number: " + number);
+          }
+        }
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.class, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.Builder.class);
+        }
+
+        // Construct using org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          internalGetMutableTypeMap().clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_descriptor;
+        }
+
+        @java.lang.Override
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap getDefaultInstanceForType() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap build() {
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap buildPartial() {
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap result = new org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap(this);
+          int from_bitField0_ = bitField0_;
+          result.typeMap_ = internalGetTypeMap();
+          result.typeMap_.makeImmutable();
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) {
+            return mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap other) {
+          if (other == org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.getDefaultInstance()) return this;
+          internalGetMutableTypeMap().mergeFrom(
+              other.internalGetTypeMap());
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private com.google.protobuf.MapField<
+            java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> typeMap_;
+        private com.google.protobuf.MapField<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
+        internalGetTypeMap() {
+          if (typeMap_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                TypeMapDefaultEntryHolder.defaultEntry);
+          }
+          return typeMap_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
+        internalGetMutableTypeMap() {
+          onChanged();;
+          if (typeMap_ == null) {
+            typeMap_ = com.google.protobuf.MapField.newMapField(
+                TypeMapDefaultEntryHolder.defaultEntry);
+          }
+          if (!typeMap_.isMutable()) {
+            typeMap_ = typeMap_.copy();
+          }
+          return typeMap_;
+        }
+
+        public int getTypeMapCount() {
+          return internalGetTypeMap().getMap().size();
+        }
+        /**
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         */
+
+        public boolean containsTypeMap(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          return internalGetTypeMap().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getTypeMapMap()} instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getTypeMap() {
+          return getTypeMapMap();
+        }
+        /**
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         */
+
+        public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getTypeMapMap() {
+          return internalGetTypeMap().getMap();
+        }
+        /**
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         */
+
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getTypeMapOrDefault(
+            java.lang.String key,
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper defaultValue) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> map =
+              internalGetTypeMap().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         */
+
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getTypeMapOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> map =
+              internalGetTypeMap().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearTypeMap() {
+          internalGetMutableTypeMap().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         */
+
+        public Builder removeTypeMap(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          internalGetMutableTypeMap().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
+        getMutableTypeMap() {
+          return internalGetMutableTypeMap().getMutableMap();
+        }
+        /**
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         */
+        public Builder putTypeMap(
+            java.lang.String key,
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          if (value == null) { throw new java.lang.NullPointerException(); }
+          internalGetMutableTypeMap().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         */
+
+        public Builder putAllTypeMap(
+            java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> values) {
+          internalGetMutableTypeMap().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeMap)
+      }
+
+      // @@protoc_insertion_point(class_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeMap)
+      private static final org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap();
+      }
+
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TypeMap>
+          PARSER = new com.google.protobuf.AbstractParser<TypeMap>() {
+        @java.lang.Override
+        public TypeMap parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TypeMap(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<TypeMap> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TypeMap> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
-    public static final int NESTED_TYPE_TUPLE_FIELD_NUMBER = 3;
-    private java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> nestedTypeTuple_;
-    /**
-     * <pre>
-     * Third case, our message contains a tuple of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-     */
-    public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getNestedTypeTupleList() {
-      return nestedTypeTuple_;
+    public interface TypeContainerOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:syft_proto.execution.v1.NestedTypeWrapper.TypeContainer)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * First scenario, acts like a list with one element, the type.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+       * @return Whether the nestedType field is set.
+       */
+      boolean hasNestedType();
+      /**
+       * <pre>
+       * First scenario, acts like a list with one element, the type.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+       * @return The nestedType.
+       */
+      org.openmined.syftproto.execution.v1.TypeWrapper.ClassType getNestedType();
+      /**
+       * <pre>
+       * First scenario, acts like a list with one element, the type.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+       */
+      org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder getNestedTypeOrBuilder();
+
+      /**
+       * <pre>
+       * Second scenario, a list of possibly nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+       * @return Whether the nestedTypeList field is set.
+       */
+      boolean hasNestedTypeList();
+      /**
+       * <pre>
+       * Second scenario, a list of possibly nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+       * @return The nestedTypeList.
+       */
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList getNestedTypeList();
+      /**
+       * <pre>
+       * Second scenario, a list of possibly nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+       */
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeListOrBuilder getNestedTypeListOrBuilder();
+
+      /**
+       * <pre>
+       * Third scenario, a tuple of possibly nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+       * @return Whether the nestedTypeTuple field is set.
+       */
+      boolean hasNestedTypeTuple();
+      /**
+       * <pre>
+       * Third scenario, a tuple of possibly nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+       * @return The nestedTypeTuple.
+       */
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple getNestedTypeTuple();
+      /**
+       * <pre>
+       * Third scenario, a tuple of possibly nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+       */
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTupleOrBuilder getNestedTypeTupleOrBuilder();
+
+      /**
+       * <pre>
+       * Last scenario, a dict of possible nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+       * @return Whether the nestedTypeDict field is set.
+       */
+      boolean hasNestedTypeDict();
+      /**
+       * <pre>
+       * Last scenario, a dict of possible nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+       * @return The nestedTypeDict.
+       */
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap getNestedTypeDict();
+      /**
+       * <pre>
+       * Last scenario, a dict of possible nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+       */
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMapOrBuilder getNestedTypeDictOrBuilder();
+
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.NestedContainerCase getNestedContainerCase();
     }
     /**
      * <pre>
-     * Third case, our message contains a tuple of nested types.
+     * To create the behavior described above, we need a new message, as
+     * oneof will not permit repeated fields.
      * </pre>
      *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+     * Protobuf type {@code syft_proto.execution.v1.NestedTypeWrapper.TypeContainer}
      */
-    public java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
-        getNestedTypeTupleOrBuilderList() {
-      return nestedTypeTuple_;
-    }
-    /**
-     * <pre>
-     * Third case, our message contains a tuple of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-     */
-    public int getNestedTypeTupleCount() {
-      return nestedTypeTuple_.size();
-    }
-    /**
-     * <pre>
-     * Third case, our message contains a tuple of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-     */
-    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypeTuple(int index) {
-      return nestedTypeTuple_.get(index);
-    }
-    /**
-     * <pre>
-     * Third case, our message contains a tuple of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-     */
-    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getNestedTypeTupleOrBuilder(
-        int index) {
-      return nestedTypeTuple_.get(index);
+    public  static final class TypeContainer extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.NestedTypeWrapper.TypeContainer)
+        TypeContainerOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use TypeContainer.newBuilder() to construct.
+      private TypeContainer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private TypeContainer() {
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new TypeContainer();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private TypeContainer(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder subBuilder = null;
+                if (nestedContainerCase_ == 1) {
+                  subBuilder = ((org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_).toBuilder();
+                }
+                nestedContainer_ =
+                    input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_);
+                  nestedContainer_ = subBuilder.buildPartial();
+                }
+                nestedContainerCase_ = 1;
+                break;
+              }
+              case 18: {
+                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.Builder subBuilder = null;
+                if (nestedContainerCase_ == 2) {
+                  subBuilder = ((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) nestedContainer_).toBuilder();
+                }
+                nestedContainer_ =
+                    input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) nestedContainer_);
+                  nestedContainer_ = subBuilder.buildPartial();
+                }
+                nestedContainerCase_ = 2;
+                break;
+              }
+              case 26: {
+                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.Builder subBuilder = null;
+                if (nestedContainerCase_ == 3) {
+                  subBuilder = ((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) nestedContainer_).toBuilder();
+                }
+                nestedContainer_ =
+                    input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) nestedContainer_);
+                  nestedContainer_ = subBuilder.buildPartial();
+                }
+                nestedContainerCase_ = 3;
+                break;
+              }
+              case 34: {
+                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.Builder subBuilder = null;
+                if (nestedContainerCase_ == 4) {
+                  subBuilder = ((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) nestedContainer_).toBuilder();
+                }
+                nestedContainer_ =
+                    input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) nestedContainer_);
+                  nestedContainer_ = subBuilder.buildPartial();
+                }
+                nestedContainerCase_ = 4;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeContainer_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeContainer_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.class, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.Builder.class);
+      }
+
+      private int nestedContainerCase_ = 0;
+      private java.lang.Object nestedContainer_;
+      public enum NestedContainerCase
+          implements com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        NESTED_TYPE(1),
+        NESTED_TYPE_LIST(2),
+        NESTED_TYPE_TUPLE(3),
+        NESTED_TYPE_DICT(4),
+        NESTEDCONTAINER_NOT_SET(0);
+        private final int value;
+        private NestedContainerCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static NestedContainerCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static NestedContainerCase forNumber(int value) {
+          switch (value) {
+            case 1: return NESTED_TYPE;
+            case 2: return NESTED_TYPE_LIST;
+            case 3: return NESTED_TYPE_TUPLE;
+            case 4: return NESTED_TYPE_DICT;
+            case 0: return NESTEDCONTAINER_NOT_SET;
+            default: return null;
+          }
+        }
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public NestedContainerCase
+      getNestedContainerCase() {
+        return NestedContainerCase.forNumber(
+            nestedContainerCase_);
+      }
+
+      public static final int NESTED_TYPE_FIELD_NUMBER = 1;
+      /**
+       * <pre>
+       * First scenario, acts like a list with one element, the type.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+       * @return Whether the nestedType field is set.
+       */
+      public boolean hasNestedType() {
+        return nestedContainerCase_ == 1;
+      }
+      /**
+       * <pre>
+       * First scenario, acts like a list with one element, the type.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+       * @return The nestedType.
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType getNestedType() {
+        if (nestedContainerCase_ == 1) {
+           return (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_;
+        }
+        return org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+      }
+      /**
+       * <pre>
+       * First scenario, acts like a list with one element, the type.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder getNestedTypeOrBuilder() {
+        if (nestedContainerCase_ == 1) {
+           return (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_;
+        }
+        return org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+      }
+
+      public static final int NESTED_TYPE_LIST_FIELD_NUMBER = 2;
+      /**
+       * <pre>
+       * Second scenario, a list of possibly nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+       * @return Whether the nestedTypeList field is set.
+       */
+      public boolean hasNestedTypeList() {
+        return nestedContainerCase_ == 2;
+      }
+      /**
+       * <pre>
+       * Second scenario, a list of possibly nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+       * @return The nestedTypeList.
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList getNestedTypeList() {
+        if (nestedContainerCase_ == 2) {
+           return (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) nestedContainer_;
+        }
+        return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.getDefaultInstance();
+      }
+      /**
+       * <pre>
+       * Second scenario, a list of possibly nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeListOrBuilder getNestedTypeListOrBuilder() {
+        if (nestedContainerCase_ == 2) {
+           return (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) nestedContainer_;
+        }
+        return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.getDefaultInstance();
+      }
+
+      public static final int NESTED_TYPE_TUPLE_FIELD_NUMBER = 3;
+      /**
+       * <pre>
+       * Third scenario, a tuple of possibly nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+       * @return Whether the nestedTypeTuple field is set.
+       */
+      public boolean hasNestedTypeTuple() {
+        return nestedContainerCase_ == 3;
+      }
+      /**
+       * <pre>
+       * Third scenario, a tuple of possibly nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+       * @return The nestedTypeTuple.
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple getNestedTypeTuple() {
+        if (nestedContainerCase_ == 3) {
+           return (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) nestedContainer_;
+        }
+        return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.getDefaultInstance();
+      }
+      /**
+       * <pre>
+       * Third scenario, a tuple of possibly nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTupleOrBuilder getNestedTypeTupleOrBuilder() {
+        if (nestedContainerCase_ == 3) {
+           return (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) nestedContainer_;
+        }
+        return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.getDefaultInstance();
+      }
+
+      public static final int NESTED_TYPE_DICT_FIELD_NUMBER = 4;
+      /**
+       * <pre>
+       * Last scenario, a dict of possible nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+       * @return Whether the nestedTypeDict field is set.
+       */
+      public boolean hasNestedTypeDict() {
+        return nestedContainerCase_ == 4;
+      }
+      /**
+       * <pre>
+       * Last scenario, a dict of possible nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+       * @return The nestedTypeDict.
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap getNestedTypeDict() {
+        if (nestedContainerCase_ == 4) {
+           return (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) nestedContainer_;
+        }
+        return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.getDefaultInstance();
+      }
+      /**
+       * <pre>
+       * Last scenario, a dict of possible nested elements.
+       * </pre>
+       *
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMapOrBuilder getNestedTypeDictOrBuilder() {
+        if (nestedContainerCase_ == 4) {
+           return (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) nestedContainer_;
+        }
+        return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (nestedContainerCase_ == 1) {
+          output.writeMessage(1, (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_);
+        }
+        if (nestedContainerCase_ == 2) {
+          output.writeMessage(2, (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) nestedContainer_);
+        }
+        if (nestedContainerCase_ == 3) {
+          output.writeMessage(3, (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) nestedContainer_);
+        }
+        if (nestedContainerCase_ == 4) {
+          output.writeMessage(4, (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) nestedContainer_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (nestedContainerCase_ == 1) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_);
+        }
+        if (nestedContainerCase_ == 2) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) nestedContainer_);
+        }
+        if (nestedContainerCase_ == 3) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) nestedContainer_);
+        }
+        if (nestedContainerCase_ == 4) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) nestedContainer_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer)) {
+          return super.equals(obj);
+        }
+        org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer other = (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer) obj;
+
+        if (!getNestedContainerCase().equals(other.getNestedContainerCase())) return false;
+        switch (nestedContainerCase_) {
+          case 1:
+            if (!getNestedType()
+                .equals(other.getNestedType())) return false;
+            break;
+          case 2:
+            if (!getNestedTypeList()
+                .equals(other.getNestedTypeList())) return false;
+            break;
+          case 3:
+            if (!getNestedTypeTuple()
+                .equals(other.getNestedTypeTuple())) return false;
+            break;
+          case 4:
+            if (!getNestedTypeDict()
+                .equals(other.getNestedTypeDict())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (nestedContainerCase_) {
+          case 1:
+            hash = (37 * hash) + NESTED_TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + getNestedType().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + NESTED_TYPE_LIST_FIELD_NUMBER;
+            hash = (53 * hash) + getNestedTypeList().hashCode();
+            break;
+          case 3:
+            hash = (37 * hash) + NESTED_TYPE_TUPLE_FIELD_NUMBER;
+            hash = (53 * hash) + getNestedTypeTuple().hashCode();
+            break;
+          case 4:
+            hash = (37 * hash) + NESTED_TYPE_DICT_FIELD_NUMBER;
+            hash = (53 * hash) + getNestedTypeDict().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * To create the behavior described above, we need a new message, as
+       * oneof will not permit repeated fields.
+       * </pre>
+       *
+       * Protobuf type {@code syft_proto.execution.v1.NestedTypeWrapper.TypeContainer}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:syft_proto.execution.v1.NestedTypeWrapper.TypeContainer)
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainerOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeContainer_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeContainer_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.class, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.Builder.class);
+        }
+
+        // Construct using org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          nestedContainerCase_ = 0;
+          nestedContainer_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeContainer_descriptor;
+        }
+
+        @java.lang.Override
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer getDefaultInstanceForType() {
+          return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer build() {
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer buildPartial() {
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer result = new org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer(this);
+          if (nestedContainerCase_ == 1) {
+            if (nestedTypeBuilder_ == null) {
+              result.nestedContainer_ = nestedContainer_;
+            } else {
+              result.nestedContainer_ = nestedTypeBuilder_.build();
+            }
+          }
+          if (nestedContainerCase_ == 2) {
+            if (nestedTypeListBuilder_ == null) {
+              result.nestedContainer_ = nestedContainer_;
+            } else {
+              result.nestedContainer_ = nestedTypeListBuilder_.build();
+            }
+          }
+          if (nestedContainerCase_ == 3) {
+            if (nestedTypeTupleBuilder_ == null) {
+              result.nestedContainer_ = nestedContainer_;
+            } else {
+              result.nestedContainer_ = nestedTypeTupleBuilder_.build();
+            }
+          }
+          if (nestedContainerCase_ == 4) {
+            if (nestedTypeDictBuilder_ == null) {
+              result.nestedContainer_ = nestedContainer_;
+            } else {
+              result.nestedContainer_ = nestedTypeDictBuilder_.build();
+            }
+          }
+          result.nestedContainerCase_ = nestedContainerCase_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer) {
+            return mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer other) {
+          if (other == org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.getDefaultInstance()) return this;
+          switch (other.getNestedContainerCase()) {
+            case NESTED_TYPE: {
+              mergeNestedType(other.getNestedType());
+              break;
+            }
+            case NESTED_TYPE_LIST: {
+              mergeNestedTypeList(other.getNestedTypeList());
+              break;
+            }
+            case NESTED_TYPE_TUPLE: {
+              mergeNestedTypeTuple(other.getNestedTypeTuple());
+              break;
+            }
+            case NESTED_TYPE_DICT: {
+              mergeNestedTypeDict(other.getNestedTypeDict());
+              break;
+            }
+            case NESTEDCONTAINER_NOT_SET: {
+              break;
+            }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int nestedContainerCase_ = 0;
+        private java.lang.Object nestedContainer_;
+        public NestedContainerCase
+            getNestedContainerCase() {
+          return NestedContainerCase.forNumber(
+              nestedContainerCase_);
+        }
+
+        public Builder clearNestedContainer() {
+          nestedContainerCase_ = 0;
+          nestedContainer_ = null;
+          onChanged();
+          return this;
+        }
+
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+            org.openmined.syftproto.execution.v1.TypeWrapper.ClassType, org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder> nestedTypeBuilder_;
+        /**
+         * <pre>
+         * First scenario, acts like a list with one element, the type.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         * @return Whether the nestedType field is set.
+         */
+        public boolean hasNestedType() {
+          return nestedContainerCase_ == 1;
+        }
+        /**
+         * <pre>
+         * First scenario, acts like a list with one element, the type.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         * @return The nestedType.
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType getNestedType() {
+          if (nestedTypeBuilder_ == null) {
+            if (nestedContainerCase_ == 1) {
+              return (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_;
+            }
+            return org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+          } else {
+            if (nestedContainerCase_ == 1) {
+              return nestedTypeBuilder_.getMessage();
+            }
+            return org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+          }
+        }
+        /**
+         * <pre>
+         * First scenario, acts like a list with one element, the type.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         */
+        public Builder setNestedType(org.openmined.syftproto.execution.v1.TypeWrapper.ClassType value) {
+          if (nestedTypeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            nestedContainer_ = value;
+            onChanged();
+          } else {
+            nestedTypeBuilder_.setMessage(value);
+          }
+          nestedContainerCase_ = 1;
+          return this;
+        }
+        /**
+         * <pre>
+         * First scenario, acts like a list with one element, the type.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         */
+        public Builder setNestedType(
+            org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder builderForValue) {
+          if (nestedTypeBuilder_ == null) {
+            nestedContainer_ = builderForValue.build();
+            onChanged();
+          } else {
+            nestedTypeBuilder_.setMessage(builderForValue.build());
+          }
+          nestedContainerCase_ = 1;
+          return this;
+        }
+        /**
+         * <pre>
+         * First scenario, acts like a list with one element, the type.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         */
+        public Builder mergeNestedType(org.openmined.syftproto.execution.v1.TypeWrapper.ClassType value) {
+          if (nestedTypeBuilder_ == null) {
+            if (nestedContainerCase_ == 1 &&
+                nestedContainer_ != org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance()) {
+              nestedContainer_ = org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.newBuilder((org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_)
+                  .mergeFrom(value).buildPartial();
+            } else {
+              nestedContainer_ = value;
+            }
+            onChanged();
+          } else {
+            if (nestedContainerCase_ == 1) {
+              nestedTypeBuilder_.mergeFrom(value);
+            }
+            nestedTypeBuilder_.setMessage(value);
+          }
+          nestedContainerCase_ = 1;
+          return this;
+        }
+        /**
+         * <pre>
+         * First scenario, acts like a list with one element, the type.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         */
+        public Builder clearNestedType() {
+          if (nestedTypeBuilder_ == null) {
+            if (nestedContainerCase_ == 1) {
+              nestedContainerCase_ = 0;
+              nestedContainer_ = null;
+              onChanged();
+            }
+          } else {
+            if (nestedContainerCase_ == 1) {
+              nestedContainerCase_ = 0;
+              nestedContainer_ = null;
+            }
+            nestedTypeBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * First scenario, acts like a list with one element, the type.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder getNestedTypeBuilder() {
+          return getNestedTypeFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * First scenario, acts like a list with one element, the type.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder getNestedTypeOrBuilder() {
+          if ((nestedContainerCase_ == 1) && (nestedTypeBuilder_ != null)) {
+            return nestedTypeBuilder_.getMessageOrBuilder();
+          } else {
+            if (nestedContainerCase_ == 1) {
+              return (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_;
+            }
+            return org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+          }
+        }
+        /**
+         * <pre>
+         * First scenario, acts like a list with one element, the type.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            org.openmined.syftproto.execution.v1.TypeWrapper.ClassType, org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder> 
+            getNestedTypeFieldBuilder() {
+          if (nestedTypeBuilder_ == null) {
+            if (!(nestedContainerCase_ == 1)) {
+              nestedContainer_ = org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+            }
+            nestedTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                org.openmined.syftproto.execution.v1.TypeWrapper.ClassType, org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder>(
+                    (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_,
+                    getParentForChildren(),
+                    isClean());
+            nestedContainer_ = null;
+          }
+          nestedContainerCase_ = 1;
+          onChanged();;
+          return nestedTypeBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeListOrBuilder> nestedTypeListBuilder_;
+        /**
+         * <pre>
+         * Second scenario, a list of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+         * @return Whether the nestedTypeList field is set.
+         */
+        public boolean hasNestedTypeList() {
+          return nestedContainerCase_ == 2;
+        }
+        /**
+         * <pre>
+         * Second scenario, a list of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+         * @return The nestedTypeList.
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList getNestedTypeList() {
+          if (nestedTypeListBuilder_ == null) {
+            if (nestedContainerCase_ == 2) {
+              return (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) nestedContainer_;
+            }
+            return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.getDefaultInstance();
+          } else {
+            if (nestedContainerCase_ == 2) {
+              return nestedTypeListBuilder_.getMessage();
+            }
+            return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.getDefaultInstance();
+          }
+        }
+        /**
+         * <pre>
+         * Second scenario, a list of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+         */
+        public Builder setNestedTypeList(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList value) {
+          if (nestedTypeListBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            nestedContainer_ = value;
+            onChanged();
+          } else {
+            nestedTypeListBuilder_.setMessage(value);
+          }
+          nestedContainerCase_ = 2;
+          return this;
+        }
+        /**
+         * <pre>
+         * Second scenario, a list of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+         */
+        public Builder setNestedTypeList(
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.Builder builderForValue) {
+          if (nestedTypeListBuilder_ == null) {
+            nestedContainer_ = builderForValue.build();
+            onChanged();
+          } else {
+            nestedTypeListBuilder_.setMessage(builderForValue.build());
+          }
+          nestedContainerCase_ = 2;
+          return this;
+        }
+        /**
+         * <pre>
+         * Second scenario, a list of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+         */
+        public Builder mergeNestedTypeList(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList value) {
+          if (nestedTypeListBuilder_ == null) {
+            if (nestedContainerCase_ == 2 &&
+                nestedContainer_ != org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.getDefaultInstance()) {
+              nestedContainer_ = org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.newBuilder((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) nestedContainer_)
+                  .mergeFrom(value).buildPartial();
+            } else {
+              nestedContainer_ = value;
+            }
+            onChanged();
+          } else {
+            if (nestedContainerCase_ == 2) {
+              nestedTypeListBuilder_.mergeFrom(value);
+            }
+            nestedTypeListBuilder_.setMessage(value);
+          }
+          nestedContainerCase_ = 2;
+          return this;
+        }
+        /**
+         * <pre>
+         * Second scenario, a list of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+         */
+        public Builder clearNestedTypeList() {
+          if (nestedTypeListBuilder_ == null) {
+            if (nestedContainerCase_ == 2) {
+              nestedContainerCase_ = 0;
+              nestedContainer_ = null;
+              onChanged();
+            }
+          } else {
+            if (nestedContainerCase_ == 2) {
+              nestedContainerCase_ = 0;
+              nestedContainer_ = null;
+            }
+            nestedTypeListBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Second scenario, a list of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.Builder getNestedTypeListBuilder() {
+          return getNestedTypeListFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * Second scenario, a list of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeListOrBuilder getNestedTypeListOrBuilder() {
+          if ((nestedContainerCase_ == 2) && (nestedTypeListBuilder_ != null)) {
+            return nestedTypeListBuilder_.getMessageOrBuilder();
+          } else {
+            if (nestedContainerCase_ == 2) {
+              return (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) nestedContainer_;
+            }
+            return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.getDefaultInstance();
+          }
+        }
+        /**
+         * <pre>
+         * Second scenario, a list of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeList nested_type_list = 2[json_name = "nestedTypeList"];</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeListOrBuilder> 
+            getNestedTypeListFieldBuilder() {
+          if (nestedTypeListBuilder_ == null) {
+            if (!(nestedContainerCase_ == 2)) {
+              nestedContainer_ = org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.getDefaultInstance();
+            }
+            nestedTypeListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeListOrBuilder>(
+                    (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) nestedContainer_,
+                    getParentForChildren(),
+                    isClean());
+            nestedContainer_ = null;
+          }
+          nestedContainerCase_ = 2;
+          onChanged();;
+          return nestedTypeListBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTupleOrBuilder> nestedTypeTupleBuilder_;
+        /**
+         * <pre>
+         * Third scenario, a tuple of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+         * @return Whether the nestedTypeTuple field is set.
+         */
+        public boolean hasNestedTypeTuple() {
+          return nestedContainerCase_ == 3;
+        }
+        /**
+         * <pre>
+         * Third scenario, a tuple of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+         * @return The nestedTypeTuple.
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple getNestedTypeTuple() {
+          if (nestedTypeTupleBuilder_ == null) {
+            if (nestedContainerCase_ == 3) {
+              return (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) nestedContainer_;
+            }
+            return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.getDefaultInstance();
+          } else {
+            if (nestedContainerCase_ == 3) {
+              return nestedTypeTupleBuilder_.getMessage();
+            }
+            return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.getDefaultInstance();
+          }
+        }
+        /**
+         * <pre>
+         * Third scenario, a tuple of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+         */
+        public Builder setNestedTypeTuple(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple value) {
+          if (nestedTypeTupleBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            nestedContainer_ = value;
+            onChanged();
+          } else {
+            nestedTypeTupleBuilder_.setMessage(value);
+          }
+          nestedContainerCase_ = 3;
+          return this;
+        }
+        /**
+         * <pre>
+         * Third scenario, a tuple of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+         */
+        public Builder setNestedTypeTuple(
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.Builder builderForValue) {
+          if (nestedTypeTupleBuilder_ == null) {
+            nestedContainer_ = builderForValue.build();
+            onChanged();
+          } else {
+            nestedTypeTupleBuilder_.setMessage(builderForValue.build());
+          }
+          nestedContainerCase_ = 3;
+          return this;
+        }
+        /**
+         * <pre>
+         * Third scenario, a tuple of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+         */
+        public Builder mergeNestedTypeTuple(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple value) {
+          if (nestedTypeTupleBuilder_ == null) {
+            if (nestedContainerCase_ == 3 &&
+                nestedContainer_ != org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.getDefaultInstance()) {
+              nestedContainer_ = org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.newBuilder((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) nestedContainer_)
+                  .mergeFrom(value).buildPartial();
+            } else {
+              nestedContainer_ = value;
+            }
+            onChanged();
+          } else {
+            if (nestedContainerCase_ == 3) {
+              nestedTypeTupleBuilder_.mergeFrom(value);
+            }
+            nestedTypeTupleBuilder_.setMessage(value);
+          }
+          nestedContainerCase_ = 3;
+          return this;
+        }
+        /**
+         * <pre>
+         * Third scenario, a tuple of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+         */
+        public Builder clearNestedTypeTuple() {
+          if (nestedTypeTupleBuilder_ == null) {
+            if (nestedContainerCase_ == 3) {
+              nestedContainerCase_ = 0;
+              nestedContainer_ = null;
+              onChanged();
+            }
+          } else {
+            if (nestedContainerCase_ == 3) {
+              nestedContainerCase_ = 0;
+              nestedContainer_ = null;
+            }
+            nestedTypeTupleBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Third scenario, a tuple of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.Builder getNestedTypeTupleBuilder() {
+          return getNestedTypeTupleFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * Third scenario, a tuple of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTupleOrBuilder getNestedTypeTupleOrBuilder() {
+          if ((nestedContainerCase_ == 3) && (nestedTypeTupleBuilder_ != null)) {
+            return nestedTypeTupleBuilder_.getMessageOrBuilder();
+          } else {
+            if (nestedContainerCase_ == 3) {
+              return (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) nestedContainer_;
+            }
+            return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.getDefaultInstance();
+          }
+        }
+        /**
+         * <pre>
+         * Third scenario, a tuple of possibly nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTupleOrBuilder> 
+            getNestedTypeTupleFieldBuilder() {
+          if (nestedTypeTupleBuilder_ == null) {
+            if (!(nestedContainerCase_ == 3)) {
+              nestedContainer_ = org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.getDefaultInstance();
+            }
+            nestedTypeTupleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTupleOrBuilder>(
+                    (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeTuple) nestedContainer_,
+                    getParentForChildren(),
+                    isClean());
+            nestedContainer_ = null;
+          }
+          nestedContainerCase_ = 3;
+          onChanged();;
+          return nestedTypeTupleBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMapOrBuilder> nestedTypeDictBuilder_;
+        /**
+         * <pre>
+         * Last scenario, a dict of possible nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+         * @return Whether the nestedTypeDict field is set.
+         */
+        public boolean hasNestedTypeDict() {
+          return nestedContainerCase_ == 4;
+        }
+        /**
+         * <pre>
+         * Last scenario, a dict of possible nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+         * @return The nestedTypeDict.
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap getNestedTypeDict() {
+          if (nestedTypeDictBuilder_ == null) {
+            if (nestedContainerCase_ == 4) {
+              return (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) nestedContainer_;
+            }
+            return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.getDefaultInstance();
+          } else {
+            if (nestedContainerCase_ == 4) {
+              return nestedTypeDictBuilder_.getMessage();
+            }
+            return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.getDefaultInstance();
+          }
+        }
+        /**
+         * <pre>
+         * Last scenario, a dict of possible nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+         */
+        public Builder setNestedTypeDict(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap value) {
+          if (nestedTypeDictBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            nestedContainer_ = value;
+            onChanged();
+          } else {
+            nestedTypeDictBuilder_.setMessage(value);
+          }
+          nestedContainerCase_ = 4;
+          return this;
+        }
+        /**
+         * <pre>
+         * Last scenario, a dict of possible nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+         */
+        public Builder setNestedTypeDict(
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.Builder builderForValue) {
+          if (nestedTypeDictBuilder_ == null) {
+            nestedContainer_ = builderForValue.build();
+            onChanged();
+          } else {
+            nestedTypeDictBuilder_.setMessage(builderForValue.build());
+          }
+          nestedContainerCase_ = 4;
+          return this;
+        }
+        /**
+         * <pre>
+         * Last scenario, a dict of possible nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+         */
+        public Builder mergeNestedTypeDict(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap value) {
+          if (nestedTypeDictBuilder_ == null) {
+            if (nestedContainerCase_ == 4 &&
+                nestedContainer_ != org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.getDefaultInstance()) {
+              nestedContainer_ = org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.newBuilder((org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) nestedContainer_)
+                  .mergeFrom(value).buildPartial();
+            } else {
+              nestedContainer_ = value;
+            }
+            onChanged();
+          } else {
+            if (nestedContainerCase_ == 4) {
+              nestedTypeDictBuilder_.mergeFrom(value);
+            }
+            nestedTypeDictBuilder_.setMessage(value);
+          }
+          nestedContainerCase_ = 4;
+          return this;
+        }
+        /**
+         * <pre>
+         * Last scenario, a dict of possible nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+         */
+        public Builder clearNestedTypeDict() {
+          if (nestedTypeDictBuilder_ == null) {
+            if (nestedContainerCase_ == 4) {
+              nestedContainerCase_ = 0;
+              nestedContainer_ = null;
+              onChanged();
+            }
+          } else {
+            if (nestedContainerCase_ == 4) {
+              nestedContainerCase_ = 0;
+              nestedContainer_ = null;
+            }
+            nestedTypeDictBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Last scenario, a dict of possible nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.Builder getNestedTypeDictBuilder() {
+          return getNestedTypeDictFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * Last scenario, a dict of possible nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+         */
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMapOrBuilder getNestedTypeDictOrBuilder() {
+          if ((nestedContainerCase_ == 4) && (nestedTypeDictBuilder_ != null)) {
+            return nestedTypeDictBuilder_.getMessageOrBuilder();
+          } else {
+            if (nestedContainerCase_ == 4) {
+              return (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) nestedContainer_;
+            }
+            return org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.getDefaultInstance();
+          }
+        }
+        /**
+         * <pre>
+         * Last scenario, a dict of possible nested elements.
+         * </pre>
+         *
+         * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeMap nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMapOrBuilder> 
+            getNestedTypeDictFieldBuilder() {
+          if (nestedTypeDictBuilder_ == null) {
+            if (!(nestedContainerCase_ == 4)) {
+              nestedContainer_ = org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.getDefaultInstance();
+            }
+            nestedTypeDictBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMapOrBuilder>(
+                    (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) nestedContainer_,
+                    getParentForChildren(),
+                    isClean());
+            nestedContainer_ = null;
+          }
+          nestedContainerCase_ = 4;
+          onChanged();;
+          return nestedTypeDictBuilder_;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeContainer)
+      }
+
+      // @@protoc_insertion_point(class_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeContainer)
+      private static final org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer();
+      }
+
+      public static org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TypeContainer>
+          PARSER = new com.google.protobuf.AbstractParser<TypeContainer>() {
+        @java.lang.Override
+        public TypeContainer parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TypeContainer(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<TypeContainer> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TypeContainer> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
-    public static final int NESTED_TYPE_DICT_FIELD_NUMBER = 4;
-    private java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value> nestedTypeDict_;
+    public static final int NESTED_TYPES_FIELD_NUMBER = 1;
+    private org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer nestedTypes_;
     /**
-     * <pre>
-     * Fourth case, our message contains a dict of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
+     * @return Whether the nestedTypes field is set.
      */
-    public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value> getNestedTypeDictList() {
-      return nestedTypeDict_;
+    public boolean hasNestedTypes() {
+      return nestedTypes_ != null;
     }
     /**
-     * <pre>
-     * Fourth case, our message contains a dict of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
+     * @return The nestedTypes.
      */
-    public java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_valueOrBuilder> 
-        getNestedTypeDictOrBuilderList() {
-      return nestedTypeDict_;
+    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer getNestedTypes() {
+      return nestedTypes_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.getDefaultInstance() : nestedTypes_;
     }
     /**
-     * <pre>
-     * Fourth case, our message contains a dict of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
      */
-    public int getNestedTypeDictCount() {
-      return nestedTypeDict_.size();
-    }
-    /**
-     * <pre>
-     * Fourth case, our message contains a dict of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-     */
-    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value getNestedTypeDict(int index) {
-      return nestedTypeDict_.get(index);
-    }
-    /**
-     * <pre>
-     * Fourth case, our message contains a dict of nested types.
-     * </pre>
-     *
-     * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-     */
-    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_valueOrBuilder getNestedTypeDictOrBuilder(
-        int index) {
-      return nestedTypeDict_.get(index);
+    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainerOrBuilder getNestedTypesOrBuilder() {
+      return getNestedTypes();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1797,17 +4721,8 @@ public final class TypeWrapper {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (nestedType_ != null) {
-        output.writeMessage(1, getNestedType());
-      }
-      for (int i = 0; i < nestedTypeList_.size(); i++) {
-        output.writeMessage(2, nestedTypeList_.get(i));
-      }
-      for (int i = 0; i < nestedTypeTuple_.size(); i++) {
-        output.writeMessage(3, nestedTypeTuple_.get(i));
-      }
-      for (int i = 0; i < nestedTypeDict_.size(); i++) {
-        output.writeMessage(4, nestedTypeDict_.get(i));
+      if (nestedTypes_ != null) {
+        output.writeMessage(1, getNestedTypes());
       }
       unknownFields.writeTo(output);
     }
@@ -1818,21 +4733,9 @@ public final class TypeWrapper {
       if (size != -1) return size;
 
       size = 0;
-      if (nestedType_ != null) {
+      if (nestedTypes_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getNestedType());
-      }
-      for (int i = 0; i < nestedTypeList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, nestedTypeList_.get(i));
-      }
-      for (int i = 0; i < nestedTypeTuple_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, nestedTypeTuple_.get(i));
-      }
-      for (int i = 0; i < nestedTypeDict_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, nestedTypeDict_.get(i));
+          .computeMessageSize(1, getNestedTypes());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1849,17 +4752,11 @@ public final class TypeWrapper {
       }
       org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper other = (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper) obj;
 
-      if (hasNestedType() != other.hasNestedType()) return false;
-      if (hasNestedType()) {
-        if (!getNestedType()
-            .equals(other.getNestedType())) return false;
+      if (hasNestedTypes() != other.hasNestedTypes()) return false;
+      if (hasNestedTypes()) {
+        if (!getNestedTypes()
+            .equals(other.getNestedTypes())) return false;
       }
-      if (!getNestedTypeListList()
-          .equals(other.getNestedTypeListList())) return false;
-      if (!getNestedTypeTupleList()
-          .equals(other.getNestedTypeTupleList())) return false;
-      if (!getNestedTypeDictList()
-          .equals(other.getNestedTypeDictList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1871,21 +4768,9 @@ public final class TypeWrapper {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasNestedType()) {
-        hash = (37 * hash) + NESTED_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getNestedType().hashCode();
-      }
-      if (getNestedTypeListCount() > 0) {
-        hash = (37 * hash) + NESTED_TYPE_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getNestedTypeListList().hashCode();
-      }
-      if (getNestedTypeTupleCount() > 0) {
-        hash = (37 * hash) + NESTED_TYPE_TUPLE_FIELD_NUMBER;
-        hash = (53 * hash) + getNestedTypeTupleList().hashCode();
-      }
-      if (getNestedTypeDictCount() > 0) {
-        hash = (37 * hash) + NESTED_TYPE_DICT_FIELD_NUMBER;
-        hash = (53 * hash) + getNestedTypeDictList().hashCode();
+      if (hasNestedTypes()) {
+        hash = (37 * hash) + NESTED_TYPES_FIELD_NUMBER;
+        hash = (53 * hash) + getNestedTypes().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2015,37 +4900,16 @@ public final class TypeWrapper {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getNestedTypeListFieldBuilder();
-          getNestedTypeTupleFieldBuilder();
-          getNestedTypeDictFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (nestedTypeBuilder_ == null) {
-          nestedType_ = null;
+        if (nestedTypesBuilder_ == null) {
+          nestedTypes_ = null;
         } else {
-          nestedType_ = null;
-          nestedTypeBuilder_ = null;
-        }
-        if (nestedTypeListBuilder_ == null) {
-          nestedTypeList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          nestedTypeListBuilder_.clear();
-        }
-        if (nestedTypeTupleBuilder_ == null) {
-          nestedTypeTuple_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          nestedTypeTupleBuilder_.clear();
-        }
-        if (nestedTypeDictBuilder_ == null) {
-          nestedTypeDict_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          nestedTypeDictBuilder_.clear();
+          nestedTypes_ = null;
+          nestedTypesBuilder_ = null;
         }
         return this;
       }
@@ -2073,38 +4937,10 @@ public final class TypeWrapper {
       @java.lang.Override
       public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper buildPartial() {
         org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper result = new org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper(this);
-        int from_bitField0_ = bitField0_;
-        if (nestedTypeBuilder_ == null) {
-          result.nestedType_ = nestedType_;
+        if (nestedTypesBuilder_ == null) {
+          result.nestedTypes_ = nestedTypes_;
         } else {
-          result.nestedType_ = nestedTypeBuilder_.build();
-        }
-        if (nestedTypeListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            nestedTypeList_ = java.util.Collections.unmodifiableList(nestedTypeList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.nestedTypeList_ = nestedTypeList_;
-        } else {
-          result.nestedTypeList_ = nestedTypeListBuilder_.build();
-        }
-        if (nestedTypeTupleBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            nestedTypeTuple_ = java.util.Collections.unmodifiableList(nestedTypeTuple_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.nestedTypeTuple_ = nestedTypeTuple_;
-        } else {
-          result.nestedTypeTuple_ = nestedTypeTupleBuilder_.build();
-        }
-        if (nestedTypeDictBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            nestedTypeDict_ = java.util.Collections.unmodifiableList(nestedTypeDict_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.nestedTypeDict_ = nestedTypeDict_;
-        } else {
-          result.nestedTypeDict_ = nestedTypeDictBuilder_.build();
+          result.nestedTypes_ = nestedTypesBuilder_.build();
         }
         onBuilt();
         return result;
@@ -2154,86 +4990,8 @@ public final class TypeWrapper {
 
       public Builder mergeFrom(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper other) {
         if (other == org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance()) return this;
-        if (other.hasNestedType()) {
-          mergeNestedType(other.getNestedType());
-        }
-        if (nestedTypeListBuilder_ == null) {
-          if (!other.nestedTypeList_.isEmpty()) {
-            if (nestedTypeList_.isEmpty()) {
-              nestedTypeList_ = other.nestedTypeList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureNestedTypeListIsMutable();
-              nestedTypeList_.addAll(other.nestedTypeList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.nestedTypeList_.isEmpty()) {
-            if (nestedTypeListBuilder_.isEmpty()) {
-              nestedTypeListBuilder_.dispose();
-              nestedTypeListBuilder_ = null;
-              nestedTypeList_ = other.nestedTypeList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              nestedTypeListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getNestedTypeListFieldBuilder() : null;
-            } else {
-              nestedTypeListBuilder_.addAllMessages(other.nestedTypeList_);
-            }
-          }
-        }
-        if (nestedTypeTupleBuilder_ == null) {
-          if (!other.nestedTypeTuple_.isEmpty()) {
-            if (nestedTypeTuple_.isEmpty()) {
-              nestedTypeTuple_ = other.nestedTypeTuple_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureNestedTypeTupleIsMutable();
-              nestedTypeTuple_.addAll(other.nestedTypeTuple_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.nestedTypeTuple_.isEmpty()) {
-            if (nestedTypeTupleBuilder_.isEmpty()) {
-              nestedTypeTupleBuilder_.dispose();
-              nestedTypeTupleBuilder_ = null;
-              nestedTypeTuple_ = other.nestedTypeTuple_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              nestedTypeTupleBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getNestedTypeTupleFieldBuilder() : null;
-            } else {
-              nestedTypeTupleBuilder_.addAllMessages(other.nestedTypeTuple_);
-            }
-          }
-        }
-        if (nestedTypeDictBuilder_ == null) {
-          if (!other.nestedTypeDict_.isEmpty()) {
-            if (nestedTypeDict_.isEmpty()) {
-              nestedTypeDict_ = other.nestedTypeDict_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureNestedTypeDictIsMutable();
-              nestedTypeDict_.addAll(other.nestedTypeDict_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.nestedTypeDict_.isEmpty()) {
-            if (nestedTypeDictBuilder_.isEmpty()) {
-              nestedTypeDictBuilder_.dispose();
-              nestedTypeDictBuilder_ = null;
-              nestedTypeDict_ = other.nestedTypeDict_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              nestedTypeDictBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getNestedTypeDictFieldBuilder() : null;
-            } else {
-              nestedTypeDictBuilder_.addAllMessages(other.nestedTypeDict_);
-            }
-          }
+        if (other.hasNestedTypes()) {
+          mergeNestedTypes(other.getNestedTypes());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2263,1097 +5021,124 @@ public final class TypeWrapper {
         }
         return this;
       }
-      private int bitField0_;
 
-      private org.openmined.syftproto.execution.v1.TypeWrapper.type nestedType_;
+      private org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer nestedTypes_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.TypeWrapper.type, org.openmined.syftproto.execution.v1.TypeWrapper.type.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.typeOrBuilder> nestedTypeBuilder_;
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainerOrBuilder> nestedTypesBuilder_;
       /**
-       * <pre>
-       * First case, our message contains a type.
-       * </pre>
-       *
-       * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
-       * @return Whether the nestedType field is set.
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
+       * @return Whether the nestedTypes field is set.
        */
-      public boolean hasNestedType() {
-        return nestedTypeBuilder_ != null || nestedType_ != null;
+      public boolean hasNestedTypes() {
+        return nestedTypesBuilder_ != null || nestedTypes_ != null;
       }
       /**
-       * <pre>
-       * First case, our message contains a type.
-       * </pre>
-       *
-       * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
-       * @return The nestedType.
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
+       * @return The nestedTypes.
        */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.type getNestedType() {
-        if (nestedTypeBuilder_ == null) {
-          return nestedType_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.type.getDefaultInstance() : nestedType_;
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer getNestedTypes() {
+        if (nestedTypesBuilder_ == null) {
+          return nestedTypes_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.getDefaultInstance() : nestedTypes_;
         } else {
-          return nestedTypeBuilder_.getMessage();
+          return nestedTypesBuilder_.getMessage();
         }
       }
       /**
-       * <pre>
-       * First case, our message contains a type.
-       * </pre>
-       *
-       * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      public Builder setNestedType(org.openmined.syftproto.execution.v1.TypeWrapper.type value) {
-        if (nestedTypeBuilder_ == null) {
+      public Builder setNestedTypes(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer value) {
+        if (nestedTypesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          nestedType_ = value;
+          nestedTypes_ = value;
           onChanged();
         } else {
-          nestedTypeBuilder_.setMessage(value);
+          nestedTypesBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <pre>
-       * First case, our message contains a type.
-       * </pre>
-       *
-       * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      public Builder setNestedType(
-          org.openmined.syftproto.execution.v1.TypeWrapper.type.Builder builderForValue) {
-        if (nestedTypeBuilder_ == null) {
-          nestedType_ = builderForValue.build();
+      public Builder setNestedTypes(
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.Builder builderForValue) {
+        if (nestedTypesBuilder_ == null) {
+          nestedTypes_ = builderForValue.build();
           onChanged();
         } else {
-          nestedTypeBuilder_.setMessage(builderForValue.build());
+          nestedTypesBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <pre>
-       * First case, our message contains a type.
-       * </pre>
-       *
-       * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      public Builder mergeNestedType(org.openmined.syftproto.execution.v1.TypeWrapper.type value) {
-        if (nestedTypeBuilder_ == null) {
-          if (nestedType_ != null) {
-            nestedType_ =
-              org.openmined.syftproto.execution.v1.TypeWrapper.type.newBuilder(nestedType_).mergeFrom(value).buildPartial();
+      public Builder mergeNestedTypes(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer value) {
+        if (nestedTypesBuilder_ == null) {
+          if (nestedTypes_ != null) {
+            nestedTypes_ =
+              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.newBuilder(nestedTypes_).mergeFrom(value).buildPartial();
           } else {
-            nestedType_ = value;
+            nestedTypes_ = value;
           }
           onChanged();
         } else {
-          nestedTypeBuilder_.mergeFrom(value);
+          nestedTypesBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <pre>
-       * First case, our message contains a type.
-       * </pre>
-       *
-       * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      public Builder clearNestedType() {
-        if (nestedTypeBuilder_ == null) {
-          nestedType_ = null;
+      public Builder clearNestedTypes() {
+        if (nestedTypesBuilder_ == null) {
+          nestedTypes_ = null;
           onChanged();
         } else {
-          nestedType_ = null;
-          nestedTypeBuilder_ = null;
+          nestedTypes_ = null;
+          nestedTypesBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <pre>
-       * First case, our message contains a type.
-       * </pre>
-       *
-       * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.type.Builder getNestedTypeBuilder() {
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.Builder getNestedTypesBuilder() {
         
         onChanged();
-        return getNestedTypeFieldBuilder().getBuilder();
+        return getNestedTypesFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * First case, our message contains a type.
-       * </pre>
-       *
-       * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.typeOrBuilder getNestedTypeOrBuilder() {
-        if (nestedTypeBuilder_ != null) {
-          return nestedTypeBuilder_.getMessageOrBuilder();
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainerOrBuilder getNestedTypesOrBuilder() {
+        if (nestedTypesBuilder_ != null) {
+          return nestedTypesBuilder_.getMessageOrBuilder();
         } else {
-          return nestedType_ == null ?
-              org.openmined.syftproto.execution.v1.TypeWrapper.type.getDefaultInstance() : nestedType_;
+          return nestedTypes_ == null ?
+              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.getDefaultInstance() : nestedTypes_;
         }
       }
       /**
-       * <pre>
-       * First case, our message contains a type.
-       * </pre>
-       *
-       * <code>.syft_proto.execution.v1.type nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer nested_types = 1[json_name = "nestedTypes"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.TypeWrapper.type, org.openmined.syftproto.execution.v1.TypeWrapper.type.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.typeOrBuilder> 
-          getNestedTypeFieldBuilder() {
-        if (nestedTypeBuilder_ == null) {
-          nestedTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openmined.syftproto.execution.v1.TypeWrapper.type, org.openmined.syftproto.execution.v1.TypeWrapper.type.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.typeOrBuilder>(
-                  getNestedType(),
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainerOrBuilder> 
+          getNestedTypesFieldBuilder() {
+        if (nestedTypesBuilder_ == null) {
+          nestedTypesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainer.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeContainerOrBuilder>(
+                  getNestedTypes(),
                   getParentForChildren(),
                   isClean());
-          nestedType_ = null;
+          nestedTypes_ = null;
         }
-        return nestedTypeBuilder_;
-      }
-
-      private java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> nestedTypeList_ =
-        java.util.Collections.emptyList();
-      private void ensureNestedTypeListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          nestedTypeList_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>(nestedTypeList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> nestedTypeListBuilder_;
-
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getNestedTypeListList() {
-        if (nestedTypeListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(nestedTypeList_);
-        } else {
-          return nestedTypeListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public int getNestedTypeListCount() {
-        if (nestedTypeListBuilder_ == null) {
-          return nestedTypeList_.size();
-        } else {
-          return nestedTypeListBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypeList(int index) {
-        if (nestedTypeListBuilder_ == null) {
-          return nestedTypeList_.get(index);
-        } else {
-          return nestedTypeListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public Builder setNestedTypeList(
-          int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
-        if (nestedTypeListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNestedTypeListIsMutable();
-          nestedTypeList_.set(index, value);
-          onChanged();
-        } else {
-          nestedTypeListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public Builder setNestedTypeList(
-          int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
-        if (nestedTypeListBuilder_ == null) {
-          ensureNestedTypeListIsMutable();
-          nestedTypeList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          nestedTypeListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public Builder addNestedTypeList(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
-        if (nestedTypeListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNestedTypeListIsMutable();
-          nestedTypeList_.add(value);
-          onChanged();
-        } else {
-          nestedTypeListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public Builder addNestedTypeList(
-          int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
-        if (nestedTypeListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNestedTypeListIsMutable();
-          nestedTypeList_.add(index, value);
-          onChanged();
-        } else {
-          nestedTypeListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public Builder addNestedTypeList(
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
-        if (nestedTypeListBuilder_ == null) {
-          ensureNestedTypeListIsMutable();
-          nestedTypeList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          nestedTypeListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public Builder addNestedTypeList(
-          int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
-        if (nestedTypeListBuilder_ == null) {
-          ensureNestedTypeListIsMutable();
-          nestedTypeList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          nestedTypeListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public Builder addAllNestedTypeList(
-          java.lang.Iterable<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> values) {
-        if (nestedTypeListBuilder_ == null) {
-          ensureNestedTypeListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, nestedTypeList_);
-          onChanged();
-        } else {
-          nestedTypeListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public Builder clearNestedTypeList() {
-        if (nestedTypeListBuilder_ == null) {
-          nestedTypeList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          nestedTypeListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public Builder removeNestedTypeList(int index) {
-        if (nestedTypeListBuilder_ == null) {
-          ensureNestedTypeListIsMutable();
-          nestedTypeList_.remove(index);
-          onChanged();
-        } else {
-          nestedTypeListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder getNestedTypeListBuilder(
-          int index) {
-        return getNestedTypeListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getNestedTypeListOrBuilder(
-          int index) {
-        if (nestedTypeListBuilder_ == null) {
-          return nestedTypeList_.get(index);  } else {
-          return nestedTypeListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
-           getNestedTypeListOrBuilderList() {
-        if (nestedTypeListBuilder_ != null) {
-          return nestedTypeListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(nestedTypeList_);
-        }
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder addNestedTypeListBuilder() {
-        return getNestedTypeListFieldBuilder().addBuilder(
-            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder addNestedTypeListBuilder(
-          int index) {
-        return getNestedTypeListFieldBuilder().addBuilder(
-            index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Second case, our message contains a list of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_list = 2[json_name = "nestedTypeList"];</code>
-       */
-      public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder> 
-           getNestedTypeListBuilderList() {
-        return getNestedTypeListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
-          getNestedTypeListFieldBuilder() {
-        if (nestedTypeListBuilder_ == null) {
-          nestedTypeListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder>(
-                  nestedTypeList_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          nestedTypeList_ = null;
-        }
-        return nestedTypeListBuilder_;
-      }
-
-      private java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> nestedTypeTuple_ =
-        java.util.Collections.emptyList();
-      private void ensureNestedTypeTupleIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          nestedTypeTuple_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>(nestedTypeTuple_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> nestedTypeTupleBuilder_;
-
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getNestedTypeTupleList() {
-        if (nestedTypeTupleBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(nestedTypeTuple_);
-        } else {
-          return nestedTypeTupleBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public int getNestedTypeTupleCount() {
-        if (nestedTypeTupleBuilder_ == null) {
-          return nestedTypeTuple_.size();
-        } else {
-          return nestedTypeTupleBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypeTuple(int index) {
-        if (nestedTypeTupleBuilder_ == null) {
-          return nestedTypeTuple_.get(index);
-        } else {
-          return nestedTypeTupleBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public Builder setNestedTypeTuple(
-          int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
-        if (nestedTypeTupleBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNestedTypeTupleIsMutable();
-          nestedTypeTuple_.set(index, value);
-          onChanged();
-        } else {
-          nestedTypeTupleBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public Builder setNestedTypeTuple(
-          int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
-        if (nestedTypeTupleBuilder_ == null) {
-          ensureNestedTypeTupleIsMutable();
-          nestedTypeTuple_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          nestedTypeTupleBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public Builder addNestedTypeTuple(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
-        if (nestedTypeTupleBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNestedTypeTupleIsMutable();
-          nestedTypeTuple_.add(value);
-          onChanged();
-        } else {
-          nestedTypeTupleBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public Builder addNestedTypeTuple(
-          int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
-        if (nestedTypeTupleBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNestedTypeTupleIsMutable();
-          nestedTypeTuple_.add(index, value);
-          onChanged();
-        } else {
-          nestedTypeTupleBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public Builder addNestedTypeTuple(
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
-        if (nestedTypeTupleBuilder_ == null) {
-          ensureNestedTypeTupleIsMutable();
-          nestedTypeTuple_.add(builderForValue.build());
-          onChanged();
-        } else {
-          nestedTypeTupleBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public Builder addNestedTypeTuple(
-          int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
-        if (nestedTypeTupleBuilder_ == null) {
-          ensureNestedTypeTupleIsMutable();
-          nestedTypeTuple_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          nestedTypeTupleBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public Builder addAllNestedTypeTuple(
-          java.lang.Iterable<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> values) {
-        if (nestedTypeTupleBuilder_ == null) {
-          ensureNestedTypeTupleIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, nestedTypeTuple_);
-          onChanged();
-        } else {
-          nestedTypeTupleBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public Builder clearNestedTypeTuple() {
-        if (nestedTypeTupleBuilder_ == null) {
-          nestedTypeTuple_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          nestedTypeTupleBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public Builder removeNestedTypeTuple(int index) {
-        if (nestedTypeTupleBuilder_ == null) {
-          ensureNestedTypeTupleIsMutable();
-          nestedTypeTuple_.remove(index);
-          onChanged();
-        } else {
-          nestedTypeTupleBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder getNestedTypeTupleBuilder(
-          int index) {
-        return getNestedTypeTupleFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getNestedTypeTupleOrBuilder(
-          int index) {
-        if (nestedTypeTupleBuilder_ == null) {
-          return nestedTypeTuple_.get(index);  } else {
-          return nestedTypeTupleBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
-           getNestedTypeTupleOrBuilderList() {
-        if (nestedTypeTupleBuilder_ != null) {
-          return nestedTypeTupleBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(nestedTypeTuple_);
-        }
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder addNestedTypeTupleBuilder() {
-        return getNestedTypeTupleFieldBuilder().addBuilder(
-            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder addNestedTypeTupleBuilder(
-          int index) {
-        return getNestedTypeTupleFieldBuilder().addBuilder(
-            index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Third case, our message contains a tuple of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper nested_type_tuple = 3[json_name = "nestedTypeTuple"];</code>
-       */
-      public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder> 
-           getNestedTypeTupleBuilderList() {
-        return getNestedTypeTupleFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
-          getNestedTypeTupleFieldBuilder() {
-        if (nestedTypeTupleBuilder_ == null) {
-          nestedTypeTupleBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder>(
-                  nestedTypeTuple_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          nestedTypeTuple_ = null;
-        }
-        return nestedTypeTupleBuilder_;
-      }
-
-      private java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value> nestedTypeDict_ =
-        java.util.Collections.emptyList();
-      private void ensureNestedTypeDictIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          nestedTypeDict_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value>(nestedTypeDict_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_valueOrBuilder> nestedTypeDictBuilder_;
-
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value> getNestedTypeDictList() {
-        if (nestedTypeDictBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(nestedTypeDict_);
-        } else {
-          return nestedTypeDictBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public int getNestedTypeDictCount() {
-        if (nestedTypeDictBuilder_ == null) {
-          return nestedTypeDict_.size();
-        } else {
-          return nestedTypeDictBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value getNestedTypeDict(int index) {
-        if (nestedTypeDictBuilder_ == null) {
-          return nestedTypeDict_.get(index);
-        } else {
-          return nestedTypeDictBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public Builder setNestedTypeDict(
-          int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value value) {
-        if (nestedTypeDictBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNestedTypeDictIsMutable();
-          nestedTypeDict_.set(index, value);
-          onChanged();
-        } else {
-          nestedTypeDictBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public Builder setNestedTypeDict(
-          int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.Builder builderForValue) {
-        if (nestedTypeDictBuilder_ == null) {
-          ensureNestedTypeDictIsMutable();
-          nestedTypeDict_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          nestedTypeDictBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public Builder addNestedTypeDict(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value value) {
-        if (nestedTypeDictBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNestedTypeDictIsMutable();
-          nestedTypeDict_.add(value);
-          onChanged();
-        } else {
-          nestedTypeDictBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public Builder addNestedTypeDict(
-          int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value value) {
-        if (nestedTypeDictBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNestedTypeDictIsMutable();
-          nestedTypeDict_.add(index, value);
-          onChanged();
-        } else {
-          nestedTypeDictBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public Builder addNestedTypeDict(
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.Builder builderForValue) {
-        if (nestedTypeDictBuilder_ == null) {
-          ensureNestedTypeDictIsMutable();
-          nestedTypeDict_.add(builderForValue.build());
-          onChanged();
-        } else {
-          nestedTypeDictBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public Builder addNestedTypeDict(
-          int index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.Builder builderForValue) {
-        if (nestedTypeDictBuilder_ == null) {
-          ensureNestedTypeDictIsMutable();
-          nestedTypeDict_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          nestedTypeDictBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public Builder addAllNestedTypeDict(
-          java.lang.Iterable<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value> values) {
-        if (nestedTypeDictBuilder_ == null) {
-          ensureNestedTypeDictIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, nestedTypeDict_);
-          onChanged();
-        } else {
-          nestedTypeDictBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public Builder clearNestedTypeDict() {
-        if (nestedTypeDictBuilder_ == null) {
-          nestedTypeDict_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          nestedTypeDictBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public Builder removeNestedTypeDict(int index) {
-        if (nestedTypeDictBuilder_ == null) {
-          ensureNestedTypeDictIsMutable();
-          nestedTypeDict_.remove(index);
-          onChanged();
-        } else {
-          nestedTypeDictBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.Builder getNestedTypeDictBuilder(
-          int index) {
-        return getNestedTypeDictFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_valueOrBuilder getNestedTypeDictOrBuilder(
-          int index) {
-        if (nestedTypeDictBuilder_ == null) {
-          return nestedTypeDict_.get(index);  } else {
-          return nestedTypeDictBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public java.util.List<? extends org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_valueOrBuilder> 
-           getNestedTypeDictOrBuilderList() {
-        if (nestedTypeDictBuilder_ != null) {
-          return nestedTypeDictBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(nestedTypeDict_);
-        }
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.Builder addNestedTypeDictBuilder() {
-        return getNestedTypeDictFieldBuilder().addBuilder(
-            org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.Builder addNestedTypeDictBuilder(
-          int index) {
-        return getNestedTypeDictFieldBuilder().addBuilder(
-            index, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Fourth case, our message contains a dict of nested types.
-       * </pre>
-       *
-       * <code>repeated .syft_proto.execution.v1.NestedTypeWrapper.key_value nested_type_dict = 4[json_name = "nestedTypeDict"];</code>
-       */
-      public java.util.List<org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.Builder> 
-           getNestedTypeDictBuilderList() {
-        return getNestedTypeDictFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_valueOrBuilder> 
-          getNestedTypeDictFieldBuilder() {
-        if (nestedTypeDictBuilder_ == null) {
-          nestedTypeDictBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_value.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.key_valueOrBuilder>(
-                  nestedTypeDict_,
-                  ((bitField0_ & 0x00000004) != 0),
-                  getParentForChildren(),
-                  isClean());
-          nestedTypeDict_ = null;
-        }
-        return nestedTypeDictBuilder_;
+        return nestedTypesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3409,20 +5194,40 @@ public final class TypeWrapper {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_syft_proto_execution_v1_type_descriptor;
+    internal_static_syft_proto_execution_v1_ClassType_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_syft_proto_execution_v1_type_fieldAccessorTable;
+      internal_static_syft_proto_execution_v1_ClassType_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_syft_proto_execution_v1_NestedTypeWrapper_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_syft_proto_execution_v1_NestedTypeWrapper_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_syft_proto_execution_v1_NestedTypeWrapper_key_value_descriptor;
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeList_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_syft_proto_execution_v1_NestedTypeWrapper_key_value_fieldAccessorTable;
+      internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeTuple_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeTuple_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_TypeMapEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_TypeMapEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeContainer_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeContainer_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3433,44 +5238,79 @@ public final class TypeWrapper {
   static {
     java.lang.String[] descriptorData = {
       "\n*syft_proto/execution/v1/type_wrapper.p" +
-      "roto\022\027syft_proto.execution.v1\"*\n\004type\022\016\n" +
-      "\002id\030\001 \001(\005R\002id\022\022\n\004type\030\002 \001(\014R\004type\"\302\003\n\021Ne" +
-      "stedTypeWrapper\022>\n\013nested_type\030\001 \001(\0132\035.s" +
-      "yft_proto.execution.v1.typeR\nnestedType\022" +
-      "T\n\020nested_type_list\030\002 \003(\0132*.syft_proto.e" +
-      "xecution.v1.NestedTypeWrapperR\016nestedTyp" +
-      "eList\022V\n\021nested_type_tuple\030\003 \003(\0132*.syft_" +
-      "proto.execution.v1.NestedTypeWrapperR\017ne" +
-      "stedTypeTuple\022^\n\020nested_type_dict\030\004 \003(\0132" +
-      "4.syft_proto.execution.v1.NestedTypeWrap" +
-      "per.key_valueR\016nestedTypeDict\032_\n\tkey_val" +
-      "ue\022\020\n\003key\030\001 \001(\014R\003key\022@\n\005value\030\002 \001(\0132*.sy" +
-      "ft_proto.execution.v1.NestedTypeWrapperR" +
-      "\005valueB&\n$org.openmined.syftproto.execut" +
-      "ion.v1b\006proto3"
+      "roto\022\027syft_proto.execution.v1\"(\n\tClassTy" +
+      "pe\022\033\n\ttype_name\030\001 \001(\tR\010typeName\"\211\007\n\021Nest" +
+      "edTypeWrapper\022[\n\014nested_types\030\001 \001(\01328.sy" +
+      "ft_proto.execution.v1.NestedTypeWrapper." +
+      "TypeContainerR\013nestedTypes\032Y\n\010TypeList\022M" +
+      "\n\014nested_types\030\001 \003(\0132*.syft_proto.execut" +
+      "ion.v1.NestedTypeWrapperR\013nestedTypes\032Z\n" +
+      "\tTypeTuple\022M\n\014nested_types\030\001 \003(\0132*.syft_" +
+      "proto.execution.v1.NestedTypeWrapperR\013ne" +
+      "stedTypes\032\315\001\n\007TypeMap\022Z\n\010type_map\030\001 \003(\0132" +
+      "?.syft_proto.execution.v1.NestedTypeWrap" +
+      "per.TypeMap.TypeMapEntryR\007typeMap\032f\n\014Typ" +
+      "eMapEntry\022\020\n\003key\030\001 \001(\tR\003key\022@\n\005value\030\002 \001" +
+      "(\0132*.syft_proto.execution.v1.NestedTypeW" +
+      "rapperR\005value:\0028\001\032\217\003\n\rTypeContainer\022E\n\013n" +
+      "ested_type\030\001 \001(\0132\".syft_proto.execution." +
+      "v1.ClassTypeH\000R\nnestedType\022_\n\020nested_typ" +
+      "e_list\030\002 \001(\01323.syft_proto.execution.v1.N" +
+      "estedTypeWrapper.TypeListH\000R\016nestedTypeL" +
+      "ist\022b\n\021nested_type_tuple\030\003 \001(\01324.syft_pr" +
+      "oto.execution.v1.NestedTypeWrapper.TypeT" +
+      "upleH\000R\017nestedTypeTuple\022^\n\020nested_type_d" +
+      "ict\030\004 \001(\01322.syft_proto.execution.v1.Nest" +
+      "edTypeWrapper.TypeMapH\000R\016nestedTypeDictB" +
+      "\022\n\020nested_containerB&\n$org.openmined.syf" +
+      "tproto.execution.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_syft_proto_execution_v1_type_descriptor =
+    internal_static_syft_proto_execution_v1_ClassType_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_syft_proto_execution_v1_type_fieldAccessorTable = new
+    internal_static_syft_proto_execution_v1_ClassType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_syft_proto_execution_v1_type_descriptor,
-        new java.lang.String[] { "Id", "Type", });
+        internal_static_syft_proto_execution_v1_ClassType_descriptor,
+        new java.lang.String[] { "TypeName", });
     internal_static_syft_proto_execution_v1_NestedTypeWrapper_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_syft_proto_execution_v1_NestedTypeWrapper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_NestedTypeWrapper_descriptor,
-        new java.lang.String[] { "NestedType", "NestedTypeList", "NestedTypeTuple", "NestedTypeDict", });
-    internal_static_syft_proto_execution_v1_NestedTypeWrapper_key_value_descriptor =
+        new java.lang.String[] { "NestedTypes", });
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeList_descriptor =
       internal_static_syft_proto_execution_v1_NestedTypeWrapper_descriptor.getNestedTypes().get(0);
-    internal_static_syft_proto_execution_v1_NestedTypeWrapper_key_value_fieldAccessorTable = new
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_syft_proto_execution_v1_NestedTypeWrapper_key_value_descriptor,
+        internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeList_descriptor,
+        new java.lang.String[] { "NestedTypes", });
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeTuple_descriptor =
+      internal_static_syft_proto_execution_v1_NestedTypeWrapper_descriptor.getNestedTypes().get(1);
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeTuple_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeTuple_descriptor,
+        new java.lang.String[] { "NestedTypes", });
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_descriptor =
+      internal_static_syft_proto_execution_v1_NestedTypeWrapper_descriptor.getNestedTypes().get(2);
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_descriptor,
+        new java.lang.String[] { "TypeMap", });
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_TypeMapEntry_descriptor =
+      internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_descriptor.getNestedTypes().get(0);
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_TypeMapEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_TypeMapEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeContainer_descriptor =
+      internal_static_syft_proto_execution_v1_NestedTypeWrapper_descriptor.getNestedTypes().get(3);
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeContainer_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeContainer_descriptor,
+        new java.lang.String[] { "NestedType", "NestedTypeList", "NestedTypeTuple", "NestedTypeDict", "NestedContainer", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

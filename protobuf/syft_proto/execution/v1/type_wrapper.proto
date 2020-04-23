@@ -19,11 +19,19 @@ message NestedTypeWrapper {
         4. A dict of nested types.
     */
 
-    // Message defined to simulate the behavior of a generic map.
-    message KeyValue {
-        // currently only str is supported, this should generalize for any type
-        string key = 1;
-        NestedTypeWrapper value = 2;
+    //Wrapper to simulate the behavior of a list in oneof.
+    message TypeList {
+        repeated NestedTypeWrapper nested_types = 1;
+    }
+
+    //Wrapper to simulate the behavior of a tuple in oneof.
+    message TypeTuple {
+        repeated NestedTypeWrapper nested_types = 1;
+    }
+
+    //Wrapper to simulate the behavior of a map in oneof.
+    message TypeMap {
+        map<string, NestedTypeWrapper> type_map = 1;
     }
 
     // To create the behavior described above, we need a new message, as
@@ -34,15 +42,15 @@ message NestedTypeWrapper {
             ClassType nested_type = 1;
 
             // Second scenario, a list of possibly nested elements.
-            NestedTypeWrapper nested_type_list = 2;
+            TypeList nested_type_list = 2;
 
             // Third scenario, a tuple of possibly nested elements.
-            NestedTypeWrapper nested_type_tuple = 3;
+            TypeTuple nested_type_tuple = 3;
 
             // Last scenario, a dict of possible nested elements.
-            KeyValue nested_type_dict = 4;
+            TypeMap nested_type_dict = 4;
         }
     }
 
-    repeated TypeContainer nested_types = 1;
+    TypeContainer nested_types = 1;
 }

@@ -18,33 +18,26 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
-  serialized_pb=b'\n*syft_proto/execution/v1/type_wrapper.proto\x12\x17syft_proto.execution.v1\"*\n\x04type\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04type\x18\x02 \x01(\x0cR\x04type\"\xc2\x03\n\x11NestedTypeWrapper\x12>\n\x0bnested_type\x18\x01 \x01(\x0b\x32\x1d.syft_proto.execution.v1.typeR\nnestedType\x12T\n\x10nested_type_list\x18\x02 \x03(\x0b\x32*.syft_proto.execution.v1.NestedTypeWrapperR\x0enestedTypeList\x12V\n\x11nested_type_tuple\x18\x03 \x03(\x0b\x32*.syft_proto.execution.v1.NestedTypeWrapperR\x0fnestedTypeTuple\x12^\n\x10nested_type_dict\x18\x04 \x03(\x0b\x32\x34.syft_proto.execution.v1.NestedTypeWrapper.key_valueR\x0enestedTypeDict\x1a_\n\tkey_value\x12\x10\n\x03key\x18\x01 \x01(\x0cR\x03key\x12@\n\x05value\x18\x02 \x01(\x0b\x32*.syft_proto.execution.v1.NestedTypeWrapperR\x05valueB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
+  serialized_pb=b'\n*syft_proto/execution/v1/type_wrapper.proto\x12\x17syft_proto.execution.v1\"(\n\tClassType\x12\x1b\n\ttype_name\x18\x01 \x01(\tR\x08typeName\"\x89\x07\n\x11NestedTypeWrapper\x12[\n\x0cnested_types\x18\x01 \x01(\x0b\x32\x38.syft_proto.execution.v1.NestedTypeWrapper.TypeContainerR\x0bnestedTypes\x1aY\n\x08TypeList\x12M\n\x0cnested_types\x18\x01 \x03(\x0b\x32*.syft_proto.execution.v1.NestedTypeWrapperR\x0bnestedTypes\x1aZ\n\tTypeTuple\x12M\n\x0cnested_types\x18\x01 \x03(\x0b\x32*.syft_proto.execution.v1.NestedTypeWrapperR\x0bnestedTypes\x1a\xcd\x01\n\x07TypeMap\x12Z\n\x08type_map\x18\x01 \x03(\x0b\x32?.syft_proto.execution.v1.NestedTypeWrapper.TypeMap.TypeMapEntryR\x07typeMap\x1a\x66\n\x0cTypeMapEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12@\n\x05value\x18\x02 \x01(\x0b\x32*.syft_proto.execution.v1.NestedTypeWrapperR\x05value:\x02\x38\x01\x1a\x8f\x03\n\rTypeContainer\x12\x45\n\x0bnested_type\x18\x01 \x01(\x0b\x32\".syft_proto.execution.v1.ClassTypeH\x00R\nnestedType\x12_\n\x10nested_type_list\x18\x02 \x01(\x0b\x32\x33.syft_proto.execution.v1.NestedTypeWrapper.TypeListH\x00R\x0enestedTypeList\x12\x62\n\x11nested_type_tuple\x18\x03 \x01(\x0b\x32\x34.syft_proto.execution.v1.NestedTypeWrapper.TypeTupleH\x00R\x0fnestedTypeTuple\x12^\n\x10nested_type_dict\x18\x04 \x01(\x0b\x32\x32.syft_proto.execution.v1.NestedTypeWrapper.TypeMapH\x00R\x0enestedTypeDictB\x12\n\x10nested_containerB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
 )
 
 
 
 
-_TYPE = _descriptor.Descriptor(
-  name='type',
-  full_name='syft_proto.execution.v1.type',
+_CLASSTYPE = _descriptor.Descriptor(
+  name='ClassType',
+  full_name='syft_proto.execution.v1.ClassType',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='syft_proto.execution.v1.type.id', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='type_name', full_name='syft_proto.execution.v1.ClassType.type_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='syft_proto.execution.v1.type.type', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='type', file=DESCRIPTOR),
+      serialized_options=None, json_name='typeName', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -58,31 +51,24 @@ _TYPE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=71,
-  serialized_end=113,
+  serialized_end=111,
 )
 
 
-_NESTEDTYPEWRAPPER_KEY_VALUE = _descriptor.Descriptor(
-  name='key_value',
-  full_name='syft_proto.execution.v1.NestedTypeWrapper.key_value',
+_NESTEDTYPEWRAPPER_TYPELIST = _descriptor.Descriptor(
+  name='TypeList',
+  full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='syft_proto.execution.v1.NestedTypeWrapper.key_value.key', index=0,
-      number=1, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
+      name='nested_types', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeList.nested_types', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='key', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='syft_proto.execution.v1.NestedTypeWrapper.key_value.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='value', file=DESCRIPTOR),
+      serialized_options=None, json_name='nestedTypes', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -95,8 +81,159 @@ _NESTEDTYPEWRAPPER_KEY_VALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=471,
-  serialized_end=566,
+  serialized_start=228,
+  serialized_end=317,
+)
+
+_NESTEDTYPEWRAPPER_TYPETUPLE = _descriptor.Descriptor(
+  name='TypeTuple',
+  full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeTuple',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nested_types', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeTuple.nested_types', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='nestedTypes', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=319,
+  serialized_end=409,
+)
+
+_NESTEDTYPEWRAPPER_TYPEMAP_TYPEMAPENTRY = _descriptor.Descriptor(
+  name='TypeMapEntry',
+  full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeMap.TypeMapEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeMap.TypeMapEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='key', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeMap.TypeMapEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='value', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=515,
+  serialized_end=617,
+)
+
+_NESTEDTYPEWRAPPER_TYPEMAP = _descriptor.Descriptor(
+  name='TypeMap',
+  full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeMap',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='type_map', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeMap.type_map', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='typeMap', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_NESTEDTYPEWRAPPER_TYPEMAP_TYPEMAPENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=412,
+  serialized_end=617,
+)
+
+_NESTEDTYPEWRAPPER_TYPECONTAINER = _descriptor.Descriptor(
+  name='TypeContainer',
+  full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeContainer',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nested_type', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='nestedType', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='nested_type_list', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type_list', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='nestedTypeList', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='nested_type_tuple', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type_tuple', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='nestedTypeTuple', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='nested_type_dict', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type_dict', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='nestedTypeDict', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='nested_container', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_container',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=620,
+  serialized_end=1019,
 )
 
 _NESTEDTYPEWRAPPER = _descriptor.Descriptor(
@@ -107,37 +244,16 @@ _NESTEDTYPEWRAPPER = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='nested_type', full_name='syft_proto.execution.v1.NestedTypeWrapper.nested_type', index=0,
+      name='nested_types', full_name='syft_proto.execution.v1.NestedTypeWrapper.nested_types', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='nestedType', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='nested_type_list', full_name='syft_proto.execution.v1.NestedTypeWrapper.nested_type_list', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='nestedTypeList', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='nested_type_tuple', full_name='syft_proto.execution.v1.NestedTypeWrapper.nested_type_tuple', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='nestedTypeTuple', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='nested_type_dict', full_name='syft_proto.execution.v1.NestedTypeWrapper.nested_type_dict', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='nestedTypeDict', file=DESCRIPTOR),
+      serialized_options=None, json_name='nestedTypes', file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_NESTEDTYPEWRAPPER_KEY_VALUE, ],
+  nested_types=[_NESTEDTYPEWRAPPER_TYPELIST, _NESTEDTYPEWRAPPER_TYPETUPLE, _NESTEDTYPEWRAPPER_TYPEMAP, _NESTEDTYPEWRAPPER_TYPECONTAINER, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -146,33 +262,81 @@ _NESTEDTYPEWRAPPER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=116,
-  serialized_end=566,
+  serialized_start=114,
+  serialized_end=1019,
 )
 
-_NESTEDTYPEWRAPPER_KEY_VALUE.fields_by_name['value'].message_type = _NESTEDTYPEWRAPPER
-_NESTEDTYPEWRAPPER_KEY_VALUE.containing_type = _NESTEDTYPEWRAPPER
-_NESTEDTYPEWRAPPER.fields_by_name['nested_type'].message_type = _TYPE
-_NESTEDTYPEWRAPPER.fields_by_name['nested_type_list'].message_type = _NESTEDTYPEWRAPPER
-_NESTEDTYPEWRAPPER.fields_by_name['nested_type_tuple'].message_type = _NESTEDTYPEWRAPPER
-_NESTEDTYPEWRAPPER.fields_by_name['nested_type_dict'].message_type = _NESTEDTYPEWRAPPER_KEY_VALUE
-DESCRIPTOR.message_types_by_name['type'] = _TYPE
+_NESTEDTYPEWRAPPER_TYPELIST.fields_by_name['nested_types'].message_type = _NESTEDTYPEWRAPPER
+_NESTEDTYPEWRAPPER_TYPELIST.containing_type = _NESTEDTYPEWRAPPER
+_NESTEDTYPEWRAPPER_TYPETUPLE.fields_by_name['nested_types'].message_type = _NESTEDTYPEWRAPPER
+_NESTEDTYPEWRAPPER_TYPETUPLE.containing_type = _NESTEDTYPEWRAPPER
+_NESTEDTYPEWRAPPER_TYPEMAP_TYPEMAPENTRY.fields_by_name['value'].message_type = _NESTEDTYPEWRAPPER
+_NESTEDTYPEWRAPPER_TYPEMAP_TYPEMAPENTRY.containing_type = _NESTEDTYPEWRAPPER_TYPEMAP
+_NESTEDTYPEWRAPPER_TYPEMAP.fields_by_name['type_map'].message_type = _NESTEDTYPEWRAPPER_TYPEMAP_TYPEMAPENTRY
+_NESTEDTYPEWRAPPER_TYPEMAP.containing_type = _NESTEDTYPEWRAPPER
+_NESTEDTYPEWRAPPER_TYPECONTAINER.fields_by_name['nested_type'].message_type = _CLASSTYPE
+_NESTEDTYPEWRAPPER_TYPECONTAINER.fields_by_name['nested_type_list'].message_type = _NESTEDTYPEWRAPPER_TYPELIST
+_NESTEDTYPEWRAPPER_TYPECONTAINER.fields_by_name['nested_type_tuple'].message_type = _NESTEDTYPEWRAPPER_TYPETUPLE
+_NESTEDTYPEWRAPPER_TYPECONTAINER.fields_by_name['nested_type_dict'].message_type = _NESTEDTYPEWRAPPER_TYPEMAP
+_NESTEDTYPEWRAPPER_TYPECONTAINER.containing_type = _NESTEDTYPEWRAPPER
+_NESTEDTYPEWRAPPER_TYPECONTAINER.oneofs_by_name['nested_container'].fields.append(
+  _NESTEDTYPEWRAPPER_TYPECONTAINER.fields_by_name['nested_type'])
+_NESTEDTYPEWRAPPER_TYPECONTAINER.fields_by_name['nested_type'].containing_oneof = _NESTEDTYPEWRAPPER_TYPECONTAINER.oneofs_by_name['nested_container']
+_NESTEDTYPEWRAPPER_TYPECONTAINER.oneofs_by_name['nested_container'].fields.append(
+  _NESTEDTYPEWRAPPER_TYPECONTAINER.fields_by_name['nested_type_list'])
+_NESTEDTYPEWRAPPER_TYPECONTAINER.fields_by_name['nested_type_list'].containing_oneof = _NESTEDTYPEWRAPPER_TYPECONTAINER.oneofs_by_name['nested_container']
+_NESTEDTYPEWRAPPER_TYPECONTAINER.oneofs_by_name['nested_container'].fields.append(
+  _NESTEDTYPEWRAPPER_TYPECONTAINER.fields_by_name['nested_type_tuple'])
+_NESTEDTYPEWRAPPER_TYPECONTAINER.fields_by_name['nested_type_tuple'].containing_oneof = _NESTEDTYPEWRAPPER_TYPECONTAINER.oneofs_by_name['nested_container']
+_NESTEDTYPEWRAPPER_TYPECONTAINER.oneofs_by_name['nested_container'].fields.append(
+  _NESTEDTYPEWRAPPER_TYPECONTAINER.fields_by_name['nested_type_dict'])
+_NESTEDTYPEWRAPPER_TYPECONTAINER.fields_by_name['nested_type_dict'].containing_oneof = _NESTEDTYPEWRAPPER_TYPECONTAINER.oneofs_by_name['nested_container']
+_NESTEDTYPEWRAPPER.fields_by_name['nested_types'].message_type = _NESTEDTYPEWRAPPER_TYPECONTAINER
+DESCRIPTOR.message_types_by_name['ClassType'] = _CLASSTYPE
 DESCRIPTOR.message_types_by_name['NestedTypeWrapper'] = _NESTEDTYPEWRAPPER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-type = _reflection.GeneratedProtocolMessageType('type', (_message.Message,), {
-  'DESCRIPTOR' : _TYPE,
+ClassType = _reflection.GeneratedProtocolMessageType('ClassType', (_message.Message,), {
+  'DESCRIPTOR' : _CLASSTYPE,
   '__module__' : 'syft_proto.execution.v1.type_wrapper_pb2'
-  # @@protoc_insertion_point(class_scope:syft_proto.execution.v1.type)
+  # @@protoc_insertion_point(class_scope:syft_proto.execution.v1.ClassType)
   })
-_sym_db.RegisterMessage(type)
+_sym_db.RegisterMessage(ClassType)
 
 NestedTypeWrapper = _reflection.GeneratedProtocolMessageType('NestedTypeWrapper', (_message.Message,), {
 
-  'key_value' : _reflection.GeneratedProtocolMessageType('key_value', (_message.Message,), {
-    'DESCRIPTOR' : _NESTEDTYPEWRAPPER_KEY_VALUE,
+  'TypeList' : _reflection.GeneratedProtocolMessageType('TypeList', (_message.Message,), {
+    'DESCRIPTOR' : _NESTEDTYPEWRAPPER_TYPELIST,
     '__module__' : 'syft_proto.execution.v1.type_wrapper_pb2'
-    # @@protoc_insertion_point(class_scope:syft_proto.execution.v1.NestedTypeWrapper.key_value)
+    # @@protoc_insertion_point(class_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeList)
+    })
+  ,
+
+  'TypeTuple' : _reflection.GeneratedProtocolMessageType('TypeTuple', (_message.Message,), {
+    'DESCRIPTOR' : _NESTEDTYPEWRAPPER_TYPETUPLE,
+    '__module__' : 'syft_proto.execution.v1.type_wrapper_pb2'
+    # @@protoc_insertion_point(class_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeTuple)
+    })
+  ,
+
+  'TypeMap' : _reflection.GeneratedProtocolMessageType('TypeMap', (_message.Message,), {
+
+    'TypeMapEntry' : _reflection.GeneratedProtocolMessageType('TypeMapEntry', (_message.Message,), {
+      'DESCRIPTOR' : _NESTEDTYPEWRAPPER_TYPEMAP_TYPEMAPENTRY,
+      '__module__' : 'syft_proto.execution.v1.type_wrapper_pb2'
+      # @@protoc_insertion_point(class_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeMap.TypeMapEntry)
+      })
+    ,
+    'DESCRIPTOR' : _NESTEDTYPEWRAPPER_TYPEMAP,
+    '__module__' : 'syft_proto.execution.v1.type_wrapper_pb2'
+    # @@protoc_insertion_point(class_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeMap)
+    })
+  ,
+
+  'TypeContainer' : _reflection.GeneratedProtocolMessageType('TypeContainer', (_message.Message,), {
+    'DESCRIPTOR' : _NESTEDTYPEWRAPPER_TYPECONTAINER,
+    '__module__' : 'syft_proto.execution.v1.type_wrapper_pb2'
+    # @@protoc_insertion_point(class_scope:syft_proto.execution.v1.NestedTypeWrapper.TypeContainer)
     })
   ,
   'DESCRIPTOR' : _NESTEDTYPEWRAPPER,
@@ -180,8 +344,13 @@ NestedTypeWrapper = _reflection.GeneratedProtocolMessageType('NestedTypeWrapper'
   # @@protoc_insertion_point(class_scope:syft_proto.execution.v1.NestedTypeWrapper)
   })
 _sym_db.RegisterMessage(NestedTypeWrapper)
-_sym_db.RegisterMessage(NestedTypeWrapper.key_value)
+_sym_db.RegisterMessage(NestedTypeWrapper.TypeList)
+_sym_db.RegisterMessage(NestedTypeWrapper.TypeTuple)
+_sym_db.RegisterMessage(NestedTypeWrapper.TypeMap)
+_sym_db.RegisterMessage(NestedTypeWrapper.TypeMap.TypeMapEntry)
+_sym_db.RegisterMessage(NestedTypeWrapper.TypeContainer)
 
 
 DESCRIPTOR._options = None
+_NESTEDTYPEWRAPPER_TYPEMAP_TYPEMAPENTRY._options = None
 # @@protoc_insertion_point(module_scope)
