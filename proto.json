@@ -194,6 +194,9 @@
     },
     "syft.execution.role.Role": {
       "code": 58
+    },
+    "syft.frameworks.torch.tensors.interpreters.paillier.PaillierTensor": {
+      "code": 59
     }
   }
 }
