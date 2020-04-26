@@ -168,7 +168,7 @@
     "torch.memory_format": {
       "code": 49
     },
-    "syft.messaging.message.CryptenInit": {
+    "syft.messaging.message.CryptenInitPlan": {
       "code": 50
     },
     "syft.frameworks.torch.fl.dataset.BaseDataset": {
@@ -197,6 +197,9 @@
     },
     "syft.frameworks.torch.tensors.interpreters.paillier.PaillierTensor": {
       "code": 59
+    },
+    "syft.messaging.message.CryptenInitJail": {
+      "code": 60
     }
   }
 }
