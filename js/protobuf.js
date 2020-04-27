@@ -42,6 +42,7 @@ $root.syft_proto = (function() {
                  * Properties of a CommunicationAction.
                  * @memberof syft_proto.execution.v1
                  * @interface ICommunicationAction
+                 * @property {string|null} [name] CommunicationAction name
                  * @property {syft_proto.types.syft.v1.IId|null} [obj_id] CommunicationAction obj_id
                  * @property {syft_proto.types.syft.v1.IId|null} [source] CommunicationAction source
                  * @property {Array.<syft_proto.types.syft.v1.IId>|null} [destinations] CommunicationAction destinations
@@ -64,6 +65,14 @@ $root.syft_proto = (function() {
                             if (properties[keys[i]] != null)
                                 this[keys[i]] = properties[keys[i]];
                 }
+
+                /**
+                 * CommunicationAction name.
+                 * @member {string} name
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @instance
+                 */
+                CommunicationAction.prototype.name = "";
 
                 /**
                  * CommunicationAction obj_id.
@@ -121,16 +130,18 @@ $root.syft_proto = (function() {
                 CommunicationAction.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
+                    if (message.name != null && message.hasOwnProperty("name"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
                     if (message.obj_id != null && message.hasOwnProperty("obj_id"))
-                        $root.syft_proto.types.syft.v1.Id.encode(message.obj_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.syft_proto.types.syft.v1.Id.encode(message.obj_id, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.source != null && message.hasOwnProperty("source"))
-                        $root.syft_proto.types.syft.v1.Id.encode(message.source, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                        $root.syft_proto.types.syft.v1.Id.encode(message.source, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     if (message.destinations != null && message.destinations.length)
                         for (var i = 0; i < message.destinations.length; ++i)
-                            $root.syft_proto.types.syft.v1.Id.encode(message.destinations[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                            $root.syft_proto.types.syft.v1.Id.encode(message.destinations[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.kwargs != null && message.hasOwnProperty("kwargs"))
                         for (var keys = Object.keys(message.kwargs), i = 0; i < keys.length; ++i) {
-                            writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                            writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
                             $root.syft_proto.types.syft.v1.Arg.encode(message.kwargs[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
                         }
                     return writer;
@@ -168,17 +179,20 @@ $root.syft_proto = (function() {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.obj_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            message.name = reader.string();
                             break;
                         case 2:
-                            message.source = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            message.obj_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
                             break;
                         case 3:
+                            message.source = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        case 4:
                             if (!(message.destinations && message.destinations.length))
                                 message.destinations = [];
                             message.destinations.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
                             break;
-                        case 4:
+                        case 5:
                             reader.skip().pos++;
                             if (message.kwargs === $util.emptyObject)
                                 message.kwargs = {};
@@ -221,6 +235,9 @@ $root.syft_proto = (function() {
                 CommunicationAction.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
+                    if (message.name != null && message.hasOwnProperty("name"))
+                        if (!$util.isString(message.name))
+                            return "name: string expected";
                     if (message.obj_id != null && message.hasOwnProperty("obj_id")) {
                         var error = $root.syft_proto.types.syft.v1.Id.verify(message.obj_id);
                         if (error)
@@ -265,6 +282,8 @@ $root.syft_proto = (function() {
                     if (object instanceof $root.syft_proto.execution.v1.CommunicationAction)
                         return object;
                     var message = new $root.syft_proto.execution.v1.CommunicationAction();
+                    if (object.name != null)
+                        message.name = String(object.name);
                     if (object.obj_id != null) {
                         if (typeof object.obj_id !== "object")
                             throw TypeError(".syft_proto.execution.v1.CommunicationAction.obj_id: object expected");
@@ -316,9 +335,12 @@ $root.syft_proto = (function() {
                     if (options.objects || options.defaults)
                         object.kwargs = {};
                     if (options.defaults) {
+                        object.name = "";
                         object.obj_id = null;
                         object.source = null;
                     }
+                    if (message.name != null && message.hasOwnProperty("name"))
+                        object.name = message.name;
                     if (message.obj_id != null && message.hasOwnProperty("obj_id"))
                         object.obj_id = $root.syft_proto.types.syft.v1.Id.toObject(message.obj_id, options);
                     if (message.source != null && message.hasOwnProperty("source"))

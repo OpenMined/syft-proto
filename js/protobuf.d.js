@@ -11,6 +11,9 @@ export namespace syft_proto {
             /** Properties of a CommunicationAction. */
             interface ICommunicationAction {
 
+                /** CommunicationAction name */
+                name?: (string|null);
+
                 /** CommunicationAction obj_id */
                 obj_id?: (syft_proto.types.syft.v1.IId|null);
 
@@ -32,6 +35,9 @@ export namespace syft_proto {
                  * @param [properties] Properties to set
                  */
                 constructor(properties?: syft_proto.execution.v1.ICommunicationAction);
+
+                /** CommunicationAction name. */
+                public name: string;
 
                 /** CommunicationAction obj_id. */
                 public obj_id?: (syft_proto.types.syft.v1.IId|null);
