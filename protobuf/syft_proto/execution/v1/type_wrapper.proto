@@ -31,7 +31,7 @@ message NestedTypeWrapper {
 
     //Wrapper to simulate the behavior of a map in oneof.
     message TypeMap {
-        map<string, NestedTypeWrapper> type_map = 1;
+        map<string, NestedTypeWrapper> nested_types = 1;
     }
 
     // To create the behavior described above, we need a new message, as
