@@ -3518,7 +3518,7 @@ $root.syft_proto = (function() {
                      * Properties of a TypeMap.
                      * @memberof syft_proto.execution.v1.NestedTypeWrapper
                      * @interface ITypeMap
-                     * @property {Object.<string,syft_proto.execution.v1.INestedTypeWrapper>|null} [type_map] TypeMap type_map
+                     * @property {Object.<string,syft_proto.execution.v1.INestedTypeWrapper>|null} [nested_types] TypeMap nested_types
                      */
 
                     /**
@@ -3530,7 +3530,7 @@ $root.syft_proto = (function() {
                      * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeMap=} [properties] Properties to set
                      */
                     function TypeMap(properties) {
-                        this.type_map = {};
+                        this.nested_types = {};
                         if (properties)
                             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                                 if (properties[keys[i]] != null)
@@ -3538,12 +3538,12 @@ $root.syft_proto = (function() {
                     }
 
                     /**
-                     * TypeMap type_map.
-                     * @member {Object.<string,syft_proto.execution.v1.INestedTypeWrapper>} type_map
+                     * TypeMap nested_types.
+                     * @member {Object.<string,syft_proto.execution.v1.INestedTypeWrapper>} nested_types
                      * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeMap
                      * @instance
                      */
-                    TypeMap.prototype.type_map = $util.emptyObject;
+                    TypeMap.prototype.nested_types = $util.emptyObject;
 
                     /**
                      * Creates a new TypeMap instance using the specified properties.
@@ -3569,10 +3569,10 @@ $root.syft_proto = (function() {
                     TypeMap.encode = function encode(message, writer) {
                         if (!writer)
                             writer = $Writer.create();
-                        if (message.type_map != null && message.hasOwnProperty("type_map"))
-                            for (var keys = Object.keys(message.type_map), i = 0; i < keys.length; ++i) {
+                        if (message.nested_types != null && message.hasOwnProperty("nested_types"))
+                            for (var keys = Object.keys(message.nested_types), i = 0; i < keys.length; ++i) {
                                 writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                                $root.syft_proto.execution.v1.NestedTypeWrapper.encode(message.type_map[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                                $root.syft_proto.execution.v1.NestedTypeWrapper.encode(message.nested_types[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
                             }
                         return writer;
                     };
@@ -3610,11 +3610,11 @@ $root.syft_proto = (function() {
                             switch (tag >>> 3) {
                             case 1:
                                 reader.skip().pos++;
-                                if (message.type_map === $util.emptyObject)
-                                    message.type_map = {};
+                                if (message.nested_types === $util.emptyObject)
+                                    message.nested_types = {};
                                 key = reader.string();
                                 reader.pos++;
-                                message.type_map[key] = $root.syft_proto.execution.v1.NestedTypeWrapper.decode(reader, reader.uint32());
+                                message.nested_types[key] = $root.syft_proto.execution.v1.NestedTypeWrapper.decode(reader, reader.uint32());
                                 break;
                             default:
                                 reader.skipType(tag & 7);
@@ -3651,14 +3651,14 @@ $root.syft_proto = (function() {
                     TypeMap.verify = function verify(message) {
                         if (typeof message !== "object" || message === null)
                             return "object expected";
-                        if (message.type_map != null && message.hasOwnProperty("type_map")) {
-                            if (!$util.isObject(message.type_map))
-                                return "type_map: object expected";
-                            var key = Object.keys(message.type_map);
+                        if (message.nested_types != null && message.hasOwnProperty("nested_types")) {
+                            if (!$util.isObject(message.nested_types))
+                                return "nested_types: object expected";
+                            var key = Object.keys(message.nested_types);
                             for (var i = 0; i < key.length; ++i) {
-                                var error = $root.syft_proto.execution.v1.NestedTypeWrapper.verify(message.type_map[key[i]]);
+                                var error = $root.syft_proto.execution.v1.NestedTypeWrapper.verify(message.nested_types[key[i]]);
                                 if (error)
-                                    return "type_map." + error;
+                                    return "nested_types." + error;
                             }
                         }
                         return null;
@@ -3676,14 +3676,14 @@ $root.syft_proto = (function() {
                         if (object instanceof $root.syft_proto.execution.v1.NestedTypeWrapper.TypeMap)
                             return object;
                         var message = new $root.syft_proto.execution.v1.NestedTypeWrapper.TypeMap();
-                        if (object.type_map) {
-                            if (typeof object.type_map !== "object")
-                                throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeMap.type_map: object expected");
-                            message.type_map = {};
-                            for (var keys = Object.keys(object.type_map), i = 0; i < keys.length; ++i) {
-                                if (typeof object.type_map[keys[i]] !== "object")
-                                    throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeMap.type_map: object expected");
-                                message.type_map[keys[i]] = $root.syft_proto.execution.v1.NestedTypeWrapper.fromObject(object.type_map[keys[i]]);
+                        if (object.nested_types) {
+                            if (typeof object.nested_types !== "object")
+                                throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeMap.nested_types: object expected");
+                            message.nested_types = {};
+                            for (var keys = Object.keys(object.nested_types), i = 0; i < keys.length; ++i) {
+                                if (typeof object.nested_types[keys[i]] !== "object")
+                                    throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeMap.nested_types: object expected");
+                                message.nested_types[keys[i]] = $root.syft_proto.execution.v1.NestedTypeWrapper.fromObject(object.nested_types[keys[i]]);
                             }
                         }
                         return message;
@@ -3703,12 +3703,12 @@ $root.syft_proto = (function() {
                             options = {};
                         var object = {};
                         if (options.objects || options.defaults)
-                            object.type_map = {};
+                            object.nested_types = {};
                         var keys2;
-                        if (message.type_map && (keys2 = Object.keys(message.type_map)).length) {
-                            object.type_map = {};
+                        if (message.nested_types && (keys2 = Object.keys(message.nested_types)).length) {
+                            object.nested_types = {};
                             for (var j = 0; j < keys2.length; ++j)
-                                object.type_map[keys2[j]] = $root.syft_proto.execution.v1.NestedTypeWrapper.toObject(message.type_map[keys2[j]], options);
+                                object.nested_types[keys2[j]] = $root.syft_proto.execution.v1.NestedTypeWrapper.toObject(message.nested_types[keys2[j]], options);
                         }
                         return object;
                     };

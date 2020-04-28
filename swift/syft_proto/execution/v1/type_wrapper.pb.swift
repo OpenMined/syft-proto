@@ -87,7 +87,7 @@ struct SyftProto_Execution_V1_NestedTypeWrapper {
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var typeMap: Dictionary<String,SyftProto_Execution_V1_NestedTypeWrapper> = [:]
+    var nestedTypes: Dictionary<String,SyftProto_Execution_V1_NestedTypeWrapper> = [:]
 
     var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -295,27 +295,27 @@ extension SyftProto_Execution_V1_NestedTypeWrapper.TypeTuple: SwiftProtobuf.Mess
 extension SyftProto_Execution_V1_NestedTypeWrapper.TypeMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = SyftProto_Execution_V1_NestedTypeWrapper.protoMessageName + ".TypeMap"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "type_map"),
+    1: .standard(proto: "nested_types"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Execution_V1_NestedTypeWrapper>.self, value: &self.typeMap)
+      case 1: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Execution_V1_NestedTypeWrapper>.self, value: &self.nestedTypes)
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.typeMap.isEmpty {
-      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Execution_V1_NestedTypeWrapper>.self, value: self.typeMap, fieldNumber: 1)
+    if !self.nestedTypes.isEmpty {
+      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Execution_V1_NestedTypeWrapper>.self, value: self.nestedTypes, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeMap, rhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeMap) -> Bool {
-    if lhs.typeMap != rhs.typeMap {return false}
+    if lhs.nestedTypes != rhs.nestedTypes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

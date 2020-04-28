@@ -2322,37 +2322,37 @@ public final class TypeWrapper {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      int getTypeMapCount();
+      int getNestedTypesCount();
       /**
-       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
        */
-      boolean containsTypeMap(
+      boolean containsNestedTypes(
           java.lang.String key);
       /**
-       * Use {@link #getTypeMapMap()} instead.
+       * Use {@link #getNestedTypesMap()} instead.
        */
       @java.lang.Deprecated
       java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
-      getTypeMap();
+      getNestedTypes();
       /**
-       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
        */
       java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
-      getTypeMapMap();
+      getNestedTypesMap();
       /**
-       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
        */
 
-      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getTypeMapOrDefault(
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypesOrDefault(
           java.lang.String key,
           org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper defaultValue);
       /**
-       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
        */
 
-      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getTypeMapOrThrow(
+      org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypesOrThrow(
           java.lang.String key);
     }
     /**
@@ -2407,15 +2407,15 @@ public final class TypeWrapper {
                 break;
               case 10: {
                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  typeMap_ = com.google.protobuf.MapField.newMapField(
-                      TypeMapDefaultEntryHolder.defaultEntry);
+                  nestedTypes_ = com.google.protobuf.MapField.newMapField(
+                      NestedTypesDefaultEntryHolder.defaultEntry);
                   mutable_bitField0_ |= 0x00000001;
                 }
                 com.google.protobuf.MapEntry<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
-                typeMap__ = input.readMessage(
-                    TypeMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                typeMap_.getMutableMap().put(
-                    typeMap__.getKey(), typeMap__.getValue());
+                nestedTypes__ = input.readMessage(
+                    NestedTypesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                nestedTypes_.getMutableMap().put(
+                    nestedTypes__.getKey(), nestedTypes__.getValue());
                 break;
               }
               default: {
@@ -2448,7 +2448,7 @@ public final class TypeWrapper {
           int number) {
         switch (number) {
           case 1:
-            return internalGetTypeMap();
+            return internalGetNestedTypes();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -2462,76 +2462,76 @@ public final class TypeWrapper {
                 org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.class, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.Builder.class);
       }
 
-      public static final int TYPE_MAP_FIELD_NUMBER = 1;
-      private static final class TypeMapDefaultEntryHolder {
+      public static final int NESTED_TYPES_FIELD_NUMBER = 1;
+      private static final class NestedTypesDefaultEntryHolder {
         static final com.google.protobuf.MapEntry<
             java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> defaultEntry =
                 com.google.protobuf.MapEntry
                 .<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>newDefaultInstance(
-                    org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_TypeMapEntry_descriptor, 
+                    org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_NestedTypesEntry_descriptor, 
                     com.google.protobuf.WireFormat.FieldType.STRING,
                     "",
                     com.google.protobuf.WireFormat.FieldType.MESSAGE,
                     org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance());
       }
       private com.google.protobuf.MapField<
-          java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> typeMap_;
+          java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> nestedTypes_;
       private com.google.protobuf.MapField<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
-      internalGetTypeMap() {
-        if (typeMap_ == null) {
+      internalGetNestedTypes() {
+        if (nestedTypes_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              TypeMapDefaultEntryHolder.defaultEntry);
+              NestedTypesDefaultEntryHolder.defaultEntry);
         }
-        return typeMap_;
+        return nestedTypes_;
       }
 
-      public int getTypeMapCount() {
-        return internalGetTypeMap().getMap().size();
+      public int getNestedTypesCount() {
+        return internalGetNestedTypes().getMap().size();
       }
       /**
-       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
        */
 
-      public boolean containsTypeMap(
+      public boolean containsNestedTypes(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetTypeMap().getMap().containsKey(key);
+        return internalGetNestedTypes().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getTypeMapMap()} instead.
+       * Use {@link #getNestedTypesMap()} instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getTypeMap() {
-        return getTypeMapMap();
+      public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getNestedTypes() {
+        return getNestedTypesMap();
       }
       /**
-       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
        */
 
-      public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getTypeMapMap() {
-        return internalGetTypeMap().getMap();
+      public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getNestedTypesMap() {
+        return internalGetNestedTypes().getMap();
       }
       /**
-       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
        */
 
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getTypeMapOrDefault(
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypesOrDefault(
           java.lang.String key,
           org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper defaultValue) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> map =
-            internalGetTypeMap().getMap();
+            internalGetNestedTypes().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+       * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
        */
 
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getTypeMapOrThrow(
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypesOrThrow(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> map =
-            internalGetTypeMap().getMap();
+            internalGetNestedTypes().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
@@ -2555,8 +2555,8 @@ public final class TypeWrapper {
         com.google.protobuf.GeneratedMessageV3
           .serializeStringMapTo(
             output,
-            internalGetTypeMap(),
-            TypeMapDefaultEntryHolder.defaultEntry,
+            internalGetNestedTypes(),
+            NestedTypesDefaultEntryHolder.defaultEntry,
             1);
         unknownFields.writeTo(output);
       }
@@ -2568,14 +2568,14 @@ public final class TypeWrapper {
 
         size = 0;
         for (java.util.Map.Entry<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> entry
-             : internalGetTypeMap().getMap().entrySet()) {
+             : internalGetNestedTypes().getMap().entrySet()) {
           com.google.protobuf.MapEntry<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
-          typeMap__ = TypeMapDefaultEntryHolder.defaultEntry.newBuilderForType()
+          nestedTypes__ = NestedTypesDefaultEntryHolder.defaultEntry.newBuilderForType()
               .setKey(entry.getKey())
               .setValue(entry.getValue())
               .build();
           size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(1, typeMap__);
+              .computeMessageSize(1, nestedTypes__);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -2592,8 +2592,8 @@ public final class TypeWrapper {
         }
         org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap other = (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap) obj;
 
-        if (!internalGetTypeMap().equals(
-            other.internalGetTypeMap())) return false;
+        if (!internalGetNestedTypes().equals(
+            other.internalGetNestedTypes())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -2605,9 +2605,9 @@ public final class TypeWrapper {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        if (!internalGetTypeMap().getMap().isEmpty()) {
-          hash = (37 * hash) + TYPE_MAP_FIELD_NUMBER;
-          hash = (53 * hash) + internalGetTypeMap().hashCode();
+        if (!internalGetNestedTypes().getMap().isEmpty()) {
+          hash = (37 * hash) + NESTED_TYPES_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetNestedTypes().hashCode();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -2725,7 +2725,7 @@ public final class TypeWrapper {
             int number) {
           switch (number) {
             case 1:
-              return internalGetTypeMap();
+              return internalGetNestedTypes();
             default:
               throw new RuntimeException(
                   "Invalid map field number: " + number);
@@ -2736,7 +2736,7 @@ public final class TypeWrapper {
             int number) {
           switch (number) {
             case 1:
-              return internalGetMutableTypeMap();
+              return internalGetMutableNestedTypes();
             default:
               throw new RuntimeException(
                   "Invalid map field number: " + number);
@@ -2768,7 +2768,7 @@ public final class TypeWrapper {
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          internalGetMutableTypeMap().clear();
+          internalGetMutableNestedTypes().clear();
           return this;
         }
 
@@ -2796,8 +2796,8 @@ public final class TypeWrapper {
         public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap buildPartial() {
           org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap result = new org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap(this);
           int from_bitField0_ = bitField0_;
-          result.typeMap_ = internalGetTypeMap();
-          result.typeMap_.makeImmutable();
+          result.nestedTypes_ = internalGetNestedTypes();
+          result.nestedTypes_.makeImmutable();
           onBuilt();
           return result;
         }
@@ -2846,8 +2846,8 @@ public final class TypeWrapper {
 
         public Builder mergeFrom(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap other) {
           if (other == org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeMap.getDefaultInstance()) return this;
-          internalGetMutableTypeMap().mergeFrom(
-              other.internalGetTypeMap());
+          internalGetMutableNestedTypes().mergeFrom(
+              other.internalGetNestedTypes());
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -2879,94 +2879,94 @@ public final class TypeWrapper {
         private int bitField0_;
 
         private com.google.protobuf.MapField<
-            java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> typeMap_;
+            java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> nestedTypes_;
         private com.google.protobuf.MapField<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
-        internalGetTypeMap() {
-          if (typeMap_ == null) {
+        internalGetNestedTypes() {
+          if (nestedTypes_ == null) {
             return com.google.protobuf.MapField.emptyMapField(
-                TypeMapDefaultEntryHolder.defaultEntry);
+                NestedTypesDefaultEntryHolder.defaultEntry);
           }
-          return typeMap_;
+          return nestedTypes_;
         }
         private com.google.protobuf.MapField<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
-        internalGetMutableTypeMap() {
+        internalGetMutableNestedTypes() {
           onChanged();;
-          if (typeMap_ == null) {
-            typeMap_ = com.google.protobuf.MapField.newMapField(
-                TypeMapDefaultEntryHolder.defaultEntry);
+          if (nestedTypes_ == null) {
+            nestedTypes_ = com.google.protobuf.MapField.newMapField(
+                NestedTypesDefaultEntryHolder.defaultEntry);
           }
-          if (!typeMap_.isMutable()) {
-            typeMap_ = typeMap_.copy();
+          if (!nestedTypes_.isMutable()) {
+            nestedTypes_ = nestedTypes_.copy();
           }
-          return typeMap_;
+          return nestedTypes_;
         }
 
-        public int getTypeMapCount() {
-          return internalGetTypeMap().getMap().size();
+        public int getNestedTypesCount() {
+          return internalGetNestedTypes().getMap().size();
         }
         /**
-         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
          */
 
-        public boolean containsTypeMap(
+        public boolean containsNestedTypes(
             java.lang.String key) {
           if (key == null) { throw new java.lang.NullPointerException(); }
-          return internalGetTypeMap().getMap().containsKey(key);
+          return internalGetNestedTypes().getMap().containsKey(key);
         }
         /**
-         * Use {@link #getTypeMapMap()} instead.
+         * Use {@link #getNestedTypesMap()} instead.
          */
         @java.lang.Deprecated
-        public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getTypeMap() {
-          return getTypeMapMap();
+        public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getNestedTypes() {
+          return getNestedTypesMap();
         }
         /**
-         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
          */
 
-        public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getTypeMapMap() {
-          return internalGetTypeMap().getMap();
+        public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> getNestedTypesMap() {
+          return internalGetNestedTypes().getMap();
         }
         /**
-         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
          */
 
-        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getTypeMapOrDefault(
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypesOrDefault(
             java.lang.String key,
             org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper defaultValue) {
           if (key == null) { throw new java.lang.NullPointerException(); }
           java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> map =
-              internalGetTypeMap().getMap();
+              internalGetNestedTypes().getMap();
           return map.containsKey(key) ? map.get(key) : defaultValue;
         }
         /**
-         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
          */
 
-        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getTypeMapOrThrow(
+        public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getNestedTypesOrThrow(
             java.lang.String key) {
           if (key == null) { throw new java.lang.NullPointerException(); }
           java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> map =
-              internalGetTypeMap().getMap();
+              internalGetNestedTypes().getMap();
           if (!map.containsKey(key)) {
             throw new java.lang.IllegalArgumentException();
           }
           return map.get(key);
         }
 
-        public Builder clearTypeMap() {
-          internalGetMutableTypeMap().getMutableMap()
+        public Builder clearNestedTypes() {
+          internalGetMutableNestedTypes().getMutableMap()
               .clear();
           return this;
         }
         /**
-         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
          */
 
-        public Builder removeTypeMap(
+        public Builder removeNestedTypes(
             java.lang.String key) {
           if (key == null) { throw new java.lang.NullPointerException(); }
-          internalGetMutableTypeMap().getMutableMap()
+          internalGetMutableNestedTypes().getMutableMap()
               .remove(key);
           return this;
         }
@@ -2975,28 +2975,28 @@ public final class TypeWrapper {
          */
         @java.lang.Deprecated
         public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper>
-        getMutableTypeMap() {
-          return internalGetMutableTypeMap().getMutableMap();
+        getMutableNestedTypes() {
+          return internalGetMutableNestedTypes().getMutableMap();
         }
         /**
-         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
          */
-        public Builder putTypeMap(
+        public Builder putNestedTypes(
             java.lang.String key,
             org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
           if (key == null) { throw new java.lang.NullPointerException(); }
           if (value == null) { throw new java.lang.NullPointerException(); }
-          internalGetMutableTypeMap().getMutableMap()
+          internalGetMutableNestedTypes().getMutableMap()
               .put(key, value);
           return this;
         }
         /**
-         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; type_map = 1[json_name = "typeMap"];</code>
+         * <code>map&lt;string, .syft_proto.execution.v1.NestedTypeWrapper&gt; nested_types = 1[json_name = "nestedTypes"];</code>
          */
 
-        public Builder putAllTypeMap(
+        public Builder putAllNestedTypes(
             java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper> values) {
-          internalGetMutableTypeMap().getMutableMap()
+          internalGetMutableNestedTypes().getMutableMap()
               .putAll(values);
           return this;
         }
@@ -5219,10 +5219,10 @@ public final class TypeWrapper {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_TypeMapEntry_descriptor;
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_NestedTypesEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_TypeMapEntry_fieldAccessorTable;
+      internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_NestedTypesEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeContainer_descriptor;
   private static final 
@@ -5239,7 +5239,7 @@ public final class TypeWrapper {
     java.lang.String[] descriptorData = {
       "\n*syft_proto/execution/v1/type_wrapper.p" +
       "roto\022\027syft_proto.execution.v1\"(\n\tClassTy" +
-      "pe\022\033\n\ttype_name\030\001 \001(\tR\010typeName\"\211\007\n\021Nest" +
+      "pe\022\033\n\ttype_name\030\001 \001(\tR\010typeName\"\231\007\n\021Nest" +
       "edTypeWrapper\022[\n\014nested_types\030\001 \001(\01328.sy" +
       "ft_proto.execution.v1.NestedTypeWrapper." +
       "TypeContainerR\013nestedTypes\032Y\n\010TypeList\022M" +
@@ -5247,23 +5247,24 @@ public final class TypeWrapper {
       "ion.v1.NestedTypeWrapperR\013nestedTypes\032Z\n" +
       "\tTypeTuple\022M\n\014nested_types\030\001 \003(\0132*.syft_" +
       "proto.execution.v1.NestedTypeWrapperR\013ne" +
-      "stedTypes\032\315\001\n\007TypeMap\022Z\n\010type_map\030\001 \003(\0132" +
-      "?.syft_proto.execution.v1.NestedTypeWrap" +
-      "per.TypeMap.TypeMapEntryR\007typeMap\032f\n\014Typ" +
-      "eMapEntry\022\020\n\003key\030\001 \001(\tR\003key\022@\n\005value\030\002 \001" +
-      "(\0132*.syft_proto.execution.v1.NestedTypeW" +
-      "rapperR\005value:\0028\001\032\217\003\n\rTypeContainer\022E\n\013n" +
-      "ested_type\030\001 \001(\0132\".syft_proto.execution." +
-      "v1.ClassTypeH\000R\nnestedType\022_\n\020nested_typ" +
-      "e_list\030\002 \001(\01323.syft_proto.execution.v1.N" +
-      "estedTypeWrapper.TypeListH\000R\016nestedTypeL" +
-      "ist\022b\n\021nested_type_tuple\030\003 \001(\01324.syft_pr" +
-      "oto.execution.v1.NestedTypeWrapper.TypeT" +
-      "upleH\000R\017nestedTypeTuple\022^\n\020nested_type_d" +
-      "ict\030\004 \001(\01322.syft_proto.execution.v1.Nest" +
-      "edTypeWrapper.TypeMapH\000R\016nestedTypeDictB" +
-      "\022\n\020nested_containerB&\n$org.openmined.syf" +
-      "tproto.execution.v1b\006proto3"
+      "stedTypes\032\335\001\n\007TypeMap\022f\n\014nested_types\030\001 " +
+      "\003(\0132C.syft_proto.execution.v1.NestedType" +
+      "Wrapper.TypeMap.NestedTypesEntryR\013nested" +
+      "Types\032j\n\020NestedTypesEntry\022\020\n\003key\030\001 \001(\tR\003" +
+      "key\022@\n\005value\030\002 \001(\0132*.syft_proto.executio" +
+      "n.v1.NestedTypeWrapperR\005value:\0028\001\032\217\003\n\rTy" +
+      "peContainer\022E\n\013nested_type\030\001 \001(\0132\".syft_" +
+      "proto.execution.v1.ClassTypeH\000R\nnestedTy" +
+      "pe\022_\n\020nested_type_list\030\002 \001(\01323.syft_prot" +
+      "o.execution.v1.NestedTypeWrapper.TypeLis" +
+      "tH\000R\016nestedTypeList\022b\n\021nested_type_tuple" +
+      "\030\003 \001(\01324.syft_proto.execution.v1.NestedT" +
+      "ypeWrapper.TypeTupleH\000R\017nestedTypeTuple\022" +
+      "^\n\020nested_type_dict\030\004 \001(\01322.syft_proto.e" +
+      "xecution.v1.NestedTypeWrapper.TypeMapH\000R" +
+      "\016nestedTypeDictB\022\n\020nested_containerB&\n$o" +
+      "rg.openmined.syftproto.execution.v1b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5298,12 +5299,12 @@ public final class TypeWrapper {
     internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_descriptor,
-        new java.lang.String[] { "TypeMap", });
-    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_TypeMapEntry_descriptor =
+        new java.lang.String[] { "NestedTypes", });
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_NestedTypesEntry_descriptor =
       internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_descriptor.getNestedTypes().get(0);
-    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_TypeMapEntry_fieldAccessorTable = new
+    internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_NestedTypesEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_TypeMapEntry_descriptor,
+        internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeMap_NestedTypesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_syft_proto_execution_v1_NestedTypeWrapper_TypeContainer_descriptor =
       internal_static_syft_proto_execution_v1_NestedTypeWrapper_descriptor.getNestedTypes().get(3);

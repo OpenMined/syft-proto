@@ -1291,8 +1291,8 @@ export namespace syft_proto {
                 /** Properties of a TypeMap. */
                 interface ITypeMap {
 
-                    /** TypeMap type_map */
-                    type_map?: ({ [k: string]: syft_proto.execution.v1.INestedTypeWrapper }|null);
+                    /** TypeMap nested_types */
+                    nested_types?: ({ [k: string]: syft_proto.execution.v1.INestedTypeWrapper }|null);
                 }
 
                 /** Represents a TypeMap. */
@@ -1304,8 +1304,8 @@ export namespace syft_proto {
                      */
                     constructor(properties?: syft_proto.execution.v1.NestedTypeWrapper.ITypeMap);
 
-                    /** TypeMap type_map. */
-                    public type_map: { [k: string]: syft_proto.execution.v1.INestedTypeWrapper };
+                    /** TypeMap nested_types. */
+                    public nested_types: { [k: string]: syft_proto.execution.v1.INestedTypeWrapper };
 
                     /**
                      * Creates a new TypeMap instance using the specified properties.
