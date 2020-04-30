@@ -24,6 +24,8 @@ struct SyftProto_Execution_V1_CommunicationAction {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var name: String = String()
+
   var objID: SyftProto_Types_Syft_V1_Id {
     get {return _objID ?? SyftProto_Types_Syft_V1_Id()}
     set {_objID = newValue}
@@ -61,41 +63,47 @@ fileprivate let _protobuf_package = "syft_proto.execution.v1"
 extension SyftProto_Execution_V1_CommunicationAction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CommunicationAction"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "obj_id"),
-    2: .same(proto: "source"),
-    3: .same(proto: "destinations"),
-    4: .same(proto: "kwargs"),
+    1: .same(proto: "name"),
+    2: .standard(proto: "obj_id"),
+    3: .same(proto: "source"),
+    4: .same(proto: "destinations"),
+    5: .same(proto: "kwargs"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularMessageField(value: &self._objID)
-      case 2: try decoder.decodeSingularMessageField(value: &self._source)
-      case 3: try decoder.decodeRepeatedMessageField(value: &self.destinations)
-      case 4: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Types_Syft_V1_Arg>.self, value: &self.kwargs)
+      case 1: try decoder.decodeSingularStringField(value: &self.name)
+      case 2: try decoder.decodeSingularMessageField(value: &self._objID)
+      case 3: try decoder.decodeSingularMessageField(value: &self._source)
+      case 4: try decoder.decodeRepeatedMessageField(value: &self.destinations)
+      case 5: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Types_Syft_V1_Arg>.self, value: &self.kwargs)
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._objID {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
-    if let v = self._source {
+    if let v = self._objID {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     }
+    if let v = self._source {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    }
     if !self.destinations.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.destinations, fieldNumber: 3)
+      try visitor.visitRepeatedMessageField(value: self.destinations, fieldNumber: 4)
     }
     if !self.kwargs.isEmpty {
-      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Types_Syft_V1_Arg>.self, value: self.kwargs, fieldNumber: 4)
+      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Types_Syft_V1_Arg>.self, value: self.kwargs, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: SyftProto_Execution_V1_CommunicationAction, rhs: SyftProto_Execution_V1_CommunicationAction) -> Bool {
+    if lhs.name != rhs.name {return false}
     if lhs._objID != rhs._objID {return false}
     if lhs._source != rhs._source {return false}
     if lhs.destinations != rhs.destinations {return false}
