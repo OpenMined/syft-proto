@@ -2720,24 +2720,24 @@ $root.syft_proto = (function() {
                 return StateTensor;
             })();
 
-            v1.ClassType = (function() {
+            v1.InputTypeDescriptor = (function() {
 
                 /**
-                 * Properties of a ClassType.
+                 * Properties of an InputTypeDescriptor.
                  * @memberof syft_proto.execution.v1
-                 * @interface IClassType
-                 * @property {string|null} [type_name] ClassType type_name
+                 * @interface IInputTypeDescriptor
+                 * @property {string|null} [type_name] InputTypeDescriptor type_name
                  */
 
                 /**
-                 * Constructs a new ClassType.
+                 * Constructs a new InputTypeDescriptor.
                  * @memberof syft_proto.execution.v1
-                 * @classdesc Represents a ClassType.
-                 * @implements IClassType
+                 * @classdesc Represents an InputTypeDescriptor.
+                 * @implements IInputTypeDescriptor
                  * @constructor
-                 * @param {syft_proto.execution.v1.IClassType=} [properties] Properties to set
+                 * @param {syft_proto.execution.v1.IInputTypeDescriptor=} [properties] Properties to set
                  */
-                function ClassType(properties) {
+                function InputTypeDescriptor(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -2745,35 +2745,35 @@ $root.syft_proto = (function() {
                 }
 
                 /**
-                 * ClassType type_name.
+                 * InputTypeDescriptor type_name.
                  * @member {string} type_name
-                 * @memberof syft_proto.execution.v1.ClassType
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
                  * @instance
                  */
-                ClassType.prototype.type_name = "";
+                InputTypeDescriptor.prototype.type_name = "";
 
                 /**
-                 * Creates a new ClassType instance using the specified properties.
+                 * Creates a new InputTypeDescriptor instance using the specified properties.
                  * @function create
-                 * @memberof syft_proto.execution.v1.ClassType
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
                  * @static
-                 * @param {syft_proto.execution.v1.IClassType=} [properties] Properties to set
-                 * @returns {syft_proto.execution.v1.ClassType} ClassType instance
+                 * @param {syft_proto.execution.v1.IInputTypeDescriptor=} [properties] Properties to set
+                 * @returns {syft_proto.execution.v1.InputTypeDescriptor} InputTypeDescriptor instance
                  */
-                ClassType.create = function create(properties) {
-                    return new ClassType(properties);
+                InputTypeDescriptor.create = function create(properties) {
+                    return new InputTypeDescriptor(properties);
                 };
 
                 /**
-                 * Encodes the specified ClassType message. Does not implicitly {@link syft_proto.execution.v1.ClassType.verify|verify} messages.
+                 * Encodes the specified InputTypeDescriptor message. Does not implicitly {@link syft_proto.execution.v1.InputTypeDescriptor.verify|verify} messages.
                  * @function encode
-                 * @memberof syft_proto.execution.v1.ClassType
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
                  * @static
-                 * @param {syft_proto.execution.v1.IClassType} message ClassType message or plain object to encode
+                 * @param {syft_proto.execution.v1.IInputTypeDescriptor} message InputTypeDescriptor message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                ClassType.encode = function encode(message, writer) {
+                InputTypeDescriptor.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
                     if (message.type_name != null && message.hasOwnProperty("type_name"))
@@ -2782,33 +2782,33 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Encodes the specified ClassType message, length delimited. Does not implicitly {@link syft_proto.execution.v1.ClassType.verify|verify} messages.
+                 * Encodes the specified InputTypeDescriptor message, length delimited. Does not implicitly {@link syft_proto.execution.v1.InputTypeDescriptor.verify|verify} messages.
                  * @function encodeDelimited
-                 * @memberof syft_proto.execution.v1.ClassType
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
                  * @static
-                 * @param {syft_proto.execution.v1.IClassType} message ClassType message or plain object to encode
+                 * @param {syft_proto.execution.v1.IInputTypeDescriptor} message InputTypeDescriptor message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                ClassType.encodeDelimited = function encodeDelimited(message, writer) {
+                InputTypeDescriptor.encodeDelimited = function encodeDelimited(message, writer) {
                     return this.encode(message, writer).ldelim();
                 };
 
                 /**
-                 * Decodes a ClassType message from the specified reader or buffer.
+                 * Decodes an InputTypeDescriptor message from the specified reader or buffer.
                  * @function decode
-                 * @memberof syft_proto.execution.v1.ClassType
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {syft_proto.execution.v1.ClassType} ClassType
+                 * @returns {syft_proto.execution.v1.InputTypeDescriptor} InputTypeDescriptor
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                ClassType.decode = function decode(reader, length) {
+                InputTypeDescriptor.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.ClassType();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.InputTypeDescriptor();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -2824,30 +2824,30 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Decodes a ClassType message from the specified reader or buffer, length delimited.
+                 * Decodes an InputTypeDescriptor message from the specified reader or buffer, length delimited.
                  * @function decodeDelimited
-                 * @memberof syft_proto.execution.v1.ClassType
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {syft_proto.execution.v1.ClassType} ClassType
+                 * @returns {syft_proto.execution.v1.InputTypeDescriptor} InputTypeDescriptor
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                ClassType.decodeDelimited = function decodeDelimited(reader) {
+                InputTypeDescriptor.decodeDelimited = function decodeDelimited(reader) {
                     if (!(reader instanceof $Reader))
                         reader = new $Reader(reader);
                     return this.decode(reader, reader.uint32());
                 };
 
                 /**
-                 * Verifies a ClassType message.
+                 * Verifies an InputTypeDescriptor message.
                  * @function verify
-                 * @memberof syft_proto.execution.v1.ClassType
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                ClassType.verify = function verify(message) {
+                InputTypeDescriptor.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     if (message.type_name != null && message.hasOwnProperty("type_name"))
@@ -2857,32 +2857,32 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Creates a ClassType message from a plain object. Also converts values to their respective internal types.
+                 * Creates an InputTypeDescriptor message from a plain object. Also converts values to their respective internal types.
                  * @function fromObject
-                 * @memberof syft_proto.execution.v1.ClassType
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
                  * @static
                  * @param {Object.<string,*>} object Plain object
-                 * @returns {syft_proto.execution.v1.ClassType} ClassType
+                 * @returns {syft_proto.execution.v1.InputTypeDescriptor} InputTypeDescriptor
                  */
-                ClassType.fromObject = function fromObject(object) {
-                    if (object instanceof $root.syft_proto.execution.v1.ClassType)
+                InputTypeDescriptor.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.execution.v1.InputTypeDescriptor)
                         return object;
-                    var message = new $root.syft_proto.execution.v1.ClassType();
+                    var message = new $root.syft_proto.execution.v1.InputTypeDescriptor();
                     if (object.type_name != null)
                         message.type_name = String(object.type_name);
                     return message;
                 };
 
                 /**
-                 * Creates a plain object from a ClassType message. Also converts values to other types if specified.
+                 * Creates a plain object from an InputTypeDescriptor message. Also converts values to other types if specified.
                  * @function toObject
-                 * @memberof syft_proto.execution.v1.ClassType
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
                  * @static
-                 * @param {syft_proto.execution.v1.ClassType} message ClassType
+                 * @param {syft_proto.execution.v1.InputTypeDescriptor} message InputTypeDescriptor
                  * @param {$protobuf.IConversionOptions} [options] Conversion options
                  * @returns {Object.<string,*>} Plain object
                  */
-                ClassType.toObject = function toObject(message, options) {
+                InputTypeDescriptor.toObject = function toObject(message, options) {
                     if (!options)
                         options = {};
                     var object = {};
@@ -2894,17 +2894,17 @@ $root.syft_proto = (function() {
                 };
 
                 /**
-                 * Converts this ClassType to JSON.
+                 * Converts this InputTypeDescriptor to JSON.
                  * @function toJSON
-                 * @memberof syft_proto.execution.v1.ClassType
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
                  * @instance
                  * @returns {Object.<string,*>} JSON object
                  */
-                ClassType.prototype.toJSON = function toJSON() {
+                InputTypeDescriptor.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
                 };
 
-                return ClassType;
+                return InputTypeDescriptor;
             })();
 
             v1.NestedTypeWrapper = (function() {
@@ -3733,7 +3733,7 @@ $root.syft_proto = (function() {
                      * Properties of a TypeContainer.
                      * @memberof syft_proto.execution.v1.NestedTypeWrapper
                      * @interface ITypeContainer
-                     * @property {syft_proto.execution.v1.IClassType|null} [nested_type] TypeContainer nested_type
+                     * @property {syft_proto.execution.v1.IInputTypeDescriptor|null} [nested_type] TypeContainer nested_type
                      * @property {syft_proto.execution.v1.NestedTypeWrapper.ITypeList|null} [nested_type_list] TypeContainer nested_type_list
                      * @property {syft_proto.execution.v1.NestedTypeWrapper.ITypeTuple|null} [nested_type_tuple] TypeContainer nested_type_tuple
                      * @property {syft_proto.execution.v1.NestedTypeWrapper.ITypeMap|null} [nested_type_dict] TypeContainer nested_type_dict
@@ -3756,7 +3756,7 @@ $root.syft_proto = (function() {
 
                     /**
                      * TypeContainer nested_type.
-                     * @member {syft_proto.execution.v1.IClassType|null|undefined} nested_type
+                     * @member {syft_proto.execution.v1.IInputTypeDescriptor|null|undefined} nested_type
                      * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
                      * @instance
                      */
@@ -3825,7 +3825,7 @@ $root.syft_proto = (function() {
                         if (!writer)
                             writer = $Writer.create();
                         if (message.nested_type != null && message.hasOwnProperty("nested_type"))
-                            $root.syft_proto.execution.v1.ClassType.encode(message.nested_type, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                            $root.syft_proto.execution.v1.InputTypeDescriptor.encode(message.nested_type, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                         if (message.nested_type_list != null && message.hasOwnProperty("nested_type_list"))
                             $root.syft_proto.execution.v1.NestedTypeWrapper.TypeList.encode(message.nested_type_list, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                         if (message.nested_type_tuple != null && message.hasOwnProperty("nested_type_tuple"))
@@ -3867,7 +3867,7 @@ $root.syft_proto = (function() {
                             var tag = reader.uint32();
                             switch (tag >>> 3) {
                             case 1:
-                                message.nested_type = $root.syft_proto.execution.v1.ClassType.decode(reader, reader.uint32());
+                                message.nested_type = $root.syft_proto.execution.v1.InputTypeDescriptor.decode(reader, reader.uint32());
                                 break;
                             case 2:
                                 message.nested_type_list = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeList.decode(reader, reader.uint32());
@@ -3917,7 +3917,7 @@ $root.syft_proto = (function() {
                         if (message.nested_type != null && message.hasOwnProperty("nested_type")) {
                             properties.nested_container = 1;
                             {
-                                var error = $root.syft_proto.execution.v1.ClassType.verify(message.nested_type);
+                                var error = $root.syft_proto.execution.v1.InputTypeDescriptor.verify(message.nested_type);
                                 if (error)
                                     return "nested_type." + error;
                             }
@@ -3970,7 +3970,7 @@ $root.syft_proto = (function() {
                         if (object.nested_type != null) {
                             if (typeof object.nested_type !== "object")
                                 throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type: object expected");
-                            message.nested_type = $root.syft_proto.execution.v1.ClassType.fromObject(object.nested_type);
+                            message.nested_type = $root.syft_proto.execution.v1.InputTypeDescriptor.fromObject(object.nested_type);
                         }
                         if (object.nested_type_list != null) {
                             if (typeof object.nested_type_list !== "object")
@@ -4004,7 +4004,7 @@ $root.syft_proto = (function() {
                             options = {};
                         var object = {};
                         if (message.nested_type != null && message.hasOwnProperty("nested_type")) {
-                            object.nested_type = $root.syft_proto.execution.v1.ClassType.toObject(message.nested_type, options);
+                            object.nested_type = $root.syft_proto.execution.v1.InputTypeDescriptor.toObject(message.nested_type, options);
                             if (options.oneofs)
                                 object.nested_container = "nested_type";
                         }

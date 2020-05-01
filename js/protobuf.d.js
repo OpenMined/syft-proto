@@ -926,91 +926,91 @@ export namespace syft_proto {
                 public toJSON(): { [k: string]: any };
             }
 
-            /** Properties of a ClassType. */
-            interface IClassType {
+            /** Properties of an InputTypeDescriptor. */
+            interface IInputTypeDescriptor {
 
-                /** ClassType type_name */
+                /** InputTypeDescriptor type_name */
                 type_name?: (string|null);
             }
 
-            /** Represents a ClassType. */
-            class ClassType implements IClassType {
+            /** Represents an InputTypeDescriptor. */
+            class InputTypeDescriptor implements IInputTypeDescriptor {
 
                 /**
-                 * Constructs a new ClassType.
+                 * Constructs a new InputTypeDescriptor.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: syft_proto.execution.v1.IClassType);
+                constructor(properties?: syft_proto.execution.v1.IInputTypeDescriptor);
 
-                /** ClassType type_name. */
+                /** InputTypeDescriptor type_name. */
                 public type_name: string;
 
                 /**
-                 * Creates a new ClassType instance using the specified properties.
+                 * Creates a new InputTypeDescriptor instance using the specified properties.
                  * @param [properties] Properties to set
-                 * @returns ClassType instance
+                 * @returns InputTypeDescriptor instance
                  */
-                public static create(properties?: syft_proto.execution.v1.IClassType): syft_proto.execution.v1.ClassType;
+                public static create(properties?: syft_proto.execution.v1.IInputTypeDescriptor): syft_proto.execution.v1.InputTypeDescriptor;
 
                 /**
-                 * Encodes the specified ClassType message. Does not implicitly {@link syft_proto.execution.v1.ClassType.verify|verify} messages.
-                 * @param message ClassType message or plain object to encode
+                 * Encodes the specified InputTypeDescriptor message. Does not implicitly {@link syft_proto.execution.v1.InputTypeDescriptor.verify|verify} messages.
+                 * @param message InputTypeDescriptor message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: syft_proto.execution.v1.IClassType, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encode(message: syft_proto.execution.v1.IInputTypeDescriptor, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Encodes the specified ClassType message, length delimited. Does not implicitly {@link syft_proto.execution.v1.ClassType.verify|verify} messages.
-                 * @param message ClassType message or plain object to encode
+                 * Encodes the specified InputTypeDescriptor message, length delimited. Does not implicitly {@link syft_proto.execution.v1.InputTypeDescriptor.verify|verify} messages.
+                 * @param message InputTypeDescriptor message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: syft_proto.execution.v1.IClassType, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: syft_proto.execution.v1.IInputTypeDescriptor, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Decodes a ClassType message from the specified reader or buffer.
+                 * Decodes an InputTypeDescriptor message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns ClassType
+                 * @returns InputTypeDescriptor
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.ClassType;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.InputTypeDescriptor;
 
                 /**
-                 * Decodes a ClassType message from the specified reader or buffer, length delimited.
+                 * Decodes an InputTypeDescriptor message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns ClassType
+                 * @returns InputTypeDescriptor
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.ClassType;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.InputTypeDescriptor;
 
                 /**
-                 * Verifies a ClassType message.
+                 * Verifies an InputTypeDescriptor message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
                 public static verify(message: { [k: string]: any }): (string|null);
 
                 /**
-                 * Creates a ClassType message from a plain object. Also converts values to their respective internal types.
+                 * Creates an InputTypeDescriptor message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
-                 * @returns ClassType
+                 * @returns InputTypeDescriptor
                  */
-                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.ClassType;
+                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.InputTypeDescriptor;
 
                 /**
-                 * Creates a plain object from a ClassType message. Also converts values to other types if specified.
-                 * @param message ClassType
+                 * Creates a plain object from an InputTypeDescriptor message. Also converts values to other types if specified.
+                 * @param message InputTypeDescriptor
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: syft_proto.execution.v1.ClassType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public static toObject(message: syft_proto.execution.v1.InputTypeDescriptor, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
-                 * Converts this ClassType to JSON.
+                 * Converts this InputTypeDescriptor to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
@@ -1382,7 +1382,7 @@ export namespace syft_proto {
                 interface ITypeContainer {
 
                     /** TypeContainer nested_type */
-                    nested_type?: (syft_proto.execution.v1.IClassType|null);
+                    nested_type?: (syft_proto.execution.v1.IInputTypeDescriptor|null);
 
                     /** TypeContainer nested_type_list */
                     nested_type_list?: (syft_proto.execution.v1.NestedTypeWrapper.ITypeList|null);
@@ -1404,7 +1404,7 @@ export namespace syft_proto {
                     constructor(properties?: syft_proto.execution.v1.NestedTypeWrapper.ITypeContainer);
 
                     /** TypeContainer nested_type. */
-                    public nested_type?: (syft_proto.execution.v1.IClassType|null);
+                    public nested_type?: (syft_proto.execution.v1.IInputTypeDescriptor|null);
 
                     /** TypeContainer nested_type_list. */
                     public nested_type_list?: (syft_proto.execution.v1.NestedTypeWrapper.ITypeList|null);

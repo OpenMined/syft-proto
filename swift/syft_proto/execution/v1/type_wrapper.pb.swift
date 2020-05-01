@@ -19,7 +19,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct SyftProto_Execution_V1_ClassType {
+struct SyftProto_Execution_V1_InputTypeDescriptor {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -104,10 +104,10 @@ struct SyftProto_Execution_V1_NestedTypeWrapper {
     var nestedContainer: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer.OneOf_NestedContainer? = nil
 
     /// First scenario, acts like a list with one element, the type.
-    var nestedType: SyftProto_Execution_V1_ClassType {
+    var nestedType: SyftProto_Execution_V1_InputTypeDescriptor {
       get {
         if case .nestedType(let v)? = nestedContainer {return v}
-        return SyftProto_Execution_V1_ClassType()
+        return SyftProto_Execution_V1_InputTypeDescriptor()
       }
       set {nestedContainer = .nestedType(newValue)}
     }
@@ -143,7 +143,7 @@ struct SyftProto_Execution_V1_NestedTypeWrapper {
 
     enum OneOf_NestedContainer: Equatable {
       /// First scenario, acts like a list with one element, the type.
-      case nestedType(SyftProto_Execution_V1_ClassType)
+      case nestedType(SyftProto_Execution_V1_InputTypeDescriptor)
       /// Second scenario, a list of possibly nested elements.
       case nestedTypeList(SyftProto_Execution_V1_NestedTypeWrapper.TypeList)
       /// Third scenario, a tuple of possibly nested elements.
@@ -176,8 +176,8 @@ struct SyftProto_Execution_V1_NestedTypeWrapper {
 
 fileprivate let _protobuf_package = "syft_proto.execution.v1"
 
-extension SyftProto_Execution_V1_ClassType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ClassType"
+extension SyftProto_Execution_V1_InputTypeDescriptor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".InputTypeDescriptor"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "type_name"),
   ]
@@ -198,7 +198,7 @@ extension SyftProto_Execution_V1_ClassType: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Execution_V1_ClassType, rhs: SyftProto_Execution_V1_ClassType) -> Bool {
+  static func ==(lhs: SyftProto_Execution_V1_InputTypeDescriptor, rhs: SyftProto_Execution_V1_InputTypeDescriptor) -> Bool {
     if lhs.typeName != rhs.typeName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -334,7 +334,7 @@ extension SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer: SwiftProtobuf.
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1:
-        var v: SyftProto_Execution_V1_ClassType?
+        var v: SyftProto_Execution_V1_InputTypeDescriptor?
         if let current = self.nestedContainer {
           try decoder.handleConflictingOneOf()
           if case .nestedType(let m) = current {v = m}

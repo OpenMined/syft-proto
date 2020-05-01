@@ -3,7 +3,7 @@ syntax = "proto3";
 package syft_proto.execution.v1;
 option java_package = "org.openmined.syftproto.execution.v1";
 
-message ClassType {
+message InputTypeDescriptor {
     /*
         A type contains the serialization id and string bytes.
     */
@@ -39,7 +39,7 @@ message NestedTypeWrapper {
     message TypeContainer {
         oneof nested_container {
             // First scenario, acts like a list with one element, the type.
-            ClassType nested_type = 1;
+            InputTypeDescriptor nested_type = 1;
 
             // Second scenario, a list of possibly nested elements.
             TypeList nested_type_list = 2;

@@ -14,8 +14,8 @@ public final class TypeWrapper {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface ClassTypeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:syft_proto.execution.v1.ClassType)
+  public interface InputTypeDescriptorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:syft_proto.execution.v1.InputTypeDescriptor)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -39,18 +39,18 @@ public final class TypeWrapper {
         getTypeNameBytes();
   }
   /**
-   * Protobuf type {@code syft_proto.execution.v1.ClassType}
+   * Protobuf type {@code syft_proto.execution.v1.InputTypeDescriptor}
    */
-  public  static final class ClassType extends
+  public  static final class InputTypeDescriptor extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.ClassType)
-      ClassTypeOrBuilder {
+      // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.InputTypeDescriptor)
+      InputTypeDescriptorOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ClassType.newBuilder() to construct.
-    private ClassType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use InputTypeDescriptor.newBuilder() to construct.
+    private InputTypeDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ClassType() {
+    private InputTypeDescriptor() {
       typeName_ = "";
     }
 
@@ -58,7 +58,7 @@ public final class TypeWrapper {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ClassType();
+      return new InputTypeDescriptor();
     }
 
     @java.lang.Override
@@ -66,7 +66,7 @@ public final class TypeWrapper {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ClassType(
+    private InputTypeDescriptor(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -111,15 +111,15 @@ public final class TypeWrapper {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_ClassType_descriptor;
+      return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_InputTypeDescriptor_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_ClassType_fieldAccessorTable
+      return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_InputTypeDescriptor_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.class, org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder.class);
+              org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.class, org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.Builder.class);
     }
 
     public static final int TYPE_NAME_FIELD_NUMBER = 1;
@@ -205,10 +205,10 @@ public final class TypeWrapper {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.openmined.syftproto.execution.v1.TypeWrapper.ClassType)) {
+      if (!(obj instanceof org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor)) {
         return super.equals(obj);
       }
-      org.openmined.syftproto.execution.v1.TypeWrapper.ClassType other = (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) obj;
+      org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor other = (org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) obj;
 
       if (!getTypeName()
           .equals(other.getTypeName())) return false;
@@ -230,69 +230,69 @@ public final class TypeWrapper {
       return hash;
     }
 
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(byte[] data)
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(java.io.InputStream input)
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseDelimitedFrom(java.io.InputStream input)
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseDelimitedFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parseFrom(
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -305,7 +305,7 @@ public final class TypeWrapper {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.openmined.syftproto.execution.v1.TypeWrapper.ClassType prototype) {
+    public static Builder newBuilder(org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -321,26 +321,26 @@ public final class TypeWrapper {
       return builder;
     }
     /**
-     * Protobuf type {@code syft_proto.execution.v1.ClassType}
+     * Protobuf type {@code syft_proto.execution.v1.InputTypeDescriptor}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:syft_proto.execution.v1.ClassType)
-        org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder {
+        // @@protoc_insertion_point(builder_implements:syft_proto.execution.v1.InputTypeDescriptor)
+        org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptorOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_ClassType_descriptor;
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_InputTypeDescriptor_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_ClassType_fieldAccessorTable
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_InputTypeDescriptor_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.class, org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder.class);
+                org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.class, org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.Builder.class);
       }
 
-      // Construct using org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.newBuilder()
+      // Construct using org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -366,17 +366,17 @@ public final class TypeWrapper {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_ClassType_descriptor;
+        return org.openmined.syftproto.execution.v1.TypeWrapper.internal_static_syft_proto_execution_v1_InputTypeDescriptor_descriptor;
       }
 
       @java.lang.Override
-      public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType getDefaultInstanceForType() {
-        return org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+      public org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor getDefaultInstanceForType() {
+        return org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType build() {
-        org.openmined.syftproto.execution.v1.TypeWrapper.ClassType result = buildPartial();
+      public org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor build() {
+        org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -384,8 +384,8 @@ public final class TypeWrapper {
       }
 
       @java.lang.Override
-      public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType buildPartial() {
-        org.openmined.syftproto.execution.v1.TypeWrapper.ClassType result = new org.openmined.syftproto.execution.v1.TypeWrapper.ClassType(this);
+      public org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor buildPartial() {
+        org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor result = new org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor(this);
         result.typeName_ = typeName_;
         onBuilt();
         return result;
@@ -425,16 +425,16 @@ public final class TypeWrapper {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) {
-          return mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.ClassType)other);
+        if (other instanceof org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) {
+          return mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.openmined.syftproto.execution.v1.TypeWrapper.ClassType other) {
-        if (other == org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor other) {
+        if (other == org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.getDefaultInstance()) return this;
         if (!other.getTypeName().isEmpty()) {
           typeName_ = other.typeName_;
           onChanged();
@@ -454,11 +454,11 @@ public final class TypeWrapper {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.openmined.syftproto.execution.v1.TypeWrapper.ClassType parsedMessage = null;
+        org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) e.getUnfinishedMessage();
+          parsedMessage = (org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -576,41 +576,41 @@ public final class TypeWrapper {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:syft_proto.execution.v1.ClassType)
+      // @@protoc_insertion_point(builder_scope:syft_proto.execution.v1.InputTypeDescriptor)
     }
 
-    // @@protoc_insertion_point(class_scope:syft_proto.execution.v1.ClassType)
-    private static final org.openmined.syftproto.execution.v1.TypeWrapper.ClassType DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:syft_proto.execution.v1.InputTypeDescriptor)
+    private static final org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.openmined.syftproto.execution.v1.TypeWrapper.ClassType();
+      DEFAULT_INSTANCE = new org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor();
     }
 
-    public static org.openmined.syftproto.execution.v1.TypeWrapper.ClassType getDefaultInstance() {
+    public static org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ClassType>
-        PARSER = new com.google.protobuf.AbstractParser<ClassType>() {
+    private static final com.google.protobuf.Parser<InputTypeDescriptor>
+        PARSER = new com.google.protobuf.AbstractParser<InputTypeDescriptor>() {
       @java.lang.Override
-      public ClassType parsePartialFrom(
+      public InputTypeDescriptor parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClassType(input, extensionRegistry);
+        return new InputTypeDescriptor(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ClassType> parser() {
+    public static com.google.protobuf.Parser<InputTypeDescriptor> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ClassType> getParserForType() {
+    public com.google.protobuf.Parser<InputTypeDescriptor> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType getDefaultInstanceForType() {
+    public org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3062,7 +3062,7 @@ public final class TypeWrapper {
        * First scenario, acts like a list with one element, the type.
        * </pre>
        *
-       * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
        * @return Whether the nestedType field is set.
        */
       boolean hasNestedType();
@@ -3071,18 +3071,18 @@ public final class TypeWrapper {
        * First scenario, acts like a list with one element, the type.
        * </pre>
        *
-       * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
        * @return The nestedType.
        */
-      org.openmined.syftproto.execution.v1.TypeWrapper.ClassType getNestedType();
+      org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor getNestedType();
       /**
        * <pre>
        * First scenario, acts like a list with one element, the type.
        * </pre>
        *
-       * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
        */
-      org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder getNestedTypeOrBuilder();
+      org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptorOrBuilder getNestedTypeOrBuilder();
 
       /**
        * <pre>
@@ -3218,14 +3218,14 @@ public final class TypeWrapper {
                 done = true;
                 break;
               case 10: {
-                org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder subBuilder = null;
+                org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.Builder subBuilder = null;
                 if (nestedContainerCase_ == 1) {
-                  subBuilder = ((org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_).toBuilder();
+                  subBuilder = ((org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) nestedContainer_).toBuilder();
                 }
                 nestedContainer_ =
-                    input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.parser(), extensionRegistry);
+                    input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.parser(), extensionRegistry);
                 if (subBuilder != null) {
-                  subBuilder.mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_);
+                  subBuilder.mergeFrom((org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) nestedContainer_);
                   nestedContainer_ = subBuilder.buildPartial();
                 }
                 nestedContainerCase_ = 1;
@@ -3356,7 +3356,7 @@ public final class TypeWrapper {
        * First scenario, acts like a list with one element, the type.
        * </pre>
        *
-       * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
        * @return Whether the nestedType field is set.
        */
       public boolean hasNestedType() {
@@ -3367,27 +3367,27 @@ public final class TypeWrapper {
        * First scenario, acts like a list with one element, the type.
        * </pre>
        *
-       * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
        * @return The nestedType.
        */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType getNestedType() {
+      public org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor getNestedType() {
         if (nestedContainerCase_ == 1) {
-           return (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_;
+           return (org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) nestedContainer_;
         }
-        return org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+        return org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.getDefaultInstance();
       }
       /**
        * <pre>
        * First scenario, acts like a list with one element, the type.
        * </pre>
        *
-       * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+       * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
        */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder getNestedTypeOrBuilder() {
+      public org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptorOrBuilder getNestedTypeOrBuilder() {
         if (nestedContainerCase_ == 1) {
-           return (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_;
+           return (org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) nestedContainer_;
         }
-        return org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+        return org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.getDefaultInstance();
       }
 
       public static final int NESTED_TYPE_LIST_FIELD_NUMBER = 2;
@@ -3525,7 +3525,7 @@ public final class TypeWrapper {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (nestedContainerCase_ == 1) {
-          output.writeMessage(1, (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_);
+          output.writeMessage(1, (org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) nestedContainer_);
         }
         if (nestedContainerCase_ == 2) {
           output.writeMessage(2, (org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.TypeList) nestedContainer_);
@@ -3547,7 +3547,7 @@ public final class TypeWrapper {
         size = 0;
         if (nestedContainerCase_ == 1) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_);
+            .computeMessageSize(1, (org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) nestedContainer_);
         }
         if (nestedContainerCase_ == 2) {
           size += com.google.protobuf.CodedOutputStream
@@ -3937,13 +3937,13 @@ public final class TypeWrapper {
 
 
         private com.google.protobuf.SingleFieldBuilderV3<
-            org.openmined.syftproto.execution.v1.TypeWrapper.ClassType, org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder> nestedTypeBuilder_;
+            org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor, org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptorOrBuilder> nestedTypeBuilder_;
         /**
          * <pre>
          * First scenario, acts like a list with one element, the type.
          * </pre>
          *
-         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
          * @return Whether the nestedType field is set.
          */
         public boolean hasNestedType() {
@@ -3954,20 +3954,20 @@ public final class TypeWrapper {
          * First scenario, acts like a list with one element, the type.
          * </pre>
          *
-         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
          * @return The nestedType.
          */
-        public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType getNestedType() {
+        public org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor getNestedType() {
           if (nestedTypeBuilder_ == null) {
             if (nestedContainerCase_ == 1) {
-              return (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_;
+              return (org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) nestedContainer_;
             }
-            return org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+            return org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.getDefaultInstance();
           } else {
             if (nestedContainerCase_ == 1) {
               return nestedTypeBuilder_.getMessage();
             }
-            return org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+            return org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.getDefaultInstance();
           }
         }
         /**
@@ -3975,9 +3975,9 @@ public final class TypeWrapper {
          * First scenario, acts like a list with one element, the type.
          * </pre>
          *
-         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
          */
-        public Builder setNestedType(org.openmined.syftproto.execution.v1.TypeWrapper.ClassType value) {
+        public Builder setNestedType(org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor value) {
           if (nestedTypeBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -3995,10 +3995,10 @@ public final class TypeWrapper {
          * First scenario, acts like a list with one element, the type.
          * </pre>
          *
-         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
          */
         public Builder setNestedType(
-            org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder builderForValue) {
+            org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.Builder builderForValue) {
           if (nestedTypeBuilder_ == null) {
             nestedContainer_ = builderForValue.build();
             onChanged();
@@ -4013,13 +4013,13 @@ public final class TypeWrapper {
          * First scenario, acts like a list with one element, the type.
          * </pre>
          *
-         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
          */
-        public Builder mergeNestedType(org.openmined.syftproto.execution.v1.TypeWrapper.ClassType value) {
+        public Builder mergeNestedType(org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor value) {
           if (nestedTypeBuilder_ == null) {
             if (nestedContainerCase_ == 1 &&
-                nestedContainer_ != org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance()) {
-              nestedContainer_ = org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.newBuilder((org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_)
+                nestedContainer_ != org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.getDefaultInstance()) {
+              nestedContainer_ = org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.newBuilder((org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) nestedContainer_)
                   .mergeFrom(value).buildPartial();
             } else {
               nestedContainer_ = value;
@@ -4039,7 +4039,7 @@ public final class TypeWrapper {
          * First scenario, acts like a list with one element, the type.
          * </pre>
          *
-         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
          */
         public Builder clearNestedType() {
           if (nestedTypeBuilder_ == null) {
@@ -4062,9 +4062,9 @@ public final class TypeWrapper {
          * First scenario, acts like a list with one element, the type.
          * </pre>
          *
-         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
          */
-        public org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder getNestedTypeBuilder() {
+        public org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.Builder getNestedTypeBuilder() {
           return getNestedTypeFieldBuilder().getBuilder();
         }
         /**
@@ -4072,16 +4072,16 @@ public final class TypeWrapper {
          * First scenario, acts like a list with one element, the type.
          * </pre>
          *
-         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
          */
-        public org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder getNestedTypeOrBuilder() {
+        public org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptorOrBuilder getNestedTypeOrBuilder() {
           if ((nestedContainerCase_ == 1) && (nestedTypeBuilder_ != null)) {
             return nestedTypeBuilder_.getMessageOrBuilder();
           } else {
             if (nestedContainerCase_ == 1) {
-              return (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_;
+              return (org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) nestedContainer_;
             }
-            return org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+            return org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.getDefaultInstance();
           }
         }
         /**
@@ -4089,18 +4089,18 @@ public final class TypeWrapper {
          * First scenario, acts like a list with one element, the type.
          * </pre>
          *
-         * <code>.syft_proto.execution.v1.ClassType nested_type = 1[json_name = "nestedType"];</code>
+         * <code>.syft_proto.execution.v1.InputTypeDescriptor nested_type = 1[json_name = "nestedType"];</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-            org.openmined.syftproto.execution.v1.TypeWrapper.ClassType, org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder> 
+            org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor, org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptorOrBuilder> 
             getNestedTypeFieldBuilder() {
           if (nestedTypeBuilder_ == null) {
             if (!(nestedContainerCase_ == 1)) {
-              nestedContainer_ = org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.getDefaultInstance();
+              nestedContainer_ = org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.getDefaultInstance();
             }
             nestedTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                org.openmined.syftproto.execution.v1.TypeWrapper.ClassType, org.openmined.syftproto.execution.v1.TypeWrapper.ClassType.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.ClassTypeOrBuilder>(
-                    (org.openmined.syftproto.execution.v1.TypeWrapper.ClassType) nestedContainer_,
+                org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor, org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptorOrBuilder>(
+                    (org.openmined.syftproto.execution.v1.TypeWrapper.InputTypeDescriptor) nestedContainer_,
                     getParentForChildren(),
                     isClean());
             nestedContainer_ = null;
@@ -5194,10 +5194,10 @@ public final class TypeWrapper {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_syft_proto_execution_v1_ClassType_descriptor;
+    internal_static_syft_proto_execution_v1_InputTypeDescriptor_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_syft_proto_execution_v1_ClassType_fieldAccessorTable;
+      internal_static_syft_proto_execution_v1_InputTypeDescriptor_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_syft_proto_execution_v1_NestedTypeWrapper_descriptor;
   private static final 
@@ -5238,43 +5238,43 @@ public final class TypeWrapper {
   static {
     java.lang.String[] descriptorData = {
       "\n*syft_proto/execution/v1/type_wrapper.p" +
-      "roto\022\027syft_proto.execution.v1\"(\n\tClassTy" +
-      "pe\022\033\n\ttype_name\030\001 \001(\tR\010typeName\"\231\007\n\021Nest" +
-      "edTypeWrapper\022[\n\014nested_types\030\001 \001(\01328.sy" +
-      "ft_proto.execution.v1.NestedTypeWrapper." +
-      "TypeContainerR\013nestedTypes\032Y\n\010TypeList\022M" +
-      "\n\014nested_types\030\001 \003(\0132*.syft_proto.execut" +
-      "ion.v1.NestedTypeWrapperR\013nestedTypes\032Z\n" +
-      "\tTypeTuple\022M\n\014nested_types\030\001 \003(\0132*.syft_" +
-      "proto.execution.v1.NestedTypeWrapperR\013ne" +
-      "stedTypes\032\335\001\n\007TypeMap\022f\n\014nested_types\030\001 " +
-      "\003(\0132C.syft_proto.execution.v1.NestedType" +
-      "Wrapper.TypeMap.NestedTypesEntryR\013nested" +
-      "Types\032j\n\020NestedTypesEntry\022\020\n\003key\030\001 \001(\tR\003" +
-      "key\022@\n\005value\030\002 \001(\0132*.syft_proto.executio" +
-      "n.v1.NestedTypeWrapperR\005value:\0028\001\032\217\003\n\rTy" +
-      "peContainer\022E\n\013nested_type\030\001 \001(\0132\".syft_" +
-      "proto.execution.v1.ClassTypeH\000R\nnestedTy" +
-      "pe\022_\n\020nested_type_list\030\002 \001(\01323.syft_prot" +
-      "o.execution.v1.NestedTypeWrapper.TypeLis" +
-      "tH\000R\016nestedTypeList\022b\n\021nested_type_tuple" +
-      "\030\003 \001(\01324.syft_proto.execution.v1.NestedT" +
-      "ypeWrapper.TypeTupleH\000R\017nestedTypeTuple\022" +
-      "^\n\020nested_type_dict\030\004 \001(\01322.syft_proto.e" +
-      "xecution.v1.NestedTypeWrapper.TypeMapH\000R" +
-      "\016nestedTypeDictB\022\n\020nested_containerB&\n$o" +
-      "rg.openmined.syftproto.execution.v1b\006pro" +
-      "to3"
+      "roto\022\027syft_proto.execution.v1\"2\n\023InputTy" +
+      "peDescriptor\022\033\n\ttype_name\030\001 \001(\tR\010typeNam" +
+      "e\"\243\007\n\021NestedTypeWrapper\022[\n\014nested_types\030" +
+      "\001 \001(\01328.syft_proto.execution.v1.NestedTy" +
+      "peWrapper.TypeContainerR\013nestedTypes\032Y\n\010" +
+      "TypeList\022M\n\014nested_types\030\001 \003(\0132*.syft_pr" +
+      "oto.execution.v1.NestedTypeWrapperR\013nest" +
+      "edTypes\032Z\n\tTypeTuple\022M\n\014nested_types\030\001 \003" +
+      "(\0132*.syft_proto.execution.v1.NestedTypeW" +
+      "rapperR\013nestedTypes\032\335\001\n\007TypeMap\022f\n\014neste" +
+      "d_types\030\001 \003(\0132C.syft_proto.execution.v1." +
+      "NestedTypeWrapper.TypeMap.NestedTypesEnt" +
+      "ryR\013nestedTypes\032j\n\020NestedTypesEntry\022\020\n\003k" +
+      "ey\030\001 \001(\tR\003key\022@\n\005value\030\002 \001(\0132*.syft_prot" +
+      "o.execution.v1.NestedTypeWrapperR\005value:" +
+      "\0028\001\032\231\003\n\rTypeContainer\022O\n\013nested_type\030\001 \001" +
+      "(\0132,.syft_proto.execution.v1.InputTypeDe" +
+      "scriptorH\000R\nnestedType\022_\n\020nested_type_li" +
+      "st\030\002 \001(\01323.syft_proto.execution.v1.Neste" +
+      "dTypeWrapper.TypeListH\000R\016nestedTypeList\022" +
+      "b\n\021nested_type_tuple\030\003 \001(\01324.syft_proto." +
+      "execution.v1.NestedTypeWrapper.TypeTuple" +
+      "H\000R\017nestedTypeTuple\022^\n\020nested_type_dict\030" +
+      "\004 \001(\01322.syft_proto.execution.v1.NestedTy" +
+      "peWrapper.TypeMapH\000R\016nestedTypeDictB\022\n\020n" +
+      "ested_containerB&\n$org.openmined.syftpro" +
+      "to.execution.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_syft_proto_execution_v1_ClassType_descriptor =
+    internal_static_syft_proto_execution_v1_InputTypeDescriptor_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_syft_proto_execution_v1_ClassType_fieldAccessorTable = new
+    internal_static_syft_proto_execution_v1_InputTypeDescriptor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_syft_proto_execution_v1_ClassType_descriptor,
+        internal_static_syft_proto_execution_v1_InputTypeDescriptor_descriptor,
         new java.lang.String[] { "TypeName", });
     internal_static_syft_proto_execution_v1_NestedTypeWrapper_descriptor =
       getDescriptor().getMessageTypes().get(1);
