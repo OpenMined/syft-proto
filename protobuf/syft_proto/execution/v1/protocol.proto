@@ -13,7 +13,6 @@ message Protocol {
     repeated string input_repartition = 4;
     repeated string output_repartition = 5;
     bool include_state = 6;
-    bool is_built = 7;
-    repeated string tags = 8;
-    string description = 9;
+    repeated string tags = 7;
+    string description = 8;
 }
