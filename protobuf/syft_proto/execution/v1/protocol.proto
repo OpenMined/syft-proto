@@ -10,8 +10,6 @@ message Protocol {
     syft_proto.types.syft.v1.Id id = 1;
     string name = 2;
     map<string, syft_proto.execution.v1.Role> roles = 3;
-    repeated string input_repartition = 4;
-    repeated string output_repartition = 5;
-    repeated string tags = 6;
-    string description = 7;
+    repeated string tags = 4;
+    string description = 5;
 }
