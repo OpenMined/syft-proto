@@ -12,7 +12,6 @@ message Protocol {
     map<string, syft_proto.execution.v1.Role> roles = 3;
     repeated string input_repartition = 4;
     repeated string output_repartition = 5;
-    bool include_state = 6;
-    repeated string tags = 7;
-    string description = 8;
+    repeated string tags = 6;
+    string description = 7;
 }
