@@ -55,42 +55,36 @@ public final class PlanOuterClass {
     boolean getIncludeState();
 
     /**
-     * <code>bool is_built = 4[json_name = "isBuilt"];</code>
-     * @return The isBuilt.
-     */
-    boolean getIsBuilt();
-
-    /**
-     * <code>string name = 5[json_name = "name"];</code>
+     * <code>string name = 4[json_name = "name"];</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>string name = 5[json_name = "name"];</code>
+     * <code>string name = 4[json_name = "name"];</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @return The count of tags.
      */
     int getTagsCount();
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @param index The index of the element to return.
      * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the tags at the given index.
      */
@@ -98,19 +92,19 @@ public final class PlanOuterClass {
         getTagsBytes(int index);
 
     /**
-     * <code>string description = 7[json_name = "description"];</code>
+     * <code>string description = 6[json_name = "description"];</code>
      * @return The description.
      */
     java.lang.String getDescription();
     /**
-     * <code>string description = 7[json_name = "description"];</code>
+     * <code>string description = 6[json_name = "description"];</code>
      * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
-     * <code>bytes torchscript = 8[json_name = "torchscript"];</code>
+     * <code>bytes torchscript = 7[json_name = "torchscript"];</code>
      * @return The torchscript.
      */
     com.google.protobuf.ByteString getTorchscript();
@@ -196,18 +190,13 @@ public final class PlanOuterClass {
               includeState_ = input.readBool();
               break;
             }
-            case 32: {
-
-              isBuilt_ = input.readBool();
-              break;
-            }
-            case 42: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
               break;
             }
-            case 50: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
@@ -216,13 +205,13 @@ public final class PlanOuterClass {
               tags_.add(s);
               break;
             }
-            case 58: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-            case 66: {
+            case 58: {
 
               torchscript_ = input.readBytes();
               break;
@@ -318,20 +307,10 @@ public final class PlanOuterClass {
       return includeState_;
     }
 
-    public static final int IS_BUILT_FIELD_NUMBER = 4;
-    private boolean isBuilt_;
-    /**
-     * <code>bool is_built = 4[json_name = "isBuilt"];</code>
-     * @return The isBuilt.
-     */
-    public boolean getIsBuilt() {
-      return isBuilt_;
-    }
-
-    public static final int NAME_FIELD_NUMBER = 5;
+    public static final int NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object name_;
     /**
-     * <code>string name = 5[json_name = "name"];</code>
+     * <code>string name = 4[json_name = "name"];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -347,7 +326,7 @@ public final class PlanOuterClass {
       }
     }
     /**
-     * <code>string name = 5[json_name = "name"];</code>
+     * <code>string name = 4[json_name = "name"];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -364,10 +343,10 @@ public final class PlanOuterClass {
       }
     }
 
-    public static final int TAGS_FIELD_NUMBER = 6;
+    public static final int TAGS_FIELD_NUMBER = 5;
     private com.google.protobuf.LazyStringList tags_;
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
@@ -375,14 +354,14 @@ public final class PlanOuterClass {
       return tags_;
     }
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @param index The index of the element to return.
      * @return The tags at the given index.
      */
@@ -390,7 +369,7 @@ public final class PlanOuterClass {
       return tags_.get(index);
     }
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the tags at the given index.
      */
@@ -399,10 +378,10 @@ public final class PlanOuterClass {
       return tags_.getByteString(index);
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 7;
+    public static final int DESCRIPTION_FIELD_NUMBER = 6;
     private volatile java.lang.Object description_;
     /**
-     * <code>string description = 7[json_name = "description"];</code>
+     * <code>string description = 6[json_name = "description"];</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -418,7 +397,7 @@ public final class PlanOuterClass {
       }
     }
     /**
-     * <code>string description = 7[json_name = "description"];</code>
+     * <code>string description = 6[json_name = "description"];</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -435,10 +414,10 @@ public final class PlanOuterClass {
       }
     }
 
-    public static final int TORCHSCRIPT_FIELD_NUMBER = 8;
+    public static final int TORCHSCRIPT_FIELD_NUMBER = 7;
     private com.google.protobuf.ByteString torchscript_;
     /**
-     * <code>bytes torchscript = 8[json_name = "torchscript"];</code>
+     * <code>bytes torchscript = 7[json_name = "torchscript"];</code>
      * @return The torchscript.
      */
     public com.google.protobuf.ByteString getTorchscript() {
@@ -468,20 +447,17 @@ public final class PlanOuterClass {
       if (includeState_ != false) {
         output.writeBool(3, includeState_);
       }
-      if (isBuilt_ != false) {
-        output.writeBool(4, isBuilt_);
-      }
       if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
       }
       for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tags_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tags_.getRaw(i));
       }
       if (!getDescriptionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
       }
       if (!torchscript_.isEmpty()) {
-        output.writeBytes(8, torchscript_);
+        output.writeBytes(7, torchscript_);
       }
       unknownFields.writeTo(output);
     }
@@ -504,12 +480,8 @@ public final class PlanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, includeState_);
       }
-      if (isBuilt_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isBuilt_);
-      }
       if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
       {
         int dataSize = 0;
@@ -520,11 +492,11 @@ public final class PlanOuterClass {
         size += 1 * getTagsList().size();
       }
       if (!getDescriptionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
       }
       if (!torchscript_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(8, torchscript_);
+          .computeBytesSize(7, torchscript_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -553,8 +525,6 @@ public final class PlanOuterClass {
       }
       if (getIncludeState()
           != other.getIncludeState()) return false;
-      if (getIsBuilt()
-          != other.getIsBuilt()) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (!getTagsList()
@@ -585,9 +555,6 @@ public final class PlanOuterClass {
       hash = (37 * hash) + INCLUDE_STATE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIncludeState());
-      hash = (37 * hash) + IS_BUILT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsBuilt());
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       if (getTagsCount() > 0) {
@@ -745,8 +712,6 @@ public final class PlanOuterClass {
         }
         includeState_ = false;
 
-        isBuilt_ = false;
-
         name_ = "";
 
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -793,7 +758,6 @@ public final class PlanOuterClass {
           result.role_ = roleBuilder_.build();
         }
         result.includeState_ = includeState_;
-        result.isBuilt_ = isBuilt_;
         result.name_ = name_;
         if (((bitField0_ & 0x00000001) != 0)) {
           tags_ = tags_.getUnmodifiableView();
@@ -858,9 +822,6 @@ public final class PlanOuterClass {
         }
         if (other.getIncludeState() != false) {
           setIncludeState(other.getIncludeState());
-        }
-        if (other.getIsBuilt() != false) {
-          setIsBuilt(other.getIsBuilt());
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
@@ -1181,39 +1142,9 @@ public final class PlanOuterClass {
         return this;
       }
 
-      private boolean isBuilt_ ;
-      /**
-       * <code>bool is_built = 4[json_name = "isBuilt"];</code>
-       * @return The isBuilt.
-       */
-      public boolean getIsBuilt() {
-        return isBuilt_;
-      }
-      /**
-       * <code>bool is_built = 4[json_name = "isBuilt"];</code>
-       * @param value The isBuilt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsBuilt(boolean value) {
-        
-        isBuilt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_built = 4[json_name = "isBuilt"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsBuilt() {
-        
-        isBuilt_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object name_ = "";
       /**
-       * <code>string name = 5[json_name = "name"];</code>
+       * <code>string name = 4[json_name = "name"];</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -1229,7 +1160,7 @@ public final class PlanOuterClass {
         }
       }
       /**
-       * <code>string name = 5[json_name = "name"];</code>
+       * <code>string name = 4[json_name = "name"];</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -1246,7 +1177,7 @@ public final class PlanOuterClass {
         }
       }
       /**
-       * <code>string name = 5[json_name = "name"];</code>
+       * <code>string name = 4[json_name = "name"];</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -1261,7 +1192,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>string name = 5[json_name = "name"];</code>
+       * <code>string name = 4[json_name = "name"];</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -1271,7 +1202,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>string name = 5[json_name = "name"];</code>
+       * <code>string name = 4[json_name = "name"];</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -1295,7 +1226,7 @@ public final class PlanOuterClass {
          }
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
@@ -1303,14 +1234,14 @@ public final class PlanOuterClass {
         return tags_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @param index The index of the element to return.
        * @return The tags at the given index.
        */
@@ -1318,7 +1249,7 @@ public final class PlanOuterClass {
         return tags_.get(index);
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @param index The index of the value to return.
        * @return The bytes of the tags at the given index.
        */
@@ -1327,7 +1258,7 @@ public final class PlanOuterClass {
         return tags_.getByteString(index);
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @param index The index to set the value at.
        * @param value The tags to set.
        * @return This builder for chaining.
@@ -1343,7 +1274,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @param value The tags to add.
        * @return This builder for chaining.
        */
@@ -1358,7 +1289,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @param values The tags to add.
        * @return This builder for chaining.
        */
@@ -1371,7 +1302,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTags() {
@@ -1381,7 +1312,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @param value The bytes of the tags to add.
        * @return This builder for chaining.
        */
@@ -1399,7 +1330,7 @@ public final class PlanOuterClass {
 
       private java.lang.Object description_ = "";
       /**
-       * <code>string description = 7[json_name = "description"];</code>
+       * <code>string description = 6[json_name = "description"];</code>
        * @return The description.
        */
       public java.lang.String getDescription() {
@@ -1415,7 +1346,7 @@ public final class PlanOuterClass {
         }
       }
       /**
-       * <code>string description = 7[json_name = "description"];</code>
+       * <code>string description = 6[json_name = "description"];</code>
        * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
@@ -1432,7 +1363,7 @@ public final class PlanOuterClass {
         }
       }
       /**
-       * <code>string description = 7[json_name = "description"];</code>
+       * <code>string description = 6[json_name = "description"];</code>
        * @param value The description to set.
        * @return This builder for chaining.
        */
@@ -1447,7 +1378,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>string description = 7[json_name = "description"];</code>
+       * <code>string description = 6[json_name = "description"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
@@ -1457,7 +1388,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>string description = 7[json_name = "description"];</code>
+       * <code>string description = 6[json_name = "description"];</code>
        * @param value The bytes for description to set.
        * @return This builder for chaining.
        */
@@ -1475,14 +1406,14 @@ public final class PlanOuterClass {
 
       private com.google.protobuf.ByteString torchscript_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes torchscript = 8[json_name = "torchscript"];</code>
+       * <code>bytes torchscript = 7[json_name = "torchscript"];</code>
        * @return The torchscript.
        */
       public com.google.protobuf.ByteString getTorchscript() {
         return torchscript_;
       }
       /**
-       * <code>bytes torchscript = 8[json_name = "torchscript"];</code>
+       * <code>bytes torchscript = 7[json_name = "torchscript"];</code>
        * @param value The torchscript to set.
        * @return This builder for chaining.
        */
@@ -1496,7 +1427,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>bytes torchscript = 8[json_name = "torchscript"];</code>
+       * <code>bytes torchscript = 7[json_name = "torchscript"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTorchscript() {
@@ -1575,15 +1506,14 @@ public final class PlanOuterClass {
       "\n\"syft_proto/execution/v1/plan.proto\022\027sy" +
       "ft_proto.execution.v1\032\"syft_proto/execut" +
       "ion/v1/role.proto\032!syft_proto/types/syft" +
-      "/v1/id.proto\"\223\002\n\004Plan\022,\n\002id\030\001 \001(\0132\034.syft" +
+      "/v1/id.proto\"\370\001\n\004Plan\022,\n\002id\030\001 \001(\0132\034.syft" +
       "_proto.types.syft.v1.IdR\002id\0221\n\004role\030\002 \001(" +
       "\0132\035.syft_proto.execution.v1.RoleR\004role\022#" +
-      "\n\rinclude_state\030\003 \001(\010R\014includeState\022\031\n\010i" +
-      "s_built\030\004 \001(\010R\007isBuilt\022\022\n\004name\030\005 \001(\tR\004na" +
-      "me\022\022\n\004tags\030\006 \003(\tR\004tags\022 \n\013description\030\007 " +
-      "\001(\tR\013description\022 \n\013torchscript\030\010 \001(\014R\013t" +
-      "orchscriptB&\n$org.openmined.syftproto.ex" +
-      "ecution.v1b\006proto3"
+      "\n\rinclude_state\030\003 \001(\010R\014includeState\022\022\n\004n" +
+      "ame\030\004 \001(\tR\004name\022\022\n\004tags\030\005 \003(\tR\004tags\022 \n\013d" +
+      "escription\030\006 \001(\tR\013description\022 \n\013torchsc" +
+      "ript\030\007 \001(\014R\013torchscriptB&\n$org.openmined" +
+      ".syftproto.execution.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1596,7 +1526,7 @@ public final class PlanOuterClass {
     internal_static_syft_proto_execution_v1_Plan_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_Plan_descriptor,
-        new java.lang.String[] { "Id", "Role", "IncludeState", "IsBuilt", "Name", "Tags", "Description", "Torchscript", });
+        new java.lang.String[] { "Id", "Role", "IncludeState", "Name", "Tags", "Description", "Torchscript", });
     org.openmined.syftproto.execution.v1.RoleOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
   }

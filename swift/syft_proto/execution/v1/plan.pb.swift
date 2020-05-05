@@ -44,8 +44,6 @@ struct SyftProto_Execution_V1_Plan {
 
   var includeState: Bool = false
 
-  var isBuilt: Bool = false
-
   var name: String = String()
 
   var tags: [String] = []
@@ -72,11 +70,10 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     1: .same(proto: "id"),
     2: .same(proto: "role"),
     3: .standard(proto: "include_state"),
-    4: .standard(proto: "is_built"),
-    5: .same(proto: "name"),
-    6: .same(proto: "tags"),
-    7: .same(proto: "description"),
-    8: .same(proto: "torchscript"),
+    4: .same(proto: "name"),
+    5: .same(proto: "tags"),
+    6: .same(proto: "description"),
+    7: .same(proto: "torchscript"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -85,11 +82,10 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 1: try decoder.decodeSingularMessageField(value: &self._id)
       case 2: try decoder.decodeSingularMessageField(value: &self._role)
       case 3: try decoder.decodeSingularBoolField(value: &self.includeState)
-      case 4: try decoder.decodeSingularBoolField(value: &self.isBuilt)
-      case 5: try decoder.decodeSingularStringField(value: &self.name)
-      case 6: try decoder.decodeRepeatedStringField(value: &self.tags)
-      case 7: try decoder.decodeSingularStringField(value: &self.description_p)
-      case 8: try decoder.decodeSingularBytesField(value: &self.torchscript)
+      case 4: try decoder.decodeSingularStringField(value: &self.name)
+      case 5: try decoder.decodeRepeatedStringField(value: &self.tags)
+      case 6: try decoder.decodeSingularStringField(value: &self.description_p)
+      case 7: try decoder.decodeSingularBytesField(value: &self.torchscript)
       default: break
       }
     }
@@ -105,20 +101,17 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if self.includeState != false {
       try visitor.visitSingularBoolField(value: self.includeState, fieldNumber: 3)
     }
-    if self.isBuilt != false {
-      try visitor.visitSingularBoolField(value: self.isBuilt, fieldNumber: 4)
-    }
     if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 4)
     }
     if !self.tags.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.tags, fieldNumber: 6)
+      try visitor.visitRepeatedStringField(value: self.tags, fieldNumber: 5)
     }
     if !self.description_p.isEmpty {
-      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 7)
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 6)
     }
     if !self.torchscript.isEmpty {
-      try visitor.visitSingularBytesField(value: self.torchscript, fieldNumber: 8)
+      try visitor.visitSingularBytesField(value: self.torchscript, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -127,7 +120,6 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs._id != rhs._id {return false}
     if lhs._role != rhs._role {return false}
     if lhs.includeState != rhs.includeState {return false}
-    if lhs.isBuilt != rhs.isBuilt {return false}
     if lhs.name != rhs.name {return false}
     if lhs.tags != rhs.tags {return false}
     if lhs.description_p != rhs.description_p {return false}
