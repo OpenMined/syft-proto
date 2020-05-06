@@ -1496,17 +1496,17 @@ export namespace syft_proto {
                 /** Protocol id */
                 id?: (syft_proto.types.syft.v1.IId|null);
 
+                /** Protocol name */
+                name?: (string|null);
+
+                /** Protocol roles */
+                roles?: ({ [k: string]: syft_proto.execution.v1.IRole }|null);
+
                 /** Protocol tags */
                 tags?: (string[]|null);
 
                 /** Protocol description */
                 description?: (string|null);
-
-                /** Protocol workers_resolved */
-                workers_resolved?: (boolean|null);
-
-                /** Protocol plan_assignments */
-                plan_assignments?: (syft_proto.execution.v1.IPlanAssignment[]|null);
             }
 
             /** Represents a Protocol. */
@@ -1521,17 +1521,17 @@ export namespace syft_proto {
                 /** Protocol id. */
                 public id?: (syft_proto.types.syft.v1.IId|null);
 
+                /** Protocol name. */
+                public name: string;
+
+                /** Protocol roles. */
+                public roles: { [k: string]: syft_proto.execution.v1.IRole };
+
                 /** Protocol tags. */
                 public tags: string[];
 
                 /** Protocol description. */
                 public description: string;
-
-                /** Protocol workers_resolved. */
-                public workers_resolved: boolean;
-
-                /** Protocol plan_assignments. */
-                public plan_assignments: syft_proto.execution.v1.IPlanAssignment[];
 
                 /**
                  * Creates a new Protocol instance using the specified properties.
@@ -1599,102 +1599,6 @@ export namespace syft_proto {
 
                 /**
                  * Converts this Protocol to JSON.
-                 * @returns JSON object
-                 */
-                public toJSON(): { [k: string]: any };
-            }
-
-            /** Properties of a PlanAssignment. */
-            interface IPlanAssignment {
-
-                /** PlanAssignment plan_id */
-                plan_id?: (syft_proto.types.syft.v1.IId|null);
-
-                /** PlanAssignment worker_id */
-                worker_id?: (syft_proto.types.syft.v1.IId|null);
-            }
-
-            /** Represents a PlanAssignment. */
-            class PlanAssignment implements IPlanAssignment {
-
-                /**
-                 * Constructs a new PlanAssignment.
-                 * @param [properties] Properties to set
-                 */
-                constructor(properties?: syft_proto.execution.v1.IPlanAssignment);
-
-                /** PlanAssignment plan_id. */
-                public plan_id?: (syft_proto.types.syft.v1.IId|null);
-
-                /** PlanAssignment worker_id. */
-                public worker_id?: (syft_proto.types.syft.v1.IId|null);
-
-                /**
-                 * Creates a new PlanAssignment instance using the specified properties.
-                 * @param [properties] Properties to set
-                 * @returns PlanAssignment instance
-                 */
-                public static create(properties?: syft_proto.execution.v1.IPlanAssignment): syft_proto.execution.v1.PlanAssignment;
-
-                /**
-                 * Encodes the specified PlanAssignment message. Does not implicitly {@link syft_proto.execution.v1.PlanAssignment.verify|verify} messages.
-                 * @param message PlanAssignment message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encode(message: syft_proto.execution.v1.IPlanAssignment, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Encodes the specified PlanAssignment message, length delimited. Does not implicitly {@link syft_proto.execution.v1.PlanAssignment.verify|verify} messages.
-                 * @param message PlanAssignment message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encodeDelimited(message: syft_proto.execution.v1.IPlanAssignment, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Decodes a PlanAssignment message from the specified reader or buffer.
-                 * @param reader Reader or buffer to decode from
-                 * @param [length] Message length if known beforehand
-                 * @returns PlanAssignment
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.PlanAssignment;
-
-                /**
-                 * Decodes a PlanAssignment message from the specified reader or buffer, length delimited.
-                 * @param reader Reader or buffer to decode from
-                 * @returns PlanAssignment
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.PlanAssignment;
-
-                /**
-                 * Verifies a PlanAssignment message.
-                 * @param message Plain object to verify
-                 * @returns `null` if valid, otherwise the reason why it is not
-                 */
-                public static verify(message: { [k: string]: any }): (string|null);
-
-                /**
-                 * Creates a PlanAssignment message from a plain object. Also converts values to their respective internal types.
-                 * @param object Plain object
-                 * @returns PlanAssignment
-                 */
-                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.PlanAssignment;
-
-                /**
-                 * Creates a plain object from a PlanAssignment message. Also converts values to other types if specified.
-                 * @param message PlanAssignment
-                 * @param [options] Conversion options
-                 * @returns Plain object
-                 */
-                public static toObject(message: syft_proto.execution.v1.PlanAssignment, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                /**
-                 * Converts this PlanAssignment to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };

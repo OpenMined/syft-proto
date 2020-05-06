@@ -34,24 +34,70 @@ public final class ProtocolOuterClass {
     org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder();
 
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>string name = 2[json_name = "name"];</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 2[json_name = "name"];</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+     */
+    int getRolesCount();
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+     */
+    boolean containsRoles(
+        java.lang.String key);
+    /**
+     * Use {@link #getRolesMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+    getRoles();
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+     */
+    java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+    getRolesMap();
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+     */
+
+    org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrDefault(
+        java.lang.String key,
+        org.openmined.syftproto.execution.v1.RoleOuterClass.Role defaultValue);
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+     */
+
+    org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @return The count of tags.
      */
     int getTagsCount();
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @param index The index of the element to return.
      * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the tags at the given index.
      */
@@ -59,46 +105,16 @@ public final class ProtocolOuterClass {
         getTagsBytes(int index);
 
     /**
-     * <code>string description = 3[json_name = "description"];</code>
+     * <code>string description = 5[json_name = "description"];</code>
      * @return The description.
      */
     java.lang.String getDescription();
     /**
-     * <code>string description = 3[json_name = "description"];</code>
+     * <code>string description = 5[json_name = "description"];</code>
      * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
-
-    /**
-     * <code>bool workers_resolved = 4[json_name = "workersResolved"];</code>
-     * @return The workersResolved.
-     */
-    boolean getWorkersResolved();
-
-    /**
-     * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-     */
-    java.util.List<org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment> 
-        getPlanAssignmentsList();
-    /**
-     * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-     */
-    org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment getPlanAssignments(int index);
-    /**
-     * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-     */
-    int getPlanAssignmentsCount();
-    /**
-     * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-     */
-    java.util.List<? extends org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignmentOrBuilder> 
-        getPlanAssignmentsOrBuilderList();
-    /**
-     * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-     */
-    org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignmentOrBuilder getPlanAssignmentsOrBuilder(
-        int index);
   }
   /**
    * Protobuf type {@code syft_proto.execution.v1.Protocol}
@@ -113,9 +129,9 @@ public final class ProtocolOuterClass {
       super(builder);
     }
     private Protocol() {
+      name_ = "";
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
-      planAssignments_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -164,31 +180,36 @@ public final class ProtocolOuterClass {
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
+                roles_ = com.google.protobuf.MapField.newMapField(
+                    RolesDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+              roles__ = input.readMessage(
+                  RolesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              roles_.getMutableMap().put(
+                  roles__.getKey(), roles__.getValue());
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
               }
               tags_.add(s);
               break;
             }
-            case 26: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
-              break;
-            }
-            case 32: {
-
-              workersResolved_ = input.readBool();
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                planAssignments_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              planAssignments_.add(
-                  input.readMessage(org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -206,11 +227,8 @@ public final class ProtocolOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-        }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          planAssignments_ = java.util.Collections.unmodifiableList(planAssignments_);
+          tags_ = tags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -221,6 +239,18 @@ public final class ProtocolOuterClass {
       return org.openmined.syftproto.execution.v1.ProtocolOuterClass.internal_static_syft_proto_execution_v1_Protocol_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetRoles();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -252,10 +282,122 @@ public final class ProtocolOuterClass {
       return getId();
     }
 
-    public static final int TAGS_FIELD_NUMBER = 2;
+    public static final int NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 2[json_name = "name"];</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 2[json_name = "name"];</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROLES_FIELD_NUMBER = 3;
+    private static final class RolesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>newDefaultInstance(
+                  org.openmined.syftproto.execution.v1.ProtocolOuterClass.internal_static_syft_proto_execution_v1_Protocol_RolesEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.openmined.syftproto.execution.v1.RoleOuterClass.Role.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> roles_;
+    private com.google.protobuf.MapField<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+    internalGetRoles() {
+      if (roles_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            RolesDefaultEntryHolder.defaultEntry);
+      }
+      return roles_;
+    }
+
+    public int getRolesCount() {
+      return internalGetRoles().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+     */
+
+    public boolean containsRoles(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetRoles().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getRolesMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRoles() {
+      return getRolesMap();
+    }
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+     */
+
+    public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRolesMap() {
+      return internalGetRoles().getMap();
+    }
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+     */
+
+    public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrDefault(
+        java.lang.String key,
+        org.openmined.syftproto.execution.v1.RoleOuterClass.Role defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> map =
+          internalGetRoles().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+     */
+
+    public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> map =
+          internalGetRoles().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int TAGS_FIELD_NUMBER = 4;
     private com.google.protobuf.LazyStringList tags_;
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
@@ -263,14 +405,14 @@ public final class ProtocolOuterClass {
       return tags_;
     }
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @param index The index of the element to return.
      * @return The tags at the given index.
      */
@@ -278,7 +420,7 @@ public final class ProtocolOuterClass {
       return tags_.get(index);
     }
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the tags at the given index.
      */
@@ -287,10 +429,10 @@ public final class ProtocolOuterClass {
       return tags_.getByteString(index);
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 3;
+    public static final int DESCRIPTION_FIELD_NUMBER = 5;
     private volatile java.lang.Object description_;
     /**
-     * <code>string description = 3[json_name = "description"];</code>
+     * <code>string description = 5[json_name = "description"];</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -306,7 +448,7 @@ public final class ProtocolOuterClass {
       }
     }
     /**
-     * <code>string description = 3[json_name = "description"];</code>
+     * <code>string description = 5[json_name = "description"];</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -321,51 +463,6 @@ public final class ProtocolOuterClass {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int WORKERS_RESOLVED_FIELD_NUMBER = 4;
-    private boolean workersResolved_;
-    /**
-     * <code>bool workers_resolved = 4[json_name = "workersResolved"];</code>
-     * @return The workersResolved.
-     */
-    public boolean getWorkersResolved() {
-      return workersResolved_;
-    }
-
-    public static final int PLAN_ASSIGNMENTS_FIELD_NUMBER = 5;
-    private java.util.List<org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment> planAssignments_;
-    /**
-     * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-     */
-    public java.util.List<org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment> getPlanAssignmentsList() {
-      return planAssignments_;
-    }
-    /**
-     * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-     */
-    public java.util.List<? extends org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignmentOrBuilder> 
-        getPlanAssignmentsOrBuilderList() {
-      return planAssignments_;
-    }
-    /**
-     * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-     */
-    public int getPlanAssignmentsCount() {
-      return planAssignments_.size();
-    }
-    /**
-     * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-     */
-    public org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment getPlanAssignments(int index) {
-      return planAssignments_.get(index);
-    }
-    /**
-     * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-     */
-    public org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignmentOrBuilder getPlanAssignmentsOrBuilder(
-        int index) {
-      return planAssignments_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -385,17 +482,20 @@ public final class ProtocolOuterClass {
       if (id_ != null) {
         output.writeMessage(1, getId());
       }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetRoles(),
+          RolesDefaultEntryHolder.defaultEntry,
+          3);
       for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tags_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
       }
       if (!getDescriptionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
-      }
-      if (workersResolved_ != false) {
-        output.writeBool(4, workersResolved_);
-      }
-      for (int i = 0; i < planAssignments_.size(); i++) {
-        output.writeMessage(5, planAssignments_.get(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
       unknownFields.writeTo(output);
     }
@@ -410,6 +510,19 @@ public final class ProtocolOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getId());
       }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      }
+      for (java.util.Map.Entry<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> entry
+           : internalGetRoles().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+        roles__ = RolesDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, roles__);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < tags_.size(); i++) {
@@ -419,15 +532,7 @@ public final class ProtocolOuterClass {
         size += 1 * getTagsList().size();
       }
       if (!getDescriptionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
-      }
-      if (workersResolved_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, workersResolved_);
-      }
-      for (int i = 0; i < planAssignments_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, planAssignments_.get(i));
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -449,14 +554,14 @@ public final class ProtocolOuterClass {
         if (!getId()
             .equals(other.getId())) return false;
       }
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!internalGetRoles().equals(
+          other.internalGetRoles())) return false;
       if (!getTagsList()
           .equals(other.getTagsList())) return false;
       if (!getDescription()
           .equals(other.getDescription())) return false;
-      if (getWorkersResolved()
-          != other.getWorkersResolved()) return false;
-      if (!getPlanAssignmentsList()
-          .equals(other.getPlanAssignmentsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -472,19 +577,18 @@ public final class ProtocolOuterClass {
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId().hashCode();
       }
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      if (!internalGetRoles().getMap().isEmpty()) {
+        hash = (37 * hash) + ROLES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetRoles().hashCode();
+      }
       if (getTagsCount() > 0) {
         hash = (37 * hash) + TAGS_FIELD_NUMBER;
         hash = (53 * hash) + getTagsList().hashCode();
       }
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
-      hash = (37 * hash) + WORKERS_RESOLVED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getWorkersResolved());
-      if (getPlanAssignmentsCount() > 0) {
-        hash = (37 * hash) + PLAN_ASSIGNMENTS_FIELD_NUMBER;
-        hash = (53 * hash) + getPlanAssignmentsList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -592,6 +696,28 @@ public final class ProtocolOuterClass {
         return org.openmined.syftproto.execution.v1.ProtocolOuterClass.internal_static_syft_proto_execution_v1_Protocol_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetRoles();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetMutableRoles();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -613,7 +739,6 @@ public final class ProtocolOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getPlanAssignmentsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -625,18 +750,13 @@ public final class ProtocolOuterClass {
           id_ = null;
           idBuilder_ = null;
         }
+        name_ = "";
+
+        internalGetMutableRoles().clear();
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         description_ = "";
 
-        workersResolved_ = false;
-
-        if (planAssignmentsBuilder_ == null) {
-          planAssignments_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          planAssignmentsBuilder_.clear();
-        }
         return this;
       }
 
@@ -669,22 +789,15 @@ public final class ProtocolOuterClass {
         } else {
           result.id_ = idBuilder_.build();
         }
-        if (((bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+        result.roles_ = internalGetRoles();
+        result.roles_.makeImmutable();
+        if (((bitField0_ & 0x00000002) != 0)) {
           tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.tags_ = tags_;
         result.description_ = description_;
-        result.workersResolved_ = workersResolved_;
-        if (planAssignmentsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            planAssignments_ = java.util.Collections.unmodifiableList(planAssignments_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.planAssignments_ = planAssignments_;
-        } else {
-          result.planAssignments_ = planAssignmentsBuilder_.build();
-        }
         onBuilt();
         return result;
       }
@@ -736,10 +849,16 @@ public final class ProtocolOuterClass {
         if (other.hasId()) {
           mergeId(other.getId());
         }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        internalGetMutableRoles().mergeFrom(
+            other.internalGetRoles());
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -749,35 +868,6 @@ public final class ProtocolOuterClass {
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
           onChanged();
-        }
-        if (other.getWorkersResolved() != false) {
-          setWorkersResolved(other.getWorkersResolved());
-        }
-        if (planAssignmentsBuilder_ == null) {
-          if (!other.planAssignments_.isEmpty()) {
-            if (planAssignments_.isEmpty()) {
-              planAssignments_ = other.planAssignments_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensurePlanAssignmentsIsMutable();
-              planAssignments_.addAll(other.planAssignments_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.planAssignments_.isEmpty()) {
-            if (planAssignmentsBuilder_.isEmpty()) {
-              planAssignmentsBuilder_.dispose();
-              planAssignmentsBuilder_ = null;
-              planAssignments_ = other.planAssignments_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              planAssignmentsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getPlanAssignmentsFieldBuilder() : null;
-            } else {
-              planAssignmentsBuilder_.addAllMessages(other.planAssignments_);
-            }
-          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -928,15 +1018,214 @@ public final class ProtocolOuterClass {
         return idBuilder_;
       }
 
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 2[json_name = "name"];</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 2[json_name = "name"];</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 2[json_name = "name"];</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2[json_name = "name"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2[json_name = "name"];</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> roles_;
+      private com.google.protobuf.MapField<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+      internalGetRoles() {
+        if (roles_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              RolesDefaultEntryHolder.defaultEntry);
+        }
+        return roles_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+      internalGetMutableRoles() {
+        onChanged();;
+        if (roles_ == null) {
+          roles_ = com.google.protobuf.MapField.newMapField(
+              RolesDefaultEntryHolder.defaultEntry);
+        }
+        if (!roles_.isMutable()) {
+          roles_ = roles_.copy();
+        }
+        return roles_;
+      }
+
+      public int getRolesCount() {
+        return internalGetRoles().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+       */
+
+      public boolean containsRoles(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetRoles().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getRolesMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRoles() {
+        return getRolesMap();
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+       */
+
+      public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRolesMap() {
+        return internalGetRoles().getMap();
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+       */
+
+      public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrDefault(
+          java.lang.String key,
+          org.openmined.syftproto.execution.v1.RoleOuterClass.Role defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> map =
+            internalGetRoles().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+       */
+
+      public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> map =
+            internalGetRoles().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearRoles() {
+        internalGetMutableRoles().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+       */
+
+      public Builder removeRoles(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableRoles().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+      getMutableRoles() {
+        return internalGetMutableRoles().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+       */
+      public Builder putRoles(
+          java.lang.String key,
+          org.openmined.syftproto.execution.v1.RoleOuterClass.Role value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableRoles().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
+       */
+
+      public Builder putAllRoles(
+          java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> values) {
+        internalGetMutableRoles().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
@@ -944,14 +1233,14 @@ public final class ProtocolOuterClass {
         return tags_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @param index The index of the element to return.
        * @return The tags at the given index.
        */
@@ -959,7 +1248,7 @@ public final class ProtocolOuterClass {
         return tags_.get(index);
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @param index The index of the value to return.
        * @return The bytes of the tags at the given index.
        */
@@ -968,7 +1257,7 @@ public final class ProtocolOuterClass {
         return tags_.getByteString(index);
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @param index The index to set the value at.
        * @param value The tags to set.
        * @return This builder for chaining.
@@ -984,7 +1273,7 @@ public final class ProtocolOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @param value The tags to add.
        * @return This builder for chaining.
        */
@@ -999,7 +1288,7 @@ public final class ProtocolOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @param values The tags to add.
        * @return This builder for chaining.
        */
@@ -1012,17 +1301,17 @@ public final class ProtocolOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @param value The bytes of the tags to add.
        * @return This builder for chaining.
        */
@@ -1040,7 +1329,7 @@ public final class ProtocolOuterClass {
 
       private java.lang.Object description_ = "";
       /**
-       * <code>string description = 3[json_name = "description"];</code>
+       * <code>string description = 5[json_name = "description"];</code>
        * @return The description.
        */
       public java.lang.String getDescription() {
@@ -1056,7 +1345,7 @@ public final class ProtocolOuterClass {
         }
       }
       /**
-       * <code>string description = 3[json_name = "description"];</code>
+       * <code>string description = 5[json_name = "description"];</code>
        * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
@@ -1073,7 +1362,7 @@ public final class ProtocolOuterClass {
         }
       }
       /**
-       * <code>string description = 3[json_name = "description"];</code>
+       * <code>string description = 5[json_name = "description"];</code>
        * @param value The description to set.
        * @return This builder for chaining.
        */
@@ -1088,7 +1377,7 @@ public final class ProtocolOuterClass {
         return this;
       }
       /**
-       * <code>string description = 3[json_name = "description"];</code>
+       * <code>string description = 5[json_name = "description"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
@@ -1098,7 +1387,7 @@ public final class ProtocolOuterClass {
         return this;
       }
       /**
-       * <code>string description = 3[json_name = "description"];</code>
+       * <code>string description = 5[json_name = "description"];</code>
        * @param value The bytes for description to set.
        * @return This builder for chaining.
        */
@@ -1112,276 +1401,6 @@ public final class ProtocolOuterClass {
         description_ = value;
         onChanged();
         return this;
-      }
-
-      private boolean workersResolved_ ;
-      /**
-       * <code>bool workers_resolved = 4[json_name = "workersResolved"];</code>
-       * @return The workersResolved.
-       */
-      public boolean getWorkersResolved() {
-        return workersResolved_;
-      }
-      /**
-       * <code>bool workers_resolved = 4[json_name = "workersResolved"];</code>
-       * @param value The workersResolved to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWorkersResolved(boolean value) {
-        
-        workersResolved_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool workers_resolved = 4[json_name = "workersResolved"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWorkersResolved() {
-        
-        workersResolved_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment> planAssignments_ =
-        java.util.Collections.emptyList();
-      private void ensurePlanAssignmentsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          planAssignments_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment>(planAssignments_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.Builder, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignmentOrBuilder> planAssignmentsBuilder_;
-
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public java.util.List<org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment> getPlanAssignmentsList() {
-        if (planAssignmentsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(planAssignments_);
-        } else {
-          return planAssignmentsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public int getPlanAssignmentsCount() {
-        if (planAssignmentsBuilder_ == null) {
-          return planAssignments_.size();
-        } else {
-          return planAssignmentsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment getPlanAssignments(int index) {
-        if (planAssignmentsBuilder_ == null) {
-          return planAssignments_.get(index);
-        } else {
-          return planAssignmentsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public Builder setPlanAssignments(
-          int index, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment value) {
-        if (planAssignmentsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlanAssignmentsIsMutable();
-          planAssignments_.set(index, value);
-          onChanged();
-        } else {
-          planAssignmentsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public Builder setPlanAssignments(
-          int index, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.Builder builderForValue) {
-        if (planAssignmentsBuilder_ == null) {
-          ensurePlanAssignmentsIsMutable();
-          planAssignments_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          planAssignmentsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public Builder addPlanAssignments(org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment value) {
-        if (planAssignmentsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlanAssignmentsIsMutable();
-          planAssignments_.add(value);
-          onChanged();
-        } else {
-          planAssignmentsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public Builder addPlanAssignments(
-          int index, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment value) {
-        if (planAssignmentsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlanAssignmentsIsMutable();
-          planAssignments_.add(index, value);
-          onChanged();
-        } else {
-          planAssignmentsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public Builder addPlanAssignments(
-          org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.Builder builderForValue) {
-        if (planAssignmentsBuilder_ == null) {
-          ensurePlanAssignmentsIsMutable();
-          planAssignments_.add(builderForValue.build());
-          onChanged();
-        } else {
-          planAssignmentsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public Builder addPlanAssignments(
-          int index, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.Builder builderForValue) {
-        if (planAssignmentsBuilder_ == null) {
-          ensurePlanAssignmentsIsMutable();
-          planAssignments_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          planAssignmentsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public Builder addAllPlanAssignments(
-          java.lang.Iterable<? extends org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment> values) {
-        if (planAssignmentsBuilder_ == null) {
-          ensurePlanAssignmentsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, planAssignments_);
-          onChanged();
-        } else {
-          planAssignmentsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public Builder clearPlanAssignments() {
-        if (planAssignmentsBuilder_ == null) {
-          planAssignments_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          planAssignmentsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public Builder removePlanAssignments(int index) {
-        if (planAssignmentsBuilder_ == null) {
-          ensurePlanAssignmentsIsMutable();
-          planAssignments_.remove(index);
-          onChanged();
-        } else {
-          planAssignmentsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.Builder getPlanAssignmentsBuilder(
-          int index) {
-        return getPlanAssignmentsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignmentOrBuilder getPlanAssignmentsOrBuilder(
-          int index) {
-        if (planAssignmentsBuilder_ == null) {
-          return planAssignments_.get(index);  } else {
-          return planAssignmentsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public java.util.List<? extends org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignmentOrBuilder> 
-           getPlanAssignmentsOrBuilderList() {
-        if (planAssignmentsBuilder_ != null) {
-          return planAssignmentsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(planAssignments_);
-        }
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.Builder addPlanAssignmentsBuilder() {
-        return getPlanAssignmentsFieldBuilder().addBuilder(
-            org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.Builder addPlanAssignmentsBuilder(
-          int index) {
-        return getPlanAssignmentsFieldBuilder().addBuilder(
-            index, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .syft_proto.execution.v1.PlanAssignment plan_assignments = 5[json_name = "planAssignments"];</code>
-       */
-      public java.util.List<org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.Builder> 
-           getPlanAssignmentsBuilderList() {
-        return getPlanAssignmentsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.Builder, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignmentOrBuilder> 
-          getPlanAssignmentsFieldBuilder() {
-        if (planAssignmentsBuilder_ == null) {
-          planAssignmentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.Builder, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignmentOrBuilder>(
-                  planAssignments_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          planAssignments_ = null;
-        }
-        return planAssignmentsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1436,834 +1455,16 @@ public final class ProtocolOuterClass {
 
   }
 
-  public interface PlanAssignmentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:syft_proto.execution.v1.PlanAssignment)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-     * @return Whether the planId field is set.
-     */
-    boolean hasPlanId();
-    /**
-     * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-     * @return The planId.
-     */
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getPlanId();
-    /**
-     * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-     */
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getPlanIdOrBuilder();
-
-    /**
-     * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-     * @return Whether the workerId field is set.
-     */
-    boolean hasWorkerId();
-    /**
-     * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-     * @return The workerId.
-     */
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getWorkerId();
-    /**
-     * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-     */
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getWorkerIdOrBuilder();
-  }
-  /**
-   * Protobuf type {@code syft_proto.execution.v1.PlanAssignment}
-   */
-  public  static final class PlanAssignment extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.PlanAssignment)
-      PlanAssignmentOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use PlanAssignment.newBuilder() to construct.
-    private PlanAssignment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private PlanAssignment() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new PlanAssignment();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private PlanAssignment(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder subBuilder = null;
-              if (planId_ != null) {
-                subBuilder = planId_.toBuilder();
-              }
-              planId_ = input.readMessage(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(planId_);
-                planId_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder subBuilder = null;
-              if (workerId_ != null) {
-                subBuilder = workerId_.toBuilder();
-              }
-              workerId_ = input.readMessage(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(workerId_);
-                workerId_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return org.openmined.syftproto.execution.v1.ProtocolOuterClass.internal_static_syft_proto_execution_v1_PlanAssignment_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return org.openmined.syftproto.execution.v1.ProtocolOuterClass.internal_static_syft_proto_execution_v1_PlanAssignment_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.class, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.Builder.class);
-    }
-
-    public static final int PLAN_ID_FIELD_NUMBER = 1;
-    private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id planId_;
-    /**
-     * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-     * @return Whether the planId field is set.
-     */
-    public boolean hasPlanId() {
-      return planId_ != null;
-    }
-    /**
-     * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-     * @return The planId.
-     */
-    public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getPlanId() {
-      return planId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : planId_;
-    }
-    /**
-     * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-     */
-    public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getPlanIdOrBuilder() {
-      return getPlanId();
-    }
-
-    public static final int WORKER_ID_FIELD_NUMBER = 2;
-    private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id workerId_;
-    /**
-     * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-     * @return Whether the workerId field is set.
-     */
-    public boolean hasWorkerId() {
-      return workerId_ != null;
-    }
-    /**
-     * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-     * @return The workerId.
-     */
-    public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getWorkerId() {
-      return workerId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : workerId_;
-    }
-    /**
-     * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-     */
-    public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getWorkerIdOrBuilder() {
-      return getWorkerId();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (planId_ != null) {
-        output.writeMessage(1, getPlanId());
-      }
-      if (workerId_ != null) {
-        output.writeMessage(2, getWorkerId());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (planId_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getPlanId());
-      }
-      if (workerId_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getWorkerId());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment)) {
-        return super.equals(obj);
-      }
-      org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment other = (org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment) obj;
-
-      if (hasPlanId() != other.hasPlanId()) return false;
-      if (hasPlanId()) {
-        if (!getPlanId()
-            .equals(other.getPlanId())) return false;
-      }
-      if (hasWorkerId() != other.hasWorkerId()) return false;
-      if (hasWorkerId()) {
-        if (!getWorkerId()
-            .equals(other.getWorkerId())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasPlanId()) {
-        hash = (37 * hash) + PLAN_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getPlanId().hashCode();
-      }
-      if (hasWorkerId()) {
-        hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getWorkerId().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code syft_proto.execution.v1.PlanAssignment}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:syft_proto.execution.v1.PlanAssignment)
-        org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignmentOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return org.openmined.syftproto.execution.v1.ProtocolOuterClass.internal_static_syft_proto_execution_v1_PlanAssignment_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return org.openmined.syftproto.execution.v1.ProtocolOuterClass.internal_static_syft_proto_execution_v1_PlanAssignment_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.class, org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.Builder.class);
-      }
-
-      // Construct using org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (planIdBuilder_ == null) {
-          planId_ = null;
-        } else {
-          planId_ = null;
-          planIdBuilder_ = null;
-        }
-        if (workerIdBuilder_ == null) {
-          workerId_ = null;
-        } else {
-          workerId_ = null;
-          workerIdBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return org.openmined.syftproto.execution.v1.ProtocolOuterClass.internal_static_syft_proto_execution_v1_PlanAssignment_descriptor;
-      }
-
-      @java.lang.Override
-      public org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment getDefaultInstanceForType() {
-        return org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment build() {
-        org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment buildPartial() {
-        org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment result = new org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment(this);
-        if (planIdBuilder_ == null) {
-          result.planId_ = planId_;
-        } else {
-          result.planId_ = planIdBuilder_.build();
-        }
-        if (workerIdBuilder_ == null) {
-          result.workerId_ = workerId_;
-        } else {
-          result.workerId_ = workerIdBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment) {
-          return mergeFrom((org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment other) {
-        if (other == org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment.getDefaultInstance()) return this;
-        if (other.hasPlanId()) {
-          mergePlanId(other.getPlanId());
-        }
-        if (other.hasWorkerId()) {
-          mergeWorkerId(other.getWorkerId());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id planId_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> planIdBuilder_;
-      /**
-       * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-       * @return Whether the planId field is set.
-       */
-      public boolean hasPlanId() {
-        return planIdBuilder_ != null || planId_ != null;
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-       * @return The planId.
-       */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getPlanId() {
-        if (planIdBuilder_ == null) {
-          return planId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : planId_;
-        } else {
-          return planIdBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-       */
-      public Builder setPlanId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (planIdBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          planId_ = value;
-          onChanged();
-        } else {
-          planIdBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-       */
-      public Builder setPlanId(
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
-        if (planIdBuilder_ == null) {
-          planId_ = builderForValue.build();
-          onChanged();
-        } else {
-          planIdBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-       */
-      public Builder mergePlanId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (planIdBuilder_ == null) {
-          if (planId_ != null) {
-            planId_ =
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.newBuilder(planId_).mergeFrom(value).buildPartial();
-          } else {
-            planId_ = value;
-          }
-          onChanged();
-        } else {
-          planIdBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-       */
-      public Builder clearPlanId() {
-        if (planIdBuilder_ == null) {
-          planId_ = null;
-          onChanged();
-        } else {
-          planId_ = null;
-          planIdBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-       */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getPlanIdBuilder() {
-        
-        onChanged();
-        return getPlanIdFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-       */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getPlanIdOrBuilder() {
-        if (planIdBuilder_ != null) {
-          return planIdBuilder_.getMessageOrBuilder();
-        } else {
-          return planId_ == null ?
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : planId_;
-        }
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id plan_id = 1[json_name = "planId"];</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
-          getPlanIdFieldBuilder() {
-        if (planIdBuilder_ == null) {
-          planIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder>(
-                  getPlanId(),
-                  getParentForChildren(),
-                  isClean());
-          planId_ = null;
-        }
-        return planIdBuilder_;
-      }
-
-      private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id workerId_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> workerIdBuilder_;
-      /**
-       * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-       * @return Whether the workerId field is set.
-       */
-      public boolean hasWorkerId() {
-        return workerIdBuilder_ != null || workerId_ != null;
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-       * @return The workerId.
-       */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getWorkerId() {
-        if (workerIdBuilder_ == null) {
-          return workerId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : workerId_;
-        } else {
-          return workerIdBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-       */
-      public Builder setWorkerId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (workerIdBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          workerId_ = value;
-          onChanged();
-        } else {
-          workerIdBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-       */
-      public Builder setWorkerId(
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
-        if (workerIdBuilder_ == null) {
-          workerId_ = builderForValue.build();
-          onChanged();
-        } else {
-          workerIdBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-       */
-      public Builder mergeWorkerId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (workerIdBuilder_ == null) {
-          if (workerId_ != null) {
-            workerId_ =
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.newBuilder(workerId_).mergeFrom(value).buildPartial();
-          } else {
-            workerId_ = value;
-          }
-          onChanged();
-        } else {
-          workerIdBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-       */
-      public Builder clearWorkerId() {
-        if (workerIdBuilder_ == null) {
-          workerId_ = null;
-          onChanged();
-        } else {
-          workerId_ = null;
-          workerIdBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-       */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getWorkerIdBuilder() {
-        
-        onChanged();
-        return getWorkerIdFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-       */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getWorkerIdOrBuilder() {
-        if (workerIdBuilder_ != null) {
-          return workerIdBuilder_.getMessageOrBuilder();
-        } else {
-          return workerId_ == null ?
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : workerId_;
-        }
-      }
-      /**
-       * <code>.syft_proto.types.syft.v1.Id worker_id = 2[json_name = "workerId"];</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
-          getWorkerIdFieldBuilder() {
-        if (workerIdBuilder_ == null) {
-          workerIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder>(
-                  getWorkerId(),
-                  getParentForChildren(),
-                  isClean());
-          workerId_ = null;
-        }
-        return workerIdBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:syft_proto.execution.v1.PlanAssignment)
-    }
-
-    // @@protoc_insertion_point(class_scope:syft_proto.execution.v1.PlanAssignment)
-    private static final org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment();
-    }
-
-    public static org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PlanAssignment>
-        PARSER = new com.google.protobuf.AbstractParser<PlanAssignment>() {
-      @java.lang.Override
-      public PlanAssignment parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlanAssignment(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PlanAssignment> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PlanAssignment> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public org.openmined.syftproto.execution.v1.ProtocolOuterClass.PlanAssignment getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_syft_proto_execution_v1_Protocol_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_syft_proto_execution_v1_Protocol_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_syft_proto_execution_v1_PlanAssignment_descriptor;
+    internal_static_syft_proto_execution_v1_Protocol_RolesEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_syft_proto_execution_v1_PlanAssignment_fieldAccessorTable;
+      internal_static_syft_proto_execution_v1_Protocol_RolesEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2275,37 +1476,37 @@ public final class ProtocolOuterClass {
     java.lang.String[] descriptorData = {
       "\n&syft_proto/execution/v1/protocol.proto" +
       "\022\027syft_proto.execution.v1\032!syft_proto/ty" +
-      "pes/syft/v1/id.proto\"\355\001\n\010Protocol\022,\n\002id\030" +
-      "\001 \001(\0132\034.syft_proto.types.syft.v1.IdR\002id\022" +
-      "\022\n\004tags\030\002 \003(\tR\004tags\022 \n\013description\030\003 \001(\t" +
-      "R\013description\022)\n\020workers_resolved\030\004 \001(\010R" +
-      "\017workersResolved\022R\n\020plan_assignments\030\005 \003" +
-      "(\0132\'.syft_proto.execution.v1.PlanAssignm" +
-      "entR\017planAssignments\"\202\001\n\016PlanAssignment\022" +
-      "5\n\007plan_id\030\001 \001(\0132\034.syft_proto.types.syft" +
-      ".v1.IdR\006planId\0229\n\tworker_id\030\002 \001(\0132\034.syft" +
-      "_proto.types.syft.v1.IdR\010workerIdB&\n$org" +
-      ".openmined.syftproto.execution.v1b\006proto" +
-      "3"
+      "pes/syft/v1/id.proto\032\"syft_proto/executi" +
+      "on/v1/role.proto\"\237\002\n\010Protocol\022,\n\002id\030\001 \001(" +
+      "\0132\034.syft_proto.types.syft.v1.IdR\002id\022\022\n\004n" +
+      "ame\030\002 \001(\tR\004name\022B\n\005roles\030\003 \003(\0132,.syft_pr" +
+      "oto.execution.v1.Protocol.RolesEntryR\005ro" +
+      "les\022\022\n\004tags\030\004 \003(\tR\004tags\022 \n\013description\030\005" +
+      " \001(\tR\013description\032W\n\nRolesEntry\022\020\n\003key\030\001" +
+      " \001(\tR\003key\0223\n\005value\030\002 \001(\0132\035.syft_proto.ex" +
+      "ecution.v1.RoleR\005value:\0028\001B&\n$org.openmi" +
+      "ned.syftproto.execution.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor(),
+          org.openmined.syftproto.execution.v1.RoleOuterClass.getDescriptor(),
         });
     internal_static_syft_proto_execution_v1_Protocol_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_syft_proto_execution_v1_Protocol_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_Protocol_descriptor,
-        new java.lang.String[] { "Id", "Tags", "Description", "WorkersResolved", "PlanAssignments", });
-    internal_static_syft_proto_execution_v1_PlanAssignment_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_syft_proto_execution_v1_PlanAssignment_fieldAccessorTable = new
+        new java.lang.String[] { "Id", "Name", "Roles", "Tags", "Description", });
+    internal_static_syft_proto_execution_v1_Protocol_RolesEntry_descriptor =
+      internal_static_syft_proto_execution_v1_Protocol_descriptor.getNestedTypes().get(0);
+    internal_static_syft_proto_execution_v1_Protocol_RolesEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_syft_proto_execution_v1_PlanAssignment_descriptor,
-        new java.lang.String[] { "PlanId", "WorkerId", });
+        internal_static_syft_proto_execution_v1_Protocol_RolesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
+    org.openmined.syftproto.execution.v1.RoleOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
