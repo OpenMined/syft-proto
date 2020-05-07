@@ -200,6 +200,12 @@
     },
     "syft.messaging.message.CryptenInitJail": {
       "code": 60
+    },
+    "type": {
+      "code": 61
+    },
+    "syft.execution.type_wrapper.NestedTypeWrapper": {
+      "code": 62
     }
   }
 }

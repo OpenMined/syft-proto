@@ -52,12 +52,22 @@ struct SyftProto_Execution_V1_Plan {
 
   var torchscript: Data = SwiftProtobuf.Internal.emptyData
 
+  var inputTypes: SyftProto_Execution_V1_NestedTypeWrapper {
+    get {return _inputTypes ?? SyftProto_Execution_V1_NestedTypeWrapper()}
+    set {_inputTypes = newValue}
+  }
+  /// Returns true if `inputTypes` has been explicitly set.
+  var hasInputTypes: Bool {return self._inputTypes != nil}
+  /// Clears the value of `inputTypes`. Subsequent reads from it will return its default value.
+  mutating func clearInputTypes() {self._inputTypes = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _id: SyftProto_Types_Syft_V1_Id? = nil
   fileprivate var _role: SyftProto_Execution_V1_Role? = nil
+  fileprivate var _inputTypes: SyftProto_Execution_V1_NestedTypeWrapper? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -74,6 +84,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     5: .same(proto: "tags"),
     6: .same(proto: "description"),
     7: .same(proto: "torchscript"),
+    8: .standard(proto: "input_types"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -86,6 +97,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 5: try decoder.decodeRepeatedStringField(value: &self.tags)
       case 6: try decoder.decodeSingularStringField(value: &self.description_p)
       case 7: try decoder.decodeSingularBytesField(value: &self.torchscript)
+      case 8: try decoder.decodeSingularMessageField(value: &self._inputTypes)
       default: break
       }
     }
@@ -113,6 +125,9 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.torchscript.isEmpty {
       try visitor.visitSingularBytesField(value: self.torchscript, fieldNumber: 7)
     }
+    if let v = self._inputTypes {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -124,6 +139,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs.tags != rhs.tags {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.torchscript != rhs.torchscript {return false}
+    if lhs._inputTypes != rhs._inputTypes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

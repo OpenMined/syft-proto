@@ -1377,6 +1377,7 @@ $root.syft_proto = (function() {
                  * @property {Array.<string>|null} [tags] Plan tags
                  * @property {string|null} [description] Plan description
                  * @property {Uint8Array|null} [torchscript] Plan torchscript
+                 * @property {syft_proto.execution.v1.INestedTypeWrapper|null} [input_types] Plan input_types
                  */
 
                 /**
@@ -1452,6 +1453,14 @@ $root.syft_proto = (function() {
                 Plan.prototype.torchscript = $util.newBuffer([]);
 
                 /**
+                 * Plan input_types.
+                 * @member {syft_proto.execution.v1.INestedTypeWrapper|null|undefined} input_types
+                 * @memberof syft_proto.execution.v1.Plan
+                 * @instance
+                 */
+                Plan.prototype.input_types = null;
+
+                /**
                  * Creates a new Plan instance using the specified properties.
                  * @function create
                  * @memberof syft_proto.execution.v1.Plan
@@ -1490,6 +1499,8 @@ $root.syft_proto = (function() {
                         writer.uint32(/* id 6, wireType 2 =*/50).string(message.description);
                     if (message.torchscript != null && message.hasOwnProperty("torchscript"))
                         writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.torchscript);
+                    if (message.input_types != null && message.hasOwnProperty("input_types"))
+                        $root.syft_proto.execution.v1.NestedTypeWrapper.encode(message.input_types, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                     return writer;
                 };
 
@@ -1546,6 +1557,9 @@ $root.syft_proto = (function() {
                             break;
                         case 7:
                             message.torchscript = reader.bytes();
+                            break;
+                        case 8:
+                            message.input_types = $root.syft_proto.execution.v1.NestedTypeWrapper.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -1611,6 +1625,11 @@ $root.syft_proto = (function() {
                     if (message.torchscript != null && message.hasOwnProperty("torchscript"))
                         if (!(message.torchscript && typeof message.torchscript.length === "number" || $util.isString(message.torchscript)))
                             return "torchscript: buffer expected";
+                    if (message.input_types != null && message.hasOwnProperty("input_types")) {
+                        var error = $root.syft_proto.execution.v1.NestedTypeWrapper.verify(message.input_types);
+                        if (error)
+                            return "input_types." + error;
+                    }
                     return null;
                 };
 
@@ -1654,6 +1673,11 @@ $root.syft_proto = (function() {
                             $util.base64.decode(object.torchscript, message.torchscript = $util.newBuffer($util.base64.length(object.torchscript)), 0);
                         else if (object.torchscript.length)
                             message.torchscript = object.torchscript;
+                    if (object.input_types != null) {
+                        if (typeof object.input_types !== "object")
+                            throw TypeError(".syft_proto.execution.v1.Plan.input_types: object expected");
+                        message.input_types = $root.syft_proto.execution.v1.NestedTypeWrapper.fromObject(object.input_types);
+                    }
                     return message;
                 };
 
@@ -1685,6 +1709,7 @@ $root.syft_proto = (function() {
                             if (options.bytes !== Array)
                                 object.torchscript = $util.newBuffer(object.torchscript);
                         }
+                        object.input_types = null;
                     }
                     if (message.id != null && message.hasOwnProperty("id"))
                         object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
@@ -1703,6 +1728,8 @@ $root.syft_proto = (function() {
                         object.description = message.description;
                     if (message.torchscript != null && message.hasOwnProperty("torchscript"))
                         object.torchscript = options.bytes === String ? $util.base64.encode(message.torchscript, 0, message.torchscript.length) : options.bytes === Array ? Array.prototype.slice.call(message.torchscript) : message.torchscript;
+                    if (message.input_types != null && message.hasOwnProperty("input_types"))
+                        object.input_types = $root.syft_proto.execution.v1.NestedTypeWrapper.toObject(message.input_types, options);
                     return object;
                 };
 
@@ -2669,6 +2696,1329 @@ $root.syft_proto = (function() {
                 };
 
                 return StateTensor;
+            })();
+
+            v1.InputTypeDescriptor = (function() {
+
+                /**
+                 * Properties of an InputTypeDescriptor.
+                 * @memberof syft_proto.execution.v1
+                 * @interface IInputTypeDescriptor
+                 * @property {string|null} [type_name] InputTypeDescriptor type_name
+                 */
+
+                /**
+                 * Constructs a new InputTypeDescriptor.
+                 * @memberof syft_proto.execution.v1
+                 * @classdesc Represents an InputTypeDescriptor.
+                 * @implements IInputTypeDescriptor
+                 * @constructor
+                 * @param {syft_proto.execution.v1.IInputTypeDescriptor=} [properties] Properties to set
+                 */
+                function InputTypeDescriptor(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * InputTypeDescriptor type_name.
+                 * @member {string} type_name
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
+                 * @instance
+                 */
+                InputTypeDescriptor.prototype.type_name = "";
+
+                /**
+                 * Creates a new InputTypeDescriptor instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
+                 * @static
+                 * @param {syft_proto.execution.v1.IInputTypeDescriptor=} [properties] Properties to set
+                 * @returns {syft_proto.execution.v1.InputTypeDescriptor} InputTypeDescriptor instance
+                 */
+                InputTypeDescriptor.create = function create(properties) {
+                    return new InputTypeDescriptor(properties);
+                };
+
+                /**
+                 * Encodes the specified InputTypeDescriptor message. Does not implicitly {@link syft_proto.execution.v1.InputTypeDescriptor.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
+                 * @static
+                 * @param {syft_proto.execution.v1.IInputTypeDescriptor} message InputTypeDescriptor message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                InputTypeDescriptor.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.type_name != null && message.hasOwnProperty("type_name"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.type_name);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified InputTypeDescriptor message, length delimited. Does not implicitly {@link syft_proto.execution.v1.InputTypeDescriptor.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
+                 * @static
+                 * @param {syft_proto.execution.v1.IInputTypeDescriptor} message InputTypeDescriptor message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                InputTypeDescriptor.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes an InputTypeDescriptor message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.execution.v1.InputTypeDescriptor} InputTypeDescriptor
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                InputTypeDescriptor.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.InputTypeDescriptor();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.type_name = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes an InputTypeDescriptor message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.execution.v1.InputTypeDescriptor} InputTypeDescriptor
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                InputTypeDescriptor.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies an InputTypeDescriptor message.
+                 * @function verify
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                InputTypeDescriptor.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.type_name != null && message.hasOwnProperty("type_name"))
+                        if (!$util.isString(message.type_name))
+                            return "type_name: string expected";
+                    return null;
+                };
+
+                /**
+                 * Creates an InputTypeDescriptor message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.execution.v1.InputTypeDescriptor} InputTypeDescriptor
+                 */
+                InputTypeDescriptor.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.execution.v1.InputTypeDescriptor)
+                        return object;
+                    var message = new $root.syft_proto.execution.v1.InputTypeDescriptor();
+                    if (object.type_name != null)
+                        message.type_name = String(object.type_name);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from an InputTypeDescriptor message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
+                 * @static
+                 * @param {syft_proto.execution.v1.InputTypeDescriptor} message InputTypeDescriptor
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                InputTypeDescriptor.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.type_name = "";
+                    if (message.type_name != null && message.hasOwnProperty("type_name"))
+                        object.type_name = message.type_name;
+                    return object;
+                };
+
+                /**
+                 * Converts this InputTypeDescriptor to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.execution.v1.InputTypeDescriptor
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                InputTypeDescriptor.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return InputTypeDescriptor;
+            })();
+
+            v1.NestedTypeWrapper = (function() {
+
+                /**
+                 * Properties of a NestedTypeWrapper.
+                 * @memberof syft_proto.execution.v1
+                 * @interface INestedTypeWrapper
+                 * @property {syft_proto.execution.v1.NestedTypeWrapper.ITypeContainer|null} [nested_types] NestedTypeWrapper nested_types
+                 */
+
+                /**
+                 * Constructs a new NestedTypeWrapper.
+                 * @memberof syft_proto.execution.v1
+                 * @classdesc Represents a NestedTypeWrapper.
+                 * @implements INestedTypeWrapper
+                 * @constructor
+                 * @param {syft_proto.execution.v1.INestedTypeWrapper=} [properties] Properties to set
+                 */
+                function NestedTypeWrapper(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * NestedTypeWrapper nested_types.
+                 * @member {syft_proto.execution.v1.NestedTypeWrapper.ITypeContainer|null|undefined} nested_types
+                 * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                 * @instance
+                 */
+                NestedTypeWrapper.prototype.nested_types = null;
+
+                /**
+                 * Creates a new NestedTypeWrapper instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                 * @static
+                 * @param {syft_proto.execution.v1.INestedTypeWrapper=} [properties] Properties to set
+                 * @returns {syft_proto.execution.v1.NestedTypeWrapper} NestedTypeWrapper instance
+                 */
+                NestedTypeWrapper.create = function create(properties) {
+                    return new NestedTypeWrapper(properties);
+                };
+
+                /**
+                 * Encodes the specified NestedTypeWrapper message. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                 * @static
+                 * @param {syft_proto.execution.v1.INestedTypeWrapper} message NestedTypeWrapper message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                NestedTypeWrapper.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.nested_types != null && message.hasOwnProperty("nested_types"))
+                        $root.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.encode(message.nested_types, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified NestedTypeWrapper message, length delimited. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                 * @static
+                 * @param {syft_proto.execution.v1.INestedTypeWrapper} message NestedTypeWrapper message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                NestedTypeWrapper.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a NestedTypeWrapper message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.execution.v1.NestedTypeWrapper} NestedTypeWrapper
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                NestedTypeWrapper.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.NestedTypeWrapper();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.nested_types = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a NestedTypeWrapper message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.execution.v1.NestedTypeWrapper} NestedTypeWrapper
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                NestedTypeWrapper.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a NestedTypeWrapper message.
+                 * @function verify
+                 * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                NestedTypeWrapper.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.nested_types != null && message.hasOwnProperty("nested_types")) {
+                        var error = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.verify(message.nested_types);
+                        if (error)
+                            return "nested_types." + error;
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a NestedTypeWrapper message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.execution.v1.NestedTypeWrapper} NestedTypeWrapper
+                 */
+                NestedTypeWrapper.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.execution.v1.NestedTypeWrapper)
+                        return object;
+                    var message = new $root.syft_proto.execution.v1.NestedTypeWrapper();
+                    if (object.nested_types != null) {
+                        if (typeof object.nested_types !== "object")
+                            throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.nested_types: object expected");
+                        message.nested_types = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.fromObject(object.nested_types);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a NestedTypeWrapper message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                 * @static
+                 * @param {syft_proto.execution.v1.NestedTypeWrapper} message NestedTypeWrapper
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                NestedTypeWrapper.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.nested_types = null;
+                    if (message.nested_types != null && message.hasOwnProperty("nested_types"))
+                        object.nested_types = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.toObject(message.nested_types, options);
+                    return object;
+                };
+
+                /**
+                 * Converts this NestedTypeWrapper to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                NestedTypeWrapper.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                NestedTypeWrapper.TypeList = (function() {
+
+                    /**
+                     * Properties of a TypeList.
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                     * @interface ITypeList
+                     * @property {Array.<syft_proto.execution.v1.INestedTypeWrapper>|null} [nested_types] TypeList nested_types
+                     */
+
+                    /**
+                     * Constructs a new TypeList.
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                     * @classdesc Represents a TypeList.
+                     * @implements ITypeList
+                     * @constructor
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeList=} [properties] Properties to set
+                     */
+                    function TypeList(properties) {
+                        this.nested_types = [];
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * TypeList nested_types.
+                     * @member {Array.<syft_proto.execution.v1.INestedTypeWrapper>} nested_types
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeList
+                     * @instance
+                     */
+                    TypeList.prototype.nested_types = $util.emptyArray;
+
+                    /**
+                     * Creates a new TypeList instance using the specified properties.
+                     * @function create
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeList
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeList=} [properties] Properties to set
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeList} TypeList instance
+                     */
+                    TypeList.create = function create(properties) {
+                        return new TypeList(properties);
+                    };
+
+                    /**
+                     * Encodes the specified TypeList message. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.TypeList.verify|verify} messages.
+                     * @function encode
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeList
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeList} message TypeList message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    TypeList.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.nested_types != null && message.nested_types.length)
+                            for (var i = 0; i < message.nested_types.length; ++i)
+                                $root.syft_proto.execution.v1.NestedTypeWrapper.encode(message.nested_types[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified TypeList message, length delimited. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.TypeList.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeList
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeList} message TypeList message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    TypeList.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes a TypeList message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeList
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeList} TypeList
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    TypeList.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.NestedTypeWrapper.TypeList();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                if (!(message.nested_types && message.nested_types.length))
+                                    message.nested_types = [];
+                                message.nested_types.push($root.syft_proto.execution.v1.NestedTypeWrapper.decode(reader, reader.uint32()));
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes a TypeList message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeList
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeList} TypeList
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    TypeList.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies a TypeList message.
+                     * @function verify
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeList
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    TypeList.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.nested_types != null && message.hasOwnProperty("nested_types")) {
+                            if (!Array.isArray(message.nested_types))
+                                return "nested_types: array expected";
+                            for (var i = 0; i < message.nested_types.length; ++i) {
+                                var error = $root.syft_proto.execution.v1.NestedTypeWrapper.verify(message.nested_types[i]);
+                                if (error)
+                                    return "nested_types." + error;
+                            }
+                        }
+                        return null;
+                    };
+
+                    /**
+                     * Creates a TypeList message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeList
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeList} TypeList
+                     */
+                    TypeList.fromObject = function fromObject(object) {
+                        if (object instanceof $root.syft_proto.execution.v1.NestedTypeWrapper.TypeList)
+                            return object;
+                        var message = new $root.syft_proto.execution.v1.NestedTypeWrapper.TypeList();
+                        if (object.nested_types) {
+                            if (!Array.isArray(object.nested_types))
+                                throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeList.nested_types: array expected");
+                            message.nested_types = [];
+                            for (var i = 0; i < object.nested_types.length; ++i) {
+                                if (typeof object.nested_types[i] !== "object")
+                                    throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeList.nested_types: object expected");
+                                message.nested_types[i] = $root.syft_proto.execution.v1.NestedTypeWrapper.fromObject(object.nested_types[i]);
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from a TypeList message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeList
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.TypeList} message TypeList
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    TypeList.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (options.arrays || options.defaults)
+                            object.nested_types = [];
+                        if (message.nested_types && message.nested_types.length) {
+                            object.nested_types = [];
+                            for (var j = 0; j < message.nested_types.length; ++j)
+                                object.nested_types[j] = $root.syft_proto.execution.v1.NestedTypeWrapper.toObject(message.nested_types[j], options);
+                        }
+                        return object;
+                    };
+
+                    /**
+                     * Converts this TypeList to JSON.
+                     * @function toJSON
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeList
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    TypeList.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return TypeList;
+                })();
+
+                NestedTypeWrapper.TypeTuple = (function() {
+
+                    /**
+                     * Properties of a TypeTuple.
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                     * @interface ITypeTuple
+                     * @property {Array.<syft_proto.execution.v1.INestedTypeWrapper>|null} [nested_types] TypeTuple nested_types
+                     */
+
+                    /**
+                     * Constructs a new TypeTuple.
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                     * @classdesc Represents a TypeTuple.
+                     * @implements ITypeTuple
+                     * @constructor
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeTuple=} [properties] Properties to set
+                     */
+                    function TypeTuple(properties) {
+                        this.nested_types = [];
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * TypeTuple nested_types.
+                     * @member {Array.<syft_proto.execution.v1.INestedTypeWrapper>} nested_types
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeTuple
+                     * @instance
+                     */
+                    TypeTuple.prototype.nested_types = $util.emptyArray;
+
+                    /**
+                     * Creates a new TypeTuple instance using the specified properties.
+                     * @function create
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeTuple
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeTuple=} [properties] Properties to set
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeTuple} TypeTuple instance
+                     */
+                    TypeTuple.create = function create(properties) {
+                        return new TypeTuple(properties);
+                    };
+
+                    /**
+                     * Encodes the specified TypeTuple message. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.TypeTuple.verify|verify} messages.
+                     * @function encode
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeTuple
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeTuple} message TypeTuple message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    TypeTuple.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.nested_types != null && message.nested_types.length)
+                            for (var i = 0; i < message.nested_types.length; ++i)
+                                $root.syft_proto.execution.v1.NestedTypeWrapper.encode(message.nested_types[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified TypeTuple message, length delimited. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.TypeTuple.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeTuple
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeTuple} message TypeTuple message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    TypeTuple.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes a TypeTuple message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeTuple
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeTuple} TypeTuple
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    TypeTuple.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                if (!(message.nested_types && message.nested_types.length))
+                                    message.nested_types = [];
+                                message.nested_types.push($root.syft_proto.execution.v1.NestedTypeWrapper.decode(reader, reader.uint32()));
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes a TypeTuple message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeTuple
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeTuple} TypeTuple
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    TypeTuple.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies a TypeTuple message.
+                     * @function verify
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeTuple
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    TypeTuple.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.nested_types != null && message.hasOwnProperty("nested_types")) {
+                            if (!Array.isArray(message.nested_types))
+                                return "nested_types: array expected";
+                            for (var i = 0; i < message.nested_types.length; ++i) {
+                                var error = $root.syft_proto.execution.v1.NestedTypeWrapper.verify(message.nested_types[i]);
+                                if (error)
+                                    return "nested_types." + error;
+                            }
+                        }
+                        return null;
+                    };
+
+                    /**
+                     * Creates a TypeTuple message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeTuple
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeTuple} TypeTuple
+                     */
+                    TypeTuple.fromObject = function fromObject(object) {
+                        if (object instanceof $root.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple)
+                            return object;
+                        var message = new $root.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple();
+                        if (object.nested_types) {
+                            if (!Array.isArray(object.nested_types))
+                                throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeTuple.nested_types: array expected");
+                            message.nested_types = [];
+                            for (var i = 0; i < object.nested_types.length; ++i) {
+                                if (typeof object.nested_types[i] !== "object")
+                                    throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeTuple.nested_types: object expected");
+                                message.nested_types[i] = $root.syft_proto.execution.v1.NestedTypeWrapper.fromObject(object.nested_types[i]);
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from a TypeTuple message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeTuple
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.TypeTuple} message TypeTuple
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    TypeTuple.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (options.arrays || options.defaults)
+                            object.nested_types = [];
+                        if (message.nested_types && message.nested_types.length) {
+                            object.nested_types = [];
+                            for (var j = 0; j < message.nested_types.length; ++j)
+                                object.nested_types[j] = $root.syft_proto.execution.v1.NestedTypeWrapper.toObject(message.nested_types[j], options);
+                        }
+                        return object;
+                    };
+
+                    /**
+                     * Converts this TypeTuple to JSON.
+                     * @function toJSON
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeTuple
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    TypeTuple.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return TypeTuple;
+                })();
+
+                NestedTypeWrapper.TypeMap = (function() {
+
+                    /**
+                     * Properties of a TypeMap.
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                     * @interface ITypeMap
+                     * @property {Object.<string,syft_proto.execution.v1.INestedTypeWrapper>|null} [nested_types] TypeMap nested_types
+                     */
+
+                    /**
+                     * Constructs a new TypeMap.
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                     * @classdesc Represents a TypeMap.
+                     * @implements ITypeMap
+                     * @constructor
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeMap=} [properties] Properties to set
+                     */
+                    function TypeMap(properties) {
+                        this.nested_types = {};
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * TypeMap nested_types.
+                     * @member {Object.<string,syft_proto.execution.v1.INestedTypeWrapper>} nested_types
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeMap
+                     * @instance
+                     */
+                    TypeMap.prototype.nested_types = $util.emptyObject;
+
+                    /**
+                     * Creates a new TypeMap instance using the specified properties.
+                     * @function create
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeMap
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeMap=} [properties] Properties to set
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeMap} TypeMap instance
+                     */
+                    TypeMap.create = function create(properties) {
+                        return new TypeMap(properties);
+                    };
+
+                    /**
+                     * Encodes the specified TypeMap message. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.TypeMap.verify|verify} messages.
+                     * @function encode
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeMap
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeMap} message TypeMap message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    TypeMap.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.nested_types != null && message.hasOwnProperty("nested_types"))
+                            for (var keys = Object.keys(message.nested_types), i = 0; i < keys.length; ++i) {
+                                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                                $root.syft_proto.execution.v1.NestedTypeWrapper.encode(message.nested_types[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                            }
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified TypeMap message, length delimited. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.TypeMap.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeMap
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeMap} message TypeMap message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    TypeMap.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes a TypeMap message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeMap
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeMap} TypeMap
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    TypeMap.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.NestedTypeWrapper.TypeMap(), key;
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                reader.skip().pos++;
+                                if (message.nested_types === $util.emptyObject)
+                                    message.nested_types = {};
+                                key = reader.string();
+                                reader.pos++;
+                                message.nested_types[key] = $root.syft_proto.execution.v1.NestedTypeWrapper.decode(reader, reader.uint32());
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes a TypeMap message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeMap
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeMap} TypeMap
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    TypeMap.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies a TypeMap message.
+                     * @function verify
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeMap
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    TypeMap.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.nested_types != null && message.hasOwnProperty("nested_types")) {
+                            if (!$util.isObject(message.nested_types))
+                                return "nested_types: object expected";
+                            var key = Object.keys(message.nested_types);
+                            for (var i = 0; i < key.length; ++i) {
+                                var error = $root.syft_proto.execution.v1.NestedTypeWrapper.verify(message.nested_types[key[i]]);
+                                if (error)
+                                    return "nested_types." + error;
+                            }
+                        }
+                        return null;
+                    };
+
+                    /**
+                     * Creates a TypeMap message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeMap
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeMap} TypeMap
+                     */
+                    TypeMap.fromObject = function fromObject(object) {
+                        if (object instanceof $root.syft_proto.execution.v1.NestedTypeWrapper.TypeMap)
+                            return object;
+                        var message = new $root.syft_proto.execution.v1.NestedTypeWrapper.TypeMap();
+                        if (object.nested_types) {
+                            if (typeof object.nested_types !== "object")
+                                throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeMap.nested_types: object expected");
+                            message.nested_types = {};
+                            for (var keys = Object.keys(object.nested_types), i = 0; i < keys.length; ++i) {
+                                if (typeof object.nested_types[keys[i]] !== "object")
+                                    throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeMap.nested_types: object expected");
+                                message.nested_types[keys[i]] = $root.syft_proto.execution.v1.NestedTypeWrapper.fromObject(object.nested_types[keys[i]]);
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from a TypeMap message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeMap
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.TypeMap} message TypeMap
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    TypeMap.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (options.objects || options.defaults)
+                            object.nested_types = {};
+                        var keys2;
+                        if (message.nested_types && (keys2 = Object.keys(message.nested_types)).length) {
+                            object.nested_types = {};
+                            for (var j = 0; j < keys2.length; ++j)
+                                object.nested_types[keys2[j]] = $root.syft_proto.execution.v1.NestedTypeWrapper.toObject(message.nested_types[keys2[j]], options);
+                        }
+                        return object;
+                    };
+
+                    /**
+                     * Converts this TypeMap to JSON.
+                     * @function toJSON
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeMap
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    TypeMap.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return TypeMap;
+                })();
+
+                NestedTypeWrapper.TypeContainer = (function() {
+
+                    /**
+                     * Properties of a TypeContainer.
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                     * @interface ITypeContainer
+                     * @property {syft_proto.execution.v1.IInputTypeDescriptor|null} [nested_type] TypeContainer nested_type
+                     * @property {syft_proto.execution.v1.NestedTypeWrapper.ITypeList|null} [nested_type_list] TypeContainer nested_type_list
+                     * @property {syft_proto.execution.v1.NestedTypeWrapper.ITypeTuple|null} [nested_type_tuple] TypeContainer nested_type_tuple
+                     * @property {syft_proto.execution.v1.NestedTypeWrapper.ITypeMap|null} [nested_type_dict] TypeContainer nested_type_dict
+                     */
+
+                    /**
+                     * Constructs a new TypeContainer.
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper
+                     * @classdesc Represents a TypeContainer.
+                     * @implements ITypeContainer
+                     * @constructor
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeContainer=} [properties] Properties to set
+                     */
+                    function TypeContainer(properties) {
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * TypeContainer nested_type.
+                     * @member {syft_proto.execution.v1.IInputTypeDescriptor|null|undefined} nested_type
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @instance
+                     */
+                    TypeContainer.prototype.nested_type = null;
+
+                    /**
+                     * TypeContainer nested_type_list.
+                     * @member {syft_proto.execution.v1.NestedTypeWrapper.ITypeList|null|undefined} nested_type_list
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @instance
+                     */
+                    TypeContainer.prototype.nested_type_list = null;
+
+                    /**
+                     * TypeContainer nested_type_tuple.
+                     * @member {syft_proto.execution.v1.NestedTypeWrapper.ITypeTuple|null|undefined} nested_type_tuple
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @instance
+                     */
+                    TypeContainer.prototype.nested_type_tuple = null;
+
+                    /**
+                     * TypeContainer nested_type_dict.
+                     * @member {syft_proto.execution.v1.NestedTypeWrapper.ITypeMap|null|undefined} nested_type_dict
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @instance
+                     */
+                    TypeContainer.prototype.nested_type_dict = null;
+
+                    // OneOf field names bound to virtual getters and setters
+                    var $oneOfFields;
+
+                    /**
+                     * TypeContainer nested_container.
+                     * @member {"nested_type"|"nested_type_list"|"nested_type_tuple"|"nested_type_dict"|undefined} nested_container
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @instance
+                     */
+                    Object.defineProperty(TypeContainer.prototype, "nested_container", {
+                        get: $util.oneOfGetter($oneOfFields = ["nested_type", "nested_type_list", "nested_type_tuple", "nested_type_dict"]),
+                        set: $util.oneOfSetter($oneOfFields)
+                    });
+
+                    /**
+                     * Creates a new TypeContainer instance using the specified properties.
+                     * @function create
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeContainer=} [properties] Properties to set
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeContainer} TypeContainer instance
+                     */
+                    TypeContainer.create = function create(properties) {
+                        return new TypeContainer(properties);
+                    };
+
+                    /**
+                     * Encodes the specified TypeContainer message. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.verify|verify} messages.
+                     * @function encode
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeContainer} message TypeContainer message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    TypeContainer.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.nested_type != null && message.hasOwnProperty("nested_type"))
+                            $root.syft_proto.execution.v1.InputTypeDescriptor.encode(message.nested_type, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        if (message.nested_type_list != null && message.hasOwnProperty("nested_type_list"))
+                            $root.syft_proto.execution.v1.NestedTypeWrapper.TypeList.encode(message.nested_type_list, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                        if (message.nested_type_tuple != null && message.hasOwnProperty("nested_type_tuple"))
+                            $root.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple.encode(message.nested_type_tuple, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        if (message.nested_type_dict != null && message.hasOwnProperty("nested_type_dict"))
+                            $root.syft_proto.execution.v1.NestedTypeWrapper.TypeMap.encode(message.nested_type_dict, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified TypeContainer message, length delimited. Does not implicitly {@link syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.ITypeContainer} message TypeContainer message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    TypeContainer.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes a TypeContainer message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeContainer} TypeContainer
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    TypeContainer.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                message.nested_type = $root.syft_proto.execution.v1.InputTypeDescriptor.decode(reader, reader.uint32());
+                                break;
+                            case 2:
+                                message.nested_type_list = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeList.decode(reader, reader.uint32());
+                                break;
+                            case 3:
+                                message.nested_type_tuple = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple.decode(reader, reader.uint32());
+                                break;
+                            case 4:
+                                message.nested_type_dict = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeMap.decode(reader, reader.uint32());
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes a TypeContainer message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeContainer} TypeContainer
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    TypeContainer.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies a TypeContainer message.
+                     * @function verify
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    TypeContainer.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        var properties = {};
+                        if (message.nested_type != null && message.hasOwnProperty("nested_type")) {
+                            properties.nested_container = 1;
+                            {
+                                var error = $root.syft_proto.execution.v1.InputTypeDescriptor.verify(message.nested_type);
+                                if (error)
+                                    return "nested_type." + error;
+                            }
+                        }
+                        if (message.nested_type_list != null && message.hasOwnProperty("nested_type_list")) {
+                            if (properties.nested_container === 1)
+                                return "nested_container: multiple values";
+                            properties.nested_container = 1;
+                            {
+                                var error = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeList.verify(message.nested_type_list);
+                                if (error)
+                                    return "nested_type_list." + error;
+                            }
+                        }
+                        if (message.nested_type_tuple != null && message.hasOwnProperty("nested_type_tuple")) {
+                            if (properties.nested_container === 1)
+                                return "nested_container: multiple values";
+                            properties.nested_container = 1;
+                            {
+                                var error = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple.verify(message.nested_type_tuple);
+                                if (error)
+                                    return "nested_type_tuple." + error;
+                            }
+                        }
+                        if (message.nested_type_dict != null && message.hasOwnProperty("nested_type_dict")) {
+                            if (properties.nested_container === 1)
+                                return "nested_container: multiple values";
+                            properties.nested_container = 1;
+                            {
+                                var error = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeMap.verify(message.nested_type_dict);
+                                if (error)
+                                    return "nested_type_dict." + error;
+                            }
+                        }
+                        return null;
+                    };
+
+                    /**
+                     * Creates a TypeContainer message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {syft_proto.execution.v1.NestedTypeWrapper.TypeContainer} TypeContainer
+                     */
+                    TypeContainer.fromObject = function fromObject(object) {
+                        if (object instanceof $root.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer)
+                            return object;
+                        var message = new $root.syft_proto.execution.v1.NestedTypeWrapper.TypeContainer();
+                        if (object.nested_type != null) {
+                            if (typeof object.nested_type !== "object")
+                                throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type: object expected");
+                            message.nested_type = $root.syft_proto.execution.v1.InputTypeDescriptor.fromObject(object.nested_type);
+                        }
+                        if (object.nested_type_list != null) {
+                            if (typeof object.nested_type_list !== "object")
+                                throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type_list: object expected");
+                            message.nested_type_list = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeList.fromObject(object.nested_type_list);
+                        }
+                        if (object.nested_type_tuple != null) {
+                            if (typeof object.nested_type_tuple !== "object")
+                                throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type_tuple: object expected");
+                            message.nested_type_tuple = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple.fromObject(object.nested_type_tuple);
+                        }
+                        if (object.nested_type_dict != null) {
+                            if (typeof object.nested_type_dict !== "object")
+                                throw TypeError(".syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type_dict: object expected");
+                            message.nested_type_dict = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeMap.fromObject(object.nested_type_dict);
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from a TypeContainer message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @static
+                     * @param {syft_proto.execution.v1.NestedTypeWrapper.TypeContainer} message TypeContainer
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    TypeContainer.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (message.nested_type != null && message.hasOwnProperty("nested_type")) {
+                            object.nested_type = $root.syft_proto.execution.v1.InputTypeDescriptor.toObject(message.nested_type, options);
+                            if (options.oneofs)
+                                object.nested_container = "nested_type";
+                        }
+                        if (message.nested_type_list != null && message.hasOwnProperty("nested_type_list")) {
+                            object.nested_type_list = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeList.toObject(message.nested_type_list, options);
+                            if (options.oneofs)
+                                object.nested_container = "nested_type_list";
+                        }
+                        if (message.nested_type_tuple != null && message.hasOwnProperty("nested_type_tuple")) {
+                            object.nested_type_tuple = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeTuple.toObject(message.nested_type_tuple, options);
+                            if (options.oneofs)
+                                object.nested_container = "nested_type_tuple";
+                        }
+                        if (message.nested_type_dict != null && message.hasOwnProperty("nested_type_dict")) {
+                            object.nested_type_dict = $root.syft_proto.execution.v1.NestedTypeWrapper.TypeMap.toObject(message.nested_type_dict, options);
+                            if (options.oneofs)
+                                object.nested_container = "nested_type_dict";
+                        }
+                        return object;
+                    };
+
+                    /**
+                     * Converts this TypeContainer to JSON.
+                     * @function toJSON
+                     * @memberof syft_proto.execution.v1.NestedTypeWrapper.TypeContainer
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    TypeContainer.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return TypeContainer;
+                })();
+
+                return NestedTypeWrapper;
             })();
 
             v1.Protocol = (function() {
