@@ -198,13 +198,13 @@
     "syft.frameworks.torch.tensors.interpreters.paillier.PaillierTensor": {
       "code": 59
     },
-    "type": {
+    "syft.messaging.message.CryptenInitJail": {
       "code": 60
     },
-    "syft.execution.type_wrapper.NestedTypeWrapper": {
+    "type": {
       "code": 61
     },
-    "syft.messaging.message.CryptenInitJail": {
+    "syft.execution.type_wrapper.NestedTypeWrapper": {
       "code": 62
     }
   }

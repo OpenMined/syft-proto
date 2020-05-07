@@ -1373,12 +1373,11 @@ $root.syft_proto = (function() {
                  * @property {syft_proto.types.syft.v1.IId|null} [id] Plan id
                  * @property {syft_proto.execution.v1.IRole|null} [role] Plan role
                  * @property {boolean|null} [include_state] Plan include_state
-                 * @property {boolean|null} [is_built] Plan is_built
                  * @property {string|null} [name] Plan name
                  * @property {Array.<string>|null} [tags] Plan tags
                  * @property {string|null} [description] Plan description
                  * @property {Uint8Array|null} [torchscript] Plan torchscript
-                 * @property {syft_proto.execution.v1.INestedTypeWrapper|null} [serialized_input] Plan serialized_input
+                 * @property {syft_proto.execution.v1.INestedTypeWrapper|null} [input_types] Plan input_types
                  */
 
                 /**
@@ -1422,14 +1421,6 @@ $root.syft_proto = (function() {
                 Plan.prototype.include_state = false;
 
                 /**
-                 * Plan is_built.
-                 * @member {boolean} is_built
-                 * @memberof syft_proto.execution.v1.Plan
-                 * @instance
-                 */
-                Plan.prototype.is_built = false;
-
-                /**
                  * Plan name.
                  * @member {string} name
                  * @memberof syft_proto.execution.v1.Plan
@@ -1462,12 +1453,12 @@ $root.syft_proto = (function() {
                 Plan.prototype.torchscript = $util.newBuffer([]);
 
                 /**
-                 * Plan serialized_input.
-                 * @member {syft_proto.execution.v1.INestedTypeWrapper|null|undefined} serialized_input
+                 * Plan input_types.
+                 * @member {syft_proto.execution.v1.INestedTypeWrapper|null|undefined} input_types
                  * @memberof syft_proto.execution.v1.Plan
                  * @instance
                  */
-                Plan.prototype.serialized_input = null;
+                Plan.prototype.input_types = null;
 
                 /**
                  * Creates a new Plan instance using the specified properties.
@@ -1499,19 +1490,17 @@ $root.syft_proto = (function() {
                         $root.syft_proto.execution.v1.Role.encode(message.role, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.include_state != null && message.hasOwnProperty("include_state"))
                         writer.uint32(/* id 3, wireType 0 =*/24).bool(message.include_state);
-                    if (message.is_built != null && message.hasOwnProperty("is_built"))
-                        writer.uint32(/* id 4, wireType 0 =*/32).bool(message.is_built);
                     if (message.name != null && message.hasOwnProperty("name"))
-                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.name);
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.name);
                     if (message.tags != null && message.tags.length)
                         for (var i = 0; i < message.tags.length; ++i)
-                            writer.uint32(/* id 6, wireType 2 =*/50).string(message.tags[i]);
+                            writer.uint32(/* id 5, wireType 2 =*/42).string(message.tags[i]);
                     if (message.description != null && message.hasOwnProperty("description"))
-                        writer.uint32(/* id 7, wireType 2 =*/58).string(message.description);
+                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.description);
                     if (message.torchscript != null && message.hasOwnProperty("torchscript"))
-                        writer.uint32(/* id 8, wireType 2 =*/66).bytes(message.torchscript);
-                    if (message.serialized_input != null && message.hasOwnProperty("serialized_input"))
-                        $root.syft_proto.execution.v1.NestedTypeWrapper.encode(message.serialized_input, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                        writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.torchscript);
+                    if (message.input_types != null && message.hasOwnProperty("input_types"))
+                        $root.syft_proto.execution.v1.NestedTypeWrapper.encode(message.input_types, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                     return writer;
                 };
 
@@ -1556,24 +1545,21 @@ $root.syft_proto = (function() {
                             message.include_state = reader.bool();
                             break;
                         case 4:
-                            message.is_built = reader.bool();
-                            break;
-                        case 5:
                             message.name = reader.string();
                             break;
-                        case 6:
+                        case 5:
                             if (!(message.tags && message.tags.length))
                                 message.tags = [];
                             message.tags.push(reader.string());
                             break;
-                        case 7:
+                        case 6:
                             message.description = reader.string();
                             break;
-                        case 8:
+                        case 7:
                             message.torchscript = reader.bytes();
                             break;
-                        case 9:
-                            message.serialized_input = $root.syft_proto.execution.v1.NestedTypeWrapper.decode(reader, reader.uint32());
+                        case 8:
+                            message.input_types = $root.syft_proto.execution.v1.NestedTypeWrapper.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -1623,9 +1609,6 @@ $root.syft_proto = (function() {
                     if (message.include_state != null && message.hasOwnProperty("include_state"))
                         if (typeof message.include_state !== "boolean")
                             return "include_state: boolean expected";
-                    if (message.is_built != null && message.hasOwnProperty("is_built"))
-                        if (typeof message.is_built !== "boolean")
-                            return "is_built: boolean expected";
                     if (message.name != null && message.hasOwnProperty("name"))
                         if (!$util.isString(message.name))
                             return "name: string expected";
@@ -1642,10 +1625,10 @@ $root.syft_proto = (function() {
                     if (message.torchscript != null && message.hasOwnProperty("torchscript"))
                         if (!(message.torchscript && typeof message.torchscript.length === "number" || $util.isString(message.torchscript)))
                             return "torchscript: buffer expected";
-                    if (message.serialized_input != null && message.hasOwnProperty("serialized_input")) {
-                        var error = $root.syft_proto.execution.v1.NestedTypeWrapper.verify(message.serialized_input);
+                    if (message.input_types != null && message.hasOwnProperty("input_types")) {
+                        var error = $root.syft_proto.execution.v1.NestedTypeWrapper.verify(message.input_types);
                         if (error)
-                            return "serialized_input." + error;
+                            return "input_types." + error;
                     }
                     return null;
                 };
@@ -1674,8 +1657,6 @@ $root.syft_proto = (function() {
                     }
                     if (object.include_state != null)
                         message.include_state = Boolean(object.include_state);
-                    if (object.is_built != null)
-                        message.is_built = Boolean(object.is_built);
                     if (object.name != null)
                         message.name = String(object.name);
                     if (object.tags) {
@@ -1692,10 +1673,10 @@ $root.syft_proto = (function() {
                             $util.base64.decode(object.torchscript, message.torchscript = $util.newBuffer($util.base64.length(object.torchscript)), 0);
                         else if (object.torchscript.length)
                             message.torchscript = object.torchscript;
-                    if (object.serialized_input != null) {
-                        if (typeof object.serialized_input !== "object")
-                            throw TypeError(".syft_proto.execution.v1.Plan.serialized_input: object expected");
-                        message.serialized_input = $root.syft_proto.execution.v1.NestedTypeWrapper.fromObject(object.serialized_input);
+                    if (object.input_types != null) {
+                        if (typeof object.input_types !== "object")
+                            throw TypeError(".syft_proto.execution.v1.Plan.input_types: object expected");
+                        message.input_types = $root.syft_proto.execution.v1.NestedTypeWrapper.fromObject(object.input_types);
                     }
                     return message;
                 };
@@ -1719,7 +1700,6 @@ $root.syft_proto = (function() {
                         object.id = null;
                         object.role = null;
                         object.include_state = false;
-                        object.is_built = false;
                         object.name = "";
                         object.description = "";
                         if (options.bytes === String)
@@ -1729,7 +1709,7 @@ $root.syft_proto = (function() {
                             if (options.bytes !== Array)
                                 object.torchscript = $util.newBuffer(object.torchscript);
                         }
-                        object.serialized_input = null;
+                        object.input_types = null;
                     }
                     if (message.id != null && message.hasOwnProperty("id"))
                         object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
@@ -1737,8 +1717,6 @@ $root.syft_proto = (function() {
                         object.role = $root.syft_proto.execution.v1.Role.toObject(message.role, options);
                     if (message.include_state != null && message.hasOwnProperty("include_state"))
                         object.include_state = message.include_state;
-                    if (message.is_built != null && message.hasOwnProperty("is_built"))
-                        object.is_built = message.is_built;
                     if (message.name != null && message.hasOwnProperty("name"))
                         object.name = message.name;
                     if (message.tags && message.tags.length) {
@@ -1750,8 +1728,8 @@ $root.syft_proto = (function() {
                         object.description = message.description;
                     if (message.torchscript != null && message.hasOwnProperty("torchscript"))
                         object.torchscript = options.bytes === String ? $util.base64.encode(message.torchscript, 0, message.torchscript.length) : options.bytes === Array ? Array.prototype.slice.call(message.torchscript) : message.torchscript;
-                    if (message.serialized_input != null && message.hasOwnProperty("serialized_input"))
-                        object.serialized_input = $root.syft_proto.execution.v1.NestedTypeWrapper.toObject(message.serialized_input, options);
+                    if (message.input_types != null && message.hasOwnProperty("input_types"))
+                        object.input_types = $root.syft_proto.execution.v1.NestedTypeWrapper.toObject(message.input_types, options);
                     return object;
                 };
 

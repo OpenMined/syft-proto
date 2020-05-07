@@ -473,9 +473,6 @@ export namespace syft_proto {
                 /** Plan include_state */
                 include_state?: (boolean|null);
 
-                /** Plan is_built */
-                is_built?: (boolean|null);
-
                 /** Plan name */
                 name?: (string|null);
 
@@ -488,8 +485,8 @@ export namespace syft_proto {
                 /** Plan torchscript */
                 torchscript?: (Uint8Array|null);
 
-                /** Plan serialized_input */
-                serialized_input?: (syft_proto.execution.v1.INestedTypeWrapper|null);
+                /** Plan input_types */
+                input_types?: (syft_proto.execution.v1.INestedTypeWrapper|null);
             }
 
             /** Represents a Plan. */
@@ -510,9 +507,6 @@ export namespace syft_proto {
                 /** Plan include_state. */
                 public include_state: boolean;
 
-                /** Plan is_built. */
-                public is_built: boolean;
-
                 /** Plan name. */
                 public name: string;
 
@@ -525,8 +519,8 @@ export namespace syft_proto {
                 /** Plan torchscript. */
                 public torchscript: Uint8Array;
 
-                /** Plan serialized_input. */
-                public serialized_input?: (syft_proto.execution.v1.INestedTypeWrapper|null);
+                /** Plan input_types. */
+                public input_types?: (syft_proto.execution.v1.INestedTypeWrapper|null);
 
                 /**
                  * Creates a new Plan instance using the specified properties.

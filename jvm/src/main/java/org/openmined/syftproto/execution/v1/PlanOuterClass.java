@@ -55,42 +55,36 @@ public final class PlanOuterClass {
     boolean getIncludeState();
 
     /**
-     * <code>bool is_built = 4[json_name = "isBuilt"];</code>
-     * @return The isBuilt.
-     */
-    boolean getIsBuilt();
-
-    /**
-     * <code>string name = 5[json_name = "name"];</code>
+     * <code>string name = 4[json_name = "name"];</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>string name = 5[json_name = "name"];</code>
+     * <code>string name = 4[json_name = "name"];</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @return The count of tags.
      */
     int getTagsCount();
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @param index The index of the element to return.
      * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the tags at the given index.
      */
@@ -98,37 +92,37 @@ public final class PlanOuterClass {
         getTagsBytes(int index);
 
     /**
-     * <code>string description = 7[json_name = "description"];</code>
+     * <code>string description = 6[json_name = "description"];</code>
      * @return The description.
      */
     java.lang.String getDescription();
     /**
-     * <code>string description = 7[json_name = "description"];</code>
+     * <code>string description = 6[json_name = "description"];</code>
      * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
-     * <code>bytes torchscript = 8[json_name = "torchscript"];</code>
+     * <code>bytes torchscript = 7[json_name = "torchscript"];</code>
      * @return The torchscript.
      */
     com.google.protobuf.ByteString getTorchscript();
 
     /**
-     * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
-     * @return Whether the serializedInput field is set.
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
+     * @return Whether the inputTypes field is set.
      */
-    boolean hasSerializedInput();
+    boolean hasInputTypes();
     /**
-     * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
-     * @return The serializedInput.
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
+     * @return The inputTypes.
      */
-    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getSerializedInput();
+    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getInputTypes();
     /**
-     * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
      */
-    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getSerializedInputOrBuilder();
+    org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getInputTypesOrBuilder();
   }
   /**
    * Protobuf type {@code syft_proto.execution.v1.Plan}
@@ -211,18 +205,13 @@ public final class PlanOuterClass {
               includeState_ = input.readBool();
               break;
             }
-            case 32: {
-
-              isBuilt_ = input.readBool();
-              break;
-            }
-            case 42: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
               break;
             }
-            case 50: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
@@ -231,26 +220,26 @@ public final class PlanOuterClass {
               tags_.add(s);
               break;
             }
-            case 58: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-            case 66: {
+            case 58: {
 
               torchscript_ = input.readBytes();
               break;
             }
-            case 74: {
+            case 66: {
               org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder subBuilder = null;
-              if (serializedInput_ != null) {
-                subBuilder = serializedInput_.toBuilder();
+              if (inputTypes_ != null) {
+                subBuilder = inputTypes_.toBuilder();
               }
-              serializedInput_ = input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.parser(), extensionRegistry);
+              inputTypes_ = input.readMessage(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(serializedInput_);
-                serializedInput_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(inputTypes_);
+                inputTypes_ = subBuilder.buildPartial();
               }
 
               break;
@@ -346,20 +335,10 @@ public final class PlanOuterClass {
       return includeState_;
     }
 
-    public static final int IS_BUILT_FIELD_NUMBER = 4;
-    private boolean isBuilt_;
-    /**
-     * <code>bool is_built = 4[json_name = "isBuilt"];</code>
-     * @return The isBuilt.
-     */
-    public boolean getIsBuilt() {
-      return isBuilt_;
-    }
-
-    public static final int NAME_FIELD_NUMBER = 5;
+    public static final int NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object name_;
     /**
-     * <code>string name = 5[json_name = "name"];</code>
+     * <code>string name = 4[json_name = "name"];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -375,7 +354,7 @@ public final class PlanOuterClass {
       }
     }
     /**
-     * <code>string name = 5[json_name = "name"];</code>
+     * <code>string name = 4[json_name = "name"];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -392,10 +371,10 @@ public final class PlanOuterClass {
       }
     }
 
-    public static final int TAGS_FIELD_NUMBER = 6;
+    public static final int TAGS_FIELD_NUMBER = 5;
     private com.google.protobuf.LazyStringList tags_;
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
@@ -403,14 +382,14 @@ public final class PlanOuterClass {
       return tags_;
     }
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @param index The index of the element to return.
      * @return The tags at the given index.
      */
@@ -418,7 +397,7 @@ public final class PlanOuterClass {
       return tags_.get(index);
     }
     /**
-     * <code>repeated string tags = 6[json_name = "tags"];</code>
+     * <code>repeated string tags = 5[json_name = "tags"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the tags at the given index.
      */
@@ -427,10 +406,10 @@ public final class PlanOuterClass {
       return tags_.getByteString(index);
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 7;
+    public static final int DESCRIPTION_FIELD_NUMBER = 6;
     private volatile java.lang.Object description_;
     /**
-     * <code>string description = 7[json_name = "description"];</code>
+     * <code>string description = 6[json_name = "description"];</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -446,7 +425,7 @@ public final class PlanOuterClass {
       }
     }
     /**
-     * <code>string description = 7[json_name = "description"];</code>
+     * <code>string description = 6[json_name = "description"];</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -463,37 +442,37 @@ public final class PlanOuterClass {
       }
     }
 
-    public static final int TORCHSCRIPT_FIELD_NUMBER = 8;
+    public static final int TORCHSCRIPT_FIELD_NUMBER = 7;
     private com.google.protobuf.ByteString torchscript_;
     /**
-     * <code>bytes torchscript = 8[json_name = "torchscript"];</code>
+     * <code>bytes torchscript = 7[json_name = "torchscript"];</code>
      * @return The torchscript.
      */
     public com.google.protobuf.ByteString getTorchscript() {
       return torchscript_;
     }
 
-    public static final int SERIALIZED_INPUT_FIELD_NUMBER = 9;
-    private org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper serializedInput_;
+    public static final int INPUT_TYPES_FIELD_NUMBER = 8;
+    private org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper inputTypes_;
     /**
-     * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
-     * @return Whether the serializedInput field is set.
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
+     * @return Whether the inputTypes field is set.
      */
-    public boolean hasSerializedInput() {
-      return serializedInput_ != null;
+    public boolean hasInputTypes() {
+      return inputTypes_ != null;
     }
     /**
-     * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
-     * @return The serializedInput.
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
+     * @return The inputTypes.
      */
-    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getSerializedInput() {
-      return serializedInput_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : serializedInput_;
+    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getInputTypes() {
+      return inputTypes_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : inputTypes_;
     }
     /**
-     * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+     * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
      */
-    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getSerializedInputOrBuilder() {
-      return getSerializedInput();
+    public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getInputTypesOrBuilder() {
+      return getInputTypes();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -519,23 +498,20 @@ public final class PlanOuterClass {
       if (includeState_ != false) {
         output.writeBool(3, includeState_);
       }
-      if (isBuilt_ != false) {
-        output.writeBool(4, isBuilt_);
-      }
       if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
       }
       for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tags_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tags_.getRaw(i));
       }
       if (!getDescriptionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
       }
       if (!torchscript_.isEmpty()) {
-        output.writeBytes(8, torchscript_);
+        output.writeBytes(7, torchscript_);
       }
-      if (serializedInput_ != null) {
-        output.writeMessage(9, getSerializedInput());
+      if (inputTypes_ != null) {
+        output.writeMessage(8, getInputTypes());
       }
       unknownFields.writeTo(output);
     }
@@ -558,12 +534,8 @@ public final class PlanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, includeState_);
       }
-      if (isBuilt_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isBuilt_);
-      }
       if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
       {
         int dataSize = 0;
@@ -574,15 +546,15 @@ public final class PlanOuterClass {
         size += 1 * getTagsList().size();
       }
       if (!getDescriptionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
       }
       if (!torchscript_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(8, torchscript_);
+          .computeBytesSize(7, torchscript_);
       }
-      if (serializedInput_ != null) {
+      if (inputTypes_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getSerializedInput());
+          .computeMessageSize(8, getInputTypes());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -611,8 +583,6 @@ public final class PlanOuterClass {
       }
       if (getIncludeState()
           != other.getIncludeState()) return false;
-      if (getIsBuilt()
-          != other.getIsBuilt()) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (!getTagsList()
@@ -621,10 +591,10 @@ public final class PlanOuterClass {
           .equals(other.getDescription())) return false;
       if (!getTorchscript()
           .equals(other.getTorchscript())) return false;
-      if (hasSerializedInput() != other.hasSerializedInput()) return false;
-      if (hasSerializedInput()) {
-        if (!getSerializedInput()
-            .equals(other.getSerializedInput())) return false;
+      if (hasInputTypes() != other.hasInputTypes()) return false;
+      if (hasInputTypes()) {
+        if (!getInputTypes()
+            .equals(other.getInputTypes())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -648,9 +618,6 @@ public final class PlanOuterClass {
       hash = (37 * hash) + INCLUDE_STATE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIncludeState());
-      hash = (37 * hash) + IS_BUILT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsBuilt());
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       if (getTagsCount() > 0) {
@@ -661,9 +628,9 @@ public final class PlanOuterClass {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + TORCHSCRIPT_FIELD_NUMBER;
       hash = (53 * hash) + getTorchscript().hashCode();
-      if (hasSerializedInput()) {
-        hash = (37 * hash) + SERIALIZED_INPUT_FIELD_NUMBER;
-        hash = (53 * hash) + getSerializedInput().hashCode();
+      if (hasInputTypes()) {
+        hash = (37 * hash) + INPUT_TYPES_FIELD_NUMBER;
+        hash = (53 * hash) + getInputTypes().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -812,8 +779,6 @@ public final class PlanOuterClass {
         }
         includeState_ = false;
 
-        isBuilt_ = false;
-
         name_ = "";
 
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -822,11 +787,11 @@ public final class PlanOuterClass {
 
         torchscript_ = com.google.protobuf.ByteString.EMPTY;
 
-        if (serializedInputBuilder_ == null) {
-          serializedInput_ = null;
+        if (inputTypesBuilder_ == null) {
+          inputTypes_ = null;
         } else {
-          serializedInput_ = null;
-          serializedInputBuilder_ = null;
+          inputTypes_ = null;
+          inputTypesBuilder_ = null;
         }
         return this;
       }
@@ -866,7 +831,6 @@ public final class PlanOuterClass {
           result.role_ = roleBuilder_.build();
         }
         result.includeState_ = includeState_;
-        result.isBuilt_ = isBuilt_;
         result.name_ = name_;
         if (((bitField0_ & 0x00000001) != 0)) {
           tags_ = tags_.getUnmodifiableView();
@@ -875,10 +839,10 @@ public final class PlanOuterClass {
         result.tags_ = tags_;
         result.description_ = description_;
         result.torchscript_ = torchscript_;
-        if (serializedInputBuilder_ == null) {
-          result.serializedInput_ = serializedInput_;
+        if (inputTypesBuilder_ == null) {
+          result.inputTypes_ = inputTypes_;
         } else {
-          result.serializedInput_ = serializedInputBuilder_.build();
+          result.inputTypes_ = inputTypesBuilder_.build();
         }
         onBuilt();
         return result;
@@ -937,9 +901,6 @@ public final class PlanOuterClass {
         if (other.getIncludeState() != false) {
           setIncludeState(other.getIncludeState());
         }
-        if (other.getIsBuilt() != false) {
-          setIsBuilt(other.getIsBuilt());
-        }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
@@ -961,8 +922,8 @@ public final class PlanOuterClass {
         if (other.getTorchscript() != com.google.protobuf.ByteString.EMPTY) {
           setTorchscript(other.getTorchscript());
         }
-        if (other.hasSerializedInput()) {
-          mergeSerializedInput(other.getSerializedInput());
+        if (other.hasInputTypes()) {
+          mergeInputTypes(other.getInputTypes());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1262,39 +1223,9 @@ public final class PlanOuterClass {
         return this;
       }
 
-      private boolean isBuilt_ ;
-      /**
-       * <code>bool is_built = 4[json_name = "isBuilt"];</code>
-       * @return The isBuilt.
-       */
-      public boolean getIsBuilt() {
-        return isBuilt_;
-      }
-      /**
-       * <code>bool is_built = 4[json_name = "isBuilt"];</code>
-       * @param value The isBuilt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsBuilt(boolean value) {
-        
-        isBuilt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_built = 4[json_name = "isBuilt"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsBuilt() {
-        
-        isBuilt_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object name_ = "";
       /**
-       * <code>string name = 5[json_name = "name"];</code>
+       * <code>string name = 4[json_name = "name"];</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -1310,7 +1241,7 @@ public final class PlanOuterClass {
         }
       }
       /**
-       * <code>string name = 5[json_name = "name"];</code>
+       * <code>string name = 4[json_name = "name"];</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -1327,7 +1258,7 @@ public final class PlanOuterClass {
         }
       }
       /**
-       * <code>string name = 5[json_name = "name"];</code>
+       * <code>string name = 4[json_name = "name"];</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -1342,7 +1273,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>string name = 5[json_name = "name"];</code>
+       * <code>string name = 4[json_name = "name"];</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -1352,7 +1283,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>string name = 5[json_name = "name"];</code>
+       * <code>string name = 4[json_name = "name"];</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -1376,7 +1307,7 @@ public final class PlanOuterClass {
          }
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
@@ -1384,14 +1315,14 @@ public final class PlanOuterClass {
         return tags_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @param index The index of the element to return.
        * @return The tags at the given index.
        */
@@ -1399,7 +1330,7 @@ public final class PlanOuterClass {
         return tags_.get(index);
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @param index The index of the value to return.
        * @return The bytes of the tags at the given index.
        */
@@ -1408,7 +1339,7 @@ public final class PlanOuterClass {
         return tags_.getByteString(index);
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @param index The index to set the value at.
        * @param value The tags to set.
        * @return This builder for chaining.
@@ -1424,7 +1355,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @param value The tags to add.
        * @return This builder for chaining.
        */
@@ -1439,7 +1370,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @param values The tags to add.
        * @return This builder for chaining.
        */
@@ -1452,7 +1383,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTags() {
@@ -1462,7 +1393,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 6[json_name = "tags"];</code>
+       * <code>repeated string tags = 5[json_name = "tags"];</code>
        * @param value The bytes of the tags to add.
        * @return This builder for chaining.
        */
@@ -1480,7 +1411,7 @@ public final class PlanOuterClass {
 
       private java.lang.Object description_ = "";
       /**
-       * <code>string description = 7[json_name = "description"];</code>
+       * <code>string description = 6[json_name = "description"];</code>
        * @return The description.
        */
       public java.lang.String getDescription() {
@@ -1496,7 +1427,7 @@ public final class PlanOuterClass {
         }
       }
       /**
-       * <code>string description = 7[json_name = "description"];</code>
+       * <code>string description = 6[json_name = "description"];</code>
        * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
@@ -1513,7 +1444,7 @@ public final class PlanOuterClass {
         }
       }
       /**
-       * <code>string description = 7[json_name = "description"];</code>
+       * <code>string description = 6[json_name = "description"];</code>
        * @param value The description to set.
        * @return This builder for chaining.
        */
@@ -1528,7 +1459,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>string description = 7[json_name = "description"];</code>
+       * <code>string description = 6[json_name = "description"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
@@ -1538,7 +1469,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>string description = 7[json_name = "description"];</code>
+       * <code>string description = 6[json_name = "description"];</code>
        * @param value The bytes for description to set.
        * @return This builder for chaining.
        */
@@ -1556,14 +1487,14 @@ public final class PlanOuterClass {
 
       private com.google.protobuf.ByteString torchscript_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes torchscript = 8[json_name = "torchscript"];</code>
+       * <code>bytes torchscript = 7[json_name = "torchscript"];</code>
        * @return The torchscript.
        */
       public com.google.protobuf.ByteString getTorchscript() {
         return torchscript_;
       }
       /**
-       * <code>bytes torchscript = 8[json_name = "torchscript"];</code>
+       * <code>bytes torchscript = 7[json_name = "torchscript"];</code>
        * @param value The torchscript to set.
        * @return This builder for chaining.
        */
@@ -1577,7 +1508,7 @@ public final class PlanOuterClass {
         return this;
       }
       /**
-       * <code>bytes torchscript = 8[json_name = "torchscript"];</code>
+       * <code>bytes torchscript = 7[json_name = "torchscript"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTorchscript() {
@@ -1587,123 +1518,123 @@ public final class PlanOuterClass {
         return this;
       }
 
-      private org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper serializedInput_;
+      private org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper inputTypes_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> serializedInputBuilder_;
+          org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> inputTypesBuilder_;
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
-       * @return Whether the serializedInput field is set.
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
+       * @return Whether the inputTypes field is set.
        */
-      public boolean hasSerializedInput() {
-        return serializedInputBuilder_ != null || serializedInput_ != null;
+      public boolean hasInputTypes() {
+        return inputTypesBuilder_ != null || inputTypes_ != null;
       }
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
-       * @return The serializedInput.
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
+       * @return The inputTypes.
        */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getSerializedInput() {
-        if (serializedInputBuilder_ == null) {
-          return serializedInput_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : serializedInput_;
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getInputTypes() {
+        if (inputTypesBuilder_ == null) {
+          return inputTypes_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : inputTypes_;
         } else {
-          return serializedInputBuilder_.getMessage();
+          return inputTypesBuilder_.getMessage();
         }
       }
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
        */
-      public Builder setSerializedInput(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
-        if (serializedInputBuilder_ == null) {
+      public Builder setInputTypes(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
+        if (inputTypesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          serializedInput_ = value;
+          inputTypes_ = value;
           onChanged();
         } else {
-          serializedInputBuilder_.setMessage(value);
+          inputTypesBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
        */
-      public Builder setSerializedInput(
+      public Builder setInputTypes(
           org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder builderForValue) {
-        if (serializedInputBuilder_ == null) {
-          serializedInput_ = builderForValue.build();
+        if (inputTypesBuilder_ == null) {
+          inputTypes_ = builderForValue.build();
           onChanged();
         } else {
-          serializedInputBuilder_.setMessage(builderForValue.build());
+          inputTypesBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
        */
-      public Builder mergeSerializedInput(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
-        if (serializedInputBuilder_ == null) {
-          if (serializedInput_ != null) {
-            serializedInput_ =
-              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.newBuilder(serializedInput_).mergeFrom(value).buildPartial();
+      public Builder mergeInputTypes(org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper value) {
+        if (inputTypesBuilder_ == null) {
+          if (inputTypes_ != null) {
+            inputTypes_ =
+              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.newBuilder(inputTypes_).mergeFrom(value).buildPartial();
           } else {
-            serializedInput_ = value;
+            inputTypes_ = value;
           }
           onChanged();
         } else {
-          serializedInputBuilder_.mergeFrom(value);
+          inputTypesBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
        */
-      public Builder clearSerializedInput() {
-        if (serializedInputBuilder_ == null) {
-          serializedInput_ = null;
+      public Builder clearInputTypes() {
+        if (inputTypesBuilder_ == null) {
+          inputTypes_ = null;
           onChanged();
         } else {
-          serializedInput_ = null;
-          serializedInputBuilder_ = null;
+          inputTypes_ = null;
+          inputTypesBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
        */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder getSerializedInputBuilder() {
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder getInputTypesBuilder() {
         
         onChanged();
-        return getSerializedInputFieldBuilder().getBuilder();
+        return getInputTypesFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
        */
-      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getSerializedInputOrBuilder() {
-        if (serializedInputBuilder_ != null) {
-          return serializedInputBuilder_.getMessageOrBuilder();
+      public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getInputTypesOrBuilder() {
+        if (inputTypesBuilder_ != null) {
+          return inputTypesBuilder_.getMessageOrBuilder();
         } else {
-          return serializedInput_ == null ?
-              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : serializedInput_;
+          return inputTypes_ == null ?
+              org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : inputTypes_;
         }
       }
       /**
-       * <code>.syft_proto.execution.v1.NestedTypeWrapper serialized_input = 9[json_name = "serializedInput"];</code>
+       * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder> 
-          getSerializedInputFieldBuilder() {
-        if (serializedInputBuilder_ == null) {
-          serializedInputBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getInputTypesFieldBuilder() {
+        if (inputTypesBuilder_ == null) {
+          inputTypesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.Builder, org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder>(
-                  getSerializedInput(),
+                  getInputTypes(),
                   getParentForChildren(),
                   isClean());
-          serializedInput_ = null;
+          inputTypes_ = null;
         }
-        return serializedInputBuilder_;
+        return inputTypesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1776,17 +1707,16 @@ public final class PlanOuterClass {
       "ft_proto.execution.v1\032\"syft_proto/execut" +
       "ion/v1/role.proto\032!syft_proto/types/syft" +
       "/v1/id.proto\032*syft_proto/execution/v1/ty" +
-      "pe_wrapper.proto\"\352\002\n\004Plan\022,\n\002id\030\001 \001(\0132\034." +
+      "pe_wrapper.proto\"\305\002\n\004Plan\022,\n\002id\030\001 \001(\0132\034." +
       "syft_proto.types.syft.v1.IdR\002id\0221\n\004role\030" +
       "\002 \001(\0132\035.syft_proto.execution.v1.RoleR\004ro" +
       "le\022#\n\rinclude_state\030\003 \001(\010R\014includeState\022" +
-      "\031\n\010is_built\030\004 \001(\010R\007isBuilt\022\022\n\004name\030\005 \001(\t" +
-      "R\004name\022\022\n\004tags\030\006 \003(\tR\004tags\022 \n\013descriptio" +
-      "n\030\007 \001(\tR\013description\022 \n\013torchscript\030\010 \001(" +
-      "\014R\013torchscript\022U\n\020serialized_input\030\t \001(\013" +
-      "2*.syft_proto.execution.v1.NestedTypeWra" +
-      "pperR\017serializedInputB&\n$org.openmined.s" +
-      "yftproto.execution.v1b\006proto3"
+      "\022\n\004name\030\004 \001(\tR\004name\022\022\n\004tags\030\005 \003(\tR\004tags\022" +
+      " \n\013description\030\006 \001(\tR\013description\022 \n\013tor" +
+      "chscript\030\007 \001(\014R\013torchscript\022K\n\013input_typ" +
+      "es\030\010 \001(\0132*.syft_proto.execution.v1.Neste" +
+      "dTypeWrapperR\ninputTypesB&\n$org.openmine" +
+      "d.syftproto.execution.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1800,7 +1730,7 @@ public final class PlanOuterClass {
     internal_static_syft_proto_execution_v1_Plan_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_Plan_descriptor,
-        new java.lang.String[] { "Id", "Role", "IncludeState", "IsBuilt", "Name", "Tags", "Description", "Torchscript", "SerializedInput", });
+        new java.lang.String[] { "Id", "Role", "IncludeState", "Name", "Tags", "Description", "Torchscript", "InputTypes", });
     org.openmined.syftproto.execution.v1.RoleOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
     org.openmined.syftproto.execution.v1.TypeWrapper.getDescriptor();

@@ -11,10 +11,9 @@ message Plan {
     syft_proto.types.syft.v1.Id id = 1;
     syft_proto.execution.v1.Role role = 2;
     bool include_state = 3;
-    bool is_built = 4;
-    string name = 5;
-    repeated string tags = 6;
-    string description = 7;
-    bytes torchscript = 8;
-    NestedTypeWrapper serialized_input = 9;
+    string name = 4;
+    repeated string tags = 5;
+    string description = 6;
+    bytes torchscript = 7;
+    NestedTypeWrapper input_types = 8;
 }

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
-  serialized_pb=b'\n\"syft_proto/execution/v1/plan.proto\x12\x17syft_proto.execution.v1\x1a\"syft_proto/execution/v1/role.proto\x1a!syft_proto/types/syft/v1/id.proto\x1a*syft_proto/execution/v1/type_wrapper.proto\"\xea\x02\n\x04Plan\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x31\n\x04role\x18\x02 \x01(\x0b\x32\x1d.syft_proto.execution.v1.RoleR\x04role\x12#\n\rinclude_state\x18\x03 \x01(\x08R\x0cincludeState\x12\x19\n\x08is_built\x18\x04 \x01(\x08R\x07isBuilt\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\x12\x12\n\x04tags\x18\x06 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x07 \x01(\tR\x0b\x64\x65scription\x12 \n\x0btorchscript\x18\x08 \x01(\x0cR\x0btorchscript\x12U\n\x10serialized_input\x18\t \x01(\x0b\x32*.syft_proto.execution.v1.NestedTypeWrapperR\x0fserializedInputB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
+  serialized_pb=b'\n\"syft_proto/execution/v1/plan.proto\x12\x17syft_proto.execution.v1\x1a\"syft_proto/execution/v1/role.proto\x1a!syft_proto/types/syft/v1/id.proto\x1a*syft_proto/execution/v1/type_wrapper.proto\"\xc5\x02\n\x04Plan\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x31\n\x04role\x18\x02 \x01(\x0b\x32\x1d.syft_proto.execution.v1.RoleR\x04role\x12#\n\rinclude_state\x18\x03 \x01(\x08R\x0cincludeState\x12\x12\n\x04name\x18\x04 \x01(\tR\x04name\x12\x12\n\x04tags\x18\x05 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x06 \x01(\tR\x0b\x64\x65scription\x12 \n\x0btorchscript\x18\x07 \x01(\x0cR\x0btorchscript\x12K\n\x0binput_types\x18\x08 \x01(\x0b\x32*.syft_proto.execution.v1.NestedTypeWrapperR\ninputTypesB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
   ,
   dependencies=[syft__proto_dot_execution_dot_v1_dot_role__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_type__wrapper__pb2.DESCRIPTOR,])
 
@@ -57,47 +57,40 @@ _PLAN = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='includeState', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='is_built', full_name='syft_proto.execution.v1.Plan.is_built', index=3,
-      number=4, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='isBuilt', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='syft_proto.execution.v1.Plan.name', index=4,
-      number=5, type=9, cpp_type=9, label=1,
+      name='name', full_name='syft_proto.execution.v1.Plan.name', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='name', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='tags', full_name='syft_proto.execution.v1.Plan.tags', index=5,
-      number=6, type=9, cpp_type=9, label=3,
+      name='tags', full_name='syft_proto.execution.v1.Plan.tags', index=4,
+      number=5, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='tags', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='description', full_name='syft_proto.execution.v1.Plan.description', index=6,
-      number=7, type=9, cpp_type=9, label=1,
+      name='description', full_name='syft_proto.execution.v1.Plan.description', index=5,
+      number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='description', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='torchscript', full_name='syft_proto.execution.v1.Plan.torchscript', index=7,
-      number=8, type=12, cpp_type=9, label=1,
+      name='torchscript', full_name='syft_proto.execution.v1.Plan.torchscript', index=6,
+      number=7, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='torchscript', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='serialized_input', full_name='syft_proto.execution.v1.Plan.serialized_input', index=8,
-      number=9, type=11, cpp_type=10, label=1,
+      name='input_types', full_name='syft_proto.execution.v1.Plan.input_types', index=7,
+      number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='serializedInput', file=DESCRIPTOR),
+      serialized_options=None, json_name='inputTypes', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -111,12 +104,12 @@ _PLAN = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=179,
-  serialized_end=541,
+  serialized_end=504,
 )
 
 _PLAN.fields_by_name['id'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
 _PLAN.fields_by_name['role'].message_type = syft__proto_dot_execution_dot_v1_dot_role__pb2._ROLE
-_PLAN.fields_by_name['serialized_input'].message_type = syft__proto_dot_execution_dot_v1_dot_type__wrapper__pb2._NESTEDTYPEWRAPPER
+_PLAN.fields_by_name['input_types'].message_type = syft__proto_dot_execution_dot_v1_dot_type__wrapper__pb2._NESTEDTYPEWRAPPER
 DESCRIPTOR.message_types_by_name['Plan'] = _PLAN
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

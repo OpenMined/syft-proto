@@ -44,8 +44,6 @@ struct SyftProto_Execution_V1_Plan {
 
   var includeState: Bool = false
 
-  var isBuilt: Bool = false
-
   var name: String = String()
 
   var tags: [String] = []
@@ -54,14 +52,14 @@ struct SyftProto_Execution_V1_Plan {
 
   var torchscript: Data = SwiftProtobuf.Internal.emptyData
 
-  var serializedInput: SyftProto_Execution_V1_NestedTypeWrapper {
-    get {return _serializedInput ?? SyftProto_Execution_V1_NestedTypeWrapper()}
-    set {_serializedInput = newValue}
+  var inputTypes: SyftProto_Execution_V1_NestedTypeWrapper {
+    get {return _inputTypes ?? SyftProto_Execution_V1_NestedTypeWrapper()}
+    set {_inputTypes = newValue}
   }
-  /// Returns true if `serializedInput` has been explicitly set.
-  var hasSerializedInput: Bool {return self._serializedInput != nil}
-  /// Clears the value of `serializedInput`. Subsequent reads from it will return its default value.
-  mutating func clearSerializedInput() {self._serializedInput = nil}
+  /// Returns true if `inputTypes` has been explicitly set.
+  var hasInputTypes: Bool {return self._inputTypes != nil}
+  /// Clears the value of `inputTypes`. Subsequent reads from it will return its default value.
+  mutating func clearInputTypes() {self._inputTypes = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -69,7 +67,7 @@ struct SyftProto_Execution_V1_Plan {
 
   fileprivate var _id: SyftProto_Types_Syft_V1_Id? = nil
   fileprivate var _role: SyftProto_Execution_V1_Role? = nil
-  fileprivate var _serializedInput: SyftProto_Execution_V1_NestedTypeWrapper? = nil
+  fileprivate var _inputTypes: SyftProto_Execution_V1_NestedTypeWrapper? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -82,12 +80,11 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     1: .same(proto: "id"),
     2: .same(proto: "role"),
     3: .standard(proto: "include_state"),
-    4: .standard(proto: "is_built"),
-    5: .same(proto: "name"),
-    6: .same(proto: "tags"),
-    7: .same(proto: "description"),
-    8: .same(proto: "torchscript"),
-    9: .standard(proto: "serialized_input"),
+    4: .same(proto: "name"),
+    5: .same(proto: "tags"),
+    6: .same(proto: "description"),
+    7: .same(proto: "torchscript"),
+    8: .standard(proto: "input_types"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -96,12 +93,11 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 1: try decoder.decodeSingularMessageField(value: &self._id)
       case 2: try decoder.decodeSingularMessageField(value: &self._role)
       case 3: try decoder.decodeSingularBoolField(value: &self.includeState)
-      case 4: try decoder.decodeSingularBoolField(value: &self.isBuilt)
-      case 5: try decoder.decodeSingularStringField(value: &self.name)
-      case 6: try decoder.decodeRepeatedStringField(value: &self.tags)
-      case 7: try decoder.decodeSingularStringField(value: &self.description_p)
-      case 8: try decoder.decodeSingularBytesField(value: &self.torchscript)
-      case 9: try decoder.decodeSingularMessageField(value: &self._serializedInput)
+      case 4: try decoder.decodeSingularStringField(value: &self.name)
+      case 5: try decoder.decodeRepeatedStringField(value: &self.tags)
+      case 6: try decoder.decodeSingularStringField(value: &self.description_p)
+      case 7: try decoder.decodeSingularBytesField(value: &self.torchscript)
+      case 8: try decoder.decodeSingularMessageField(value: &self._inputTypes)
       default: break
       }
     }
@@ -117,23 +113,20 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if self.includeState != false {
       try visitor.visitSingularBoolField(value: self.includeState, fieldNumber: 3)
     }
-    if self.isBuilt != false {
-      try visitor.visitSingularBoolField(value: self.isBuilt, fieldNumber: 4)
-    }
     if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 4)
     }
     if !self.tags.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.tags, fieldNumber: 6)
+      try visitor.visitRepeatedStringField(value: self.tags, fieldNumber: 5)
     }
     if !self.description_p.isEmpty {
-      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 7)
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 6)
     }
     if !self.torchscript.isEmpty {
-      try visitor.visitSingularBytesField(value: self.torchscript, fieldNumber: 8)
+      try visitor.visitSingularBytesField(value: self.torchscript, fieldNumber: 7)
     }
-    if let v = self._serializedInput {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
+    if let v = self._inputTypes {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -142,12 +135,11 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs._id != rhs._id {return false}
     if lhs._role != rhs._role {return false}
     if lhs.includeState != rhs.includeState {return false}
-    if lhs.isBuilt != rhs.isBuilt {return false}
     if lhs.name != rhs.name {return false}
     if lhs.tags != rhs.tags {return false}
     if lhs.description_p != rhs.description_p {return false}
     if lhs.torchscript != rhs.torchscript {return false}
-    if lhs._serializedInput != rhs._serializedInput {return false}
+    if lhs._inputTypes != rhs._inputTypes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
