@@ -1837,8 +1837,8 @@ export namespace syft_proto {
                     /** Arg arg_float */
                     arg_float?: (number|null);
 
-                    /** Arg arg_string */
-                    arg_string?: (string|null);
+                    /** Arg arg_str */
+                    arg_str?: (string|null);
 
                     /** Arg arg_shape */
                     arg_shape?: (syft_proto.types.syft.v1.IShape|null);
@@ -1877,8 +1877,8 @@ export namespace syft_proto {
                     /** Arg arg_float. */
                     public arg_float: number;
 
-                    /** Arg arg_string. */
-                    public arg_string: string;
+                    /** Arg arg_str. */
+                    public arg_str: string;
 
                     /** Arg arg_shape. */
                     public arg_shape?: (syft_proto.types.syft.v1.IShape|null);
@@ -1899,7 +1899,7 @@ export namespace syft_proto {
                     public arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
 
                     /** Arg arg. */
-                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id");
+                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_str"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id");
 
                     /**
                      * Creates a new Arg instance using the specified properties.

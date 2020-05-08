@@ -50,12 +50,12 @@ struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argFloat(newValue)}
   }
 
-  var argString: String {
+  var argStr: String {
     get {
-      if case .argString(let v)? = arg {return v}
+      if case .argStr(let v)? = arg {return v}
       return String()
     }
-    set {arg = .argString(newValue)}
+    set {arg = .argStr(newValue)}
   }
 
   var argShape: SyftProto_Types_Syft_V1_Shape {
@@ -112,7 +112,7 @@ struct SyftProto_Types_Syft_V1_Arg {
     case argBool(Bool)
     case argInt(Int32)
     case argFloat(Float)
-    case argString(String)
+    case argStr(String)
     case argShape(SyftProto_Types_Syft_V1_Shape)
     case argTensor(SyftProto_Types_Torch_V1_TorchTensor)
     case argTorchParam(SyftProto_Types_Torch_V1_Parameter)
@@ -126,7 +126,7 @@ struct SyftProto_Types_Syft_V1_Arg {
       case (.argBool(let l), .argBool(let r)): return l == r
       case (.argInt(let l), .argInt(let r)): return l == r
       case (.argFloat(let l), .argFloat(let r)): return l == r
-      case (.argString(let l), .argString(let r)): return l == r
+      case (.argStr(let l), .argStr(let r)): return l == r
       case (.argShape(let l), .argShape(let r)): return l == r
       case (.argTensor(let l), .argTensor(let r)): return l == r
       case (.argTorchParam(let l), .argTorchParam(let r)): return l == r
@@ -152,7 +152,7 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
     1: .standard(proto: "arg_bool"),
     2: .standard(proto: "arg_int"),
     3: .standard(proto: "arg_float"),
-    4: .standard(proto: "arg_string"),
+    4: .standard(proto: "arg_str"),
     5: .standard(proto: "arg_shape"),
     6: .standard(proto: "arg_tensor"),
     7: .standard(proto: "arg_torch_param"),
@@ -183,7 +183,7 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if self.arg != nil {try decoder.handleConflictingOneOf()}
         var v: String?
         try decoder.decodeSingularStringField(value: &v)
-        if let v = v {self.arg = .argString(v)}
+        if let v = v {self.arg = .argStr(v)}
       case 5:
         var v: SyftProto_Types_Syft_V1_Shape?
         if let current = self.arg {
@@ -245,7 +245,7 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
     case .argFloat(let v)?:
       try visitor.visitSingularFloatField(value: v, fieldNumber: 3)
-    case .argString(let v)?:
+    case .argStr(let v)?:
       try visitor.visitSingularStringField(value: v, fieldNumber: 4)
     case .argShape(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)

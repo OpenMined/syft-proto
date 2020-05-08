@@ -5025,7 +5025,7 @@ $root.syft_proto = (function() {
                      * @property {boolean|null} [arg_bool] Arg arg_bool
                      * @property {number|null} [arg_int] Arg arg_int
                      * @property {number|null} [arg_float] Arg arg_float
-                     * @property {string|null} [arg_string] Arg arg_string
+                     * @property {string|null} [arg_str] Arg arg_str
                      * @property {syft_proto.types.syft.v1.IShape|null} [arg_shape] Arg arg_shape
                      * @property {syft_proto.types.torch.v1.ITorchTensor|null} [arg_tensor] Arg arg_tensor
                      * @property {syft_proto.types.torch.v1.IParameter|null} [arg_torch_param] Arg arg_torch_param
@@ -5074,12 +5074,12 @@ $root.syft_proto = (function() {
                     Arg.prototype.arg_float = 0;
 
                     /**
-                     * Arg arg_string.
-                     * @member {string} arg_string
+                     * Arg arg_str.
+                     * @member {string} arg_str
                      * @memberof syft_proto.types.syft.v1.Arg
                      * @instance
                      */
-                    Arg.prototype.arg_string = "";
+                    Arg.prototype.arg_str = "";
 
                     /**
                      * Arg arg_shape.
@@ -5134,12 +5134,12 @@ $root.syft_proto = (function() {
 
                     /**
                      * Arg arg.
-                     * @member {"arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id"|undefined} arg
+                     * @member {"arg_bool"|"arg_int"|"arg_float"|"arg_str"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id"|undefined} arg
                      * @memberof syft_proto.types.syft.v1.Arg
                      * @instance
                      */
                     Object.defineProperty(Arg.prototype, "arg", {
-                        get: $util.oneOfGetter($oneOfFields = ["arg_bool", "arg_int", "arg_float", "arg_string", "arg_shape", "arg_tensor", "arg_torch_param", "arg_pointer_tensor", "arg_placeholder", "arg_placeholder_id"]),
+                        get: $util.oneOfGetter($oneOfFields = ["arg_bool", "arg_int", "arg_float", "arg_str", "arg_shape", "arg_tensor", "arg_torch_param", "arg_pointer_tensor", "arg_placeholder", "arg_placeholder_id"]),
                         set: $util.oneOfSetter($oneOfFields)
                     });
 
@@ -5173,8 +5173,8 @@ $root.syft_proto = (function() {
                             writer.uint32(/* id 2, wireType 0 =*/16).int32(message.arg_int);
                         if (message.arg_float != null && message.hasOwnProperty("arg_float"))
                             writer.uint32(/* id 3, wireType 5 =*/29).float(message.arg_float);
-                        if (message.arg_string != null && message.hasOwnProperty("arg_string"))
-                            writer.uint32(/* id 4, wireType 2 =*/34).string(message.arg_string);
+                        if (message.arg_str != null && message.hasOwnProperty("arg_str"))
+                            writer.uint32(/* id 4, wireType 2 =*/34).string(message.arg_str);
                         if (message.arg_shape != null && message.hasOwnProperty("arg_shape"))
                             $root.syft_proto.types.syft.v1.Shape.encode(message.arg_shape, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                         if (message.arg_tensor != null && message.hasOwnProperty("arg_tensor"))
@@ -5231,7 +5231,7 @@ $root.syft_proto = (function() {
                                 message.arg_float = reader.float();
                                 break;
                             case 4:
-                                message.arg_string = reader.string();
+                                message.arg_str = reader.string();
                                 break;
                             case 5:
                                 message.arg_shape = $root.syft_proto.types.syft.v1.Shape.decode(reader, reader.uint32());
@@ -5306,12 +5306,12 @@ $root.syft_proto = (function() {
                             if (typeof message.arg_float !== "number")
                                 return "arg_float: number expected";
                         }
-                        if (message.arg_string != null && message.hasOwnProperty("arg_string")) {
+                        if (message.arg_str != null && message.hasOwnProperty("arg_str")) {
                             if (properties.arg === 1)
                                 return "arg: multiple values";
                             properties.arg = 1;
-                            if (!$util.isString(message.arg_string))
-                                return "arg_string: string expected";
+                            if (!$util.isString(message.arg_str))
+                                return "arg_str: string expected";
                         }
                         if (message.arg_shape != null && message.hasOwnProperty("arg_shape")) {
                             if (properties.arg === 1)
@@ -5394,8 +5394,8 @@ $root.syft_proto = (function() {
                             message.arg_int = object.arg_int | 0;
                         if (object.arg_float != null)
                             message.arg_float = Number(object.arg_float);
-                        if (object.arg_string != null)
-                            message.arg_string = String(object.arg_string);
+                        if (object.arg_str != null)
+                            message.arg_str = String(object.arg_str);
                         if (object.arg_shape != null) {
                             if (typeof object.arg_shape !== "object")
                                 throw TypeError(".syft_proto.types.syft.v1.Arg.arg_shape: object expected");
@@ -5457,10 +5457,10 @@ $root.syft_proto = (function() {
                             if (options.oneofs)
                                 object.arg = "arg_float";
                         }
-                        if (message.arg_string != null && message.hasOwnProperty("arg_string")) {
-                            object.arg_string = message.arg_string;
+                        if (message.arg_str != null && message.hasOwnProperty("arg_str")) {
+                            object.arg_str = message.arg_str;
                             if (options.oneofs)
-                                object.arg = "arg_string";
+                                object.arg = "arg_str";
                         }
                         if (message.arg_shape != null && message.hasOwnProperty("arg_shape")) {
                             object.arg_shape = $root.syft_proto.types.syft.v1.Shape.toObject(message.arg_shape, options);
