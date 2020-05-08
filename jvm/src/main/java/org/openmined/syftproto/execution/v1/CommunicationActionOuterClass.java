@@ -19,77 +19,107 @@ public final class CommunicationActionOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return The name.
+     * <code>string command = 1[json_name = "command"];</code>
+     * @return The command.
      */
-    java.lang.String getName();
+    java.lang.String getCommand();
     /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string command = 1[json_name = "command"];</code>
+     * @return The bytes for command.
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+        getCommandBytes();
 
     /**
-     * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
-     * @return Whether the objId field is set.
+     * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
+     * @return Whether the targetId field is set.
      */
-    boolean hasObjId();
+    boolean hasTargetId();
     /**
-     * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
-     * @return The objId.
+     * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
+     * @return The targetId.
      */
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjId();
+    org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getTargetId();
     /**
-     * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
+     * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
      */
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjIdOrBuilder();
+    org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getTargetIdOrBuilder();
 
     /**
-     * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
-     * @return Whether the source field is set.
+     * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
+     * @return Whether the targetPointer field is set.
      */
-    boolean hasSource();
+    boolean hasTargetPointer();
     /**
-     * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
-     * @return The source.
+     * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
+     * @return The targetPointer.
      */
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getSource();
+    org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getTargetPointer();
     /**
-     * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
+     * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
      */
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getSourceOrBuilder();
+    org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getTargetPointerOrBuilder();
 
     /**
-     * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+     * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+     * @return Whether the targetPlaceholderId field is set.
      */
-    java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> 
-        getDestinationsList();
+    boolean hasTargetPlaceholderId();
     /**
-     * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+     * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+     * @return The targetPlaceholderId.
      */
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getDestinations(int index);
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getTargetPlaceholderId();
     /**
-     * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+     * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
      */
-    int getDestinationsCount();
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getTargetPlaceholderIdOrBuilder();
+
     /**
-     * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+     * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+     * @return Whether the targetTensor field is set.
      */
-    java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
-        getDestinationsOrBuilderList();
+    boolean hasTargetTensor();
     /**
-     * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+     * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+     * @return The targetTensor.
      */
-    org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getDestinationsOrBuilder(
+    org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTargetTensor();
+    /**
+     * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+     */
+    org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getTargetTensorOrBuilder();
+
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
+     */
+    java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> 
+        getArgsList();
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
+     */
+    org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getArgs(int index);
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
+     */
+    int getArgsCount();
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
+     */
+    java.util.List<? extends org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> 
+        getArgsOrBuilderList();
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
+     */
+    org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder getArgsOrBuilder(
         int index);
 
     /**
-     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
     int getKwargsCount();
     /**
-     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
     boolean containsKwargs(
         java.lang.String key);
@@ -100,23 +130,73 @@ public final class CommunicationActionOuterClass {
     java.util.Map<java.lang.String, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg>
     getKwargs();
     /**
-     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
     java.util.Map<java.lang.String, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg>
     getKwargsMap();
     /**
-     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
 
     org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getKwargsOrDefault(
         java.lang.String key,
         org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg defaultValue);
     /**
-     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
 
     org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getKwargsOrThrow(
         java.lang.String key);
+
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+     */
+    java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> 
+        getReturnIdsList();
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+     */
+    org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getReturnIds(int index);
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+     */
+    int getReturnIdsCount();
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+     */
+    java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
+        getReturnIdsOrBuilderList();
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+     */
+    org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getReturnIdsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     */
+    java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> 
+        getReturnPlaceholderIdsList();
+    /**
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     */
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index);
+    /**
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     */
+    int getReturnPlaceholderIdsCount();
+    /**
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     */
+    java.util.List<? extends org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+        getReturnPlaceholderIdsOrBuilderList();
+    /**
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     */
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
+        int index);
+
+    public org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction.TargetCase getTargetCase();
   }
   /**
    * Protobuf type {@code syft_proto.execution.v1.CommunicationAction}
@@ -131,8 +211,10 @@ public final class CommunicationActionOuterClass {
       super(builder);
     }
     private CommunicationAction() {
-      name_ = "";
-      destinations_ = java.util.Collections.emptyList();
+      command_ = "";
+      args_ = java.util.Collections.emptyList();
+      returnIds_ = java.util.Collections.emptyList();
+      returnPlaceholderIds_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -169,45 +251,61 @@ public final class CommunicationActionOuterClass {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              command_ = s;
               break;
             }
             case 18: {
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder subBuilder = null;
-              if (objId_ != null) {
-                subBuilder = objId_.toBuilder();
+              org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder subBuilder = null;
+              if (targetCase_ == 2) {
+                subBuilder = ((org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_).toBuilder();
               }
-              objId_ = input.readMessage(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.parser(), extensionRegistry);
+              target_ =
+                  input.readMessage(org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(objId_);
-                objId_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_);
+                target_ = subBuilder.buildPartial();
               }
-
+              targetCase_ = 2;
               break;
             }
             case 26: {
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder subBuilder = null;
-              if (source_ != null) {
-                subBuilder = source_.toBuilder();
+              org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder subBuilder = null;
+              if (targetCase_ == 3) {
+                subBuilder = ((org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) target_).toBuilder();
               }
-              source_ = input.readMessage(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.parser(), extensionRegistry);
+              target_ =
+                  input.readMessage(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(source_);
-                source_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) target_);
+                target_ = subBuilder.buildPartial();
               }
-
+              targetCase_ = 3;
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                destinations_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id>();
-                mutable_bitField0_ |= 0x00000001;
+              org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder subBuilder = null;
+              if (targetCase_ == 4) {
+                subBuilder = ((org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_).toBuilder();
               }
-              destinations_.add(
-                  input.readMessage(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.parser(), extensionRegistry));
+              target_ =
+                  input.readMessage(org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_);
+                target_ = subBuilder.buildPartial();
+              }
+              targetCase_ = 4;
               break;
             }
             case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                args_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              args_.add(
+                  input.readMessage(org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 kwargs_ = com.google.protobuf.MapField.newMapField(
                     KwargsDefaultEntryHolder.defaultEntry);
@@ -218,6 +316,38 @@ public final class CommunicationActionOuterClass {
                   KwargsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               kwargs_.getMutableMap().put(
                   kwargs__.getKey(), kwargs__.getValue());
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                returnIds_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              returnIds_.add(
+                  input.readMessage(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.parser(), extensionRegistry));
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                returnPlaceholderIds_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              returnPlaceholderIds_.add(
+                  input.readMessage(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
+              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder subBuilder = null;
+              if (targetCase_ == 9) {
+                subBuilder = ((org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_).toBuilder();
+              }
+              target_ =
+                  input.readMessage(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_);
+                target_ = subBuilder.buildPartial();
+              }
+              targetCase_ = 9;
               break;
             }
             default: {
@@ -236,7 +366,13 @@ public final class CommunicationActionOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          destinations_ = java.util.Collections.unmodifiableList(destinations_);
+          args_ = java.util.Collections.unmodifiableList(args_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          returnIds_ = java.util.Collections.unmodifiableList(returnIds_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          returnPlaceholderIds_ = java.util.Collections.unmodifiableList(returnPlaceholderIds_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -252,7 +388,7 @@ public final class CommunicationActionOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 5:
+        case 6:
           return internalGetKwargs();
         default:
           throw new RuntimeException(
@@ -267,124 +403,235 @@ public final class CommunicationActionOuterClass {
               org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction.class, org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction.Builder.class);
     }
 
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+    private int targetCase_ = 0;
+    private java.lang.Object target_;
+    public enum TargetCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      TARGET_ID(9),
+      TARGET_POINTER(2),
+      TARGET_PLACEHOLDER_ID(3),
+      TARGET_TENSOR(4),
+      TARGET_NOT_SET(0);
+      private final int value;
+      private TargetCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TargetCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static TargetCase forNumber(int value) {
+        switch (value) {
+          case 9: return TARGET_ID;
+          case 2: return TARGET_POINTER;
+          case 3: return TARGET_PLACEHOLDER_ID;
+          case 4: return TARGET_TENSOR;
+          case 0: return TARGET_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public TargetCase
+    getTargetCase() {
+      return TargetCase.forNumber(
+          targetCase_);
+    }
+
+    public static final int COMMAND_FIELD_NUMBER = 1;
+    private volatile java.lang.Object command_;
     /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return The name.
+     * <code>string command = 1[json_name = "command"];</code>
+     * @return The command.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getCommand() {
+      java.lang.Object ref = command_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        command_ = s;
         return s;
       }
     }
     /**
-     * <code>string name = 1[json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string command = 1[json_name = "command"];</code>
+     * @return The bytes for command.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getCommandBytes() {
+      java.lang.Object ref = command_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        command_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int OBJ_ID_FIELD_NUMBER = 2;
-    private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id objId_;
+    public static final int TARGET_ID_FIELD_NUMBER = 9;
     /**
-     * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
-     * @return Whether the objId field is set.
+     * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
+     * @return Whether the targetId field is set.
      */
-    public boolean hasObjId() {
-      return objId_ != null;
+    public boolean hasTargetId() {
+      return targetCase_ == 9;
     }
     /**
-     * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
-     * @return The objId.
+     * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
+     * @return The targetId.
      */
-    public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjId() {
-      return objId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objId_;
+    public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getTargetId() {
+      if (targetCase_ == 9) {
+         return (org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_;
+      }
+      return org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance();
     }
     /**
-     * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
+     * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
      */
-    public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjIdOrBuilder() {
-      return getObjId();
-    }
-
-    public static final int SOURCE_FIELD_NUMBER = 3;
-    private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id source_;
-    /**
-     * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
-     * @return Whether the source field is set.
-     */
-    public boolean hasSource() {
-      return source_ != null;
-    }
-    /**
-     * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
-     * @return The source.
-     */
-    public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getSource() {
-      return source_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : source_;
-    }
-    /**
-     * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
-     */
-    public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getSourceOrBuilder() {
-      return getSource();
+    public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getTargetIdOrBuilder() {
+      if (targetCase_ == 9) {
+         return (org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_;
+      }
+      return org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance();
     }
 
-    public static final int DESTINATIONS_FIELD_NUMBER = 4;
-    private java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> destinations_;
+    public static final int TARGET_POINTER_FIELD_NUMBER = 2;
     /**
-     * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+     * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
+     * @return Whether the targetPointer field is set.
      */
-    public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> getDestinationsList() {
-      return destinations_;
+    public boolean hasTargetPointer() {
+      return targetCase_ == 2;
     }
     /**
-     * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+     * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
+     * @return The targetPointer.
      */
-    public java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
-        getDestinationsOrBuilderList() {
-      return destinations_;
+    public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getTargetPointer() {
+      if (targetCase_ == 2) {
+         return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_;
+      }
+      return org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
     }
     /**
-     * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+     * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
      */
-    public int getDestinationsCount() {
-      return destinations_.size();
+    public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getTargetPointerOrBuilder() {
+      if (targetCase_ == 2) {
+         return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_;
+      }
+      return org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
+    }
+
+    public static final int TARGET_PLACEHOLDER_ID_FIELD_NUMBER = 3;
+    /**
+     * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+     * @return Whether the targetPlaceholderId field is set.
+     */
+    public boolean hasTargetPlaceholderId() {
+      return targetCase_ == 3;
     }
     /**
-     * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+     * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+     * @return The targetPlaceholderId.
      */
-    public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getDestinations(int index) {
-      return destinations_.get(index);
+    public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getTargetPlaceholderId() {
+      if (targetCase_ == 3) {
+         return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) target_;
+      }
+      return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
     }
     /**
-     * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+     * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
      */
-    public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getDestinationsOrBuilder(
+    public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getTargetPlaceholderIdOrBuilder() {
+      if (targetCase_ == 3) {
+         return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) target_;
+      }
+      return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
+    }
+
+    public static final int TARGET_TENSOR_FIELD_NUMBER = 4;
+    /**
+     * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+     * @return Whether the targetTensor field is set.
+     */
+    public boolean hasTargetTensor() {
+      return targetCase_ == 4;
+    }
+    /**
+     * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+     * @return The targetTensor.
+     */
+    public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTargetTensor() {
+      if (targetCase_ == 4) {
+         return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_;
+      }
+      return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+    }
+    /**
+     * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+     */
+    public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getTargetTensorOrBuilder() {
+      if (targetCase_ == 4) {
+         return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_;
+      }
+      return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+    }
+
+    public static final int ARGS_FIELD_NUMBER = 5;
+    private java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> args_;
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
+     */
+    public java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getArgsList() {
+      return args_;
+    }
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
+     */
+    public java.util.List<? extends org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> 
+        getArgsOrBuilderList() {
+      return args_;
+    }
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
+     */
+    public int getArgsCount() {
+      return args_.size();
+    }
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
+     */
+    public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getArgs(int index) {
+      return args_.get(index);
+    }
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
+     */
+    public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder getArgsOrBuilder(
         int index) {
-      return destinations_.get(index);
+      return args_.get(index);
     }
 
-    public static final int KWARGS_FIELD_NUMBER = 5;
+    public static final int KWARGS_FIELD_NUMBER = 6;
     private static final class KwargsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> defaultEntry =
@@ -411,7 +658,7 @@ public final class CommunicationActionOuterClass {
       return internalGetKwargs().getMap().size();
     }
     /**
-     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
 
     public boolean containsKwargs(
@@ -427,14 +674,14 @@ public final class CommunicationActionOuterClass {
       return getKwargsMap();
     }
     /**
-     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
 
     public java.util.Map<java.lang.String, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getKwargsMap() {
       return internalGetKwargs().getMap();
     }
     /**
-     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
 
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getKwargsOrDefault(
@@ -446,7 +693,7 @@ public final class CommunicationActionOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+     * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
 
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getKwargsOrThrow(
@@ -458,6 +705,76 @@ public final class CommunicationActionOuterClass {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
+    }
+
+    public static final int RETURN_IDS_FIELD_NUMBER = 7;
+    private java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> returnIds_;
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+     */
+    public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> getReturnIdsList() {
+      return returnIds_;
+    }
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+     */
+    public java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
+        getReturnIdsOrBuilderList() {
+      return returnIds_;
+    }
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+     */
+    public int getReturnIdsCount() {
+      return returnIds_.size();
+    }
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+     */
+    public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getReturnIds(int index) {
+      return returnIds_.get(index);
+    }
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+     */
+    public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getReturnIdsOrBuilder(
+        int index) {
+      return returnIds_.get(index);
+    }
+
+    public static final int RETURN_PLACEHOLDER_IDS_FIELD_NUMBER = 8;
+    private java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> returnPlaceholderIds_;
+    /**
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     */
+    public java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> getReturnPlaceholderIdsList() {
+      return returnPlaceholderIds_;
+    }
+    /**
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     */
+    public java.util.List<? extends org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+        getReturnPlaceholderIdsOrBuilderList() {
+      return returnPlaceholderIds_;
+    }
+    /**
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     */
+    public int getReturnPlaceholderIdsCount() {
+      return returnPlaceholderIds_.size();
+    }
+    /**
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     */
+    public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index) {
+      return returnPlaceholderIds_.get(index);
+    }
+    /**
+     * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+     */
+    public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
+        int index) {
+      return returnPlaceholderIds_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -474,24 +791,36 @@ public final class CommunicationActionOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      if (!getCommandBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, command_);
       }
-      if (objId_ != null) {
-        output.writeMessage(2, getObjId());
+      if (targetCase_ == 2) {
+        output.writeMessage(2, (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_);
       }
-      if (source_ != null) {
-        output.writeMessage(3, getSource());
+      if (targetCase_ == 3) {
+        output.writeMessage(3, (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) target_);
       }
-      for (int i = 0; i < destinations_.size(); i++) {
-        output.writeMessage(4, destinations_.get(i));
+      if (targetCase_ == 4) {
+        output.writeMessage(4, (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_);
+      }
+      for (int i = 0; i < args_.size(); i++) {
+        output.writeMessage(5, args_.get(i));
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetKwargs(),
           KwargsDefaultEntryHolder.defaultEntry,
-          5);
+          6);
+      for (int i = 0; i < returnIds_.size(); i++) {
+        output.writeMessage(7, returnIds_.get(i));
+      }
+      for (int i = 0; i < returnPlaceholderIds_.size(); i++) {
+        output.writeMessage(8, returnPlaceholderIds_.get(i));
+      }
+      if (targetCase_ == 9) {
+        output.writeMessage(9, (org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -501,20 +830,24 @@ public final class CommunicationActionOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      if (!getCommandBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, command_);
       }
-      if (objId_ != null) {
+      if (targetCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getObjId());
+          .computeMessageSize(2, (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_);
       }
-      if (source_ != null) {
+      if (targetCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getSource());
+          .computeMessageSize(3, (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) target_);
       }
-      for (int i = 0; i < destinations_.size(); i++) {
+      if (targetCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, destinations_.get(i));
+          .computeMessageSize(4, (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_);
+      }
+      for (int i = 0; i < args_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, args_.get(i));
       }
       for (java.util.Map.Entry<java.lang.String, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> entry
            : internalGetKwargs().getMap().entrySet()) {
@@ -524,7 +857,19 @@ public final class CommunicationActionOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(5, kwargs__);
+            .computeMessageSize(6, kwargs__);
+      }
+      for (int i = 0; i < returnIds_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, returnIds_.get(i));
+      }
+      for (int i = 0; i < returnPlaceholderIds_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, returnPlaceholderIds_.get(i));
+      }
+      if (targetCase_ == 9) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, (org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -541,22 +886,37 @@ public final class CommunicationActionOuterClass {
       }
       org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction other = (org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (hasObjId() != other.hasObjId()) return false;
-      if (hasObjId()) {
-        if (!getObjId()
-            .equals(other.getObjId())) return false;
-      }
-      if (hasSource() != other.hasSource()) return false;
-      if (hasSource()) {
-        if (!getSource()
-            .equals(other.getSource())) return false;
-      }
-      if (!getDestinationsList()
-          .equals(other.getDestinationsList())) return false;
+      if (!getCommand()
+          .equals(other.getCommand())) return false;
+      if (!getArgsList()
+          .equals(other.getArgsList())) return false;
       if (!internalGetKwargs().equals(
           other.internalGetKwargs())) return false;
+      if (!getReturnIdsList()
+          .equals(other.getReturnIdsList())) return false;
+      if (!getReturnPlaceholderIdsList()
+          .equals(other.getReturnPlaceholderIdsList())) return false;
+      if (!getTargetCase().equals(other.getTargetCase())) return false;
+      switch (targetCase_) {
+        case 9:
+          if (!getTargetId()
+              .equals(other.getTargetId())) return false;
+          break;
+        case 2:
+          if (!getTargetPointer()
+              .equals(other.getTargetPointer())) return false;
+          break;
+        case 3:
+          if (!getTargetPlaceholderId()
+              .equals(other.getTargetPlaceholderId())) return false;
+          break;
+        case 4:
+          if (!getTargetTensor()
+              .equals(other.getTargetTensor())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -568,23 +928,43 @@ public final class CommunicationActionOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      if (hasObjId()) {
-        hash = (37 * hash) + OBJ_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getObjId().hashCode();
-      }
-      if (hasSource()) {
-        hash = (37 * hash) + SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getSource().hashCode();
-      }
-      if (getDestinationsCount() > 0) {
-        hash = (37 * hash) + DESTINATIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getDestinationsList().hashCode();
+      hash = (37 * hash) + COMMAND_FIELD_NUMBER;
+      hash = (53 * hash) + getCommand().hashCode();
+      if (getArgsCount() > 0) {
+        hash = (37 * hash) + ARGS_FIELD_NUMBER;
+        hash = (53 * hash) + getArgsList().hashCode();
       }
       if (!internalGetKwargs().getMap().isEmpty()) {
         hash = (37 * hash) + KWARGS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetKwargs().hashCode();
+      }
+      if (getReturnIdsCount() > 0) {
+        hash = (37 * hash) + RETURN_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getReturnIdsList().hashCode();
+      }
+      if (getReturnPlaceholderIdsCount() > 0) {
+        hash = (37 * hash) + RETURN_PLACEHOLDER_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getReturnPlaceholderIdsList().hashCode();
+      }
+      switch (targetCase_) {
+        case 9:
+          hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getTargetId().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + TARGET_POINTER_FIELD_NUMBER;
+          hash = (53 * hash) + getTargetPointer().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + TARGET_PLACEHOLDER_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getTargetPlaceholderId().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + TARGET_TENSOR_FIELD_NUMBER;
+          hash = (53 * hash) + getTargetTensor().hashCode();
+          break;
+        case 0:
+        default:
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -697,7 +1077,7 @@ public final class CommunicationActionOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 5:
+          case 6:
             return internalGetKwargs();
           default:
             throw new RuntimeException(
@@ -708,7 +1088,7 @@ public final class CommunicationActionOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 5:
+          case 6:
             return internalGetMutableKwargs();
           default:
             throw new RuntimeException(
@@ -736,33 +1116,37 @@ public final class CommunicationActionOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getDestinationsFieldBuilder();
+          getArgsFieldBuilder();
+          getReturnIdsFieldBuilder();
+          getReturnPlaceholderIdsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        name_ = "";
+        command_ = "";
 
-        if (objIdBuilder_ == null) {
-          objId_ = null;
-        } else {
-          objId_ = null;
-          objIdBuilder_ = null;
-        }
-        if (sourceBuilder_ == null) {
-          source_ = null;
-        } else {
-          source_ = null;
-          sourceBuilder_ = null;
-        }
-        if (destinationsBuilder_ == null) {
-          destinations_ = java.util.Collections.emptyList();
+        if (argsBuilder_ == null) {
+          args_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          destinationsBuilder_.clear();
+          argsBuilder_.clear();
         }
         internalGetMutableKwargs().clear();
+        if (returnIdsBuilder_ == null) {
+          returnIds_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          returnIdsBuilder_.clear();
+        }
+        if (returnPlaceholderIdsBuilder_ == null) {
+          returnPlaceholderIds_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          returnPlaceholderIdsBuilder_.clear();
+        }
+        targetCase_ = 0;
+        target_ = null;
         return this;
       }
 
@@ -790,28 +1174,65 @@ public final class CommunicationActionOuterClass {
       public org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction buildPartial() {
         org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction result = new org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction(this);
         int from_bitField0_ = bitField0_;
-        result.name_ = name_;
-        if (objIdBuilder_ == null) {
-          result.objId_ = objId_;
-        } else {
-          result.objId_ = objIdBuilder_.build();
+        result.command_ = command_;
+        if (targetCase_ == 9) {
+          if (targetIdBuilder_ == null) {
+            result.target_ = target_;
+          } else {
+            result.target_ = targetIdBuilder_.build();
+          }
         }
-        if (sourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = sourceBuilder_.build();
+        if (targetCase_ == 2) {
+          if (targetPointerBuilder_ == null) {
+            result.target_ = target_;
+          } else {
+            result.target_ = targetPointerBuilder_.build();
+          }
         }
-        if (destinationsBuilder_ == null) {
+        if (targetCase_ == 3) {
+          if (targetPlaceholderIdBuilder_ == null) {
+            result.target_ = target_;
+          } else {
+            result.target_ = targetPlaceholderIdBuilder_.build();
+          }
+        }
+        if (targetCase_ == 4) {
+          if (targetTensorBuilder_ == null) {
+            result.target_ = target_;
+          } else {
+            result.target_ = targetTensorBuilder_.build();
+          }
+        }
+        if (argsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            destinations_ = java.util.Collections.unmodifiableList(destinations_);
+            args_ = java.util.Collections.unmodifiableList(args_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.destinations_ = destinations_;
+          result.args_ = args_;
         } else {
-          result.destinations_ = destinationsBuilder_.build();
+          result.args_ = argsBuilder_.build();
         }
         result.kwargs_ = internalGetKwargs();
         result.kwargs_.makeImmutable();
+        if (returnIdsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            returnIds_ = java.util.Collections.unmodifiableList(returnIds_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.returnIds_ = returnIds_;
+        } else {
+          result.returnIds_ = returnIdsBuilder_.build();
+        }
+        if (returnPlaceholderIdsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            returnPlaceholderIds_ = java.util.Collections.unmodifiableList(returnPlaceholderIds_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.returnPlaceholderIds_ = returnPlaceholderIds_;
+        } else {
+          result.returnPlaceholderIds_ = returnPlaceholderIdsBuilder_.build();
+        }
+        result.targetCase_ = targetCase_;
         onBuilt();
         return result;
       }
@@ -860,44 +1281,111 @@ public final class CommunicationActionOuterClass {
 
       public Builder mergeFrom(org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction other) {
         if (other == org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
+        if (!other.getCommand().isEmpty()) {
+          command_ = other.command_;
           onChanged();
         }
-        if (other.hasObjId()) {
-          mergeObjId(other.getObjId());
-        }
-        if (other.hasSource()) {
-          mergeSource(other.getSource());
-        }
-        if (destinationsBuilder_ == null) {
-          if (!other.destinations_.isEmpty()) {
-            if (destinations_.isEmpty()) {
-              destinations_ = other.destinations_;
+        if (argsBuilder_ == null) {
+          if (!other.args_.isEmpty()) {
+            if (args_.isEmpty()) {
+              args_ = other.args_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureDestinationsIsMutable();
-              destinations_.addAll(other.destinations_);
+              ensureArgsIsMutable();
+              args_.addAll(other.args_);
             }
             onChanged();
           }
         } else {
-          if (!other.destinations_.isEmpty()) {
-            if (destinationsBuilder_.isEmpty()) {
-              destinationsBuilder_.dispose();
-              destinationsBuilder_ = null;
-              destinations_ = other.destinations_;
+          if (!other.args_.isEmpty()) {
+            if (argsBuilder_.isEmpty()) {
+              argsBuilder_.dispose();
+              argsBuilder_ = null;
+              args_ = other.args_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              destinationsBuilder_ = 
+              argsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getDestinationsFieldBuilder() : null;
+                   getArgsFieldBuilder() : null;
             } else {
-              destinationsBuilder_.addAllMessages(other.destinations_);
+              argsBuilder_.addAllMessages(other.args_);
             }
           }
         }
         internalGetMutableKwargs().mergeFrom(
             other.internalGetKwargs());
+        if (returnIdsBuilder_ == null) {
+          if (!other.returnIds_.isEmpty()) {
+            if (returnIds_.isEmpty()) {
+              returnIds_ = other.returnIds_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureReturnIdsIsMutable();
+              returnIds_.addAll(other.returnIds_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.returnIds_.isEmpty()) {
+            if (returnIdsBuilder_.isEmpty()) {
+              returnIdsBuilder_.dispose();
+              returnIdsBuilder_ = null;
+              returnIds_ = other.returnIds_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              returnIdsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getReturnIdsFieldBuilder() : null;
+            } else {
+              returnIdsBuilder_.addAllMessages(other.returnIds_);
+            }
+          }
+        }
+        if (returnPlaceholderIdsBuilder_ == null) {
+          if (!other.returnPlaceholderIds_.isEmpty()) {
+            if (returnPlaceholderIds_.isEmpty()) {
+              returnPlaceholderIds_ = other.returnPlaceholderIds_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureReturnPlaceholderIdsIsMutable();
+              returnPlaceholderIds_.addAll(other.returnPlaceholderIds_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.returnPlaceholderIds_.isEmpty()) {
+            if (returnPlaceholderIdsBuilder_.isEmpty()) {
+              returnPlaceholderIdsBuilder_.dispose();
+              returnPlaceholderIdsBuilder_ = null;
+              returnPlaceholderIds_ = other.returnPlaceholderIds_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              returnPlaceholderIdsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getReturnPlaceholderIdsFieldBuilder() : null;
+            } else {
+              returnPlaceholderIdsBuilder_.addAllMessages(other.returnPlaceholderIds_);
+            }
+          }
+        }
+        switch (other.getTargetCase()) {
+          case TARGET_ID: {
+            mergeTargetId(other.getTargetId());
+            break;
+          }
+          case TARGET_POINTER: {
+            mergeTargetPointer(other.getTargetPointer());
+            break;
+          }
+          case TARGET_PLACEHOLDER_ID: {
+            mergeTargetPlaceholderId(other.getTargetPlaceholderId());
+            break;
+          }
+          case TARGET_TENSOR: {
+            mergeTargetTensor(other.getTargetTensor());
+            break;
+          }
+          case TARGET_NOT_SET: {
+            break;
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -926,560 +1414,889 @@ public final class CommunicationActionOuterClass {
         }
         return this;
       }
+      private int targetCase_ = 0;
+      private java.lang.Object target_;
+      public TargetCase
+          getTargetCase() {
+        return TargetCase.forNumber(
+            targetCase_);
+      }
+
+      public Builder clearTarget() {
+        targetCase_ = 0;
+        target_ = null;
+        onChanged();
+        return this;
+      }
+
       private int bitField0_;
 
-      private java.lang.Object name_ = "";
+      private java.lang.Object command_ = "";
       /**
-       * <code>string name = 1[json_name = "name"];</code>
-       * @return The name.
+       * <code>string command = 1[json_name = "command"];</code>
+       * @return The command.
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getCommand() {
+        java.lang.Object ref = command_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          command_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string name = 1[json_name = "name"];</code>
-       * @return The bytes for name.
+       * <code>string command = 1[json_name = "command"];</code>
+       * @return The bytes for command.
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getCommandBytes() {
+        java.lang.Object ref = command_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          command_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string name = 1[json_name = "name"];</code>
-       * @param value The name to set.
+       * <code>string command = 1[json_name = "command"];</code>
+       * @param value The command to set.
        * @return This builder for chaining.
        */
-      public Builder setName(
+      public Builder setCommand(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        name_ = value;
+        command_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 1[json_name = "name"];</code>
+       * <code>string command = 1[json_name = "command"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearName() {
+      public Builder clearCommand() {
         
-        name_ = getDefaultInstance().getName();
+        command_ = getDefaultInstance().getCommand();
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 1[json_name = "name"];</code>
-       * @param value The bytes for name to set.
+       * <code>string command = 1[json_name = "command"];</code>
+       * @param value The bytes for command to set.
        * @return This builder for chaining.
        */
-      public Builder setNameBytes(
+      public Builder setCommandBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        name_ = value;
+        command_ = value;
         onChanged();
         return this;
       }
 
-      private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id objId_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> objIdBuilder_;
+          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> targetIdBuilder_;
       /**
-       * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
-       * @return Whether the objId field is set.
+       * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
+       * @return Whether the targetId field is set.
        */
-      public boolean hasObjId() {
-        return objIdBuilder_ != null || objId_ != null;
+      public boolean hasTargetId() {
+        return targetCase_ == 9;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
-       * @return The objId.
+       * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
+       * @return The targetId.
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjId() {
-        if (objIdBuilder_ == null) {
-          return objId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objId_;
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getTargetId() {
+        if (targetIdBuilder_ == null) {
+          if (targetCase_ == 9) {
+            return (org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_;
+          }
+          return org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance();
         } else {
-          return objIdBuilder_.getMessage();
+          if (targetCase_ == 9) {
+            return targetIdBuilder_.getMessage();
+          }
+          return org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
        */
-      public Builder setObjId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (objIdBuilder_ == null) {
+      public Builder setTargetId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
+        if (targetIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          objId_ = value;
+          target_ = value;
           onChanged();
         } else {
-          objIdBuilder_.setMessage(value);
+          targetIdBuilder_.setMessage(value);
         }
-
+        targetCase_ = 9;
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
        */
-      public Builder setObjId(
+      public Builder setTargetId(
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
-        if (objIdBuilder_ == null) {
-          objId_ = builderForValue.build();
+        if (targetIdBuilder_ == null) {
+          target_ = builderForValue.build();
           onChanged();
         } else {
-          objIdBuilder_.setMessage(builderForValue.build());
+          targetIdBuilder_.setMessage(builderForValue.build());
         }
-
+        targetCase_ = 9;
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
        */
-      public Builder mergeObjId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (objIdBuilder_ == null) {
-          if (objId_ != null) {
-            objId_ =
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.newBuilder(objId_).mergeFrom(value).buildPartial();
+      public Builder mergeTargetId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
+        if (targetIdBuilder_ == null) {
+          if (targetCase_ == 9 &&
+              target_ != org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance()) {
+            target_ = org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.newBuilder((org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_)
+                .mergeFrom(value).buildPartial();
           } else {
-            objId_ = value;
+            target_ = value;
           }
           onChanged();
         } else {
-          objIdBuilder_.mergeFrom(value);
+          if (targetCase_ == 9) {
+            targetIdBuilder_.mergeFrom(value);
+          }
+          targetIdBuilder_.setMessage(value);
         }
-
+        targetCase_ = 9;
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
        */
-      public Builder clearObjId() {
-        if (objIdBuilder_ == null) {
-          objId_ = null;
-          onChanged();
+      public Builder clearTargetId() {
+        if (targetIdBuilder_ == null) {
+          if (targetCase_ == 9) {
+            targetCase_ = 0;
+            target_ = null;
+            onChanged();
+          }
         } else {
-          objId_ = null;
-          objIdBuilder_ = null;
+          if (targetCase_ == 9) {
+            targetCase_ = 0;
+            target_ = null;
+          }
+          targetIdBuilder_.clear();
         }
-
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getObjIdBuilder() {
-        
-        onChanged();
-        return getObjIdFieldBuilder().getBuilder();
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getTargetIdBuilder() {
+        return getTargetIdFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjIdOrBuilder() {
-        if (objIdBuilder_ != null) {
-          return objIdBuilder_.getMessageOrBuilder();
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getTargetIdOrBuilder() {
+        if ((targetCase_ == 9) && (targetIdBuilder_ != null)) {
+          return targetIdBuilder_.getMessageOrBuilder();
         } else {
-          return objId_ == null ?
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objId_;
+          if (targetCase_ == 9) {
+            return (org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_;
+          }
+          return org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id obj_id = 2[json_name = "objId"];</code>
+       * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
-          getObjIdFieldBuilder() {
-        if (objIdBuilder_ == null) {
-          objIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getTargetIdFieldBuilder() {
+        if (targetIdBuilder_ == null) {
+          if (!(targetCase_ == 9)) {
+            target_ = org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance();
+          }
+          targetIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder>(
-                  getObjId(),
+                  (org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_,
                   getParentForChildren(),
                   isClean());
-          objId_ = null;
+          target_ = null;
         }
-        return objIdBuilder_;
+        targetCase_ = 9;
+        onChanged();;
+        return targetIdBuilder_;
       }
 
-      private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id source_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> sourceBuilder_;
+          org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder> targetPointerBuilder_;
       /**
-       * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
-       * @return Whether the source field is set.
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
+       * @return Whether the targetPointer field is set.
        */
-      public boolean hasSource() {
-        return sourceBuilder_ != null || source_ != null;
+      public boolean hasTargetPointer() {
+        return targetCase_ == 2;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
-       * @return The source.
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
+       * @return The targetPointer.
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getSource() {
-        if (sourceBuilder_ == null) {
-          return source_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : source_;
+      public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getTargetPointer() {
+        if (targetPointerBuilder_ == null) {
+          if (targetCase_ == 2) {
+            return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_;
+          }
+          return org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
         } else {
-          return sourceBuilder_.getMessage();
+          if (targetCase_ == 2) {
+            return targetPointerBuilder_.getMessage();
+          }
+          return org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public Builder setSource(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (sourceBuilder_ == null) {
+      public Builder setTargetPointer(org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor value) {
+        if (targetPointerBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          source_ = value;
+          target_ = value;
           onChanged();
         } else {
-          sourceBuilder_.setMessage(value);
+          targetPointerBuilder_.setMessage(value);
         }
-
+        targetCase_ = 2;
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public Builder setSource(
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
-        if (sourceBuilder_ == null) {
-          source_ = builderForValue.build();
+      public Builder setTargetPointer(
+          org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder builderForValue) {
+        if (targetPointerBuilder_ == null) {
+          target_ = builderForValue.build();
           onChanged();
         } else {
-          sourceBuilder_.setMessage(builderForValue.build());
+          targetPointerBuilder_.setMessage(builderForValue.build());
         }
-
+        targetCase_ = 2;
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public Builder mergeSource(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (sourceBuilder_ == null) {
-          if (source_ != null) {
-            source_ =
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.newBuilder(source_).mergeFrom(value).buildPartial();
+      public Builder mergeTargetPointer(org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor value) {
+        if (targetPointerBuilder_ == null) {
+          if (targetCase_ == 2 &&
+              target_ != org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance()) {
+            target_ = org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.newBuilder((org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_)
+                .mergeFrom(value).buildPartial();
           } else {
-            source_ = value;
+            target_ = value;
           }
           onChanged();
         } else {
-          sourceBuilder_.mergeFrom(value);
+          if (targetCase_ == 2) {
+            targetPointerBuilder_.mergeFrom(value);
+          }
+          targetPointerBuilder_.setMessage(value);
         }
-
+        targetCase_ = 2;
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public Builder clearSource() {
-        if (sourceBuilder_ == null) {
-          source_ = null;
-          onChanged();
+      public Builder clearTargetPointer() {
+        if (targetPointerBuilder_ == null) {
+          if (targetCase_ == 2) {
+            targetCase_ = 0;
+            target_ = null;
+            onChanged();
+          }
         } else {
-          source_ = null;
-          sourceBuilder_ = null;
+          if (targetCase_ == 2) {
+            targetCase_ = 0;
+            target_ = null;
+          }
+          targetPointerBuilder_.clear();
         }
-
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getSourceBuilder() {
-        
-        onChanged();
-        return getSourceFieldBuilder().getBuilder();
+      public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder getTargetPointerBuilder() {
+        return getTargetPointerFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getSourceOrBuilder() {
-        if (sourceBuilder_ != null) {
-          return sourceBuilder_.getMessageOrBuilder();
+      public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getTargetPointerOrBuilder() {
+        if ((targetCase_ == 2) && (targetPointerBuilder_ != null)) {
+          return targetPointerBuilder_.getMessageOrBuilder();
         } else {
-          return source_ == null ?
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : source_;
+          if (targetCase_ == 2) {
+            return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_;
+          }
+          return org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id source = 3[json_name = "source"];</code>
+       * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
-          getSourceFieldBuilder() {
-        if (sourceBuilder_ == null) {
-          sourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder>(
-                  getSource(),
+          org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder> 
+          getTargetPointerFieldBuilder() {
+        if (targetPointerBuilder_ == null) {
+          if (!(targetCase_ == 2)) {
+            target_ = org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.getDefaultInstance();
+          }
+          targetPointerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor.Builder, org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder>(
+                  (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_,
                   getParentForChildren(),
                   isClean());
-          source_ = null;
+          target_ = null;
         }
-        return sourceBuilder_;
+        targetCase_ = 2;
+        onChanged();;
+        return targetPointerBuilder_;
       }
 
-      private java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> destinations_ =
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> targetPlaceholderIdBuilder_;
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+       * @return Whether the targetPlaceholderId field is set.
+       */
+      public boolean hasTargetPlaceholderId() {
+        return targetCase_ == 3;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+       * @return The targetPlaceholderId.
+       */
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getTargetPlaceholderId() {
+        if (targetPlaceholderIdBuilder_ == null) {
+          if (targetCase_ == 3) {
+            return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) target_;
+          }
+          return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
+        } else {
+          if (targetCase_ == 3) {
+            return targetPlaceholderIdBuilder_.getMessage();
+          }
+          return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+       */
+      public Builder setTargetPlaceholderId(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+        if (targetPlaceholderIdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          target_ = value;
+          onChanged();
+        } else {
+          targetPlaceholderIdBuilder_.setMessage(value);
+        }
+        targetCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+       */
+      public Builder setTargetPlaceholderId(
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
+        if (targetPlaceholderIdBuilder_ == null) {
+          target_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetPlaceholderIdBuilder_.setMessage(builderForValue.build());
+        }
+        targetCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+       */
+      public Builder mergeTargetPlaceholderId(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+        if (targetPlaceholderIdBuilder_ == null) {
+          if (targetCase_ == 3 &&
+              target_ != org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance()) {
+            target_ = org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.newBuilder((org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) target_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            target_ = value;
+          }
+          onChanged();
+        } else {
+          if (targetCase_ == 3) {
+            targetPlaceholderIdBuilder_.mergeFrom(value);
+          }
+          targetPlaceholderIdBuilder_.setMessage(value);
+        }
+        targetCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+       */
+      public Builder clearTargetPlaceholderId() {
+        if (targetPlaceholderIdBuilder_ == null) {
+          if (targetCase_ == 3) {
+            targetCase_ = 0;
+            target_ = null;
+            onChanged();
+          }
+        } else {
+          if (targetCase_ == 3) {
+            targetCase_ = 0;
+            target_ = null;
+          }
+          targetPlaceholderIdBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder getTargetPlaceholderIdBuilder() {
+        return getTargetPlaceholderIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getTargetPlaceholderIdOrBuilder() {
+        if ((targetCase_ == 3) && (targetPlaceholderIdBuilder_ != null)) {
+          return targetPlaceholderIdBuilder_.getMessageOrBuilder();
+        } else {
+          if (targetCase_ == 3) {
+            return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) target_;
+          }
+          return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+          getTargetPlaceholderIdFieldBuilder() {
+        if (targetPlaceholderIdBuilder_ == null) {
+          if (!(targetCase_ == 3)) {
+            target_ = org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
+          }
+          targetPlaceholderIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder>(
+                  (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) target_,
+                  getParentForChildren(),
+                  isClean());
+          target_ = null;
+        }
+        targetCase_ = 3;
+        onChanged();;
+        return targetPlaceholderIdBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> targetTensorBuilder_;
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+       * @return Whether the targetTensor field is set.
+       */
+      public boolean hasTargetTensor() {
+        return targetCase_ == 4;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+       * @return The targetTensor.
+       */
+      public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTargetTensor() {
+        if (targetTensorBuilder_ == null) {
+          if (targetCase_ == 4) {
+            return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_;
+          }
+          return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+        } else {
+          if (targetCase_ == 4) {
+            return targetTensorBuilder_.getMessage();
+          }
+          return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+       */
+      public Builder setTargetTensor(org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor value) {
+        if (targetTensorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          target_ = value;
+          onChanged();
+        } else {
+          targetTensorBuilder_.setMessage(value);
+        }
+        targetCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+       */
+      public Builder setTargetTensor(
+          org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder builderForValue) {
+        if (targetTensorBuilder_ == null) {
+          target_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetTensorBuilder_.setMessage(builderForValue.build());
+        }
+        targetCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+       */
+      public Builder mergeTargetTensor(org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor value) {
+        if (targetTensorBuilder_ == null) {
+          if (targetCase_ == 4 &&
+              target_ != org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance()) {
+            target_ = org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.newBuilder((org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            target_ = value;
+          }
+          onChanged();
+        } else {
+          if (targetCase_ == 4) {
+            targetTensorBuilder_.mergeFrom(value);
+          }
+          targetTensorBuilder_.setMessage(value);
+        }
+        targetCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+       */
+      public Builder clearTargetTensor() {
+        if (targetTensorBuilder_ == null) {
+          if (targetCase_ == 4) {
+            targetCase_ = 0;
+            target_ = null;
+            onChanged();
+          }
+        } else {
+          if (targetCase_ == 4) {
+            targetCase_ = 0;
+            target_ = null;
+          }
+          targetTensorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+       */
+      public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder getTargetTensorBuilder() {
+        return getTargetTensorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+       */
+      public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getTargetTensorOrBuilder() {
+        if ((targetCase_ == 4) && (targetTensorBuilder_ != null)) {
+          return targetTensorBuilder_.getMessageOrBuilder();
+        } else {
+          if (targetCase_ == 4) {
+            return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_;
+          }
+          return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> 
+          getTargetTensorFieldBuilder() {
+        if (targetTensorBuilder_ == null) {
+          if (!(targetCase_ == 4)) {
+            target_ = org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+          }
+          targetTensorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder>(
+                  (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_,
+                  getParentForChildren(),
+                  isClean());
+          target_ = null;
+        }
+        targetCase_ = 4;
+        onChanged();;
+        return targetTensorBuilder_;
+      }
+
+      private java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> args_ =
         java.util.Collections.emptyList();
-      private void ensureDestinationsIsMutable() {
+      private void ensureArgsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          destinations_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id>(destinations_);
+          args_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg>(args_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> destinationsBuilder_;
+          org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> argsBuilder_;
 
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> getDestinationsList() {
-        if (destinationsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(destinations_);
+      public java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getArgsList() {
+        if (argsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(args_);
         } else {
-          return destinationsBuilder_.getMessageList();
+          return argsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public int getDestinationsCount() {
-        if (destinationsBuilder_ == null) {
-          return destinations_.size();
+      public int getArgsCount() {
+        if (argsBuilder_ == null) {
+          return args_.size();
         } else {
-          return destinationsBuilder_.getCount();
+          return argsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getDestinations(int index) {
-        if (destinationsBuilder_ == null) {
-          return destinations_.get(index);
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getArgs(int index) {
+        if (argsBuilder_ == null) {
+          return args_.get(index);
         } else {
-          return destinationsBuilder_.getMessage(index);
+          return argsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public Builder setDestinations(
-          int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (destinationsBuilder_ == null) {
+      public Builder setArgs(
+          int index, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg value) {
+        if (argsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureDestinationsIsMutable();
-          destinations_.set(index, value);
+          ensureArgsIsMutable();
+          args_.set(index, value);
           onChanged();
         } else {
-          destinationsBuilder_.setMessage(index, value);
+          argsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public Builder setDestinations(
-          int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
-        if (destinationsBuilder_ == null) {
-          ensureDestinationsIsMutable();
-          destinations_.set(index, builderForValue.build());
+      public Builder setArgs(
+          int index, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder builderForValue) {
+        if (argsBuilder_ == null) {
+          ensureArgsIsMutable();
+          args_.set(index, builderForValue.build());
           onChanged();
         } else {
-          destinationsBuilder_.setMessage(index, builderForValue.build());
+          argsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public Builder addDestinations(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (destinationsBuilder_ == null) {
+      public Builder addArgs(org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg value) {
+        if (argsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureDestinationsIsMutable();
-          destinations_.add(value);
+          ensureArgsIsMutable();
+          args_.add(value);
           onChanged();
         } else {
-          destinationsBuilder_.addMessage(value);
+          argsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public Builder addDestinations(
-          int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
-        if (destinationsBuilder_ == null) {
+      public Builder addArgs(
+          int index, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg value) {
+        if (argsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureDestinationsIsMutable();
-          destinations_.add(index, value);
+          ensureArgsIsMutable();
+          args_.add(index, value);
           onChanged();
         } else {
-          destinationsBuilder_.addMessage(index, value);
+          argsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public Builder addDestinations(
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
-        if (destinationsBuilder_ == null) {
-          ensureDestinationsIsMutable();
-          destinations_.add(builderForValue.build());
+      public Builder addArgs(
+          org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder builderForValue) {
+        if (argsBuilder_ == null) {
+          ensureArgsIsMutable();
+          args_.add(builderForValue.build());
           onChanged();
         } else {
-          destinationsBuilder_.addMessage(builderForValue.build());
+          argsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public Builder addDestinations(
-          int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
-        if (destinationsBuilder_ == null) {
-          ensureDestinationsIsMutable();
-          destinations_.add(index, builderForValue.build());
+      public Builder addArgs(
+          int index, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder builderForValue) {
+        if (argsBuilder_ == null) {
+          ensureArgsIsMutable();
+          args_.add(index, builderForValue.build());
           onChanged();
         } else {
-          destinationsBuilder_.addMessage(index, builderForValue.build());
+          argsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public Builder addAllDestinations(
-          java.lang.Iterable<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> values) {
-        if (destinationsBuilder_ == null) {
-          ensureDestinationsIsMutable();
+      public Builder addAllArgs(
+          java.lang.Iterable<? extends org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> values) {
+        if (argsBuilder_ == null) {
+          ensureArgsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, destinations_);
+              values, args_);
           onChanged();
         } else {
-          destinationsBuilder_.addAllMessages(values);
+          argsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public Builder clearDestinations() {
-        if (destinationsBuilder_ == null) {
-          destinations_ = java.util.Collections.emptyList();
+      public Builder clearArgs() {
+        if (argsBuilder_ == null) {
+          args_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          destinationsBuilder_.clear();
+          argsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public Builder removeDestinations(int index) {
-        if (destinationsBuilder_ == null) {
-          ensureDestinationsIsMutable();
-          destinations_.remove(index);
+      public Builder removeArgs(int index) {
+        if (argsBuilder_ == null) {
+          ensureArgsIsMutable();
+          args_.remove(index);
           onChanged();
         } else {
-          destinationsBuilder_.remove(index);
+          argsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getDestinationsBuilder(
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder getArgsBuilder(
           int index) {
-        return getDestinationsFieldBuilder().getBuilder(index);
+        return getArgsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getDestinationsOrBuilder(
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder getArgsOrBuilder(
           int index) {
-        if (destinationsBuilder_ == null) {
-          return destinations_.get(index);  } else {
-          return destinationsBuilder_.getMessageOrBuilder(index);
+        if (argsBuilder_ == null) {
+          return args_.get(index);  } else {
+          return argsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
-           getDestinationsOrBuilderList() {
-        if (destinationsBuilder_ != null) {
-          return destinationsBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> 
+           getArgsOrBuilderList() {
+        if (argsBuilder_ != null) {
+          return argsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(destinations_);
+          return java.util.Collections.unmodifiableList(args_);
         }
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder addDestinationsBuilder() {
-        return getDestinationsFieldBuilder().addBuilder(
-            org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance());
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder addArgsBuilder() {
+        return getArgsFieldBuilder().addBuilder(
+            org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.getDefaultInstance());
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder addDestinationsBuilder(
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder addArgsBuilder(
           int index) {
-        return getDestinationsFieldBuilder().addBuilder(
-            index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance());
+        return getArgsFieldBuilder().addBuilder(
+            index, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.getDefaultInstance());
       }
       /**
-       * <code>repeated .syft_proto.types.syft.v1.Id destinations = 4[json_name = "destinations"];</code>
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
        */
-      public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder> 
-           getDestinationsBuilderList() {
-        return getDestinationsFieldBuilder().getBuilderList();
+      public java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder> 
+           getArgsBuilderList() {
+        return getArgsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
-          getDestinationsFieldBuilder() {
-        if (destinationsBuilder_ == null) {
-          destinationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder>(
-                  destinations_,
+          org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> 
+          getArgsFieldBuilder() {
+        if (argsBuilder_ == null) {
+          argsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder>(
+                  args_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          destinations_ = null;
+          args_ = null;
         }
-        return destinationsBuilder_;
+        return argsBuilder_;
       }
 
       private com.google.protobuf.MapField<
@@ -1509,7 +2326,7 @@ public final class CommunicationActionOuterClass {
         return internalGetKwargs().getMap().size();
       }
       /**
-       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
        */
 
       public boolean containsKwargs(
@@ -1525,14 +2342,14 @@ public final class CommunicationActionOuterClass {
         return getKwargsMap();
       }
       /**
-       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
        */
 
       public java.util.Map<java.lang.String, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getKwargsMap() {
         return internalGetKwargs().getMap();
       }
       /**
-       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
        */
 
       public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getKwargsOrDefault(
@@ -1544,7 +2361,7 @@ public final class CommunicationActionOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
        */
 
       public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getKwargsOrThrow(
@@ -1564,7 +2381,7 @@ public final class CommunicationActionOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
        */
 
       public Builder removeKwargs(
@@ -1583,7 +2400,7 @@ public final class CommunicationActionOuterClass {
         return internalGetMutableKwargs().getMutableMap();
       }
       /**
-       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
        */
       public Builder putKwargs(
           java.lang.String key,
@@ -1595,7 +2412,7 @@ public final class CommunicationActionOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 5[json_name = "kwargs"];</code>
+       * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
        */
 
       public Builder putAllKwargs(
@@ -1603,6 +2420,486 @@ public final class CommunicationActionOuterClass {
         internalGetMutableKwargs().getMutableMap()
             .putAll(values);
         return this;
+      }
+
+      private java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> returnIds_ =
+        java.util.Collections.emptyList();
+      private void ensureReturnIdsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          returnIds_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id>(returnIds_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> returnIdsBuilder_;
+
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> getReturnIdsList() {
+        if (returnIdsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(returnIds_);
+        } else {
+          return returnIdsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public int getReturnIdsCount() {
+        if (returnIdsBuilder_ == null) {
+          return returnIds_.size();
+        } else {
+          return returnIdsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getReturnIds(int index) {
+        if (returnIdsBuilder_ == null) {
+          return returnIds_.get(index);
+        } else {
+          return returnIdsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public Builder setReturnIds(
+          int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
+        if (returnIdsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReturnIdsIsMutable();
+          returnIds_.set(index, value);
+          onChanged();
+        } else {
+          returnIdsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public Builder setReturnIds(
+          int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
+        if (returnIdsBuilder_ == null) {
+          ensureReturnIdsIsMutable();
+          returnIds_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          returnIdsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public Builder addReturnIds(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
+        if (returnIdsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReturnIdsIsMutable();
+          returnIds_.add(value);
+          onChanged();
+        } else {
+          returnIdsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public Builder addReturnIds(
+          int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
+        if (returnIdsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReturnIdsIsMutable();
+          returnIds_.add(index, value);
+          onChanged();
+        } else {
+          returnIdsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public Builder addReturnIds(
+          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
+        if (returnIdsBuilder_ == null) {
+          ensureReturnIdsIsMutable();
+          returnIds_.add(builderForValue.build());
+          onChanged();
+        } else {
+          returnIdsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public Builder addReturnIds(
+          int index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
+        if (returnIdsBuilder_ == null) {
+          ensureReturnIdsIsMutable();
+          returnIds_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          returnIdsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public Builder addAllReturnIds(
+          java.lang.Iterable<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> values) {
+        if (returnIdsBuilder_ == null) {
+          ensureReturnIdsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, returnIds_);
+          onChanged();
+        } else {
+          returnIdsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public Builder clearReturnIds() {
+        if (returnIdsBuilder_ == null) {
+          returnIds_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          returnIdsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public Builder removeReturnIds(int index) {
+        if (returnIdsBuilder_ == null) {
+          ensureReturnIdsIsMutable();
+          returnIds_.remove(index);
+          onChanged();
+        } else {
+          returnIdsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getReturnIdsBuilder(
+          int index) {
+        return getReturnIdsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getReturnIdsOrBuilder(
+          int index) {
+        if (returnIdsBuilder_ == null) {
+          return returnIds_.get(index);  } else {
+          return returnIdsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
+           getReturnIdsOrBuilderList() {
+        if (returnIdsBuilder_ != null) {
+          return returnIdsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(returnIds_);
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder addReturnIdsBuilder() {
+        return getReturnIdsFieldBuilder().addBuilder(
+            org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder addReturnIdsBuilder(
+          int index) {
+        return getReturnIdsFieldBuilder().addBuilder(
+            index, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
+       */
+      public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder> 
+           getReturnIdsBuilderList() {
+        return getReturnIdsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
+          getReturnIdsFieldBuilder() {
+        if (returnIdsBuilder_ == null) {
+          returnIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder>(
+                  returnIds_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          returnIds_ = null;
+        }
+        return returnIdsBuilder_;
+      }
+
+      private java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> returnPlaceholderIds_ =
+        java.util.Collections.emptyList();
+      private void ensureReturnPlaceholderIdsIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          returnPlaceholderIds_ = new java.util.ArrayList<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId>(returnPlaceholderIds_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> returnPlaceholderIdsBuilder_;
+
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> getReturnPlaceholderIdsList() {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(returnPlaceholderIds_);
+        } else {
+          return returnPlaceholderIdsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public int getReturnPlaceholderIdsCount() {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          return returnPlaceholderIds_.size();
+        } else {
+          return returnPlaceholderIdsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          return returnPlaceholderIds_.get(index);
+        } else {
+          return returnPlaceholderIdsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public Builder setReturnPlaceholderIds(
+          int index, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.set(index, value);
+          onChanged();
+        } else {
+          returnPlaceholderIdsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public Builder setReturnPlaceholderIds(
+          int index, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          returnPlaceholderIdsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public Builder addReturnPlaceholderIds(org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.add(value);
+          onChanged();
+        } else {
+          returnPlaceholderIdsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public Builder addReturnPlaceholderIds(
+          int index, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId value) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.add(index, value);
+          onChanged();
+        } else {
+          returnPlaceholderIdsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public Builder addReturnPlaceholderIds(
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.add(builderForValue.build());
+          onChanged();
+        } else {
+          returnPlaceholderIdsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public Builder addReturnPlaceholderIds(
+          int index, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder builderForValue) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          returnPlaceholderIdsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public Builder addAllReturnPlaceholderIds(
+          java.lang.Iterable<? extends org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> values) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          ensureReturnPlaceholderIdsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, returnPlaceholderIds_);
+          onChanged();
+        } else {
+          returnPlaceholderIdsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public Builder clearReturnPlaceholderIds() {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          returnPlaceholderIds_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          returnPlaceholderIdsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public Builder removeReturnPlaceholderIds(int index) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          ensureReturnPlaceholderIdsIsMutable();
+          returnPlaceholderIds_.remove(index);
+          onChanged();
+        } else {
+          returnPlaceholderIdsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder getReturnPlaceholderIdsBuilder(
+          int index) {
+        return getReturnPlaceholderIdsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
+          int index) {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          return returnPlaceholderIds_.get(index);  } else {
+          return returnPlaceholderIdsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public java.util.List<? extends org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+           getReturnPlaceholderIdsOrBuilderList() {
+        if (returnPlaceholderIdsBuilder_ != null) {
+          return returnPlaceholderIdsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(returnPlaceholderIds_);
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder addReturnPlaceholderIdsBuilder() {
+        return getReturnPlaceholderIdsFieldBuilder().addBuilder(
+            org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder addReturnPlaceholderIdsBuilder(
+          int index) {
+        return getReturnPlaceholderIdsFieldBuilder().addBuilder(
+            index, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
+       */
+      public java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder> 
+           getReturnPlaceholderIdsBuilderList() {
+        return getReturnPlaceholderIdsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
+          getReturnPlaceholderIdsFieldBuilder() {
+        if (returnPlaceholderIdsBuilder_ == null) {
+          returnPlaceholderIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.Builder, org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder>(
+                  returnPlaceholderIds_,
+                  ((bitField0_ & 0x00000008) != 0),
+                  getParentForChildren(),
+                  isClean());
+          returnPlaceholderIds_ = null;
+        }
+        return returnPlaceholderIdsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1677,41 +2974,60 @@ public final class CommunicationActionOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n2syft_proto/execution/v1/communication_" +
-      "action.proto\022\027syft_proto.execution.v1\032\"s" +
-      "yft_proto/types/syft/v1/arg.proto\032!syft_" +
-      "proto/types/syft/v1/id.proto\"\202\003\n\023Communi" +
-      "cationAction\022\022\n\004name\030\001 \001(\tR\004name\0223\n\006obj_" +
-      "id\030\002 \001(\0132\034.syft_proto.types.syft.v1.IdR\005" +
-      "objId\0224\n\006source\030\003 \001(\0132\034.syft_proto.types" +
-      ".syft.v1.IdR\006source\022@\n\014destinations\030\004 \003(" +
-      "\0132\034.syft_proto.types.syft.v1.IdR\014destina" +
-      "tions\022P\n\006kwargs\030\005 \003(\01328.syft_proto.execu" +
-      "tion.v1.CommunicationAction.KwargsEntryR" +
-      "\006kwargs\032X\n\013KwargsEntry\022\020\n\003key\030\001 \001(\tR\003key" +
-      "\0223\n\005value\030\002 \001(\0132\035.syft_proto.types.syft." +
-      "v1.ArgR\005value:\0028\001B&\n$org.openmined.syftp" +
-      "roto.execution.v1b\006proto3"
+      "action.proto\022\027syft_proto.execution.v1\032,s" +
+      "yft_proto/execution/v1/placeholder_id.pr" +
+      "oto\0323syft_proto/generic/pointers/v1/poin" +
+      "ter_tensor.proto\032\"syft_proto/types/syft/" +
+      "v1/arg.proto\032!syft_proto/types/syft/v1/i" +
+      "d.proto\032&syft_proto/types/torch/v1/tenso" +
+      "r.proto\"\365\005\n\023CommunicationAction\022\030\n\007comma" +
+      "nd\030\001 \001(\tR\007command\022;\n\ttarget_id\030\t \001(\0132\034.s" +
+      "yft_proto.types.syft.v1.IdH\000R\010targetId\022V" +
+      "\n\016target_pointer\030\002 \001(\0132-.syft_proto.gene" +
+      "ric.pointers.v1.PointerTensorH\000R\rtargetP" +
+      "ointer\022\\\n\025target_placeholder_id\030\003 \001(\0132&." +
+      "syft_proto.execution.v1.PlaceholderIdH\000R" +
+      "\023targetPlaceholderId\022M\n\rtarget_tensor\030\004 " +
+      "\001(\0132&.syft_proto.types.torch.v1.TorchTen" +
+      "sorH\000R\014targetTensor\0221\n\004args\030\005 \003(\0132\035.syft" +
+      "_proto.types.syft.v1.ArgR\004args\022P\n\006kwargs" +
+      "\030\006 \003(\01328.syft_proto.execution.v1.Communi" +
+      "cationAction.KwargsEntryR\006kwargs\022;\n\nretu" +
+      "rn_ids\030\007 \003(\0132\034.syft_proto.types.syft.v1." +
+      "IdR\treturnIds\022\\\n\026return_placeholder_ids\030" +
+      "\010 \003(\0132&.syft_proto.execution.v1.Placehol" +
+      "derIdR\024returnPlaceholderIds\032X\n\013KwargsEnt" +
+      "ry\022\020\n\003key\030\001 \001(\tR\003key\0223\n\005value\030\002 \001(\0132\035.sy" +
+      "ft_proto.types.syft.v1.ArgR\005value:\0028\001B\010\n" +
+      "\006targetB&\n$org.openmined.syftproto.execu" +
+      "tion.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.getDescriptor(),
+          org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.ArgOuterClass.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor(),
+          org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor(),
         });
     internal_static_syft_proto_execution_v1_CommunicationAction_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_syft_proto_execution_v1_CommunicationAction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_CommunicationAction_descriptor,
-        new java.lang.String[] { "Name", "ObjId", "Source", "Destinations", "Kwargs", });
+        new java.lang.String[] { "Command", "TargetId", "TargetPointer", "TargetPlaceholderId", "TargetTensor", "Args", "Kwargs", "ReturnIds", "ReturnPlaceholderIds", "Target", });
     internal_static_syft_proto_execution_v1_CommunicationAction_KwargsEntry_descriptor =
       internal_static_syft_proto_execution_v1_CommunicationAction_descriptor.getNestedTypes().get(0);
     internal_static_syft_proto_execution_v1_CommunicationAction_KwargsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_CommunicationAction_KwargsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.getDescriptor();
+    org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.ArgOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
+    org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
