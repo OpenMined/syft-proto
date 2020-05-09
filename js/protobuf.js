@@ -42,11 +42,15 @@ $root.syft_proto = (function() {
                  * Properties of a CommunicationAction.
                  * @memberof syft_proto.execution.v1
                  * @interface ICommunicationAction
-                 * @property {string|null} [name] CommunicationAction name
-                 * @property {syft_proto.types.syft.v1.IId|null} [obj_id] CommunicationAction obj_id
-                 * @property {syft_proto.types.syft.v1.IId|null} [source] CommunicationAction source
-                 * @property {Array.<syft_proto.types.syft.v1.IId>|null} [destinations] CommunicationAction destinations
+                 * @property {string|null} [command] CommunicationAction command
+                 * @property {syft_proto.types.syft.v1.IId|null} [target_id] CommunicationAction target_id
+                 * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [target_pointer] CommunicationAction target_pointer
+                 * @property {syft_proto.execution.v1.IPlaceholderId|null} [target_placeholder_id] CommunicationAction target_placeholder_id
+                 * @property {syft_proto.types.torch.v1.ITorchTensor|null} [target_tensor] CommunicationAction target_tensor
+                 * @property {Array.<syft_proto.types.syft.v1.IArg>|null} [args] CommunicationAction args
                  * @property {Object.<string,syft_proto.types.syft.v1.IArg>|null} [kwargs] CommunicationAction kwargs
+                 * @property {Array.<syft_proto.types.syft.v1.IId>|null} [return_ids] CommunicationAction return_ids
+                 * @property {Array.<syft_proto.execution.v1.IPlaceholderId>|null} [return_placeholder_ids] CommunicationAction return_placeholder_ids
                  */
 
                 /**
@@ -58,8 +62,10 @@ $root.syft_proto = (function() {
                  * @param {syft_proto.execution.v1.ICommunicationAction=} [properties] Properties to set
                  */
                 function CommunicationAction(properties) {
-                    this.destinations = [];
+                    this.args = [];
                     this.kwargs = {};
+                    this.return_ids = [];
+                    this.return_placeholder_ids = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -67,36 +73,52 @@ $root.syft_proto = (function() {
                 }
 
                 /**
-                 * CommunicationAction name.
-                 * @member {string} name
+                 * CommunicationAction command.
+                 * @member {string} command
                  * @memberof syft_proto.execution.v1.CommunicationAction
                  * @instance
                  */
-                CommunicationAction.prototype.name = "";
+                CommunicationAction.prototype.command = "";
 
                 /**
-                 * CommunicationAction obj_id.
-                 * @member {syft_proto.types.syft.v1.IId|null|undefined} obj_id
+                 * CommunicationAction target_id.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} target_id
                  * @memberof syft_proto.execution.v1.CommunicationAction
                  * @instance
                  */
-                CommunicationAction.prototype.obj_id = null;
+                CommunicationAction.prototype.target_id = null;
 
                 /**
-                 * CommunicationAction source.
-                 * @member {syft_proto.types.syft.v1.IId|null|undefined} source
+                 * CommunicationAction target_pointer.
+                 * @member {syft_proto.generic.pointers.v1.IPointerTensor|null|undefined} target_pointer
                  * @memberof syft_proto.execution.v1.CommunicationAction
                  * @instance
                  */
-                CommunicationAction.prototype.source = null;
+                CommunicationAction.prototype.target_pointer = null;
 
                 /**
-                 * CommunicationAction destinations.
-                 * @member {Array.<syft_proto.types.syft.v1.IId>} destinations
+                 * CommunicationAction target_placeholder_id.
+                 * @member {syft_proto.execution.v1.IPlaceholderId|null|undefined} target_placeholder_id
                  * @memberof syft_proto.execution.v1.CommunicationAction
                  * @instance
                  */
-                CommunicationAction.prototype.destinations = $util.emptyArray;
+                CommunicationAction.prototype.target_placeholder_id = null;
+
+                /**
+                 * CommunicationAction target_tensor.
+                 * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} target_tensor
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @instance
+                 */
+                CommunicationAction.prototype.target_tensor = null;
+
+                /**
+                 * CommunicationAction args.
+                 * @member {Array.<syft_proto.types.syft.v1.IArg>} args
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @instance
+                 */
+                CommunicationAction.prototype.args = $util.emptyArray;
 
                 /**
                  * CommunicationAction kwargs.
@@ -105,6 +127,36 @@ $root.syft_proto = (function() {
                  * @instance
                  */
                 CommunicationAction.prototype.kwargs = $util.emptyObject;
+
+                /**
+                 * CommunicationAction return_ids.
+                 * @member {Array.<syft_proto.types.syft.v1.IId>} return_ids
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @instance
+                 */
+                CommunicationAction.prototype.return_ids = $util.emptyArray;
+
+                /**
+                 * CommunicationAction return_placeholder_ids.
+                 * @member {Array.<syft_proto.execution.v1.IPlaceholderId>} return_placeholder_ids
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @instance
+                 */
+                CommunicationAction.prototype.return_placeholder_ids = $util.emptyArray;
+
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+
+                /**
+                 * CommunicationAction target.
+                 * @member {"target_id"|"target_pointer"|"target_placeholder_id"|"target_tensor"|undefined} target
+                 * @memberof syft_proto.execution.v1.CommunicationAction
+                 * @instance
+                 */
+                Object.defineProperty(CommunicationAction.prototype, "target", {
+                    get: $util.oneOfGetter($oneOfFields = ["target_id", "target_pointer", "target_placeholder_id", "target_tensor"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
 
                 /**
                  * Creates a new CommunicationAction instance using the specified properties.
@@ -130,20 +182,30 @@ $root.syft_proto = (function() {
                 CommunicationAction.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.name != null && message.hasOwnProperty("name"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                    if (message.obj_id != null && message.hasOwnProperty("obj_id"))
-                        $root.syft_proto.types.syft.v1.Id.encode(message.obj_id, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    if (message.source != null && message.hasOwnProperty("source"))
-                        $root.syft_proto.types.syft.v1.Id.encode(message.source, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                    if (message.destinations != null && message.destinations.length)
-                        for (var i = 0; i < message.destinations.length; ++i)
-                            $root.syft_proto.types.syft.v1.Id.encode(message.destinations[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.command != null && message.hasOwnProperty("command"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.command);
+                    if (message.target_pointer != null && message.hasOwnProperty("target_pointer"))
+                        $root.syft_proto.generic.pointers.v1.PointerTensor.encode(message.target_pointer, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.target_placeholder_id != null && message.hasOwnProperty("target_placeholder_id"))
+                        $root.syft_proto.execution.v1.PlaceholderId.encode(message.target_placeholder_id, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.target_tensor != null && message.hasOwnProperty("target_tensor"))
+                        $root.syft_proto.types.torch.v1.TorchTensor.encode(message.target_tensor, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.args != null && message.args.length)
+                        for (var i = 0; i < message.args.length; ++i)
+                            $root.syft_proto.types.syft.v1.Arg.encode(message.args[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                     if (message.kwargs != null && message.hasOwnProperty("kwargs"))
                         for (var keys = Object.keys(message.kwargs), i = 0; i < keys.length; ++i) {
-                            writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                            writer.uint32(/* id 6, wireType 2 =*/50).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
                             $root.syft_proto.types.syft.v1.Arg.encode(message.kwargs[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
                         }
+                    if (message.return_ids != null && message.return_ids.length)
+                        for (var i = 0; i < message.return_ids.length; ++i)
+                            $root.syft_proto.types.syft.v1.Id.encode(message.return_ids[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    if (message.return_placeholder_ids != null && message.return_placeholder_ids.length)
+                        for (var i = 0; i < message.return_placeholder_ids.length; ++i)
+                            $root.syft_proto.execution.v1.PlaceholderId.encode(message.return_placeholder_ids[i], writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                    if (message.target_id != null && message.hasOwnProperty("target_id"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.target_id, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                     return writer;
                 };
 
@@ -179,26 +241,42 @@ $root.syft_proto = (function() {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.name = reader.string();
+                            message.command = reader.string();
+                            break;
+                        case 9:
+                            message.target_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.obj_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            message.target_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.decode(reader, reader.uint32());
                             break;
                         case 3:
-                            message.source = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            message.target_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.decode(reader, reader.uint32());
                             break;
                         case 4:
-                            if (!(message.destinations && message.destinations.length))
-                                message.destinations = [];
-                            message.destinations.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
+                            message.target_tensor = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
                             break;
                         case 5:
+                            if (!(message.args && message.args.length))
+                                message.args = [];
+                            message.args.push($root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32()));
+                            break;
+                        case 6:
                             reader.skip().pos++;
                             if (message.kwargs === $util.emptyObject)
                                 message.kwargs = {};
                             key = reader.string();
                             reader.pos++;
                             message.kwargs[key] = $root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32());
+                            break;
+                        case 7:
+                            if (!(message.return_ids && message.return_ids.length))
+                                message.return_ids = [];
+                            message.return_ids.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
+                            break;
+                        case 8:
+                            if (!(message.return_placeholder_ids && message.return_placeholder_ids.length))
+                                message.return_placeholder_ids = [];
+                            message.return_placeholder_ids.push($root.syft_proto.execution.v1.PlaceholderId.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -235,26 +313,55 @@ $root.syft_proto = (function() {
                 CommunicationAction.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.name != null && message.hasOwnProperty("name"))
-                        if (!$util.isString(message.name))
-                            return "name: string expected";
-                    if (message.obj_id != null && message.hasOwnProperty("obj_id")) {
-                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.obj_id);
-                        if (error)
-                            return "obj_id." + error;
-                    }
-                    if (message.source != null && message.hasOwnProperty("source")) {
-                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.source);
-                        if (error)
-                            return "source." + error;
-                    }
-                    if (message.destinations != null && message.hasOwnProperty("destinations")) {
-                        if (!Array.isArray(message.destinations))
-                            return "destinations: array expected";
-                        for (var i = 0; i < message.destinations.length; ++i) {
-                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.destinations[i]);
+                    var properties = {};
+                    if (message.command != null && message.hasOwnProperty("command"))
+                        if (!$util.isString(message.command))
+                            return "command: string expected";
+                    if (message.target_id != null && message.hasOwnProperty("target_id")) {
+                        properties.target = 1;
+                        {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.target_id);
                             if (error)
-                                return "destinations." + error;
+                                return "target_id." + error;
+                        }
+                    }
+                    if (message.target_pointer != null && message.hasOwnProperty("target_pointer")) {
+                        if (properties.target === 1)
+                            return "target: multiple values";
+                        properties.target = 1;
+                        {
+                            var error = $root.syft_proto.generic.pointers.v1.PointerTensor.verify(message.target_pointer);
+                            if (error)
+                                return "target_pointer." + error;
+                        }
+                    }
+                    if (message.target_placeholder_id != null && message.hasOwnProperty("target_placeholder_id")) {
+                        if (properties.target === 1)
+                            return "target: multiple values";
+                        properties.target = 1;
+                        {
+                            var error = $root.syft_proto.execution.v1.PlaceholderId.verify(message.target_placeholder_id);
+                            if (error)
+                                return "target_placeholder_id." + error;
+                        }
+                    }
+                    if (message.target_tensor != null && message.hasOwnProperty("target_tensor")) {
+                        if (properties.target === 1)
+                            return "target: multiple values";
+                        properties.target = 1;
+                        {
+                            var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.target_tensor);
+                            if (error)
+                                return "target_tensor." + error;
+                        }
+                    }
+                    if (message.args != null && message.hasOwnProperty("args")) {
+                        if (!Array.isArray(message.args))
+                            return "args: array expected";
+                        for (var i = 0; i < message.args.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Arg.verify(message.args[i]);
+                            if (error)
+                                return "args." + error;
                         }
                     }
                     if (message.kwargs != null && message.hasOwnProperty("kwargs")) {
@@ -265,6 +372,24 @@ $root.syft_proto = (function() {
                             var error = $root.syft_proto.types.syft.v1.Arg.verify(message.kwargs[key[i]]);
                             if (error)
                                 return "kwargs." + error;
+                        }
+                    }
+                    if (message.return_ids != null && message.hasOwnProperty("return_ids")) {
+                        if (!Array.isArray(message.return_ids))
+                            return "return_ids: array expected";
+                        for (var i = 0; i < message.return_ids.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.return_ids[i]);
+                            if (error)
+                                return "return_ids." + error;
+                        }
+                    }
+                    if (message.return_placeholder_ids != null && message.hasOwnProperty("return_placeholder_ids")) {
+                        if (!Array.isArray(message.return_placeholder_ids))
+                            return "return_placeholder_ids: array expected";
+                        for (var i = 0; i < message.return_placeholder_ids.length; ++i) {
+                            var error = $root.syft_proto.execution.v1.PlaceholderId.verify(message.return_placeholder_ids[i]);
+                            if (error)
+                                return "return_placeholder_ids." + error;
                         }
                     }
                     return null;
@@ -282,26 +407,36 @@ $root.syft_proto = (function() {
                     if (object instanceof $root.syft_proto.execution.v1.CommunicationAction)
                         return object;
                     var message = new $root.syft_proto.execution.v1.CommunicationAction();
-                    if (object.name != null)
-                        message.name = String(object.name);
-                    if (object.obj_id != null) {
-                        if (typeof object.obj_id !== "object")
-                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.obj_id: object expected");
-                        message.obj_id = $root.syft_proto.types.syft.v1.Id.fromObject(object.obj_id);
+                    if (object.command != null)
+                        message.command = String(object.command);
+                    if (object.target_id != null) {
+                        if (typeof object.target_id !== "object")
+                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.target_id: object expected");
+                        message.target_id = $root.syft_proto.types.syft.v1.Id.fromObject(object.target_id);
                     }
-                    if (object.source != null) {
-                        if (typeof object.source !== "object")
-                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.source: object expected");
-                        message.source = $root.syft_proto.types.syft.v1.Id.fromObject(object.source);
+                    if (object.target_pointer != null) {
+                        if (typeof object.target_pointer !== "object")
+                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.target_pointer: object expected");
+                        message.target_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.fromObject(object.target_pointer);
                     }
-                    if (object.destinations) {
-                        if (!Array.isArray(object.destinations))
-                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.destinations: array expected");
-                        message.destinations = [];
-                        for (var i = 0; i < object.destinations.length; ++i) {
-                            if (typeof object.destinations[i] !== "object")
-                                throw TypeError(".syft_proto.execution.v1.CommunicationAction.destinations: object expected");
-                            message.destinations[i] = $root.syft_proto.types.syft.v1.Id.fromObject(object.destinations[i]);
+                    if (object.target_placeholder_id != null) {
+                        if (typeof object.target_placeholder_id !== "object")
+                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.target_placeholder_id: object expected");
+                        message.target_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.fromObject(object.target_placeholder_id);
+                    }
+                    if (object.target_tensor != null) {
+                        if (typeof object.target_tensor !== "object")
+                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.target_tensor: object expected");
+                        message.target_tensor = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.target_tensor);
+                    }
+                    if (object.args) {
+                        if (!Array.isArray(object.args))
+                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.args: array expected");
+                        message.args = [];
+                        for (var i = 0; i < object.args.length; ++i) {
+                            if (typeof object.args[i] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.CommunicationAction.args: object expected");
+                            message.args[i] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.args[i]);
                         }
                     }
                     if (object.kwargs) {
@@ -312,6 +447,26 @@ $root.syft_proto = (function() {
                             if (typeof object.kwargs[keys[i]] !== "object")
                                 throw TypeError(".syft_proto.execution.v1.CommunicationAction.kwargs: object expected");
                             message.kwargs[keys[i]] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.kwargs[keys[i]]);
+                        }
+                    }
+                    if (object.return_ids) {
+                        if (!Array.isArray(object.return_ids))
+                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.return_ids: array expected");
+                        message.return_ids = [];
+                        for (var i = 0; i < object.return_ids.length; ++i) {
+                            if (typeof object.return_ids[i] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.CommunicationAction.return_ids: object expected");
+                            message.return_ids[i] = $root.syft_proto.types.syft.v1.Id.fromObject(object.return_ids[i]);
+                        }
+                    }
+                    if (object.return_placeholder_ids) {
+                        if (!Array.isArray(object.return_placeholder_ids))
+                            throw TypeError(".syft_proto.execution.v1.CommunicationAction.return_placeholder_ids: array expected");
+                        message.return_placeholder_ids = [];
+                        for (var i = 0; i < object.return_placeholder_ids.length; ++i) {
+                            if (typeof object.return_placeholder_ids[i] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.CommunicationAction.return_placeholder_ids: object expected");
+                            message.return_placeholder_ids[i] = $root.syft_proto.execution.v1.PlaceholderId.fromObject(object.return_placeholder_ids[i]);
                         }
                     }
                     return message;
@@ -330,31 +485,57 @@ $root.syft_proto = (function() {
                     if (!options)
                         options = {};
                     var object = {};
-                    if (options.arrays || options.defaults)
-                        object.destinations = [];
+                    if (options.arrays || options.defaults) {
+                        object.args = [];
+                        object.return_ids = [];
+                        object.return_placeholder_ids = [];
+                    }
                     if (options.objects || options.defaults)
                         object.kwargs = {};
-                    if (options.defaults) {
-                        object.name = "";
-                        object.obj_id = null;
-                        object.source = null;
+                    if (options.defaults)
+                        object.command = "";
+                    if (message.command != null && message.hasOwnProperty("command"))
+                        object.command = message.command;
+                    if (message.target_pointer != null && message.hasOwnProperty("target_pointer")) {
+                        object.target_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.toObject(message.target_pointer, options);
+                        if (options.oneofs)
+                            object.target = "target_pointer";
                     }
-                    if (message.name != null && message.hasOwnProperty("name"))
-                        object.name = message.name;
-                    if (message.obj_id != null && message.hasOwnProperty("obj_id"))
-                        object.obj_id = $root.syft_proto.types.syft.v1.Id.toObject(message.obj_id, options);
-                    if (message.source != null && message.hasOwnProperty("source"))
-                        object.source = $root.syft_proto.types.syft.v1.Id.toObject(message.source, options);
-                    if (message.destinations && message.destinations.length) {
-                        object.destinations = [];
-                        for (var j = 0; j < message.destinations.length; ++j)
-                            object.destinations[j] = $root.syft_proto.types.syft.v1.Id.toObject(message.destinations[j], options);
+                    if (message.target_placeholder_id != null && message.hasOwnProperty("target_placeholder_id")) {
+                        object.target_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.toObject(message.target_placeholder_id, options);
+                        if (options.oneofs)
+                            object.target = "target_placeholder_id";
+                    }
+                    if (message.target_tensor != null && message.hasOwnProperty("target_tensor")) {
+                        object.target_tensor = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.target_tensor, options);
+                        if (options.oneofs)
+                            object.target = "target_tensor";
+                    }
+                    if (message.args && message.args.length) {
+                        object.args = [];
+                        for (var j = 0; j < message.args.length; ++j)
+                            object.args[j] = $root.syft_proto.types.syft.v1.Arg.toObject(message.args[j], options);
                     }
                     var keys2;
                     if (message.kwargs && (keys2 = Object.keys(message.kwargs)).length) {
                         object.kwargs = {};
                         for (var j = 0; j < keys2.length; ++j)
                             object.kwargs[keys2[j]] = $root.syft_proto.types.syft.v1.Arg.toObject(message.kwargs[keys2[j]], options);
+                    }
+                    if (message.return_ids && message.return_ids.length) {
+                        object.return_ids = [];
+                        for (var j = 0; j < message.return_ids.length; ++j)
+                            object.return_ids[j] = $root.syft_proto.types.syft.v1.Id.toObject(message.return_ids[j], options);
+                    }
+                    if (message.return_placeholder_ids && message.return_placeholder_ids.length) {
+                        object.return_placeholder_ids = [];
+                        for (var j = 0; j < message.return_placeholder_ids.length; ++j)
+                            object.return_placeholder_ids[j] = $root.syft_proto.execution.v1.PlaceholderId.toObject(message.return_placeholder_ids[j], options);
+                    }
+                    if (message.target_id != null && message.hasOwnProperty("target_id")) {
+                        object.target_id = $root.syft_proto.types.syft.v1.Id.toObject(message.target_id, options);
+                        if (options.oneofs)
+                            object.target = "target_id";
                     }
                     return object;
                 };
@@ -371,6 +552,198 @@ $root.syft_proto = (function() {
                 };
 
                 return CommunicationAction;
+            })();
+
+            v1.PlaceholderId = (function() {
+
+                /**
+                 * Properties of a PlaceholderId.
+                 * @memberof syft_proto.execution.v1
+                 * @interface IPlaceholderId
+                 * @property {syft_proto.types.syft.v1.IId|null} [id] PlaceholderId id
+                 */
+
+                /**
+                 * Constructs a new PlaceholderId.
+                 * @memberof syft_proto.execution.v1
+                 * @classdesc Represents a PlaceholderId.
+                 * @implements IPlaceholderId
+                 * @constructor
+                 * @param {syft_proto.execution.v1.IPlaceholderId=} [properties] Properties to set
+                 */
+                function PlaceholderId(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * PlaceholderId id.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} id
+                 * @memberof syft_proto.execution.v1.PlaceholderId
+                 * @instance
+                 */
+                PlaceholderId.prototype.id = null;
+
+                /**
+                 * Creates a new PlaceholderId instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.execution.v1.PlaceholderId
+                 * @static
+                 * @param {syft_proto.execution.v1.IPlaceholderId=} [properties] Properties to set
+                 * @returns {syft_proto.execution.v1.PlaceholderId} PlaceholderId instance
+                 */
+                PlaceholderId.create = function create(properties) {
+                    return new PlaceholderId(properties);
+                };
+
+                /**
+                 * Encodes the specified PlaceholderId message. Does not implicitly {@link syft_proto.execution.v1.PlaceholderId.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.execution.v1.PlaceholderId
+                 * @static
+                 * @param {syft_proto.execution.v1.IPlaceholderId} message PlaceholderId message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                PlaceholderId.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified PlaceholderId message, length delimited. Does not implicitly {@link syft_proto.execution.v1.PlaceholderId.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.execution.v1.PlaceholderId
+                 * @static
+                 * @param {syft_proto.execution.v1.IPlaceholderId} message PlaceholderId message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                PlaceholderId.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a PlaceholderId message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.execution.v1.PlaceholderId
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.execution.v1.PlaceholderId} PlaceholderId
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                PlaceholderId.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.PlaceholderId();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a PlaceholderId message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.execution.v1.PlaceholderId
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.execution.v1.PlaceholderId} PlaceholderId
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                PlaceholderId.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a PlaceholderId message.
+                 * @function verify
+                 * @memberof syft_proto.execution.v1.PlaceholderId
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                PlaceholderId.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.id != null && message.hasOwnProperty("id")) {
+                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
+                        if (error)
+                            return "id." + error;
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a PlaceholderId message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.execution.v1.PlaceholderId
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.execution.v1.PlaceholderId} PlaceholderId
+                 */
+                PlaceholderId.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.execution.v1.PlaceholderId)
+                        return object;
+                    var message = new $root.syft_proto.execution.v1.PlaceholderId();
+                    if (object.id != null) {
+                        if (typeof object.id !== "object")
+                            throw TypeError(".syft_proto.execution.v1.PlaceholderId.id: object expected");
+                        message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a PlaceholderId message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.execution.v1.PlaceholderId
+                 * @static
+                 * @param {syft_proto.execution.v1.PlaceholderId} message PlaceholderId
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                PlaceholderId.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.id = null;
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
+                    return object;
+                };
+
+                /**
+                 * Converts this PlaceholderId to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.execution.v1.PlaceholderId
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                PlaceholderId.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return PlaceholderId;
             })();
 
             v1.Placeholder = (function() {
@@ -652,198 +1025,6 @@ $root.syft_proto = (function() {
                 };
 
                 return Placeholder;
-            })();
-
-            v1.PlaceholderId = (function() {
-
-                /**
-                 * Properties of a PlaceholderId.
-                 * @memberof syft_proto.execution.v1
-                 * @interface IPlaceholderId
-                 * @property {syft_proto.types.syft.v1.IId|null} [id] PlaceholderId id
-                 */
-
-                /**
-                 * Constructs a new PlaceholderId.
-                 * @memberof syft_proto.execution.v1
-                 * @classdesc Represents a PlaceholderId.
-                 * @implements IPlaceholderId
-                 * @constructor
-                 * @param {syft_proto.execution.v1.IPlaceholderId=} [properties] Properties to set
-                 */
-                function PlaceholderId(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-
-                /**
-                 * PlaceholderId id.
-                 * @member {syft_proto.types.syft.v1.IId|null|undefined} id
-                 * @memberof syft_proto.execution.v1.PlaceholderId
-                 * @instance
-                 */
-                PlaceholderId.prototype.id = null;
-
-                /**
-                 * Creates a new PlaceholderId instance using the specified properties.
-                 * @function create
-                 * @memberof syft_proto.execution.v1.PlaceholderId
-                 * @static
-                 * @param {syft_proto.execution.v1.IPlaceholderId=} [properties] Properties to set
-                 * @returns {syft_proto.execution.v1.PlaceholderId} PlaceholderId instance
-                 */
-                PlaceholderId.create = function create(properties) {
-                    return new PlaceholderId(properties);
-                };
-
-                /**
-                 * Encodes the specified PlaceholderId message. Does not implicitly {@link syft_proto.execution.v1.PlaceholderId.verify|verify} messages.
-                 * @function encode
-                 * @memberof syft_proto.execution.v1.PlaceholderId
-                 * @static
-                 * @param {syft_proto.execution.v1.IPlaceholderId} message PlaceholderId message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                PlaceholderId.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.id != null && message.hasOwnProperty("id"))
-                        $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    return writer;
-                };
-
-                /**
-                 * Encodes the specified PlaceholderId message, length delimited. Does not implicitly {@link syft_proto.execution.v1.PlaceholderId.verify|verify} messages.
-                 * @function encodeDelimited
-                 * @memberof syft_proto.execution.v1.PlaceholderId
-                 * @static
-                 * @param {syft_proto.execution.v1.IPlaceholderId} message PlaceholderId message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                PlaceholderId.encodeDelimited = function encodeDelimited(message, writer) {
-                    return this.encode(message, writer).ldelim();
-                };
-
-                /**
-                 * Decodes a PlaceholderId message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof syft_proto.execution.v1.PlaceholderId
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {syft_proto.execution.v1.PlaceholderId} PlaceholderId
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                PlaceholderId.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.PlaceholderId();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-
-                /**
-                 * Decodes a PlaceholderId message from the specified reader or buffer, length delimited.
-                 * @function decodeDelimited
-                 * @memberof syft_proto.execution.v1.PlaceholderId
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {syft_proto.execution.v1.PlaceholderId} PlaceholderId
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                PlaceholderId.decodeDelimited = function decodeDelimited(reader) {
-                    if (!(reader instanceof $Reader))
-                        reader = new $Reader(reader);
-                    return this.decode(reader, reader.uint32());
-                };
-
-                /**
-                 * Verifies a PlaceholderId message.
-                 * @function verify
-                 * @memberof syft_proto.execution.v1.PlaceholderId
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                PlaceholderId.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.id != null && message.hasOwnProperty("id")) {
-                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
-                        if (error)
-                            return "id." + error;
-                    }
-                    return null;
-                };
-
-                /**
-                 * Creates a PlaceholderId message from a plain object. Also converts values to their respective internal types.
-                 * @function fromObject
-                 * @memberof syft_proto.execution.v1.PlaceholderId
-                 * @static
-                 * @param {Object.<string,*>} object Plain object
-                 * @returns {syft_proto.execution.v1.PlaceholderId} PlaceholderId
-                 */
-                PlaceholderId.fromObject = function fromObject(object) {
-                    if (object instanceof $root.syft_proto.execution.v1.PlaceholderId)
-                        return object;
-                    var message = new $root.syft_proto.execution.v1.PlaceholderId();
-                    if (object.id != null) {
-                        if (typeof object.id !== "object")
-                            throw TypeError(".syft_proto.execution.v1.PlaceholderId.id: object expected");
-                        message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
-                    }
-                    return message;
-                };
-
-                /**
-                 * Creates a plain object from a PlaceholderId message. Also converts values to other types if specified.
-                 * @function toObject
-                 * @memberof syft_proto.execution.v1.PlaceholderId
-                 * @static
-                 * @param {syft_proto.execution.v1.PlaceholderId} message PlaceholderId
-                 * @param {$protobuf.IConversionOptions} [options] Conversion options
-                 * @returns {Object.<string,*>} Plain object
-                 */
-                PlaceholderId.toObject = function toObject(message, options) {
-                    if (!options)
-                        options = {};
-                    var object = {};
-                    if (options.defaults)
-                        object.id = null;
-                    if (message.id != null && message.hasOwnProperty("id"))
-                        object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
-                    return object;
-                };
-
-                /**
-                 * Converts this PlaceholderId to JSON.
-                 * @function toJSON
-                 * @memberof syft_proto.execution.v1.PlaceholderId
-                 * @instance
-                 * @returns {Object.<string,*>} JSON object
-                 */
-                PlaceholderId.prototype.toJSON = function toJSON() {
-                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-
-                return PlaceholderId;
             })();
 
             v1.ComputationAction = (function() {
@@ -4381,499 +4562,6 @@ $root.syft_proto = (function() {
                  */
                 var v1 = {};
 
-                v1.Arg = (function() {
-
-                    /**
-                     * Properties of an Arg.
-                     * @memberof syft_proto.types.syft.v1
-                     * @interface IArg
-                     * @property {boolean|null} [arg_bool] Arg arg_bool
-                     * @property {number|null} [arg_int] Arg arg_int
-                     * @property {number|null} [arg_float] Arg arg_float
-                     * @property {string|null} [arg_string] Arg arg_string
-                     * @property {syft_proto.types.syft.v1.IShape|null} [arg_shape] Arg arg_shape
-                     * @property {syft_proto.types.torch.v1.ITorchTensor|null} [arg_tensor] Arg arg_tensor
-                     * @property {syft_proto.types.torch.v1.IParameter|null} [arg_torch_param] Arg arg_torch_param
-                     * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [arg_pointer_tensor] Arg arg_pointer_tensor
-                     * @property {syft_proto.execution.v1.IPlaceholder|null} [arg_placeholder] Arg arg_placeholder
-                     * @property {syft_proto.execution.v1.IPlaceholderId|null} [arg_placeholder_id] Arg arg_placeholder_id
-                     */
-
-                    /**
-                     * Constructs a new Arg.
-                     * @memberof syft_proto.types.syft.v1
-                     * @classdesc Represents an Arg.
-                     * @implements IArg
-                     * @constructor
-                     * @param {syft_proto.types.syft.v1.IArg=} [properties] Properties to set
-                     */
-                    function Arg(properties) {
-                        if (properties)
-                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                                if (properties[keys[i]] != null)
-                                    this[keys[i]] = properties[keys[i]];
-                    }
-
-                    /**
-                     * Arg arg_bool.
-                     * @member {boolean} arg_bool
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @instance
-                     */
-                    Arg.prototype.arg_bool = false;
-
-                    /**
-                     * Arg arg_int.
-                     * @member {number} arg_int
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @instance
-                     */
-                    Arg.prototype.arg_int = 0;
-
-                    /**
-                     * Arg arg_float.
-                     * @member {number} arg_float
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @instance
-                     */
-                    Arg.prototype.arg_float = 0;
-
-                    /**
-                     * Arg arg_string.
-                     * @member {string} arg_string
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @instance
-                     */
-                    Arg.prototype.arg_string = "";
-
-                    /**
-                     * Arg arg_shape.
-                     * @member {syft_proto.types.syft.v1.IShape|null|undefined} arg_shape
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @instance
-                     */
-                    Arg.prototype.arg_shape = null;
-
-                    /**
-                     * Arg arg_tensor.
-                     * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} arg_tensor
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @instance
-                     */
-                    Arg.prototype.arg_tensor = null;
-
-                    /**
-                     * Arg arg_torch_param.
-                     * @member {syft_proto.types.torch.v1.IParameter|null|undefined} arg_torch_param
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @instance
-                     */
-                    Arg.prototype.arg_torch_param = null;
-
-                    /**
-                     * Arg arg_pointer_tensor.
-                     * @member {syft_proto.generic.pointers.v1.IPointerTensor|null|undefined} arg_pointer_tensor
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @instance
-                     */
-                    Arg.prototype.arg_pointer_tensor = null;
-
-                    /**
-                     * Arg arg_placeholder.
-                     * @member {syft_proto.execution.v1.IPlaceholder|null|undefined} arg_placeholder
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @instance
-                     */
-                    Arg.prototype.arg_placeholder = null;
-
-                    /**
-                     * Arg arg_placeholder_id.
-                     * @member {syft_proto.execution.v1.IPlaceholderId|null|undefined} arg_placeholder_id
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @instance
-                     */
-                    Arg.prototype.arg_placeholder_id = null;
-
-                    // OneOf field names bound to virtual getters and setters
-                    var $oneOfFields;
-
-                    /**
-                     * Arg arg.
-                     * @member {"arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id"|undefined} arg
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @instance
-                     */
-                    Object.defineProperty(Arg.prototype, "arg", {
-                        get: $util.oneOfGetter($oneOfFields = ["arg_bool", "arg_int", "arg_float", "arg_string", "arg_shape", "arg_tensor", "arg_torch_param", "arg_pointer_tensor", "arg_placeholder", "arg_placeholder_id"]),
-                        set: $util.oneOfSetter($oneOfFields)
-                    });
-
-                    /**
-                     * Creates a new Arg instance using the specified properties.
-                     * @function create
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @static
-                     * @param {syft_proto.types.syft.v1.IArg=} [properties] Properties to set
-                     * @returns {syft_proto.types.syft.v1.Arg} Arg instance
-                     */
-                    Arg.create = function create(properties) {
-                        return new Arg(properties);
-                    };
-
-                    /**
-                     * Encodes the specified Arg message. Does not implicitly {@link syft_proto.types.syft.v1.Arg.verify|verify} messages.
-                     * @function encode
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @static
-                     * @param {syft_proto.types.syft.v1.IArg} message Arg message or plain object to encode
-                     * @param {$protobuf.Writer} [writer] Writer to encode to
-                     * @returns {$protobuf.Writer} Writer
-                     */
-                    Arg.encode = function encode(message, writer) {
-                        if (!writer)
-                            writer = $Writer.create();
-                        if (message.arg_bool != null && message.hasOwnProperty("arg_bool"))
-                            writer.uint32(/* id 1, wireType 0 =*/8).bool(message.arg_bool);
-                        if (message.arg_int != null && message.hasOwnProperty("arg_int"))
-                            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.arg_int);
-                        if (message.arg_float != null && message.hasOwnProperty("arg_float"))
-                            writer.uint32(/* id 3, wireType 5 =*/29).float(message.arg_float);
-                        if (message.arg_string != null && message.hasOwnProperty("arg_string"))
-                            writer.uint32(/* id 4, wireType 2 =*/34).string(message.arg_string);
-                        if (message.arg_shape != null && message.hasOwnProperty("arg_shape"))
-                            $root.syft_proto.types.syft.v1.Shape.encode(message.arg_shape, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                        if (message.arg_tensor != null && message.hasOwnProperty("arg_tensor"))
-                            $root.syft_proto.types.torch.v1.TorchTensor.encode(message.arg_tensor, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                        if (message.arg_torch_param != null && message.hasOwnProperty("arg_torch_param"))
-                            $root.syft_proto.types.torch.v1.Parameter.encode(message.arg_torch_param, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                        if (message.arg_pointer_tensor != null && message.hasOwnProperty("arg_pointer_tensor"))
-                            $root.syft_proto.generic.pointers.v1.PointerTensor.encode(message.arg_pointer_tensor, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                        if (message.arg_placeholder != null && message.hasOwnProperty("arg_placeholder"))
-                            $root.syft_proto.execution.v1.Placeholder.encode(message.arg_placeholder, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-                        if (message.arg_placeholder_id != null && message.hasOwnProperty("arg_placeholder_id"))
-                            $root.syft_proto.execution.v1.PlaceholderId.encode(message.arg_placeholder_id, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
-                        return writer;
-                    };
-
-                    /**
-                     * Encodes the specified Arg message, length delimited. Does not implicitly {@link syft_proto.types.syft.v1.Arg.verify|verify} messages.
-                     * @function encodeDelimited
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @static
-                     * @param {syft_proto.types.syft.v1.IArg} message Arg message or plain object to encode
-                     * @param {$protobuf.Writer} [writer] Writer to encode to
-                     * @returns {$protobuf.Writer} Writer
-                     */
-                    Arg.encodeDelimited = function encodeDelimited(message, writer) {
-                        return this.encode(message, writer).ldelim();
-                    };
-
-                    /**
-                     * Decodes an Arg message from the specified reader or buffer.
-                     * @function decode
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @static
-                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                     * @param {number} [length] Message length if known beforehand
-                     * @returns {syft_proto.types.syft.v1.Arg} Arg
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    Arg.decode = function decode(reader, length) {
-                        if (!(reader instanceof $Reader))
-                            reader = $Reader.create(reader);
-                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.types.syft.v1.Arg();
-                        while (reader.pos < end) {
-                            var tag = reader.uint32();
-                            switch (tag >>> 3) {
-                            case 1:
-                                message.arg_bool = reader.bool();
-                                break;
-                            case 2:
-                                message.arg_int = reader.int32();
-                                break;
-                            case 3:
-                                message.arg_float = reader.float();
-                                break;
-                            case 4:
-                                message.arg_string = reader.string();
-                                break;
-                            case 5:
-                                message.arg_shape = $root.syft_proto.types.syft.v1.Shape.decode(reader, reader.uint32());
-                                break;
-                            case 6:
-                                message.arg_tensor = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
-                                break;
-                            case 7:
-                                message.arg_torch_param = $root.syft_proto.types.torch.v1.Parameter.decode(reader, reader.uint32());
-                                break;
-                            case 8:
-                                message.arg_pointer_tensor = $root.syft_proto.generic.pointers.v1.PointerTensor.decode(reader, reader.uint32());
-                                break;
-                            case 9:
-                                message.arg_placeholder = $root.syft_proto.execution.v1.Placeholder.decode(reader, reader.uint32());
-                                break;
-                            case 10:
-                                message.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.decode(reader, reader.uint32());
-                                break;
-                            default:
-                                reader.skipType(tag & 7);
-                                break;
-                            }
-                        }
-                        return message;
-                    };
-
-                    /**
-                     * Decodes an Arg message from the specified reader or buffer, length delimited.
-                     * @function decodeDelimited
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @static
-                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                     * @returns {syft_proto.types.syft.v1.Arg} Arg
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    Arg.decodeDelimited = function decodeDelimited(reader) {
-                        if (!(reader instanceof $Reader))
-                            reader = new $Reader(reader);
-                        return this.decode(reader, reader.uint32());
-                    };
-
-                    /**
-                     * Verifies an Arg message.
-                     * @function verify
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @static
-                     * @param {Object.<string,*>} message Plain object to verify
-                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                     */
-                    Arg.verify = function verify(message) {
-                        if (typeof message !== "object" || message === null)
-                            return "object expected";
-                        var properties = {};
-                        if (message.arg_bool != null && message.hasOwnProperty("arg_bool")) {
-                            properties.arg = 1;
-                            if (typeof message.arg_bool !== "boolean")
-                                return "arg_bool: boolean expected";
-                        }
-                        if (message.arg_int != null && message.hasOwnProperty("arg_int")) {
-                            if (properties.arg === 1)
-                                return "arg: multiple values";
-                            properties.arg = 1;
-                            if (!$util.isInteger(message.arg_int))
-                                return "arg_int: integer expected";
-                        }
-                        if (message.arg_float != null && message.hasOwnProperty("arg_float")) {
-                            if (properties.arg === 1)
-                                return "arg: multiple values";
-                            properties.arg = 1;
-                            if (typeof message.arg_float !== "number")
-                                return "arg_float: number expected";
-                        }
-                        if (message.arg_string != null && message.hasOwnProperty("arg_string")) {
-                            if (properties.arg === 1)
-                                return "arg: multiple values";
-                            properties.arg = 1;
-                            if (!$util.isString(message.arg_string))
-                                return "arg_string: string expected";
-                        }
-                        if (message.arg_shape != null && message.hasOwnProperty("arg_shape")) {
-                            if (properties.arg === 1)
-                                return "arg: multiple values";
-                            properties.arg = 1;
-                            {
-                                var error = $root.syft_proto.types.syft.v1.Shape.verify(message.arg_shape);
-                                if (error)
-                                    return "arg_shape." + error;
-                            }
-                        }
-                        if (message.arg_tensor != null && message.hasOwnProperty("arg_tensor")) {
-                            if (properties.arg === 1)
-                                return "arg: multiple values";
-                            properties.arg = 1;
-                            {
-                                var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.arg_tensor);
-                                if (error)
-                                    return "arg_tensor." + error;
-                            }
-                        }
-                        if (message.arg_torch_param != null && message.hasOwnProperty("arg_torch_param")) {
-                            if (properties.arg === 1)
-                                return "arg: multiple values";
-                            properties.arg = 1;
-                            {
-                                var error = $root.syft_proto.types.torch.v1.Parameter.verify(message.arg_torch_param);
-                                if (error)
-                                    return "arg_torch_param." + error;
-                            }
-                        }
-                        if (message.arg_pointer_tensor != null && message.hasOwnProperty("arg_pointer_tensor")) {
-                            if (properties.arg === 1)
-                                return "arg: multiple values";
-                            properties.arg = 1;
-                            {
-                                var error = $root.syft_proto.generic.pointers.v1.PointerTensor.verify(message.arg_pointer_tensor);
-                                if (error)
-                                    return "arg_pointer_tensor." + error;
-                            }
-                        }
-                        if (message.arg_placeholder != null && message.hasOwnProperty("arg_placeholder")) {
-                            if (properties.arg === 1)
-                                return "arg: multiple values";
-                            properties.arg = 1;
-                            {
-                                var error = $root.syft_proto.execution.v1.Placeholder.verify(message.arg_placeholder);
-                                if (error)
-                                    return "arg_placeholder." + error;
-                            }
-                        }
-                        if (message.arg_placeholder_id != null && message.hasOwnProperty("arg_placeholder_id")) {
-                            if (properties.arg === 1)
-                                return "arg: multiple values";
-                            properties.arg = 1;
-                            {
-                                var error = $root.syft_proto.execution.v1.PlaceholderId.verify(message.arg_placeholder_id);
-                                if (error)
-                                    return "arg_placeholder_id." + error;
-                            }
-                        }
-                        return null;
-                    };
-
-                    /**
-                     * Creates an Arg message from a plain object. Also converts values to their respective internal types.
-                     * @function fromObject
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @static
-                     * @param {Object.<string,*>} object Plain object
-                     * @returns {syft_proto.types.syft.v1.Arg} Arg
-                     */
-                    Arg.fromObject = function fromObject(object) {
-                        if (object instanceof $root.syft_proto.types.syft.v1.Arg)
-                            return object;
-                        var message = new $root.syft_proto.types.syft.v1.Arg();
-                        if (object.arg_bool != null)
-                            message.arg_bool = Boolean(object.arg_bool);
-                        if (object.arg_int != null)
-                            message.arg_int = object.arg_int | 0;
-                        if (object.arg_float != null)
-                            message.arg_float = Number(object.arg_float);
-                        if (object.arg_string != null)
-                            message.arg_string = String(object.arg_string);
-                        if (object.arg_shape != null) {
-                            if (typeof object.arg_shape !== "object")
-                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_shape: object expected");
-                            message.arg_shape = $root.syft_proto.types.syft.v1.Shape.fromObject(object.arg_shape);
-                        }
-                        if (object.arg_tensor != null) {
-                            if (typeof object.arg_tensor !== "object")
-                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_tensor: object expected");
-                            message.arg_tensor = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.arg_tensor);
-                        }
-                        if (object.arg_torch_param != null) {
-                            if (typeof object.arg_torch_param !== "object")
-                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_torch_param: object expected");
-                            message.arg_torch_param = $root.syft_proto.types.torch.v1.Parameter.fromObject(object.arg_torch_param);
-                        }
-                        if (object.arg_pointer_tensor != null) {
-                            if (typeof object.arg_pointer_tensor !== "object")
-                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_pointer_tensor: object expected");
-                            message.arg_pointer_tensor = $root.syft_proto.generic.pointers.v1.PointerTensor.fromObject(object.arg_pointer_tensor);
-                        }
-                        if (object.arg_placeholder != null) {
-                            if (typeof object.arg_placeholder !== "object")
-                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_placeholder: object expected");
-                            message.arg_placeholder = $root.syft_proto.execution.v1.Placeholder.fromObject(object.arg_placeholder);
-                        }
-                        if (object.arg_placeholder_id != null) {
-                            if (typeof object.arg_placeholder_id !== "object")
-                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_placeholder_id: object expected");
-                            message.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.fromObject(object.arg_placeholder_id);
-                        }
-                        return message;
-                    };
-
-                    /**
-                     * Creates a plain object from an Arg message. Also converts values to other types if specified.
-                     * @function toObject
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @static
-                     * @param {syft_proto.types.syft.v1.Arg} message Arg
-                     * @param {$protobuf.IConversionOptions} [options] Conversion options
-                     * @returns {Object.<string,*>} Plain object
-                     */
-                    Arg.toObject = function toObject(message, options) {
-                        if (!options)
-                            options = {};
-                        var object = {};
-                        if (message.arg_bool != null && message.hasOwnProperty("arg_bool")) {
-                            object.arg_bool = message.arg_bool;
-                            if (options.oneofs)
-                                object.arg = "arg_bool";
-                        }
-                        if (message.arg_int != null && message.hasOwnProperty("arg_int")) {
-                            object.arg_int = message.arg_int;
-                            if (options.oneofs)
-                                object.arg = "arg_int";
-                        }
-                        if (message.arg_float != null && message.hasOwnProperty("arg_float")) {
-                            object.arg_float = options.json && !isFinite(message.arg_float) ? String(message.arg_float) : message.arg_float;
-                            if (options.oneofs)
-                                object.arg = "arg_float";
-                        }
-                        if (message.arg_string != null && message.hasOwnProperty("arg_string")) {
-                            object.arg_string = message.arg_string;
-                            if (options.oneofs)
-                                object.arg = "arg_string";
-                        }
-                        if (message.arg_shape != null && message.hasOwnProperty("arg_shape")) {
-                            object.arg_shape = $root.syft_proto.types.syft.v1.Shape.toObject(message.arg_shape, options);
-                            if (options.oneofs)
-                                object.arg = "arg_shape";
-                        }
-                        if (message.arg_tensor != null && message.hasOwnProperty("arg_tensor")) {
-                            object.arg_tensor = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.arg_tensor, options);
-                            if (options.oneofs)
-                                object.arg = "arg_tensor";
-                        }
-                        if (message.arg_torch_param != null && message.hasOwnProperty("arg_torch_param")) {
-                            object.arg_torch_param = $root.syft_proto.types.torch.v1.Parameter.toObject(message.arg_torch_param, options);
-                            if (options.oneofs)
-                                object.arg = "arg_torch_param";
-                        }
-                        if (message.arg_pointer_tensor != null && message.hasOwnProperty("arg_pointer_tensor")) {
-                            object.arg_pointer_tensor = $root.syft_proto.generic.pointers.v1.PointerTensor.toObject(message.arg_pointer_tensor, options);
-                            if (options.oneofs)
-                                object.arg = "arg_pointer_tensor";
-                        }
-                        if (message.arg_placeholder != null && message.hasOwnProperty("arg_placeholder")) {
-                            object.arg_placeholder = $root.syft_proto.execution.v1.Placeholder.toObject(message.arg_placeholder, options);
-                            if (options.oneofs)
-                                object.arg = "arg_placeholder";
-                        }
-                        if (message.arg_placeholder_id != null && message.hasOwnProperty("arg_placeholder_id")) {
-                            object.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.toObject(message.arg_placeholder_id, options);
-                            if (options.oneofs)
-                                object.arg = "arg_placeholder_id";
-                        }
-                        return object;
-                    };
-
-                    /**
-                     * Converts this Arg to JSON.
-                     * @function toJSON
-                     * @memberof syft_proto.types.syft.v1.Arg
-                     * @instance
-                     * @returns {Object.<string,*>} JSON object
-                     */
-                    Arg.prototype.toJSON = function toJSON() {
-                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                    };
-
-                    return Arg;
-                })();
-
                 v1.Id = (function() {
 
                     /**
@@ -5326,6 +5014,499 @@ $root.syft_proto = (function() {
                     };
 
                     return Shape;
+                })();
+
+                v1.Arg = (function() {
+
+                    /**
+                     * Properties of an Arg.
+                     * @memberof syft_proto.types.syft.v1
+                     * @interface IArg
+                     * @property {boolean|null} [arg_bool] Arg arg_bool
+                     * @property {number|null} [arg_int] Arg arg_int
+                     * @property {number|null} [arg_float] Arg arg_float
+                     * @property {string|null} [arg_str] Arg arg_str
+                     * @property {syft_proto.types.syft.v1.IShape|null} [arg_shape] Arg arg_shape
+                     * @property {syft_proto.types.torch.v1.ITorchTensor|null} [arg_tensor] Arg arg_tensor
+                     * @property {syft_proto.types.torch.v1.IParameter|null} [arg_torch_param] Arg arg_torch_param
+                     * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [arg_pointer_tensor] Arg arg_pointer_tensor
+                     * @property {syft_proto.execution.v1.IPlaceholder|null} [arg_placeholder] Arg arg_placeholder
+                     * @property {syft_proto.execution.v1.IPlaceholderId|null} [arg_placeholder_id] Arg arg_placeholder_id
+                     */
+
+                    /**
+                     * Constructs a new Arg.
+                     * @memberof syft_proto.types.syft.v1
+                     * @classdesc Represents an Arg.
+                     * @implements IArg
+                     * @constructor
+                     * @param {syft_proto.types.syft.v1.IArg=} [properties] Properties to set
+                     */
+                    function Arg(properties) {
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * Arg arg_bool.
+                     * @member {boolean} arg_bool
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_bool = false;
+
+                    /**
+                     * Arg arg_int.
+                     * @member {number} arg_int
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_int = 0;
+
+                    /**
+                     * Arg arg_float.
+                     * @member {number} arg_float
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_float = 0;
+
+                    /**
+                     * Arg arg_str.
+                     * @member {string} arg_str
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_str = "";
+
+                    /**
+                     * Arg arg_shape.
+                     * @member {syft_proto.types.syft.v1.IShape|null|undefined} arg_shape
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_shape = null;
+
+                    /**
+                     * Arg arg_tensor.
+                     * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} arg_tensor
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_tensor = null;
+
+                    /**
+                     * Arg arg_torch_param.
+                     * @member {syft_proto.types.torch.v1.IParameter|null|undefined} arg_torch_param
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_torch_param = null;
+
+                    /**
+                     * Arg arg_pointer_tensor.
+                     * @member {syft_proto.generic.pointers.v1.IPointerTensor|null|undefined} arg_pointer_tensor
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_pointer_tensor = null;
+
+                    /**
+                     * Arg arg_placeholder.
+                     * @member {syft_proto.execution.v1.IPlaceholder|null|undefined} arg_placeholder
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_placeholder = null;
+
+                    /**
+                     * Arg arg_placeholder_id.
+                     * @member {syft_proto.execution.v1.IPlaceholderId|null|undefined} arg_placeholder_id
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_placeholder_id = null;
+
+                    // OneOf field names bound to virtual getters and setters
+                    var $oneOfFields;
+
+                    /**
+                     * Arg arg.
+                     * @member {"arg_bool"|"arg_int"|"arg_float"|"arg_str"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id"|undefined} arg
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Object.defineProperty(Arg.prototype, "arg", {
+                        get: $util.oneOfGetter($oneOfFields = ["arg_bool", "arg_int", "arg_float", "arg_str", "arg_shape", "arg_tensor", "arg_torch_param", "arg_pointer_tensor", "arg_placeholder", "arg_placeholder_id"]),
+                        set: $util.oneOfSetter($oneOfFields)
+                    });
+
+                    /**
+                     * Creates a new Arg instance using the specified properties.
+                     * @function create
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @static
+                     * @param {syft_proto.types.syft.v1.IArg=} [properties] Properties to set
+                     * @returns {syft_proto.types.syft.v1.Arg} Arg instance
+                     */
+                    Arg.create = function create(properties) {
+                        return new Arg(properties);
+                    };
+
+                    /**
+                     * Encodes the specified Arg message. Does not implicitly {@link syft_proto.types.syft.v1.Arg.verify|verify} messages.
+                     * @function encode
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @static
+                     * @param {syft_proto.types.syft.v1.IArg} message Arg message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    Arg.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.arg_bool != null && message.hasOwnProperty("arg_bool"))
+                            writer.uint32(/* id 1, wireType 0 =*/8).bool(message.arg_bool);
+                        if (message.arg_int != null && message.hasOwnProperty("arg_int"))
+                            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.arg_int);
+                        if (message.arg_float != null && message.hasOwnProperty("arg_float"))
+                            writer.uint32(/* id 3, wireType 5 =*/29).float(message.arg_float);
+                        if (message.arg_str != null && message.hasOwnProperty("arg_str"))
+                            writer.uint32(/* id 4, wireType 2 =*/34).string(message.arg_str);
+                        if (message.arg_shape != null && message.hasOwnProperty("arg_shape"))
+                            $root.syft_proto.types.syft.v1.Shape.encode(message.arg_shape, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                        if (message.arg_tensor != null && message.hasOwnProperty("arg_tensor"))
+                            $root.syft_proto.types.torch.v1.TorchTensor.encode(message.arg_tensor, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                        if (message.arg_torch_param != null && message.hasOwnProperty("arg_torch_param"))
+                            $root.syft_proto.types.torch.v1.Parameter.encode(message.arg_torch_param, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                        if (message.arg_pointer_tensor != null && message.hasOwnProperty("arg_pointer_tensor"))
+                            $root.syft_proto.generic.pointers.v1.PointerTensor.encode(message.arg_pointer_tensor, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                        if (message.arg_placeholder != null && message.hasOwnProperty("arg_placeholder"))
+                            $root.syft_proto.execution.v1.Placeholder.encode(message.arg_placeholder, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                        if (message.arg_placeholder_id != null && message.hasOwnProperty("arg_placeholder_id"))
+                            $root.syft_proto.execution.v1.PlaceholderId.encode(message.arg_placeholder_id, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified Arg message, length delimited. Does not implicitly {@link syft_proto.types.syft.v1.Arg.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @static
+                     * @param {syft_proto.types.syft.v1.IArg} message Arg message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    Arg.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes an Arg message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {syft_proto.types.syft.v1.Arg} Arg
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    Arg.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.types.syft.v1.Arg();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                message.arg_bool = reader.bool();
+                                break;
+                            case 2:
+                                message.arg_int = reader.int32();
+                                break;
+                            case 3:
+                                message.arg_float = reader.float();
+                                break;
+                            case 4:
+                                message.arg_str = reader.string();
+                                break;
+                            case 5:
+                                message.arg_shape = $root.syft_proto.types.syft.v1.Shape.decode(reader, reader.uint32());
+                                break;
+                            case 6:
+                                message.arg_tensor = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
+                                break;
+                            case 7:
+                                message.arg_torch_param = $root.syft_proto.types.torch.v1.Parameter.decode(reader, reader.uint32());
+                                break;
+                            case 8:
+                                message.arg_pointer_tensor = $root.syft_proto.generic.pointers.v1.PointerTensor.decode(reader, reader.uint32());
+                                break;
+                            case 9:
+                                message.arg_placeholder = $root.syft_proto.execution.v1.Placeholder.decode(reader, reader.uint32());
+                                break;
+                            case 10:
+                                message.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.decode(reader, reader.uint32());
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes an Arg message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {syft_proto.types.syft.v1.Arg} Arg
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    Arg.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies an Arg message.
+                     * @function verify
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    Arg.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        var properties = {};
+                        if (message.arg_bool != null && message.hasOwnProperty("arg_bool")) {
+                            properties.arg = 1;
+                            if (typeof message.arg_bool !== "boolean")
+                                return "arg_bool: boolean expected";
+                        }
+                        if (message.arg_int != null && message.hasOwnProperty("arg_int")) {
+                            if (properties.arg === 1)
+                                return "arg: multiple values";
+                            properties.arg = 1;
+                            if (!$util.isInteger(message.arg_int))
+                                return "arg_int: integer expected";
+                        }
+                        if (message.arg_float != null && message.hasOwnProperty("arg_float")) {
+                            if (properties.arg === 1)
+                                return "arg: multiple values";
+                            properties.arg = 1;
+                            if (typeof message.arg_float !== "number")
+                                return "arg_float: number expected";
+                        }
+                        if (message.arg_str != null && message.hasOwnProperty("arg_str")) {
+                            if (properties.arg === 1)
+                                return "arg: multiple values";
+                            properties.arg = 1;
+                            if (!$util.isString(message.arg_str))
+                                return "arg_str: string expected";
+                        }
+                        if (message.arg_shape != null && message.hasOwnProperty("arg_shape")) {
+                            if (properties.arg === 1)
+                                return "arg: multiple values";
+                            properties.arg = 1;
+                            {
+                                var error = $root.syft_proto.types.syft.v1.Shape.verify(message.arg_shape);
+                                if (error)
+                                    return "arg_shape." + error;
+                            }
+                        }
+                        if (message.arg_tensor != null && message.hasOwnProperty("arg_tensor")) {
+                            if (properties.arg === 1)
+                                return "arg: multiple values";
+                            properties.arg = 1;
+                            {
+                                var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.arg_tensor);
+                                if (error)
+                                    return "arg_tensor." + error;
+                            }
+                        }
+                        if (message.arg_torch_param != null && message.hasOwnProperty("arg_torch_param")) {
+                            if (properties.arg === 1)
+                                return "arg: multiple values";
+                            properties.arg = 1;
+                            {
+                                var error = $root.syft_proto.types.torch.v1.Parameter.verify(message.arg_torch_param);
+                                if (error)
+                                    return "arg_torch_param." + error;
+                            }
+                        }
+                        if (message.arg_pointer_tensor != null && message.hasOwnProperty("arg_pointer_tensor")) {
+                            if (properties.arg === 1)
+                                return "arg: multiple values";
+                            properties.arg = 1;
+                            {
+                                var error = $root.syft_proto.generic.pointers.v1.PointerTensor.verify(message.arg_pointer_tensor);
+                                if (error)
+                                    return "arg_pointer_tensor." + error;
+                            }
+                        }
+                        if (message.arg_placeholder != null && message.hasOwnProperty("arg_placeholder")) {
+                            if (properties.arg === 1)
+                                return "arg: multiple values";
+                            properties.arg = 1;
+                            {
+                                var error = $root.syft_proto.execution.v1.Placeholder.verify(message.arg_placeholder);
+                                if (error)
+                                    return "arg_placeholder." + error;
+                            }
+                        }
+                        if (message.arg_placeholder_id != null && message.hasOwnProperty("arg_placeholder_id")) {
+                            if (properties.arg === 1)
+                                return "arg: multiple values";
+                            properties.arg = 1;
+                            {
+                                var error = $root.syft_proto.execution.v1.PlaceholderId.verify(message.arg_placeholder_id);
+                                if (error)
+                                    return "arg_placeholder_id." + error;
+                            }
+                        }
+                        return null;
+                    };
+
+                    /**
+                     * Creates an Arg message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {syft_proto.types.syft.v1.Arg} Arg
+                     */
+                    Arg.fromObject = function fromObject(object) {
+                        if (object instanceof $root.syft_proto.types.syft.v1.Arg)
+                            return object;
+                        var message = new $root.syft_proto.types.syft.v1.Arg();
+                        if (object.arg_bool != null)
+                            message.arg_bool = Boolean(object.arg_bool);
+                        if (object.arg_int != null)
+                            message.arg_int = object.arg_int | 0;
+                        if (object.arg_float != null)
+                            message.arg_float = Number(object.arg_float);
+                        if (object.arg_str != null)
+                            message.arg_str = String(object.arg_str);
+                        if (object.arg_shape != null) {
+                            if (typeof object.arg_shape !== "object")
+                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_shape: object expected");
+                            message.arg_shape = $root.syft_proto.types.syft.v1.Shape.fromObject(object.arg_shape);
+                        }
+                        if (object.arg_tensor != null) {
+                            if (typeof object.arg_tensor !== "object")
+                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_tensor: object expected");
+                            message.arg_tensor = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.arg_tensor);
+                        }
+                        if (object.arg_torch_param != null) {
+                            if (typeof object.arg_torch_param !== "object")
+                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_torch_param: object expected");
+                            message.arg_torch_param = $root.syft_proto.types.torch.v1.Parameter.fromObject(object.arg_torch_param);
+                        }
+                        if (object.arg_pointer_tensor != null) {
+                            if (typeof object.arg_pointer_tensor !== "object")
+                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_pointer_tensor: object expected");
+                            message.arg_pointer_tensor = $root.syft_proto.generic.pointers.v1.PointerTensor.fromObject(object.arg_pointer_tensor);
+                        }
+                        if (object.arg_placeholder != null) {
+                            if (typeof object.arg_placeholder !== "object")
+                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_placeholder: object expected");
+                            message.arg_placeholder = $root.syft_proto.execution.v1.Placeholder.fromObject(object.arg_placeholder);
+                        }
+                        if (object.arg_placeholder_id != null) {
+                            if (typeof object.arg_placeholder_id !== "object")
+                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_placeholder_id: object expected");
+                            message.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.fromObject(object.arg_placeholder_id);
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from an Arg message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @static
+                     * @param {syft_proto.types.syft.v1.Arg} message Arg
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    Arg.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (message.arg_bool != null && message.hasOwnProperty("arg_bool")) {
+                            object.arg_bool = message.arg_bool;
+                            if (options.oneofs)
+                                object.arg = "arg_bool";
+                        }
+                        if (message.arg_int != null && message.hasOwnProperty("arg_int")) {
+                            object.arg_int = message.arg_int;
+                            if (options.oneofs)
+                                object.arg = "arg_int";
+                        }
+                        if (message.arg_float != null && message.hasOwnProperty("arg_float")) {
+                            object.arg_float = options.json && !isFinite(message.arg_float) ? String(message.arg_float) : message.arg_float;
+                            if (options.oneofs)
+                                object.arg = "arg_float";
+                        }
+                        if (message.arg_str != null && message.hasOwnProperty("arg_str")) {
+                            object.arg_str = message.arg_str;
+                            if (options.oneofs)
+                                object.arg = "arg_str";
+                        }
+                        if (message.arg_shape != null && message.hasOwnProperty("arg_shape")) {
+                            object.arg_shape = $root.syft_proto.types.syft.v1.Shape.toObject(message.arg_shape, options);
+                            if (options.oneofs)
+                                object.arg = "arg_shape";
+                        }
+                        if (message.arg_tensor != null && message.hasOwnProperty("arg_tensor")) {
+                            object.arg_tensor = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.arg_tensor, options);
+                            if (options.oneofs)
+                                object.arg = "arg_tensor";
+                        }
+                        if (message.arg_torch_param != null && message.hasOwnProperty("arg_torch_param")) {
+                            object.arg_torch_param = $root.syft_proto.types.torch.v1.Parameter.toObject(message.arg_torch_param, options);
+                            if (options.oneofs)
+                                object.arg = "arg_torch_param";
+                        }
+                        if (message.arg_pointer_tensor != null && message.hasOwnProperty("arg_pointer_tensor")) {
+                            object.arg_pointer_tensor = $root.syft_proto.generic.pointers.v1.PointerTensor.toObject(message.arg_pointer_tensor, options);
+                            if (options.oneofs)
+                                object.arg = "arg_pointer_tensor";
+                        }
+                        if (message.arg_placeholder != null && message.hasOwnProperty("arg_placeholder")) {
+                            object.arg_placeholder = $root.syft_proto.execution.v1.Placeholder.toObject(message.arg_placeholder, options);
+                            if (options.oneofs)
+                                object.arg = "arg_placeholder";
+                        }
+                        if (message.arg_placeholder_id != null && message.hasOwnProperty("arg_placeholder_id")) {
+                            object.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.toObject(message.arg_placeholder_id, options);
+                            if (options.oneofs)
+                                object.arg = "arg_placeholder_id";
+                        }
+                        return object;
+                    };
+
+                    /**
+                     * Converts this Arg to JSON.
+                     * @function toJSON
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    Arg.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return Arg;
                 })();
 
                 return v1;

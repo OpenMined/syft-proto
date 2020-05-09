@@ -37,16 +37,16 @@ public final class ArgOuterClass {
     float getArgFloat();
 
     /**
-     * <code>string arg_string = 4[json_name = "argString"];</code>
-     * @return The argString.
+     * <code>string arg_str = 4[json_name = "argStr"];</code>
+     * @return The argStr.
      */
-    java.lang.String getArgString();
+    java.lang.String getArgStr();
     /**
-     * <code>string arg_string = 4[json_name = "argString"];</code>
-     * @return The bytes for argString.
+     * <code>string arg_str = 4[json_name = "argStr"];</code>
+     * @return The bytes for argStr.
      */
     com.google.protobuf.ByteString
-        getArgStringBytes();
+        getArgStrBytes();
 
     /**
      * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
@@ -330,7 +330,7 @@ public final class ArgOuterClass {
       ARG_BOOL(1),
       ARG_INT(2),
       ARG_FLOAT(3),
-      ARG_STRING(4),
+      ARG_STR(4),
       ARG_SHAPE(5),
       ARG_TENSOR(6),
       ARG_TORCH_PARAM(7),
@@ -357,7 +357,7 @@ public final class ArgOuterClass {
           case 1: return ARG_BOOL;
           case 2: return ARG_INT;
           case 3: return ARG_FLOAT;
-          case 4: return ARG_STRING;
+          case 4: return ARG_STR;
           case 5: return ARG_SHAPE;
           case 6: return ARG_TENSOR;
           case 7: return ARG_TORCH_PARAM;
@@ -415,12 +415,12 @@ public final class ArgOuterClass {
       return 0F;
     }
 
-    public static final int ARG_STRING_FIELD_NUMBER = 4;
+    public static final int ARG_STR_FIELD_NUMBER = 4;
     /**
-     * <code>string arg_string = 4[json_name = "argString"];</code>
-     * @return The argString.
+     * <code>string arg_str = 4[json_name = "argStr"];</code>
+     * @return The argStr.
      */
-    public java.lang.String getArgString() {
+    public java.lang.String getArgStr() {
       java.lang.Object ref = "";
       if (argCase_ == 4) {
         ref = arg_;
@@ -438,11 +438,11 @@ public final class ArgOuterClass {
       }
     }
     /**
-     * <code>string arg_string = 4[json_name = "argString"];</code>
-     * @return The bytes for argString.
+     * <code>string arg_str = 4[json_name = "argStr"];</code>
+     * @return The bytes for argStr.
      */
     public com.google.protobuf.ByteString
-        getArgStringBytes() {
+        getArgStrBytes() {
       java.lang.Object ref = "";
       if (argCase_ == 4) {
         ref = arg_;
@@ -757,8 +757,8 @@ public final class ArgOuterClass {
                   other.getArgFloat())) return false;
           break;
         case 4:
-          if (!getArgString()
-              .equals(other.getArgString())) return false;
+          if (!getArgStr()
+              .equals(other.getArgStr())) return false;
           break;
         case 5:
           if (!getArgShape()
@@ -814,8 +814,8 @@ public final class ArgOuterClass {
               getArgFloat());
           break;
         case 4:
-          hash = (37 * hash) + ARG_STRING_FIELD_NUMBER;
-          hash = (53 * hash) + getArgString().hashCode();
+          hash = (37 * hash) + ARG_STR_FIELD_NUMBER;
+          hash = (53 * hash) + getArgStr().hashCode();
           break;
         case 5:
           hash = (37 * hash) + ARG_SHAPE_FIELD_NUMBER;
@@ -1121,7 +1121,7 @@ public final class ArgOuterClass {
             setArgFloat(other.getArgFloat());
             break;
           }
-          case ARG_STRING: {
+          case ARG_STR: {
             argCase_ = 4;
             arg_ = other.arg_;
             onChanged();
@@ -1302,10 +1302,10 @@ public final class ArgOuterClass {
       }
 
       /**
-       * <code>string arg_string = 4[json_name = "argString"];</code>
-       * @return The argString.
+       * <code>string arg_str = 4[json_name = "argStr"];</code>
+       * @return The argStr.
        */
-      public java.lang.String getArgString() {
+      public java.lang.String getArgStr() {
         java.lang.Object ref = "";
         if (argCase_ == 4) {
           ref = arg_;
@@ -1323,11 +1323,11 @@ public final class ArgOuterClass {
         }
       }
       /**
-       * <code>string arg_string = 4[json_name = "argString"];</code>
-       * @return The bytes for argString.
+       * <code>string arg_str = 4[json_name = "argStr"];</code>
+       * @return The bytes for argStr.
        */
       public com.google.protobuf.ByteString
-          getArgStringBytes() {
+          getArgStrBytes() {
         java.lang.Object ref = "";
         if (argCase_ == 4) {
           ref = arg_;
@@ -1345,11 +1345,11 @@ public final class ArgOuterClass {
         }
       }
       /**
-       * <code>string arg_string = 4[json_name = "argString"];</code>
-       * @param value The argString to set.
+       * <code>string arg_str = 4[json_name = "argStr"];</code>
+       * @param value The argStr to set.
        * @return This builder for chaining.
        */
-      public Builder setArgString(
+      public Builder setArgStr(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -1360,10 +1360,10 @@ public final class ArgOuterClass {
         return this;
       }
       /**
-       * <code>string arg_string = 4[json_name = "argString"];</code>
+       * <code>string arg_str = 4[json_name = "argStr"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearArgString() {
+      public Builder clearArgStr() {
         if (argCase_ == 4) {
           argCase_ = 0;
           arg_ = null;
@@ -1372,11 +1372,11 @@ public final class ArgOuterClass {
         return this;
       }
       /**
-       * <code>string arg_string = 4[json_name = "argString"];</code>
-       * @param value The bytes for argString to set.
+       * <code>string arg_str = 4[json_name = "argStr"];</code>
+       * @param value The bytes for argStr to set.
        * @return This builder for chaining.
        */
-      public Builder setArgStringBytes(
+      public Builder setArgStrBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -2290,23 +2290,23 @@ public final class ArgOuterClass {
       "roto\032&syft_proto/types/torch/v1/tensor.p" +
       "roto\032$syft_proto/types/syft/v1/shape.pro" +
       "to\032)syft_proto/types/torch/v1/parameter." +
-      "proto\"\345\004\n\003Arg\022\033\n\010arg_bool\030\001 \001(\010H\000R\007argBo" +
+      "proto\"\337\004\n\003Arg\022\033\n\010arg_bool\030\001 \001(\010H\000R\007argBo" +
       "ol\022\031\n\007arg_int\030\002 \001(\005H\000R\006argInt\022\035\n\targ_flo" +
-      "at\030\003 \001(\002H\000R\010argFloat\022\037\n\narg_string\030\004 \001(\t" +
-      "H\000R\targString\022>\n\targ_shape\030\005 \001(\0132\037.syft_" +
-      "proto.types.syft.v1.ShapeH\000R\010argShape\022G\n" +
-      "\narg_tensor\030\006 \001(\0132&.syft_proto.types.tor" +
-      "ch.v1.TorchTensorH\000R\targTensor\022N\n\017arg_to" +
-      "rch_param\030\007 \001(\0132$.syft_proto.types.torch" +
-      ".v1.ParameterH\000R\rargTorchParam\022]\n\022arg_po" +
-      "inter_tensor\030\010 \001(\0132-.syft_proto.generic." +
-      "pointers.v1.PointerTensorH\000R\020argPointerT" +
-      "ensor\022O\n\017arg_placeholder\030\t \001(\0132$.syft_pr" +
-      "oto.execution.v1.PlaceholderH\000R\016argPlace" +
-      "holder\022V\n\022arg_placeholder_id\030\n \001(\0132&.syf" +
-      "t_proto.execution.v1.PlaceholderIdH\000R\020ar" +
-      "gPlaceholderIdB\005\n\003argB\'\n%org.openmined.s" +
-      "yftproto.types.syft.v1b\006proto3"
+      "at\030\003 \001(\002H\000R\010argFloat\022\031\n\007arg_str\030\004 \001(\tH\000R" +
+      "\006argStr\022>\n\targ_shape\030\005 \001(\0132\037.syft_proto." +
+      "types.syft.v1.ShapeH\000R\010argShape\022G\n\narg_t" +
+      "ensor\030\006 \001(\0132&.syft_proto.types.torch.v1." +
+      "TorchTensorH\000R\targTensor\022N\n\017arg_torch_pa" +
+      "ram\030\007 \001(\0132$.syft_proto.types.torch.v1.Pa" +
+      "rameterH\000R\rargTorchParam\022]\n\022arg_pointer_" +
+      "tensor\030\010 \001(\0132-.syft_proto.generic.pointe" +
+      "rs.v1.PointerTensorH\000R\020argPointerTensor\022" +
+      "O\n\017arg_placeholder\030\t \001(\0132$.syft_proto.ex" +
+      "ecution.v1.PlaceholderH\000R\016argPlaceholder" +
+      "\022V\n\022arg_placeholder_id\030\n \001(\0132&.syft_prot" +
+      "o.execution.v1.PlaceholderIdH\000R\020argPlace" +
+      "holderIdB\005\n\003argB\'\n%org.openmined.syftpro" +
+      "to.types.syft.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2323,7 +2323,7 @@ public final class ArgOuterClass {
     internal_static_syft_proto_types_syft_v1_Arg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_types_syft_v1_Arg_descriptor,
-        new java.lang.String[] { "ArgBool", "ArgInt", "ArgFloat", "ArgString", "ArgShape", "ArgTensor", "ArgTorchParam", "ArgPointerTensor", "ArgPlaceholder", "ArgPlaceholderId", "Arg", });
+        new java.lang.String[] { "ArgBool", "ArgInt", "ArgFloat", "ArgStr", "ArgShape", "ArgTensor", "ArgTorchParam", "ArgPointerTensor", "ArgPlaceholder", "ArgPlaceholderId", "Arg", });
     org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor();
     org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.getDescriptor();
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor();

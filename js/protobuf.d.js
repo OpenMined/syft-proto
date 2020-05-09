@@ -11,20 +11,32 @@ export namespace syft_proto {
             /** Properties of a CommunicationAction. */
             interface ICommunicationAction {
 
-                /** CommunicationAction name */
-                name?: (string|null);
+                /** CommunicationAction command */
+                command?: (string|null);
 
-                /** CommunicationAction obj_id */
-                obj_id?: (syft_proto.types.syft.v1.IId|null);
+                /** CommunicationAction target_id */
+                target_id?: (syft_proto.types.syft.v1.IId|null);
 
-                /** CommunicationAction source */
-                source?: (syft_proto.types.syft.v1.IId|null);
+                /** CommunicationAction target_pointer */
+                target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
-                /** CommunicationAction destinations */
-                destinations?: (syft_proto.types.syft.v1.IId[]|null);
+                /** CommunicationAction target_placeholder_id */
+                target_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+
+                /** CommunicationAction target_tensor */
+                target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** CommunicationAction args */
+                args?: (syft_proto.types.syft.v1.IArg[]|null);
 
                 /** CommunicationAction kwargs */
                 kwargs?: ({ [k: string]: syft_proto.types.syft.v1.IArg }|null);
+
+                /** CommunicationAction return_ids */
+                return_ids?: (syft_proto.types.syft.v1.IId[]|null);
+
+                /** CommunicationAction return_placeholder_ids */
+                return_placeholder_ids?: (syft_proto.execution.v1.IPlaceholderId[]|null);
             }
 
             /** Represents a CommunicationAction. */
@@ -36,20 +48,35 @@ export namespace syft_proto {
                  */
                 constructor(properties?: syft_proto.execution.v1.ICommunicationAction);
 
-                /** CommunicationAction name. */
-                public name: string;
+                /** CommunicationAction command. */
+                public command: string;
 
-                /** CommunicationAction obj_id. */
-                public obj_id?: (syft_proto.types.syft.v1.IId|null);
+                /** CommunicationAction target_id. */
+                public target_id?: (syft_proto.types.syft.v1.IId|null);
 
-                /** CommunicationAction source. */
-                public source?: (syft_proto.types.syft.v1.IId|null);
+                /** CommunicationAction target_pointer. */
+                public target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
-                /** CommunicationAction destinations. */
-                public destinations: syft_proto.types.syft.v1.IId[];
+                /** CommunicationAction target_placeholder_id. */
+                public target_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+
+                /** CommunicationAction target_tensor. */
+                public target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** CommunicationAction args. */
+                public args: syft_proto.types.syft.v1.IArg[];
 
                 /** CommunicationAction kwargs. */
                 public kwargs: { [k: string]: syft_proto.types.syft.v1.IArg };
+
+                /** CommunicationAction return_ids. */
+                public return_ids: syft_proto.types.syft.v1.IId[];
+
+                /** CommunicationAction return_placeholder_ids. */
+                public return_placeholder_ids: syft_proto.execution.v1.IPlaceholderId[];
+
+                /** CommunicationAction target. */
+                public target?: ("target_id"|"target_pointer"|"target_placeholder_id"|"target_tensor");
 
                 /**
                  * Creates a new CommunicationAction instance using the specified properties.
@@ -117,6 +144,96 @@ export namespace syft_proto {
 
                 /**
                  * Converts this CommunicationAction to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a PlaceholderId. */
+            interface IPlaceholderId {
+
+                /** PlaceholderId id */
+                id?: (syft_proto.types.syft.v1.IId|null);
+            }
+
+            /** Represents a PlaceholderId. */
+            class PlaceholderId implements IPlaceholderId {
+
+                /**
+                 * Constructs a new PlaceholderId.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.execution.v1.IPlaceholderId);
+
+                /** PlaceholderId id. */
+                public id?: (syft_proto.types.syft.v1.IId|null);
+
+                /**
+                 * Creates a new PlaceholderId instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns PlaceholderId instance
+                 */
+                public static create(properties?: syft_proto.execution.v1.IPlaceholderId): syft_proto.execution.v1.PlaceholderId;
+
+                /**
+                 * Encodes the specified PlaceholderId message. Does not implicitly {@link syft_proto.execution.v1.PlaceholderId.verify|verify} messages.
+                 * @param message PlaceholderId message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.execution.v1.IPlaceholderId, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified PlaceholderId message, length delimited. Does not implicitly {@link syft_proto.execution.v1.PlaceholderId.verify|verify} messages.
+                 * @param message PlaceholderId message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.execution.v1.IPlaceholderId, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a PlaceholderId message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns PlaceholderId
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.PlaceholderId;
+
+                /**
+                 * Decodes a PlaceholderId message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns PlaceholderId
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.PlaceholderId;
+
+                /**
+                 * Verifies a PlaceholderId message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a PlaceholderId message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns PlaceholderId
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.PlaceholderId;
+
+                /**
+                 * Creates a plain object from a PlaceholderId message. Also converts values to other types if specified.
+                 * @param message PlaceholderId
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.execution.v1.PlaceholderId, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this PlaceholderId to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
@@ -225,96 +342,6 @@ export namespace syft_proto {
 
                 /**
                  * Converts this Placeholder to JSON.
-                 * @returns JSON object
-                 */
-                public toJSON(): { [k: string]: any };
-            }
-
-            /** Properties of a PlaceholderId. */
-            interface IPlaceholderId {
-
-                /** PlaceholderId id */
-                id?: (syft_proto.types.syft.v1.IId|null);
-            }
-
-            /** Represents a PlaceholderId. */
-            class PlaceholderId implements IPlaceholderId {
-
-                /**
-                 * Constructs a new PlaceholderId.
-                 * @param [properties] Properties to set
-                 */
-                constructor(properties?: syft_proto.execution.v1.IPlaceholderId);
-
-                /** PlaceholderId id. */
-                public id?: (syft_proto.types.syft.v1.IId|null);
-
-                /**
-                 * Creates a new PlaceholderId instance using the specified properties.
-                 * @param [properties] Properties to set
-                 * @returns PlaceholderId instance
-                 */
-                public static create(properties?: syft_proto.execution.v1.IPlaceholderId): syft_proto.execution.v1.PlaceholderId;
-
-                /**
-                 * Encodes the specified PlaceholderId message. Does not implicitly {@link syft_proto.execution.v1.PlaceholderId.verify|verify} messages.
-                 * @param message PlaceholderId message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encode(message: syft_proto.execution.v1.IPlaceholderId, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Encodes the specified PlaceholderId message, length delimited. Does not implicitly {@link syft_proto.execution.v1.PlaceholderId.verify|verify} messages.
-                 * @param message PlaceholderId message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encodeDelimited(message: syft_proto.execution.v1.IPlaceholderId, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Decodes a PlaceholderId message from the specified reader or buffer.
-                 * @param reader Reader or buffer to decode from
-                 * @param [length] Message length if known beforehand
-                 * @returns PlaceholderId
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.PlaceholderId;
-
-                /**
-                 * Decodes a PlaceholderId message from the specified reader or buffer, length delimited.
-                 * @param reader Reader or buffer to decode from
-                 * @returns PlaceholderId
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.PlaceholderId;
-
-                /**
-                 * Verifies a PlaceholderId message.
-                 * @param message Plain object to verify
-                 * @returns `null` if valid, otherwise the reason why it is not
-                 */
-                public static verify(message: { [k: string]: any }): (string|null);
-
-                /**
-                 * Creates a PlaceholderId message from a plain object. Also converts values to their respective internal types.
-                 * @param object Plain object
-                 * @returns PlaceholderId
-                 */
-                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.PlaceholderId;
-
-                /**
-                 * Creates a plain object from a PlaceholderId message. Also converts values to other types if specified.
-                 * @param message PlaceholderId
-                 * @param [options] Conversion options
-                 * @returns Plain object
-                 */
-                public static toObject(message: syft_proto.execution.v1.PlaceholderId, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                /**
-                 * Converts this PlaceholderId to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
@@ -1609,153 +1636,6 @@ export namespace syft_proto {
             /** Namespace v1. */
             namespace v1 {
 
-                /** Properties of an Arg. */
-                interface IArg {
-
-                    /** Arg arg_bool */
-                    arg_bool?: (boolean|null);
-
-                    /** Arg arg_int */
-                    arg_int?: (number|null);
-
-                    /** Arg arg_float */
-                    arg_float?: (number|null);
-
-                    /** Arg arg_string */
-                    arg_string?: (string|null);
-
-                    /** Arg arg_shape */
-                    arg_shape?: (syft_proto.types.syft.v1.IShape|null);
-
-                    /** Arg arg_tensor */
-                    arg_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
-
-                    /** Arg arg_torch_param */
-                    arg_torch_param?: (syft_proto.types.torch.v1.IParameter|null);
-
-                    /** Arg arg_pointer_tensor */
-                    arg_pointer_tensor?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
-
-                    /** Arg arg_placeholder */
-                    arg_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
-
-                    /** Arg arg_placeholder_id */
-                    arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
-                }
-
-                /** Represents an Arg. */
-                class Arg implements IArg {
-
-                    /**
-                     * Constructs a new Arg.
-                     * @param [properties] Properties to set
-                     */
-                    constructor(properties?: syft_proto.types.syft.v1.IArg);
-
-                    /** Arg arg_bool. */
-                    public arg_bool: boolean;
-
-                    /** Arg arg_int. */
-                    public arg_int: number;
-
-                    /** Arg arg_float. */
-                    public arg_float: number;
-
-                    /** Arg arg_string. */
-                    public arg_string: string;
-
-                    /** Arg arg_shape. */
-                    public arg_shape?: (syft_proto.types.syft.v1.IShape|null);
-
-                    /** Arg arg_tensor. */
-                    public arg_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
-
-                    /** Arg arg_torch_param. */
-                    public arg_torch_param?: (syft_proto.types.torch.v1.IParameter|null);
-
-                    /** Arg arg_pointer_tensor. */
-                    public arg_pointer_tensor?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
-
-                    /** Arg arg_placeholder. */
-                    public arg_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
-
-                    /** Arg arg_placeholder_id. */
-                    public arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
-
-                    /** Arg arg. */
-                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_string"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id");
-
-                    /**
-                     * Creates a new Arg instance using the specified properties.
-                     * @param [properties] Properties to set
-                     * @returns Arg instance
-                     */
-                    public static create(properties?: syft_proto.types.syft.v1.IArg): syft_proto.types.syft.v1.Arg;
-
-                    /**
-                     * Encodes the specified Arg message. Does not implicitly {@link syft_proto.types.syft.v1.Arg.verify|verify} messages.
-                     * @param message Arg message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encode(message: syft_proto.types.syft.v1.IArg, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Encodes the specified Arg message, length delimited. Does not implicitly {@link syft_proto.types.syft.v1.Arg.verify|verify} messages.
-                     * @param message Arg message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encodeDelimited(message: syft_proto.types.syft.v1.IArg, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Decodes an Arg message from the specified reader or buffer.
-                     * @param reader Reader or buffer to decode from
-                     * @param [length] Message length if known beforehand
-                     * @returns Arg
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.types.syft.v1.Arg;
-
-                    /**
-                     * Decodes an Arg message from the specified reader or buffer, length delimited.
-                     * @param reader Reader or buffer to decode from
-                     * @returns Arg
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.types.syft.v1.Arg;
-
-                    /**
-                     * Verifies an Arg message.
-                     * @param message Plain object to verify
-                     * @returns `null` if valid, otherwise the reason why it is not
-                     */
-                    public static verify(message: { [k: string]: any }): (string|null);
-
-                    /**
-                     * Creates an Arg message from a plain object. Also converts values to their respective internal types.
-                     * @param object Plain object
-                     * @returns Arg
-                     */
-                    public static fromObject(object: { [k: string]: any }): syft_proto.types.syft.v1.Arg;
-
-                    /**
-                     * Creates a plain object from an Arg message. Also converts values to other types if specified.
-                     * @param message Arg
-                     * @param [options] Conversion options
-                     * @returns Plain object
-                     */
-                    public static toObject(message: syft_proto.types.syft.v1.Arg, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                    /**
-                     * Converts this Arg to JSON.
-                     * @returns JSON object
-                     */
-                    public toJSON(): { [k: string]: any };
-                }
-
                 /** Properties of an Id. */
                 interface IId {
 
@@ -1940,6 +1820,153 @@ export namespace syft_proto {
 
                     /**
                      * Converts this Shape to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of an Arg. */
+                interface IArg {
+
+                    /** Arg arg_bool */
+                    arg_bool?: (boolean|null);
+
+                    /** Arg arg_int */
+                    arg_int?: (number|null);
+
+                    /** Arg arg_float */
+                    arg_float?: (number|null);
+
+                    /** Arg arg_str */
+                    arg_str?: (string|null);
+
+                    /** Arg arg_shape */
+                    arg_shape?: (syft_proto.types.syft.v1.IShape|null);
+
+                    /** Arg arg_tensor */
+                    arg_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                    /** Arg arg_torch_param */
+                    arg_torch_param?: (syft_proto.types.torch.v1.IParameter|null);
+
+                    /** Arg arg_pointer_tensor */
+                    arg_pointer_tensor?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
+
+                    /** Arg arg_placeholder */
+                    arg_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
+
+                    /** Arg arg_placeholder_id */
+                    arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+                }
+
+                /** Represents an Arg. */
+                class Arg implements IArg {
+
+                    /**
+                     * Constructs a new Arg.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.types.syft.v1.IArg);
+
+                    /** Arg arg_bool. */
+                    public arg_bool: boolean;
+
+                    /** Arg arg_int. */
+                    public arg_int: number;
+
+                    /** Arg arg_float. */
+                    public arg_float: number;
+
+                    /** Arg arg_str. */
+                    public arg_str: string;
+
+                    /** Arg arg_shape. */
+                    public arg_shape?: (syft_proto.types.syft.v1.IShape|null);
+
+                    /** Arg arg_tensor. */
+                    public arg_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                    /** Arg arg_torch_param. */
+                    public arg_torch_param?: (syft_proto.types.torch.v1.IParameter|null);
+
+                    /** Arg arg_pointer_tensor. */
+                    public arg_pointer_tensor?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
+
+                    /** Arg arg_placeholder. */
+                    public arg_placeholder?: (syft_proto.execution.v1.IPlaceholder|null);
+
+                    /** Arg arg_placeholder_id. */
+                    public arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+
+                    /** Arg arg. */
+                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_str"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id");
+
+                    /**
+                     * Creates a new Arg instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns Arg instance
+                     */
+                    public static create(properties?: syft_proto.types.syft.v1.IArg): syft_proto.types.syft.v1.Arg;
+
+                    /**
+                     * Encodes the specified Arg message. Does not implicitly {@link syft_proto.types.syft.v1.Arg.verify|verify} messages.
+                     * @param message Arg message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.types.syft.v1.IArg, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified Arg message, length delimited. Does not implicitly {@link syft_proto.types.syft.v1.Arg.verify|verify} messages.
+                     * @param message Arg message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.types.syft.v1.IArg, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes an Arg message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns Arg
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.types.syft.v1.Arg;
+
+                    /**
+                     * Decodes an Arg message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns Arg
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.types.syft.v1.Arg;
+
+                    /**
+                     * Verifies an Arg message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates an Arg message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns Arg
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.syft.v1.Arg;
+
+                    /**
+                     * Creates a plain object from an Arg message. Also converts values to other types if specified.
+                     * @param message Arg
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.types.syft.v1.Arg, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this Arg to JSON.
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };

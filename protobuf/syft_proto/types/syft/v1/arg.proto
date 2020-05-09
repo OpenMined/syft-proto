@@ -15,7 +15,7 @@ message Arg {
         bool arg_bool = 1;
         int32 arg_int = 2;
         float arg_float = 3;
-        string arg_string = 4;
+        string arg_str = 4;
 
         syft_proto.types.syft.v1.Shape arg_shape = 5;
         syft_proto.types.torch.v1.TorchTensor arg_tensor = 6;
