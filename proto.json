@@ -206,6 +206,9 @@
     },
     "syft.execution.type_wrapper.NestedTypeWrapper": {
       "code": 62
+    },
+    "syft.workers.virtual.VirtualWorker": {
+      "code": 63
     }
   }
 }
