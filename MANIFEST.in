@@ -1,2 +1,3 @@
 include versioneer.py
 include syft_proto/_version.py
+include proto.json
