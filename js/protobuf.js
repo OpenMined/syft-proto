@@ -9375,6 +9375,7 @@ $root.syft_proto = (function() {
                  * @memberof syft_proto.messaging.v1
                  * @interface ISyftMessage
                  * @property {google.protobuf.IEmpty|null} [contents_empty_msg] SyftMessage contents_empty_msg
+                 * @property {syft_proto.messaging.v1.IIsNoneMessage|null} [contents_is_none_msg] SyftMessage contents_is_none_msg
                  * @property {syft_proto.messaging.v1.IObjectMessage|null} [contents_object_msg] SyftMessage contents_object_msg
                  * @property {syft_proto.messaging.v1.ITensorCommandMessage|null} [contents_tensor_cmd_msg] SyftMessage contents_tensor_cmd_msg
                  */
@@ -9403,6 +9404,14 @@ $root.syft_proto = (function() {
                 SyftMessage.prototype.contents_empty_msg = null;
 
                 /**
+                 * SyftMessage contents_is_none_msg.
+                 * @member {syft_proto.messaging.v1.IIsNoneMessage|null|undefined} contents_is_none_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_is_none_msg = null;
+
+                /**
                  * SyftMessage contents_object_msg.
                  * @member {syft_proto.messaging.v1.IObjectMessage|null|undefined} contents_object_msg
                  * @memberof syft_proto.messaging.v1.SyftMessage
@@ -9423,12 +9432,12 @@ $root.syft_proto = (function() {
 
                 /**
                  * SyftMessage contents.
-                 * @member {"contents_empty_msg"|"contents_object_msg"|"contents_tensor_cmd_msg"|undefined} contents
+                 * @member {"contents_empty_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_tensor_cmd_msg"|undefined} contents
                  * @memberof syft_proto.messaging.v1.SyftMessage
                  * @instance
                  */
                 Object.defineProperty(SyftMessage.prototype, "contents", {
-                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_object_msg", "contents_tensor_cmd_msg"]),
+                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_is_none_msg", "contents_object_msg", "contents_tensor_cmd_msg"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
@@ -9458,6 +9467,8 @@ $root.syft_proto = (function() {
                         writer = $Writer.create();
                     if (message.contents_empty_msg != null && message.hasOwnProperty("contents_empty_msg"))
                         $root.google.protobuf.Empty.encode(message.contents_empty_msg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.contents_is_none_msg != null && message.hasOwnProperty("contents_is_none_msg"))
+                        $root.syft_proto.messaging.v1.IsNoneMessage.encode(message.contents_is_none_msg, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.contents_object_msg != null && message.hasOwnProperty("contents_object_msg"))
                         $root.syft_proto.messaging.v1.ObjectMessage.encode(message.contents_object_msg, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                     if (message.contents_tensor_cmd_msg != null && message.hasOwnProperty("contents_tensor_cmd_msg"))
@@ -9498,6 +9509,9 @@ $root.syft_proto = (function() {
                         switch (tag >>> 3) {
                         case 1:
                             message.contents_empty_msg = $root.google.protobuf.Empty.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            message.contents_is_none_msg = $root.syft_proto.messaging.v1.IsNoneMessage.decode(reader, reader.uint32());
                             break;
                         case 5:
                             message.contents_object_msg = $root.syft_proto.messaging.v1.ObjectMessage.decode(reader, reader.uint32());
@@ -9549,6 +9563,16 @@ $root.syft_proto = (function() {
                                 return "contents_empty_msg." + error;
                         }
                     }
+                    if (message.contents_is_none_msg != null && message.hasOwnProperty("contents_is_none_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.IsNoneMessage.verify(message.contents_is_none_msg);
+                            if (error)
+                                return "contents_is_none_msg." + error;
+                        }
+                    }
                     if (message.contents_object_msg != null && message.hasOwnProperty("contents_object_msg")) {
                         if (properties.contents === 1)
                             return "contents: multiple values";
@@ -9589,6 +9613,11 @@ $root.syft_proto = (function() {
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_empty_msg: object expected");
                         message.contents_empty_msg = $root.google.protobuf.Empty.fromObject(object.contents_empty_msg);
                     }
+                    if (object.contents_is_none_msg != null) {
+                        if (typeof object.contents_is_none_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_is_none_msg: object expected");
+                        message.contents_is_none_msg = $root.syft_proto.messaging.v1.IsNoneMessage.fromObject(object.contents_is_none_msg);
+                    }
                     if (object.contents_object_msg != null) {
                         if (typeof object.contents_object_msg !== "object")
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_object_msg: object expected");
@@ -9620,6 +9649,11 @@ $root.syft_proto = (function() {
                         if (options.oneofs)
                             object.contents = "contents_empty_msg";
                     }
+                    if (message.contents_is_none_msg != null && message.hasOwnProperty("contents_is_none_msg")) {
+                        object.contents_is_none_msg = $root.syft_proto.messaging.v1.IsNoneMessage.toObject(message.contents_is_none_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_is_none_msg";
+                    }
                     if (message.contents_object_msg != null && message.hasOwnProperty("contents_object_msg")) {
                         object.contents_object_msg = $root.syft_proto.messaging.v1.ObjectMessage.toObject(message.contents_object_msg, options);
                         if (options.oneofs)
@@ -9645,6 +9679,198 @@ $root.syft_proto = (function() {
                 };
 
                 return SyftMessage;
+            })();
+
+            v1.IsNoneMessage = (function() {
+
+                /**
+                 * Properties of an IsNoneMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface IIsNoneMessage
+                 * @property {syft_proto.types.syft.v1.IId|null} [object_id] IsNoneMessage object_id
+                 */
+
+                /**
+                 * Constructs a new IsNoneMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents an IsNoneMessage.
+                 * @implements IIsNoneMessage
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.IIsNoneMessage=} [properties] Properties to set
+                 */
+                function IsNoneMessage(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * IsNoneMessage object_id.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} object_id
+                 * @memberof syft_proto.messaging.v1.IsNoneMessage
+                 * @instance
+                 */
+                IsNoneMessage.prototype.object_id = null;
+
+                /**
+                 * Creates a new IsNoneMessage instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.IsNoneMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IIsNoneMessage=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.IsNoneMessage} IsNoneMessage instance
+                 */
+                IsNoneMessage.create = function create(properties) {
+                    return new IsNoneMessage(properties);
+                };
+
+                /**
+                 * Encodes the specified IsNoneMessage message. Does not implicitly {@link syft_proto.messaging.v1.IsNoneMessage.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.IsNoneMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IIsNoneMessage} message IsNoneMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                IsNoneMessage.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.object_id != null && message.hasOwnProperty("object_id"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.object_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified IsNoneMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.IsNoneMessage.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.IsNoneMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IIsNoneMessage} message IsNoneMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                IsNoneMessage.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes an IsNoneMessage message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.IsNoneMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.IsNoneMessage} IsNoneMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                IsNoneMessage.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.IsNoneMessage();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.object_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes an IsNoneMessage message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.IsNoneMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.IsNoneMessage} IsNoneMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                IsNoneMessage.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies an IsNoneMessage message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.IsNoneMessage
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                IsNoneMessage.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.object_id != null && message.hasOwnProperty("object_id")) {
+                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.object_id);
+                        if (error)
+                            return "object_id." + error;
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates an IsNoneMessage message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.IsNoneMessage
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.IsNoneMessage} IsNoneMessage
+                 */
+                IsNoneMessage.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.IsNoneMessage)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.IsNoneMessage();
+                    if (object.object_id != null) {
+                        if (typeof object.object_id !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.IsNoneMessage.object_id: object expected");
+                        message.object_id = $root.syft_proto.types.syft.v1.Id.fromObject(object.object_id);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from an IsNoneMessage message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.IsNoneMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IsNoneMessage} message IsNoneMessage
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                IsNoneMessage.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.object_id = null;
+                    if (message.object_id != null && message.hasOwnProperty("object_id"))
+                        object.object_id = $root.syft_proto.types.syft.v1.Id.toObject(message.object_id, options);
+                    return object;
+                };
+
+                /**
+                 * Converts this IsNoneMessage to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.IsNoneMessage
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                IsNoneMessage.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return IsNoneMessage;
             })();
 
             v1.ObjectMessage = (function() {

@@ -3353,6 +3353,9 @@ export namespace syft_proto {
                 /** SyftMessage contents_empty_msg */
                 contents_empty_msg?: (google.protobuf.IEmpty|null);
 
+                /** SyftMessage contents_is_none_msg */
+                contents_is_none_msg?: (syft_proto.messaging.v1.IIsNoneMessage|null);
+
                 /** SyftMessage contents_object_msg */
                 contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
@@ -3372,6 +3375,9 @@ export namespace syft_proto {
                 /** SyftMessage contents_empty_msg. */
                 public contents_empty_msg?: (google.protobuf.IEmpty|null);
 
+                /** SyftMessage contents_is_none_msg. */
+                public contents_is_none_msg?: (syft_proto.messaging.v1.IIsNoneMessage|null);
+
                 /** SyftMessage contents_object_msg. */
                 public contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
@@ -3379,7 +3385,7 @@ export namespace syft_proto {
                 public contents_tensor_cmd_msg?: (syft_proto.messaging.v1.ITensorCommandMessage|null);
 
                 /** SyftMessage contents. */
-                public contents?: ("contents_empty_msg"|"contents_object_msg"|"contents_tensor_cmd_msg");
+                public contents?: ("contents_empty_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_tensor_cmd_msg");
 
                 /**
                  * Creates a new SyftMessage instance using the specified properties.
@@ -3447,6 +3453,96 @@ export namespace syft_proto {
 
                 /**
                  * Converts this SyftMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of an IsNoneMessage. */
+            interface IIsNoneMessage {
+
+                /** IsNoneMessage object_id */
+                object_id?: (syft_proto.types.syft.v1.IId|null);
+            }
+
+            /** Represents an IsNoneMessage. */
+            class IsNoneMessage implements IIsNoneMessage {
+
+                /**
+                 * Constructs a new IsNoneMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IIsNoneMessage);
+
+                /** IsNoneMessage object_id. */
+                public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /**
+                 * Creates a new IsNoneMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns IsNoneMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IIsNoneMessage): syft_proto.messaging.v1.IsNoneMessage;
+
+                /**
+                 * Encodes the specified IsNoneMessage message. Does not implicitly {@link syft_proto.messaging.v1.IsNoneMessage.verify|verify} messages.
+                 * @param message IsNoneMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IIsNoneMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified IsNoneMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.IsNoneMessage.verify|verify} messages.
+                 * @param message IsNoneMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IIsNoneMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes an IsNoneMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns IsNoneMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.IsNoneMessage;
+
+                /**
+                 * Decodes an IsNoneMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns IsNoneMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.IsNoneMessage;
+
+                /**
+                 * Verifies an IsNoneMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates an IsNoneMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns IsNoneMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.IsNoneMessage;
+
+                /**
+                 * Creates a plain object from an IsNoneMessage message. Also converts values to other types if specified.
+                 * @param message IsNoneMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.IsNoneMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this IsNoneMessage to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
