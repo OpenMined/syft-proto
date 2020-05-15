@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SyftProto"
-  spec.version      = "0.2.9.a1"
+  spec.version      = "0.4.4"
   spec.summary      = "Syft protobuf Swift classes"
 
   # This description is used to generate tags and improve search results.
