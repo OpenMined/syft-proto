@@ -7743,6 +7743,193 @@ $root.syft_proto = (function() {
                     return Device;
                 })();
 
+                v1.MemoryFormat = (function() {
+
+                    /**
+                     * Properties of a MemoryFormat.
+                     * @memberof syft_proto.types.torch.v1
+                     * @interface IMemoryFormat
+                     * @property {string|null} [memory_format_type] MemoryFormat memory_format_type
+                     */
+
+                    /**
+                     * Constructs a new MemoryFormat.
+                     * @memberof syft_proto.types.torch.v1
+                     * @classdesc Represents a MemoryFormat.
+                     * @implements IMemoryFormat
+                     * @constructor
+                     * @param {syft_proto.types.torch.v1.IMemoryFormat=} [properties] Properties to set
+                     */
+                    function MemoryFormat(properties) {
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * MemoryFormat memory_format_type.
+                     * @member {string} memory_format_type
+                     * @memberof syft_proto.types.torch.v1.MemoryFormat
+                     * @instance
+                     */
+                    MemoryFormat.prototype.memory_format_type = "";
+
+                    /**
+                     * Creates a new MemoryFormat instance using the specified properties.
+                     * @function create
+                     * @memberof syft_proto.types.torch.v1.MemoryFormat
+                     * @static
+                     * @param {syft_proto.types.torch.v1.IMemoryFormat=} [properties] Properties to set
+                     * @returns {syft_proto.types.torch.v1.MemoryFormat} MemoryFormat instance
+                     */
+                    MemoryFormat.create = function create(properties) {
+                        return new MemoryFormat(properties);
+                    };
+
+                    /**
+                     * Encodes the specified MemoryFormat message. Does not implicitly {@link syft_proto.types.torch.v1.MemoryFormat.verify|verify} messages.
+                     * @function encode
+                     * @memberof syft_proto.types.torch.v1.MemoryFormat
+                     * @static
+                     * @param {syft_proto.types.torch.v1.IMemoryFormat} message MemoryFormat message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    MemoryFormat.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.memory_format_type != null && message.hasOwnProperty("memory_format_type"))
+                            writer.uint32(/* id 1, wireType 2 =*/10).string(message.memory_format_type);
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified MemoryFormat message, length delimited. Does not implicitly {@link syft_proto.types.torch.v1.MemoryFormat.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof syft_proto.types.torch.v1.MemoryFormat
+                     * @static
+                     * @param {syft_proto.types.torch.v1.IMemoryFormat} message MemoryFormat message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    MemoryFormat.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes a MemoryFormat message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof syft_proto.types.torch.v1.MemoryFormat
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {syft_proto.types.torch.v1.MemoryFormat} MemoryFormat
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    MemoryFormat.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.types.torch.v1.MemoryFormat();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                message.memory_format_type = reader.string();
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes a MemoryFormat message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof syft_proto.types.torch.v1.MemoryFormat
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {syft_proto.types.torch.v1.MemoryFormat} MemoryFormat
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    MemoryFormat.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies a MemoryFormat message.
+                     * @function verify
+                     * @memberof syft_proto.types.torch.v1.MemoryFormat
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    MemoryFormat.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.memory_format_type != null && message.hasOwnProperty("memory_format_type"))
+                            if (!$util.isString(message.memory_format_type))
+                                return "memory_format_type: string expected";
+                        return null;
+                    };
+
+                    /**
+                     * Creates a MemoryFormat message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof syft_proto.types.torch.v1.MemoryFormat
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {syft_proto.types.torch.v1.MemoryFormat} MemoryFormat
+                     */
+                    MemoryFormat.fromObject = function fromObject(object) {
+                        if (object instanceof $root.syft_proto.types.torch.v1.MemoryFormat)
+                            return object;
+                        var message = new $root.syft_proto.types.torch.v1.MemoryFormat();
+                        if (object.memory_format_type != null)
+                            message.memory_format_type = String(object.memory_format_type);
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from a MemoryFormat message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof syft_proto.types.torch.v1.MemoryFormat
+                     * @static
+                     * @param {syft_proto.types.torch.v1.MemoryFormat} message MemoryFormat
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    MemoryFormat.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (options.defaults)
+                            object.memory_format_type = "";
+                        if (message.memory_format_type != null && message.hasOwnProperty("memory_format_type"))
+                            object.memory_format_type = message.memory_format_type;
+                        return object;
+                    };
+
+                    /**
+                     * Converts this MemoryFormat to JSON.
+                     * @function toJSON
+                     * @memberof syft_proto.types.torch.v1.MemoryFormat
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    MemoryFormat.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return MemoryFormat;
+                })();
+
                 v1.ScriptFunction = (function() {
 
                     /**

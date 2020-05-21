@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package syft_proto.types.torch.v1;
+option java_package = "org.openmined.syftproto.types.torch.v1";
+
+message MemoryFormat {
+    string memory_format_type = 1;
+}

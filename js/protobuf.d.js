@@ -2697,6 +2697,96 @@ export namespace syft_proto {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** Properties of a MemoryFormat. */
+                interface IMemoryFormat {
+
+                    /** MemoryFormat memory_format_type */
+                    memory_format_type?: (string|null);
+                }
+
+                /** Represents a MemoryFormat. */
+                class MemoryFormat implements IMemoryFormat {
+
+                    /**
+                     * Constructs a new MemoryFormat.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.types.torch.v1.IMemoryFormat);
+
+                    /** MemoryFormat memory_format_type. */
+                    public memory_format_type: string;
+
+                    /**
+                     * Creates a new MemoryFormat instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns MemoryFormat instance
+                     */
+                    public static create(properties?: syft_proto.types.torch.v1.IMemoryFormat): syft_proto.types.torch.v1.MemoryFormat;
+
+                    /**
+                     * Encodes the specified MemoryFormat message. Does not implicitly {@link syft_proto.types.torch.v1.MemoryFormat.verify|verify} messages.
+                     * @param message MemoryFormat message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.types.torch.v1.IMemoryFormat, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified MemoryFormat message, length delimited. Does not implicitly {@link syft_proto.types.torch.v1.MemoryFormat.verify|verify} messages.
+                     * @param message MemoryFormat message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.types.torch.v1.IMemoryFormat, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a MemoryFormat message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns MemoryFormat
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.types.torch.v1.MemoryFormat;
+
+                    /**
+                     * Decodes a MemoryFormat message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns MemoryFormat
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.types.torch.v1.MemoryFormat;
+
+                    /**
+                     * Verifies a MemoryFormat message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a MemoryFormat message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns MemoryFormat
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.MemoryFormat;
+
+                    /**
+                     * Creates a plain object from a MemoryFormat message. Also converts values to other types if specified.
+                     * @param message MemoryFormat
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.types.torch.v1.MemoryFormat, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this MemoryFormat to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 /** Properties of a ScriptFunction. */
                 interface IScriptFunction {
 
