@@ -2697,6 +2697,96 @@ export namespace syft_proto {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** Properties of a TorchDType. */
+                interface ITorchDType {
+
+                    /** TorchDType torch_type */
+                    torch_type?: (string|null);
+                }
+
+                /** Represents a TorchDType. */
+                class TorchDType implements ITorchDType {
+
+                    /**
+                     * Constructs a new TorchDType.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.types.torch.v1.ITorchDType);
+
+                    /** TorchDType torch_type. */
+                    public torch_type: string;
+
+                    /**
+                     * Creates a new TorchDType instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns TorchDType instance
+                     */
+                    public static create(properties?: syft_proto.types.torch.v1.ITorchDType): syft_proto.types.torch.v1.TorchDType;
+
+                    /**
+                     * Encodes the specified TorchDType message. Does not implicitly {@link syft_proto.types.torch.v1.TorchDType.verify|verify} messages.
+                     * @param message TorchDType message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.types.torch.v1.ITorchDType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified TorchDType message, length delimited. Does not implicitly {@link syft_proto.types.torch.v1.TorchDType.verify|verify} messages.
+                     * @param message TorchDType message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.types.torch.v1.ITorchDType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a TorchDType message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns TorchDType
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.types.torch.v1.TorchDType;
+
+                    /**
+                     * Decodes a TorchDType message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns TorchDType
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.types.torch.v1.TorchDType;
+
+                    /**
+                     * Verifies a TorchDType message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a TorchDType message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns TorchDType
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.TorchDType;
+
+                    /**
+                     * Creates a plain object from a TorchDType message. Also converts values to other types if specified.
+                     * @param message TorchDType
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.types.torch.v1.TorchDType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this TorchDType to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 /** Properties of a MemoryFormat. */
                 interface IMemoryFormat {
 

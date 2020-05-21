@@ -7743,6 +7743,193 @@ $root.syft_proto = (function() {
                     return Device;
                 })();
 
+                v1.TorchDType = (function() {
+
+                    /**
+                     * Properties of a TorchDType.
+                     * @memberof syft_proto.types.torch.v1
+                     * @interface ITorchDType
+                     * @property {string|null} [torch_type] TorchDType torch_type
+                     */
+
+                    /**
+                     * Constructs a new TorchDType.
+                     * @memberof syft_proto.types.torch.v1
+                     * @classdesc Represents a TorchDType.
+                     * @implements ITorchDType
+                     * @constructor
+                     * @param {syft_proto.types.torch.v1.ITorchDType=} [properties] Properties to set
+                     */
+                    function TorchDType(properties) {
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * TorchDType torch_type.
+                     * @member {string} torch_type
+                     * @memberof syft_proto.types.torch.v1.TorchDType
+                     * @instance
+                     */
+                    TorchDType.prototype.torch_type = "";
+
+                    /**
+                     * Creates a new TorchDType instance using the specified properties.
+                     * @function create
+                     * @memberof syft_proto.types.torch.v1.TorchDType
+                     * @static
+                     * @param {syft_proto.types.torch.v1.ITorchDType=} [properties] Properties to set
+                     * @returns {syft_proto.types.torch.v1.TorchDType} TorchDType instance
+                     */
+                    TorchDType.create = function create(properties) {
+                        return new TorchDType(properties);
+                    };
+
+                    /**
+                     * Encodes the specified TorchDType message. Does not implicitly {@link syft_proto.types.torch.v1.TorchDType.verify|verify} messages.
+                     * @function encode
+                     * @memberof syft_proto.types.torch.v1.TorchDType
+                     * @static
+                     * @param {syft_proto.types.torch.v1.ITorchDType} message TorchDType message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    TorchDType.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.torch_type != null && message.hasOwnProperty("torch_type"))
+                            writer.uint32(/* id 1, wireType 2 =*/10).string(message.torch_type);
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified TorchDType message, length delimited. Does not implicitly {@link syft_proto.types.torch.v1.TorchDType.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof syft_proto.types.torch.v1.TorchDType
+                     * @static
+                     * @param {syft_proto.types.torch.v1.ITorchDType} message TorchDType message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    TorchDType.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes a TorchDType message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof syft_proto.types.torch.v1.TorchDType
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {syft_proto.types.torch.v1.TorchDType} TorchDType
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    TorchDType.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.types.torch.v1.TorchDType();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                message.torch_type = reader.string();
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes a TorchDType message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof syft_proto.types.torch.v1.TorchDType
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {syft_proto.types.torch.v1.TorchDType} TorchDType
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    TorchDType.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies a TorchDType message.
+                     * @function verify
+                     * @memberof syft_proto.types.torch.v1.TorchDType
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    TorchDType.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.torch_type != null && message.hasOwnProperty("torch_type"))
+                            if (!$util.isString(message.torch_type))
+                                return "torch_type: string expected";
+                        return null;
+                    };
+
+                    /**
+                     * Creates a TorchDType message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof syft_proto.types.torch.v1.TorchDType
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {syft_proto.types.torch.v1.TorchDType} TorchDType
+                     */
+                    TorchDType.fromObject = function fromObject(object) {
+                        if (object instanceof $root.syft_proto.types.torch.v1.TorchDType)
+                            return object;
+                        var message = new $root.syft_proto.types.torch.v1.TorchDType();
+                        if (object.torch_type != null)
+                            message.torch_type = String(object.torch_type);
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from a TorchDType message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof syft_proto.types.torch.v1.TorchDType
+                     * @static
+                     * @param {syft_proto.types.torch.v1.TorchDType} message TorchDType
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    TorchDType.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (options.defaults)
+                            object.torch_type = "";
+                        if (message.torch_type != null && message.hasOwnProperty("torch_type"))
+                            object.torch_type = message.torch_type;
+                        return object;
+                    };
+
+                    /**
+                     * Converts this TorchDType to JSON.
+                     * @function toJSON
+                     * @memberof syft_proto.types.torch.v1.TorchDType
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    TorchDType.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return TorchDType;
+                })();
+
                 v1.MemoryFormat = (function() {
 
                     /**
