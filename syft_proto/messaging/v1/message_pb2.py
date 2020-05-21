@@ -14,6 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from syft_proto.execution.v1 import computation_action_pb2 as syft__proto_dot_execution_dot_v1_dot_computation__action__pb2
 from syft_proto.execution.v1 import communication_action_pb2 as syft__proto_dot_execution_dot_v1_dot_communication__action__pb2
+from syft_proto.types.syft.v1 import id_pb2 as syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2
 from syft_proto.types.torch.v1 import tensor_pb2 as syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2
 
 
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.messaging.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.messaging.v1',
-  serialized_pb=b'\n%syft_proto/messaging/v1/message.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x30syft_proto/execution/v1/computation_action.proto\x1a\x32syft_proto/execution/v1/communication_action.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\xa3\x02\n\x0bSyftMessage\x12\x46\n\x12\x63ontents_empty_msg\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00R\x10\x63ontentsEmptyMsg\x12X\n\x13\x63ontents_object_msg\x18\x05 \x01(\x0b\x32&.syft_proto.messaging.v1.ObjectMessageH\x00R\x11\x63ontentsObjectMsg\x12\x66\n\x17\x63ontents_tensor_cmd_msg\x18\x07 \x01(\x0b\x32-.syft_proto.messaging.v1.TensorCommandMessageH\x00R\x14\x63ontentsTensorCmdMsgB\n\n\x08\x63ontents\"O\n\rObjectMessage\x12>\n\x06tensor\x18\x01 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x06tensor\"\xc6\x01\n\x14TensorCommandMessage\x12N\n\x0b\x63omputation\x18\x01 \x01(\x0b\x32*.syft_proto.execution.v1.ComputationActionH\x00R\x0b\x63omputation\x12T\n\rcommunication\x18\x02 \x01(\x0b\x32,.syft_proto.execution.v1.CommunicationActionH\x00R\rcommunicationB\x08\n\x06\x61\x63tionB&\n$org.openmined.syftproto.messaging.v1b\x06proto3'
+  serialized_pb=b'\n%syft_proto/messaging/v1/message.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x30syft_proto/execution/v1/computation_action.proto\x1a\x32syft_proto/execution/v1/communication_action.proto\x1a!syft_proto/types/syft/v1/id.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\xfe\x02\n\x0bSyftMessage\x12\x46\n\x12\x63ontents_empty_msg\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00R\x10\x63ontentsEmptyMsg\x12Y\n\x14\x63ontents_is_none_msg\x18\x04 \x01(\x0b\x32&.syft_proto.messaging.v1.IsNoneMessageH\x00R\x11\x63ontentsIsNoneMsg\x12X\n\x13\x63ontents_object_msg\x18\x05 \x01(\x0b\x32&.syft_proto.messaging.v1.ObjectMessageH\x00R\x11\x63ontentsObjectMsg\x12\x66\n\x17\x63ontents_tensor_cmd_msg\x18\x07 \x01(\x0b\x32-.syft_proto.messaging.v1.TensorCommandMessageH\x00R\x14\x63ontentsTensorCmdMsgB\n\n\x08\x63ontents\"J\n\rIsNoneMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\"O\n\rObjectMessage\x12>\n\x06tensor\x18\x01 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x06tensor\"\xc6\x01\n\x14TensorCommandMessage\x12N\n\x0b\x63omputation\x18\x01 \x01(\x0b\x32*.syft_proto.execution.v1.ComputationActionH\x00R\x0b\x63omputation\x12T\n\rcommunication\x18\x02 \x01(\x0b\x32,.syft_proto.execution.v1.CommunicationActionH\x00R\rcommunicationB\x08\n\x06\x61\x63tionB&\n$org.openmined.syftproto.messaging.v1b\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_computation__action__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_communication__action__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_computation__action__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_communication__action__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
 
 
 
@@ -44,14 +45,21 @@ _SYFTMESSAGE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='contentsEmptyMsg', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='contents_object_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_object_msg', index=1,
+      name='contents_is_none_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_is_none_msg', index=1,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='contentsIsNoneMsg', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='contents_object_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_object_msg', index=2,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='contentsObjectMsg', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='contents_tensor_cmd_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_tensor_cmd_msg', index=2,
+      name='contents_tensor_cmd_msg', full_name='syft_proto.messaging.v1.SyftMessage.contents_tensor_cmd_msg', index=3,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -72,8 +80,39 @@ _SYFTMESSAGE = _descriptor.Descriptor(
       name='contents', full_name='syft_proto.messaging.v1.SyftMessage.contents',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=238,
-  serialized_end=529,
+  serialized_start=273,
+  serialized_end=655,
+)
+
+
+_ISNONEMESSAGE = _descriptor.Descriptor(
+  name='IsNoneMessage',
+  full_name='syft_proto.messaging.v1.IsNoneMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='object_id', full_name='syft_proto.messaging.v1.IsNoneMessage.object_id', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='objectId', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=657,
+  serialized_end=731,
 )
 
 
@@ -103,8 +142,8 @@ _OBJECTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=531,
-  serialized_end=610,
+  serialized_start=733,
+  serialized_end=812,
 )
 
 
@@ -144,22 +183,27 @@ _TENSORCOMMANDMESSAGE = _descriptor.Descriptor(
       name='action', full_name='syft_proto.messaging.v1.TensorCommandMessage.action',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=613,
-  serialized_end=811,
+  serialized_start=815,
+  serialized_end=1013,
 )
 
 _SYFTMESSAGE.fields_by_name['contents_empty_msg'].message_type = google_dot_protobuf_dot_empty__pb2._EMPTY
+_SYFTMESSAGE.fields_by_name['contents_is_none_msg'].message_type = _ISNONEMESSAGE
 _SYFTMESSAGE.fields_by_name['contents_object_msg'].message_type = _OBJECTMESSAGE
 _SYFTMESSAGE.fields_by_name['contents_tensor_cmd_msg'].message_type = _TENSORCOMMANDMESSAGE
 _SYFTMESSAGE.oneofs_by_name['contents'].fields.append(
   _SYFTMESSAGE.fields_by_name['contents_empty_msg'])
 _SYFTMESSAGE.fields_by_name['contents_empty_msg'].containing_oneof = _SYFTMESSAGE.oneofs_by_name['contents']
 _SYFTMESSAGE.oneofs_by_name['contents'].fields.append(
+  _SYFTMESSAGE.fields_by_name['contents_is_none_msg'])
+_SYFTMESSAGE.fields_by_name['contents_is_none_msg'].containing_oneof = _SYFTMESSAGE.oneofs_by_name['contents']
+_SYFTMESSAGE.oneofs_by_name['contents'].fields.append(
   _SYFTMESSAGE.fields_by_name['contents_object_msg'])
 _SYFTMESSAGE.fields_by_name['contents_object_msg'].containing_oneof = _SYFTMESSAGE.oneofs_by_name['contents']
 _SYFTMESSAGE.oneofs_by_name['contents'].fields.append(
   _SYFTMESSAGE.fields_by_name['contents_tensor_cmd_msg'])
 _SYFTMESSAGE.fields_by_name['contents_tensor_cmd_msg'].containing_oneof = _SYFTMESSAGE.oneofs_by_name['contents']
+_ISNONEMESSAGE.fields_by_name['object_id'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
 _OBJECTMESSAGE.fields_by_name['tensor'].message_type = syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2._TORCHTENSOR
 _TENSORCOMMANDMESSAGE.fields_by_name['computation'].message_type = syft__proto_dot_execution_dot_v1_dot_computation__action__pb2._COMPUTATIONACTION
 _TENSORCOMMANDMESSAGE.fields_by_name['communication'].message_type = syft__proto_dot_execution_dot_v1_dot_communication__action__pb2._COMMUNICATIONACTION
@@ -170,6 +214,7 @@ _TENSORCOMMANDMESSAGE.oneofs_by_name['action'].fields.append(
   _TENSORCOMMANDMESSAGE.fields_by_name['communication'])
 _TENSORCOMMANDMESSAGE.fields_by_name['communication'].containing_oneof = _TENSORCOMMANDMESSAGE.oneofs_by_name['action']
 DESCRIPTOR.message_types_by_name['SyftMessage'] = _SYFTMESSAGE
+DESCRIPTOR.message_types_by_name['IsNoneMessage'] = _ISNONEMESSAGE
 DESCRIPTOR.message_types_by_name['ObjectMessage'] = _OBJECTMESSAGE
 DESCRIPTOR.message_types_by_name['TensorCommandMessage'] = _TENSORCOMMANDMESSAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -180,6 +225,13 @@ SyftMessage = _reflection.GeneratedProtocolMessageType('SyftMessage', (_message.
   # @@protoc_insertion_point(class_scope:syft_proto.messaging.v1.SyftMessage)
   })
 _sym_db.RegisterMessage(SyftMessage)
+
+IsNoneMessage = _reflection.GeneratedProtocolMessageType('IsNoneMessage', (_message.Message,), {
+  'DESCRIPTOR' : _ISNONEMESSAGE,
+  '__module__' : 'syft_proto.messaging.v1.message_pb2'
+  # @@protoc_insertion_point(class_scope:syft_proto.messaging.v1.IsNoneMessage)
+  })
+_sym_db.RegisterMessage(IsNoneMessage)
 
 ObjectMessage = _reflection.GeneratedProtocolMessageType('ObjectMessage', (_message.Message,), {
   'DESCRIPTOR' : _OBJECTMESSAGE,

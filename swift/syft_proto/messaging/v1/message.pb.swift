@@ -36,7 +36,14 @@ public struct SyftProto_Messaging_V1_SyftMessage {
 
   /// ForceObjectDeleteMessage contents_delete_msg = 2;
   /// GetShapeMessage contents_get_shape_msg = 3;
-  /// IsNoneMessage contents_is_none_msg = 4;
+  public var contentsIsNoneMsg: SyftProto_Messaging_V1_IsNoneMessage {
+    get {
+      if case .contentsIsNoneMsg(let v)? = contents {return v}
+      return SyftProto_Messaging_V1_IsNoneMessage()
+    }
+    set {contents = .contentsIsNoneMsg(newValue)}
+  }
+
   public var contentsObjectMsg: SyftProto_Messaging_V1_ObjectMessage {
     get {
       if case .contentsObjectMsg(let v)? = contents {return v}
@@ -60,7 +67,7 @@ public struct SyftProto_Messaging_V1_SyftMessage {
     case contentsEmptyMsg(SwiftProtobuf.Google_Protobuf_Empty)
     /// ForceObjectDeleteMessage contents_delete_msg = 2;
     /// GetShapeMessage contents_get_shape_msg = 3;
-    /// IsNoneMessage contents_is_none_msg = 4;
+    case contentsIsNoneMsg(SyftProto_Messaging_V1_IsNoneMessage)
     case contentsObjectMsg(SyftProto_Messaging_V1_ObjectMessage)
     /// ObjectRequestMessage contents_object_request_msg = 6;
     case contentsTensorCmdMsg(SyftProto_Messaging_V1_TensorCommandMessage)
@@ -69,6 +76,7 @@ public struct SyftProto_Messaging_V1_SyftMessage {
     public static func ==(lhs: SyftProto_Messaging_V1_SyftMessage.OneOf_Contents, rhs: SyftProto_Messaging_V1_SyftMessage.OneOf_Contents) -> Bool {
       switch (lhs, rhs) {
       case (.contentsEmptyMsg(let l), .contentsEmptyMsg(let r)): return l == r
+      case (.contentsIsNoneMsg(let l), .contentsIsNoneMsg(let r)): return l == r
       case (.contentsObjectMsg(let l), .contentsObjectMsg(let r)): return l == r
       case (.contentsTensorCmdMsg(let l), .contentsTensorCmdMsg(let r)): return l == r
       default: return false
@@ -78,6 +86,27 @@ public struct SyftProto_Messaging_V1_SyftMessage {
   }
 
   public init() {}
+}
+
+public struct SyftProto_Messaging_V1_IsNoneMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var objectID: SyftProto_Types_Syft_V1_Id {
+    get {return _objectID ?? SyftProto_Types_Syft_V1_Id()}
+    set {_objectID = newValue}
+  }
+  /// Returns true if `objectID` has been explicitly set.
+  public var hasObjectID: Bool {return self._objectID != nil}
+  /// Clears the value of `objectID`. Subsequent reads from it will return its default value.
+  public mutating func clearObjectID() {self._objectID = nil}
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _objectID: SyftProto_Types_Syft_V1_Id? = nil
 }
 
 public struct SyftProto_Messaging_V1_ObjectMessage {
@@ -152,6 +181,7 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
   public static let protoMessageName: String = _protobuf_package + ".SyftMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "contents_empty_msg"),
+    4: .standard(proto: "contents_is_none_msg"),
     5: .standard(proto: "contents_object_msg"),
     7: .standard(proto: "contents_tensor_cmd_msg"),
   ]
@@ -167,6 +197,14 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsEmptyMsg(v)}
+      case 4:
+        var v: SyftProto_Messaging_V1_IsNoneMessage?
+        if let current = self.contents {
+          try decoder.handleConflictingOneOf()
+          if case .contentsIsNoneMsg(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.contents = .contentsIsNoneMsg(v)}
       case 5:
         var v: SyftProto_Messaging_V1_ObjectMessage?
         if let current = self.contents {
@@ -192,6 +230,8 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
     switch self.contents {
     case .contentsEmptyMsg(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    case .contentsIsNoneMsg(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
     case .contentsObjectMsg(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
     case .contentsTensorCmdMsg(let v)?:
@@ -203,6 +243,35 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
 
   public static func ==(lhs: SyftProto_Messaging_V1_SyftMessage, rhs: SyftProto_Messaging_V1_SyftMessage) -> Bool {
     if lhs.contents != rhs.contents {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension SyftProto_Messaging_V1_IsNoneMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".IsNoneMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "object_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularMessageField(value: &self._objectID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._objectID {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: SyftProto_Messaging_V1_IsNoneMessage, rhs: SyftProto_Messaging_V1_IsNoneMessage) -> Bool {
+    if lhs._objectID != rhs._objectID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
