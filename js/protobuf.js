@@ -9555,6 +9555,255 @@ $root.syft_proto = (function() {
              */
             var v1 = {};
 
+            v1.String = (function() {
+
+                /**
+                 * Properties of a String.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface IString
+                 * @property {string|null} [child] String child
+                 * @property {Array.<string>|null} [tags] String tags
+                 * @property {string|null} [description] String description
+                 */
+
+                /**
+                 * Constructs a new String.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents a String.
+                 * @implements IString
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.IString=} [properties] Properties to set
+                 */
+                function String(properties) {
+                    this.tags = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * String child.
+                 * @member {string} child
+                 * @memberof syft_proto.messaging.v1.String
+                 * @instance
+                 */
+                String.prototype.child = "";
+
+                /**
+                 * String tags.
+                 * @member {Array.<string>} tags
+                 * @memberof syft_proto.messaging.v1.String
+                 * @instance
+                 */
+                String.prototype.tags = $util.emptyArray;
+
+                /**
+                 * String description.
+                 * @member {string} description
+                 * @memberof syft_proto.messaging.v1.String
+                 * @instance
+                 */
+                String.prototype.description = "";
+
+                /**
+                 * Creates a new String instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.String
+                 * @static
+                 * @param {syft_proto.messaging.v1.IString=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.String} String instance
+                 */
+                String.create = function create(properties) {
+                    return new String(properties);
+                };
+
+                /**
+                 * Encodes the specified String message. Does not implicitly {@link syft_proto.messaging.v1.String.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.String
+                 * @static
+                 * @param {syft_proto.messaging.v1.IString} message String message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                String.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.child != null && message.hasOwnProperty("child"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.child);
+                    if (message.tags != null && message.tags.length)
+                        for (var i = 0; i < message.tags.length; ++i)
+                            writer.uint32(/* id 2, wireType 2 =*/18).string(message.tags[i]);
+                    if (message.description != null && message.hasOwnProperty("description"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.description);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified String message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.String.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.String
+                 * @static
+                 * @param {syft_proto.messaging.v1.IString} message String message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                String.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a String message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.String
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.String} String
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                String.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.String();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.child = reader.string();
+                            break;
+                        case 2:
+                            if (!(message.tags && message.tags.length))
+                                message.tags = [];
+                            message.tags.push(reader.string());
+                            break;
+                        case 3:
+                            message.description = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a String message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.String
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.String} String
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                String.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a String message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.String
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                String.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.child != null && message.hasOwnProperty("child"))
+                        if (!$util.isString(message.child))
+                            return "child: string expected";
+                    if (message.tags != null && message.hasOwnProperty("tags")) {
+                        if (!Array.isArray(message.tags))
+                            return "tags: array expected";
+                        for (var i = 0; i < message.tags.length; ++i)
+                            if (!$util.isString(message.tags[i]))
+                                return "tags: string[] expected";
+                    }
+                    if (message.description != null && message.hasOwnProperty("description"))
+                        if (!$util.isString(message.description))
+                            return "description: string expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a String message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.String
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.String} String
+                 */
+                String.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.String)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.String();
+                    if (object.child != null)
+                        message.child = String(object.child);
+                    if (object.tags) {
+                        if (!Array.isArray(object.tags))
+                            throw TypeError(".syft_proto.messaging.v1.String.tags: array expected");
+                        message.tags = [];
+                        for (var i = 0; i < object.tags.length; ++i)
+                            message.tags[i] = String(object.tags[i]);
+                    }
+                    if (object.description != null)
+                        message.description = String(object.description);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a String message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.String
+                 * @static
+                 * @param {syft_proto.messaging.v1.String} message String
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                String.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults)
+                        object.tags = [];
+                    if (options.defaults) {
+                        object.child = "";
+                        object.description = "";
+                    }
+                    if (message.child != null && message.hasOwnProperty("child"))
+                        object.child = message.child;
+                    if (message.tags && message.tags.length) {
+                        object.tags = [];
+                        for (var j = 0; j < message.tags.length; ++j)
+                            object.tags[j] = message.tags[j];
+                    }
+                    if (message.description != null && message.hasOwnProperty("description"))
+                        object.description = message.description;
+                    return object;
+                };
+
+                /**
+                 * Converts this String to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.String
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                String.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return String;
+            })();
+
             v1.SyftMessage = (function() {
 
                 /**
