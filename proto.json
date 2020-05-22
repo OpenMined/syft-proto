@@ -210,6 +210,9 @@
     "syft.workers.virtual.VirtualWorker": {
       "code": 63,
       "forced_code": 64
+    },
+    "syft.execution.role_assignments.RoleAssignments": {
+      "code": 65
     }
   }
 }
