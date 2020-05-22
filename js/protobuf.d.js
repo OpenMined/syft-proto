@@ -3278,6 +3278,126 @@ export namespace syft_proto {
                      */
                     public toJSON(): { [k: string]: any };
                 }
+
+                /** Properties of a PointerDataset. */
+                interface IPointerDataset {
+
+                    /** PointerDataset object_id */
+                    object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerDataset location_id */
+                    location_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerDataset object_id_at_location */
+                    object_id_at_location?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerDataset tags */
+                    tags?: (string[]|null);
+
+                    /** PointerDataset description */
+                    description?: (string|null);
+
+                    /** PointerDataset garbage_collect_data */
+                    garbage_collect_data?: (boolean|null);
+                }
+
+                /** Represents a PointerDataset. */
+                class PointerDataset implements IPointerDataset {
+
+                    /**
+                     * Constructs a new PointerDataset.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.generic.pointers.v1.IPointerDataset);
+
+                    /** PointerDataset object_id. */
+                    public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerDataset location_id. */
+                    public location_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerDataset object_id_at_location. */
+                    public object_id_at_location?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerDataset tags. */
+                    public tags: string[];
+
+                    /** PointerDataset description. */
+                    public description: string;
+
+                    /** PointerDataset garbage_collect_data. */
+                    public garbage_collect_data: boolean;
+
+                    /**
+                     * Creates a new PointerDataset instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns PointerDataset instance
+                     */
+                    public static create(properties?: syft_proto.generic.pointers.v1.IPointerDataset): syft_proto.generic.pointers.v1.PointerDataset;
+
+                    /**
+                     * Encodes the specified PointerDataset message. Does not implicitly {@link syft_proto.generic.pointers.v1.PointerDataset.verify|verify} messages.
+                     * @param message PointerDataset message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.generic.pointers.v1.IPointerDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified PointerDataset message, length delimited. Does not implicitly {@link syft_proto.generic.pointers.v1.PointerDataset.verify|verify} messages.
+                     * @param message PointerDataset message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.generic.pointers.v1.IPointerDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a PointerDataset message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns PointerDataset
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.generic.pointers.v1.PointerDataset;
+
+                    /**
+                     * Decodes a PointerDataset message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns PointerDataset
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.generic.pointers.v1.PointerDataset;
+
+                    /**
+                     * Verifies a PointerDataset message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a PointerDataset message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns PointerDataset
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.generic.pointers.v1.PointerDataset;
+
+                    /**
+                     * Creates a plain object from a PointerDataset message. Also converts values to other types if specified.
+                     * @param message PointerDataset
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.generic.pointers.v1.PointerDataset, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this PointerDataset to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
             }
         }
     }
