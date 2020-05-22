@@ -9059,6 +9059,275 @@ $root.syft_proto = (function() {
                     return PointerTensor;
                 })();
 
+                v1.ObjectPointer = (function() {
+
+                    /**
+                     * Properties of an ObjectPointer.
+                     * @memberof syft_proto.generic.pointers.v1
+                     * @interface IObjectPointer
+                     * @property {syft_proto.types.syft.v1.IId|null} [object_id] ObjectPointer object_id
+                     * @property {syft_proto.types.syft.v1.IId|null} [location_id] ObjectPointer location_id
+                     * @property {syft_proto.types.syft.v1.IId|null} [object_id_at_location] ObjectPointer object_id_at_location
+                     * @property {string|null} [point_to_attr] ObjectPointer point_to_attr
+                     */
+
+                    /**
+                     * Constructs a new ObjectPointer.
+                     * @memberof syft_proto.generic.pointers.v1
+                     * @classdesc Represents an ObjectPointer.
+                     * @implements IObjectPointer
+                     * @constructor
+                     * @param {syft_proto.generic.pointers.v1.IObjectPointer=} [properties] Properties to set
+                     */
+                    function ObjectPointer(properties) {
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * ObjectPointer object_id.
+                     * @member {syft_proto.types.syft.v1.IId|null|undefined} object_id
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @instance
+                     */
+                    ObjectPointer.prototype.object_id = null;
+
+                    /**
+                     * ObjectPointer location_id.
+                     * @member {syft_proto.types.syft.v1.IId|null|undefined} location_id
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @instance
+                     */
+                    ObjectPointer.prototype.location_id = null;
+
+                    /**
+                     * ObjectPointer object_id_at_location.
+                     * @member {syft_proto.types.syft.v1.IId|null|undefined} object_id_at_location
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @instance
+                     */
+                    ObjectPointer.prototype.object_id_at_location = null;
+
+                    /**
+                     * ObjectPointer point_to_attr.
+                     * @member {string} point_to_attr
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @instance
+                     */
+                    ObjectPointer.prototype.point_to_attr = "";
+
+                    /**
+                     * Creates a new ObjectPointer instance using the specified properties.
+                     * @function create
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @static
+                     * @param {syft_proto.generic.pointers.v1.IObjectPointer=} [properties] Properties to set
+                     * @returns {syft_proto.generic.pointers.v1.ObjectPointer} ObjectPointer instance
+                     */
+                    ObjectPointer.create = function create(properties) {
+                        return new ObjectPointer(properties);
+                    };
+
+                    /**
+                     * Encodes the specified ObjectPointer message. Does not implicitly {@link syft_proto.generic.pointers.v1.ObjectPointer.verify|verify} messages.
+                     * @function encode
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @static
+                     * @param {syft_proto.generic.pointers.v1.IObjectPointer} message ObjectPointer message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    ObjectPointer.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.object_id != null && message.hasOwnProperty("object_id"))
+                            $root.syft_proto.types.syft.v1.Id.encode(message.object_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        if (message.location_id != null && message.hasOwnProperty("location_id"))
+                            $root.syft_proto.types.syft.v1.Id.encode(message.location_id, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                        if (message.object_id_at_location != null && message.hasOwnProperty("object_id_at_location"))
+                            $root.syft_proto.types.syft.v1.Id.encode(message.object_id_at_location, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        if (message.point_to_attr != null && message.hasOwnProperty("point_to_attr"))
+                            writer.uint32(/* id 4, wireType 2 =*/34).string(message.point_to_attr);
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified ObjectPointer message, length delimited. Does not implicitly {@link syft_proto.generic.pointers.v1.ObjectPointer.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @static
+                     * @param {syft_proto.generic.pointers.v1.IObjectPointer} message ObjectPointer message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    ObjectPointer.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes an ObjectPointer message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {syft_proto.generic.pointers.v1.ObjectPointer} ObjectPointer
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    ObjectPointer.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.generic.pointers.v1.ObjectPointer();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                message.object_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                                break;
+                            case 2:
+                                message.location_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                                break;
+                            case 3:
+                                message.object_id_at_location = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                                break;
+                            case 4:
+                                message.point_to_attr = reader.string();
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes an ObjectPointer message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {syft_proto.generic.pointers.v1.ObjectPointer} ObjectPointer
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    ObjectPointer.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies an ObjectPointer message.
+                     * @function verify
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    ObjectPointer.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.object_id != null && message.hasOwnProperty("object_id")) {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.object_id);
+                            if (error)
+                                return "object_id." + error;
+                        }
+                        if (message.location_id != null && message.hasOwnProperty("location_id")) {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.location_id);
+                            if (error)
+                                return "location_id." + error;
+                        }
+                        if (message.object_id_at_location != null && message.hasOwnProperty("object_id_at_location")) {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.object_id_at_location);
+                            if (error)
+                                return "object_id_at_location." + error;
+                        }
+                        if (message.point_to_attr != null && message.hasOwnProperty("point_to_attr"))
+                            if (!$util.isString(message.point_to_attr))
+                                return "point_to_attr: string expected";
+                        return null;
+                    };
+
+                    /**
+                     * Creates an ObjectPointer message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {syft_proto.generic.pointers.v1.ObjectPointer} ObjectPointer
+                     */
+                    ObjectPointer.fromObject = function fromObject(object) {
+                        if (object instanceof $root.syft_proto.generic.pointers.v1.ObjectPointer)
+                            return object;
+                        var message = new $root.syft_proto.generic.pointers.v1.ObjectPointer();
+                        if (object.object_id != null) {
+                            if (typeof object.object_id !== "object")
+                                throw TypeError(".syft_proto.generic.pointers.v1.ObjectPointer.object_id: object expected");
+                            message.object_id = $root.syft_proto.types.syft.v1.Id.fromObject(object.object_id);
+                        }
+                        if (object.location_id != null) {
+                            if (typeof object.location_id !== "object")
+                                throw TypeError(".syft_proto.generic.pointers.v1.ObjectPointer.location_id: object expected");
+                            message.location_id = $root.syft_proto.types.syft.v1.Id.fromObject(object.location_id);
+                        }
+                        if (object.object_id_at_location != null) {
+                            if (typeof object.object_id_at_location !== "object")
+                                throw TypeError(".syft_proto.generic.pointers.v1.ObjectPointer.object_id_at_location: object expected");
+                            message.object_id_at_location = $root.syft_proto.types.syft.v1.Id.fromObject(object.object_id_at_location);
+                        }
+                        if (object.point_to_attr != null)
+                            message.point_to_attr = String(object.point_to_attr);
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from an ObjectPointer message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @static
+                     * @param {syft_proto.generic.pointers.v1.ObjectPointer} message ObjectPointer
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    ObjectPointer.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (options.defaults) {
+                            object.object_id = null;
+                            object.location_id = null;
+                            object.object_id_at_location = null;
+                            object.point_to_attr = "";
+                        }
+                        if (message.object_id != null && message.hasOwnProperty("object_id"))
+                            object.object_id = $root.syft_proto.types.syft.v1.Id.toObject(message.object_id, options);
+                        if (message.location_id != null && message.hasOwnProperty("location_id"))
+                            object.location_id = $root.syft_proto.types.syft.v1.Id.toObject(message.location_id, options);
+                        if (message.object_id_at_location != null && message.hasOwnProperty("object_id_at_location"))
+                            object.object_id_at_location = $root.syft_proto.types.syft.v1.Id.toObject(message.object_id_at_location, options);
+                        if (message.point_to_attr != null && message.hasOwnProperty("point_to_attr"))
+                            object.point_to_attr = message.point_to_attr;
+                        return object;
+                    };
+
+                    /**
+                     * Converts this ObjectPointer to JSON.
+                     * @function toJSON
+                     * @memberof syft_proto.generic.pointers.v1.ObjectPointer
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    ObjectPointer.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return ObjectPointer;
+                })();
+
                 v1.PointerPlan = (function() {
 
                     /**
