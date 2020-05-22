@@ -19,115 +19,115 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct SyftProto_Types_Torch_V1_TensorData {
+public struct SyftProto_Types_Torch_V1_TensorData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var shape: SyftProto_Types_Torch_V1_Size {
+  public var shape: SyftProto_Types_Torch_V1_Size {
     get {return _storage._shape ?? SyftProto_Types_Torch_V1_Size()}
     set {_uniqueStorage()._shape = newValue}
   }
   /// Returns true if `shape` has been explicitly set.
-  var hasShape: Bool {return _storage._shape != nil}
+  public var hasShape: Bool {return _storage._shape != nil}
   /// Clears the value of `shape`. Subsequent reads from it will return its default value.
-  mutating func clearShape() {_uniqueStorage()._shape = nil}
+  public mutating func clearShape() {_uniqueStorage()._shape = nil}
 
-  var dtype: String {
+  public var dtype: String {
     get {return _storage._dtype}
     set {_uniqueStorage()._dtype = newValue}
   }
 
-  var isQuantized: Bool {
+  public var isQuantized: Bool {
     get {return _storage._isQuantized}
     set {_uniqueStorage()._isQuantized = newValue}
   }
 
-  var scale: Float {
+  public var scale: Float {
     get {return _storage._scale}
     set {_uniqueStorage()._scale = newValue}
   }
 
-  var zeroPoint: Int32 {
+  public var zeroPoint: Int32 {
     get {return _storage._zeroPoint}
     set {_uniqueStorage()._zeroPoint = newValue}
   }
 
   /// Integer types
-  var contentsUint8: [UInt32] {
+  public var contentsUint8: [UInt32] {
     get {return _storage._contentsUint8}
     set {_uniqueStorage()._contentsUint8 = newValue}
   }
 
-  var contentsInt8: [Int32] {
+  public var contentsInt8: [Int32] {
     get {return _storage._contentsInt8}
     set {_uniqueStorage()._contentsInt8 = newValue}
   }
 
-  var contentsInt16: [Int32] {
+  public var contentsInt16: [Int32] {
     get {return _storage._contentsInt16}
     set {_uniqueStorage()._contentsInt16 = newValue}
   }
 
-  var contentsInt32: [Int32] {
+  public var contentsInt32: [Int32] {
     get {return _storage._contentsInt32}
     set {_uniqueStorage()._contentsInt32 = newValue}
   }
 
-  var contentsInt64: [Int64] {
+  public var contentsInt64: [Int64] {
     get {return _storage._contentsInt64}
     set {_uniqueStorage()._contentsInt64 = newValue}
   }
 
   /// Floating point types
-  var contentsFloat16: [Float] {
+  public var contentsFloat16: [Float] {
     get {return _storage._contentsFloat16}
     set {_uniqueStorage()._contentsFloat16 = newValue}
   }
 
-  var contentsFloat32: [Float] {
+  public var contentsFloat32: [Float] {
     get {return _storage._contentsFloat32}
     set {_uniqueStorage()._contentsFloat32 = newValue}
   }
 
-  var contentsFloat64: [Double] {
+  public var contentsFloat64: [Double] {
     get {return _storage._contentsFloat64}
     set {_uniqueStorage()._contentsFloat64 = newValue}
   }
 
   /// Boolean types
-  var contentsBool: [Bool] {
+  public var contentsBool: [Bool] {
     get {return _storage._contentsBool}
     set {_uniqueStorage()._contentsBool = newValue}
   }
 
   /// Quantized types
-  var contentsQint8: [Int32] {
+  public var contentsQint8: [Int32] {
     get {return _storage._contentsQint8}
     set {_uniqueStorage()._contentsQint8 = newValue}
   }
 
   /// 8-bit unsigned integer
-  var contentsQuint8: [UInt32] {
+  public var contentsQuint8: [UInt32] {
     get {return _storage._contentsQuint8}
     set {_uniqueStorage()._contentsQuint8 = newValue}
   }
 
   /// 32-bit signed integer
-  var contentsQint32: [Int32] {
+  public var contentsQint32: [Int32] {
     get {return _storage._contentsQint32}
     set {_uniqueStorage()._contentsQint32 = newValue}
   }
 
   /// Brain floating point types
-  var contentsBfloat16: [Float] {
+  public var contentsBfloat16: [Float] {
     get {return _storage._contentsBfloat16}
     set {_uniqueStorage()._contentsBfloat16 = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -137,8 +137,8 @@ struct SyftProto_Types_Torch_V1_TensorData {
 fileprivate let _protobuf_package = "syft_proto.types.torch.v1"
 
 extension SyftProto_Types_Torch_V1_TensorData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".TensorData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".TensorData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "shape"),
     2: .same(proto: "dtype"),
     3: .standard(proto: "is_quantized"),
@@ -212,7 +212,7 @@ extension SyftProto_Types_Torch_V1_TensorData: SwiftProtobuf.Message, SwiftProto
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -241,7 +241,7 @@ extension SyftProto_Types_Torch_V1_TensorData: SwiftProtobuf.Message, SwiftProto
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._shape {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -301,7 +301,7 @@ extension SyftProto_Types_Torch_V1_TensorData: SwiftProtobuf.Message, SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Types_Torch_V1_TensorData, rhs: SyftProto_Types_Torch_V1_TensorData) -> Bool {
+  public static func ==(lhs: SyftProto_Types_Torch_V1_TensorData, rhs: SyftProto_Types_Torch_V1_TensorData) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

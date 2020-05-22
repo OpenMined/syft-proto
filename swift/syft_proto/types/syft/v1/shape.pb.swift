@@ -19,16 +19,16 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct SyftProto_Types_Syft_V1_Shape {
+public struct SyftProto_Types_Syft_V1_Shape {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var dims: [Int32] = []
+  public var dims: [Int32] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -36,12 +36,12 @@ struct SyftProto_Types_Syft_V1_Shape {
 fileprivate let _protobuf_package = "syft_proto.types.syft.v1"
 
 extension SyftProto_Types_Syft_V1_Shape: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Shape"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Shape"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "dims"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedInt32Field(value: &self.dims)
@@ -50,14 +50,14 @@ extension SyftProto_Types_Syft_V1_Shape: SwiftProtobuf.Message, SwiftProtobuf._M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.dims.isEmpty {
       try visitor.visitPackedInt32Field(value: self.dims, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Types_Syft_V1_Shape, rhs: SyftProto_Types_Syft_V1_Shape) -> Bool {
+  public static func ==(lhs: SyftProto_Types_Syft_V1_Shape, rhs: SyftProto_Types_Syft_V1_Shape) -> Bool {
     if lhs.dims != rhs.dims {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

@@ -19,31 +19,31 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct SyftProto_Execution_V1_Protocol {
+public struct SyftProto_Execution_V1_Protocol {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var id: SyftProto_Types_Syft_V1_Id {
+  public var id: SyftProto_Types_Syft_V1_Id {
     get {return _id ?? SyftProto_Types_Syft_V1_Id()}
     set {_id = newValue}
   }
   /// Returns true if `id` has been explicitly set.
-  var hasID: Bool {return self._id != nil}
+  public var hasID: Bool {return self._id != nil}
   /// Clears the value of `id`. Subsequent reads from it will return its default value.
-  mutating func clearID() {self._id = nil}
+  public mutating func clearID() {self._id = nil}
 
-  var name: String = String()
+  public var name: String = String()
 
-  var roles: Dictionary<String,SyftProto_Execution_V1_Role> = [:]
+  public var roles: Dictionary<String,SyftProto_Execution_V1_Role> = [:]
 
-  var tags: [String] = []
+  public var tags: [String] = []
 
-  var description_p: String = String()
+  public var description_p: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _id: SyftProto_Types_Syft_V1_Id? = nil
 }
@@ -53,8 +53,8 @@ struct SyftProto_Execution_V1_Protocol {
 fileprivate let _protobuf_package = "syft_proto.execution.v1"
 
 extension SyftProto_Execution_V1_Protocol: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Protocol"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Protocol"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .same(proto: "name"),
     3: .same(proto: "roles"),
@@ -62,7 +62,7 @@ extension SyftProto_Execution_V1_Protocol: SwiftProtobuf.Message, SwiftProtobuf.
     5: .same(proto: "description"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularMessageField(value: &self._id)
@@ -75,7 +75,7 @@ extension SyftProto_Execution_V1_Protocol: SwiftProtobuf.Message, SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._id {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
@@ -94,7 +94,7 @@ extension SyftProto_Execution_V1_Protocol: SwiftProtobuf.Message, SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Execution_V1_Protocol, rhs: SyftProto_Execution_V1_Protocol) -> Bool {
+  public static func ==(lhs: SyftProto_Execution_V1_Protocol, rhs: SyftProto_Execution_V1_Protocol) -> Bool {
     if lhs._id != rhs._id {return false}
     if lhs.name != rhs.name {return false}
     if lhs.roles != rhs.roles {return false}

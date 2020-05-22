@@ -19,18 +19,18 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct SyftProto_Execution_V1_InputTypeDescriptor {
+public struct SyftProto_Execution_V1_InputTypeDescriptor {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   ///
   ///A type contains the serialization id and string bytes.
-  var typeName: String = String()
+  public var typeName: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 ///
@@ -39,72 +39,72 @@ struct SyftProto_Execution_V1_InputTypeDescriptor {
 ///2. A list of nested types.
 ///3. A tuple of nested types.
 ///4. A dict of nested types.
-struct SyftProto_Execution_V1_NestedTypeWrapper {
+public struct SyftProto_Execution_V1_NestedTypeWrapper {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var nestedTypes: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer {
+  public var nestedTypes: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer {
     get {return _nestedTypes ?? SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer()}
     set {_nestedTypes = newValue}
   }
   /// Returns true if `nestedTypes` has been explicitly set.
-  var hasNestedTypes: Bool {return self._nestedTypes != nil}
+  public var hasNestedTypes: Bool {return self._nestedTypes != nil}
   /// Clears the value of `nestedTypes`. Subsequent reads from it will return its default value.
-  mutating func clearNestedTypes() {self._nestedTypes = nil}
+  public mutating func clearNestedTypes() {self._nestedTypes = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   ///Wrapper to simulate the behavior of a list in oneof.
-  struct TypeList {
+  public struct TypeList {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var nestedTypes: [SyftProto_Execution_V1_NestedTypeWrapper] = []
+    public var nestedTypes: [SyftProto_Execution_V1_NestedTypeWrapper] = []
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
   ///Wrapper to simulate the behavior of a tuple in oneof.
-  struct TypeTuple {
+  public struct TypeTuple {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var nestedTypes: [SyftProto_Execution_V1_NestedTypeWrapper] = []
+    public var nestedTypes: [SyftProto_Execution_V1_NestedTypeWrapper] = []
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
   ///Wrapper to simulate the behavior of a map in oneof.
-  struct TypeMap {
+  public struct TypeMap {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var nestedTypes: Dictionary<String,SyftProto_Execution_V1_NestedTypeWrapper> = [:]
+    public var nestedTypes: Dictionary<String,SyftProto_Execution_V1_NestedTypeWrapper> = [:]
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
   /// To create the behavior described above, we need a new message, as
   /// oneof will not permit repeated fields.
-  struct TypeContainer {
+  public struct TypeContainer {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var nestedContainer: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer.OneOf_NestedContainer? = nil
+    public var nestedContainer: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer.OneOf_NestedContainer? = nil
 
     /// First scenario, acts like a list with one element, the type.
-    var nestedType: SyftProto_Execution_V1_InputTypeDescriptor {
+    public var nestedType: SyftProto_Execution_V1_InputTypeDescriptor {
       get {
         if case .nestedType(let v)? = nestedContainer {return v}
         return SyftProto_Execution_V1_InputTypeDescriptor()
@@ -113,7 +113,7 @@ struct SyftProto_Execution_V1_NestedTypeWrapper {
     }
 
     /// Second scenario, a list of possibly nested elements.
-    var nestedTypeList: SyftProto_Execution_V1_NestedTypeWrapper.TypeList {
+    public var nestedTypeList: SyftProto_Execution_V1_NestedTypeWrapper.TypeList {
       get {
         if case .nestedTypeList(let v)? = nestedContainer {return v}
         return SyftProto_Execution_V1_NestedTypeWrapper.TypeList()
@@ -122,7 +122,7 @@ struct SyftProto_Execution_V1_NestedTypeWrapper {
     }
 
     /// Third scenario, a tuple of possibly nested elements.
-    var nestedTypeTuple: SyftProto_Execution_V1_NestedTypeWrapper.TypeTuple {
+    public var nestedTypeTuple: SyftProto_Execution_V1_NestedTypeWrapper.TypeTuple {
       get {
         if case .nestedTypeTuple(let v)? = nestedContainer {return v}
         return SyftProto_Execution_V1_NestedTypeWrapper.TypeTuple()
@@ -131,7 +131,7 @@ struct SyftProto_Execution_V1_NestedTypeWrapper {
     }
 
     /// Last scenario, a dict of possible nested elements.
-    var nestedTypeDict: SyftProto_Execution_V1_NestedTypeWrapper.TypeMap {
+    public var nestedTypeDict: SyftProto_Execution_V1_NestedTypeWrapper.TypeMap {
       get {
         if case .nestedTypeDict(let v)? = nestedContainer {return v}
         return SyftProto_Execution_V1_NestedTypeWrapper.TypeMap()
@@ -139,9 +139,9 @@ struct SyftProto_Execution_V1_NestedTypeWrapper {
       set {nestedContainer = .nestedTypeDict(newValue)}
     }
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    enum OneOf_NestedContainer: Equatable {
+    public enum OneOf_NestedContainer: Equatable {
       /// First scenario, acts like a list with one element, the type.
       case nestedType(SyftProto_Execution_V1_InputTypeDescriptor)
       /// Second scenario, a list of possibly nested elements.
@@ -152,7 +152,7 @@ struct SyftProto_Execution_V1_NestedTypeWrapper {
       case nestedTypeDict(SyftProto_Execution_V1_NestedTypeWrapper.TypeMap)
 
     #if !swift(>=4.1)
-      static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer.OneOf_NestedContainer, rhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer.OneOf_NestedContainer) -> Bool {
+      public static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer.OneOf_NestedContainer, rhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer.OneOf_NestedContainer) -> Bool {
         switch (lhs, rhs) {
         case (.nestedType(let l), .nestedType(let r)): return l == r
         case (.nestedTypeList(let l), .nestedTypeList(let r)): return l == r
@@ -164,10 +164,10 @@ struct SyftProto_Execution_V1_NestedTypeWrapper {
     #endif
     }
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _nestedTypes: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer? = nil
 }
@@ -177,12 +177,12 @@ struct SyftProto_Execution_V1_NestedTypeWrapper {
 fileprivate let _protobuf_package = "syft_proto.execution.v1"
 
 extension SyftProto_Execution_V1_InputTypeDescriptor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".InputTypeDescriptor"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".InputTypeDescriptor"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "type_name"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.typeName)
@@ -191,14 +191,14 @@ extension SyftProto_Execution_V1_InputTypeDescriptor: SwiftProtobuf.Message, Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.typeName.isEmpty {
       try visitor.visitSingularStringField(value: self.typeName, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Execution_V1_InputTypeDescriptor, rhs: SyftProto_Execution_V1_InputTypeDescriptor) -> Bool {
+  public static func ==(lhs: SyftProto_Execution_V1_InputTypeDescriptor, rhs: SyftProto_Execution_V1_InputTypeDescriptor) -> Bool {
     if lhs.typeName != rhs.typeName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -206,12 +206,12 @@ extension SyftProto_Execution_V1_InputTypeDescriptor: SwiftProtobuf.Message, Swi
 }
 
 extension SyftProto_Execution_V1_NestedTypeWrapper: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".NestedTypeWrapper"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".NestedTypeWrapper"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "nested_types"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularMessageField(value: &self._nestedTypes)
@@ -220,14 +220,14 @@ extension SyftProto_Execution_V1_NestedTypeWrapper: SwiftProtobuf.Message, Swift
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._nestedTypes {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper, rhs: SyftProto_Execution_V1_NestedTypeWrapper) -> Bool {
+  public static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper, rhs: SyftProto_Execution_V1_NestedTypeWrapper) -> Bool {
     if lhs._nestedTypes != rhs._nestedTypes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -235,12 +235,12 @@ extension SyftProto_Execution_V1_NestedTypeWrapper: SwiftProtobuf.Message, Swift
 }
 
 extension SyftProto_Execution_V1_NestedTypeWrapper.TypeList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = SyftProto_Execution_V1_NestedTypeWrapper.protoMessageName + ".TypeList"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = SyftProto_Execution_V1_NestedTypeWrapper.protoMessageName + ".TypeList"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "nested_types"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.nestedTypes)
@@ -249,14 +249,14 @@ extension SyftProto_Execution_V1_NestedTypeWrapper.TypeList: SwiftProtobuf.Messa
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.nestedTypes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.nestedTypes, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeList, rhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeList) -> Bool {
+  public static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeList, rhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeList) -> Bool {
     if lhs.nestedTypes != rhs.nestedTypes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -264,12 +264,12 @@ extension SyftProto_Execution_V1_NestedTypeWrapper.TypeList: SwiftProtobuf.Messa
 }
 
 extension SyftProto_Execution_V1_NestedTypeWrapper.TypeTuple: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = SyftProto_Execution_V1_NestedTypeWrapper.protoMessageName + ".TypeTuple"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = SyftProto_Execution_V1_NestedTypeWrapper.protoMessageName + ".TypeTuple"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "nested_types"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.nestedTypes)
@@ -278,14 +278,14 @@ extension SyftProto_Execution_V1_NestedTypeWrapper.TypeTuple: SwiftProtobuf.Mess
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.nestedTypes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.nestedTypes, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeTuple, rhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeTuple) -> Bool {
+  public static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeTuple, rhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeTuple) -> Bool {
     if lhs.nestedTypes != rhs.nestedTypes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -293,12 +293,12 @@ extension SyftProto_Execution_V1_NestedTypeWrapper.TypeTuple: SwiftProtobuf.Mess
 }
 
 extension SyftProto_Execution_V1_NestedTypeWrapper.TypeMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = SyftProto_Execution_V1_NestedTypeWrapper.protoMessageName + ".TypeMap"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = SyftProto_Execution_V1_NestedTypeWrapper.protoMessageName + ".TypeMap"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "nested_types"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Execution_V1_NestedTypeWrapper>.self, value: &self.nestedTypes)
@@ -307,14 +307,14 @@ extension SyftProto_Execution_V1_NestedTypeWrapper.TypeMap: SwiftProtobuf.Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.nestedTypes.isEmpty {
       try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Execution_V1_NestedTypeWrapper>.self, value: self.nestedTypes, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeMap, rhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeMap) -> Bool {
+  public static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeMap, rhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeMap) -> Bool {
     if lhs.nestedTypes != rhs.nestedTypes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -322,15 +322,15 @@ extension SyftProto_Execution_V1_NestedTypeWrapper.TypeMap: SwiftProtobuf.Messag
 }
 
 extension SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = SyftProto_Execution_V1_NestedTypeWrapper.protoMessageName + ".TypeContainer"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = SyftProto_Execution_V1_NestedTypeWrapper.protoMessageName + ".TypeContainer"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "nested_type"),
     2: .standard(proto: "nested_type_list"),
     3: .standard(proto: "nested_type_tuple"),
     4: .standard(proto: "nested_type_dict"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1:
@@ -370,7 +370,7 @@ extension SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer: SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     switch self.nestedContainer {
     case .nestedType(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -385,7 +385,7 @@ extension SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer, rhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer) -> Bool {
+  public static func ==(lhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer, rhs: SyftProto_Execution_V1_NestedTypeWrapper.TypeContainer) -> Bool {
     if lhs.nestedContainer != rhs.nestedContainer {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

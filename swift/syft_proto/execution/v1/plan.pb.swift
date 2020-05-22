@@ -19,51 +19,51 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct SyftProto_Execution_V1_Plan {
+public struct SyftProto_Execution_V1_Plan {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var id: SyftProto_Types_Syft_V1_Id {
+  public var id: SyftProto_Types_Syft_V1_Id {
     get {return _id ?? SyftProto_Types_Syft_V1_Id()}
     set {_id = newValue}
   }
   /// Returns true if `id` has been explicitly set.
-  var hasID: Bool {return self._id != nil}
+  public var hasID: Bool {return self._id != nil}
   /// Clears the value of `id`. Subsequent reads from it will return its default value.
-  mutating func clearID() {self._id = nil}
+  public mutating func clearID() {self._id = nil}
 
-  var role: SyftProto_Execution_V1_Role {
+  public var role: SyftProto_Execution_V1_Role {
     get {return _role ?? SyftProto_Execution_V1_Role()}
     set {_role = newValue}
   }
   /// Returns true if `role` has been explicitly set.
-  var hasRole: Bool {return self._role != nil}
+  public var hasRole: Bool {return self._role != nil}
   /// Clears the value of `role`. Subsequent reads from it will return its default value.
-  mutating func clearRole() {self._role = nil}
+  public mutating func clearRole() {self._role = nil}
 
-  var includeState: Bool = false
+  public var includeState: Bool = false
 
-  var name: String = String()
+  public var name: String = String()
 
-  var tags: [String] = []
+  public var tags: [String] = []
 
-  var description_p: String = String()
+  public var description_p: String = String()
 
-  var torchscript: Data = SwiftProtobuf.Internal.emptyData
+  public var torchscript: Data = SwiftProtobuf.Internal.emptyData
 
-  var inputTypes: SyftProto_Execution_V1_NestedTypeWrapper {
+  public var inputTypes: SyftProto_Execution_V1_NestedTypeWrapper {
     get {return _inputTypes ?? SyftProto_Execution_V1_NestedTypeWrapper()}
     set {_inputTypes = newValue}
   }
   /// Returns true if `inputTypes` has been explicitly set.
-  var hasInputTypes: Bool {return self._inputTypes != nil}
+  public var hasInputTypes: Bool {return self._inputTypes != nil}
   /// Clears the value of `inputTypes`. Subsequent reads from it will return its default value.
-  mutating func clearInputTypes() {self._inputTypes = nil}
+  public mutating func clearInputTypes() {self._inputTypes = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _id: SyftProto_Types_Syft_V1_Id? = nil
   fileprivate var _role: SyftProto_Execution_V1_Role? = nil
@@ -75,8 +75,8 @@ struct SyftProto_Execution_V1_Plan {
 fileprivate let _protobuf_package = "syft_proto.execution.v1"
 
 extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Plan"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Plan"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .same(proto: "role"),
     3: .standard(proto: "include_state"),
@@ -87,7 +87,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     8: .standard(proto: "input_types"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularMessageField(value: &self._id)
@@ -103,7 +103,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._id {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
@@ -131,7 +131,7 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Execution_V1_Plan, rhs: SyftProto_Execution_V1_Plan) -> Bool {
+  public static func ==(lhs: SyftProto_Execution_V1_Plan, rhs: SyftProto_Execution_V1_Plan) -> Bool {
     if lhs._id != rhs._id {return false}
     if lhs._role != rhs._role {return false}
     if lhs.includeState != rhs.includeState {return false}
