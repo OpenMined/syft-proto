@@ -211,8 +211,11 @@
       "code": 63,
       "forced_code": 64
     },
-    "syft.frameworks.torch.tensors.interpreters.fv.FVTensor": {
+    "syft.execution.role_assignments.RoleAssignments": {
       "code": 65
+    },
+    "syft.frameworks.torch.tensors.interpreters.fv.FVTensor": {
+      "code": 66
     }
   }
 }

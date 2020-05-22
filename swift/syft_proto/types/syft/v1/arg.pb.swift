@@ -19,14 +19,14 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct SyftProto_Types_Syft_V1_Arg {
+public struct SyftProto_Types_Syft_V1_Arg {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var arg: SyftProto_Types_Syft_V1_Arg.OneOf_Arg? = nil
+  public var arg: SyftProto_Types_Syft_V1_Arg.OneOf_Arg? = nil
 
-  var argBool: Bool {
+  public var argBool: Bool {
     get {
       if case .argBool(let v)? = arg {return v}
       return false
@@ -34,7 +34,7 @@ struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argBool(newValue)}
   }
 
-  var argInt: Int32 {
+  public var argInt: Int32 {
     get {
       if case .argInt(let v)? = arg {return v}
       return 0
@@ -42,7 +42,7 @@ struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argInt(newValue)}
   }
 
-  var argFloat: Float {
+  public var argFloat: Float {
     get {
       if case .argFloat(let v)? = arg {return v}
       return 0
@@ -50,7 +50,7 @@ struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argFloat(newValue)}
   }
 
-  var argStr: String {
+  public var argStr: String {
     get {
       if case .argStr(let v)? = arg {return v}
       return String()
@@ -58,7 +58,7 @@ struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argStr(newValue)}
   }
 
-  var argShape: SyftProto_Types_Syft_V1_Shape {
+  public var argShape: SyftProto_Types_Syft_V1_Shape {
     get {
       if case .argShape(let v)? = arg {return v}
       return SyftProto_Types_Syft_V1_Shape()
@@ -66,7 +66,7 @@ struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argShape(newValue)}
   }
 
-  var argTensor: SyftProto_Types_Torch_V1_TorchTensor {
+  public var argTensor: SyftProto_Types_Torch_V1_TorchTensor {
     get {
       if case .argTensor(let v)? = arg {return v}
       return SyftProto_Types_Torch_V1_TorchTensor()
@@ -74,7 +74,7 @@ struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argTensor(newValue)}
   }
 
-  var argTorchParam: SyftProto_Types_Torch_V1_Parameter {
+  public var argTorchParam: SyftProto_Types_Torch_V1_Parameter {
     get {
       if case .argTorchParam(let v)? = arg {return v}
       return SyftProto_Types_Torch_V1_Parameter()
@@ -82,7 +82,7 @@ struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argTorchParam(newValue)}
   }
 
-  var argPointerTensor: SyftProto_Generic_Pointers_V1_PointerTensor {
+  public var argPointerTensor: SyftProto_Generic_Pointers_V1_PointerTensor {
     get {
       if case .argPointerTensor(let v)? = arg {return v}
       return SyftProto_Generic_Pointers_V1_PointerTensor()
@@ -90,7 +90,7 @@ struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argPointerTensor(newValue)}
   }
 
-  var argPlaceholder: SyftProto_Execution_V1_Placeholder {
+  public var argPlaceholder: SyftProto_Execution_V1_Placeholder {
     get {
       if case .argPlaceholder(let v)? = arg {return v}
       return SyftProto_Execution_V1_Placeholder()
@@ -98,7 +98,7 @@ struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argPlaceholder(newValue)}
   }
 
-  var argPlaceholderID: SyftProto_Execution_V1_PlaceholderId {
+  public var argPlaceholderID: SyftProto_Execution_V1_PlaceholderId {
     get {
       if case .argPlaceholderID(let v)? = arg {return v}
       return SyftProto_Execution_V1_PlaceholderId()
@@ -106,9 +106,9 @@ struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argPlaceholderID(newValue)}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Arg: Equatable {
+  public enum OneOf_Arg: Equatable {
     case argBool(Bool)
     case argInt(Int32)
     case argFloat(Float)
@@ -121,7 +121,7 @@ struct SyftProto_Types_Syft_V1_Arg {
     case argPlaceholderID(SyftProto_Execution_V1_PlaceholderId)
 
   #if !swift(>=4.1)
-    static func ==(lhs: SyftProto_Types_Syft_V1_Arg.OneOf_Arg, rhs: SyftProto_Types_Syft_V1_Arg.OneOf_Arg) -> Bool {
+    public static func ==(lhs: SyftProto_Types_Syft_V1_Arg.OneOf_Arg, rhs: SyftProto_Types_Syft_V1_Arg.OneOf_Arg) -> Bool {
       switch (lhs, rhs) {
       case (.argBool(let l), .argBool(let r)): return l == r
       case (.argInt(let l), .argInt(let r)): return l == r
@@ -139,7 +139,7 @@ struct SyftProto_Types_Syft_V1_Arg {
   #endif
   }
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -147,8 +147,8 @@ struct SyftProto_Types_Syft_V1_Arg {
 fileprivate let _protobuf_package = "syft_proto.types.syft.v1"
 
 extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Arg"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Arg"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "arg_bool"),
     2: .standard(proto: "arg_int"),
     3: .standard(proto: "arg_float"),
@@ -161,7 +161,7 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
     10: .standard(proto: "arg_placeholder_id"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1:
@@ -237,7 +237,7 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     switch self.arg {
     case .argBool(let v)?:
       try visitor.visitSingularBoolField(value: v, fieldNumber: 1)
@@ -264,7 +264,7 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Types_Syft_V1_Arg, rhs: SyftProto_Types_Syft_V1_Arg) -> Bool {
+  public static func ==(lhs: SyftProto_Types_Syft_V1_Arg, rhs: SyftProto_Types_Syft_V1_Arg) -> Bool {
     if lhs.arg != rhs.arg {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

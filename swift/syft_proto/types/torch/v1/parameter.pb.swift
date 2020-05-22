@@ -19,43 +19,43 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct SyftProto_Types_Torch_V1_Parameter {
+public struct SyftProto_Types_Torch_V1_Parameter {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var id: SyftProto_Types_Syft_V1_Id {
+  public var id: SyftProto_Types_Syft_V1_Id {
     get {return _id ?? SyftProto_Types_Syft_V1_Id()}
     set {_id = newValue}
   }
   /// Returns true if `id` has been explicitly set.
-  var hasID: Bool {return self._id != nil}
+  public var hasID: Bool {return self._id != nil}
   /// Clears the value of `id`. Subsequent reads from it will return its default value.
-  mutating func clearID() {self._id = nil}
+  public mutating func clearID() {self._id = nil}
 
-  var tensor: SyftProto_Types_Torch_V1_TorchTensor {
+  public var tensor: SyftProto_Types_Torch_V1_TorchTensor {
     get {return _tensor ?? SyftProto_Types_Torch_V1_TorchTensor()}
     set {_tensor = newValue}
   }
   /// Returns true if `tensor` has been explicitly set.
-  var hasTensor: Bool {return self._tensor != nil}
+  public var hasTensor: Bool {return self._tensor != nil}
   /// Clears the value of `tensor`. Subsequent reads from it will return its default value.
-  mutating func clearTensor() {self._tensor = nil}
+  public mutating func clearTensor() {self._tensor = nil}
 
-  var requiresGrad: Bool = false
+  public var requiresGrad: Bool = false
 
-  var grad: SyftProto_Types_Torch_V1_TorchTensor {
+  public var grad: SyftProto_Types_Torch_V1_TorchTensor {
     get {return _grad ?? SyftProto_Types_Torch_V1_TorchTensor()}
     set {_grad = newValue}
   }
   /// Returns true if `grad` has been explicitly set.
-  var hasGrad: Bool {return self._grad != nil}
+  public var hasGrad: Bool {return self._grad != nil}
   /// Clears the value of `grad`. Subsequent reads from it will return its default value.
-  mutating func clearGrad() {self._grad = nil}
+  public mutating func clearGrad() {self._grad = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _id: SyftProto_Types_Syft_V1_Id? = nil
   fileprivate var _tensor: SyftProto_Types_Torch_V1_TorchTensor? = nil
@@ -67,15 +67,15 @@ struct SyftProto_Types_Torch_V1_Parameter {
 fileprivate let _protobuf_package = "syft_proto.types.torch.v1"
 
 extension SyftProto_Types_Torch_V1_Parameter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Parameter"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Parameter"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .same(proto: "tensor"),
     3: .standard(proto: "requires_grad"),
     4: .same(proto: "grad"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularMessageField(value: &self._id)
@@ -87,7 +87,7 @@ extension SyftProto_Types_Torch_V1_Parameter: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._id {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
@@ -103,7 +103,7 @@ extension SyftProto_Types_Torch_V1_Parameter: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Types_Torch_V1_Parameter, rhs: SyftProto_Types_Torch_V1_Parameter) -> Bool {
+  public static func ==(lhs: SyftProto_Types_Torch_V1_Parameter, rhs: SyftProto_Types_Torch_V1_Parameter) -> Bool {
     if lhs._id != rhs._id {return false}
     if lhs._tensor != rhs._tensor {return false}
     if lhs.requiresGrad != rhs.requiresGrad {return false}

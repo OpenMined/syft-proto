@@ -19,14 +19,14 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct SyftProto_Execution_V1_StateTensor {
+public struct SyftProto_Execution_V1_StateTensor {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var tensor: SyftProto_Execution_V1_StateTensor.OneOf_Tensor? = nil
+  public var tensor: SyftProto_Execution_V1_StateTensor.OneOf_Tensor? = nil
 
-  var torchTensor: SyftProto_Types_Torch_V1_TorchTensor {
+  public var torchTensor: SyftProto_Types_Torch_V1_TorchTensor {
     get {
       if case .torchTensor(let v)? = tensor {return v}
       return SyftProto_Types_Torch_V1_TorchTensor()
@@ -34,7 +34,7 @@ struct SyftProto_Execution_V1_StateTensor {
     set {tensor = .torchTensor(newValue)}
   }
 
-  var torchParam: SyftProto_Types_Torch_V1_Parameter {
+  public var torchParam: SyftProto_Types_Torch_V1_Parameter {
     get {
       if case .torchParam(let v)? = tensor {return v}
       return SyftProto_Types_Torch_V1_Parameter()
@@ -42,14 +42,14 @@ struct SyftProto_Execution_V1_StateTensor {
     set {tensor = .torchParam(newValue)}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Tensor: Equatable {
+  public enum OneOf_Tensor: Equatable {
     case torchTensor(SyftProto_Types_Torch_V1_TorchTensor)
     case torchParam(SyftProto_Types_Torch_V1_Parameter)
 
   #if !swift(>=4.1)
-    static func ==(lhs: SyftProto_Execution_V1_StateTensor.OneOf_Tensor, rhs: SyftProto_Execution_V1_StateTensor.OneOf_Tensor) -> Bool {
+    public static func ==(lhs: SyftProto_Execution_V1_StateTensor.OneOf_Tensor, rhs: SyftProto_Execution_V1_StateTensor.OneOf_Tensor) -> Bool {
       switch (lhs, rhs) {
       case (.torchTensor(let l), .torchTensor(let r)): return l == r
       case (.torchParam(let l), .torchParam(let r)): return l == r
@@ -59,7 +59,7 @@ struct SyftProto_Execution_V1_StateTensor {
   #endif
   }
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -67,13 +67,13 @@ struct SyftProto_Execution_V1_StateTensor {
 fileprivate let _protobuf_package = "syft_proto.execution.v1"
 
 extension SyftProto_Execution_V1_StateTensor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".StateTensor"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".StateTensor"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "torch_tensor"),
     2: .standard(proto: "torch_param"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1:
@@ -97,7 +97,7 @@ extension SyftProto_Execution_V1_StateTensor: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     switch self.tensor {
     case .torchTensor(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -108,7 +108,7 @@ extension SyftProto_Execution_V1_StateTensor: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SyftProto_Execution_V1_StateTensor, rhs: SyftProto_Execution_V1_StateTensor) -> Bool {
+  public static func ==(lhs: SyftProto_Execution_V1_StateTensor, rhs: SyftProto_Execution_V1_StateTensor) -> Bool {
     if lhs.tensor != rhs.tensor {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
