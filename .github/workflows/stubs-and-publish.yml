@@ -115,7 +115,7 @@ jobs:
           BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}
         run: |
           twine upload --verbose dist/*
-          ./jvm/gradlew bintray
+          ./jvm/gradlew bintrayUpload
 
   publish_pods: 
     needs: stubs
@@ -136,5 +136,3 @@ jobs:
         export LIB_VERSION=$(git describe --tags `git rev-list --tags --max-count=1` | sed -e 's/v//g')
         pod lib lint --allow-warnings
         pod trunk push --allow-warnings
-      
-    
