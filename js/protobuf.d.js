@@ -3557,6 +3557,108 @@ export namespace syft_proto {
         /** Namespace v1. */
         namespace v1 {
 
+            /** Properties of a String. */
+            interface IString {
+
+                /** String child */
+                child?: (string|null);
+
+                /** String tags */
+                tags?: (string[]|null);
+
+                /** String description */
+                description?: (string|null);
+            }
+
+            /** Represents a String. */
+            class String implements IString {
+
+                /**
+                 * Constructs a new String.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IString);
+
+                /** String child. */
+                public child: string;
+
+                /** String tags. */
+                public tags: string[];
+
+                /** String description. */
+                public description: string;
+
+                /**
+                 * Creates a new String instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns String instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IString): syft_proto.messaging.v1.String;
+
+                /**
+                 * Encodes the specified String message. Does not implicitly {@link syft_proto.messaging.v1.String.verify|verify} messages.
+                 * @param message String message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IString, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified String message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.String.verify|verify} messages.
+                 * @param message String message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IString, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a String message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns String
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.String;
+
+                /**
+                 * Decodes a String message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns String
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.String;
+
+                /**
+                 * Verifies a String message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a String message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns String
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.String;
+
+                /**
+                 * Creates a plain object from a String message. Also converts values to other types if specified.
+                 * @param message String
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.String, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this String to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
             /** Properties of a SyftMessage. */
             interface ISyftMessage {
 
