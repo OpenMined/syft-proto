@@ -173,6 +173,111 @@ public struct SyftProto_Messaging_V1_TensorCommandMessage {
   public init() {}
 }
 
+public struct SyftProto_Messaging_V1_ForceObjectDeleteMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var objectID: SyftProto_Types_Syft_V1_Id {
+    get {return _objectID ?? SyftProto_Types_Syft_V1_Id()}
+    set {_objectID = newValue}
+  }
+  /// Returns true if `objectID` has been explicitly set.
+  public var hasObjectID: Bool {return self._objectID != nil}
+  /// Clears the value of `objectID`. Subsequent reads from it will return its default value.
+  public mutating func clearObjectID() {self._objectID = nil}
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _objectID: SyftProto_Types_Syft_V1_Id? = nil
+}
+
+public struct SyftProto_Messaging_V1_GetShapeMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var objectID: SyftProto_Types_Syft_V1_Id {
+    get {return _objectID ?? SyftProto_Types_Syft_V1_Id()}
+    set {_objectID = newValue}
+  }
+  /// Returns true if `objectID` has been explicitly set.
+  public var hasObjectID: Bool {return self._objectID != nil}
+  /// Clears the value of `objectID`. Subsequent reads from it will return its default value.
+  public mutating func clearObjectID() {self._objectID = nil}
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _objectID: SyftProto_Types_Syft_V1_Id? = nil
+}
+
+public struct SyftProto_Messaging_V1_ObjectRequestMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var objectID: SyftProto_Types_Syft_V1_Id {
+    get {return _objectID ?? SyftProto_Types_Syft_V1_Id()}
+    set {_objectID = newValue}
+  }
+  /// Returns true if `objectID` has been explicitly set.
+  public var hasObjectID: Bool {return self._objectID != nil}
+  /// Clears the value of `objectID`. Subsequent reads from it will return its default value.
+  public mutating func clearObjectID() {self._objectID = nil}
+
+  public var reason: String = String()
+
+  /// what type should user be? can't figure it out from docs/tests
+  public var user: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _objectID: SyftProto_Types_Syft_V1_Id? = nil
+}
+
+public struct SyftProto_Messaging_V1_PlanCommandMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// repeated ? args = 2;
+  public var commandName: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct SyftProto_Messaging_V1_WorkerCommandMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// repeated ? args = 2;
+  public var commandName: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+/// repeated syft_proto.types.syft.v1.Id query = 1;
+public struct SyftProto_Messaging_V1_SearchMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "syft_proto.messaging.v1"
@@ -350,6 +455,182 @@ extension SyftProto_Messaging_V1_TensorCommandMessage: SwiftProtobuf.Message, Sw
 
   public static func ==(lhs: SyftProto_Messaging_V1_TensorCommandMessage, rhs: SyftProto_Messaging_V1_TensorCommandMessage) -> Bool {
     if lhs.action != rhs.action {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension SyftProto_Messaging_V1_ForceObjectDeleteMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".ForceObjectDeleteMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "object_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularMessageField(value: &self._objectID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._objectID {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: SyftProto_Messaging_V1_ForceObjectDeleteMessage, rhs: SyftProto_Messaging_V1_ForceObjectDeleteMessage) -> Bool {
+    if lhs._objectID != rhs._objectID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension SyftProto_Messaging_V1_GetShapeMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".GetShapeMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "object_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularMessageField(value: &self._objectID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._objectID {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: SyftProto_Messaging_V1_GetShapeMessage, rhs: SyftProto_Messaging_V1_GetShapeMessage) -> Bool {
+    if lhs._objectID != rhs._objectID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension SyftProto_Messaging_V1_ObjectRequestMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".ObjectRequestMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "object_id"),
+    2: .same(proto: "reason"),
+    3: .same(proto: "user"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularMessageField(value: &self._objectID)
+      case 2: try decoder.decodeSingularStringField(value: &self.reason)
+      case 3: try decoder.decodeSingularStringField(value: &self.user)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._objectID {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    }
+    if !self.reason.isEmpty {
+      try visitor.visitSingularStringField(value: self.reason, fieldNumber: 2)
+    }
+    if !self.user.isEmpty {
+      try visitor.visitSingularStringField(value: self.user, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: SyftProto_Messaging_V1_ObjectRequestMessage, rhs: SyftProto_Messaging_V1_ObjectRequestMessage) -> Bool {
+    if lhs._objectID != rhs._objectID {return false}
+    if lhs.reason != rhs.reason {return false}
+    if lhs.user != rhs.user {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension SyftProto_Messaging_V1_PlanCommandMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".PlanCommandMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "command_name"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.commandName)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.commandName.isEmpty {
+      try visitor.visitSingularStringField(value: self.commandName, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: SyftProto_Messaging_V1_PlanCommandMessage, rhs: SyftProto_Messaging_V1_PlanCommandMessage) -> Bool {
+    if lhs.commandName != rhs.commandName {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension SyftProto_Messaging_V1_WorkerCommandMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".WorkerCommandMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "command_name"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.commandName)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.commandName.isEmpty {
+      try visitor.visitSingularStringField(value: self.commandName, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: SyftProto_Messaging_V1_WorkerCommandMessage, rhs: SyftProto_Messaging_V1_WorkerCommandMessage) -> Bool {
+    if lhs.commandName != rhs.commandName {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension SyftProto_Messaging_V1_SearchMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".SearchMessage"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: SyftProto_Messaging_V1_SearchMessage, rhs: SyftProto_Messaging_V1_SearchMessage) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
