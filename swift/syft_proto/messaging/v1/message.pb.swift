@@ -34,8 +34,22 @@ public struct SyftProto_Messaging_V1_SyftMessage {
     set {contents = .contentsEmptyMsg(newValue)}
   }
 
-  /// ForceObjectDeleteMessage contents_delete_msg = 2;
-  /// GetShapeMessage contents_get_shape_msg = 3;
+  public var contentsDeleteMsg: SyftProto_Messaging_V1_ForceObjectDeleteMessage {
+    get {
+      if case .contentsDeleteMsg(let v)? = contents {return v}
+      return SyftProto_Messaging_V1_ForceObjectDeleteMessage()
+    }
+    set {contents = .contentsDeleteMsg(newValue)}
+  }
+
+  public var contentsGetShapeMsg: SyftProto_Messaging_V1_GetShapeMessage {
+    get {
+      if case .contentsGetShapeMsg(let v)? = contents {return v}
+      return SyftProto_Messaging_V1_GetShapeMessage()
+    }
+    set {contents = .contentsGetShapeMsg(newValue)}
+  }
+
   public var contentsIsNoneMsg: SyftProto_Messaging_V1_IsNoneMessage {
     get {
       if case .contentsIsNoneMsg(let v)? = contents {return v}
@@ -52,7 +66,14 @@ public struct SyftProto_Messaging_V1_SyftMessage {
     set {contents = .contentsObjectMsg(newValue)}
   }
 
-  /// ObjectRequestMessage contents_object_request_msg = 6;
+  public var contentsObjectRequestMsg: SyftProto_Messaging_V1_ObjectRequestMessage {
+    get {
+      if case .contentsObjectRequestMsg(let v)? = contents {return v}
+      return SyftProto_Messaging_V1_ObjectRequestMessage()
+    }
+    set {contents = .contentsObjectRequestMsg(newValue)}
+  }
+
   public var contentsTensorCmdMsg: SyftProto_Messaging_V1_TensorCommandMessage {
     get {
       if case .contentsTensorCmdMsg(let v)? = contents {return v}
@@ -61,24 +82,57 @@ public struct SyftProto_Messaging_V1_SyftMessage {
     set {contents = .contentsTensorCmdMsg(newValue)}
   }
 
+  public var contentsPlanCmdMsg: SyftProto_Messaging_V1_PlanCommandMessage {
+    get {
+      if case .contentsPlanCmdMsg(let v)? = contents {return v}
+      return SyftProto_Messaging_V1_PlanCommandMessage()
+    }
+    set {contents = .contentsPlanCmdMsg(newValue)}
+  }
+
+  public var contentsWorkerCmdMsg: SyftProto_Messaging_V1_WorkerCommandMessage {
+    get {
+      if case .contentsWorkerCmdMsg(let v)? = contents {return v}
+      return SyftProto_Messaging_V1_WorkerCommandMessage()
+    }
+    set {contents = .contentsWorkerCmdMsg(newValue)}
+  }
+
+  public var contentsSearchMsg: SyftProto_Messaging_V1_SearchMessage {
+    get {
+      if case .contentsSearchMsg(let v)? = contents {return v}
+      return SyftProto_Messaging_V1_SearchMessage()
+    }
+    set {contents = .contentsSearchMsg(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Contents: Equatable {
     case contentsEmptyMsg(SwiftProtobuf.Google_Protobuf_Empty)
-    /// ForceObjectDeleteMessage contents_delete_msg = 2;
-    /// GetShapeMessage contents_get_shape_msg = 3;
+    case contentsDeleteMsg(SyftProto_Messaging_V1_ForceObjectDeleteMessage)
+    case contentsGetShapeMsg(SyftProto_Messaging_V1_GetShapeMessage)
     case contentsIsNoneMsg(SyftProto_Messaging_V1_IsNoneMessage)
     case contentsObjectMsg(SyftProto_Messaging_V1_ObjectMessage)
-    /// ObjectRequestMessage contents_object_request_msg = 6;
+    case contentsObjectRequestMsg(SyftProto_Messaging_V1_ObjectRequestMessage)
     case contentsTensorCmdMsg(SyftProto_Messaging_V1_TensorCommandMessage)
+    case contentsPlanCmdMsg(SyftProto_Messaging_V1_PlanCommandMessage)
+    case contentsWorkerCmdMsg(SyftProto_Messaging_V1_WorkerCommandMessage)
+    case contentsSearchMsg(SyftProto_Messaging_V1_SearchMessage)
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Messaging_V1_SyftMessage.OneOf_Contents, rhs: SyftProto_Messaging_V1_SyftMessage.OneOf_Contents) -> Bool {
       switch (lhs, rhs) {
       case (.contentsEmptyMsg(let l), .contentsEmptyMsg(let r)): return l == r
+      case (.contentsDeleteMsg(let l), .contentsDeleteMsg(let r)): return l == r
+      case (.contentsGetShapeMsg(let l), .contentsGetShapeMsg(let r)): return l == r
       case (.contentsIsNoneMsg(let l), .contentsIsNoneMsg(let r)): return l == r
       case (.contentsObjectMsg(let l), .contentsObjectMsg(let r)): return l == r
+      case (.contentsObjectRequestMsg(let l), .contentsObjectRequestMsg(let r)): return l == r
       case (.contentsTensorCmdMsg(let l), .contentsTensorCmdMsg(let r)): return l == r
+      case (.contentsPlanCmdMsg(let l), .contentsPlanCmdMsg(let r)): return l == r
+      case (.contentsWorkerCmdMsg(let l), .contentsWorkerCmdMsg(let r)): return l == r
+      case (.contentsSearchMsg(let l), .contentsSearchMsg(let r)): return l == r
       default: return false
       }
     }
@@ -286,9 +340,15 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
   public static let protoMessageName: String = _protobuf_package + ".SyftMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "contents_empty_msg"),
+    2: .standard(proto: "contents_delete_msg"),
+    3: .standard(proto: "contents_get_shape_msg"),
     4: .standard(proto: "contents_is_none_msg"),
     5: .standard(proto: "contents_object_msg"),
+    6: .standard(proto: "contents_object_request_msg"),
     7: .standard(proto: "contents_tensor_cmd_msg"),
+    8: .standard(proto: "contents_plan_cmd_msg"),
+    9: .standard(proto: "contents_worker_cmd_msg"),
+    10: .standard(proto: "contents_search_msg"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -302,6 +362,22 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsEmptyMsg(v)}
+      case 2:
+        var v: SyftProto_Messaging_V1_ForceObjectDeleteMessage?
+        if let current = self.contents {
+          try decoder.handleConflictingOneOf()
+          if case .contentsDeleteMsg(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.contents = .contentsDeleteMsg(v)}
+      case 3:
+        var v: SyftProto_Messaging_V1_GetShapeMessage?
+        if let current = self.contents {
+          try decoder.handleConflictingOneOf()
+          if case .contentsGetShapeMsg(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.contents = .contentsGetShapeMsg(v)}
       case 4:
         var v: SyftProto_Messaging_V1_IsNoneMessage?
         if let current = self.contents {
@@ -318,6 +394,14 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsObjectMsg(v)}
+      case 6:
+        var v: SyftProto_Messaging_V1_ObjectRequestMessage?
+        if let current = self.contents {
+          try decoder.handleConflictingOneOf()
+          if case .contentsObjectRequestMsg(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.contents = .contentsObjectRequestMsg(v)}
       case 7:
         var v: SyftProto_Messaging_V1_TensorCommandMessage?
         if let current = self.contents {
@@ -326,6 +410,30 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsTensorCmdMsg(v)}
+      case 8:
+        var v: SyftProto_Messaging_V1_PlanCommandMessage?
+        if let current = self.contents {
+          try decoder.handleConflictingOneOf()
+          if case .contentsPlanCmdMsg(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.contents = .contentsPlanCmdMsg(v)}
+      case 9:
+        var v: SyftProto_Messaging_V1_WorkerCommandMessage?
+        if let current = self.contents {
+          try decoder.handleConflictingOneOf()
+          if case .contentsWorkerCmdMsg(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.contents = .contentsWorkerCmdMsg(v)}
+      case 10:
+        var v: SyftProto_Messaging_V1_SearchMessage?
+        if let current = self.contents {
+          try decoder.handleConflictingOneOf()
+          if case .contentsSearchMsg(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.contents = .contentsSearchMsg(v)}
       default: break
       }
     }
@@ -335,12 +443,24 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
     switch self.contents {
     case .contentsEmptyMsg(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    case .contentsDeleteMsg(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    case .contentsGetShapeMsg(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
     case .contentsIsNoneMsg(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
     case .contentsObjectMsg(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+    case .contentsObjectRequestMsg(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
     case .contentsTensorCmdMsg(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+    case .contentsPlanCmdMsg(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    case .contentsWorkerCmdMsg(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
+    case .contentsSearchMsg(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)

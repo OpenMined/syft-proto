@@ -3443,14 +3443,32 @@ export namespace syft_proto {
                 /** SyftMessage contents_empty_msg */
                 contents_empty_msg?: (google.protobuf.IEmpty|null);
 
+                /** SyftMessage contents_delete_msg */
+                contents_delete_msg?: (syft_proto.messaging.v1.IForceObjectDeleteMessage|null);
+
+                /** SyftMessage contents_get_shape_msg */
+                contents_get_shape_msg?: (syft_proto.messaging.v1.IGetShapeMessage|null);
+
                 /** SyftMessage contents_is_none_msg */
                 contents_is_none_msg?: (syft_proto.messaging.v1.IIsNoneMessage|null);
 
                 /** SyftMessage contents_object_msg */
                 contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
+                /** SyftMessage contents_object_request_msg */
+                contents_object_request_msg?: (syft_proto.messaging.v1.IObjectRequestMessage|null);
+
                 /** SyftMessage contents_tensor_cmd_msg */
                 contents_tensor_cmd_msg?: (syft_proto.messaging.v1.ITensorCommandMessage|null);
+
+                /** SyftMessage contents_plan_cmd_msg */
+                contents_plan_cmd_msg?: (syft_proto.messaging.v1.IPlanCommandMessage|null);
+
+                /** SyftMessage contents_worker_cmd_msg */
+                contents_worker_cmd_msg?: (syft_proto.messaging.v1.IWorkerCommandMessage|null);
+
+                /** SyftMessage contents_search_msg */
+                contents_search_msg?: (syft_proto.messaging.v1.ISearchMessage|null);
             }
 
             /** Represents a SyftMessage. */
@@ -3465,17 +3483,35 @@ export namespace syft_proto {
                 /** SyftMessage contents_empty_msg. */
                 public contents_empty_msg?: (google.protobuf.IEmpty|null);
 
+                /** SyftMessage contents_delete_msg. */
+                public contents_delete_msg?: (syft_proto.messaging.v1.IForceObjectDeleteMessage|null);
+
+                /** SyftMessage contents_get_shape_msg. */
+                public contents_get_shape_msg?: (syft_proto.messaging.v1.IGetShapeMessage|null);
+
                 /** SyftMessage contents_is_none_msg. */
                 public contents_is_none_msg?: (syft_proto.messaging.v1.IIsNoneMessage|null);
 
                 /** SyftMessage contents_object_msg. */
                 public contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
+                /** SyftMessage contents_object_request_msg. */
+                public contents_object_request_msg?: (syft_proto.messaging.v1.IObjectRequestMessage|null);
+
                 /** SyftMessage contents_tensor_cmd_msg. */
                 public contents_tensor_cmd_msg?: (syft_proto.messaging.v1.ITensorCommandMessage|null);
 
+                /** SyftMessage contents_plan_cmd_msg. */
+                public contents_plan_cmd_msg?: (syft_proto.messaging.v1.IPlanCommandMessage|null);
+
+                /** SyftMessage contents_worker_cmd_msg. */
+                public contents_worker_cmd_msg?: (syft_proto.messaging.v1.IWorkerCommandMessage|null);
+
+                /** SyftMessage contents_search_msg. */
+                public contents_search_msg?: (syft_proto.messaging.v1.ISearchMessage|null);
+
                 /** SyftMessage contents. */
-                public contents?: ("contents_empty_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_tensor_cmd_msg");
+                public contents?: ("contents_empty_msg"|"contents_delete_msg"|"contents_get_shape_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_object_request_msg"|"contents_tensor_cmd_msg"|"contents_plan_cmd_msg"|"contents_worker_cmd_msg"|"contents_search_msg");
 
                 /**
                  * Creates a new SyftMessage instance using the specified properties.

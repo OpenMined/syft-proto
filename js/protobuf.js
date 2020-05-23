@@ -9562,9 +9562,15 @@ $root.syft_proto = (function() {
                  * @memberof syft_proto.messaging.v1
                  * @interface ISyftMessage
                  * @property {google.protobuf.IEmpty|null} [contents_empty_msg] SyftMessage contents_empty_msg
+                 * @property {syft_proto.messaging.v1.IForceObjectDeleteMessage|null} [contents_delete_msg] SyftMessage contents_delete_msg
+                 * @property {syft_proto.messaging.v1.IGetShapeMessage|null} [contents_get_shape_msg] SyftMessage contents_get_shape_msg
                  * @property {syft_proto.messaging.v1.IIsNoneMessage|null} [contents_is_none_msg] SyftMessage contents_is_none_msg
                  * @property {syft_proto.messaging.v1.IObjectMessage|null} [contents_object_msg] SyftMessage contents_object_msg
+                 * @property {syft_proto.messaging.v1.IObjectRequestMessage|null} [contents_object_request_msg] SyftMessage contents_object_request_msg
                  * @property {syft_proto.messaging.v1.ITensorCommandMessage|null} [contents_tensor_cmd_msg] SyftMessage contents_tensor_cmd_msg
+                 * @property {syft_proto.messaging.v1.IPlanCommandMessage|null} [contents_plan_cmd_msg] SyftMessage contents_plan_cmd_msg
+                 * @property {syft_proto.messaging.v1.IWorkerCommandMessage|null} [contents_worker_cmd_msg] SyftMessage contents_worker_cmd_msg
+                 * @property {syft_proto.messaging.v1.ISearchMessage|null} [contents_search_msg] SyftMessage contents_search_msg
                  */
 
                 /**
@@ -9591,6 +9597,22 @@ $root.syft_proto = (function() {
                 SyftMessage.prototype.contents_empty_msg = null;
 
                 /**
+                 * SyftMessage contents_delete_msg.
+                 * @member {syft_proto.messaging.v1.IForceObjectDeleteMessage|null|undefined} contents_delete_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_delete_msg = null;
+
+                /**
+                 * SyftMessage contents_get_shape_msg.
+                 * @member {syft_proto.messaging.v1.IGetShapeMessage|null|undefined} contents_get_shape_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_get_shape_msg = null;
+
+                /**
                  * SyftMessage contents_is_none_msg.
                  * @member {syft_proto.messaging.v1.IIsNoneMessage|null|undefined} contents_is_none_msg
                  * @memberof syft_proto.messaging.v1.SyftMessage
@@ -9607,6 +9629,14 @@ $root.syft_proto = (function() {
                 SyftMessage.prototype.contents_object_msg = null;
 
                 /**
+                 * SyftMessage contents_object_request_msg.
+                 * @member {syft_proto.messaging.v1.IObjectRequestMessage|null|undefined} contents_object_request_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_object_request_msg = null;
+
+                /**
                  * SyftMessage contents_tensor_cmd_msg.
                  * @member {syft_proto.messaging.v1.ITensorCommandMessage|null|undefined} contents_tensor_cmd_msg
                  * @memberof syft_proto.messaging.v1.SyftMessage
@@ -9614,17 +9644,41 @@ $root.syft_proto = (function() {
                  */
                 SyftMessage.prototype.contents_tensor_cmd_msg = null;
 
+                /**
+                 * SyftMessage contents_plan_cmd_msg.
+                 * @member {syft_proto.messaging.v1.IPlanCommandMessage|null|undefined} contents_plan_cmd_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_plan_cmd_msg = null;
+
+                /**
+                 * SyftMessage contents_worker_cmd_msg.
+                 * @member {syft_proto.messaging.v1.IWorkerCommandMessage|null|undefined} contents_worker_cmd_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_worker_cmd_msg = null;
+
+                /**
+                 * SyftMessage contents_search_msg.
+                 * @member {syft_proto.messaging.v1.ISearchMessage|null|undefined} contents_search_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_search_msg = null;
+
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
                 /**
                  * SyftMessage contents.
-                 * @member {"contents_empty_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_tensor_cmd_msg"|undefined} contents
+                 * @member {"contents_empty_msg"|"contents_delete_msg"|"contents_get_shape_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_object_request_msg"|"contents_tensor_cmd_msg"|"contents_plan_cmd_msg"|"contents_worker_cmd_msg"|"contents_search_msg"|undefined} contents
                  * @memberof syft_proto.messaging.v1.SyftMessage
                  * @instance
                  */
                 Object.defineProperty(SyftMessage.prototype, "contents", {
-                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_is_none_msg", "contents_object_msg", "contents_tensor_cmd_msg"]),
+                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_delete_msg", "contents_get_shape_msg", "contents_is_none_msg", "contents_object_msg", "contents_object_request_msg", "contents_tensor_cmd_msg", "contents_plan_cmd_msg", "contents_worker_cmd_msg", "contents_search_msg"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
@@ -9654,12 +9708,24 @@ $root.syft_proto = (function() {
                         writer = $Writer.create();
                     if (message.contents_empty_msg != null && message.hasOwnProperty("contents_empty_msg"))
                         $root.google.protobuf.Empty.encode(message.contents_empty_msg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.contents_delete_msg != null && message.hasOwnProperty("contents_delete_msg"))
+                        $root.syft_proto.messaging.v1.ForceObjectDeleteMessage.encode(message.contents_delete_msg, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.contents_get_shape_msg != null && message.hasOwnProperty("contents_get_shape_msg"))
+                        $root.syft_proto.messaging.v1.GetShapeMessage.encode(message.contents_get_shape_msg, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     if (message.contents_is_none_msg != null && message.hasOwnProperty("contents_is_none_msg"))
                         $root.syft_proto.messaging.v1.IsNoneMessage.encode(message.contents_is_none_msg, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.contents_object_msg != null && message.hasOwnProperty("contents_object_msg"))
                         $root.syft_proto.messaging.v1.ObjectMessage.encode(message.contents_object_msg, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.contents_object_request_msg != null && message.hasOwnProperty("contents_object_request_msg"))
+                        $root.syft_proto.messaging.v1.ObjectRequestMessage.encode(message.contents_object_request_msg, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                     if (message.contents_tensor_cmd_msg != null && message.hasOwnProperty("contents_tensor_cmd_msg"))
                         $root.syft_proto.messaging.v1.TensorCommandMessage.encode(message.contents_tensor_cmd_msg, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    if (message.contents_plan_cmd_msg != null && message.hasOwnProperty("contents_plan_cmd_msg"))
+                        $root.syft_proto.messaging.v1.PlanCommandMessage.encode(message.contents_plan_cmd_msg, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                    if (message.contents_worker_cmd_msg != null && message.hasOwnProperty("contents_worker_cmd_msg"))
+                        $root.syft_proto.messaging.v1.WorkerCommandMessage.encode(message.contents_worker_cmd_msg, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                    if (message.contents_search_msg != null && message.hasOwnProperty("contents_search_msg"))
+                        $root.syft_proto.messaging.v1.SearchMessage.encode(message.contents_search_msg, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                     return writer;
                 };
 
@@ -9697,14 +9763,32 @@ $root.syft_proto = (function() {
                         case 1:
                             message.contents_empty_msg = $root.google.protobuf.Empty.decode(reader, reader.uint32());
                             break;
+                        case 2:
+                            message.contents_delete_msg = $root.syft_proto.messaging.v1.ForceObjectDeleteMessage.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.contents_get_shape_msg = $root.syft_proto.messaging.v1.GetShapeMessage.decode(reader, reader.uint32());
+                            break;
                         case 4:
                             message.contents_is_none_msg = $root.syft_proto.messaging.v1.IsNoneMessage.decode(reader, reader.uint32());
                             break;
                         case 5:
                             message.contents_object_msg = $root.syft_proto.messaging.v1.ObjectMessage.decode(reader, reader.uint32());
                             break;
+                        case 6:
+                            message.contents_object_request_msg = $root.syft_proto.messaging.v1.ObjectRequestMessage.decode(reader, reader.uint32());
+                            break;
                         case 7:
                             message.contents_tensor_cmd_msg = $root.syft_proto.messaging.v1.TensorCommandMessage.decode(reader, reader.uint32());
+                            break;
+                        case 8:
+                            message.contents_plan_cmd_msg = $root.syft_proto.messaging.v1.PlanCommandMessage.decode(reader, reader.uint32());
+                            break;
+                        case 9:
+                            message.contents_worker_cmd_msg = $root.syft_proto.messaging.v1.WorkerCommandMessage.decode(reader, reader.uint32());
+                            break;
+                        case 10:
+                            message.contents_search_msg = $root.syft_proto.messaging.v1.SearchMessage.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -9750,6 +9834,26 @@ $root.syft_proto = (function() {
                                 return "contents_empty_msg." + error;
                         }
                     }
+                    if (message.contents_delete_msg != null && message.hasOwnProperty("contents_delete_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.ForceObjectDeleteMessage.verify(message.contents_delete_msg);
+                            if (error)
+                                return "contents_delete_msg." + error;
+                        }
+                    }
+                    if (message.contents_get_shape_msg != null && message.hasOwnProperty("contents_get_shape_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.GetShapeMessage.verify(message.contents_get_shape_msg);
+                            if (error)
+                                return "contents_get_shape_msg." + error;
+                        }
+                    }
                     if (message.contents_is_none_msg != null && message.hasOwnProperty("contents_is_none_msg")) {
                         if (properties.contents === 1)
                             return "contents: multiple values";
@@ -9770,6 +9874,16 @@ $root.syft_proto = (function() {
                                 return "contents_object_msg." + error;
                         }
                     }
+                    if (message.contents_object_request_msg != null && message.hasOwnProperty("contents_object_request_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.ObjectRequestMessage.verify(message.contents_object_request_msg);
+                            if (error)
+                                return "contents_object_request_msg." + error;
+                        }
+                    }
                     if (message.contents_tensor_cmd_msg != null && message.hasOwnProperty("contents_tensor_cmd_msg")) {
                         if (properties.contents === 1)
                             return "contents: multiple values";
@@ -9778,6 +9892,36 @@ $root.syft_proto = (function() {
                             var error = $root.syft_proto.messaging.v1.TensorCommandMessage.verify(message.contents_tensor_cmd_msg);
                             if (error)
                                 return "contents_tensor_cmd_msg." + error;
+                        }
+                    }
+                    if (message.contents_plan_cmd_msg != null && message.hasOwnProperty("contents_plan_cmd_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.PlanCommandMessage.verify(message.contents_plan_cmd_msg);
+                            if (error)
+                                return "contents_plan_cmd_msg." + error;
+                        }
+                    }
+                    if (message.contents_worker_cmd_msg != null && message.hasOwnProperty("contents_worker_cmd_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.WorkerCommandMessage.verify(message.contents_worker_cmd_msg);
+                            if (error)
+                                return "contents_worker_cmd_msg." + error;
+                        }
+                    }
+                    if (message.contents_search_msg != null && message.hasOwnProperty("contents_search_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.SearchMessage.verify(message.contents_search_msg);
+                            if (error)
+                                return "contents_search_msg." + error;
                         }
                     }
                     return null;
@@ -9800,6 +9944,16 @@ $root.syft_proto = (function() {
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_empty_msg: object expected");
                         message.contents_empty_msg = $root.google.protobuf.Empty.fromObject(object.contents_empty_msg);
                     }
+                    if (object.contents_delete_msg != null) {
+                        if (typeof object.contents_delete_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_delete_msg: object expected");
+                        message.contents_delete_msg = $root.syft_proto.messaging.v1.ForceObjectDeleteMessage.fromObject(object.contents_delete_msg);
+                    }
+                    if (object.contents_get_shape_msg != null) {
+                        if (typeof object.contents_get_shape_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_get_shape_msg: object expected");
+                        message.contents_get_shape_msg = $root.syft_proto.messaging.v1.GetShapeMessage.fromObject(object.contents_get_shape_msg);
+                    }
                     if (object.contents_is_none_msg != null) {
                         if (typeof object.contents_is_none_msg !== "object")
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_is_none_msg: object expected");
@@ -9810,10 +9964,30 @@ $root.syft_proto = (function() {
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_object_msg: object expected");
                         message.contents_object_msg = $root.syft_proto.messaging.v1.ObjectMessage.fromObject(object.contents_object_msg);
                     }
+                    if (object.contents_object_request_msg != null) {
+                        if (typeof object.contents_object_request_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_object_request_msg: object expected");
+                        message.contents_object_request_msg = $root.syft_proto.messaging.v1.ObjectRequestMessage.fromObject(object.contents_object_request_msg);
+                    }
                     if (object.contents_tensor_cmd_msg != null) {
                         if (typeof object.contents_tensor_cmd_msg !== "object")
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_tensor_cmd_msg: object expected");
                         message.contents_tensor_cmd_msg = $root.syft_proto.messaging.v1.TensorCommandMessage.fromObject(object.contents_tensor_cmd_msg);
+                    }
+                    if (object.contents_plan_cmd_msg != null) {
+                        if (typeof object.contents_plan_cmd_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_plan_cmd_msg: object expected");
+                        message.contents_plan_cmd_msg = $root.syft_proto.messaging.v1.PlanCommandMessage.fromObject(object.contents_plan_cmd_msg);
+                    }
+                    if (object.contents_worker_cmd_msg != null) {
+                        if (typeof object.contents_worker_cmd_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_worker_cmd_msg: object expected");
+                        message.contents_worker_cmd_msg = $root.syft_proto.messaging.v1.WorkerCommandMessage.fromObject(object.contents_worker_cmd_msg);
+                    }
+                    if (object.contents_search_msg != null) {
+                        if (typeof object.contents_search_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_search_msg: object expected");
+                        message.contents_search_msg = $root.syft_proto.messaging.v1.SearchMessage.fromObject(object.contents_search_msg);
                     }
                     return message;
                 };
@@ -9836,6 +10010,16 @@ $root.syft_proto = (function() {
                         if (options.oneofs)
                             object.contents = "contents_empty_msg";
                     }
+                    if (message.contents_delete_msg != null && message.hasOwnProperty("contents_delete_msg")) {
+                        object.contents_delete_msg = $root.syft_proto.messaging.v1.ForceObjectDeleteMessage.toObject(message.contents_delete_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_delete_msg";
+                    }
+                    if (message.contents_get_shape_msg != null && message.hasOwnProperty("contents_get_shape_msg")) {
+                        object.contents_get_shape_msg = $root.syft_proto.messaging.v1.GetShapeMessage.toObject(message.contents_get_shape_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_get_shape_msg";
+                    }
                     if (message.contents_is_none_msg != null && message.hasOwnProperty("contents_is_none_msg")) {
                         object.contents_is_none_msg = $root.syft_proto.messaging.v1.IsNoneMessage.toObject(message.contents_is_none_msg, options);
                         if (options.oneofs)
@@ -9846,10 +10030,30 @@ $root.syft_proto = (function() {
                         if (options.oneofs)
                             object.contents = "contents_object_msg";
                     }
+                    if (message.contents_object_request_msg != null && message.hasOwnProperty("contents_object_request_msg")) {
+                        object.contents_object_request_msg = $root.syft_proto.messaging.v1.ObjectRequestMessage.toObject(message.contents_object_request_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_object_request_msg";
+                    }
                     if (message.contents_tensor_cmd_msg != null && message.hasOwnProperty("contents_tensor_cmd_msg")) {
                         object.contents_tensor_cmd_msg = $root.syft_proto.messaging.v1.TensorCommandMessage.toObject(message.contents_tensor_cmd_msg, options);
                         if (options.oneofs)
                             object.contents = "contents_tensor_cmd_msg";
+                    }
+                    if (message.contents_plan_cmd_msg != null && message.hasOwnProperty("contents_plan_cmd_msg")) {
+                        object.contents_plan_cmd_msg = $root.syft_proto.messaging.v1.PlanCommandMessage.toObject(message.contents_plan_cmd_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_plan_cmd_msg";
+                    }
+                    if (message.contents_worker_cmd_msg != null && message.hasOwnProperty("contents_worker_cmd_msg")) {
+                        object.contents_worker_cmd_msg = $root.syft_proto.messaging.v1.WorkerCommandMessage.toObject(message.contents_worker_cmd_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_worker_cmd_msg";
+                    }
+                    if (message.contents_search_msg != null && message.hasOwnProperty("contents_search_msg")) {
+                        object.contents_search_msg = $root.syft_proto.messaging.v1.SearchMessage.toObject(message.contents_search_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_search_msg";
                     }
                     return object;
                 };
