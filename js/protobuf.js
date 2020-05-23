@@ -10889,7 +10889,6 @@ $root.syft_proto = (function() {
                  * @interface IObjectRequestMessage
                  * @property {syft_proto.types.syft.v1.IId|null} [object_id] ObjectRequestMessage object_id
                  * @property {string|null} [reason] ObjectRequestMessage reason
-                 * @property {string|null} [user] ObjectRequestMessage user
                  */
 
                 /**
@@ -10924,14 +10923,6 @@ $root.syft_proto = (function() {
                 ObjectRequestMessage.prototype.reason = "";
 
                 /**
-                 * ObjectRequestMessage user.
-                 * @member {string} user
-                 * @memberof syft_proto.messaging.v1.ObjectRequestMessage
-                 * @instance
-                 */
-                ObjectRequestMessage.prototype.user = "";
-
-                /**
                  * Creates a new ObjectRequestMessage instance using the specified properties.
                  * @function create
                  * @memberof syft_proto.messaging.v1.ObjectRequestMessage
@@ -10959,8 +10950,6 @@ $root.syft_proto = (function() {
                         $root.syft_proto.types.syft.v1.Id.encode(message.object_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.reason != null && message.hasOwnProperty("reason"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.reason);
-                    if (message.user != null && message.hasOwnProperty("user"))
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.user);
                     return writer;
                 };
 
@@ -11000,9 +10989,6 @@ $root.syft_proto = (function() {
                             break;
                         case 2:
                             message.reason = reader.string();
-                            break;
-                        case 3:
-                            message.user = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -11047,9 +11033,6 @@ $root.syft_proto = (function() {
                     if (message.reason != null && message.hasOwnProperty("reason"))
                         if (!$util.isString(message.reason))
                             return "reason: string expected";
-                    if (message.user != null && message.hasOwnProperty("user"))
-                        if (!$util.isString(message.user))
-                            return "user: string expected";
                     return null;
                 };
 
@@ -11072,8 +11055,6 @@ $root.syft_proto = (function() {
                     }
                     if (object.reason != null)
                         message.reason = String(object.reason);
-                    if (object.user != null)
-                        message.user = String(object.user);
                     return message;
                 };
 
@@ -11093,14 +11074,11 @@ $root.syft_proto = (function() {
                     if (options.defaults) {
                         object.object_id = null;
                         object.reason = "";
-                        object.user = "";
                     }
                     if (message.object_id != null && message.hasOwnProperty("object_id"))
                         object.object_id = $root.syft_proto.types.syft.v1.Id.toObject(message.object_id, options);
                     if (message.reason != null && message.hasOwnProperty("reason"))
                         object.reason = message.reason;
-                    if (message.user != null && message.hasOwnProperty("user"))
-                        object.user = message.user;
                     return object;
                 };
 
@@ -11125,6 +11103,7 @@ $root.syft_proto = (function() {
                  * @memberof syft_proto.messaging.v1
                  * @interface IPlanCommandMessage
                  * @property {string|null} [command_name] PlanCommandMessage command_name
+                 * @property {Array.<syft_proto.types.syft.v1.IArg>|null} [args] PlanCommandMessage args
                  */
 
                 /**
@@ -11136,6 +11115,7 @@ $root.syft_proto = (function() {
                  * @param {syft_proto.messaging.v1.IPlanCommandMessage=} [properties] Properties to set
                  */
                 function PlanCommandMessage(properties) {
+                    this.args = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -11149,6 +11129,14 @@ $root.syft_proto = (function() {
                  * @instance
                  */
                 PlanCommandMessage.prototype.command_name = "";
+
+                /**
+                 * PlanCommandMessage args.
+                 * @member {Array.<syft_proto.types.syft.v1.IArg>} args
+                 * @memberof syft_proto.messaging.v1.PlanCommandMessage
+                 * @instance
+                 */
+                PlanCommandMessage.prototype.args = $util.emptyArray;
 
                 /**
                  * Creates a new PlanCommandMessage instance using the specified properties.
@@ -11176,6 +11164,9 @@ $root.syft_proto = (function() {
                         writer = $Writer.create();
                     if (message.command_name != null && message.hasOwnProperty("command_name"))
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.command_name);
+                    if (message.args != null && message.args.length)
+                        for (var i = 0; i < message.args.length; ++i)
+                            $root.syft_proto.types.syft.v1.Arg.encode(message.args[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     return writer;
                 };
 
@@ -11212,6 +11203,11 @@ $root.syft_proto = (function() {
                         switch (tag >>> 3) {
                         case 1:
                             message.command_name = reader.string();
+                            break;
+                        case 2:
+                            if (!(message.args && message.args.length))
+                                message.args = [];
+                            message.args.push($root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -11251,6 +11247,15 @@ $root.syft_proto = (function() {
                     if (message.command_name != null && message.hasOwnProperty("command_name"))
                         if (!$util.isString(message.command_name))
                             return "command_name: string expected";
+                    if (message.args != null && message.hasOwnProperty("args")) {
+                        if (!Array.isArray(message.args))
+                            return "args: array expected";
+                        for (var i = 0; i < message.args.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Arg.verify(message.args[i]);
+                            if (error)
+                                return "args." + error;
+                        }
+                    }
                     return null;
                 };
 
@@ -11268,6 +11273,16 @@ $root.syft_proto = (function() {
                     var message = new $root.syft_proto.messaging.v1.PlanCommandMessage();
                     if (object.command_name != null)
                         message.command_name = String(object.command_name);
+                    if (object.args) {
+                        if (!Array.isArray(object.args))
+                            throw TypeError(".syft_proto.messaging.v1.PlanCommandMessage.args: array expected");
+                        message.args = [];
+                        for (var i = 0; i < object.args.length; ++i) {
+                            if (typeof object.args[i] !== "object")
+                                throw TypeError(".syft_proto.messaging.v1.PlanCommandMessage.args: object expected");
+                            message.args[i] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.args[i]);
+                        }
+                    }
                     return message;
                 };
 
@@ -11284,10 +11299,17 @@ $root.syft_proto = (function() {
                     if (!options)
                         options = {};
                     var object = {};
+                    if (options.arrays || options.defaults)
+                        object.args = [];
                     if (options.defaults)
                         object.command_name = "";
                     if (message.command_name != null && message.hasOwnProperty("command_name"))
                         object.command_name = message.command_name;
+                    if (message.args && message.args.length) {
+                        object.args = [];
+                        for (var j = 0; j < message.args.length; ++j)
+                            object.args[j] = $root.syft_proto.types.syft.v1.Arg.toObject(message.args[j], options);
+                    }
                     return object;
                 };
 
@@ -11312,6 +11334,7 @@ $root.syft_proto = (function() {
                  * @memberof syft_proto.messaging.v1
                  * @interface IWorkerCommandMessage
                  * @property {string|null} [command_name] WorkerCommandMessage command_name
+                 * @property {Array.<syft_proto.types.syft.v1.IArg>|null} [args] WorkerCommandMessage args
                  */
 
                 /**
@@ -11323,6 +11346,7 @@ $root.syft_proto = (function() {
                  * @param {syft_proto.messaging.v1.IWorkerCommandMessage=} [properties] Properties to set
                  */
                 function WorkerCommandMessage(properties) {
+                    this.args = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -11336,6 +11360,14 @@ $root.syft_proto = (function() {
                  * @instance
                  */
                 WorkerCommandMessage.prototype.command_name = "";
+
+                /**
+                 * WorkerCommandMessage args.
+                 * @member {Array.<syft_proto.types.syft.v1.IArg>} args
+                 * @memberof syft_proto.messaging.v1.WorkerCommandMessage
+                 * @instance
+                 */
+                WorkerCommandMessage.prototype.args = $util.emptyArray;
 
                 /**
                  * Creates a new WorkerCommandMessage instance using the specified properties.
@@ -11363,6 +11395,9 @@ $root.syft_proto = (function() {
                         writer = $Writer.create();
                     if (message.command_name != null && message.hasOwnProperty("command_name"))
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.command_name);
+                    if (message.args != null && message.args.length)
+                        for (var i = 0; i < message.args.length; ++i)
+                            $root.syft_proto.types.syft.v1.Arg.encode(message.args[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     return writer;
                 };
 
@@ -11399,6 +11434,11 @@ $root.syft_proto = (function() {
                         switch (tag >>> 3) {
                         case 1:
                             message.command_name = reader.string();
+                            break;
+                        case 2:
+                            if (!(message.args && message.args.length))
+                                message.args = [];
+                            message.args.push($root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -11438,6 +11478,15 @@ $root.syft_proto = (function() {
                     if (message.command_name != null && message.hasOwnProperty("command_name"))
                         if (!$util.isString(message.command_name))
                             return "command_name: string expected";
+                    if (message.args != null && message.hasOwnProperty("args")) {
+                        if (!Array.isArray(message.args))
+                            return "args: array expected";
+                        for (var i = 0; i < message.args.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Arg.verify(message.args[i]);
+                            if (error)
+                                return "args." + error;
+                        }
+                    }
                     return null;
                 };
 
@@ -11455,6 +11504,16 @@ $root.syft_proto = (function() {
                     var message = new $root.syft_proto.messaging.v1.WorkerCommandMessage();
                     if (object.command_name != null)
                         message.command_name = String(object.command_name);
+                    if (object.args) {
+                        if (!Array.isArray(object.args))
+                            throw TypeError(".syft_proto.messaging.v1.WorkerCommandMessage.args: array expected");
+                        message.args = [];
+                        for (var i = 0; i < object.args.length; ++i) {
+                            if (typeof object.args[i] !== "object")
+                                throw TypeError(".syft_proto.messaging.v1.WorkerCommandMessage.args: object expected");
+                            message.args[i] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.args[i]);
+                        }
+                    }
                     return message;
                 };
 
@@ -11471,10 +11530,17 @@ $root.syft_proto = (function() {
                     if (!options)
                         options = {};
                     var object = {};
+                    if (options.arrays || options.defaults)
+                        object.args = [];
                     if (options.defaults)
                         object.command_name = "";
                     if (message.command_name != null && message.hasOwnProperty("command_name"))
                         object.command_name = message.command_name;
+                    if (message.args && message.args.length) {
+                        object.args = [];
+                        for (var j = 0; j < message.args.length; ++j)
+                            object.args[j] = $root.syft_proto.types.syft.v1.Arg.toObject(message.args[j], options);
+                    }
                     return object;
                 };
 
@@ -11498,6 +11564,7 @@ $root.syft_proto = (function() {
                  * Properties of a SearchMessage.
                  * @memberof syft_proto.messaging.v1
                  * @interface ISearchMessage
+                 * @property {Array.<syft_proto.types.syft.v1.IId>|null} [query] SearchMessage query
                  */
 
                 /**
@@ -11509,11 +11576,20 @@ $root.syft_proto = (function() {
                  * @param {syft_proto.messaging.v1.ISearchMessage=} [properties] Properties to set
                  */
                 function SearchMessage(properties) {
+                    this.query = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
                                 this[keys[i]] = properties[keys[i]];
                 }
+
+                /**
+                 * SearchMessage query.
+                 * @member {Array.<syft_proto.types.syft.v1.IId>} query
+                 * @memberof syft_proto.messaging.v1.SearchMessage
+                 * @instance
+                 */
+                SearchMessage.prototype.query = $util.emptyArray;
 
                 /**
                  * Creates a new SearchMessage instance using the specified properties.
@@ -11539,6 +11615,9 @@ $root.syft_proto = (function() {
                 SearchMessage.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
+                    if (message.query != null && message.query.length)
+                        for (var i = 0; i < message.query.length; ++i)
+                            $root.syft_proto.types.syft.v1.Id.encode(message.query[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     return writer;
                 };
 
@@ -11573,6 +11652,11 @@ $root.syft_proto = (function() {
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
+                        case 1:
+                            if (!(message.query && message.query.length))
+                                message.query = [];
+                            message.query.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -11608,6 +11692,15 @@ $root.syft_proto = (function() {
                 SearchMessage.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
+                    if (message.query != null && message.hasOwnProperty("query")) {
+                        if (!Array.isArray(message.query))
+                            return "query: array expected";
+                        for (var i = 0; i < message.query.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.query[i]);
+                            if (error)
+                                return "query." + error;
+                        }
+                    }
                     return null;
                 };
 
@@ -11622,7 +11715,18 @@ $root.syft_proto = (function() {
                 SearchMessage.fromObject = function fromObject(object) {
                     if (object instanceof $root.syft_proto.messaging.v1.SearchMessage)
                         return object;
-                    return new $root.syft_proto.messaging.v1.SearchMessage();
+                    var message = new $root.syft_proto.messaging.v1.SearchMessage();
+                    if (object.query) {
+                        if (!Array.isArray(object.query))
+                            throw TypeError(".syft_proto.messaging.v1.SearchMessage.query: array expected");
+                        message.query = [];
+                        for (var i = 0; i < object.query.length; ++i) {
+                            if (typeof object.query[i] !== "object")
+                                throw TypeError(".syft_proto.messaging.v1.SearchMessage.query: object expected");
+                            message.query[i] = $root.syft_proto.types.syft.v1.Id.fromObject(object.query[i]);
+                        }
+                    }
+                    return message;
                 };
 
                 /**
@@ -11634,8 +11738,18 @@ $root.syft_proto = (function() {
                  * @param {$protobuf.IConversionOptions} [options] Conversion options
                  * @returns {Object.<string,*>} Plain object
                  */
-                SearchMessage.toObject = function toObject() {
-                    return {};
+                SearchMessage.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults)
+                        object.query = [];
+                    if (message.query && message.query.length) {
+                        object.query = [];
+                        for (var j = 0; j < message.query.length; ++j)
+                            object.query[j] = $root.syft_proto.types.syft.v1.Id.toObject(message.query[j], options);
+                    }
+                    return object;
                 };
 
                 /**

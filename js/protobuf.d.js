@@ -4015,9 +4015,6 @@ export namespace syft_proto {
 
                 /** ObjectRequestMessage reason */
                 reason?: (string|null);
-
-                /** ObjectRequestMessage user */
-                user?: (string|null);
             }
 
             /** Represents an ObjectRequestMessage. */
@@ -4034,9 +4031,6 @@ export namespace syft_proto {
 
                 /** ObjectRequestMessage reason. */
                 public reason: string;
-
-                /** ObjectRequestMessage user. */
-                public user: string;
 
                 /**
                  * Creates a new ObjectRequestMessage instance using the specified properties.
@@ -4114,6 +4108,9 @@ export namespace syft_proto {
 
                 /** PlanCommandMessage command_name */
                 command_name?: (string|null);
+
+                /** PlanCommandMessage args */
+                args?: (syft_proto.types.syft.v1.IArg[]|null);
             }
 
             /** Represents a PlanCommandMessage. */
@@ -4127,6 +4124,9 @@ export namespace syft_proto {
 
                 /** PlanCommandMessage command_name. */
                 public command_name: string;
+
+                /** PlanCommandMessage args. */
+                public args: syft_proto.types.syft.v1.IArg[];
 
                 /**
                  * Creates a new PlanCommandMessage instance using the specified properties.
@@ -4204,6 +4204,9 @@ export namespace syft_proto {
 
                 /** WorkerCommandMessage command_name */
                 command_name?: (string|null);
+
+                /** WorkerCommandMessage args */
+                args?: (syft_proto.types.syft.v1.IArg[]|null);
             }
 
             /** Represents a WorkerCommandMessage. */
@@ -4217,6 +4220,9 @@ export namespace syft_proto {
 
                 /** WorkerCommandMessage command_name. */
                 public command_name: string;
+
+                /** WorkerCommandMessage args. */
+                public args: syft_proto.types.syft.v1.IArg[];
 
                 /**
                  * Creates a new WorkerCommandMessage instance using the specified properties.
@@ -4291,6 +4297,9 @@ export namespace syft_proto {
 
             /** Properties of a SearchMessage. */
             interface ISearchMessage {
+
+                /** SearchMessage query */
+                query?: (syft_proto.types.syft.v1.IId[]|null);
             }
 
             /** Represents a SearchMessage. */
@@ -4301,6 +4310,9 @@ export namespace syft_proto {
                  * @param [properties] Properties to set
                  */
                 constructor(properties?: syft_proto.messaging.v1.ISearchMessage);
+
+                /** SearchMessage query. */
+                public query: syft_proto.types.syft.v1.IId[];
 
                 /**
                  * Creates a new SearchMessage instance using the specified properties.

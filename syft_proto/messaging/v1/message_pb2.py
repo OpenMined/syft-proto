@@ -16,6 +16,7 @@ from syft_proto.execution.v1 import computation_action_pb2 as syft__proto_dot_ex
 from syft_proto.execution.v1 import communication_action_pb2 as syft__proto_dot_execution_dot_v1_dot_communication__action__pb2
 from syft_proto.types.syft.v1 import id_pb2 as syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2
 from syft_proto.types.torch.v1 import tensor_pb2 as syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2
+from syft_proto.types.syft.v1 import arg_pb2 as syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -23,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.messaging.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.messaging.v1',
-  serialized_pb=b'\n%syft_proto/messaging/v1/message.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x30syft_proto/execution/v1/computation_action.proto\x1a\x32syft_proto/execution/v1/communication_action.proto\x1a!syft_proto/types/syft/v1/id.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\xfe\x02\n\x0bSyftMessage\x12\x46\n\x12\x63ontents_empty_msg\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00R\x10\x63ontentsEmptyMsg\x12Y\n\x14\x63ontents_is_none_msg\x18\x04 \x01(\x0b\x32&.syft_proto.messaging.v1.IsNoneMessageH\x00R\x11\x63ontentsIsNoneMsg\x12X\n\x13\x63ontents_object_msg\x18\x05 \x01(\x0b\x32&.syft_proto.messaging.v1.ObjectMessageH\x00R\x11\x63ontentsObjectMsg\x12\x66\n\x17\x63ontents_tensor_cmd_msg\x18\x07 \x01(\x0b\x32-.syft_proto.messaging.v1.TensorCommandMessageH\x00R\x14\x63ontentsTensorCmdMsgB\n\n\x08\x63ontents\"J\n\rIsNoneMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\"O\n\rObjectMessage\x12>\n\x06tensor\x18\x01 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x06tensor\"\xc6\x01\n\x14TensorCommandMessage\x12N\n\x0b\x63omputation\x18\x01 \x01(\x0b\x32*.syft_proto.execution.v1.ComputationActionH\x00R\x0b\x63omputation\x12T\n\rcommunication\x18\x02 \x01(\x0b\x32,.syft_proto.execution.v1.CommunicationActionH\x00R\rcommunicationB\x08\n\x06\x61\x63tion\"U\n\x18\x46orceObjectDeleteMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\"L\n\x0fGetShapeMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\"}\n\x14ObjectRequestMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\x12\x16\n\x06reason\x18\x02 \x01(\tR\x06reason\x12\x12\n\x04user\x18\x03 \x01(\tR\x04user\"7\n\x12PlanCommandMessage\x12!\n\x0c\x63ommand_name\x18\x01 \x01(\tR\x0b\x63ommandName\"9\n\x14WorkerCommandMessage\x12!\n\x0c\x63ommand_name\x18\x01 \x01(\tR\x0b\x63ommandName\"\x0f\n\rSearchMessageB&\n$org.openmined.syftproto.messaging.v1b\x06proto3'
+  serialized_pb=b'\n%syft_proto/messaging/v1/message.proto\x12\x17syft_proto.messaging.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x30syft_proto/execution/v1/computation_action.proto\x1a\x32syft_proto/execution/v1/communication_action.proto\x1a!syft_proto/types/syft/v1/id.proto\x1a&syft_proto/types/torch/v1/tensor.proto\x1a\"syft_proto/types/syft/v1/arg.proto\"\xfe\x02\n\x0bSyftMessage\x12\x46\n\x12\x63ontents_empty_msg\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00R\x10\x63ontentsEmptyMsg\x12Y\n\x14\x63ontents_is_none_msg\x18\x04 \x01(\x0b\x32&.syft_proto.messaging.v1.IsNoneMessageH\x00R\x11\x63ontentsIsNoneMsg\x12X\n\x13\x63ontents_object_msg\x18\x05 \x01(\x0b\x32&.syft_proto.messaging.v1.ObjectMessageH\x00R\x11\x63ontentsObjectMsg\x12\x66\n\x17\x63ontents_tensor_cmd_msg\x18\x07 \x01(\x0b\x32-.syft_proto.messaging.v1.TensorCommandMessageH\x00R\x14\x63ontentsTensorCmdMsgB\n\n\x08\x63ontents\"J\n\rIsNoneMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\"O\n\rObjectMessage\x12>\n\x06tensor\x18\x01 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorR\x06tensor\"\xc6\x01\n\x14TensorCommandMessage\x12N\n\x0b\x63omputation\x18\x01 \x01(\x0b\x32*.syft_proto.execution.v1.ComputationActionH\x00R\x0b\x63omputation\x12T\n\rcommunication\x18\x02 \x01(\x0b\x32,.syft_proto.execution.v1.CommunicationActionH\x00R\rcommunicationB\x08\n\x06\x61\x63tion\"U\n\x18\x46orceObjectDeleteMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\"L\n\x0fGetShapeMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\"i\n\x14ObjectRequestMessage\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\x12\x16\n\x06reason\x18\x02 \x01(\tR\x06reason\"j\n\x12PlanCommandMessage\x12!\n\x0c\x63ommand_name\x18\x01 \x01(\tR\x0b\x63ommandName\x12\x31\n\x04\x61rgs\x18\x02 \x03(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x04\x61rgs\"l\n\x14WorkerCommandMessage\x12!\n\x0c\x63ommand_name\x18\x01 \x01(\tR\x0b\x63ommandName\x12\x31\n\x04\x61rgs\x18\x02 \x03(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x04\x61rgs\"C\n\rSearchMessage\x12\x32\n\x05query\x18\x01 \x03(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x05queryB&\n$org.openmined.syftproto.messaging.v1b\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_computation__action__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_communication__action__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_computation__action__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_communication__action__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2.DESCRIPTOR,])
 
 
 
@@ -80,8 +81,8 @@ _SYFTMESSAGE = _descriptor.Descriptor(
       name='contents', full_name='syft_proto.messaging.v1.SyftMessage.contents',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=273,
-  serialized_end=655,
+  serialized_start=309,
+  serialized_end=691,
 )
 
 
@@ -111,8 +112,8 @@ _ISNONEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=657,
-  serialized_end=731,
+  serialized_start=693,
+  serialized_end=767,
 )
 
 
@@ -142,8 +143,8 @@ _OBJECTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=733,
-  serialized_end=812,
+  serialized_start=769,
+  serialized_end=848,
 )
 
 
@@ -183,8 +184,8 @@ _TENSORCOMMANDMESSAGE = _descriptor.Descriptor(
       name='action', full_name='syft_proto.messaging.v1.TensorCommandMessage.action',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=815,
-  serialized_end=1013,
+  serialized_start=851,
+  serialized_end=1049,
 )
 
 
@@ -214,8 +215,8 @@ _FORCEOBJECTDELETEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1015,
-  serialized_end=1100,
+  serialized_start=1051,
+  serialized_end=1136,
 )
 
 
@@ -245,8 +246,8 @@ _GETSHAPEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1102,
-  serialized_end=1178,
+  serialized_start=1138,
+  serialized_end=1214,
 )
 
 
@@ -271,13 +272,6 @@ _OBJECTREQUESTMESSAGE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='reason', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='user', full_name='syft_proto.messaging.v1.ObjectRequestMessage.user', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='user', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -290,8 +284,8 @@ _OBJECTREQUESTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1180,
-  serialized_end=1305,
+  serialized_start=1216,
+  serialized_end=1321,
 )
 
 
@@ -309,6 +303,13 @@ _PLANCOMMANDMESSAGE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='commandName', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='args', full_name='syft_proto.messaging.v1.PlanCommandMessage.args', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='args', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -321,8 +322,8 @@ _PLANCOMMANDMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1307,
-  serialized_end=1362,
+  serialized_start=1323,
+  serialized_end=1429,
 )
 
 
@@ -340,6 +341,13 @@ _WORKERCOMMANDMESSAGE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='commandName', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='args', full_name='syft_proto.messaging.v1.WorkerCommandMessage.args', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='args', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -352,8 +360,8 @@ _WORKERCOMMANDMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1364,
-  serialized_end=1421,
+  serialized_start=1431,
+  serialized_end=1539,
 )
 
 
@@ -364,6 +372,13 @@ _SEARCHMESSAGE = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='query', full_name='syft_proto.messaging.v1.SearchMessage.query', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='query', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -376,8 +391,8 @@ _SEARCHMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1423,
-  serialized_end=1438,
+  serialized_start=1541,
+  serialized_end=1608,
 )
 
 _SYFTMESSAGE.fields_by_name['contents_empty_msg'].message_type = google_dot_protobuf_dot_empty__pb2._EMPTY
@@ -409,6 +424,9 @@ _TENSORCOMMANDMESSAGE.fields_by_name['communication'].containing_oneof = _TENSOR
 _FORCEOBJECTDELETEMESSAGE.fields_by_name['object_id'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
 _GETSHAPEMESSAGE.fields_by_name['object_id'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
 _OBJECTREQUESTMESSAGE.fields_by_name['object_id'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
+_PLANCOMMANDMESSAGE.fields_by_name['args'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2._ARG
+_WORKERCOMMANDMESSAGE.fields_by_name['args'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2._ARG
+_SEARCHMESSAGE.fields_by_name['query'].message_type = syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2._ID
 DESCRIPTOR.message_types_by_name['SyftMessage'] = _SYFTMESSAGE
 DESCRIPTOR.message_types_by_name['IsNoneMessage'] = _ISNONEMESSAGE
 DESCRIPTOR.message_types_by_name['ObjectMessage'] = _OBJECTMESSAGE
