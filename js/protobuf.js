@@ -10718,9 +10718,15 @@ $root.syft_proto = (function() {
                  * @memberof syft_proto.messaging.v1
                  * @interface ISyftMessage
                  * @property {google.protobuf.IEmpty|null} [contents_empty_msg] SyftMessage contents_empty_msg
+                 * @property {syft_proto.messaging.v1.IForceObjectDeleteMessage|null} [contents_delete_msg] SyftMessage contents_delete_msg
+                 * @property {syft_proto.messaging.v1.IGetShapeMessage|null} [contents_get_shape_msg] SyftMessage contents_get_shape_msg
                  * @property {syft_proto.messaging.v1.IIsNoneMessage|null} [contents_is_none_msg] SyftMessage contents_is_none_msg
                  * @property {syft_proto.messaging.v1.IObjectMessage|null} [contents_object_msg] SyftMessage contents_object_msg
+                 * @property {syft_proto.messaging.v1.IObjectRequestMessage|null} [contents_object_request_msg] SyftMessage contents_object_request_msg
                  * @property {syft_proto.messaging.v1.ITensorCommandMessage|null} [contents_tensor_cmd_msg] SyftMessage contents_tensor_cmd_msg
+                 * @property {syft_proto.messaging.v1.IPlanCommandMessage|null} [contents_plan_cmd_msg] SyftMessage contents_plan_cmd_msg
+                 * @property {syft_proto.messaging.v1.IWorkerCommandMessage|null} [contents_worker_cmd_msg] SyftMessage contents_worker_cmd_msg
+                 * @property {syft_proto.messaging.v1.ISearchMessage|null} [contents_search_msg] SyftMessage contents_search_msg
                  */
 
                 /**
@@ -10747,6 +10753,22 @@ $root.syft_proto = (function() {
                 SyftMessage.prototype.contents_empty_msg = null;
 
                 /**
+                 * SyftMessage contents_delete_msg.
+                 * @member {syft_proto.messaging.v1.IForceObjectDeleteMessage|null|undefined} contents_delete_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_delete_msg = null;
+
+                /**
+                 * SyftMessage contents_get_shape_msg.
+                 * @member {syft_proto.messaging.v1.IGetShapeMessage|null|undefined} contents_get_shape_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_get_shape_msg = null;
+
+                /**
                  * SyftMessage contents_is_none_msg.
                  * @member {syft_proto.messaging.v1.IIsNoneMessage|null|undefined} contents_is_none_msg
                  * @memberof syft_proto.messaging.v1.SyftMessage
@@ -10763,6 +10785,14 @@ $root.syft_proto = (function() {
                 SyftMessage.prototype.contents_object_msg = null;
 
                 /**
+                 * SyftMessage contents_object_request_msg.
+                 * @member {syft_proto.messaging.v1.IObjectRequestMessage|null|undefined} contents_object_request_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_object_request_msg = null;
+
+                /**
                  * SyftMessage contents_tensor_cmd_msg.
                  * @member {syft_proto.messaging.v1.ITensorCommandMessage|null|undefined} contents_tensor_cmd_msg
                  * @memberof syft_proto.messaging.v1.SyftMessage
@@ -10770,17 +10800,41 @@ $root.syft_proto = (function() {
                  */
                 SyftMessage.prototype.contents_tensor_cmd_msg = null;
 
+                /**
+                 * SyftMessage contents_plan_cmd_msg.
+                 * @member {syft_proto.messaging.v1.IPlanCommandMessage|null|undefined} contents_plan_cmd_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_plan_cmd_msg = null;
+
+                /**
+                 * SyftMessage contents_worker_cmd_msg.
+                 * @member {syft_proto.messaging.v1.IWorkerCommandMessage|null|undefined} contents_worker_cmd_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_worker_cmd_msg = null;
+
+                /**
+                 * SyftMessage contents_search_msg.
+                 * @member {syft_proto.messaging.v1.ISearchMessage|null|undefined} contents_search_msg
+                 * @memberof syft_proto.messaging.v1.SyftMessage
+                 * @instance
+                 */
+                SyftMessage.prototype.contents_search_msg = null;
+
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
                 /**
                  * SyftMessage contents.
-                 * @member {"contents_empty_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_tensor_cmd_msg"|undefined} contents
+                 * @member {"contents_empty_msg"|"contents_delete_msg"|"contents_get_shape_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_object_request_msg"|"contents_tensor_cmd_msg"|"contents_plan_cmd_msg"|"contents_worker_cmd_msg"|"contents_search_msg"|undefined} contents
                  * @memberof syft_proto.messaging.v1.SyftMessage
                  * @instance
                  */
                 Object.defineProperty(SyftMessage.prototype, "contents", {
-                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_is_none_msg", "contents_object_msg", "contents_tensor_cmd_msg"]),
+                    get: $util.oneOfGetter($oneOfFields = ["contents_empty_msg", "contents_delete_msg", "contents_get_shape_msg", "contents_is_none_msg", "contents_object_msg", "contents_object_request_msg", "contents_tensor_cmd_msg", "contents_plan_cmd_msg", "contents_worker_cmd_msg", "contents_search_msg"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
@@ -10810,12 +10864,24 @@ $root.syft_proto = (function() {
                         writer = $Writer.create();
                     if (message.contents_empty_msg != null && message.hasOwnProperty("contents_empty_msg"))
                         $root.google.protobuf.Empty.encode(message.contents_empty_msg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.contents_delete_msg != null && message.hasOwnProperty("contents_delete_msg"))
+                        $root.syft_proto.messaging.v1.ForceObjectDeleteMessage.encode(message.contents_delete_msg, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.contents_get_shape_msg != null && message.hasOwnProperty("contents_get_shape_msg"))
+                        $root.syft_proto.messaging.v1.GetShapeMessage.encode(message.contents_get_shape_msg, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     if (message.contents_is_none_msg != null && message.hasOwnProperty("contents_is_none_msg"))
                         $root.syft_proto.messaging.v1.IsNoneMessage.encode(message.contents_is_none_msg, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.contents_object_msg != null && message.hasOwnProperty("contents_object_msg"))
                         $root.syft_proto.messaging.v1.ObjectMessage.encode(message.contents_object_msg, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.contents_object_request_msg != null && message.hasOwnProperty("contents_object_request_msg"))
+                        $root.syft_proto.messaging.v1.ObjectRequestMessage.encode(message.contents_object_request_msg, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                     if (message.contents_tensor_cmd_msg != null && message.hasOwnProperty("contents_tensor_cmd_msg"))
                         $root.syft_proto.messaging.v1.TensorCommandMessage.encode(message.contents_tensor_cmd_msg, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    if (message.contents_plan_cmd_msg != null && message.hasOwnProperty("contents_plan_cmd_msg"))
+                        $root.syft_proto.messaging.v1.PlanCommandMessage.encode(message.contents_plan_cmd_msg, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                    if (message.contents_worker_cmd_msg != null && message.hasOwnProperty("contents_worker_cmd_msg"))
+                        $root.syft_proto.messaging.v1.WorkerCommandMessage.encode(message.contents_worker_cmd_msg, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                    if (message.contents_search_msg != null && message.hasOwnProperty("contents_search_msg"))
+                        $root.syft_proto.messaging.v1.SearchMessage.encode(message.contents_search_msg, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                     return writer;
                 };
 
@@ -10853,14 +10919,32 @@ $root.syft_proto = (function() {
                         case 1:
                             message.contents_empty_msg = $root.google.protobuf.Empty.decode(reader, reader.uint32());
                             break;
+                        case 2:
+                            message.contents_delete_msg = $root.syft_proto.messaging.v1.ForceObjectDeleteMessage.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.contents_get_shape_msg = $root.syft_proto.messaging.v1.GetShapeMessage.decode(reader, reader.uint32());
+                            break;
                         case 4:
                             message.contents_is_none_msg = $root.syft_proto.messaging.v1.IsNoneMessage.decode(reader, reader.uint32());
                             break;
                         case 5:
                             message.contents_object_msg = $root.syft_proto.messaging.v1.ObjectMessage.decode(reader, reader.uint32());
                             break;
+                        case 6:
+                            message.contents_object_request_msg = $root.syft_proto.messaging.v1.ObjectRequestMessage.decode(reader, reader.uint32());
+                            break;
                         case 7:
                             message.contents_tensor_cmd_msg = $root.syft_proto.messaging.v1.TensorCommandMessage.decode(reader, reader.uint32());
+                            break;
+                        case 8:
+                            message.contents_plan_cmd_msg = $root.syft_proto.messaging.v1.PlanCommandMessage.decode(reader, reader.uint32());
+                            break;
+                        case 9:
+                            message.contents_worker_cmd_msg = $root.syft_proto.messaging.v1.WorkerCommandMessage.decode(reader, reader.uint32());
+                            break;
+                        case 10:
+                            message.contents_search_msg = $root.syft_proto.messaging.v1.SearchMessage.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -10906,6 +10990,26 @@ $root.syft_proto = (function() {
                                 return "contents_empty_msg." + error;
                         }
                     }
+                    if (message.contents_delete_msg != null && message.hasOwnProperty("contents_delete_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.ForceObjectDeleteMessage.verify(message.contents_delete_msg);
+                            if (error)
+                                return "contents_delete_msg." + error;
+                        }
+                    }
+                    if (message.contents_get_shape_msg != null && message.hasOwnProperty("contents_get_shape_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.GetShapeMessage.verify(message.contents_get_shape_msg);
+                            if (error)
+                                return "contents_get_shape_msg." + error;
+                        }
+                    }
                     if (message.contents_is_none_msg != null && message.hasOwnProperty("contents_is_none_msg")) {
                         if (properties.contents === 1)
                             return "contents: multiple values";
@@ -10926,6 +11030,16 @@ $root.syft_proto = (function() {
                                 return "contents_object_msg." + error;
                         }
                     }
+                    if (message.contents_object_request_msg != null && message.hasOwnProperty("contents_object_request_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.ObjectRequestMessage.verify(message.contents_object_request_msg);
+                            if (error)
+                                return "contents_object_request_msg." + error;
+                        }
+                    }
                     if (message.contents_tensor_cmd_msg != null && message.hasOwnProperty("contents_tensor_cmd_msg")) {
                         if (properties.contents === 1)
                             return "contents: multiple values";
@@ -10934,6 +11048,36 @@ $root.syft_proto = (function() {
                             var error = $root.syft_proto.messaging.v1.TensorCommandMessage.verify(message.contents_tensor_cmd_msg);
                             if (error)
                                 return "contents_tensor_cmd_msg." + error;
+                        }
+                    }
+                    if (message.contents_plan_cmd_msg != null && message.hasOwnProperty("contents_plan_cmd_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.PlanCommandMessage.verify(message.contents_plan_cmd_msg);
+                            if (error)
+                                return "contents_plan_cmd_msg." + error;
+                        }
+                    }
+                    if (message.contents_worker_cmd_msg != null && message.hasOwnProperty("contents_worker_cmd_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.WorkerCommandMessage.verify(message.contents_worker_cmd_msg);
+                            if (error)
+                                return "contents_worker_cmd_msg." + error;
+                        }
+                    }
+                    if (message.contents_search_msg != null && message.hasOwnProperty("contents_search_msg")) {
+                        if (properties.contents === 1)
+                            return "contents: multiple values";
+                        properties.contents = 1;
+                        {
+                            var error = $root.syft_proto.messaging.v1.SearchMessage.verify(message.contents_search_msg);
+                            if (error)
+                                return "contents_search_msg." + error;
                         }
                     }
                     return null;
@@ -10956,6 +11100,16 @@ $root.syft_proto = (function() {
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_empty_msg: object expected");
                         message.contents_empty_msg = $root.google.protobuf.Empty.fromObject(object.contents_empty_msg);
                     }
+                    if (object.contents_delete_msg != null) {
+                        if (typeof object.contents_delete_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_delete_msg: object expected");
+                        message.contents_delete_msg = $root.syft_proto.messaging.v1.ForceObjectDeleteMessage.fromObject(object.contents_delete_msg);
+                    }
+                    if (object.contents_get_shape_msg != null) {
+                        if (typeof object.contents_get_shape_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_get_shape_msg: object expected");
+                        message.contents_get_shape_msg = $root.syft_proto.messaging.v1.GetShapeMessage.fromObject(object.contents_get_shape_msg);
+                    }
                     if (object.contents_is_none_msg != null) {
                         if (typeof object.contents_is_none_msg !== "object")
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_is_none_msg: object expected");
@@ -10966,10 +11120,30 @@ $root.syft_proto = (function() {
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_object_msg: object expected");
                         message.contents_object_msg = $root.syft_proto.messaging.v1.ObjectMessage.fromObject(object.contents_object_msg);
                     }
+                    if (object.contents_object_request_msg != null) {
+                        if (typeof object.contents_object_request_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_object_request_msg: object expected");
+                        message.contents_object_request_msg = $root.syft_proto.messaging.v1.ObjectRequestMessage.fromObject(object.contents_object_request_msg);
+                    }
                     if (object.contents_tensor_cmd_msg != null) {
                         if (typeof object.contents_tensor_cmd_msg !== "object")
                             throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_tensor_cmd_msg: object expected");
                         message.contents_tensor_cmd_msg = $root.syft_proto.messaging.v1.TensorCommandMessage.fromObject(object.contents_tensor_cmd_msg);
+                    }
+                    if (object.contents_plan_cmd_msg != null) {
+                        if (typeof object.contents_plan_cmd_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_plan_cmd_msg: object expected");
+                        message.contents_plan_cmd_msg = $root.syft_proto.messaging.v1.PlanCommandMessage.fromObject(object.contents_plan_cmd_msg);
+                    }
+                    if (object.contents_worker_cmd_msg != null) {
+                        if (typeof object.contents_worker_cmd_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_worker_cmd_msg: object expected");
+                        message.contents_worker_cmd_msg = $root.syft_proto.messaging.v1.WorkerCommandMessage.fromObject(object.contents_worker_cmd_msg);
+                    }
+                    if (object.contents_search_msg != null) {
+                        if (typeof object.contents_search_msg !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.SyftMessage.contents_search_msg: object expected");
+                        message.contents_search_msg = $root.syft_proto.messaging.v1.SearchMessage.fromObject(object.contents_search_msg);
                     }
                     return message;
                 };
@@ -10992,6 +11166,16 @@ $root.syft_proto = (function() {
                         if (options.oneofs)
                             object.contents = "contents_empty_msg";
                     }
+                    if (message.contents_delete_msg != null && message.hasOwnProperty("contents_delete_msg")) {
+                        object.contents_delete_msg = $root.syft_proto.messaging.v1.ForceObjectDeleteMessage.toObject(message.contents_delete_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_delete_msg";
+                    }
+                    if (message.contents_get_shape_msg != null && message.hasOwnProperty("contents_get_shape_msg")) {
+                        object.contents_get_shape_msg = $root.syft_proto.messaging.v1.GetShapeMessage.toObject(message.contents_get_shape_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_get_shape_msg";
+                    }
                     if (message.contents_is_none_msg != null && message.hasOwnProperty("contents_is_none_msg")) {
                         object.contents_is_none_msg = $root.syft_proto.messaging.v1.IsNoneMessage.toObject(message.contents_is_none_msg, options);
                         if (options.oneofs)
@@ -11002,10 +11186,30 @@ $root.syft_proto = (function() {
                         if (options.oneofs)
                             object.contents = "contents_object_msg";
                     }
+                    if (message.contents_object_request_msg != null && message.hasOwnProperty("contents_object_request_msg")) {
+                        object.contents_object_request_msg = $root.syft_proto.messaging.v1.ObjectRequestMessage.toObject(message.contents_object_request_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_object_request_msg";
+                    }
                     if (message.contents_tensor_cmd_msg != null && message.hasOwnProperty("contents_tensor_cmd_msg")) {
                         object.contents_tensor_cmd_msg = $root.syft_proto.messaging.v1.TensorCommandMessage.toObject(message.contents_tensor_cmd_msg, options);
                         if (options.oneofs)
                             object.contents = "contents_tensor_cmd_msg";
+                    }
+                    if (message.contents_plan_cmd_msg != null && message.hasOwnProperty("contents_plan_cmd_msg")) {
+                        object.contents_plan_cmd_msg = $root.syft_proto.messaging.v1.PlanCommandMessage.toObject(message.contents_plan_cmd_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_plan_cmd_msg";
+                    }
+                    if (message.contents_worker_cmd_msg != null && message.hasOwnProperty("contents_worker_cmd_msg")) {
+                        object.contents_worker_cmd_msg = $root.syft_proto.messaging.v1.WorkerCommandMessage.toObject(message.contents_worker_cmd_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_worker_cmd_msg";
+                    }
+                    if (message.contents_search_msg != null && message.hasOwnProperty("contents_search_msg")) {
+                        object.contents_search_msg = $root.syft_proto.messaging.v1.SearchMessage.toObject(message.contents_search_msg, options);
+                        if (options.oneofs)
+                            object.contents = "contents_search_msg";
                     }
                     return object;
                 };
@@ -11651,6 +11855,1275 @@ $root.syft_proto = (function() {
                 };
 
                 return TensorCommandMessage;
+            })();
+
+            v1.ForceObjectDeleteMessage = (function() {
+
+                /**
+                 * Properties of a ForceObjectDeleteMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface IForceObjectDeleteMessage
+                 * @property {syft_proto.types.syft.v1.IId|null} [object_id] ForceObjectDeleteMessage object_id
+                 */
+
+                /**
+                 * Constructs a new ForceObjectDeleteMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents a ForceObjectDeleteMessage.
+                 * @implements IForceObjectDeleteMessage
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.IForceObjectDeleteMessage=} [properties] Properties to set
+                 */
+                function ForceObjectDeleteMessage(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * ForceObjectDeleteMessage object_id.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} object_id
+                 * @memberof syft_proto.messaging.v1.ForceObjectDeleteMessage
+                 * @instance
+                 */
+                ForceObjectDeleteMessage.prototype.object_id = null;
+
+                /**
+                 * Creates a new ForceObjectDeleteMessage instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.ForceObjectDeleteMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IForceObjectDeleteMessage=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.ForceObjectDeleteMessage} ForceObjectDeleteMessage instance
+                 */
+                ForceObjectDeleteMessage.create = function create(properties) {
+                    return new ForceObjectDeleteMessage(properties);
+                };
+
+                /**
+                 * Encodes the specified ForceObjectDeleteMessage message. Does not implicitly {@link syft_proto.messaging.v1.ForceObjectDeleteMessage.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.ForceObjectDeleteMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IForceObjectDeleteMessage} message ForceObjectDeleteMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ForceObjectDeleteMessage.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.object_id != null && message.hasOwnProperty("object_id"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.object_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified ForceObjectDeleteMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.ForceObjectDeleteMessage.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.ForceObjectDeleteMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IForceObjectDeleteMessage} message ForceObjectDeleteMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ForceObjectDeleteMessage.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a ForceObjectDeleteMessage message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.ForceObjectDeleteMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.ForceObjectDeleteMessage} ForceObjectDeleteMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ForceObjectDeleteMessage.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.ForceObjectDeleteMessage();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.object_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a ForceObjectDeleteMessage message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.ForceObjectDeleteMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.ForceObjectDeleteMessage} ForceObjectDeleteMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ForceObjectDeleteMessage.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a ForceObjectDeleteMessage message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.ForceObjectDeleteMessage
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                ForceObjectDeleteMessage.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.object_id != null && message.hasOwnProperty("object_id")) {
+                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.object_id);
+                        if (error)
+                            return "object_id." + error;
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a ForceObjectDeleteMessage message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.ForceObjectDeleteMessage
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.ForceObjectDeleteMessage} ForceObjectDeleteMessage
+                 */
+                ForceObjectDeleteMessage.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.ForceObjectDeleteMessage)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.ForceObjectDeleteMessage();
+                    if (object.object_id != null) {
+                        if (typeof object.object_id !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.ForceObjectDeleteMessage.object_id: object expected");
+                        message.object_id = $root.syft_proto.types.syft.v1.Id.fromObject(object.object_id);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a ForceObjectDeleteMessage message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.ForceObjectDeleteMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.ForceObjectDeleteMessage} message ForceObjectDeleteMessage
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                ForceObjectDeleteMessage.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.object_id = null;
+                    if (message.object_id != null && message.hasOwnProperty("object_id"))
+                        object.object_id = $root.syft_proto.types.syft.v1.Id.toObject(message.object_id, options);
+                    return object;
+                };
+
+                /**
+                 * Converts this ForceObjectDeleteMessage to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.ForceObjectDeleteMessage
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                ForceObjectDeleteMessage.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return ForceObjectDeleteMessage;
+            })();
+
+            v1.GetShapeMessage = (function() {
+
+                /**
+                 * Properties of a GetShapeMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface IGetShapeMessage
+                 * @property {syft_proto.types.syft.v1.IId|null} [object_id] GetShapeMessage object_id
+                 */
+
+                /**
+                 * Constructs a new GetShapeMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents a GetShapeMessage.
+                 * @implements IGetShapeMessage
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.IGetShapeMessage=} [properties] Properties to set
+                 */
+                function GetShapeMessage(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * GetShapeMessage object_id.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} object_id
+                 * @memberof syft_proto.messaging.v1.GetShapeMessage
+                 * @instance
+                 */
+                GetShapeMessage.prototype.object_id = null;
+
+                /**
+                 * Creates a new GetShapeMessage instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.GetShapeMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IGetShapeMessage=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.GetShapeMessage} GetShapeMessage instance
+                 */
+                GetShapeMessage.create = function create(properties) {
+                    return new GetShapeMessage(properties);
+                };
+
+                /**
+                 * Encodes the specified GetShapeMessage message. Does not implicitly {@link syft_proto.messaging.v1.GetShapeMessage.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.GetShapeMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IGetShapeMessage} message GetShapeMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                GetShapeMessage.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.object_id != null && message.hasOwnProperty("object_id"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.object_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified GetShapeMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.GetShapeMessage.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.GetShapeMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IGetShapeMessage} message GetShapeMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                GetShapeMessage.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a GetShapeMessage message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.GetShapeMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.GetShapeMessage} GetShapeMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                GetShapeMessage.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.GetShapeMessage();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.object_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a GetShapeMessage message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.GetShapeMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.GetShapeMessage} GetShapeMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                GetShapeMessage.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a GetShapeMessage message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.GetShapeMessage
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                GetShapeMessage.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.object_id != null && message.hasOwnProperty("object_id")) {
+                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.object_id);
+                        if (error)
+                            return "object_id." + error;
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a GetShapeMessage message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.GetShapeMessage
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.GetShapeMessage} GetShapeMessage
+                 */
+                GetShapeMessage.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.GetShapeMessage)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.GetShapeMessage();
+                    if (object.object_id != null) {
+                        if (typeof object.object_id !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.GetShapeMessage.object_id: object expected");
+                        message.object_id = $root.syft_proto.types.syft.v1.Id.fromObject(object.object_id);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a GetShapeMessage message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.GetShapeMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.GetShapeMessage} message GetShapeMessage
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                GetShapeMessage.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.object_id = null;
+                    if (message.object_id != null && message.hasOwnProperty("object_id"))
+                        object.object_id = $root.syft_proto.types.syft.v1.Id.toObject(message.object_id, options);
+                    return object;
+                };
+
+                /**
+                 * Converts this GetShapeMessage to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.GetShapeMessage
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                GetShapeMessage.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return GetShapeMessage;
+            })();
+
+            v1.ObjectRequestMessage = (function() {
+
+                /**
+                 * Properties of an ObjectRequestMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface IObjectRequestMessage
+                 * @property {syft_proto.types.syft.v1.IId|null} [object_id] ObjectRequestMessage object_id
+                 * @property {string|null} [reason] ObjectRequestMessage reason
+                 */
+
+                /**
+                 * Constructs a new ObjectRequestMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents an ObjectRequestMessage.
+                 * @implements IObjectRequestMessage
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.IObjectRequestMessage=} [properties] Properties to set
+                 */
+                function ObjectRequestMessage(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * ObjectRequestMessage object_id.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} object_id
+                 * @memberof syft_proto.messaging.v1.ObjectRequestMessage
+                 * @instance
+                 */
+                ObjectRequestMessage.prototype.object_id = null;
+
+                /**
+                 * ObjectRequestMessage reason.
+                 * @member {string} reason
+                 * @memberof syft_proto.messaging.v1.ObjectRequestMessage
+                 * @instance
+                 */
+                ObjectRequestMessage.prototype.reason = "";
+
+                /**
+                 * Creates a new ObjectRequestMessage instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.ObjectRequestMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IObjectRequestMessage=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.ObjectRequestMessage} ObjectRequestMessage instance
+                 */
+                ObjectRequestMessage.create = function create(properties) {
+                    return new ObjectRequestMessage(properties);
+                };
+
+                /**
+                 * Encodes the specified ObjectRequestMessage message. Does not implicitly {@link syft_proto.messaging.v1.ObjectRequestMessage.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.ObjectRequestMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IObjectRequestMessage} message ObjectRequestMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ObjectRequestMessage.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.object_id != null && message.hasOwnProperty("object_id"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.object_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.reason != null && message.hasOwnProperty("reason"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.reason);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified ObjectRequestMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.ObjectRequestMessage.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.ObjectRequestMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IObjectRequestMessage} message ObjectRequestMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ObjectRequestMessage.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes an ObjectRequestMessage message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.ObjectRequestMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.ObjectRequestMessage} ObjectRequestMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ObjectRequestMessage.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.ObjectRequestMessage();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.object_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.reason = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes an ObjectRequestMessage message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.ObjectRequestMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.ObjectRequestMessage} ObjectRequestMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ObjectRequestMessage.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies an ObjectRequestMessage message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.ObjectRequestMessage
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                ObjectRequestMessage.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.object_id != null && message.hasOwnProperty("object_id")) {
+                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.object_id);
+                        if (error)
+                            return "object_id." + error;
+                    }
+                    if (message.reason != null && message.hasOwnProperty("reason"))
+                        if (!$util.isString(message.reason))
+                            return "reason: string expected";
+                    return null;
+                };
+
+                /**
+                 * Creates an ObjectRequestMessage message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.ObjectRequestMessage
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.ObjectRequestMessage} ObjectRequestMessage
+                 */
+                ObjectRequestMessage.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.ObjectRequestMessage)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.ObjectRequestMessage();
+                    if (object.object_id != null) {
+                        if (typeof object.object_id !== "object")
+                            throw TypeError(".syft_proto.messaging.v1.ObjectRequestMessage.object_id: object expected");
+                        message.object_id = $root.syft_proto.types.syft.v1.Id.fromObject(object.object_id);
+                    }
+                    if (object.reason != null)
+                        message.reason = String(object.reason);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from an ObjectRequestMessage message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.ObjectRequestMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.ObjectRequestMessage} message ObjectRequestMessage
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                ObjectRequestMessage.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.object_id = null;
+                        object.reason = "";
+                    }
+                    if (message.object_id != null && message.hasOwnProperty("object_id"))
+                        object.object_id = $root.syft_proto.types.syft.v1.Id.toObject(message.object_id, options);
+                    if (message.reason != null && message.hasOwnProperty("reason"))
+                        object.reason = message.reason;
+                    return object;
+                };
+
+                /**
+                 * Converts this ObjectRequestMessage to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.ObjectRequestMessage
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                ObjectRequestMessage.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return ObjectRequestMessage;
+            })();
+
+            v1.PlanCommandMessage = (function() {
+
+                /**
+                 * Properties of a PlanCommandMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface IPlanCommandMessage
+                 * @property {string|null} [command_name] PlanCommandMessage command_name
+                 * @property {Array.<syft_proto.types.syft.v1.IArg>|null} [args] PlanCommandMessage args
+                 */
+
+                /**
+                 * Constructs a new PlanCommandMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents a PlanCommandMessage.
+                 * @implements IPlanCommandMessage
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.IPlanCommandMessage=} [properties] Properties to set
+                 */
+                function PlanCommandMessage(properties) {
+                    this.args = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * PlanCommandMessage command_name.
+                 * @member {string} command_name
+                 * @memberof syft_proto.messaging.v1.PlanCommandMessage
+                 * @instance
+                 */
+                PlanCommandMessage.prototype.command_name = "";
+
+                /**
+                 * PlanCommandMessage args.
+                 * @member {Array.<syft_proto.types.syft.v1.IArg>} args
+                 * @memberof syft_proto.messaging.v1.PlanCommandMessage
+                 * @instance
+                 */
+                PlanCommandMessage.prototype.args = $util.emptyArray;
+
+                /**
+                 * Creates a new PlanCommandMessage instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.PlanCommandMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IPlanCommandMessage=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.PlanCommandMessage} PlanCommandMessage instance
+                 */
+                PlanCommandMessage.create = function create(properties) {
+                    return new PlanCommandMessage(properties);
+                };
+
+                /**
+                 * Encodes the specified PlanCommandMessage message. Does not implicitly {@link syft_proto.messaging.v1.PlanCommandMessage.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.PlanCommandMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IPlanCommandMessage} message PlanCommandMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                PlanCommandMessage.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.command_name != null && message.hasOwnProperty("command_name"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.command_name);
+                    if (message.args != null && message.args.length)
+                        for (var i = 0; i < message.args.length; ++i)
+                            $root.syft_proto.types.syft.v1.Arg.encode(message.args[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified PlanCommandMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.PlanCommandMessage.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.PlanCommandMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IPlanCommandMessage} message PlanCommandMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                PlanCommandMessage.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a PlanCommandMessage message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.PlanCommandMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.PlanCommandMessage} PlanCommandMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                PlanCommandMessage.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.PlanCommandMessage();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.command_name = reader.string();
+                            break;
+                        case 2:
+                            if (!(message.args && message.args.length))
+                                message.args = [];
+                            message.args.push($root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a PlanCommandMessage message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.PlanCommandMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.PlanCommandMessage} PlanCommandMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                PlanCommandMessage.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a PlanCommandMessage message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.PlanCommandMessage
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                PlanCommandMessage.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.command_name != null && message.hasOwnProperty("command_name"))
+                        if (!$util.isString(message.command_name))
+                            return "command_name: string expected";
+                    if (message.args != null && message.hasOwnProperty("args")) {
+                        if (!Array.isArray(message.args))
+                            return "args: array expected";
+                        for (var i = 0; i < message.args.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Arg.verify(message.args[i]);
+                            if (error)
+                                return "args." + error;
+                        }
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a PlanCommandMessage message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.PlanCommandMessage
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.PlanCommandMessage} PlanCommandMessage
+                 */
+                PlanCommandMessage.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.PlanCommandMessage)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.PlanCommandMessage();
+                    if (object.command_name != null)
+                        message.command_name = String(object.command_name);
+                    if (object.args) {
+                        if (!Array.isArray(object.args))
+                            throw TypeError(".syft_proto.messaging.v1.PlanCommandMessage.args: array expected");
+                        message.args = [];
+                        for (var i = 0; i < object.args.length; ++i) {
+                            if (typeof object.args[i] !== "object")
+                                throw TypeError(".syft_proto.messaging.v1.PlanCommandMessage.args: object expected");
+                            message.args[i] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.args[i]);
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a PlanCommandMessage message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.PlanCommandMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.PlanCommandMessage} message PlanCommandMessage
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                PlanCommandMessage.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults)
+                        object.args = [];
+                    if (options.defaults)
+                        object.command_name = "";
+                    if (message.command_name != null && message.hasOwnProperty("command_name"))
+                        object.command_name = message.command_name;
+                    if (message.args && message.args.length) {
+                        object.args = [];
+                        for (var j = 0; j < message.args.length; ++j)
+                            object.args[j] = $root.syft_proto.types.syft.v1.Arg.toObject(message.args[j], options);
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this PlanCommandMessage to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.PlanCommandMessage
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                PlanCommandMessage.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return PlanCommandMessage;
+            })();
+
+            v1.WorkerCommandMessage = (function() {
+
+                /**
+                 * Properties of a WorkerCommandMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface IWorkerCommandMessage
+                 * @property {string|null} [command_name] WorkerCommandMessage command_name
+                 * @property {Array.<syft_proto.types.syft.v1.IArg>|null} [args] WorkerCommandMessage args
+                 */
+
+                /**
+                 * Constructs a new WorkerCommandMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents a WorkerCommandMessage.
+                 * @implements IWorkerCommandMessage
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.IWorkerCommandMessage=} [properties] Properties to set
+                 */
+                function WorkerCommandMessage(properties) {
+                    this.args = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * WorkerCommandMessage command_name.
+                 * @member {string} command_name
+                 * @memberof syft_proto.messaging.v1.WorkerCommandMessage
+                 * @instance
+                 */
+                WorkerCommandMessage.prototype.command_name = "";
+
+                /**
+                 * WorkerCommandMessage args.
+                 * @member {Array.<syft_proto.types.syft.v1.IArg>} args
+                 * @memberof syft_proto.messaging.v1.WorkerCommandMessage
+                 * @instance
+                 */
+                WorkerCommandMessage.prototype.args = $util.emptyArray;
+
+                /**
+                 * Creates a new WorkerCommandMessage instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.WorkerCommandMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IWorkerCommandMessage=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.WorkerCommandMessage} WorkerCommandMessage instance
+                 */
+                WorkerCommandMessage.create = function create(properties) {
+                    return new WorkerCommandMessage(properties);
+                };
+
+                /**
+                 * Encodes the specified WorkerCommandMessage message. Does not implicitly {@link syft_proto.messaging.v1.WorkerCommandMessage.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.WorkerCommandMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IWorkerCommandMessage} message WorkerCommandMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                WorkerCommandMessage.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.command_name != null && message.hasOwnProperty("command_name"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.command_name);
+                    if (message.args != null && message.args.length)
+                        for (var i = 0; i < message.args.length; ++i)
+                            $root.syft_proto.types.syft.v1.Arg.encode(message.args[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified WorkerCommandMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.WorkerCommandMessage.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.WorkerCommandMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.IWorkerCommandMessage} message WorkerCommandMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                WorkerCommandMessage.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a WorkerCommandMessage message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.WorkerCommandMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.WorkerCommandMessage} WorkerCommandMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                WorkerCommandMessage.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.WorkerCommandMessage();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.command_name = reader.string();
+                            break;
+                        case 2:
+                            if (!(message.args && message.args.length))
+                                message.args = [];
+                            message.args.push($root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a WorkerCommandMessage message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.WorkerCommandMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.WorkerCommandMessage} WorkerCommandMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                WorkerCommandMessage.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a WorkerCommandMessage message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.WorkerCommandMessage
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                WorkerCommandMessage.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.command_name != null && message.hasOwnProperty("command_name"))
+                        if (!$util.isString(message.command_name))
+                            return "command_name: string expected";
+                    if (message.args != null && message.hasOwnProperty("args")) {
+                        if (!Array.isArray(message.args))
+                            return "args: array expected";
+                        for (var i = 0; i < message.args.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Arg.verify(message.args[i]);
+                            if (error)
+                                return "args." + error;
+                        }
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a WorkerCommandMessage message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.WorkerCommandMessage
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.WorkerCommandMessage} WorkerCommandMessage
+                 */
+                WorkerCommandMessage.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.WorkerCommandMessage)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.WorkerCommandMessage();
+                    if (object.command_name != null)
+                        message.command_name = String(object.command_name);
+                    if (object.args) {
+                        if (!Array.isArray(object.args))
+                            throw TypeError(".syft_proto.messaging.v1.WorkerCommandMessage.args: array expected");
+                        message.args = [];
+                        for (var i = 0; i < object.args.length; ++i) {
+                            if (typeof object.args[i] !== "object")
+                                throw TypeError(".syft_proto.messaging.v1.WorkerCommandMessage.args: object expected");
+                            message.args[i] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.args[i]);
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a WorkerCommandMessage message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.WorkerCommandMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.WorkerCommandMessage} message WorkerCommandMessage
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                WorkerCommandMessage.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults)
+                        object.args = [];
+                    if (options.defaults)
+                        object.command_name = "";
+                    if (message.command_name != null && message.hasOwnProperty("command_name"))
+                        object.command_name = message.command_name;
+                    if (message.args && message.args.length) {
+                        object.args = [];
+                        for (var j = 0; j < message.args.length; ++j)
+                            object.args[j] = $root.syft_proto.types.syft.v1.Arg.toObject(message.args[j], options);
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this WorkerCommandMessage to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.WorkerCommandMessage
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                WorkerCommandMessage.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return WorkerCommandMessage;
+            })();
+
+            v1.SearchMessage = (function() {
+
+                /**
+                 * Properties of a SearchMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @interface ISearchMessage
+                 * @property {Array.<syft_proto.types.syft.v1.IId>|null} [query] SearchMessage query
+                 */
+
+                /**
+                 * Constructs a new SearchMessage.
+                 * @memberof syft_proto.messaging.v1
+                 * @classdesc Represents a SearchMessage.
+                 * @implements ISearchMessage
+                 * @constructor
+                 * @param {syft_proto.messaging.v1.ISearchMessage=} [properties] Properties to set
+                 */
+                function SearchMessage(properties) {
+                    this.query = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * SearchMessage query.
+                 * @member {Array.<syft_proto.types.syft.v1.IId>} query
+                 * @memberof syft_proto.messaging.v1.SearchMessage
+                 * @instance
+                 */
+                SearchMessage.prototype.query = $util.emptyArray;
+
+                /**
+                 * Creates a new SearchMessage instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.messaging.v1.SearchMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.ISearchMessage=} [properties] Properties to set
+                 * @returns {syft_proto.messaging.v1.SearchMessage} SearchMessage instance
+                 */
+                SearchMessage.create = function create(properties) {
+                    return new SearchMessage(properties);
+                };
+
+                /**
+                 * Encodes the specified SearchMessage message. Does not implicitly {@link syft_proto.messaging.v1.SearchMessage.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.messaging.v1.SearchMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.ISearchMessage} message SearchMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                SearchMessage.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.query != null && message.query.length)
+                        for (var i = 0; i < message.query.length; ++i)
+                            $root.syft_proto.types.syft.v1.Id.encode(message.query[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified SearchMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.SearchMessage.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.messaging.v1.SearchMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.ISearchMessage} message SearchMessage message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                SearchMessage.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a SearchMessage message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.messaging.v1.SearchMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.messaging.v1.SearchMessage} SearchMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                SearchMessage.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.messaging.v1.SearchMessage();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            if (!(message.query && message.query.length))
+                                message.query = [];
+                            message.query.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a SearchMessage message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.messaging.v1.SearchMessage
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.messaging.v1.SearchMessage} SearchMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                SearchMessage.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a SearchMessage message.
+                 * @function verify
+                 * @memberof syft_proto.messaging.v1.SearchMessage
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                SearchMessage.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.query != null && message.hasOwnProperty("query")) {
+                        if (!Array.isArray(message.query))
+                            return "query: array expected";
+                        for (var i = 0; i < message.query.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.query[i]);
+                            if (error)
+                                return "query." + error;
+                        }
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a SearchMessage message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.messaging.v1.SearchMessage
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.messaging.v1.SearchMessage} SearchMessage
+                 */
+                SearchMessage.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.messaging.v1.SearchMessage)
+                        return object;
+                    var message = new $root.syft_proto.messaging.v1.SearchMessage();
+                    if (object.query) {
+                        if (!Array.isArray(object.query))
+                            throw TypeError(".syft_proto.messaging.v1.SearchMessage.query: array expected");
+                        message.query = [];
+                        for (var i = 0; i < object.query.length; ++i) {
+                            if (typeof object.query[i] !== "object")
+                                throw TypeError(".syft_proto.messaging.v1.SearchMessage.query: object expected");
+                            message.query[i] = $root.syft_proto.types.syft.v1.Id.fromObject(object.query[i]);
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a SearchMessage message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.messaging.v1.SearchMessage
+                 * @static
+                 * @param {syft_proto.messaging.v1.SearchMessage} message SearchMessage
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                SearchMessage.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults)
+                        object.query = [];
+                    if (message.query && message.query.length) {
+                        object.query = [];
+                        for (var j = 0; j < message.query.length; ++j)
+                            object.query[j] = $root.syft_proto.types.syft.v1.Id.toObject(message.query[j], options);
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this SearchMessage to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.messaging.v1.SearchMessage
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                SearchMessage.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return SearchMessage;
             })();
 
             return v1;
