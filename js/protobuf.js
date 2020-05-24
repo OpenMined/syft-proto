@@ -4529,6 +4529,524 @@ $root.syft_proto = (function() {
                 return Protocol;
             })();
 
+            v1.WorkerAction = (function() {
+
+                /**
+                 * Properties of a WorkerAction.
+                 * @memberof syft_proto.execution.v1
+                 * @interface IWorkerAction
+                 * @property {string|null} [command] WorkerAction command
+                 * @property {syft_proto.types.syft.v1.IId|null} [target_id] WorkerAction target_id
+                 * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [target_pointer] WorkerAction target_pointer
+                 * @property {syft_proto.execution.v1.IPlaceholderId|null} [target_placeholder_id] WorkerAction target_placeholder_id
+                 * @property {syft_proto.types.torch.v1.ITorchTensor|null} [target_tensor] WorkerAction target_tensor
+                 * @property {Array.<syft_proto.types.syft.v1.IArg>|null} [args] WorkerAction args
+                 * @property {Object.<string,syft_proto.types.syft.v1.IArg>|null} [kwargs] WorkerAction kwargs
+                 * @property {Array.<syft_proto.types.syft.v1.IId>|null} [return_ids] WorkerAction return_ids
+                 * @property {Array.<syft_proto.execution.v1.IPlaceholderId>|null} [return_placeholder_ids] WorkerAction return_placeholder_ids
+                 */
+
+                /**
+                 * Constructs a new WorkerAction.
+                 * @memberof syft_proto.execution.v1
+                 * @classdesc Represents a WorkerAction.
+                 * @implements IWorkerAction
+                 * @constructor
+                 * @param {syft_proto.execution.v1.IWorkerAction=} [properties] Properties to set
+                 */
+                function WorkerAction(properties) {
+                    this.args = [];
+                    this.kwargs = {};
+                    this.return_ids = [];
+                    this.return_placeholder_ids = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * WorkerAction command.
+                 * @member {string} command
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @instance
+                 */
+                WorkerAction.prototype.command = "";
+
+                /**
+                 * WorkerAction target_id.
+                 * @member {syft_proto.types.syft.v1.IId|null|undefined} target_id
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @instance
+                 */
+                WorkerAction.prototype.target_id = null;
+
+                /**
+                 * WorkerAction target_pointer.
+                 * @member {syft_proto.generic.pointers.v1.IPointerTensor|null|undefined} target_pointer
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @instance
+                 */
+                WorkerAction.prototype.target_pointer = null;
+
+                /**
+                 * WorkerAction target_placeholder_id.
+                 * @member {syft_proto.execution.v1.IPlaceholderId|null|undefined} target_placeholder_id
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @instance
+                 */
+                WorkerAction.prototype.target_placeholder_id = null;
+
+                /**
+                 * WorkerAction target_tensor.
+                 * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} target_tensor
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @instance
+                 */
+                WorkerAction.prototype.target_tensor = null;
+
+                /**
+                 * WorkerAction args.
+                 * @member {Array.<syft_proto.types.syft.v1.IArg>} args
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @instance
+                 */
+                WorkerAction.prototype.args = $util.emptyArray;
+
+                /**
+                 * WorkerAction kwargs.
+                 * @member {Object.<string,syft_proto.types.syft.v1.IArg>} kwargs
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @instance
+                 */
+                WorkerAction.prototype.kwargs = $util.emptyObject;
+
+                /**
+                 * WorkerAction return_ids.
+                 * @member {Array.<syft_proto.types.syft.v1.IId>} return_ids
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @instance
+                 */
+                WorkerAction.prototype.return_ids = $util.emptyArray;
+
+                /**
+                 * WorkerAction return_placeholder_ids.
+                 * @member {Array.<syft_proto.execution.v1.IPlaceholderId>} return_placeholder_ids
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @instance
+                 */
+                WorkerAction.prototype.return_placeholder_ids = $util.emptyArray;
+
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+
+                /**
+                 * WorkerAction target.
+                 * @member {"target_id"|"target_pointer"|"target_placeholder_id"|"target_tensor"|undefined} target
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @instance
+                 */
+                Object.defineProperty(WorkerAction.prototype, "target", {
+                    get: $util.oneOfGetter($oneOfFields = ["target_id", "target_pointer", "target_placeholder_id", "target_tensor"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                /**
+                 * Creates a new WorkerAction instance using the specified properties.
+                 * @function create
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @static
+                 * @param {syft_proto.execution.v1.IWorkerAction=} [properties] Properties to set
+                 * @returns {syft_proto.execution.v1.WorkerAction} WorkerAction instance
+                 */
+                WorkerAction.create = function create(properties) {
+                    return new WorkerAction(properties);
+                };
+
+                /**
+                 * Encodes the specified WorkerAction message. Does not implicitly {@link syft_proto.execution.v1.WorkerAction.verify|verify} messages.
+                 * @function encode
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @static
+                 * @param {syft_proto.execution.v1.IWorkerAction} message WorkerAction message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                WorkerAction.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.command != null && message.hasOwnProperty("command"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.command);
+                    if (message.target_pointer != null && message.hasOwnProperty("target_pointer"))
+                        $root.syft_proto.generic.pointers.v1.PointerTensor.encode(message.target_pointer, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.target_placeholder_id != null && message.hasOwnProperty("target_placeholder_id"))
+                        $root.syft_proto.execution.v1.PlaceholderId.encode(message.target_placeholder_id, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.target_tensor != null && message.hasOwnProperty("target_tensor"))
+                        $root.syft_proto.types.torch.v1.TorchTensor.encode(message.target_tensor, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.args != null && message.args.length)
+                        for (var i = 0; i < message.args.length; ++i)
+                            $root.syft_proto.types.syft.v1.Arg.encode(message.args[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.kwargs != null && message.hasOwnProperty("kwargs"))
+                        for (var keys = Object.keys(message.kwargs), i = 0; i < keys.length; ++i) {
+                            writer.uint32(/* id 6, wireType 2 =*/50).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                            $root.syft_proto.types.syft.v1.Arg.encode(message.kwargs[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                        }
+                    if (message.return_ids != null && message.return_ids.length)
+                        for (var i = 0; i < message.return_ids.length; ++i)
+                            $root.syft_proto.types.syft.v1.Id.encode(message.return_ids[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    if (message.return_placeholder_ids != null && message.return_placeholder_ids.length)
+                        for (var i = 0; i < message.return_placeholder_ids.length; ++i)
+                            $root.syft_proto.execution.v1.PlaceholderId.encode(message.return_placeholder_ids[i], writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                    if (message.target_id != null && message.hasOwnProperty("target_id"))
+                        $root.syft_proto.types.syft.v1.Id.encode(message.target_id, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified WorkerAction message, length delimited. Does not implicitly {@link syft_proto.execution.v1.WorkerAction.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @static
+                 * @param {syft_proto.execution.v1.IWorkerAction} message WorkerAction message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                WorkerAction.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a WorkerAction message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {syft_proto.execution.v1.WorkerAction} WorkerAction
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                WorkerAction.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.WorkerAction(), key;
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.command = reader.string();
+                            break;
+                        case 9:
+                            message.target_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.target_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.target_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            message.target_tensor = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
+                            break;
+                        case 5:
+                            if (!(message.args && message.args.length))
+                                message.args = [];
+                            message.args.push($root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32()));
+                            break;
+                        case 6:
+                            reader.skip().pos++;
+                            if (message.kwargs === $util.emptyObject)
+                                message.kwargs = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.kwargs[key] = $root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32());
+                            break;
+                        case 7:
+                            if (!(message.return_ids && message.return_ids.length))
+                                message.return_ids = [];
+                            message.return_ids.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
+                            break;
+                        case 8:
+                            if (!(message.return_placeholder_ids && message.return_placeholder_ids.length))
+                                message.return_placeholder_ids = [];
+                            message.return_placeholder_ids.push($root.syft_proto.execution.v1.PlaceholderId.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a WorkerAction message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {syft_proto.execution.v1.WorkerAction} WorkerAction
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                WorkerAction.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a WorkerAction message.
+                 * @function verify
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                WorkerAction.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.command != null && message.hasOwnProperty("command"))
+                        if (!$util.isString(message.command))
+                            return "command: string expected";
+                    if (message.target_id != null && message.hasOwnProperty("target_id")) {
+                        properties.target = 1;
+                        {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.target_id);
+                            if (error)
+                                return "target_id." + error;
+                        }
+                    }
+                    if (message.target_pointer != null && message.hasOwnProperty("target_pointer")) {
+                        if (properties.target === 1)
+                            return "target: multiple values";
+                        properties.target = 1;
+                        {
+                            var error = $root.syft_proto.generic.pointers.v1.PointerTensor.verify(message.target_pointer);
+                            if (error)
+                                return "target_pointer." + error;
+                        }
+                    }
+                    if (message.target_placeholder_id != null && message.hasOwnProperty("target_placeholder_id")) {
+                        if (properties.target === 1)
+                            return "target: multiple values";
+                        properties.target = 1;
+                        {
+                            var error = $root.syft_proto.execution.v1.PlaceholderId.verify(message.target_placeholder_id);
+                            if (error)
+                                return "target_placeholder_id." + error;
+                        }
+                    }
+                    if (message.target_tensor != null && message.hasOwnProperty("target_tensor")) {
+                        if (properties.target === 1)
+                            return "target: multiple values";
+                        properties.target = 1;
+                        {
+                            var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.target_tensor);
+                            if (error)
+                                return "target_tensor." + error;
+                        }
+                    }
+                    if (message.args != null && message.hasOwnProperty("args")) {
+                        if (!Array.isArray(message.args))
+                            return "args: array expected";
+                        for (var i = 0; i < message.args.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Arg.verify(message.args[i]);
+                            if (error)
+                                return "args." + error;
+                        }
+                    }
+                    if (message.kwargs != null && message.hasOwnProperty("kwargs")) {
+                        if (!$util.isObject(message.kwargs))
+                            return "kwargs: object expected";
+                        var key = Object.keys(message.kwargs);
+                        for (var i = 0; i < key.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Arg.verify(message.kwargs[key[i]]);
+                            if (error)
+                                return "kwargs." + error;
+                        }
+                    }
+                    if (message.return_ids != null && message.hasOwnProperty("return_ids")) {
+                        if (!Array.isArray(message.return_ids))
+                            return "return_ids: array expected";
+                        for (var i = 0; i < message.return_ids.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.return_ids[i]);
+                            if (error)
+                                return "return_ids." + error;
+                        }
+                    }
+                    if (message.return_placeholder_ids != null && message.hasOwnProperty("return_placeholder_ids")) {
+                        if (!Array.isArray(message.return_placeholder_ids))
+                            return "return_placeholder_ids: array expected";
+                        for (var i = 0; i < message.return_placeholder_ids.length; ++i) {
+                            var error = $root.syft_proto.execution.v1.PlaceholderId.verify(message.return_placeholder_ids[i]);
+                            if (error)
+                                return "return_placeholder_ids." + error;
+                        }
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a WorkerAction message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {syft_proto.execution.v1.WorkerAction} WorkerAction
+                 */
+                WorkerAction.fromObject = function fromObject(object) {
+                    if (object instanceof $root.syft_proto.execution.v1.WorkerAction)
+                        return object;
+                    var message = new $root.syft_proto.execution.v1.WorkerAction();
+                    if (object.command != null)
+                        message.command = String(object.command);
+                    if (object.target_id != null) {
+                        if (typeof object.target_id !== "object")
+                            throw TypeError(".syft_proto.execution.v1.WorkerAction.target_id: object expected");
+                        message.target_id = $root.syft_proto.types.syft.v1.Id.fromObject(object.target_id);
+                    }
+                    if (object.target_pointer != null) {
+                        if (typeof object.target_pointer !== "object")
+                            throw TypeError(".syft_proto.execution.v1.WorkerAction.target_pointer: object expected");
+                        message.target_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.fromObject(object.target_pointer);
+                    }
+                    if (object.target_placeholder_id != null) {
+                        if (typeof object.target_placeholder_id !== "object")
+                            throw TypeError(".syft_proto.execution.v1.WorkerAction.target_placeholder_id: object expected");
+                        message.target_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.fromObject(object.target_placeholder_id);
+                    }
+                    if (object.target_tensor != null) {
+                        if (typeof object.target_tensor !== "object")
+                            throw TypeError(".syft_proto.execution.v1.WorkerAction.target_tensor: object expected");
+                        message.target_tensor = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.target_tensor);
+                    }
+                    if (object.args) {
+                        if (!Array.isArray(object.args))
+                            throw TypeError(".syft_proto.execution.v1.WorkerAction.args: array expected");
+                        message.args = [];
+                        for (var i = 0; i < object.args.length; ++i) {
+                            if (typeof object.args[i] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.WorkerAction.args: object expected");
+                            message.args[i] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.args[i]);
+                        }
+                    }
+                    if (object.kwargs) {
+                        if (typeof object.kwargs !== "object")
+                            throw TypeError(".syft_proto.execution.v1.WorkerAction.kwargs: object expected");
+                        message.kwargs = {};
+                        for (var keys = Object.keys(object.kwargs), i = 0; i < keys.length; ++i) {
+                            if (typeof object.kwargs[keys[i]] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.WorkerAction.kwargs: object expected");
+                            message.kwargs[keys[i]] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.kwargs[keys[i]]);
+                        }
+                    }
+                    if (object.return_ids) {
+                        if (!Array.isArray(object.return_ids))
+                            throw TypeError(".syft_proto.execution.v1.WorkerAction.return_ids: array expected");
+                        message.return_ids = [];
+                        for (var i = 0; i < object.return_ids.length; ++i) {
+                            if (typeof object.return_ids[i] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.WorkerAction.return_ids: object expected");
+                            message.return_ids[i] = $root.syft_proto.types.syft.v1.Id.fromObject(object.return_ids[i]);
+                        }
+                    }
+                    if (object.return_placeholder_ids) {
+                        if (!Array.isArray(object.return_placeholder_ids))
+                            throw TypeError(".syft_proto.execution.v1.WorkerAction.return_placeholder_ids: array expected");
+                        message.return_placeholder_ids = [];
+                        for (var i = 0; i < object.return_placeholder_ids.length; ++i) {
+                            if (typeof object.return_placeholder_ids[i] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.WorkerAction.return_placeholder_ids: object expected");
+                            message.return_placeholder_ids[i] = $root.syft_proto.execution.v1.PlaceholderId.fromObject(object.return_placeholder_ids[i]);
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a WorkerAction message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @static
+                 * @param {syft_proto.execution.v1.WorkerAction} message WorkerAction
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                WorkerAction.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults) {
+                        object.args = [];
+                        object.return_ids = [];
+                        object.return_placeholder_ids = [];
+                    }
+                    if (options.objects || options.defaults)
+                        object.kwargs = {};
+                    if (options.defaults)
+                        object.command = "";
+                    if (message.command != null && message.hasOwnProperty("command"))
+                        object.command = message.command;
+                    if (message.target_pointer != null && message.hasOwnProperty("target_pointer")) {
+                        object.target_pointer = $root.syft_proto.generic.pointers.v1.PointerTensor.toObject(message.target_pointer, options);
+                        if (options.oneofs)
+                            object.target = "target_pointer";
+                    }
+                    if (message.target_placeholder_id != null && message.hasOwnProperty("target_placeholder_id")) {
+                        object.target_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.toObject(message.target_placeholder_id, options);
+                        if (options.oneofs)
+                            object.target = "target_placeholder_id";
+                    }
+                    if (message.target_tensor != null && message.hasOwnProperty("target_tensor")) {
+                        object.target_tensor = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.target_tensor, options);
+                        if (options.oneofs)
+                            object.target = "target_tensor";
+                    }
+                    if (message.args && message.args.length) {
+                        object.args = [];
+                        for (var j = 0; j < message.args.length; ++j)
+                            object.args[j] = $root.syft_proto.types.syft.v1.Arg.toObject(message.args[j], options);
+                    }
+                    var keys2;
+                    if (message.kwargs && (keys2 = Object.keys(message.kwargs)).length) {
+                        object.kwargs = {};
+                        for (var j = 0; j < keys2.length; ++j)
+                            object.kwargs[keys2[j]] = $root.syft_proto.types.syft.v1.Arg.toObject(message.kwargs[keys2[j]], options);
+                    }
+                    if (message.return_ids && message.return_ids.length) {
+                        object.return_ids = [];
+                        for (var j = 0; j < message.return_ids.length; ++j)
+                            object.return_ids[j] = $root.syft_proto.types.syft.v1.Id.toObject(message.return_ids[j], options);
+                    }
+                    if (message.return_placeholder_ids && message.return_placeholder_ids.length) {
+                        object.return_placeholder_ids = [];
+                        for (var j = 0; j < message.return_placeholder_ids.length; ++j)
+                            object.return_placeholder_ids[j] = $root.syft_proto.execution.v1.PlaceholderId.toObject(message.return_placeholder_ids[j], options);
+                    }
+                    if (message.target_id != null && message.hasOwnProperty("target_id")) {
+                        object.target_id = $root.syft_proto.types.syft.v1.Id.toObject(message.target_id, options);
+                        if (options.oneofs)
+                            object.target = "target_id";
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this WorkerAction to JSON.
+                 * @function toJSON
+                 * @memberof syft_proto.execution.v1.WorkerAction
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                WorkerAction.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return WorkerAction;
+            })();
+
             return v1;
         })();
 
