@@ -4028,14 +4028,32 @@ export namespace syft_proto {
                 /** SyftMessage contents_empty_msg */
                 contents_empty_msg?: (google.protobuf.IEmpty|null);
 
+                /** SyftMessage contents_delete_msg */
+                contents_delete_msg?: (syft_proto.messaging.v1.IForceObjectDeleteMessage|null);
+
+                /** SyftMessage contents_get_shape_msg */
+                contents_get_shape_msg?: (syft_proto.messaging.v1.IGetShapeMessage|null);
+
                 /** SyftMessage contents_is_none_msg */
                 contents_is_none_msg?: (syft_proto.messaging.v1.IIsNoneMessage|null);
 
                 /** SyftMessage contents_object_msg */
                 contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
+                /** SyftMessage contents_object_request_msg */
+                contents_object_request_msg?: (syft_proto.messaging.v1.IObjectRequestMessage|null);
+
                 /** SyftMessage contents_tensor_cmd_msg */
                 contents_tensor_cmd_msg?: (syft_proto.messaging.v1.ITensorCommandMessage|null);
+
+                /** SyftMessage contents_plan_cmd_msg */
+                contents_plan_cmd_msg?: (syft_proto.messaging.v1.IPlanCommandMessage|null);
+
+                /** SyftMessage contents_worker_cmd_msg */
+                contents_worker_cmd_msg?: (syft_proto.messaging.v1.IWorkerCommandMessage|null);
+
+                /** SyftMessage contents_search_msg */
+                contents_search_msg?: (syft_proto.messaging.v1.ISearchMessage|null);
             }
 
             /** Represents a SyftMessage. */
@@ -4050,17 +4068,35 @@ export namespace syft_proto {
                 /** SyftMessage contents_empty_msg. */
                 public contents_empty_msg?: (google.protobuf.IEmpty|null);
 
+                /** SyftMessage contents_delete_msg. */
+                public contents_delete_msg?: (syft_proto.messaging.v1.IForceObjectDeleteMessage|null);
+
+                /** SyftMessage contents_get_shape_msg. */
+                public contents_get_shape_msg?: (syft_proto.messaging.v1.IGetShapeMessage|null);
+
                 /** SyftMessage contents_is_none_msg. */
                 public contents_is_none_msg?: (syft_proto.messaging.v1.IIsNoneMessage|null);
 
                 /** SyftMessage contents_object_msg. */
                 public contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
+                /** SyftMessage contents_object_request_msg. */
+                public contents_object_request_msg?: (syft_proto.messaging.v1.IObjectRequestMessage|null);
+
                 /** SyftMessage contents_tensor_cmd_msg. */
                 public contents_tensor_cmd_msg?: (syft_proto.messaging.v1.ITensorCommandMessage|null);
 
+                /** SyftMessage contents_plan_cmd_msg. */
+                public contents_plan_cmd_msg?: (syft_proto.messaging.v1.IPlanCommandMessage|null);
+
+                /** SyftMessage contents_worker_cmd_msg. */
+                public contents_worker_cmd_msg?: (syft_proto.messaging.v1.IWorkerCommandMessage|null);
+
+                /** SyftMessage contents_search_msg. */
+                public contents_search_msg?: (syft_proto.messaging.v1.ISearchMessage|null);
+
                 /** SyftMessage contents. */
-                public contents?: ("contents_empty_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_tensor_cmd_msg");
+                public contents?: ("contents_empty_msg"|"contents_delete_msg"|"contents_get_shape_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_object_request_msg"|"contents_tensor_cmd_msg"|"contents_plan_cmd_msg"|"contents_worker_cmd_msg"|"contents_search_msg");
 
                 /**
                  * Creates a new SyftMessage instance using the specified properties.
@@ -4407,6 +4443,564 @@ export namespace syft_proto {
 
                 /**
                  * Converts this TensorCommandMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a ForceObjectDeleteMessage. */
+            interface IForceObjectDeleteMessage {
+
+                /** ForceObjectDeleteMessage object_id */
+                object_id?: (syft_proto.types.syft.v1.IId|null);
+            }
+
+            /** Represents a ForceObjectDeleteMessage. */
+            class ForceObjectDeleteMessage implements IForceObjectDeleteMessage {
+
+                /**
+                 * Constructs a new ForceObjectDeleteMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IForceObjectDeleteMessage);
+
+                /** ForceObjectDeleteMessage object_id. */
+                public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /**
+                 * Creates a new ForceObjectDeleteMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns ForceObjectDeleteMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IForceObjectDeleteMessage): syft_proto.messaging.v1.ForceObjectDeleteMessage;
+
+                /**
+                 * Encodes the specified ForceObjectDeleteMessage message. Does not implicitly {@link syft_proto.messaging.v1.ForceObjectDeleteMessage.verify|verify} messages.
+                 * @param message ForceObjectDeleteMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IForceObjectDeleteMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified ForceObjectDeleteMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.ForceObjectDeleteMessage.verify|verify} messages.
+                 * @param message ForceObjectDeleteMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IForceObjectDeleteMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a ForceObjectDeleteMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns ForceObjectDeleteMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.ForceObjectDeleteMessage;
+
+                /**
+                 * Decodes a ForceObjectDeleteMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns ForceObjectDeleteMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.ForceObjectDeleteMessage;
+
+                /**
+                 * Verifies a ForceObjectDeleteMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a ForceObjectDeleteMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns ForceObjectDeleteMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.ForceObjectDeleteMessage;
+
+                /**
+                 * Creates a plain object from a ForceObjectDeleteMessage message. Also converts values to other types if specified.
+                 * @param message ForceObjectDeleteMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.ForceObjectDeleteMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this ForceObjectDeleteMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a GetShapeMessage. */
+            interface IGetShapeMessage {
+
+                /** GetShapeMessage object_id */
+                object_id?: (syft_proto.types.syft.v1.IId|null);
+            }
+
+            /** Represents a GetShapeMessage. */
+            class GetShapeMessage implements IGetShapeMessage {
+
+                /**
+                 * Constructs a new GetShapeMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IGetShapeMessage);
+
+                /** GetShapeMessage object_id. */
+                public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /**
+                 * Creates a new GetShapeMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns GetShapeMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IGetShapeMessage): syft_proto.messaging.v1.GetShapeMessage;
+
+                /**
+                 * Encodes the specified GetShapeMessage message. Does not implicitly {@link syft_proto.messaging.v1.GetShapeMessage.verify|verify} messages.
+                 * @param message GetShapeMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IGetShapeMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified GetShapeMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.GetShapeMessage.verify|verify} messages.
+                 * @param message GetShapeMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IGetShapeMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a GetShapeMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns GetShapeMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.GetShapeMessage;
+
+                /**
+                 * Decodes a GetShapeMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns GetShapeMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.GetShapeMessage;
+
+                /**
+                 * Verifies a GetShapeMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a GetShapeMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns GetShapeMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.GetShapeMessage;
+
+                /**
+                 * Creates a plain object from a GetShapeMessage message. Also converts values to other types if specified.
+                 * @param message GetShapeMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.GetShapeMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this GetShapeMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of an ObjectRequestMessage. */
+            interface IObjectRequestMessage {
+
+                /** ObjectRequestMessage object_id */
+                object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** ObjectRequestMessage reason */
+                reason?: (string|null);
+            }
+
+            /** Represents an ObjectRequestMessage. */
+            class ObjectRequestMessage implements IObjectRequestMessage {
+
+                /**
+                 * Constructs a new ObjectRequestMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IObjectRequestMessage);
+
+                /** ObjectRequestMessage object_id. */
+                public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** ObjectRequestMessage reason. */
+                public reason: string;
+
+                /**
+                 * Creates a new ObjectRequestMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns ObjectRequestMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IObjectRequestMessage): syft_proto.messaging.v1.ObjectRequestMessage;
+
+                /**
+                 * Encodes the specified ObjectRequestMessage message. Does not implicitly {@link syft_proto.messaging.v1.ObjectRequestMessage.verify|verify} messages.
+                 * @param message ObjectRequestMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IObjectRequestMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified ObjectRequestMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.ObjectRequestMessage.verify|verify} messages.
+                 * @param message ObjectRequestMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IObjectRequestMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes an ObjectRequestMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns ObjectRequestMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.ObjectRequestMessage;
+
+                /**
+                 * Decodes an ObjectRequestMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns ObjectRequestMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.ObjectRequestMessage;
+
+                /**
+                 * Verifies an ObjectRequestMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates an ObjectRequestMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns ObjectRequestMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.ObjectRequestMessage;
+
+                /**
+                 * Creates a plain object from an ObjectRequestMessage message. Also converts values to other types if specified.
+                 * @param message ObjectRequestMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.ObjectRequestMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this ObjectRequestMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a PlanCommandMessage. */
+            interface IPlanCommandMessage {
+
+                /** PlanCommandMessage command_name */
+                command_name?: (string|null);
+
+                /** PlanCommandMessage args */
+                args?: (syft_proto.types.syft.v1.IArg[]|null);
+            }
+
+            /** Represents a PlanCommandMessage. */
+            class PlanCommandMessage implements IPlanCommandMessage {
+
+                /**
+                 * Constructs a new PlanCommandMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IPlanCommandMessage);
+
+                /** PlanCommandMessage command_name. */
+                public command_name: string;
+
+                /** PlanCommandMessage args. */
+                public args: syft_proto.types.syft.v1.IArg[];
+
+                /**
+                 * Creates a new PlanCommandMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns PlanCommandMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IPlanCommandMessage): syft_proto.messaging.v1.PlanCommandMessage;
+
+                /**
+                 * Encodes the specified PlanCommandMessage message. Does not implicitly {@link syft_proto.messaging.v1.PlanCommandMessage.verify|verify} messages.
+                 * @param message PlanCommandMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IPlanCommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified PlanCommandMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.PlanCommandMessage.verify|verify} messages.
+                 * @param message PlanCommandMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IPlanCommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a PlanCommandMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns PlanCommandMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.PlanCommandMessage;
+
+                /**
+                 * Decodes a PlanCommandMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns PlanCommandMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.PlanCommandMessage;
+
+                /**
+                 * Verifies a PlanCommandMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a PlanCommandMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns PlanCommandMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.PlanCommandMessage;
+
+                /**
+                 * Creates a plain object from a PlanCommandMessage message. Also converts values to other types if specified.
+                 * @param message PlanCommandMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.PlanCommandMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this PlanCommandMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a WorkerCommandMessage. */
+            interface IWorkerCommandMessage {
+
+                /** WorkerCommandMessage command_name */
+                command_name?: (string|null);
+
+                /** WorkerCommandMessage args */
+                args?: (syft_proto.types.syft.v1.IArg[]|null);
+            }
+
+            /** Represents a WorkerCommandMessage. */
+            class WorkerCommandMessage implements IWorkerCommandMessage {
+
+                /**
+                 * Constructs a new WorkerCommandMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IWorkerCommandMessage);
+
+                /** WorkerCommandMessage command_name. */
+                public command_name: string;
+
+                /** WorkerCommandMessage args. */
+                public args: syft_proto.types.syft.v1.IArg[];
+
+                /**
+                 * Creates a new WorkerCommandMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns WorkerCommandMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IWorkerCommandMessage): syft_proto.messaging.v1.WorkerCommandMessage;
+
+                /**
+                 * Encodes the specified WorkerCommandMessage message. Does not implicitly {@link syft_proto.messaging.v1.WorkerCommandMessage.verify|verify} messages.
+                 * @param message WorkerCommandMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IWorkerCommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified WorkerCommandMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.WorkerCommandMessage.verify|verify} messages.
+                 * @param message WorkerCommandMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IWorkerCommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a WorkerCommandMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns WorkerCommandMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.WorkerCommandMessage;
+
+                /**
+                 * Decodes a WorkerCommandMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns WorkerCommandMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.WorkerCommandMessage;
+
+                /**
+                 * Verifies a WorkerCommandMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a WorkerCommandMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns WorkerCommandMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.WorkerCommandMessage;
+
+                /**
+                 * Creates a plain object from a WorkerCommandMessage message. Also converts values to other types if specified.
+                 * @param message WorkerCommandMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.WorkerCommandMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this WorkerCommandMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a SearchMessage. */
+            interface ISearchMessage {
+
+                /** SearchMessage query */
+                query?: (syft_proto.types.syft.v1.IId[]|null);
+            }
+
+            /** Represents a SearchMessage. */
+            class SearchMessage implements ISearchMessage {
+
+                /**
+                 * Constructs a new SearchMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.ISearchMessage);
+
+                /** SearchMessage query. */
+                public query: syft_proto.types.syft.v1.IId[];
+
+                /**
+                 * Creates a new SearchMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns SearchMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.ISearchMessage): syft_proto.messaging.v1.SearchMessage;
+
+                /**
+                 * Encodes the specified SearchMessage message. Does not implicitly {@link syft_proto.messaging.v1.SearchMessage.verify|verify} messages.
+                 * @param message SearchMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.ISearchMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified SearchMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.SearchMessage.verify|verify} messages.
+                 * @param message SearchMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.ISearchMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a SearchMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns SearchMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.SearchMessage;
+
+                /**
+                 * Decodes a SearchMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns SearchMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.SearchMessage;
+
+                /**
+                 * Verifies a SearchMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a SearchMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns SearchMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.SearchMessage;
+
+                /**
+                 * Creates a plain object from a SearchMessage message. Also converts values to other types if specified.
+                 * @param message SearchMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.SearchMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this SearchMessage to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
