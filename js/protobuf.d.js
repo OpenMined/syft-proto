@@ -1998,6 +1998,9 @@ export namespace syft_proto {
 
                     /** Arg arg_placeholder_id */
                     arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+
+                    /** Arg arg_list */
+                    arg_list?: (syft_proto.types.syft.v1.IArgList|null);
                 }
 
                 /** Represents an Arg. */
@@ -2039,8 +2042,11 @@ export namespace syft_proto {
                     /** Arg arg_placeholder_id. */
                     public arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
 
+                    /** Arg arg_list. */
+                    public arg_list?: (syft_proto.types.syft.v1.IArgList|null);
+
                     /** Arg arg. */
-                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_str"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id");
+                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_str"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id"|"arg_list");
 
                     /**
                      * Creates a new Arg instance using the specified properties.
@@ -2108,6 +2114,96 @@ export namespace syft_proto {
 
                     /**
                      * Converts this Arg to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of an ArgList. */
+                interface IArgList {
+
+                    /** ArgList args */
+                    args?: (syft_proto.types.syft.v1.IArg[]|null);
+                }
+
+                /** Represents an ArgList. */
+                class ArgList implements IArgList {
+
+                    /**
+                     * Constructs a new ArgList.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.types.syft.v1.IArgList);
+
+                    /** ArgList args. */
+                    public args: syft_proto.types.syft.v1.IArg[];
+
+                    /**
+                     * Creates a new ArgList instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns ArgList instance
+                     */
+                    public static create(properties?: syft_proto.types.syft.v1.IArgList): syft_proto.types.syft.v1.ArgList;
+
+                    /**
+                     * Encodes the specified ArgList message. Does not implicitly {@link syft_proto.types.syft.v1.ArgList.verify|verify} messages.
+                     * @param message ArgList message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.types.syft.v1.IArgList, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified ArgList message, length delimited. Does not implicitly {@link syft_proto.types.syft.v1.ArgList.verify|verify} messages.
+                     * @param message ArgList message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.types.syft.v1.IArgList, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes an ArgList message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns ArgList
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.types.syft.v1.ArgList;
+
+                    /**
+                     * Decodes an ArgList message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns ArgList
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.types.syft.v1.ArgList;
+
+                    /**
+                     * Verifies an ArgList message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates an ArgList message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns ArgList
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.syft.v1.ArgList;
+
+                    /**
+                     * Creates a plain object from an ArgList message. Also converts values to other types if specified.
+                     * @param message ArgList
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.types.syft.v1.ArgList, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this ArgList to JSON.
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };

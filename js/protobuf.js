@@ -5550,6 +5550,7 @@ $root.syft_proto = (function() {
                      * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [arg_pointer_tensor] Arg arg_pointer_tensor
                      * @property {syft_proto.execution.v1.IPlaceholder|null} [arg_placeholder] Arg arg_placeholder
                      * @property {syft_proto.execution.v1.IPlaceholderId|null} [arg_placeholder_id] Arg arg_placeholder_id
+                     * @property {syft_proto.types.syft.v1.IArgList|null} [arg_list] Arg arg_list
                      */
 
                     /**
@@ -5647,17 +5648,25 @@ $root.syft_proto = (function() {
                      */
                     Arg.prototype.arg_placeholder_id = null;
 
+                    /**
+                     * Arg arg_list.
+                     * @member {syft_proto.types.syft.v1.IArgList|null|undefined} arg_list
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_list = null;
+
                     // OneOf field names bound to virtual getters and setters
                     var $oneOfFields;
 
                     /**
                      * Arg arg.
-                     * @member {"arg_bool"|"arg_int"|"arg_float"|"arg_str"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id"|undefined} arg
+                     * @member {"arg_bool"|"arg_int"|"arg_float"|"arg_str"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id"|"arg_list"|undefined} arg
                      * @memberof syft_proto.types.syft.v1.Arg
                      * @instance
                      */
                     Object.defineProperty(Arg.prototype, "arg", {
-                        get: $util.oneOfGetter($oneOfFields = ["arg_bool", "arg_int", "arg_float", "arg_str", "arg_shape", "arg_tensor", "arg_torch_param", "arg_pointer_tensor", "arg_placeholder", "arg_placeholder_id"]),
+                        get: $util.oneOfGetter($oneOfFields = ["arg_bool", "arg_int", "arg_float", "arg_str", "arg_shape", "arg_tensor", "arg_torch_param", "arg_pointer_tensor", "arg_placeholder", "arg_placeholder_id", "arg_list"]),
                         set: $util.oneOfSetter($oneOfFields)
                     });
 
@@ -5705,6 +5714,8 @@ $root.syft_proto = (function() {
                             $root.syft_proto.execution.v1.Placeholder.encode(message.arg_placeholder, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                         if (message.arg_placeholder_id != null && message.hasOwnProperty("arg_placeholder_id"))
                             $root.syft_proto.execution.v1.PlaceholderId.encode(message.arg_placeholder_id, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                        if (message.arg_list != null && message.hasOwnProperty("arg_list"))
+                            $root.syft_proto.types.syft.v1.ArgList.encode(message.arg_list, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                         return writer;
                     };
 
@@ -5768,6 +5779,9 @@ $root.syft_proto = (function() {
                                 break;
                             case 10:
                                 message.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.decode(reader, reader.uint32());
+                                break;
+                            case 11:
+                                message.arg_list = $root.syft_proto.types.syft.v1.ArgList.decode(reader, reader.uint32());
                                 break;
                             default:
                                 reader.skipType(tag & 7);
@@ -5891,6 +5905,16 @@ $root.syft_proto = (function() {
                                     return "arg_placeholder_id." + error;
                             }
                         }
+                        if (message.arg_list != null && message.hasOwnProperty("arg_list")) {
+                            if (properties.arg === 1)
+                                return "arg: multiple values";
+                            properties.arg = 1;
+                            {
+                                var error = $root.syft_proto.types.syft.v1.ArgList.verify(message.arg_list);
+                                if (error)
+                                    return "arg_list." + error;
+                            }
+                        }
                         return null;
                     };
 
@@ -5943,6 +5967,11 @@ $root.syft_proto = (function() {
                             if (typeof object.arg_placeholder_id !== "object")
                                 throw TypeError(".syft_proto.types.syft.v1.Arg.arg_placeholder_id: object expected");
                             message.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.fromObject(object.arg_placeholder_id);
+                        }
+                        if (object.arg_list != null) {
+                            if (typeof object.arg_list !== "object")
+                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_list: object expected");
+                            message.arg_list = $root.syft_proto.types.syft.v1.ArgList.fromObject(object.arg_list);
                         }
                         return message;
                     };
@@ -6010,6 +6039,11 @@ $root.syft_proto = (function() {
                             if (options.oneofs)
                                 object.arg = "arg_placeholder_id";
                         }
+                        if (message.arg_list != null && message.hasOwnProperty("arg_list")) {
+                            object.arg_list = $root.syft_proto.types.syft.v1.ArgList.toObject(message.arg_list, options);
+                            if (options.oneofs)
+                                object.arg = "arg_list";
+                        }
                         return object;
                     };
 
@@ -6025,6 +6059,214 @@ $root.syft_proto = (function() {
                     };
 
                     return Arg;
+                })();
+
+                v1.ArgList = (function() {
+
+                    /**
+                     * Properties of an ArgList.
+                     * @memberof syft_proto.types.syft.v1
+                     * @interface IArgList
+                     * @property {Array.<syft_proto.types.syft.v1.IArg>|null} [args] ArgList args
+                     */
+
+                    /**
+                     * Constructs a new ArgList.
+                     * @memberof syft_proto.types.syft.v1
+                     * @classdesc Represents an ArgList.
+                     * @implements IArgList
+                     * @constructor
+                     * @param {syft_proto.types.syft.v1.IArgList=} [properties] Properties to set
+                     */
+                    function ArgList(properties) {
+                        this.args = [];
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * ArgList args.
+                     * @member {Array.<syft_proto.types.syft.v1.IArg>} args
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @instance
+                     */
+                    ArgList.prototype.args = $util.emptyArray;
+
+                    /**
+                     * Creates a new ArgList instance using the specified properties.
+                     * @function create
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {syft_proto.types.syft.v1.IArgList=} [properties] Properties to set
+                     * @returns {syft_proto.types.syft.v1.ArgList} ArgList instance
+                     */
+                    ArgList.create = function create(properties) {
+                        return new ArgList(properties);
+                    };
+
+                    /**
+                     * Encodes the specified ArgList message. Does not implicitly {@link syft_proto.types.syft.v1.ArgList.verify|verify} messages.
+                     * @function encode
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {syft_proto.types.syft.v1.IArgList} message ArgList message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    ArgList.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.args != null && message.args.length)
+                            for (var i = 0; i < message.args.length; ++i)
+                                $root.syft_proto.types.syft.v1.Arg.encode(message.args[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified ArgList message, length delimited. Does not implicitly {@link syft_proto.types.syft.v1.ArgList.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {syft_proto.types.syft.v1.IArgList} message ArgList message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    ArgList.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes an ArgList message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {syft_proto.types.syft.v1.ArgList} ArgList
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    ArgList.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.types.syft.v1.ArgList();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                if (!(message.args && message.args.length))
+                                    message.args = [];
+                                message.args.push($root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32()));
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes an ArgList message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {syft_proto.types.syft.v1.ArgList} ArgList
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    ArgList.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies an ArgList message.
+                     * @function verify
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    ArgList.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.args != null && message.hasOwnProperty("args")) {
+                            if (!Array.isArray(message.args))
+                                return "args: array expected";
+                            for (var i = 0; i < message.args.length; ++i) {
+                                var error = $root.syft_proto.types.syft.v1.Arg.verify(message.args[i]);
+                                if (error)
+                                    return "args." + error;
+                            }
+                        }
+                        return null;
+                    };
+
+                    /**
+                     * Creates an ArgList message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {syft_proto.types.syft.v1.ArgList} ArgList
+                     */
+                    ArgList.fromObject = function fromObject(object) {
+                        if (object instanceof $root.syft_proto.types.syft.v1.ArgList)
+                            return object;
+                        var message = new $root.syft_proto.types.syft.v1.ArgList();
+                        if (object.args) {
+                            if (!Array.isArray(object.args))
+                                throw TypeError(".syft_proto.types.syft.v1.ArgList.args: array expected");
+                            message.args = [];
+                            for (var i = 0; i < object.args.length; ++i) {
+                                if (typeof object.args[i] !== "object")
+                                    throw TypeError(".syft_proto.types.syft.v1.ArgList.args: object expected");
+                                message.args[i] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.args[i]);
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from an ArgList message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {syft_proto.types.syft.v1.ArgList} message ArgList
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    ArgList.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (options.arrays || options.defaults)
+                            object.args = [];
+                        if (message.args && message.args.length) {
+                            object.args = [];
+                            for (var j = 0; j < message.args.length; ++j)
+                                object.args[j] = $root.syft_proto.types.syft.v1.Arg.toObject(message.args[j], options);
+                        }
+                        return object;
+                    };
+
+                    /**
+                     * Converts this ArgList to JSON.
+                     * @function toJSON
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    ArgList.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return ArgList;
                 })();
 
                 return v1;
