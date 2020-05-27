@@ -72,7 +72,7 @@ public final class ParameterOuterClass {
   /**
    * Protobuf type {@code syft_proto.types.torch.v1.Parameter}
    */
-  public  static final class Parameter extends
+  public static final class Parameter extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.torch.v1.Parameter)
       ParameterOrBuilder {
@@ -196,6 +196,7 @@ public final class ParameterOuterClass {
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      * @return Whether the id field is set.
      */
+    @java.lang.Override
     public boolean hasId() {
       return id_ != null;
     }
@@ -203,12 +204,14 @@ public final class ParameterOuterClass {
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      * @return The id.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder() {
       return getId();
     }
@@ -219,6 +222,7 @@ public final class ParameterOuterClass {
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 2[json_name = "tensor"];</code>
      * @return Whether the tensor field is set.
      */
+    @java.lang.Override
     public boolean hasTensor() {
       return tensor_ != null;
     }
@@ -226,12 +230,14 @@ public final class ParameterOuterClass {
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 2[json_name = "tensor"];</code>
      * @return The tensor.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTensor() {
       return tensor_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : tensor_;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 2[json_name = "tensor"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getTensorOrBuilder() {
       return getTensor();
     }
@@ -242,6 +248,7 @@ public final class ParameterOuterClass {
      * <code>bool requires_grad = 3[json_name = "requiresGrad"];</code>
      * @return The requiresGrad.
      */
+    @java.lang.Override
     public boolean getRequiresGrad() {
       return requiresGrad_;
     }
@@ -252,6 +259,7 @@ public final class ParameterOuterClass {
      * <code>.syft_proto.types.torch.v1.TorchTensor grad = 4[json_name = "grad"];</code>
      * @return Whether the grad field is set.
      */
+    @java.lang.Override
     public boolean hasGrad() {
       return grad_ != null;
     }
@@ -259,12 +267,14 @@ public final class ParameterOuterClass {
      * <code>.syft_proto.types.torch.v1.TorchTensor grad = 4[json_name = "grad"];</code>
      * @return The grad.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getGrad() {
       return grad_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : grad_;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor grad = 4[json_name = "grad"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getGradOrBuilder() {
       return getGrad();
     }
@@ -905,6 +915,7 @@ public final class ParameterOuterClass {
        * <code>bool requires_grad = 3[json_name = "requiresGrad"];</code>
        * @return The requiresGrad.
        */
+      @java.lang.Override
       public boolean getRequiresGrad() {
         return requiresGrad_;
       }

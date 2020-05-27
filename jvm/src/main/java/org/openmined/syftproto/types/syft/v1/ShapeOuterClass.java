@@ -38,7 +38,7 @@ public final class ShapeOuterClass {
   /**
    * Protobuf type {@code syft_proto.types.syft.v1.Shape}
    */
-  public  static final class Shape extends
+  public static final class Shape extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.syft.v1.Shape)
       ShapeOrBuilder {
@@ -144,6 +144,7 @@ public final class ShapeOuterClass {
      * <code>repeated int32 dims = 1[json_name = "dims"];</code>
      * @return A list containing the dims.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Integer>
         getDimsList() {
       return dims_;

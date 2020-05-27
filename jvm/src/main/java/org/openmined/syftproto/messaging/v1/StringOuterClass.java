@@ -70,7 +70,7 @@ public final class StringOuterClass {
   /**
    * Protobuf type {@code syft_proto.messaging.v1.String}
    */
-  public  static final class String extends
+  public static final class String extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.messaging.v1.String)
       StringOrBuilder {
@@ -178,6 +178,7 @@ public final class StringOuterClass {
      * <code>string child = 1[json_name = "child"];</code>
      * @return The child.
      */
+    @java.lang.Override
     public java.lang.String getChild() {
       java.lang.Object ref = child_;
       if (ref instanceof java.lang.String) {
@@ -194,6 +195,7 @@ public final class StringOuterClass {
      * <code>string child = 1[json_name = "child"];</code>
      * @return The bytes for child.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getChildBytes() {
       java.lang.Object ref = child_;
@@ -249,6 +251,7 @@ public final class StringOuterClass {
      * <code>string description = 3[json_name = "description"];</code>
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -265,6 +268,7 @@ public final class StringOuterClass {
      * <code>string description = 3[json_name = "description"];</code>
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
