@@ -20,6 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n*syft_proto/execution/v1/state_tensor.proto\x12\x17syft_proto.execution.v1\x1a&syft_proto/types/torch/v1/tensor.proto\x1a)syft_proto/types/torch/v1/parameter.proto\"\xad\x01\n\x0bStateTensor\x12K\n\x0ctorch_tensor\x18\x01 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorH\x00R\x0btorchTensor\x12G\n\x0btorch_param\x18\x02 \x01(\x0b\x32$.syft_proto.types.torch.v1.ParameterH\x00R\ntorchParamB\x08\n\x06tensorB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
   ,
   dependencies=[syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_parameter__pb2.DESCRIPTOR,])
@@ -33,6 +34,7 @@ _STATETENSOR = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='torch_tensor', full_name='syft_proto.execution.v1.StateTensor.torch_tensor', index=0,
@@ -40,14 +42,14 @@ _STATETENSOR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='torchTensor', file=DESCRIPTOR),
+      serialized_options=None, json_name='torchTensor', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='torch_param', full_name='syft_proto.execution.v1.StateTensor.torch_param', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='torchParam', file=DESCRIPTOR),
+      serialized_options=None, json_name='torchParam', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -61,7 +63,9 @@ _STATETENSOR = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='tensor', full_name='syft_proto.execution.v1.StateTensor.tensor',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=155,
   serialized_end=328,

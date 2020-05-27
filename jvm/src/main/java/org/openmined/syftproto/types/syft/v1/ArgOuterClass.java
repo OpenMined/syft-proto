@@ -143,7 +143,7 @@ public final class ArgOuterClass {
   /**
    * Protobuf type {@code syft_proto.types.syft.v1.Arg}
    */
-  public  static final class Arg extends
+  public static final class Arg extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.syft.v1.Arg)
       ArgOrBuilder {
@@ -384,6 +384,7 @@ public final class ArgOuterClass {
      * <code>bool arg_bool = 1[json_name = "argBool"];</code>
      * @return The argBool.
      */
+    @java.lang.Override
     public boolean getArgBool() {
       if (argCase_ == 1) {
         return (java.lang.Boolean) arg_;
@@ -396,6 +397,7 @@ public final class ArgOuterClass {
      * <code>int32 arg_int = 2[json_name = "argInt"];</code>
      * @return The argInt.
      */
+    @java.lang.Override
     public int getArgInt() {
       if (argCase_ == 2) {
         return (java.lang.Integer) arg_;
@@ -408,6 +410,7 @@ public final class ArgOuterClass {
      * <code>float arg_float = 3[json_name = "argFloat"];</code>
      * @return The argFloat.
      */
+    @java.lang.Override
     public float getArgFloat() {
       if (argCase_ == 3) {
         return (java.lang.Float) arg_;
@@ -465,6 +468,7 @@ public final class ArgOuterClass {
      * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
      * @return Whether the argShape field is set.
      */
+    @java.lang.Override
     public boolean hasArgShape() {
       return argCase_ == 5;
     }
@@ -472,6 +476,7 @@ public final class ArgOuterClass {
      * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
      * @return The argShape.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getArgShape() {
       if (argCase_ == 5) {
          return (org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape) arg_;
@@ -481,6 +486,7 @@ public final class ArgOuterClass {
     /**
      * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder getArgShapeOrBuilder() {
       if (argCase_ == 5) {
          return (org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape) arg_;
@@ -493,6 +499,7 @@ public final class ArgOuterClass {
      * <code>.syft_proto.types.torch.v1.TorchTensor arg_tensor = 6[json_name = "argTensor"];</code>
      * @return Whether the argTensor field is set.
      */
+    @java.lang.Override
     public boolean hasArgTensor() {
       return argCase_ == 6;
     }
@@ -500,6 +507,7 @@ public final class ArgOuterClass {
      * <code>.syft_proto.types.torch.v1.TorchTensor arg_tensor = 6[json_name = "argTensor"];</code>
      * @return The argTensor.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getArgTensor() {
       if (argCase_ == 6) {
          return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) arg_;
@@ -509,6 +517,7 @@ public final class ArgOuterClass {
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor arg_tensor = 6[json_name = "argTensor"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getArgTensorOrBuilder() {
       if (argCase_ == 6) {
          return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) arg_;
@@ -521,6 +530,7 @@ public final class ArgOuterClass {
      * <code>.syft_proto.types.torch.v1.Parameter arg_torch_param = 7[json_name = "argTorchParam"];</code>
      * @return Whether the argTorchParam field is set.
      */
+    @java.lang.Override
     public boolean hasArgTorchParam() {
       return argCase_ == 7;
     }
@@ -528,6 +538,7 @@ public final class ArgOuterClass {
      * <code>.syft_proto.types.torch.v1.Parameter arg_torch_param = 7[json_name = "argTorchParam"];</code>
      * @return The argTorchParam.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getArgTorchParam() {
       if (argCase_ == 7) {
          return (org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) arg_;
@@ -537,6 +548,7 @@ public final class ArgOuterClass {
     /**
      * <code>.syft_proto.types.torch.v1.Parameter arg_torch_param = 7[json_name = "argTorchParam"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.ParameterOrBuilder getArgTorchParamOrBuilder() {
       if (argCase_ == 7) {
          return (org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) arg_;
@@ -549,6 +561,7 @@ public final class ArgOuterClass {
      * <code>.syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8[json_name = "argPointerTensor"];</code>
      * @return Whether the argPointerTensor field is set.
      */
+    @java.lang.Override
     public boolean hasArgPointerTensor() {
       return argCase_ == 8;
     }
@@ -556,6 +569,7 @@ public final class ArgOuterClass {
      * <code>.syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8[json_name = "argPointerTensor"];</code>
      * @return The argPointerTensor.
      */
+    @java.lang.Override
     public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getArgPointerTensor() {
       if (argCase_ == 8) {
          return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) arg_;
@@ -565,6 +579,7 @@ public final class ArgOuterClass {
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8[json_name = "argPointerTensor"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getArgPointerTensorOrBuilder() {
       if (argCase_ == 8) {
          return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) arg_;
@@ -577,6 +592,7 @@ public final class ArgOuterClass {
      * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
      * @return Whether the argPlaceholder field is set.
      */
+    @java.lang.Override
     public boolean hasArgPlaceholder() {
       return argCase_ == 9;
     }
@@ -584,6 +600,7 @@ public final class ArgOuterClass {
      * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
      * @return The argPlaceholder.
      */
+    @java.lang.Override
     public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder getArgPlaceholder() {
       if (argCase_ == 9) {
          return (org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_;
@@ -593,6 +610,7 @@ public final class ArgOuterClass {
     /**
      * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder getArgPlaceholderOrBuilder() {
       if (argCase_ == 9) {
          return (org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder) arg_;
@@ -605,6 +623,7 @@ public final class ArgOuterClass {
      * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
      * @return Whether the argPlaceholderId field is set.
      */
+    @java.lang.Override
     public boolean hasArgPlaceholderId() {
       return argCase_ == 10;
     }
@@ -612,6 +631,7 @@ public final class ArgOuterClass {
      * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
      * @return The argPlaceholderId.
      */
+    @java.lang.Override
     public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getArgPlaceholderId() {
       if (argCase_ == 10) {
          return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_;
@@ -621,6 +641,7 @@ public final class ArgOuterClass {
     /**
      * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getArgPlaceholderIdOrBuilder() {
       if (argCase_ == 10) {
          return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_;
@@ -1305,6 +1326,7 @@ public final class ArgOuterClass {
        * <code>string arg_str = 4[json_name = "argStr"];</code>
        * @return The argStr.
        */
+      @java.lang.Override
       public java.lang.String getArgStr() {
         java.lang.Object ref = "";
         if (argCase_ == 4) {
@@ -1326,6 +1348,7 @@ public final class ArgOuterClass {
        * <code>string arg_str = 4[json_name = "argStr"];</code>
        * @return The bytes for argStr.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getArgStrBytes() {
         java.lang.Object ref = "";
@@ -1394,6 +1417,7 @@ public final class ArgOuterClass {
        * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
        * @return Whether the argShape field is set.
        */
+      @java.lang.Override
       public boolean hasArgShape() {
         return argCase_ == 5;
       }
@@ -1401,6 +1425,7 @@ public final class ArgOuterClass {
        * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
        * @return The argShape.
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getArgShape() {
         if (argShapeBuilder_ == null) {
           if (argCase_ == 5) {
@@ -1494,6 +1519,7 @@ public final class ArgOuterClass {
       /**
        * <code>.syft_proto.types.syft.v1.Shape arg_shape = 5[json_name = "argShape"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder getArgShapeOrBuilder() {
         if ((argCase_ == 5) && (argShapeBuilder_ != null)) {
           return argShapeBuilder_.getMessageOrBuilder();
@@ -1532,6 +1558,7 @@ public final class ArgOuterClass {
        * <code>.syft_proto.types.torch.v1.TorchTensor arg_tensor = 6[json_name = "argTensor"];</code>
        * @return Whether the argTensor field is set.
        */
+      @java.lang.Override
       public boolean hasArgTensor() {
         return argCase_ == 6;
       }
@@ -1539,6 +1566,7 @@ public final class ArgOuterClass {
        * <code>.syft_proto.types.torch.v1.TorchTensor arg_tensor = 6[json_name = "argTensor"];</code>
        * @return The argTensor.
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getArgTensor() {
         if (argTensorBuilder_ == null) {
           if (argCase_ == 6) {
@@ -1632,6 +1660,7 @@ public final class ArgOuterClass {
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor arg_tensor = 6[json_name = "argTensor"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getArgTensorOrBuilder() {
         if ((argCase_ == 6) && (argTensorBuilder_ != null)) {
           return argTensorBuilder_.getMessageOrBuilder();
@@ -1670,6 +1699,7 @@ public final class ArgOuterClass {
        * <code>.syft_proto.types.torch.v1.Parameter arg_torch_param = 7[json_name = "argTorchParam"];</code>
        * @return Whether the argTorchParam field is set.
        */
+      @java.lang.Override
       public boolean hasArgTorchParam() {
         return argCase_ == 7;
       }
@@ -1677,6 +1707,7 @@ public final class ArgOuterClass {
        * <code>.syft_proto.types.torch.v1.Parameter arg_torch_param = 7[json_name = "argTorchParam"];</code>
        * @return The argTorchParam.
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getArgTorchParam() {
         if (argTorchParamBuilder_ == null) {
           if (argCase_ == 7) {
@@ -1770,6 +1801,7 @@ public final class ArgOuterClass {
       /**
        * <code>.syft_proto.types.torch.v1.Parameter arg_torch_param = 7[json_name = "argTorchParam"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.ParameterOrBuilder getArgTorchParamOrBuilder() {
         if ((argCase_ == 7) && (argTorchParamBuilder_ != null)) {
           return argTorchParamBuilder_.getMessageOrBuilder();
@@ -1808,6 +1840,7 @@ public final class ArgOuterClass {
        * <code>.syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8[json_name = "argPointerTensor"];</code>
        * @return Whether the argPointerTensor field is set.
        */
+      @java.lang.Override
       public boolean hasArgPointerTensor() {
         return argCase_ == 8;
       }
@@ -1815,6 +1848,7 @@ public final class ArgOuterClass {
        * <code>.syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8[json_name = "argPointerTensor"];</code>
        * @return The argPointerTensor.
        */
+      @java.lang.Override
       public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getArgPointerTensor() {
         if (argPointerTensorBuilder_ == null) {
           if (argCase_ == 8) {
@@ -1908,6 +1942,7 @@ public final class ArgOuterClass {
       /**
        * <code>.syft_proto.generic.pointers.v1.PointerTensor arg_pointer_tensor = 8[json_name = "argPointerTensor"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getArgPointerTensorOrBuilder() {
         if ((argCase_ == 8) && (argPointerTensorBuilder_ != null)) {
           return argPointerTensorBuilder_.getMessageOrBuilder();
@@ -1946,6 +1981,7 @@ public final class ArgOuterClass {
        * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
        * @return Whether the argPlaceholder field is set.
        */
+      @java.lang.Override
       public boolean hasArgPlaceholder() {
         return argCase_ == 9;
       }
@@ -1953,6 +1989,7 @@ public final class ArgOuterClass {
        * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
        * @return The argPlaceholder.
        */
+      @java.lang.Override
       public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder getArgPlaceholder() {
         if (argPlaceholderBuilder_ == null) {
           if (argCase_ == 9) {
@@ -2046,6 +2083,7 @@ public final class ArgOuterClass {
       /**
        * <code>.syft_proto.execution.v1.Placeholder arg_placeholder = 9[json_name = "argPlaceholder"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder getArgPlaceholderOrBuilder() {
         if ((argCase_ == 9) && (argPlaceholderBuilder_ != null)) {
           return argPlaceholderBuilder_.getMessageOrBuilder();
@@ -2084,6 +2122,7 @@ public final class ArgOuterClass {
        * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
        * @return Whether the argPlaceholderId field is set.
        */
+      @java.lang.Override
       public boolean hasArgPlaceholderId() {
         return argCase_ == 10;
       }
@@ -2091,6 +2130,7 @@ public final class ArgOuterClass {
        * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
        * @return The argPlaceholderId.
        */
+      @java.lang.Override
       public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getArgPlaceholderId() {
         if (argPlaceholderIdBuilder_ == null) {
           if (argCase_ == 10) {
@@ -2184,6 +2224,7 @@ public final class ArgOuterClass {
       /**
        * <code>.syft_proto.execution.v1.PlaceholderId arg_placeholder_id = 10[json_name = "argPlaceholderId"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getArgPlaceholderIdOrBuilder() {
         if ((argCase_ == 10) && (argPlaceholderIdBuilder_ != null)) {
           return argPlaceholderIdBuilder_.getMessageOrBuilder();

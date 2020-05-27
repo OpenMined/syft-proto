@@ -20,6 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.generic.pointers.v1',
   syntax='proto3',
   serialized_options=b'\n+org.openmined.syftproto.generic.pointers.v1',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n3syft_proto/generic/pointers/v1/pointer_tensor.proto\x12\x1esyft_proto.generic.pointers.v1\x1a!syft_proto/types/syft/v1/id.proto\x1a$syft_proto/types/syft/v1/shape.proto\"\xe7\x02\n\rPointerTensor\x12\x39\n\tobject_id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x08objectId\x12=\n\x0blocation_id\x18\x02 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\nlocationId\x12O\n\x15object_id_at_location\x18\x03 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x12objectIdAtLocation\x12\x35\n\x05shape\x18\x04 \x01(\x0b\x32\x1f.syft_proto.types.syft.v1.ShapeR\x05shape\x12\"\n\rpoint_to_attr\x18\x05 \x01(\tR\x0bpointToAttr\x12\x30\n\x14garbage_collect_data\x18\x06 \x01(\x08R\x12garbageCollectDataB-\n+org.openmined.syftproto.generic.pointers.v1b\x06proto3'
   ,
   dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_shape__pb2.DESCRIPTOR,])
@@ -33,6 +34,7 @@ _POINTERTENSOR = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='object_id', full_name='syft_proto.generic.pointers.v1.PointerTensor.object_id', index=0,
@@ -40,42 +42,42 @@ _POINTERTENSOR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='objectId', file=DESCRIPTOR),
+      serialized_options=None, json_name='objectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='location_id', full_name='syft_proto.generic.pointers.v1.PointerTensor.location_id', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='locationId', file=DESCRIPTOR),
+      serialized_options=None, json_name='locationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='object_id_at_location', full_name='syft_proto.generic.pointers.v1.PointerTensor.object_id_at_location', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='objectIdAtLocation', file=DESCRIPTOR),
+      serialized_options=None, json_name='objectIdAtLocation', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='shape', full_name='syft_proto.generic.pointers.v1.PointerTensor.shape', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='shape', file=DESCRIPTOR),
+      serialized_options=None, json_name='shape', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='point_to_attr', full_name='syft_proto.generic.pointers.v1.PointerTensor.point_to_attr', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='pointToAttr', file=DESCRIPTOR),
+      serialized_options=None, json_name='pointToAttr', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='garbage_collect_data', full_name='syft_proto.generic.pointers.v1.PointerTensor.garbage_collect_data', index=5,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='garbageCollectData', file=DESCRIPTOR),
+      serialized_options=None, json_name='garbageCollectData', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],

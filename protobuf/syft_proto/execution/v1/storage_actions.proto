@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package syft_proto.execution.v1;
+option java_package = "org.openmined.syftproto.execution.v1";
+
+import "syft_proto/execution/v1/placeholder_id.proto";
+import "syft_proto/generic/pointers/v1/pointer_tensor.proto";
+import "syft_proto/types/syft/v1/arg.proto";
+import "syft_proto/types/syft/v1/id.proto";
+import "syft_proto/types/torch/v1/tensor.proto";
+
+message StorageAction {
+    string command = 1;
+    oneof target {
+        syft_proto.types.syft.v1.Id target_id = 9;
+        syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2;
+        syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3;
+        syft_proto.types.torch.v1.TorchTensor target_tensor = 4;
+    }
+    repeated syft_proto.types.syft.v1.Arg args = 5;
+    map<string, syft_proto.types.syft.v1.Arg> kwargs = 6;
+    repeated syft_proto.types.syft.v1.Id return_ids = 7;
+    repeated syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8;
+}

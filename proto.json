@@ -217,7 +217,7 @@
     "syft.frameworks.torch.tensors.interpreters.fv.FVTensor": {
       "code": 66
     },
-    "syft.execution.worker_actions.WorkerAction": {
+    "syft.execution.storage_actions.StorageAction": {
       "code": 67
     }
   }
