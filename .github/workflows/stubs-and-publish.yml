@@ -115,6 +115,7 @@ jobs:
           BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}
         run: |
           twine upload --verbose dist/*
+          export LIB_VERSION=$(git describe --tags `git rev-list --tags --max-count=1` | sed -e 's/v//g')
           ./jvm/gradlew bintrayUpload
 
   publish_pods: 
