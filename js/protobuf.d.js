@@ -1625,6 +1625,147 @@ export namespace syft_proto {
                 public toJSON(): { [k: string]: any };
             }
 
+            /** Properties of a StorageAction. */
+            interface IStorageAction {
+
+                /** StorageAction command */
+                command?: (string|null);
+
+                /** StorageAction target_id */
+                target_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** StorageAction target_pointer */
+                target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
+
+                /** StorageAction target_placeholder_id */
+                target_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+
+                /** StorageAction target_tensor */
+                target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** StorageAction args */
+                args?: (syft_proto.types.syft.v1.IArg[]|null);
+
+                /** StorageAction kwargs */
+                kwargs?: ({ [k: string]: syft_proto.types.syft.v1.IArg }|null);
+
+                /** StorageAction return_ids */
+                return_ids?: (syft_proto.types.syft.v1.IId[]|null);
+
+                /** StorageAction return_placeholder_ids */
+                return_placeholder_ids?: (syft_proto.execution.v1.IPlaceholderId[]|null);
+            }
+
+            /** Represents a StorageAction. */
+            class StorageAction implements IStorageAction {
+
+                /**
+                 * Constructs a new StorageAction.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.execution.v1.IStorageAction);
+
+                /** StorageAction command. */
+                public command: string;
+
+                /** StorageAction target_id. */
+                public target_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** StorageAction target_pointer. */
+                public target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
+
+                /** StorageAction target_placeholder_id. */
+                public target_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+
+                /** StorageAction target_tensor. */
+                public target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** StorageAction args. */
+                public args: syft_proto.types.syft.v1.IArg[];
+
+                /** StorageAction kwargs. */
+                public kwargs: { [k: string]: syft_proto.types.syft.v1.IArg };
+
+                /** StorageAction return_ids. */
+                public return_ids: syft_proto.types.syft.v1.IId[];
+
+                /** StorageAction return_placeholder_ids. */
+                public return_placeholder_ids: syft_proto.execution.v1.IPlaceholderId[];
+
+                /** StorageAction target. */
+                public target?: ("target_id"|"target_pointer"|"target_placeholder_id"|"target_tensor");
+
+                /**
+                 * Creates a new StorageAction instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns StorageAction instance
+                 */
+                public static create(properties?: syft_proto.execution.v1.IStorageAction): syft_proto.execution.v1.StorageAction;
+
+                /**
+                 * Encodes the specified StorageAction message. Does not implicitly {@link syft_proto.execution.v1.StorageAction.verify|verify} messages.
+                 * @param message StorageAction message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.execution.v1.IStorageAction, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified StorageAction message, length delimited. Does not implicitly {@link syft_proto.execution.v1.StorageAction.verify|verify} messages.
+                 * @param message StorageAction message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.execution.v1.IStorageAction, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a StorageAction message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns StorageAction
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.StorageAction;
+
+                /**
+                 * Decodes a StorageAction message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns StorageAction
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.StorageAction;
+
+                /**
+                 * Verifies a StorageAction message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a StorageAction message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns StorageAction
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.StorageAction;
+
+                /**
+                 * Creates a plain object from a StorageAction message. Also converts values to other types if specified.
+                 * @param message StorageAction
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.execution.v1.StorageAction, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this StorageAction to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
             /** Properties of a WorkerAction. */
             interface IWorkerAction {
 
