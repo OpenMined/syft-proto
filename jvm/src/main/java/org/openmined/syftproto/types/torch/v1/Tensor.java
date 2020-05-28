@@ -137,7 +137,7 @@ public final class Tensor {
   /**
    * Protobuf type {@code syft_proto.types.torch.v1.TorchTensor}
    */
-  public  static final class TorchTensor extends
+  public static final class TorchTensor extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.torch.v1.TorchTensor)
       TorchTensorOrBuilder {
@@ -394,6 +394,10 @@ public final class Tensor {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -475,6 +479,7 @@ public final class Tensor {
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      * @return Whether the id field is set.
      */
+    @java.lang.Override
     public boolean hasId() {
       return id_ != null;
     }
@@ -482,12 +487,14 @@ public final class Tensor {
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      * @return The id.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder() {
       return getId();
     }
@@ -497,6 +504,7 @@ public final class Tensor {
      * <code>.syft_proto.types.torch.v1.TensorData contents_data = 2[json_name = "contentsData"];</code>
      * @return Whether the contentsData field is set.
      */
+    @java.lang.Override
     public boolean hasContentsData() {
       return contentsCase_ == 2;
     }
@@ -504,6 +512,7 @@ public final class Tensor {
      * <code>.syft_proto.types.torch.v1.TensorData contents_data = 2[json_name = "contentsData"];</code>
      * @return The contentsData.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.TensorDataOuterClass.TensorData getContentsData() {
       if (contentsCase_ == 2) {
          return (org.openmined.syftproto.types.torch.v1.TensorDataOuterClass.TensorData) contents_;
@@ -513,6 +522,7 @@ public final class Tensor {
     /**
      * <code>.syft_proto.types.torch.v1.TensorData contents_data = 2[json_name = "contentsData"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.TensorDataOuterClass.TensorDataOrBuilder getContentsDataOrBuilder() {
       if (contentsCase_ == 2) {
          return (org.openmined.syftproto.types.torch.v1.TensorDataOuterClass.TensorData) contents_;
@@ -525,6 +535,7 @@ public final class Tensor {
      * <code>bytes contents_bin = 3[json_name = "contentsBin"];</code>
      * @return The contentsBin.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getContentsBin() {
       if (contentsCase_ == 3) {
         return (com.google.protobuf.ByteString) contents_;
@@ -538,6 +549,7 @@ public final class Tensor {
      * <code>.syft_proto.types.torch.v1.TorchTensor chain = 4[json_name = "chain"];</code>
      * @return Whether the chain field is set.
      */
+    @java.lang.Override
     public boolean hasChain() {
       return chain_ != null;
     }
@@ -545,12 +557,14 @@ public final class Tensor {
      * <code>.syft_proto.types.torch.v1.TorchTensor chain = 4[json_name = "chain"];</code>
      * @return The chain.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getChain() {
       return chain_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : chain_;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor chain = 4[json_name = "chain"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getChainOrBuilder() {
       return getChain();
     }
@@ -561,6 +575,7 @@ public final class Tensor {
      * <code>.syft_proto.types.torch.v1.TorchTensor grad_chain = 5[json_name = "gradChain"];</code>
      * @return Whether the gradChain field is set.
      */
+    @java.lang.Override
     public boolean hasGradChain() {
       return gradChain_ != null;
     }
@@ -568,12 +583,14 @@ public final class Tensor {
      * <code>.syft_proto.types.torch.v1.TorchTensor grad_chain = 5[json_name = "gradChain"];</code>
      * @return The gradChain.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getGradChain() {
       return gradChain_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : gradChain_;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor grad_chain = 5[json_name = "gradChain"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getGradChainOrBuilder() {
       return getGradChain();
     }
@@ -619,6 +636,7 @@ public final class Tensor {
      * <code>string description = 7[json_name = "description"];</code>
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -635,6 +653,7 @@ public final class Tensor {
      * <code>string description = 7[json_name = "description"];</code>
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -655,14 +674,14 @@ public final class Tensor {
      * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
      * @return The enum numeric value on the wire for serializer.
      */
-    public int getSerializerValue() {
+    @java.lang.Override public int getSerializerValue() {
       return serializer_;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
      * @return The serializer.
      */
-    public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Serializer getSerializer() {
+    @java.lang.Override public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Serializer getSerializer() {
       @SuppressWarnings("deprecation")
       org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Serializer result = org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Serializer.valueOf(serializer_);
       return result == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Serializer.UNRECOGNIZED : result;
@@ -1319,6 +1338,7 @@ public final class Tensor {
        * <code>.syft_proto.types.torch.v1.TensorData contents_data = 2[json_name = "contentsData"];</code>
        * @return Whether the contentsData field is set.
        */
+      @java.lang.Override
       public boolean hasContentsData() {
         return contentsCase_ == 2;
       }
@@ -1326,6 +1346,7 @@ public final class Tensor {
        * <code>.syft_proto.types.torch.v1.TensorData contents_data = 2[json_name = "contentsData"];</code>
        * @return The contentsData.
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.TensorDataOuterClass.TensorData getContentsData() {
         if (contentsDataBuilder_ == null) {
           if (contentsCase_ == 2) {
@@ -1419,6 +1440,7 @@ public final class Tensor {
       /**
        * <code>.syft_proto.types.torch.v1.TensorData contents_data = 2[json_name = "contentsData"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.TensorDataOuterClass.TensorDataOrBuilder getContentsDataOrBuilder() {
         if ((contentsCase_ == 2) && (contentsDataBuilder_ != null)) {
           return contentsDataBuilder_.getMessageOrBuilder();
@@ -1917,7 +1939,7 @@ public final class Tensor {
        * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
        * @return The enum numeric value on the wire for serializer.
        */
-      public int getSerializerValue() {
+      @java.lang.Override public int getSerializerValue() {
         return serializer_;
       }
       /**
@@ -1926,6 +1948,7 @@ public final class Tensor {
        * @return This builder for chaining.
        */
       public Builder setSerializerValue(int value) {
+        
         serializer_ = value;
         onChanged();
         return this;
@@ -1934,6 +1957,7 @@ public final class Tensor {
        * <code>.syft_proto.types.torch.v1.TorchTensor.Serializer serializer = 8[json_name = "serializer"];</code>
        * @return The serializer.
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Serializer getSerializer() {
         @SuppressWarnings("deprecation")
         org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Serializer result = org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Serializer.valueOf(serializer_);
