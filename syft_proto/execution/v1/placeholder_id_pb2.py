@@ -19,6 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n,syft_proto/execution/v1/placeholder_id.proto\x12\x17syft_proto.execution.v1\x1a!syft_proto/types/syft/v1/id.proto\"=\n\rPlaceholderId\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02idB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
   ,
   dependencies=[syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
@@ -32,6 +33,7 @@ _PLACEHOLDERID = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='syft_proto.execution.v1.PlaceholderId.id', index=0,
@@ -39,7 +41,7 @@ _PLACEHOLDERID = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR),
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],

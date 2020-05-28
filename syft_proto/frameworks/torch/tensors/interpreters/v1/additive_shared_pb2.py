@@ -20,6 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.frameworks.torch.tensors.interpreters.v1',
   syntax='proto3',
   serialized_options=b'\n@org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\nIsyft_proto/frameworks/torch/tensors/interpreters/v1/additive_shared.proto\x12\x33syft_proto.frameworks.torch.tensors.interpreters.v1\x1a\x33syft_proto/generic/pointers/v1/pointer_tensor.proto\x1a!syft_proto/types/syft/v1/id.proto\"\xfb\x02\n\x15\x41\x64\x64itiveSharingTensor\x12,\n\x02id\x18\x01 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x02id\x12\x1d\n\tfield_int\x18\x02 \x01(\x03H\x00R\x08\x66ieldInt\x12\x1d\n\tfield_str\x18\x03 \x01(\tH\x00R\x08\x66ieldStr\x12\x14\n\x05\x64type\x18\x04 \x01(\tR\x05\x64type\x12J\n\x12\x63rypto_provider_id\x18\x05 \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x10\x63ryptoProviderId\x12?\n\x0clocation_ids\x18\x06 \x03(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\x0blocationIds\x12\x45\n\x06shares\x18\x07 \x03(\x0b\x32-.syft_proto.generic.pointers.v1.PointerTensorR\x06sharesB\x0c\n\nfield_sizeBB\n@org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1b\x06proto3'
   ,
   dependencies=[syft__proto_dot_generic_dot_pointers_dot_v1_dot_pointer__tensor__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,])
@@ -33,6 +34,7 @@ _ADDITIVESHARINGTENSOR = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.id', index=0,
@@ -40,49 +42,49 @@ _ADDITIVESHARINGTENSOR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='id', file=DESCRIPTOR),
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='field_int', full_name='syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.field_int', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='fieldInt', file=DESCRIPTOR),
+      serialized_options=None, json_name='fieldInt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='field_str', full_name='syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.field_str', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='fieldStr', file=DESCRIPTOR),
+      serialized_options=None, json_name='fieldStr', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='dtype', full_name='syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.dtype', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='dtype', file=DESCRIPTOR),
+      serialized_options=None, json_name='dtype', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='crypto_provider_id', full_name='syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.crypto_provider_id', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='cryptoProviderId', file=DESCRIPTOR),
+      serialized_options=None, json_name='cryptoProviderId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='location_ids', full_name='syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.location_ids', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='locationIds', file=DESCRIPTOR),
+      serialized_options=None, json_name='locationIds', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='shares', full_name='syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.shares', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='shares', file=DESCRIPTOR),
+      serialized_options=None, json_name='shares', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -96,7 +98,9 @@ _ADDITIVESHARINGTENSOR = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='field_size', full_name='syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.field_size',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=219,
   serialized_end=598,

@@ -18,6 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.types.torch.v1',
   syntax='proto3',
   serialized_options=b'\n&org.openmined.syftproto.types.torch.v1',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n$syft_proto/types/torch/v1/size.proto\x12\x19syft_proto.types.torch.v1\"\x1a\n\x04Size\x12\x12\n\x04\x64ims\x18\x01 \x03(\x05R\x04\x64imsB(\n&org.openmined.syftproto.types.torch.v1b\x06proto3'
 )
 
@@ -30,6 +31,7 @@ _SIZE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dims', full_name='syft_proto.types.torch.v1.Size.dims', index=0,
@@ -37,7 +39,7 @@ _SIZE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='dims', file=DESCRIPTOR),
+      serialized_options=None, json_name='dims', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],

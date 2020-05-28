@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-BUF_VERSION := 0.8.0
+BUF_VERSION := 0.13.0
 UNAME_OS := $(shell uname -s)
 UNAME_ARCH := $(shell uname -m)
 HTTPS_GIT := "https://github.com/OpenMined/syft-proto.git"
@@ -17,7 +17,7 @@ buf:
 	curl -sSL \
 	"https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
 	-o "buf" && \
-	chmod +x "buf"	
+	chmod +x "buf"
 
 protoc:
 ifeq "${PROTOC_OS}" "osx"
@@ -83,7 +83,7 @@ stage: stubs
 	git add syft_proto/*
 	git add jvm/src/*
 	git add js/*
-	git add swift/* 
+	git add swift/*
 
 commit: stage
 	git diff --quiet && git diff --staged --quiet || \
