@@ -15,7 +15,7 @@ setup(
     description="PySyft protocol constants.",
     packages=find_packages(),
     package_data={"": ["proto.json"]},
-    install_requires=["protobuf>=3.12.2"],
+    install_requires=["protobuf>=3.11.1"],
     license="LICENSE",
     include_package_data=True,
 )
