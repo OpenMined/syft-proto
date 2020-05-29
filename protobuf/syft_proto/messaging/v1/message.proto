@@ -6,7 +6,6 @@ option java_package = "org.openmined.syftproto.messaging.v1";
 import "google/protobuf/empty.proto";
 import "syft_proto/execution/v1/computation_action.proto";
 import "syft_proto/execution/v1/communication_action.proto";
-import "syft_proto/execution/v1/placeholder_id.proto";
 import "syft_proto/types/syft/v1/id.proto";
 import "syft_proto/types/torch/v1/tensor.proto";
 import "syft_proto/types/syft/v1/arg.proto";
@@ -32,7 +31,6 @@ message IsNoneMessage {
 
 message ObjectMessage {
   syft_proto.types.torch.v1.TorchTensor tensor = 1;
-  syft_proto.execution.v1.PlaceholderId placeholder_id = 2;
 }
 
 message TensorCommandMessage {
