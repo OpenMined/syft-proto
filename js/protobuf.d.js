@@ -3867,6 +3867,134 @@ export namespace syft_proto {
         /** Namespace torch. */
         namespace torch {
 
+            /** Namespace fl. */
+            namespace fl {
+
+                /** Namespace v1. */
+                namespace v1 {
+
+                    /** Properties of a BaseDataset. */
+                    interface IBaseDataset {
+
+                        /** BaseDataset data */
+                        data?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset targets */
+                        targets?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset id */
+                        id?: (syft_proto.types.syft.v1.IId|null);
+
+                        /** BaseDataset tags */
+                        tags?: (string[]|null);
+
+                        /** BaseDataset description */
+                        description?: (string|null);
+
+                        /** BaseDataset child */
+                        child?: (syft_proto.types.torch.v1.ITorchTensor|null);
+                    }
+
+                    /** Represents a BaseDataset. */
+                    class BaseDataset implements IBaseDataset {
+
+                        /**
+                         * Constructs a new BaseDataset.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: syft_proto.frameworks.torch.fl.v1.IBaseDataset);
+
+                        /** BaseDataset data. */
+                        public data?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset targets. */
+                        public targets?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset id. */
+                        public id?: (syft_proto.types.syft.v1.IId|null);
+
+                        /** BaseDataset tags. */
+                        public tags: string[];
+
+                        /** BaseDataset description. */
+                        public description: string;
+
+                        /** BaseDataset child. */
+                        public child?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /**
+                         * Creates a new BaseDataset instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns BaseDataset instance
+                         */
+                        public static create(properties?: syft_proto.frameworks.torch.fl.v1.IBaseDataset): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Encodes the specified BaseDataset message. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
+                         * @param message BaseDataset message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: syft_proto.frameworks.torch.fl.v1.IBaseDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified BaseDataset message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
+                         * @param message BaseDataset message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: syft_proto.frameworks.torch.fl.v1.IBaseDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a BaseDataset message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns BaseDataset
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Decodes a BaseDataset message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns BaseDataset
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Verifies a BaseDataset message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a BaseDataset message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns BaseDataset
+                         */
+                        public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Creates a plain object from a BaseDataset message. Also converts values to other types if specified.
+                         * @param message BaseDataset
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: syft_proto.frameworks.torch.fl.v1.BaseDataset, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this BaseDataset to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+                    }
+                }
+            }
+
             /** Namespace tensors. */
             namespace tensors {
 
