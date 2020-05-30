@@ -1973,7 +1973,7 @@ export namespace syft_proto {
                     arg_bool?: (boolean|null);
 
                     /** Arg arg_int */
-                    arg_int?: (number|null);
+                    arg_int?: (number|Long|null);
 
                     /** Arg arg_float */
                     arg_float?: (number|null);
@@ -2016,7 +2016,7 @@ export namespace syft_proto {
                     public arg_bool: boolean;
 
                     /** Arg arg_int. */
-                    public arg_int: number;
+                    public arg_int: (number|Long);
 
                     /** Arg arg_float. */
                     public arg_float: number;

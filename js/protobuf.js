@@ -5541,7 +5541,7 @@ $root.syft_proto = (function() {
                      * @memberof syft_proto.types.syft.v1
                      * @interface IArg
                      * @property {boolean|null} [arg_bool] Arg arg_bool
-                     * @property {number|null} [arg_int] Arg arg_int
+                     * @property {number|Long|null} [arg_int] Arg arg_int
                      * @property {number|null} [arg_float] Arg arg_float
                      * @property {string|null} [arg_str] Arg arg_str
                      * @property {syft_proto.types.syft.v1.IShape|null} [arg_shape] Arg arg_shape
@@ -5578,11 +5578,11 @@ $root.syft_proto = (function() {
 
                     /**
                      * Arg arg_int.
-                     * @member {number} arg_int
+                     * @member {number|Long} arg_int
                      * @memberof syft_proto.types.syft.v1.Arg
                      * @instance
                      */
-                    Arg.prototype.arg_int = 0;
+                    Arg.prototype.arg_int = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
                     /**
                      * Arg arg_float.
@@ -5697,7 +5697,7 @@ $root.syft_proto = (function() {
                         if (message.arg_bool != null && message.hasOwnProperty("arg_bool"))
                             writer.uint32(/* id 1, wireType 0 =*/8).bool(message.arg_bool);
                         if (message.arg_int != null && message.hasOwnProperty("arg_int"))
-                            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.arg_int);
+                            writer.uint32(/* id 2, wireType 0 =*/16).int64(message.arg_int);
                         if (message.arg_float != null && message.hasOwnProperty("arg_float"))
                             writer.uint32(/* id 3, wireType 5 =*/29).float(message.arg_float);
                         if (message.arg_str != null && message.hasOwnProperty("arg_str"))
@@ -5754,7 +5754,7 @@ $root.syft_proto = (function() {
                                 message.arg_bool = reader.bool();
                                 break;
                             case 2:
-                                message.arg_int = reader.int32();
+                                message.arg_int = reader.int64();
                                 break;
                             case 3:
                                 message.arg_float = reader.float();
@@ -5828,8 +5828,8 @@ $root.syft_proto = (function() {
                             if (properties.arg === 1)
                                 return "arg: multiple values";
                             properties.arg = 1;
-                            if (!$util.isInteger(message.arg_int))
-                                return "arg_int: integer expected";
+                            if (!$util.isInteger(message.arg_int) && !(message.arg_int && $util.isInteger(message.arg_int.low) && $util.isInteger(message.arg_int.high)))
+                                return "arg_int: integer|Long expected";
                         }
                         if (message.arg_float != null && message.hasOwnProperty("arg_float")) {
                             if (properties.arg === 1)
@@ -5933,7 +5933,14 @@ $root.syft_proto = (function() {
                         if (object.arg_bool != null)
                             message.arg_bool = Boolean(object.arg_bool);
                         if (object.arg_int != null)
-                            message.arg_int = object.arg_int | 0;
+                            if ($util.Long)
+                                (message.arg_int = $util.Long.fromValue(object.arg_int)).unsigned = false;
+                            else if (typeof object.arg_int === "string")
+                                message.arg_int = parseInt(object.arg_int, 10);
+                            else if (typeof object.arg_int === "number")
+                                message.arg_int = object.arg_int;
+                            else if (typeof object.arg_int === "object")
+                                message.arg_int = new $util.LongBits(object.arg_int.low >>> 0, object.arg_int.high >>> 0).toNumber();
                         if (object.arg_float != null)
                             message.arg_float = Number(object.arg_float);
                         if (object.arg_str != null)
@@ -5995,7 +6002,10 @@ $root.syft_proto = (function() {
                                 object.arg = "arg_bool";
                         }
                         if (message.arg_int != null && message.hasOwnProperty("arg_int")) {
-                            object.arg_int = message.arg_int;
+                            if (typeof message.arg_int === "number")
+                                object.arg_int = options.longs === String ? String(message.arg_int) : message.arg_int;
+                            else
+                                object.arg_int = options.longs === String ? $util.Long.prototype.toString.call(message.arg_int) : options.longs === Number ? new $util.LongBits(message.arg_int.low >>> 0, message.arg_int.high >>> 0).toNumber() : message.arg_int;
                             if (options.oneofs)
                                 object.arg = "arg_int";
                         }

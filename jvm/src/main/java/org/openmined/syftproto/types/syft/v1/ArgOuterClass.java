@@ -25,10 +25,10 @@ public final class ArgOuterClass {
     boolean getArgBool();
 
     /**
-     * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+     * <code>int64 arg_int = 2[json_name = "argInt"];</code>
      * @return The argInt.
      */
-    int getArgInt();
+    long getArgInt();
 
     /**
      * <code>float arg_float = 3[json_name = "argFloat"];</code>
@@ -207,7 +207,7 @@ public final class ArgOuterClass {
             }
             case 16: {
               argCase_ = 2;
-              arg_ = input.readInt32();
+              arg_ = input.readInt64();
               break;
             }
             case 29: {
@@ -424,14 +424,14 @@ public final class ArgOuterClass {
 
     public static final int ARG_INT_FIELD_NUMBER = 2;
     /**
-     * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+     * <code>int64 arg_int = 2[json_name = "argInt"];</code>
      * @return The argInt.
      */
-    public int getArgInt() {
+    public long getArgInt() {
       if (argCase_ == 2) {
-        return (java.lang.Integer) arg_;
+        return (java.lang.Long) arg_;
       }
-      return 0;
+      return 0L;
     }
 
     public static final int ARG_FLOAT_FIELD_NUMBER = 3;
@@ -706,8 +706,8 @@ public final class ArgOuterClass {
             1, (boolean)((java.lang.Boolean) arg_));
       }
       if (argCase_ == 2) {
-        output.writeInt32(
-            2, (int)((java.lang.Integer) arg_));
+        output.writeInt64(
+            2, (long)((java.lang.Long) arg_));
       }
       if (argCase_ == 3) {
         output.writeFloat(
@@ -753,8 +753,8 @@ public final class ArgOuterClass {
       }
       if (argCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(
-              2, (int)((java.lang.Integer) arg_));
+          .computeInt64Size(
+              2, (long)((java.lang.Long) arg_));
       }
       if (argCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
@@ -876,7 +876,8 @@ public final class ArgOuterClass {
           break;
         case 2:
           hash = (37 * hash) + ARG_INT_FIELD_NUMBER;
-          hash = (53 * hash) + getArgInt();
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getArgInt());
           break;
         case 3:
           hash = (37 * hash) + ARG_FLOAT_FIELD_NUMBER;
@@ -1319,28 +1320,28 @@ public final class ArgOuterClass {
       }
 
       /**
-       * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+       * <code>int64 arg_int = 2[json_name = "argInt"];</code>
        * @return The argInt.
        */
-      public int getArgInt() {
+      public long getArgInt() {
         if (argCase_ == 2) {
-          return (java.lang.Integer) arg_;
+          return (java.lang.Long) arg_;
         }
-        return 0;
+        return 0L;
       }
       /**
-       * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+       * <code>int64 arg_int = 2[json_name = "argInt"];</code>
        * @param value The argInt to set.
        * @return This builder for chaining.
        */
-      public Builder setArgInt(int value) {
+      public Builder setArgInt(long value) {
         argCase_ = 2;
         arg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+       * <code>int64 arg_int = 2[json_name = "argInt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearArgInt() {
@@ -3307,7 +3308,7 @@ public final class ArgOuterClass {
       "roto\032$syft_proto/types/syft/v1/shape.pro" +
       "to\032)syft_proto/types/torch/v1/parameter." +
       "proto\"\237\005\n\003Arg\022\033\n\010arg_bool\030\001 \001(\010H\000R\007argBo" +
-      "ol\022\031\n\007arg_int\030\002 \001(\005H\000R\006argInt\022\035\n\targ_flo" +
+      "ol\022\031\n\007arg_int\030\002 \001(\003H\000R\006argInt\022\035\n\targ_flo" +
       "at\030\003 \001(\002H\000R\010argFloat\022\031\n\007arg_str\030\004 \001(\tH\000R" +
       "\006argStr\022>\n\targ_shape\030\005 \001(\0132\037.syft_proto." +
       "types.syft.v1.ShapeH\000R\010argShape\022G\n\narg_t" +
