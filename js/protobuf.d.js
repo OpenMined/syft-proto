@@ -4132,6 +4132,144 @@ export namespace syft_proto {
                              */
                             public toJSON(): { [k: string]: any };
                         }
+
+                        /** Properties of a FixedPrecisionTensor. */
+                        interface IFixedPrecisionTensor {
+
+                            /** FixedPrecisionTensor id */
+                            id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** FixedPrecisionTensor field */
+                            field?: (string|null);
+
+                            /** FixedPrecisionTensor dtype */
+                            dtype?: (string|null);
+
+                            /** FixedPrecisionTensor base */
+                            base?: (number|null);
+
+                            /** FixedPrecisionTensor kappa */
+                            kappa?: (number|null);
+
+                            /** FixedPrecisionTensor precision_fractional */
+                            precision_fractional?: (number|null);
+
+                            /** FixedPrecisionTensor tags */
+                            tags?: (string[]|null);
+
+                            /** FixedPrecisionTensor description */
+                            description?: (string|null);
+
+                            /** FixedPrecisionTensor child */
+                            child?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor|null);
+                        }
+
+                        /** Represents a FixedPrecisionTensor. */
+                        class FixedPrecisionTensor implements IFixedPrecisionTensor {
+
+                            /**
+                             * Constructs a new FixedPrecisionTensor.
+                             * @param [properties] Properties to set
+                             */
+                            constructor(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor);
+
+                            /** FixedPrecisionTensor id. */
+                            public id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** FixedPrecisionTensor field. */
+                            public field: string;
+
+                            /** FixedPrecisionTensor dtype. */
+                            public dtype: string;
+
+                            /** FixedPrecisionTensor base. */
+                            public base: number;
+
+                            /** FixedPrecisionTensor kappa. */
+                            public kappa: number;
+
+                            /** FixedPrecisionTensor precision_fractional. */
+                            public precision_fractional: number;
+
+                            /** FixedPrecisionTensor tags. */
+                            public tags: string[];
+
+                            /** FixedPrecisionTensor description. */
+                            public description: string;
+
+                            /** FixedPrecisionTensor child. */
+                            public child?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor|null);
+
+                            /**
+                             * Creates a new FixedPrecisionTensor instance using the specified properties.
+                             * @param [properties] Properties to set
+                             * @returns FixedPrecisionTensor instance
+                             */
+                            public static create(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor): syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor;
+
+                            /**
+                             * Encodes the specified FixedPrecisionTensor message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.verify|verify} messages.
+                             * @param message FixedPrecisionTensor message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encode(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Encodes the specified FixedPrecisionTensor message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.verify|verify} messages.
+                             * @param message FixedPrecisionTensor message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encodeDelimited(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Decodes a FixedPrecisionTensor message from the specified reader or buffer.
+                             * @param reader Reader or buffer to decode from
+                             * @param [length] Message length if known beforehand
+                             * @returns FixedPrecisionTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor;
+
+                            /**
+                             * Decodes a FixedPrecisionTensor message from the specified reader or buffer, length delimited.
+                             * @param reader Reader or buffer to decode from
+                             * @returns FixedPrecisionTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor;
+
+                            /**
+                             * Verifies a FixedPrecisionTensor message.
+                             * @param message Plain object to verify
+                             * @returns `null` if valid, otherwise the reason why it is not
+                             */
+                            public static verify(message: { [k: string]: any }): (string|null);
+
+                            /**
+                             * Creates a FixedPrecisionTensor message from a plain object. Also converts values to their respective internal types.
+                             * @param object Plain object
+                             * @returns FixedPrecisionTensor
+                             */
+                            public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor;
+
+                            /**
+                             * Creates a plain object from a FixedPrecisionTensor message. Also converts values to other types if specified.
+                             * @param message FixedPrecisionTensor
+                             * @param [options] Conversion options
+                             * @returns Plain object
+                             */
+                            public static toObject(message: syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                            /**
+                             * Converts this FixedPrecisionTensor to JSON.
+                             * @returns JSON object
+                             */
+                            public toJSON(): { [k: string]: any };
+                        }
                     }
                 }
             }
