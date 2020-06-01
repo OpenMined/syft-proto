@@ -25,10 +25,10 @@ public final class ArgOuterClass {
     boolean getArgBool();
 
     /**
-     * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+     * <code>int64 arg_int = 2[json_name = "argInt"];</code>
      * @return The argInt.
      */
-    int getArgInt();
+    long getArgInt();
 
     /**
      * <code>float arg_float = 3[json_name = "argFloat"];</code>
@@ -138,6 +138,21 @@ public final class ArgOuterClass {
      */
     org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getArgPlaceholderIdOrBuilder();
 
+    /**
+     * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+     * @return Whether the argList field is set.
+     */
+    boolean hasArgList();
+    /**
+     * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+     * @return The argList.
+     */
+    org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList getArgList();
+    /**
+     * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+     */
+    org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgListOrBuilder getArgListOrBuilder();
+
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.ArgCase getArgCase();
   }
   /**
@@ -192,7 +207,7 @@ public final class ArgOuterClass {
             }
             case 16: {
               argCase_ = 2;
-              arg_ = input.readInt32();
+              arg_ = input.readInt64();
               break;
             }
             case 29: {
@@ -290,6 +305,20 @@ public final class ArgOuterClass {
               argCase_ = 10;
               break;
             }
+            case 90: {
+              org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.Builder subBuilder = null;
+              if (argCase_ == 11) {
+                subBuilder = ((org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) arg_).toBuilder();
+              }
+              arg_ =
+                  input.readMessage(org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) arg_);
+                arg_ = subBuilder.buildPartial();
+              }
+              argCase_ = 11;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -337,6 +366,7 @@ public final class ArgOuterClass {
       ARG_POINTER_TENSOR(8),
       ARG_PLACEHOLDER(9),
       ARG_PLACEHOLDER_ID(10),
+      ARG_LIST(11),
       ARG_NOT_SET(0);
       private final int value;
       private ArgCase(int value) {
@@ -364,6 +394,7 @@ public final class ArgOuterClass {
           case 8: return ARG_POINTER_TENSOR;
           case 9: return ARG_PLACEHOLDER;
           case 10: return ARG_PLACEHOLDER_ID;
+          case 11: return ARG_LIST;
           case 0: return ARG_NOT_SET;
           default: return null;
         }
@@ -393,14 +424,14 @@ public final class ArgOuterClass {
 
     public static final int ARG_INT_FIELD_NUMBER = 2;
     /**
-     * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+     * <code>int64 arg_int = 2[json_name = "argInt"];</code>
      * @return The argInt.
      */
-    public int getArgInt() {
+    public long getArgInt() {
       if (argCase_ == 2) {
-        return (java.lang.Integer) arg_;
+        return (java.lang.Long) arg_;
       }
-      return 0;
+      return 0L;
     }
 
     public static final int ARG_FLOAT_FIELD_NUMBER = 3;
@@ -628,6 +659,34 @@ public final class ArgOuterClass {
       return org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId.getDefaultInstance();
     }
 
+    public static final int ARG_LIST_FIELD_NUMBER = 11;
+    /**
+     * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+     * @return Whether the argList field is set.
+     */
+    public boolean hasArgList() {
+      return argCase_ == 11;
+    }
+    /**
+     * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+     * @return The argList.
+     */
+    public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList getArgList() {
+      if (argCase_ == 11) {
+         return (org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) arg_;
+      }
+      return org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.getDefaultInstance();
+    }
+    /**
+     * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+     */
+    public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgListOrBuilder getArgListOrBuilder() {
+      if (argCase_ == 11) {
+         return (org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) arg_;
+      }
+      return org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -647,8 +706,8 @@ public final class ArgOuterClass {
             1, (boolean)((java.lang.Boolean) arg_));
       }
       if (argCase_ == 2) {
-        output.writeInt32(
-            2, (int)((java.lang.Integer) arg_));
+        output.writeInt64(
+            2, (long)((java.lang.Long) arg_));
       }
       if (argCase_ == 3) {
         output.writeFloat(
@@ -675,6 +734,9 @@ public final class ArgOuterClass {
       if (argCase_ == 10) {
         output.writeMessage(10, (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_);
       }
+      if (argCase_ == 11) {
+        output.writeMessage(11, (org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) arg_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -691,8 +753,8 @@ public final class ArgOuterClass {
       }
       if (argCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(
-              2, (int)((java.lang.Integer) arg_));
+          .computeInt64Size(
+              2, (long)((java.lang.Long) arg_));
       }
       if (argCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
@@ -725,6 +787,10 @@ public final class ArgOuterClass {
       if (argCase_ == 10) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) arg_);
+      }
+      if (argCase_ == 11) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, (org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) arg_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -784,6 +850,10 @@ public final class ArgOuterClass {
           if (!getArgPlaceholderId()
               .equals(other.getArgPlaceholderId())) return false;
           break;
+        case 11:
+          if (!getArgList()
+              .equals(other.getArgList())) return false;
+          break;
         case 0:
         default:
       }
@@ -806,7 +876,8 @@ public final class ArgOuterClass {
           break;
         case 2:
           hash = (37 * hash) + ARG_INT_FIELD_NUMBER;
-          hash = (53 * hash) + getArgInt();
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getArgInt());
           break;
         case 3:
           hash = (37 * hash) + ARG_FLOAT_FIELD_NUMBER;
@@ -840,6 +911,10 @@ public final class ArgOuterClass {
         case 10:
           hash = (37 * hash) + ARG_PLACEHOLDER_ID_FIELD_NUMBER;
           hash = (53 * hash) + getArgPlaceholderId().hashCode();
+          break;
+        case 11:
+          hash = (37 * hash) + ARG_LIST_FIELD_NUMBER;
+          hash = (53 * hash) + getArgList().hashCode();
           break;
         case 0:
         default:
@@ -1059,6 +1134,13 @@ public final class ArgOuterClass {
             result.arg_ = argPlaceholderIdBuilder_.build();
           }
         }
+        if (argCase_ == 11) {
+          if (argListBuilder_ == null) {
+            result.arg_ = arg_;
+          } else {
+            result.arg_ = argListBuilder_.build();
+          }
+        }
         result.argCase_ = argCase_;
         onBuilt();
         return result;
@@ -1151,6 +1233,10 @@ public final class ArgOuterClass {
             mergeArgPlaceholderId(other.getArgPlaceholderId());
             break;
           }
+          case ARG_LIST: {
+            mergeArgList(other.getArgList());
+            break;
+          }
           case ARG_NOT_SET: {
             break;
           }
@@ -1234,28 +1320,28 @@ public final class ArgOuterClass {
       }
 
       /**
-       * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+       * <code>int64 arg_int = 2[json_name = "argInt"];</code>
        * @return The argInt.
        */
-      public int getArgInt() {
+      public long getArgInt() {
         if (argCase_ == 2) {
-          return (java.lang.Integer) arg_;
+          return (java.lang.Long) arg_;
         }
-        return 0;
+        return 0L;
       }
       /**
-       * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+       * <code>int64 arg_int = 2[json_name = "argInt"];</code>
        * @param value The argInt to set.
        * @return This builder for chaining.
        */
-      public Builder setArgInt(int value) {
+      public Builder setArgInt(long value) {
         argCase_ = 2;
         arg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 arg_int = 2[json_name = "argInt"];</code>
+       * <code>int64 arg_int = 2[json_name = "argInt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearArgInt() {
@@ -2215,6 +2301,144 @@ public final class ArgOuterClass {
         onChanged();;
         return argPlaceholderIdBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.Builder, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgListOrBuilder> argListBuilder_;
+      /**
+       * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+       * @return Whether the argList field is set.
+       */
+      public boolean hasArgList() {
+        return argCase_ == 11;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+       * @return The argList.
+       */
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList getArgList() {
+        if (argListBuilder_ == null) {
+          if (argCase_ == 11) {
+            return (org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) arg_;
+          }
+          return org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.getDefaultInstance();
+        } else {
+          if (argCase_ == 11) {
+            return argListBuilder_.getMessage();
+          }
+          return org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+       */
+      public Builder setArgList(org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList value) {
+        if (argListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          arg_ = value;
+          onChanged();
+        } else {
+          argListBuilder_.setMessage(value);
+        }
+        argCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+       */
+      public Builder setArgList(
+          org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.Builder builderForValue) {
+        if (argListBuilder_ == null) {
+          arg_ = builderForValue.build();
+          onChanged();
+        } else {
+          argListBuilder_.setMessage(builderForValue.build());
+        }
+        argCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+       */
+      public Builder mergeArgList(org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList value) {
+        if (argListBuilder_ == null) {
+          if (argCase_ == 11 &&
+              arg_ != org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.getDefaultInstance()) {
+            arg_ = org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.newBuilder((org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) arg_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            arg_ = value;
+          }
+          onChanged();
+        } else {
+          if (argCase_ == 11) {
+            argListBuilder_.mergeFrom(value);
+          }
+          argListBuilder_.setMessage(value);
+        }
+        argCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+       */
+      public Builder clearArgList() {
+        if (argListBuilder_ == null) {
+          if (argCase_ == 11) {
+            argCase_ = 0;
+            arg_ = null;
+            onChanged();
+          }
+        } else {
+          if (argCase_ == 11) {
+            argCase_ = 0;
+            arg_ = null;
+          }
+          argListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.Builder getArgListBuilder() {
+        return getArgListFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgListOrBuilder getArgListOrBuilder() {
+        if ((argCase_ == 11) && (argListBuilder_ != null)) {
+          return argListBuilder_.getMessageOrBuilder();
+        } else {
+          if (argCase_ == 11) {
+            return (org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) arg_;
+          }
+          return org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.ArgList arg_list = 11[json_name = "argList"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.Builder, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgListOrBuilder> 
+          getArgListFieldBuilder() {
+        if (argListBuilder_ == null) {
+          if (!(argCase_ == 11)) {
+            arg_ = org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.getDefaultInstance();
+          }
+          argListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.Builder, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgListOrBuilder>(
+                  (org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) arg_,
+                  getParentForChildren(),
+                  isClean());
+          arg_ = null;
+        }
+        argCase_ = 11;
+        onChanged();;
+        return argListBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2268,11 +2492,804 @@ public final class ArgOuterClass {
 
   }
 
+  public interface ArgListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:syft_proto.types.syft.v1.ArgList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+     */
+    java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> 
+        getArgsList();
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+     */
+    org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getArgs(int index);
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+     */
+    int getArgsCount();
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+     */
+    java.util.List<? extends org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> 
+        getArgsOrBuilderList();
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+     */
+    org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder getArgsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code syft_proto.types.syft.v1.ArgList}
+   */
+  public  static final class ArgList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:syft_proto.types.syft.v1.ArgList)
+      ArgListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ArgList.newBuilder() to construct.
+    private ArgList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ArgList() {
+      args_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ArgList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ArgList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                args_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              args_.add(
+                  input.readMessage(org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          args_ = java.util.Collections.unmodifiableList(args_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.openmined.syftproto.types.syft.v1.ArgOuterClass.internal_static_syft_proto_types_syft_v1_ArgList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.openmined.syftproto.types.syft.v1.ArgOuterClass.internal_static_syft_proto_types_syft_v1_ArgList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.class, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.Builder.class);
+    }
+
+    public static final int ARGS_FIELD_NUMBER = 1;
+    private java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> args_;
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+     */
+    public java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getArgsList() {
+      return args_;
+    }
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+     */
+    public java.util.List<? extends org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> 
+        getArgsOrBuilderList() {
+      return args_;
+    }
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+     */
+    public int getArgsCount() {
+      return args_.size();
+    }
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+     */
+    public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getArgs(int index) {
+      return args_.get(index);
+    }
+    /**
+     * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+     */
+    public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder getArgsOrBuilder(
+        int index) {
+      return args_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < args_.size(); i++) {
+        output.writeMessage(1, args_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < args_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, args_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList)) {
+        return super.equals(obj);
+      }
+      org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList other = (org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) obj;
+
+      if (!getArgsList()
+          .equals(other.getArgsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getArgsCount() > 0) {
+        hash = (37 * hash) + ARGS_FIELD_NUMBER;
+        hash = (53 * hash) + getArgsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code syft_proto.types.syft.v1.ArgList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:syft_proto.types.syft.v1.ArgList)
+        org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.openmined.syftproto.types.syft.v1.ArgOuterClass.internal_static_syft_proto_types_syft_v1_ArgList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.openmined.syftproto.types.syft.v1.ArgOuterClass.internal_static_syft_proto_types_syft_v1_ArgList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.class, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.Builder.class);
+      }
+
+      // Construct using org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getArgsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (argsBuilder_ == null) {
+          args_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          argsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.openmined.syftproto.types.syft.v1.ArgOuterClass.internal_static_syft_proto_types_syft_v1_ArgList_descriptor;
+      }
+
+      @java.lang.Override
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList getDefaultInstanceForType() {
+        return org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList build() {
+        org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList buildPartial() {
+        org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList result = new org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList(this);
+        int from_bitField0_ = bitField0_;
+        if (argsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            args_ = java.util.Collections.unmodifiableList(args_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.args_ = args_;
+        } else {
+          result.args_ = argsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) {
+          return mergeFrom((org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList other) {
+        if (other == org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList.getDefaultInstance()) return this;
+        if (argsBuilder_ == null) {
+          if (!other.args_.isEmpty()) {
+            if (args_.isEmpty()) {
+              args_ = other.args_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureArgsIsMutable();
+              args_.addAll(other.args_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.args_.isEmpty()) {
+            if (argsBuilder_.isEmpty()) {
+              argsBuilder_.dispose();
+              argsBuilder_ = null;
+              args_ = other.args_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              argsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getArgsFieldBuilder() : null;
+            } else {
+              argsBuilder_.addAllMessages(other.args_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> args_ =
+        java.util.Collections.emptyList();
+      private void ensureArgsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          args_ = new java.util.ArrayList<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg>(args_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> argsBuilder_;
+
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getArgsList() {
+        if (argsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(args_);
+        } else {
+          return argsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public int getArgsCount() {
+        if (argsBuilder_ == null) {
+          return args_.size();
+        } else {
+          return argsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getArgs(int index) {
+        if (argsBuilder_ == null) {
+          return args_.get(index);
+        } else {
+          return argsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public Builder setArgs(
+          int index, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg value) {
+        if (argsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureArgsIsMutable();
+          args_.set(index, value);
+          onChanged();
+        } else {
+          argsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public Builder setArgs(
+          int index, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder builderForValue) {
+        if (argsBuilder_ == null) {
+          ensureArgsIsMutable();
+          args_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          argsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public Builder addArgs(org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg value) {
+        if (argsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureArgsIsMutable();
+          args_.add(value);
+          onChanged();
+        } else {
+          argsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public Builder addArgs(
+          int index, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg value) {
+        if (argsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureArgsIsMutable();
+          args_.add(index, value);
+          onChanged();
+        } else {
+          argsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public Builder addArgs(
+          org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder builderForValue) {
+        if (argsBuilder_ == null) {
+          ensureArgsIsMutable();
+          args_.add(builderForValue.build());
+          onChanged();
+        } else {
+          argsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public Builder addArgs(
+          int index, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder builderForValue) {
+        if (argsBuilder_ == null) {
+          ensureArgsIsMutable();
+          args_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          argsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public Builder addAllArgs(
+          java.lang.Iterable<? extends org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> values) {
+        if (argsBuilder_ == null) {
+          ensureArgsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, args_);
+          onChanged();
+        } else {
+          argsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public Builder clearArgs() {
+        if (argsBuilder_ == null) {
+          args_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          argsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public Builder removeArgs(int index) {
+        if (argsBuilder_ == null) {
+          ensureArgsIsMutable();
+          args_.remove(index);
+          onChanged();
+        } else {
+          argsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder getArgsBuilder(
+          int index) {
+        return getArgsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder getArgsOrBuilder(
+          int index) {
+        if (argsBuilder_ == null) {
+          return args_.get(index);  } else {
+          return argsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public java.util.List<? extends org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> 
+           getArgsOrBuilderList() {
+        if (argsBuilder_ != null) {
+          return argsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(args_);
+        }
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder addArgsBuilder() {
+        return getArgsFieldBuilder().addBuilder(
+            org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder addArgsBuilder(
+          int index) {
+        return getArgsFieldBuilder().addBuilder(
+            index, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .syft_proto.types.syft.v1.Arg args = 1[json_name = "args"];</code>
+       */
+      public java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder> 
+           getArgsBuilderList() {
+        return getArgsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> 
+          getArgsFieldBuilder() {
+        if (argsBuilder_ == null) {
+          argsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg.Builder, org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder>(
+                  args_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          args_ = null;
+        }
+        return argsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:syft_proto.types.syft.v1.ArgList)
+    }
+
+    // @@protoc_insertion_point(class_scope:syft_proto.types.syft.v1.ArgList)
+    private static final org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList();
+    }
+
+    public static org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ArgList>
+        PARSER = new com.google.protobuf.AbstractParser<ArgList>() {
+      @java.lang.Override
+      public ArgList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ArgList(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ArgList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ArgList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_syft_proto_types_syft_v1_Arg_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_syft_proto_types_syft_v1_Arg_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_syft_proto_types_syft_v1_ArgList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_syft_proto_types_syft_v1_ArgList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2290,8 +3307,8 @@ public final class ArgOuterClass {
       "roto\032&syft_proto/types/torch/v1/tensor.p" +
       "roto\032$syft_proto/types/syft/v1/shape.pro" +
       "to\032)syft_proto/types/torch/v1/parameter." +
-      "proto\"\337\004\n\003Arg\022\033\n\010arg_bool\030\001 \001(\010H\000R\007argBo" +
-      "ol\022\031\n\007arg_int\030\002 \001(\005H\000R\006argInt\022\035\n\targ_flo" +
+      "proto\"\237\005\n\003Arg\022\033\n\010arg_bool\030\001 \001(\010H\000R\007argBo" +
+      "ol\022\031\n\007arg_int\030\002 \001(\003H\000R\006argInt\022\035\n\targ_flo" +
       "at\030\003 \001(\002H\000R\010argFloat\022\031\n\007arg_str\030\004 \001(\tH\000R" +
       "\006argStr\022>\n\targ_shape\030\005 \001(\0132\037.syft_proto." +
       "types.syft.v1.ShapeH\000R\010argShape\022G\n\narg_t" +
@@ -2305,8 +3322,11 @@ public final class ArgOuterClass {
       "ecution.v1.PlaceholderH\000R\016argPlaceholder" +
       "\022V\n\022arg_placeholder_id\030\n \001(\0132&.syft_prot" +
       "o.execution.v1.PlaceholderIdH\000R\020argPlace" +
-      "holderIdB\005\n\003argB\'\n%org.openmined.syftpro" +
-      "to.types.syft.v1b\006proto3"
+      "holderId\022>\n\010arg_list\030\013 \001(\0132!.syft_proto." +
+      "types.syft.v1.ArgListH\000R\007argListB\005\n\003arg\"" +
+      "<\n\007ArgList\0221\n\004args\030\001 \003(\0132\035.syft_proto.ty" +
+      "pes.syft.v1.ArgR\004argsB\'\n%org.openmined.s" +
+      "yftproto.types.syft.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2323,7 +3343,13 @@ public final class ArgOuterClass {
     internal_static_syft_proto_types_syft_v1_Arg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_types_syft_v1_Arg_descriptor,
-        new java.lang.String[] { "ArgBool", "ArgInt", "ArgFloat", "ArgStr", "ArgShape", "ArgTensor", "ArgTorchParam", "ArgPointerTensor", "ArgPlaceholder", "ArgPlaceholderId", "Arg", });
+        new java.lang.String[] { "ArgBool", "ArgInt", "ArgFloat", "ArgStr", "ArgShape", "ArgTensor", "ArgTorchParam", "ArgPointerTensor", "ArgPlaceholder", "ArgPlaceholderId", "ArgList", "Arg", });
+    internal_static_syft_proto_types_syft_v1_ArgList_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_syft_proto_types_syft_v1_ArgList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_syft_proto_types_syft_v1_ArgList_descriptor,
+        new java.lang.String[] { "Args", });
     org.openmined.syftproto.execution.v1.PlaceholderOuterClass.getDescriptor();
     org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.getDescriptor();
     org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.getDescriptor();

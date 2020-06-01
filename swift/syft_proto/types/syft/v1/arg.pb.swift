@@ -34,7 +34,7 @@ public struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argBool(newValue)}
   }
 
-  public var argInt: Int32 {
+  public var argInt: Int64 {
     get {
       if case .argInt(let v)? = arg {return v}
       return 0
@@ -106,11 +106,19 @@ public struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argPlaceholderID(newValue)}
   }
 
+  public var argList: SyftProto_Types_Syft_V1_ArgList {
+    get {
+      if case .argList(let v)? = arg {return v}
+      return SyftProto_Types_Syft_V1_ArgList()
+    }
+    set {arg = .argList(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Arg: Equatable {
     case argBool(Bool)
-    case argInt(Int32)
+    case argInt(Int64)
     case argFloat(Float)
     case argStr(String)
     case argShape(SyftProto_Types_Syft_V1_Shape)
@@ -119,6 +127,7 @@ public struct SyftProto_Types_Syft_V1_Arg {
     case argPointerTensor(SyftProto_Generic_Pointers_V1_PointerTensor)
     case argPlaceholder(SyftProto_Execution_V1_Placeholder)
     case argPlaceholderID(SyftProto_Execution_V1_PlaceholderId)
+    case argList(SyftProto_Types_Syft_V1_ArgList)
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Types_Syft_V1_Arg.OneOf_Arg, rhs: SyftProto_Types_Syft_V1_Arg.OneOf_Arg) -> Bool {
@@ -133,11 +142,24 @@ public struct SyftProto_Types_Syft_V1_Arg {
       case (.argPointerTensor(let l), .argPointerTensor(let r)): return l == r
       case (.argPlaceholder(let l), .argPlaceholder(let r)): return l == r
       case (.argPlaceholderID(let l), .argPlaceholderID(let r)): return l == r
+      case (.argList(let l), .argList(let r)): return l == r
       default: return false
       }
     }
   #endif
   }
+
+  public init() {}
+}
+
+public struct SyftProto_Types_Syft_V1_ArgList {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var args: [SyftProto_Types_Syft_V1_Arg] = []
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
 }
@@ -159,6 +181,7 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
     8: .standard(proto: "arg_pointer_tensor"),
     9: .standard(proto: "arg_placeholder"),
     10: .standard(proto: "arg_placeholder_id"),
+    11: .standard(proto: "arg_list"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -171,8 +194,8 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if let v = v {self.arg = .argBool(v)}
       case 2:
         if self.arg != nil {try decoder.handleConflictingOneOf()}
-        var v: Int32?
-        try decoder.decodeSingularInt32Field(value: &v)
+        var v: Int64?
+        try decoder.decodeSingularInt64Field(value: &v)
         if let v = v {self.arg = .argInt(v)}
       case 3:
         if self.arg != nil {try decoder.handleConflictingOneOf()}
@@ -232,6 +255,14 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.arg = .argPlaceholderID(v)}
+      case 11:
+        var v: SyftProto_Types_Syft_V1_ArgList?
+        if let current = self.arg {
+          try decoder.handleConflictingOneOf()
+          if case .argList(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.arg = .argList(v)}
       default: break
       }
     }
@@ -242,7 +273,7 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
     case .argBool(let v)?:
       try visitor.visitSingularBoolField(value: v, fieldNumber: 1)
     case .argInt(let v)?:
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
+      try visitor.visitSingularInt64Field(value: v, fieldNumber: 2)
     case .argFloat(let v)?:
       try visitor.visitSingularFloatField(value: v, fieldNumber: 3)
     case .argStr(let v)?:
@@ -259,6 +290,8 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
       try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
     case .argPlaceholderID(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+    case .argList(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -266,6 +299,35 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
 
   public static func ==(lhs: SyftProto_Types_Syft_V1_Arg, rhs: SyftProto_Types_Syft_V1_Arg) -> Bool {
     if lhs.arg != rhs.arg {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension SyftProto_Types_Syft_V1_ArgList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".ArgList"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "args"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedMessageField(value: &self.args)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.args.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.args, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: SyftProto_Types_Syft_V1_ArgList, rhs: SyftProto_Types_Syft_V1_ArgList) -> Bool {
+    if lhs.args != rhs.args {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

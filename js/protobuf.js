@@ -5541,7 +5541,7 @@ $root.syft_proto = (function() {
                      * @memberof syft_proto.types.syft.v1
                      * @interface IArg
                      * @property {boolean|null} [arg_bool] Arg arg_bool
-                     * @property {number|null} [arg_int] Arg arg_int
+                     * @property {number|Long|null} [arg_int] Arg arg_int
                      * @property {number|null} [arg_float] Arg arg_float
                      * @property {string|null} [arg_str] Arg arg_str
                      * @property {syft_proto.types.syft.v1.IShape|null} [arg_shape] Arg arg_shape
@@ -5550,6 +5550,7 @@ $root.syft_proto = (function() {
                      * @property {syft_proto.generic.pointers.v1.IPointerTensor|null} [arg_pointer_tensor] Arg arg_pointer_tensor
                      * @property {syft_proto.execution.v1.IPlaceholder|null} [arg_placeholder] Arg arg_placeholder
                      * @property {syft_proto.execution.v1.IPlaceholderId|null} [arg_placeholder_id] Arg arg_placeholder_id
+                     * @property {syft_proto.types.syft.v1.IArgList|null} [arg_list] Arg arg_list
                      */
 
                     /**
@@ -5577,11 +5578,11 @@ $root.syft_proto = (function() {
 
                     /**
                      * Arg arg_int.
-                     * @member {number} arg_int
+                     * @member {number|Long} arg_int
                      * @memberof syft_proto.types.syft.v1.Arg
                      * @instance
                      */
-                    Arg.prototype.arg_int = 0;
+                    Arg.prototype.arg_int = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
                     /**
                      * Arg arg_float.
@@ -5647,17 +5648,25 @@ $root.syft_proto = (function() {
                      */
                     Arg.prototype.arg_placeholder_id = null;
 
+                    /**
+                     * Arg arg_list.
+                     * @member {syft_proto.types.syft.v1.IArgList|null|undefined} arg_list
+                     * @memberof syft_proto.types.syft.v1.Arg
+                     * @instance
+                     */
+                    Arg.prototype.arg_list = null;
+
                     // OneOf field names bound to virtual getters and setters
                     var $oneOfFields;
 
                     /**
                      * Arg arg.
-                     * @member {"arg_bool"|"arg_int"|"arg_float"|"arg_str"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id"|undefined} arg
+                     * @member {"arg_bool"|"arg_int"|"arg_float"|"arg_str"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id"|"arg_list"|undefined} arg
                      * @memberof syft_proto.types.syft.v1.Arg
                      * @instance
                      */
                     Object.defineProperty(Arg.prototype, "arg", {
-                        get: $util.oneOfGetter($oneOfFields = ["arg_bool", "arg_int", "arg_float", "arg_str", "arg_shape", "arg_tensor", "arg_torch_param", "arg_pointer_tensor", "arg_placeholder", "arg_placeholder_id"]),
+                        get: $util.oneOfGetter($oneOfFields = ["arg_bool", "arg_int", "arg_float", "arg_str", "arg_shape", "arg_tensor", "arg_torch_param", "arg_pointer_tensor", "arg_placeholder", "arg_placeholder_id", "arg_list"]),
                         set: $util.oneOfSetter($oneOfFields)
                     });
 
@@ -5688,7 +5697,7 @@ $root.syft_proto = (function() {
                         if (message.arg_bool != null && message.hasOwnProperty("arg_bool"))
                             writer.uint32(/* id 1, wireType 0 =*/8).bool(message.arg_bool);
                         if (message.arg_int != null && message.hasOwnProperty("arg_int"))
-                            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.arg_int);
+                            writer.uint32(/* id 2, wireType 0 =*/16).int64(message.arg_int);
                         if (message.arg_float != null && message.hasOwnProperty("arg_float"))
                             writer.uint32(/* id 3, wireType 5 =*/29).float(message.arg_float);
                         if (message.arg_str != null && message.hasOwnProperty("arg_str"))
@@ -5705,6 +5714,8 @@ $root.syft_proto = (function() {
                             $root.syft_proto.execution.v1.Placeholder.encode(message.arg_placeholder, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                         if (message.arg_placeholder_id != null && message.hasOwnProperty("arg_placeholder_id"))
                             $root.syft_proto.execution.v1.PlaceholderId.encode(message.arg_placeholder_id, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                        if (message.arg_list != null && message.hasOwnProperty("arg_list"))
+                            $root.syft_proto.types.syft.v1.ArgList.encode(message.arg_list, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                         return writer;
                     };
 
@@ -5743,7 +5754,7 @@ $root.syft_proto = (function() {
                                 message.arg_bool = reader.bool();
                                 break;
                             case 2:
-                                message.arg_int = reader.int32();
+                                message.arg_int = reader.int64();
                                 break;
                             case 3:
                                 message.arg_float = reader.float();
@@ -5768,6 +5779,9 @@ $root.syft_proto = (function() {
                                 break;
                             case 10:
                                 message.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.decode(reader, reader.uint32());
+                                break;
+                            case 11:
+                                message.arg_list = $root.syft_proto.types.syft.v1.ArgList.decode(reader, reader.uint32());
                                 break;
                             default:
                                 reader.skipType(tag & 7);
@@ -5814,8 +5828,8 @@ $root.syft_proto = (function() {
                             if (properties.arg === 1)
                                 return "arg: multiple values";
                             properties.arg = 1;
-                            if (!$util.isInteger(message.arg_int))
-                                return "arg_int: integer expected";
+                            if (!$util.isInteger(message.arg_int) && !(message.arg_int && $util.isInteger(message.arg_int.low) && $util.isInteger(message.arg_int.high)))
+                                return "arg_int: integer|Long expected";
                         }
                         if (message.arg_float != null && message.hasOwnProperty("arg_float")) {
                             if (properties.arg === 1)
@@ -5891,6 +5905,16 @@ $root.syft_proto = (function() {
                                     return "arg_placeholder_id." + error;
                             }
                         }
+                        if (message.arg_list != null && message.hasOwnProperty("arg_list")) {
+                            if (properties.arg === 1)
+                                return "arg: multiple values";
+                            properties.arg = 1;
+                            {
+                                var error = $root.syft_proto.types.syft.v1.ArgList.verify(message.arg_list);
+                                if (error)
+                                    return "arg_list." + error;
+                            }
+                        }
                         return null;
                     };
 
@@ -5909,7 +5933,14 @@ $root.syft_proto = (function() {
                         if (object.arg_bool != null)
                             message.arg_bool = Boolean(object.arg_bool);
                         if (object.arg_int != null)
-                            message.arg_int = object.arg_int | 0;
+                            if ($util.Long)
+                                (message.arg_int = $util.Long.fromValue(object.arg_int)).unsigned = false;
+                            else if (typeof object.arg_int === "string")
+                                message.arg_int = parseInt(object.arg_int, 10);
+                            else if (typeof object.arg_int === "number")
+                                message.arg_int = object.arg_int;
+                            else if (typeof object.arg_int === "object")
+                                message.arg_int = new $util.LongBits(object.arg_int.low >>> 0, object.arg_int.high >>> 0).toNumber();
                         if (object.arg_float != null)
                             message.arg_float = Number(object.arg_float);
                         if (object.arg_str != null)
@@ -5944,6 +5975,11 @@ $root.syft_proto = (function() {
                                 throw TypeError(".syft_proto.types.syft.v1.Arg.arg_placeholder_id: object expected");
                             message.arg_placeholder_id = $root.syft_proto.execution.v1.PlaceholderId.fromObject(object.arg_placeholder_id);
                         }
+                        if (object.arg_list != null) {
+                            if (typeof object.arg_list !== "object")
+                                throw TypeError(".syft_proto.types.syft.v1.Arg.arg_list: object expected");
+                            message.arg_list = $root.syft_proto.types.syft.v1.ArgList.fromObject(object.arg_list);
+                        }
                         return message;
                     };
 
@@ -5966,7 +6002,10 @@ $root.syft_proto = (function() {
                                 object.arg = "arg_bool";
                         }
                         if (message.arg_int != null && message.hasOwnProperty("arg_int")) {
-                            object.arg_int = message.arg_int;
+                            if (typeof message.arg_int === "number")
+                                object.arg_int = options.longs === String ? String(message.arg_int) : message.arg_int;
+                            else
+                                object.arg_int = options.longs === String ? $util.Long.prototype.toString.call(message.arg_int) : options.longs === Number ? new $util.LongBits(message.arg_int.low >>> 0, message.arg_int.high >>> 0).toNumber() : message.arg_int;
                             if (options.oneofs)
                                 object.arg = "arg_int";
                         }
@@ -6010,6 +6049,11 @@ $root.syft_proto = (function() {
                             if (options.oneofs)
                                 object.arg = "arg_placeholder_id";
                         }
+                        if (message.arg_list != null && message.hasOwnProperty("arg_list")) {
+                            object.arg_list = $root.syft_proto.types.syft.v1.ArgList.toObject(message.arg_list, options);
+                            if (options.oneofs)
+                                object.arg = "arg_list";
+                        }
                         return object;
                     };
 
@@ -6025,6 +6069,214 @@ $root.syft_proto = (function() {
                     };
 
                     return Arg;
+                })();
+
+                v1.ArgList = (function() {
+
+                    /**
+                     * Properties of an ArgList.
+                     * @memberof syft_proto.types.syft.v1
+                     * @interface IArgList
+                     * @property {Array.<syft_proto.types.syft.v1.IArg>|null} [args] ArgList args
+                     */
+
+                    /**
+                     * Constructs a new ArgList.
+                     * @memberof syft_proto.types.syft.v1
+                     * @classdesc Represents an ArgList.
+                     * @implements IArgList
+                     * @constructor
+                     * @param {syft_proto.types.syft.v1.IArgList=} [properties] Properties to set
+                     */
+                    function ArgList(properties) {
+                        this.args = [];
+                        if (properties)
+                            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                if (properties[keys[i]] != null)
+                                    this[keys[i]] = properties[keys[i]];
+                    }
+
+                    /**
+                     * ArgList args.
+                     * @member {Array.<syft_proto.types.syft.v1.IArg>} args
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @instance
+                     */
+                    ArgList.prototype.args = $util.emptyArray;
+
+                    /**
+                     * Creates a new ArgList instance using the specified properties.
+                     * @function create
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {syft_proto.types.syft.v1.IArgList=} [properties] Properties to set
+                     * @returns {syft_proto.types.syft.v1.ArgList} ArgList instance
+                     */
+                    ArgList.create = function create(properties) {
+                        return new ArgList(properties);
+                    };
+
+                    /**
+                     * Encodes the specified ArgList message. Does not implicitly {@link syft_proto.types.syft.v1.ArgList.verify|verify} messages.
+                     * @function encode
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {syft_proto.types.syft.v1.IArgList} message ArgList message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    ArgList.encode = function encode(message, writer) {
+                        if (!writer)
+                            writer = $Writer.create();
+                        if (message.args != null && message.args.length)
+                            for (var i = 0; i < message.args.length; ++i)
+                                $root.syft_proto.types.syft.v1.Arg.encode(message.args[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        return writer;
+                    };
+
+                    /**
+                     * Encodes the specified ArgList message, length delimited. Does not implicitly {@link syft_proto.types.syft.v1.ArgList.verify|verify} messages.
+                     * @function encodeDelimited
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {syft_proto.types.syft.v1.IArgList} message ArgList message or plain object to encode
+                     * @param {$protobuf.Writer} [writer] Writer to encode to
+                     * @returns {$protobuf.Writer} Writer
+                     */
+                    ArgList.encodeDelimited = function encodeDelimited(message, writer) {
+                        return this.encode(message, writer).ldelim();
+                    };
+
+                    /**
+                     * Decodes an ArgList message from the specified reader or buffer.
+                     * @function decode
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @param {number} [length] Message length if known beforehand
+                     * @returns {syft_proto.types.syft.v1.ArgList} ArgList
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    ArgList.decode = function decode(reader, length) {
+                        if (!(reader instanceof $Reader))
+                            reader = $Reader.create(reader);
+                        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.types.syft.v1.ArgList();
+                        while (reader.pos < end) {
+                            var tag = reader.uint32();
+                            switch (tag >>> 3) {
+                            case 1:
+                                if (!(message.args && message.args.length))
+                                    message.args = [];
+                                message.args.push($root.syft_proto.types.syft.v1.Arg.decode(reader, reader.uint32()));
+                                break;
+                            default:
+                                reader.skipType(tag & 7);
+                                break;
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Decodes an ArgList message from the specified reader or buffer, length delimited.
+                     * @function decodeDelimited
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                     * @returns {syft_proto.types.syft.v1.ArgList} ArgList
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    ArgList.decodeDelimited = function decodeDelimited(reader) {
+                        if (!(reader instanceof $Reader))
+                            reader = new $Reader(reader);
+                        return this.decode(reader, reader.uint32());
+                    };
+
+                    /**
+                     * Verifies an ArgList message.
+                     * @function verify
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {Object.<string,*>} message Plain object to verify
+                     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                     */
+                    ArgList.verify = function verify(message) {
+                        if (typeof message !== "object" || message === null)
+                            return "object expected";
+                        if (message.args != null && message.hasOwnProperty("args")) {
+                            if (!Array.isArray(message.args))
+                                return "args: array expected";
+                            for (var i = 0; i < message.args.length; ++i) {
+                                var error = $root.syft_proto.types.syft.v1.Arg.verify(message.args[i]);
+                                if (error)
+                                    return "args." + error;
+                            }
+                        }
+                        return null;
+                    };
+
+                    /**
+                     * Creates an ArgList message from a plain object. Also converts values to their respective internal types.
+                     * @function fromObject
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {Object.<string,*>} object Plain object
+                     * @returns {syft_proto.types.syft.v1.ArgList} ArgList
+                     */
+                    ArgList.fromObject = function fromObject(object) {
+                        if (object instanceof $root.syft_proto.types.syft.v1.ArgList)
+                            return object;
+                        var message = new $root.syft_proto.types.syft.v1.ArgList();
+                        if (object.args) {
+                            if (!Array.isArray(object.args))
+                                throw TypeError(".syft_proto.types.syft.v1.ArgList.args: array expected");
+                            message.args = [];
+                            for (var i = 0; i < object.args.length; ++i) {
+                                if (typeof object.args[i] !== "object")
+                                    throw TypeError(".syft_proto.types.syft.v1.ArgList.args: object expected");
+                                message.args[i] = $root.syft_proto.types.syft.v1.Arg.fromObject(object.args[i]);
+                            }
+                        }
+                        return message;
+                    };
+
+                    /**
+                     * Creates a plain object from an ArgList message. Also converts values to other types if specified.
+                     * @function toObject
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @static
+                     * @param {syft_proto.types.syft.v1.ArgList} message ArgList
+                     * @param {$protobuf.IConversionOptions} [options] Conversion options
+                     * @returns {Object.<string,*>} Plain object
+                     */
+                    ArgList.toObject = function toObject(message, options) {
+                        if (!options)
+                            options = {};
+                        var object = {};
+                        if (options.arrays || options.defaults)
+                            object.args = [];
+                        if (message.args && message.args.length) {
+                            object.args = [];
+                            for (var j = 0; j < message.args.length; ++j)
+                                object.args[j] = $root.syft_proto.types.syft.v1.Arg.toObject(message.args[j], options);
+                        }
+                        return object;
+                    };
+
+                    /**
+                     * Converts this ArgList to JSON.
+                     * @function toJSON
+                     * @memberof syft_proto.types.syft.v1.ArgList
+                     * @instance
+                     * @returns {Object.<string,*>} JSON object
+                     */
+                    ArgList.prototype.toJSON = function toJSON() {
+                        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                    };
+
+                    return ArgList;
                 })();
 
                 return v1;
@@ -10511,6 +10763,365 @@ $root.syft_proto = (function() {
              */
             var torch = {};
 
+            torch.fl = (function() {
+
+                /**
+                 * Namespace fl.
+                 * @memberof syft_proto.frameworks.torch
+                 * @namespace
+                 */
+                var fl = {};
+
+                fl.v1 = (function() {
+
+                    /**
+                     * Namespace v1.
+                     * @memberof syft_proto.frameworks.torch.fl
+                     * @namespace
+                     */
+                    var v1 = {};
+
+                    v1.BaseDataset = (function() {
+
+                        /**
+                         * Properties of a BaseDataset.
+                         * @memberof syft_proto.frameworks.torch.fl.v1
+                         * @interface IBaseDataset
+                         * @property {syft_proto.types.torch.v1.ITorchTensor|null} [data] BaseDataset data
+                         * @property {syft_proto.types.torch.v1.ITorchTensor|null} [targets] BaseDataset targets
+                         * @property {syft_proto.types.syft.v1.IId|null} [id] BaseDataset id
+                         * @property {Array.<string>|null} [tags] BaseDataset tags
+                         * @property {string|null} [description] BaseDataset description
+                         * @property {syft_proto.types.torch.v1.ITorchTensor|null} [child] BaseDataset child
+                         */
+
+                        /**
+                         * Constructs a new BaseDataset.
+                         * @memberof syft_proto.frameworks.torch.fl.v1
+                         * @classdesc Represents a BaseDataset.
+                         * @implements IBaseDataset
+                         * @constructor
+                         * @param {syft_proto.frameworks.torch.fl.v1.IBaseDataset=} [properties] Properties to set
+                         */
+                        function BaseDataset(properties) {
+                            this.tags = [];
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+
+                        /**
+                         * BaseDataset data.
+                         * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} data
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         */
+                        BaseDataset.prototype.data = null;
+
+                        /**
+                         * BaseDataset targets.
+                         * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} targets
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         */
+                        BaseDataset.prototype.targets = null;
+
+                        /**
+                         * BaseDataset id.
+                         * @member {syft_proto.types.syft.v1.IId|null|undefined} id
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         */
+                        BaseDataset.prototype.id = null;
+
+                        /**
+                         * BaseDataset tags.
+                         * @member {Array.<string>} tags
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         */
+                        BaseDataset.prototype.tags = $util.emptyArray;
+
+                        /**
+                         * BaseDataset description.
+                         * @member {string} description
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         */
+                        BaseDataset.prototype.description = "";
+
+                        /**
+                         * BaseDataset child.
+                         * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} child
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         */
+                        BaseDataset.prototype.child = null;
+
+                        /**
+                         * Creates a new BaseDataset instance using the specified properties.
+                         * @function create
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {syft_proto.frameworks.torch.fl.v1.IBaseDataset=} [properties] Properties to set
+                         * @returns {syft_proto.frameworks.torch.fl.v1.BaseDataset} BaseDataset instance
+                         */
+                        BaseDataset.create = function create(properties) {
+                            return new BaseDataset(properties);
+                        };
+
+                        /**
+                         * Encodes the specified BaseDataset message. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
+                         * @function encode
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {syft_proto.frameworks.torch.fl.v1.IBaseDataset} message BaseDataset message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        BaseDataset.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.data != null && message.hasOwnProperty("data"))
+                                $root.syft_proto.types.torch.v1.TorchTensor.encode(message.data, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                            if (message.targets != null && message.hasOwnProperty("targets"))
+                                $root.syft_proto.types.torch.v1.TorchTensor.encode(message.targets, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                            if (message.id != null && message.hasOwnProperty("id"))
+                                $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                            if (message.tags != null && message.tags.length)
+                                for (var i = 0; i < message.tags.length; ++i)
+                                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
+                            if (message.description != null && message.hasOwnProperty("description"))
+                                writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
+                            if (message.child != null && message.hasOwnProperty("child"))
+                                $root.syft_proto.types.torch.v1.TorchTensor.encode(message.child, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                            return writer;
+                        };
+
+                        /**
+                         * Encodes the specified BaseDataset message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {syft_proto.frameworks.torch.fl.v1.IBaseDataset} message BaseDataset message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        BaseDataset.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+
+                        /**
+                         * Decodes a BaseDataset message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {syft_proto.frameworks.torch.fl.v1.BaseDataset} BaseDataset
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        BaseDataset.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.frameworks.torch.fl.v1.BaseDataset();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.data = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
+                                    break;
+                                case 2:
+                                    message.targets = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
+                                    break;
+                                case 3:
+                                    message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                                    break;
+                                case 4:
+                                    if (!(message.tags && message.tags.length))
+                                        message.tags = [];
+                                    message.tags.push(reader.string());
+                                    break;
+                                case 5:
+                                    message.description = reader.string();
+                                    break;
+                                case 6:
+                                    message.child = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+
+                        /**
+                         * Decodes a BaseDataset message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {syft_proto.frameworks.torch.fl.v1.BaseDataset} BaseDataset
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        BaseDataset.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+
+                        /**
+                         * Verifies a BaseDataset message.
+                         * @function verify
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        BaseDataset.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.data != null && message.hasOwnProperty("data")) {
+                                var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.data);
+                                if (error)
+                                    return "data." + error;
+                            }
+                            if (message.targets != null && message.hasOwnProperty("targets")) {
+                                var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.targets);
+                                if (error)
+                                    return "targets." + error;
+                            }
+                            if (message.id != null && message.hasOwnProperty("id")) {
+                                var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
+                                if (error)
+                                    return "id." + error;
+                            }
+                            if (message.tags != null && message.hasOwnProperty("tags")) {
+                                if (!Array.isArray(message.tags))
+                                    return "tags: array expected";
+                                for (var i = 0; i < message.tags.length; ++i)
+                                    if (!$util.isString(message.tags[i]))
+                                        return "tags: string[] expected";
+                            }
+                            if (message.description != null && message.hasOwnProperty("description"))
+                                if (!$util.isString(message.description))
+                                    return "description: string expected";
+                            if (message.child != null && message.hasOwnProperty("child")) {
+                                var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.child);
+                                if (error)
+                                    return "child." + error;
+                            }
+                            return null;
+                        };
+
+                        /**
+                         * Creates a BaseDataset message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {syft_proto.frameworks.torch.fl.v1.BaseDataset} BaseDataset
+                         */
+                        BaseDataset.fromObject = function fromObject(object) {
+                            if (object instanceof $root.syft_proto.frameworks.torch.fl.v1.BaseDataset)
+                                return object;
+                            var message = new $root.syft_proto.frameworks.torch.fl.v1.BaseDataset();
+                            if (object.data != null) {
+                                if (typeof object.data !== "object")
+                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.data: object expected");
+                                message.data = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.data);
+                            }
+                            if (object.targets != null) {
+                                if (typeof object.targets !== "object")
+                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.targets: object expected");
+                                message.targets = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.targets);
+                            }
+                            if (object.id != null) {
+                                if (typeof object.id !== "object")
+                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.id: object expected");
+                                message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
+                            }
+                            if (object.tags) {
+                                if (!Array.isArray(object.tags))
+                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.tags: array expected");
+                                message.tags = [];
+                                for (var i = 0; i < object.tags.length; ++i)
+                                    message.tags[i] = String(object.tags[i]);
+                            }
+                            if (object.description != null)
+                                message.description = String(object.description);
+                            if (object.child != null) {
+                                if (typeof object.child !== "object")
+                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.child: object expected");
+                                message.child = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.child);
+                            }
+                            return message;
+                        };
+
+                        /**
+                         * Creates a plain object from a BaseDataset message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {syft_proto.frameworks.torch.fl.v1.BaseDataset} message BaseDataset
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        BaseDataset.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.arrays || options.defaults)
+                                object.tags = [];
+                            if (options.defaults) {
+                                object.data = null;
+                                object.targets = null;
+                                object.id = null;
+                                object.description = "";
+                                object.child = null;
+                            }
+                            if (message.data != null && message.hasOwnProperty("data"))
+                                object.data = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.data, options);
+                            if (message.targets != null && message.hasOwnProperty("targets"))
+                                object.targets = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.targets, options);
+                            if (message.id != null && message.hasOwnProperty("id"))
+                                object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
+                            if (message.tags && message.tags.length) {
+                                object.tags = [];
+                                for (var j = 0; j < message.tags.length; ++j)
+                                    object.tags[j] = message.tags[j];
+                            }
+                            if (message.description != null && message.hasOwnProperty("description"))
+                                object.description = message.description;
+                            if (message.child != null && message.hasOwnProperty("child"))
+                                object.child = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.child, options);
+                            return object;
+                        };
+
+                        /**
+                         * Converts this BaseDataset to JSON.
+                         * @function toJSON
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        BaseDataset.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+
+                        return BaseDataset;
+                    })();
+
+                    return v1;
+                })();
+
+                return fl;
+            })();
+
             torch.tensors = (function() {
 
                 /**
@@ -10945,6 +11556,397 @@ $root.syft_proto = (function() {
                             };
 
                             return AdditiveSharingTensor;
+                        })();
+
+                        v1.FixedPrecisionTensor = (function() {
+
+                            /**
+                             * Properties of a FixedPrecisionTensor.
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1
+                             * @interface IFixedPrecisionTensor
+                             * @property {syft_proto.types.syft.v1.IId|null} [id] FixedPrecisionTensor id
+                             * @property {string|null} [field] FixedPrecisionTensor field
+                             * @property {string|null} [dtype] FixedPrecisionTensor dtype
+                             * @property {number|null} [base] FixedPrecisionTensor base
+                             * @property {number|null} [kappa] FixedPrecisionTensor kappa
+                             * @property {number|null} [precision_fractional] FixedPrecisionTensor precision_fractional
+                             * @property {Array.<string>|null} [tags] FixedPrecisionTensor tags
+                             * @property {string|null} [description] FixedPrecisionTensor description
+                             * @property {syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor|null} [child] FixedPrecisionTensor child
+                             */
+
+                            /**
+                             * Constructs a new FixedPrecisionTensor.
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1
+                             * @classdesc Represents a FixedPrecisionTensor.
+                             * @implements IFixedPrecisionTensor
+                             * @constructor
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor=} [properties] Properties to set
+                             */
+                            function FixedPrecisionTensor(properties) {
+                                this.tags = [];
+                                if (properties)
+                                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                        if (properties[keys[i]] != null)
+                                            this[keys[i]] = properties[keys[i]];
+                            }
+
+                            /**
+                             * FixedPrecisionTensor id.
+                             * @member {syft_proto.types.syft.v1.IId|null|undefined} id
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.id = null;
+
+                            /**
+                             * FixedPrecisionTensor field.
+                             * @member {string} field
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.field = "";
+
+                            /**
+                             * FixedPrecisionTensor dtype.
+                             * @member {string} dtype
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.dtype = "";
+
+                            /**
+                             * FixedPrecisionTensor base.
+                             * @member {number} base
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.base = 0;
+
+                            /**
+                             * FixedPrecisionTensor kappa.
+                             * @member {number} kappa
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.kappa = 0;
+
+                            /**
+                             * FixedPrecisionTensor precision_fractional.
+                             * @member {number} precision_fractional
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.precision_fractional = 0;
+
+                            /**
+                             * FixedPrecisionTensor tags.
+                             * @member {Array.<string>} tags
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.tags = $util.emptyArray;
+
+                            /**
+                             * FixedPrecisionTensor description.
+                             * @member {string} description
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.description = "";
+
+                            /**
+                             * FixedPrecisionTensor child.
+                             * @member {syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor|null|undefined} child
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.child = null;
+
+                            /**
+                             * Creates a new FixedPrecisionTensor instance using the specified properties.
+                             * @function create
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor=} [properties] Properties to set
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor} FixedPrecisionTensor instance
+                             */
+                            FixedPrecisionTensor.create = function create(properties) {
+                                return new FixedPrecisionTensor(properties);
+                            };
+
+                            /**
+                             * Encodes the specified FixedPrecisionTensor message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.verify|verify} messages.
+                             * @function encode
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor} message FixedPrecisionTensor message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            FixedPrecisionTensor.encode = function encode(message, writer) {
+                                if (!writer)
+                                    writer = $Writer.create();
+                                if (message.id != null && message.hasOwnProperty("id"))
+                                    $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                if (message.field != null && message.hasOwnProperty("field"))
+                                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.field);
+                                if (message.dtype != null && message.hasOwnProperty("dtype"))
+                                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.dtype);
+                                if (message.base != null && message.hasOwnProperty("base"))
+                                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.base);
+                                if (message.kappa != null && message.hasOwnProperty("kappa"))
+                                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.kappa);
+                                if (message.precision_fractional != null && message.hasOwnProperty("precision_fractional"))
+                                    writer.uint32(/* id 7, wireType 0 =*/56).int32(message.precision_fractional);
+                                if (message.tags != null && message.tags.length)
+                                    for (var i = 0; i < message.tags.length; ++i)
+                                        writer.uint32(/* id 8, wireType 2 =*/66).string(message.tags[i]);
+                                if (message.description != null && message.hasOwnProperty("description"))
+                                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.description);
+                                if (message.child != null && message.hasOwnProperty("child"))
+                                    $root.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.encode(message.child, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                                return writer;
+                            };
+
+                            /**
+                             * Encodes the specified FixedPrecisionTensor message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.verify|verify} messages.
+                             * @function encodeDelimited
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor} message FixedPrecisionTensor message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            FixedPrecisionTensor.encodeDelimited = function encodeDelimited(message, writer) {
+                                return this.encode(message, writer).ldelim();
+                            };
+
+                            /**
+                             * Decodes a FixedPrecisionTensor message from the specified reader or buffer.
+                             * @function decode
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @param {number} [length] Message length if known beforehand
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor} FixedPrecisionTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            FixedPrecisionTensor.decode = function decode(reader, length) {
+                                if (!(reader instanceof $Reader))
+                                    reader = $Reader.create(reader);
+                                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor();
+                                while (reader.pos < end) {
+                                    var tag = reader.uint32();
+                                    switch (tag >>> 3) {
+                                    case 1:
+                                        message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                                        break;
+                                    case 3:
+                                        message.field = reader.string();
+                                        break;
+                                    case 4:
+                                        message.dtype = reader.string();
+                                        break;
+                                    case 5:
+                                        message.base = reader.int32();
+                                        break;
+                                    case 6:
+                                        message.kappa = reader.int32();
+                                        break;
+                                    case 7:
+                                        message.precision_fractional = reader.int32();
+                                        break;
+                                    case 8:
+                                        if (!(message.tags && message.tags.length))
+                                            message.tags = [];
+                                        message.tags.push(reader.string());
+                                        break;
+                                    case 9:
+                                        message.description = reader.string();
+                                        break;
+                                    case 10:
+                                        message.child = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.decode(reader, reader.uint32());
+                                        break;
+                                    default:
+                                        reader.skipType(tag & 7);
+                                        break;
+                                    }
+                                }
+                                return message;
+                            };
+
+                            /**
+                             * Decodes a FixedPrecisionTensor message from the specified reader or buffer, length delimited.
+                             * @function decodeDelimited
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor} FixedPrecisionTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            FixedPrecisionTensor.decodeDelimited = function decodeDelimited(reader) {
+                                if (!(reader instanceof $Reader))
+                                    reader = new $Reader(reader);
+                                return this.decode(reader, reader.uint32());
+                            };
+
+                            /**
+                             * Verifies a FixedPrecisionTensor message.
+                             * @function verify
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {Object.<string,*>} message Plain object to verify
+                             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                             */
+                            FixedPrecisionTensor.verify = function verify(message) {
+                                if (typeof message !== "object" || message === null)
+                                    return "object expected";
+                                if (message.id != null && message.hasOwnProperty("id")) {
+                                    var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
+                                    if (error)
+                                        return "id." + error;
+                                }
+                                if (message.field != null && message.hasOwnProperty("field"))
+                                    if (!$util.isString(message.field))
+                                        return "field: string expected";
+                                if (message.dtype != null && message.hasOwnProperty("dtype"))
+                                    if (!$util.isString(message.dtype))
+                                        return "dtype: string expected";
+                                if (message.base != null && message.hasOwnProperty("base"))
+                                    if (!$util.isInteger(message.base))
+                                        return "base: integer expected";
+                                if (message.kappa != null && message.hasOwnProperty("kappa"))
+                                    if (!$util.isInteger(message.kappa))
+                                        return "kappa: integer expected";
+                                if (message.precision_fractional != null && message.hasOwnProperty("precision_fractional"))
+                                    if (!$util.isInteger(message.precision_fractional))
+                                        return "precision_fractional: integer expected";
+                                if (message.tags != null && message.hasOwnProperty("tags")) {
+                                    if (!Array.isArray(message.tags))
+                                        return "tags: array expected";
+                                    for (var i = 0; i < message.tags.length; ++i)
+                                        if (!$util.isString(message.tags[i]))
+                                            return "tags: string[] expected";
+                                }
+                                if (message.description != null && message.hasOwnProperty("description"))
+                                    if (!$util.isString(message.description))
+                                        return "description: string expected";
+                                if (message.child != null && message.hasOwnProperty("child")) {
+                                    var error = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.verify(message.child);
+                                    if (error)
+                                        return "child." + error;
+                                }
+                                return null;
+                            };
+
+                            /**
+                             * Creates a FixedPrecisionTensor message from a plain object. Also converts values to their respective internal types.
+                             * @function fromObject
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {Object.<string,*>} object Plain object
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor} FixedPrecisionTensor
+                             */
+                            FixedPrecisionTensor.fromObject = function fromObject(object) {
+                                if (object instanceof $root.syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor)
+                                    return object;
+                                var message = new $root.syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor();
+                                if (object.id != null) {
+                                    if (typeof object.id !== "object")
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.id: object expected");
+                                    message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
+                                }
+                                if (object.field != null)
+                                    message.field = String(object.field);
+                                if (object.dtype != null)
+                                    message.dtype = String(object.dtype);
+                                if (object.base != null)
+                                    message.base = object.base | 0;
+                                if (object.kappa != null)
+                                    message.kappa = object.kappa | 0;
+                                if (object.precision_fractional != null)
+                                    message.precision_fractional = object.precision_fractional | 0;
+                                if (object.tags) {
+                                    if (!Array.isArray(object.tags))
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.tags: array expected");
+                                    message.tags = [];
+                                    for (var i = 0; i < object.tags.length; ++i)
+                                        message.tags[i] = String(object.tags[i]);
+                                }
+                                if (object.description != null)
+                                    message.description = String(object.description);
+                                if (object.child != null) {
+                                    if (typeof object.child !== "object")
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.child: object expected");
+                                    message.child = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.fromObject(object.child);
+                                }
+                                return message;
+                            };
+
+                            /**
+                             * Creates a plain object from a FixedPrecisionTensor message. Also converts values to other types if specified.
+                             * @function toObject
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor} message FixedPrecisionTensor
+                             * @param {$protobuf.IConversionOptions} [options] Conversion options
+                             * @returns {Object.<string,*>} Plain object
+                             */
+                            FixedPrecisionTensor.toObject = function toObject(message, options) {
+                                if (!options)
+                                    options = {};
+                                var object = {};
+                                if (options.arrays || options.defaults)
+                                    object.tags = [];
+                                if (options.defaults) {
+                                    object.id = null;
+                                    object.field = "";
+                                    object.dtype = "";
+                                    object.base = 0;
+                                    object.kappa = 0;
+                                    object.precision_fractional = 0;
+                                    object.description = "";
+                                    object.child = null;
+                                }
+                                if (message.id != null && message.hasOwnProperty("id"))
+                                    object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
+                                if (message.field != null && message.hasOwnProperty("field"))
+                                    object.field = message.field;
+                                if (message.dtype != null && message.hasOwnProperty("dtype"))
+                                    object.dtype = message.dtype;
+                                if (message.base != null && message.hasOwnProperty("base"))
+                                    object.base = message.base;
+                                if (message.kappa != null && message.hasOwnProperty("kappa"))
+                                    object.kappa = message.kappa;
+                                if (message.precision_fractional != null && message.hasOwnProperty("precision_fractional"))
+                                    object.precision_fractional = message.precision_fractional;
+                                if (message.tags && message.tags.length) {
+                                    object.tags = [];
+                                    for (var j = 0; j < message.tags.length; ++j)
+                                        object.tags[j] = message.tags[j];
+                                }
+                                if (message.description != null && message.hasOwnProperty("description"))
+                                    object.description = message.description;
+                                if (message.child != null && message.hasOwnProperty("child"))
+                                    object.child = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.toObject(message.child, options);
+                                return object;
+                            };
+
+                            /**
+                             * Converts this FixedPrecisionTensor to JSON.
+                             * @function toJSON
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             * @returns {Object.<string,*>} JSON object
+                             */
+                            FixedPrecisionTensor.prototype.toJSON = function toJSON() {
+                                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                            };
+
+                            return FixedPrecisionTensor;
                         })();
 
                         return v1;
