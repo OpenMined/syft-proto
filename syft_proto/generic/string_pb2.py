@@ -18,6 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.messaging.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.messaging.v1',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n\x1fsyft_proto/generic/string.proto\x12\x17syft_proto.messaging.v1\"T\n\x06String\x12\x14\n\x05\x63hild\x18\x01 \x01(\tR\x05\x63hild\x12\x12\n\x04tags\x18\x02 \x03(\tR\x04tags\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scriptionB&\n$org.openmined.syftproto.messaging.v1b\x06proto3'
 )
 
@@ -30,6 +31,7 @@ _STRING = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='child', full_name='syft_proto.messaging.v1.String.child', index=0,
@@ -37,21 +39,21 @@ _STRING = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='child', file=DESCRIPTOR),
+      serialized_options=None, json_name='child', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tags', full_name='syft_proto.messaging.v1.String.tags', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='tags', file=DESCRIPTOR),
+      serialized_options=None, json_name='tags', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='syft_proto.messaging.v1.String.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='description', file=DESCRIPTOR),
+      serialized_options=None, json_name='description', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],

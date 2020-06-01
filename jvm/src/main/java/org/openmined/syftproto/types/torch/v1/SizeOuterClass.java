@@ -38,7 +38,7 @@ public final class SizeOuterClass {
   /**
    * Protobuf type {@code syft_proto.types.torch.v1.Size}
    */
-  public  static final class Size extends
+  public static final class Size extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.torch.v1.Size)
       SizeOrBuilder {
@@ -144,6 +144,7 @@ public final class SizeOuterClass {
      * <code>repeated int32 dims = 1[json_name = "dims"];</code>
      * @return A list containing the dims.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Integer>
         getDimsList() {
       return dims_;
