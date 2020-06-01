@@ -33,7 +33,7 @@ public final class Dtype {
   /**
    * Protobuf type {@code syft_proto.types.torch.v1.TorchDType}
    */
-  public  static final class TorchDType extends
+  public static final class TorchDType extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.torch.v1.TorchDType)
       TorchDTypeOrBuilder {
@@ -120,6 +120,7 @@ public final class Dtype {
      * <code>string torch_type = 1[json_name = "torchType"];</code>
      * @return The torchType.
      */
+    @java.lang.Override
     public java.lang.String getTorchType() {
       java.lang.Object ref = torchType_;
       if (ref instanceof java.lang.String) {
@@ -136,6 +137,7 @@ public final class Dtype {
      * <code>string torch_type = 1[json_name = "torchType"];</code>
      * @return The bytes for torchType.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTorchTypeBytes() {
       java.lang.Object ref = torchType_;

@@ -23,6 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n0syft_proto/execution/v1/computation_action.proto\x12\x17syft_proto.execution.v1\x1a,syft_proto/execution/v1/placeholder_id.proto\x1a\x33syft_proto/generic/pointers/v1/pointer_tensor.proto\x1a\"syft_proto/types/syft/v1/arg.proto\x1a!syft_proto/types/syft/v1/id.proto\x1a&syft_proto/types/torch/v1/tensor.proto\"\xf1\x05\n\x11\x43omputationAction\x12\x18\n\x07\x63ommand\x18\x01 \x01(\tR\x07\x63ommand\x12;\n\ttarget_id\x18\t \x01(\x0b\x32\x1c.syft_proto.types.syft.v1.IdH\x00R\x08targetId\x12V\n\x0etarget_pointer\x18\x02 \x01(\x0b\x32-.syft_proto.generic.pointers.v1.PointerTensorH\x00R\rtargetPointer\x12\\\n\x15target_placeholder_id\x18\x03 \x01(\x0b\x32&.syft_proto.execution.v1.PlaceholderIdH\x00R\x13targetPlaceholderId\x12M\n\rtarget_tensor\x18\x04 \x01(\x0b\x32&.syft_proto.types.torch.v1.TorchTensorH\x00R\x0ctargetTensor\x12\x31\n\x04\x61rgs\x18\x05 \x03(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x04\x61rgs\x12N\n\x06kwargs\x18\x06 \x03(\x0b\x32\x36.syft_proto.execution.v1.ComputationAction.KwargsEntryR\x06kwargs\x12;\n\nreturn_ids\x18\x07 \x03(\x0b\x32\x1c.syft_proto.types.syft.v1.IdR\treturnIds\x12\\\n\x16return_placeholder_ids\x18\x08 \x03(\x0b\x32&.syft_proto.execution.v1.PlaceholderIdR\x14returnPlaceholderIds\x1aX\n\x0bKwargsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32\x1d.syft_proto.types.syft.v1.ArgR\x05value:\x02\x38\x01\x42\x08\n\x06targetB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
   ,
   dependencies=[syft__proto_dot_execution_dot_v1_dot_placeholder__id__pb2.DESCRIPTOR,syft__proto_dot_generic_dot_pointers_dot_v1_dot_pointer__tensor__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_arg__pb2.DESCRIPTOR,syft__proto_dot_types_dot_syft_dot_v1_dot_id__pb2.DESCRIPTOR,syft__proto_dot_types_dot_torch_dot_v1_dot_tensor__pb2.DESCRIPTOR,])
@@ -36,6 +37,7 @@ _COMPUTATIONACTION_KWARGSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='syft_proto.execution.v1.ComputationAction.KwargsEntry.key', index=0,
@@ -43,14 +45,14 @@ _COMPUTATIONACTION_KWARGSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='key', file=DESCRIPTOR),
+      serialized_options=None, json_name='key', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='syft_proto.execution.v1.ComputationAction.KwargsEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='value', file=DESCRIPTOR),
+      serialized_options=None, json_name='value', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -73,6 +75,7 @@ _COMPUTATIONACTION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='command', full_name='syft_proto.execution.v1.ComputationAction.command', index=0,
@@ -80,63 +83,63 @@ _COMPUTATIONACTION = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='command', file=DESCRIPTOR),
+      serialized_options=None, json_name='command', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='target_id', full_name='syft_proto.execution.v1.ComputationAction.target_id', index=1,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='targetId', file=DESCRIPTOR),
+      serialized_options=None, json_name='targetId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='target_pointer', full_name='syft_proto.execution.v1.ComputationAction.target_pointer', index=2,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='targetPointer', file=DESCRIPTOR),
+      serialized_options=None, json_name='targetPointer', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='target_placeholder_id', full_name='syft_proto.execution.v1.ComputationAction.target_placeholder_id', index=3,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='targetPlaceholderId', file=DESCRIPTOR),
+      serialized_options=None, json_name='targetPlaceholderId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='target_tensor', full_name='syft_proto.execution.v1.ComputationAction.target_tensor', index=4,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='targetTensor', file=DESCRIPTOR),
+      serialized_options=None, json_name='targetTensor', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='args', full_name='syft_proto.execution.v1.ComputationAction.args', index=5,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='args', file=DESCRIPTOR),
+      serialized_options=None, json_name='args', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='kwargs', full_name='syft_proto.execution.v1.ComputationAction.kwargs', index=6,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='kwargs', file=DESCRIPTOR),
+      serialized_options=None, json_name='kwargs', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='return_ids', full_name='syft_proto.execution.v1.ComputationAction.return_ids', index=7,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='returnIds', file=DESCRIPTOR),
+      serialized_options=None, json_name='returnIds', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='return_placeholder_ids', full_name='syft_proto.execution.v1.ComputationAction.return_placeholder_ids', index=8,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='returnPlaceholderIds', file=DESCRIPTOR),
+      serialized_options=None, json_name='returnPlaceholderIds', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -150,7 +153,9 @@ _COMPUTATIONACTION = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='target', full_name='syft_proto.execution.v1.ComputationAction.target',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=288,
   serialized_end=1041,
