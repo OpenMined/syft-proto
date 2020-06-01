@@ -11548,6 +11548,397 @@ $root.syft_proto = (function() {
                             return AdditiveSharingTensor;
                         })();
 
+                        v1.FixedPrecisionTensor = (function() {
+
+                            /**
+                             * Properties of a FixedPrecisionTensor.
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1
+                             * @interface IFixedPrecisionTensor
+                             * @property {syft_proto.types.syft.v1.IId|null} [id] FixedPrecisionTensor id
+                             * @property {string|null} [field] FixedPrecisionTensor field
+                             * @property {string|null} [dtype] FixedPrecisionTensor dtype
+                             * @property {number|null} [base] FixedPrecisionTensor base
+                             * @property {number|null} [kappa] FixedPrecisionTensor kappa
+                             * @property {number|null} [precision_fractional] FixedPrecisionTensor precision_fractional
+                             * @property {Array.<string>|null} [tags] FixedPrecisionTensor tags
+                             * @property {string|null} [description] FixedPrecisionTensor description
+                             * @property {syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor|null} [child] FixedPrecisionTensor child
+                             */
+
+                            /**
+                             * Constructs a new FixedPrecisionTensor.
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1
+                             * @classdesc Represents a FixedPrecisionTensor.
+                             * @implements IFixedPrecisionTensor
+                             * @constructor
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor=} [properties] Properties to set
+                             */
+                            function FixedPrecisionTensor(properties) {
+                                this.tags = [];
+                                if (properties)
+                                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                        if (properties[keys[i]] != null)
+                                            this[keys[i]] = properties[keys[i]];
+                            }
+
+                            /**
+                             * FixedPrecisionTensor id.
+                             * @member {syft_proto.types.syft.v1.IId|null|undefined} id
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.id = null;
+
+                            /**
+                             * FixedPrecisionTensor field.
+                             * @member {string} field
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.field = "";
+
+                            /**
+                             * FixedPrecisionTensor dtype.
+                             * @member {string} dtype
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.dtype = "";
+
+                            /**
+                             * FixedPrecisionTensor base.
+                             * @member {number} base
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.base = 0;
+
+                            /**
+                             * FixedPrecisionTensor kappa.
+                             * @member {number} kappa
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.kappa = 0;
+
+                            /**
+                             * FixedPrecisionTensor precision_fractional.
+                             * @member {number} precision_fractional
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.precision_fractional = 0;
+
+                            /**
+                             * FixedPrecisionTensor tags.
+                             * @member {Array.<string>} tags
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.tags = $util.emptyArray;
+
+                            /**
+                             * FixedPrecisionTensor description.
+                             * @member {string} description
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.description = "";
+
+                            /**
+                             * FixedPrecisionTensor child.
+                             * @member {syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor|null|undefined} child
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             */
+                            FixedPrecisionTensor.prototype.child = null;
+
+                            /**
+                             * Creates a new FixedPrecisionTensor instance using the specified properties.
+                             * @function create
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor=} [properties] Properties to set
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor} FixedPrecisionTensor instance
+                             */
+                            FixedPrecisionTensor.create = function create(properties) {
+                                return new FixedPrecisionTensor(properties);
+                            };
+
+                            /**
+                             * Encodes the specified FixedPrecisionTensor message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.verify|verify} messages.
+                             * @function encode
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor} message FixedPrecisionTensor message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            FixedPrecisionTensor.encode = function encode(message, writer) {
+                                if (!writer)
+                                    writer = $Writer.create();
+                                if (message.id != null && message.hasOwnProperty("id"))
+                                    $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                if (message.field != null && message.hasOwnProperty("field"))
+                                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.field);
+                                if (message.dtype != null && message.hasOwnProperty("dtype"))
+                                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.dtype);
+                                if (message.base != null && message.hasOwnProperty("base"))
+                                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.base);
+                                if (message.kappa != null && message.hasOwnProperty("kappa"))
+                                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.kappa);
+                                if (message.precision_fractional != null && message.hasOwnProperty("precision_fractional"))
+                                    writer.uint32(/* id 7, wireType 0 =*/56).int32(message.precision_fractional);
+                                if (message.tags != null && message.tags.length)
+                                    for (var i = 0; i < message.tags.length; ++i)
+                                        writer.uint32(/* id 8, wireType 2 =*/66).string(message.tags[i]);
+                                if (message.description != null && message.hasOwnProperty("description"))
+                                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.description);
+                                if (message.child != null && message.hasOwnProperty("child"))
+                                    $root.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.encode(message.child, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                                return writer;
+                            };
+
+                            /**
+                             * Encodes the specified FixedPrecisionTensor message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.verify|verify} messages.
+                             * @function encodeDelimited
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor} message FixedPrecisionTensor message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            FixedPrecisionTensor.encodeDelimited = function encodeDelimited(message, writer) {
+                                return this.encode(message, writer).ldelim();
+                            };
+
+                            /**
+                             * Decodes a FixedPrecisionTensor message from the specified reader or buffer.
+                             * @function decode
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @param {number} [length] Message length if known beforehand
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor} FixedPrecisionTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            FixedPrecisionTensor.decode = function decode(reader, length) {
+                                if (!(reader instanceof $Reader))
+                                    reader = $Reader.create(reader);
+                                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor();
+                                while (reader.pos < end) {
+                                    var tag = reader.uint32();
+                                    switch (tag >>> 3) {
+                                    case 1:
+                                        message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                                        break;
+                                    case 3:
+                                        message.field = reader.string();
+                                        break;
+                                    case 4:
+                                        message.dtype = reader.string();
+                                        break;
+                                    case 5:
+                                        message.base = reader.int32();
+                                        break;
+                                    case 6:
+                                        message.kappa = reader.int32();
+                                        break;
+                                    case 7:
+                                        message.precision_fractional = reader.int32();
+                                        break;
+                                    case 8:
+                                        if (!(message.tags && message.tags.length))
+                                            message.tags = [];
+                                        message.tags.push(reader.string());
+                                        break;
+                                    case 9:
+                                        message.description = reader.string();
+                                        break;
+                                    case 10:
+                                        message.child = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.decode(reader, reader.uint32());
+                                        break;
+                                    default:
+                                        reader.skipType(tag & 7);
+                                        break;
+                                    }
+                                }
+                                return message;
+                            };
+
+                            /**
+                             * Decodes a FixedPrecisionTensor message from the specified reader or buffer, length delimited.
+                             * @function decodeDelimited
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor} FixedPrecisionTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            FixedPrecisionTensor.decodeDelimited = function decodeDelimited(reader) {
+                                if (!(reader instanceof $Reader))
+                                    reader = new $Reader(reader);
+                                return this.decode(reader, reader.uint32());
+                            };
+
+                            /**
+                             * Verifies a FixedPrecisionTensor message.
+                             * @function verify
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {Object.<string,*>} message Plain object to verify
+                             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                             */
+                            FixedPrecisionTensor.verify = function verify(message) {
+                                if (typeof message !== "object" || message === null)
+                                    return "object expected";
+                                if (message.id != null && message.hasOwnProperty("id")) {
+                                    var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
+                                    if (error)
+                                        return "id." + error;
+                                }
+                                if (message.field != null && message.hasOwnProperty("field"))
+                                    if (!$util.isString(message.field))
+                                        return "field: string expected";
+                                if (message.dtype != null && message.hasOwnProperty("dtype"))
+                                    if (!$util.isString(message.dtype))
+                                        return "dtype: string expected";
+                                if (message.base != null && message.hasOwnProperty("base"))
+                                    if (!$util.isInteger(message.base))
+                                        return "base: integer expected";
+                                if (message.kappa != null && message.hasOwnProperty("kappa"))
+                                    if (!$util.isInteger(message.kappa))
+                                        return "kappa: integer expected";
+                                if (message.precision_fractional != null && message.hasOwnProperty("precision_fractional"))
+                                    if (!$util.isInteger(message.precision_fractional))
+                                        return "precision_fractional: integer expected";
+                                if (message.tags != null && message.hasOwnProperty("tags")) {
+                                    if (!Array.isArray(message.tags))
+                                        return "tags: array expected";
+                                    for (var i = 0; i < message.tags.length; ++i)
+                                        if (!$util.isString(message.tags[i]))
+                                            return "tags: string[] expected";
+                                }
+                                if (message.description != null && message.hasOwnProperty("description"))
+                                    if (!$util.isString(message.description))
+                                        return "description: string expected";
+                                if (message.child != null && message.hasOwnProperty("child")) {
+                                    var error = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.verify(message.child);
+                                    if (error)
+                                        return "child." + error;
+                                }
+                                return null;
+                            };
+
+                            /**
+                             * Creates a FixedPrecisionTensor message from a plain object. Also converts values to their respective internal types.
+                             * @function fromObject
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {Object.<string,*>} object Plain object
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor} FixedPrecisionTensor
+                             */
+                            FixedPrecisionTensor.fromObject = function fromObject(object) {
+                                if (object instanceof $root.syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor)
+                                    return object;
+                                var message = new $root.syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor();
+                                if (object.id != null) {
+                                    if (typeof object.id !== "object")
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.id: object expected");
+                                    message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
+                                }
+                                if (object.field != null)
+                                    message.field = String(object.field);
+                                if (object.dtype != null)
+                                    message.dtype = String(object.dtype);
+                                if (object.base != null)
+                                    message.base = object.base | 0;
+                                if (object.kappa != null)
+                                    message.kappa = object.kappa | 0;
+                                if (object.precision_fractional != null)
+                                    message.precision_fractional = object.precision_fractional | 0;
+                                if (object.tags) {
+                                    if (!Array.isArray(object.tags))
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.tags: array expected");
+                                    message.tags = [];
+                                    for (var i = 0; i < object.tags.length; ++i)
+                                        message.tags[i] = String(object.tags[i]);
+                                }
+                                if (object.description != null)
+                                    message.description = String(object.description);
+                                if (object.child != null) {
+                                    if (typeof object.child !== "object")
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.child: object expected");
+                                    message.child = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.fromObject(object.child);
+                                }
+                                return message;
+                            };
+
+                            /**
+                             * Creates a plain object from a FixedPrecisionTensor message. Also converts values to other types if specified.
+                             * @function toObject
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor} message FixedPrecisionTensor
+                             * @param {$protobuf.IConversionOptions} [options] Conversion options
+                             * @returns {Object.<string,*>} Plain object
+                             */
+                            FixedPrecisionTensor.toObject = function toObject(message, options) {
+                                if (!options)
+                                    options = {};
+                                var object = {};
+                                if (options.arrays || options.defaults)
+                                    object.tags = [];
+                                if (options.defaults) {
+                                    object.id = null;
+                                    object.field = "";
+                                    object.dtype = "";
+                                    object.base = 0;
+                                    object.kappa = 0;
+                                    object.precision_fractional = 0;
+                                    object.description = "";
+                                    object.child = null;
+                                }
+                                if (message.id != null && message.hasOwnProperty("id"))
+                                    object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
+                                if (message.field != null && message.hasOwnProperty("field"))
+                                    object.field = message.field;
+                                if (message.dtype != null && message.hasOwnProperty("dtype"))
+                                    object.dtype = message.dtype;
+                                if (message.base != null && message.hasOwnProperty("base"))
+                                    object.base = message.base;
+                                if (message.kappa != null && message.hasOwnProperty("kappa"))
+                                    object.kappa = message.kappa;
+                                if (message.precision_fractional != null && message.hasOwnProperty("precision_fractional"))
+                                    object.precision_fractional = message.precision_fractional;
+                                if (message.tags && message.tags.length) {
+                                    object.tags = [];
+                                    for (var j = 0; j < message.tags.length; ++j)
+                                        object.tags[j] = message.tags[j];
+                                }
+                                if (message.description != null && message.hasOwnProperty("description"))
+                                    object.description = message.description;
+                                if (message.child != null && message.hasOwnProperty("child"))
+                                    object.child = $root.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor.toObject(message.child, options);
+                                return object;
+                            };
+
+                            /**
+                             * Converts this FixedPrecisionTensor to JSON.
+                             * @function toJSON
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor
+                             * @instance
+                             * @returns {Object.<string,*>} JSON object
+                             */
+                            FixedPrecisionTensor.prototype.toJSON = function toJSON() {
+                                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                            };
+
+                            return FixedPrecisionTensor;
+                        })();
+
                         return v1;
                     })();
 
