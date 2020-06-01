@@ -34,7 +34,7 @@ public struct SyftProto_Types_Syft_V1_Arg {
     set {arg = .argBool(newValue)}
   }
 
-  public var argInt: Int32 {
+  public var argInt: Int64 {
     get {
       if case .argInt(let v)? = arg {return v}
       return 0
@@ -118,7 +118,7 @@ public struct SyftProto_Types_Syft_V1_Arg {
 
   public enum OneOf_Arg: Equatable {
     case argBool(Bool)
-    case argInt(Int32)
+    case argInt(Int64)
     case argFloat(Float)
     case argStr(String)
     case argShape(SyftProto_Types_Syft_V1_Shape)
@@ -194,8 +194,8 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if let v = v {self.arg = .argBool(v)}
       case 2:
         if self.arg != nil {try decoder.handleConflictingOneOf()}
-        var v: Int32?
-        try decoder.decodeSingularInt32Field(value: &v)
+        var v: Int64?
+        try decoder.decodeSingularInt64Field(value: &v)
         if let v = v {self.arg = .argInt(v)}
       case 3:
         if self.arg != nil {try decoder.handleConflictingOneOf()}
@@ -273,7 +273,7 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
     case .argBool(let v)?:
       try visitor.visitSingularBoolField(value: v, fieldNumber: 1)
     case .argInt(let v)?:
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
+      try visitor.visitSingularInt64Field(value: v, fieldNumber: 2)
     case .argFloat(let v)?:
       try visitor.visitSingularFloatField(value: v, fieldNumber: 3)
     case .argStr(let v)?:
