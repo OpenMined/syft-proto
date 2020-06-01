@@ -173,7 +173,7 @@ public final class Message {
   /**
    * Protobuf type {@code syft_proto.messaging.v1.SyftMessage}
    */
-  public  static final class SyftMessage extends
+  public static final class SyftMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.messaging.v1.SyftMessage)
       SyftMessageOrBuilder {
@@ -449,6 +449,7 @@ public final class Message {
      * <code>.google.protobuf.Empty contents_empty_msg = 1[json_name = "contentsEmptyMsg"];</code>
      * @return Whether the contentsEmptyMsg field is set.
      */
+    @java.lang.Override
     public boolean hasContentsEmptyMsg() {
       return contentsCase_ == 1;
     }
@@ -456,6 +457,7 @@ public final class Message {
      * <code>.google.protobuf.Empty contents_empty_msg = 1[json_name = "contentsEmptyMsg"];</code>
      * @return The contentsEmptyMsg.
      */
+    @java.lang.Override
     public com.google.protobuf.Empty getContentsEmptyMsg() {
       if (contentsCase_ == 1) {
          return (com.google.protobuf.Empty) contents_;
@@ -465,6 +467,7 @@ public final class Message {
     /**
      * <code>.google.protobuf.Empty contents_empty_msg = 1[json_name = "contentsEmptyMsg"];</code>
      */
+    @java.lang.Override
     public com.google.protobuf.EmptyOrBuilder getContentsEmptyMsgOrBuilder() {
       if (contentsCase_ == 1) {
          return (com.google.protobuf.Empty) contents_;
@@ -477,6 +480,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.ForceObjectDeleteMessage contents_delete_msg = 2[json_name = "contentsDeleteMsg"];</code>
      * @return Whether the contentsDeleteMsg field is set.
      */
+    @java.lang.Override
     public boolean hasContentsDeleteMsg() {
       return contentsCase_ == 2;
     }
@@ -484,6 +488,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.ForceObjectDeleteMessage contents_delete_msg = 2[json_name = "contentsDeleteMsg"];</code>
      * @return The contentsDeleteMsg.
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.ForceObjectDeleteMessage getContentsDeleteMsg() {
       if (contentsCase_ == 2) {
          return (org.openmined.syftproto.messaging.v1.Message.ForceObjectDeleteMessage) contents_;
@@ -493,6 +498,7 @@ public final class Message {
     /**
      * <code>.syft_proto.messaging.v1.ForceObjectDeleteMessage contents_delete_msg = 2[json_name = "contentsDeleteMsg"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.ForceObjectDeleteMessageOrBuilder getContentsDeleteMsgOrBuilder() {
       if (contentsCase_ == 2) {
          return (org.openmined.syftproto.messaging.v1.Message.ForceObjectDeleteMessage) contents_;
@@ -505,6 +511,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.GetShapeMessage contents_get_shape_msg = 3[json_name = "contentsGetShapeMsg"];</code>
      * @return Whether the contentsGetShapeMsg field is set.
      */
+    @java.lang.Override
     public boolean hasContentsGetShapeMsg() {
       return contentsCase_ == 3;
     }
@@ -512,6 +519,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.GetShapeMessage contents_get_shape_msg = 3[json_name = "contentsGetShapeMsg"];</code>
      * @return The contentsGetShapeMsg.
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.GetShapeMessage getContentsGetShapeMsg() {
       if (contentsCase_ == 3) {
          return (org.openmined.syftproto.messaging.v1.Message.GetShapeMessage) contents_;
@@ -521,6 +529,7 @@ public final class Message {
     /**
      * <code>.syft_proto.messaging.v1.GetShapeMessage contents_get_shape_msg = 3[json_name = "contentsGetShapeMsg"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.GetShapeMessageOrBuilder getContentsGetShapeMsgOrBuilder() {
       if (contentsCase_ == 3) {
          return (org.openmined.syftproto.messaging.v1.Message.GetShapeMessage) contents_;
@@ -533,6 +542,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.IsNoneMessage contents_is_none_msg = 4[json_name = "contentsIsNoneMsg"];</code>
      * @return Whether the contentsIsNoneMsg field is set.
      */
+    @java.lang.Override
     public boolean hasContentsIsNoneMsg() {
       return contentsCase_ == 4;
     }
@@ -540,6 +550,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.IsNoneMessage contents_is_none_msg = 4[json_name = "contentsIsNoneMsg"];</code>
      * @return The contentsIsNoneMsg.
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.IsNoneMessage getContentsIsNoneMsg() {
       if (contentsCase_ == 4) {
          return (org.openmined.syftproto.messaging.v1.Message.IsNoneMessage) contents_;
@@ -549,6 +560,7 @@ public final class Message {
     /**
      * <code>.syft_proto.messaging.v1.IsNoneMessage contents_is_none_msg = 4[json_name = "contentsIsNoneMsg"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.IsNoneMessageOrBuilder getContentsIsNoneMsgOrBuilder() {
       if (contentsCase_ == 4) {
          return (org.openmined.syftproto.messaging.v1.Message.IsNoneMessage) contents_;
@@ -561,6 +573,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.ObjectMessage contents_object_msg = 5[json_name = "contentsObjectMsg"];</code>
      * @return Whether the contentsObjectMsg field is set.
      */
+    @java.lang.Override
     public boolean hasContentsObjectMsg() {
       return contentsCase_ == 5;
     }
@@ -568,6 +581,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.ObjectMessage contents_object_msg = 5[json_name = "contentsObjectMsg"];</code>
      * @return The contentsObjectMsg.
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.ObjectMessage getContentsObjectMsg() {
       if (contentsCase_ == 5) {
          return (org.openmined.syftproto.messaging.v1.Message.ObjectMessage) contents_;
@@ -577,6 +591,7 @@ public final class Message {
     /**
      * <code>.syft_proto.messaging.v1.ObjectMessage contents_object_msg = 5[json_name = "contentsObjectMsg"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.ObjectMessageOrBuilder getContentsObjectMsgOrBuilder() {
       if (contentsCase_ == 5) {
          return (org.openmined.syftproto.messaging.v1.Message.ObjectMessage) contents_;
@@ -589,6 +604,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.ObjectRequestMessage contents_object_request_msg = 6[json_name = "contentsObjectRequestMsg"];</code>
      * @return Whether the contentsObjectRequestMsg field is set.
      */
+    @java.lang.Override
     public boolean hasContentsObjectRequestMsg() {
       return contentsCase_ == 6;
     }
@@ -596,6 +612,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.ObjectRequestMessage contents_object_request_msg = 6[json_name = "contentsObjectRequestMsg"];</code>
      * @return The contentsObjectRequestMsg.
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.ObjectRequestMessage getContentsObjectRequestMsg() {
       if (contentsCase_ == 6) {
          return (org.openmined.syftproto.messaging.v1.Message.ObjectRequestMessage) contents_;
@@ -605,6 +622,7 @@ public final class Message {
     /**
      * <code>.syft_proto.messaging.v1.ObjectRequestMessage contents_object_request_msg = 6[json_name = "contentsObjectRequestMsg"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.ObjectRequestMessageOrBuilder getContentsObjectRequestMsgOrBuilder() {
       if (contentsCase_ == 6) {
          return (org.openmined.syftproto.messaging.v1.Message.ObjectRequestMessage) contents_;
@@ -617,6 +635,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.TensorCommandMessage contents_tensor_cmd_msg = 7[json_name = "contentsTensorCmdMsg"];</code>
      * @return Whether the contentsTensorCmdMsg field is set.
      */
+    @java.lang.Override
     public boolean hasContentsTensorCmdMsg() {
       return contentsCase_ == 7;
     }
@@ -624,6 +643,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.TensorCommandMessage contents_tensor_cmd_msg = 7[json_name = "contentsTensorCmdMsg"];</code>
      * @return The contentsTensorCmdMsg.
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.TensorCommandMessage getContentsTensorCmdMsg() {
       if (contentsCase_ == 7) {
          return (org.openmined.syftproto.messaging.v1.Message.TensorCommandMessage) contents_;
@@ -633,6 +653,7 @@ public final class Message {
     /**
      * <code>.syft_proto.messaging.v1.TensorCommandMessage contents_tensor_cmd_msg = 7[json_name = "contentsTensorCmdMsg"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.TensorCommandMessageOrBuilder getContentsTensorCmdMsgOrBuilder() {
       if (contentsCase_ == 7) {
          return (org.openmined.syftproto.messaging.v1.Message.TensorCommandMessage) contents_;
@@ -645,6 +666,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.PlanCommandMessage contents_plan_cmd_msg = 8[json_name = "contentsPlanCmdMsg"];</code>
      * @return Whether the contentsPlanCmdMsg field is set.
      */
+    @java.lang.Override
     public boolean hasContentsPlanCmdMsg() {
       return contentsCase_ == 8;
     }
@@ -652,6 +674,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.PlanCommandMessage contents_plan_cmd_msg = 8[json_name = "contentsPlanCmdMsg"];</code>
      * @return The contentsPlanCmdMsg.
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.PlanCommandMessage getContentsPlanCmdMsg() {
       if (contentsCase_ == 8) {
          return (org.openmined.syftproto.messaging.v1.Message.PlanCommandMessage) contents_;
@@ -661,6 +684,7 @@ public final class Message {
     /**
      * <code>.syft_proto.messaging.v1.PlanCommandMessage contents_plan_cmd_msg = 8[json_name = "contentsPlanCmdMsg"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.PlanCommandMessageOrBuilder getContentsPlanCmdMsgOrBuilder() {
       if (contentsCase_ == 8) {
          return (org.openmined.syftproto.messaging.v1.Message.PlanCommandMessage) contents_;
@@ -673,6 +697,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.WorkerCommandMessage contents_worker_cmd_msg = 9[json_name = "contentsWorkerCmdMsg"];</code>
      * @return Whether the contentsWorkerCmdMsg field is set.
      */
+    @java.lang.Override
     public boolean hasContentsWorkerCmdMsg() {
       return contentsCase_ == 9;
     }
@@ -680,6 +705,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.WorkerCommandMessage contents_worker_cmd_msg = 9[json_name = "contentsWorkerCmdMsg"];</code>
      * @return The contentsWorkerCmdMsg.
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.WorkerCommandMessage getContentsWorkerCmdMsg() {
       if (contentsCase_ == 9) {
          return (org.openmined.syftproto.messaging.v1.Message.WorkerCommandMessage) contents_;
@@ -689,6 +715,7 @@ public final class Message {
     /**
      * <code>.syft_proto.messaging.v1.WorkerCommandMessage contents_worker_cmd_msg = 9[json_name = "contentsWorkerCmdMsg"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.WorkerCommandMessageOrBuilder getContentsWorkerCmdMsgOrBuilder() {
       if (contentsCase_ == 9) {
          return (org.openmined.syftproto.messaging.v1.Message.WorkerCommandMessage) contents_;
@@ -701,6 +728,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.SearchMessage contents_search_msg = 10[json_name = "contentsSearchMsg"];</code>
      * @return Whether the contentsSearchMsg field is set.
      */
+    @java.lang.Override
     public boolean hasContentsSearchMsg() {
       return contentsCase_ == 10;
     }
@@ -708,6 +736,7 @@ public final class Message {
      * <code>.syft_proto.messaging.v1.SearchMessage contents_search_msg = 10[json_name = "contentsSearchMsg"];</code>
      * @return The contentsSearchMsg.
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.SearchMessage getContentsSearchMsg() {
       if (contentsCase_ == 10) {
          return (org.openmined.syftproto.messaging.v1.Message.SearchMessage) contents_;
@@ -717,6 +746,7 @@ public final class Message {
     /**
      * <code>.syft_proto.messaging.v1.SearchMessage contents_search_msg = 10[json_name = "contentsSearchMsg"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.messaging.v1.Message.SearchMessageOrBuilder getContentsSearchMsgOrBuilder() {
       if (contentsCase_ == 10) {
          return (org.openmined.syftproto.messaging.v1.Message.SearchMessage) contents_;
@@ -1307,6 +1337,7 @@ public final class Message {
        * <code>.google.protobuf.Empty contents_empty_msg = 1[json_name = "contentsEmptyMsg"];</code>
        * @return Whether the contentsEmptyMsg field is set.
        */
+      @java.lang.Override
       public boolean hasContentsEmptyMsg() {
         return contentsCase_ == 1;
       }
@@ -1314,6 +1345,7 @@ public final class Message {
        * <code>.google.protobuf.Empty contents_empty_msg = 1[json_name = "contentsEmptyMsg"];</code>
        * @return The contentsEmptyMsg.
        */
+      @java.lang.Override
       public com.google.protobuf.Empty getContentsEmptyMsg() {
         if (contentsEmptyMsgBuilder_ == null) {
           if (contentsCase_ == 1) {
@@ -1407,6 +1439,7 @@ public final class Message {
       /**
        * <code>.google.protobuf.Empty contents_empty_msg = 1[json_name = "contentsEmptyMsg"];</code>
        */
+      @java.lang.Override
       public com.google.protobuf.EmptyOrBuilder getContentsEmptyMsgOrBuilder() {
         if ((contentsCase_ == 1) && (contentsEmptyMsgBuilder_ != null)) {
           return contentsEmptyMsgBuilder_.getMessageOrBuilder();
@@ -1445,6 +1478,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.ForceObjectDeleteMessage contents_delete_msg = 2[json_name = "contentsDeleteMsg"];</code>
        * @return Whether the contentsDeleteMsg field is set.
        */
+      @java.lang.Override
       public boolean hasContentsDeleteMsg() {
         return contentsCase_ == 2;
       }
@@ -1452,6 +1486,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.ForceObjectDeleteMessage contents_delete_msg = 2[json_name = "contentsDeleteMsg"];</code>
        * @return The contentsDeleteMsg.
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.ForceObjectDeleteMessage getContentsDeleteMsg() {
         if (contentsDeleteMsgBuilder_ == null) {
           if (contentsCase_ == 2) {
@@ -1545,6 +1580,7 @@ public final class Message {
       /**
        * <code>.syft_proto.messaging.v1.ForceObjectDeleteMessage contents_delete_msg = 2[json_name = "contentsDeleteMsg"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.ForceObjectDeleteMessageOrBuilder getContentsDeleteMsgOrBuilder() {
         if ((contentsCase_ == 2) && (contentsDeleteMsgBuilder_ != null)) {
           return contentsDeleteMsgBuilder_.getMessageOrBuilder();
@@ -1583,6 +1619,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.GetShapeMessage contents_get_shape_msg = 3[json_name = "contentsGetShapeMsg"];</code>
        * @return Whether the contentsGetShapeMsg field is set.
        */
+      @java.lang.Override
       public boolean hasContentsGetShapeMsg() {
         return contentsCase_ == 3;
       }
@@ -1590,6 +1627,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.GetShapeMessage contents_get_shape_msg = 3[json_name = "contentsGetShapeMsg"];</code>
        * @return The contentsGetShapeMsg.
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.GetShapeMessage getContentsGetShapeMsg() {
         if (contentsGetShapeMsgBuilder_ == null) {
           if (contentsCase_ == 3) {
@@ -1683,6 +1721,7 @@ public final class Message {
       /**
        * <code>.syft_proto.messaging.v1.GetShapeMessage contents_get_shape_msg = 3[json_name = "contentsGetShapeMsg"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.GetShapeMessageOrBuilder getContentsGetShapeMsgOrBuilder() {
         if ((contentsCase_ == 3) && (contentsGetShapeMsgBuilder_ != null)) {
           return contentsGetShapeMsgBuilder_.getMessageOrBuilder();
@@ -1721,6 +1760,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.IsNoneMessage contents_is_none_msg = 4[json_name = "contentsIsNoneMsg"];</code>
        * @return Whether the contentsIsNoneMsg field is set.
        */
+      @java.lang.Override
       public boolean hasContentsIsNoneMsg() {
         return contentsCase_ == 4;
       }
@@ -1728,6 +1768,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.IsNoneMessage contents_is_none_msg = 4[json_name = "contentsIsNoneMsg"];</code>
        * @return The contentsIsNoneMsg.
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.IsNoneMessage getContentsIsNoneMsg() {
         if (contentsIsNoneMsgBuilder_ == null) {
           if (contentsCase_ == 4) {
@@ -1821,6 +1862,7 @@ public final class Message {
       /**
        * <code>.syft_proto.messaging.v1.IsNoneMessage contents_is_none_msg = 4[json_name = "contentsIsNoneMsg"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.IsNoneMessageOrBuilder getContentsIsNoneMsgOrBuilder() {
         if ((contentsCase_ == 4) && (contentsIsNoneMsgBuilder_ != null)) {
           return contentsIsNoneMsgBuilder_.getMessageOrBuilder();
@@ -1859,6 +1901,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.ObjectMessage contents_object_msg = 5[json_name = "contentsObjectMsg"];</code>
        * @return Whether the contentsObjectMsg field is set.
        */
+      @java.lang.Override
       public boolean hasContentsObjectMsg() {
         return contentsCase_ == 5;
       }
@@ -1866,6 +1909,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.ObjectMessage contents_object_msg = 5[json_name = "contentsObjectMsg"];</code>
        * @return The contentsObjectMsg.
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.ObjectMessage getContentsObjectMsg() {
         if (contentsObjectMsgBuilder_ == null) {
           if (contentsCase_ == 5) {
@@ -1959,6 +2003,7 @@ public final class Message {
       /**
        * <code>.syft_proto.messaging.v1.ObjectMessage contents_object_msg = 5[json_name = "contentsObjectMsg"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.ObjectMessageOrBuilder getContentsObjectMsgOrBuilder() {
         if ((contentsCase_ == 5) && (contentsObjectMsgBuilder_ != null)) {
           return contentsObjectMsgBuilder_.getMessageOrBuilder();
@@ -1997,6 +2042,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.ObjectRequestMessage contents_object_request_msg = 6[json_name = "contentsObjectRequestMsg"];</code>
        * @return Whether the contentsObjectRequestMsg field is set.
        */
+      @java.lang.Override
       public boolean hasContentsObjectRequestMsg() {
         return contentsCase_ == 6;
       }
@@ -2004,6 +2050,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.ObjectRequestMessage contents_object_request_msg = 6[json_name = "contentsObjectRequestMsg"];</code>
        * @return The contentsObjectRequestMsg.
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.ObjectRequestMessage getContentsObjectRequestMsg() {
         if (contentsObjectRequestMsgBuilder_ == null) {
           if (contentsCase_ == 6) {
@@ -2097,6 +2144,7 @@ public final class Message {
       /**
        * <code>.syft_proto.messaging.v1.ObjectRequestMessage contents_object_request_msg = 6[json_name = "contentsObjectRequestMsg"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.ObjectRequestMessageOrBuilder getContentsObjectRequestMsgOrBuilder() {
         if ((contentsCase_ == 6) && (contentsObjectRequestMsgBuilder_ != null)) {
           return contentsObjectRequestMsgBuilder_.getMessageOrBuilder();
@@ -2135,6 +2183,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.TensorCommandMessage contents_tensor_cmd_msg = 7[json_name = "contentsTensorCmdMsg"];</code>
        * @return Whether the contentsTensorCmdMsg field is set.
        */
+      @java.lang.Override
       public boolean hasContentsTensorCmdMsg() {
         return contentsCase_ == 7;
       }
@@ -2142,6 +2191,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.TensorCommandMessage contents_tensor_cmd_msg = 7[json_name = "contentsTensorCmdMsg"];</code>
        * @return The contentsTensorCmdMsg.
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.TensorCommandMessage getContentsTensorCmdMsg() {
         if (contentsTensorCmdMsgBuilder_ == null) {
           if (contentsCase_ == 7) {
@@ -2235,6 +2285,7 @@ public final class Message {
       /**
        * <code>.syft_proto.messaging.v1.TensorCommandMessage contents_tensor_cmd_msg = 7[json_name = "contentsTensorCmdMsg"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.TensorCommandMessageOrBuilder getContentsTensorCmdMsgOrBuilder() {
         if ((contentsCase_ == 7) && (contentsTensorCmdMsgBuilder_ != null)) {
           return contentsTensorCmdMsgBuilder_.getMessageOrBuilder();
@@ -2273,6 +2324,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.PlanCommandMessage contents_plan_cmd_msg = 8[json_name = "contentsPlanCmdMsg"];</code>
        * @return Whether the contentsPlanCmdMsg field is set.
        */
+      @java.lang.Override
       public boolean hasContentsPlanCmdMsg() {
         return contentsCase_ == 8;
       }
@@ -2280,6 +2332,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.PlanCommandMessage contents_plan_cmd_msg = 8[json_name = "contentsPlanCmdMsg"];</code>
        * @return The contentsPlanCmdMsg.
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.PlanCommandMessage getContentsPlanCmdMsg() {
         if (contentsPlanCmdMsgBuilder_ == null) {
           if (contentsCase_ == 8) {
@@ -2373,6 +2426,7 @@ public final class Message {
       /**
        * <code>.syft_proto.messaging.v1.PlanCommandMessage contents_plan_cmd_msg = 8[json_name = "contentsPlanCmdMsg"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.PlanCommandMessageOrBuilder getContentsPlanCmdMsgOrBuilder() {
         if ((contentsCase_ == 8) && (contentsPlanCmdMsgBuilder_ != null)) {
           return contentsPlanCmdMsgBuilder_.getMessageOrBuilder();
@@ -2411,6 +2465,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.WorkerCommandMessage contents_worker_cmd_msg = 9[json_name = "contentsWorkerCmdMsg"];</code>
        * @return Whether the contentsWorkerCmdMsg field is set.
        */
+      @java.lang.Override
       public boolean hasContentsWorkerCmdMsg() {
         return contentsCase_ == 9;
       }
@@ -2418,6 +2473,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.WorkerCommandMessage contents_worker_cmd_msg = 9[json_name = "contentsWorkerCmdMsg"];</code>
        * @return The contentsWorkerCmdMsg.
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.WorkerCommandMessage getContentsWorkerCmdMsg() {
         if (contentsWorkerCmdMsgBuilder_ == null) {
           if (contentsCase_ == 9) {
@@ -2511,6 +2567,7 @@ public final class Message {
       /**
        * <code>.syft_proto.messaging.v1.WorkerCommandMessage contents_worker_cmd_msg = 9[json_name = "contentsWorkerCmdMsg"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.WorkerCommandMessageOrBuilder getContentsWorkerCmdMsgOrBuilder() {
         if ((contentsCase_ == 9) && (contentsWorkerCmdMsgBuilder_ != null)) {
           return contentsWorkerCmdMsgBuilder_.getMessageOrBuilder();
@@ -2549,6 +2606,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.SearchMessage contents_search_msg = 10[json_name = "contentsSearchMsg"];</code>
        * @return Whether the contentsSearchMsg field is set.
        */
+      @java.lang.Override
       public boolean hasContentsSearchMsg() {
         return contentsCase_ == 10;
       }
@@ -2556,6 +2614,7 @@ public final class Message {
        * <code>.syft_proto.messaging.v1.SearchMessage contents_search_msg = 10[json_name = "contentsSearchMsg"];</code>
        * @return The contentsSearchMsg.
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.SearchMessage getContentsSearchMsg() {
         if (contentsSearchMsgBuilder_ == null) {
           if (contentsCase_ == 10) {
@@ -2649,6 +2708,7 @@ public final class Message {
       /**
        * <code>.syft_proto.messaging.v1.SearchMessage contents_search_msg = 10[json_name = "contentsSearchMsg"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.messaging.v1.Message.SearchMessageOrBuilder getContentsSearchMsgOrBuilder() {
         if ((contentsCase_ == 10) && (contentsSearchMsgBuilder_ != null)) {
           return contentsSearchMsgBuilder_.getMessageOrBuilder();
@@ -2755,7 +2815,7 @@ public final class Message {
   /**
    * Protobuf type {@code syft_proto.messaging.v1.IsNoneMessage}
    */
-  public  static final class IsNoneMessage extends
+  public static final class IsNoneMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.messaging.v1.IsNoneMessage)
       IsNoneMessageOrBuilder {
@@ -2848,6 +2908,7 @@ public final class Message {
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      * @return Whether the objectId field is set.
      */
+    @java.lang.Override
     public boolean hasObjectId() {
       return objectId_ != null;
     }
@@ -2855,12 +2916,14 @@ public final class Message {
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      * @return The objectId.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectId() {
       return objectId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectId_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjectIdOrBuilder() {
       return getObjectId();
     }
@@ -3373,7 +3436,7 @@ public final class Message {
   /**
    * Protobuf type {@code syft_proto.messaging.v1.ObjectMessage}
    */
-  public  static final class ObjectMessage extends
+  public static final class ObjectMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.messaging.v1.ObjectMessage)
       ObjectMessageOrBuilder {
@@ -3466,6 +3529,7 @@ public final class Message {
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 1[json_name = "tensor"];</code>
      * @return Whether the tensor field is set.
      */
+    @java.lang.Override
     public boolean hasTensor() {
       return tensor_ != null;
     }
@@ -3473,12 +3537,14 @@ public final class Message {
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 1[json_name = "tensor"];</code>
      * @return The tensor.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTensor() {
       return tensor_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : tensor_;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor tensor = 1[json_name = "tensor"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getTensorOrBuilder() {
       return getTensor();
     }
@@ -4008,7 +4074,7 @@ public final class Message {
   /**
    * Protobuf type {@code syft_proto.messaging.v1.TensorCommandMessage}
    */
-  public  static final class TensorCommandMessage extends
+  public static final class TensorCommandMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.messaging.v1.TensorCommandMessage)
       TensorCommandMessageOrBuilder {
@@ -4156,6 +4222,7 @@ public final class Message {
      * <code>.syft_proto.execution.v1.ComputationAction computation = 1[json_name = "computation"];</code>
      * @return Whether the computation field is set.
      */
+    @java.lang.Override
     public boolean hasComputation() {
       return actionCase_ == 1;
     }
@@ -4163,6 +4230,7 @@ public final class Message {
      * <code>.syft_proto.execution.v1.ComputationAction computation = 1[json_name = "computation"];</code>
      * @return The computation.
      */
+    @java.lang.Override
     public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction getComputation() {
       if (actionCase_ == 1) {
          return (org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction) action_;
@@ -4172,6 +4240,7 @@ public final class Message {
     /**
      * <code>.syft_proto.execution.v1.ComputationAction computation = 1[json_name = "computation"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder getComputationOrBuilder() {
       if (actionCase_ == 1) {
          return (org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction) action_;
@@ -4184,6 +4253,7 @@ public final class Message {
      * <code>.syft_proto.execution.v1.CommunicationAction communication = 2[json_name = "communication"];</code>
      * @return Whether the communication field is set.
      */
+    @java.lang.Override
     public boolean hasCommunication() {
       return actionCase_ == 2;
     }
@@ -4191,6 +4261,7 @@ public final class Message {
      * <code>.syft_proto.execution.v1.CommunicationAction communication = 2[json_name = "communication"];</code>
      * @return The communication.
      */
+    @java.lang.Override
     public org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction getCommunication() {
       if (actionCase_ == 2) {
          return (org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction) action_;
@@ -4200,6 +4271,7 @@ public final class Message {
     /**
      * <code>.syft_proto.execution.v1.CommunicationAction communication = 2[json_name = "communication"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationActionOrBuilder getCommunicationOrBuilder() {
       if (actionCase_ == 2) {
          return (org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction) action_;
@@ -4582,6 +4654,7 @@ public final class Message {
        * <code>.syft_proto.execution.v1.ComputationAction computation = 1[json_name = "computation"];</code>
        * @return Whether the computation field is set.
        */
+      @java.lang.Override
       public boolean hasComputation() {
         return actionCase_ == 1;
       }
@@ -4589,6 +4662,7 @@ public final class Message {
        * <code>.syft_proto.execution.v1.ComputationAction computation = 1[json_name = "computation"];</code>
        * @return The computation.
        */
+      @java.lang.Override
       public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction getComputation() {
         if (computationBuilder_ == null) {
           if (actionCase_ == 1) {
@@ -4682,6 +4756,7 @@ public final class Message {
       /**
        * <code>.syft_proto.execution.v1.ComputationAction computation = 1[json_name = "computation"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder getComputationOrBuilder() {
         if ((actionCase_ == 1) && (computationBuilder_ != null)) {
           return computationBuilder_.getMessageOrBuilder();
@@ -4720,6 +4795,7 @@ public final class Message {
        * <code>.syft_proto.execution.v1.CommunicationAction communication = 2[json_name = "communication"];</code>
        * @return Whether the communication field is set.
        */
+      @java.lang.Override
       public boolean hasCommunication() {
         return actionCase_ == 2;
       }
@@ -4727,6 +4803,7 @@ public final class Message {
        * <code>.syft_proto.execution.v1.CommunicationAction communication = 2[json_name = "communication"];</code>
        * @return The communication.
        */
+      @java.lang.Override
       public org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationAction getCommunication() {
         if (communicationBuilder_ == null) {
           if (actionCase_ == 2) {
@@ -4820,6 +4897,7 @@ public final class Message {
       /**
        * <code>.syft_proto.execution.v1.CommunicationAction communication = 2[json_name = "communication"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.execution.v1.CommunicationActionOuterClass.CommunicationActionOrBuilder getCommunicationOrBuilder() {
         if ((actionCase_ == 2) && (communicationBuilder_ != null)) {
           return communicationBuilder_.getMessageOrBuilder();
@@ -4926,7 +5004,7 @@ public final class Message {
   /**
    * Protobuf type {@code syft_proto.messaging.v1.ForceObjectDeleteMessage}
    */
-  public  static final class ForceObjectDeleteMessage extends
+  public static final class ForceObjectDeleteMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.messaging.v1.ForceObjectDeleteMessage)
       ForceObjectDeleteMessageOrBuilder {
@@ -5019,6 +5097,7 @@ public final class Message {
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      * @return Whether the objectId field is set.
      */
+    @java.lang.Override
     public boolean hasObjectId() {
       return objectId_ != null;
     }
@@ -5026,12 +5105,14 @@ public final class Message {
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      * @return The objectId.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectId() {
       return objectId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectId_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjectIdOrBuilder() {
       return getObjectId();
     }
@@ -5544,7 +5625,7 @@ public final class Message {
   /**
    * Protobuf type {@code syft_proto.messaging.v1.GetShapeMessage}
    */
-  public  static final class GetShapeMessage extends
+  public static final class GetShapeMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.messaging.v1.GetShapeMessage)
       GetShapeMessageOrBuilder {
@@ -5637,6 +5718,7 @@ public final class Message {
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      * @return Whether the objectId field is set.
      */
+    @java.lang.Override
     public boolean hasObjectId() {
       return objectId_ != null;
     }
@@ -5644,12 +5726,14 @@ public final class Message {
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      * @return The objectId.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectId() {
       return objectId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectId_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjectIdOrBuilder() {
       return getObjectId();
     }
@@ -6174,7 +6258,7 @@ public final class Message {
   /**
    * Protobuf type {@code syft_proto.messaging.v1.ObjectRequestMessage}
    */
-  public  static final class ObjectRequestMessage extends
+  public static final class ObjectRequestMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.messaging.v1.ObjectRequestMessage)
       ObjectRequestMessageOrBuilder {
@@ -6274,6 +6358,7 @@ public final class Message {
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      * @return Whether the objectId field is set.
      */
+    @java.lang.Override
     public boolean hasObjectId() {
       return objectId_ != null;
     }
@@ -6281,12 +6366,14 @@ public final class Message {
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      * @return The objectId.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectId() {
       return objectId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectId_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjectIdOrBuilder() {
       return getObjectId();
     }
@@ -6297,6 +6384,7 @@ public final class Message {
      * <code>string reason = 2[json_name = "reason"];</code>
      * @return The reason.
      */
+    @java.lang.Override
     public java.lang.String getReason() {
       java.lang.Object ref = reason_;
       if (ref instanceof java.lang.String) {
@@ -6313,6 +6401,7 @@ public final class Message {
      * <code>string reason = 2[json_name = "reason"];</code>
      * @return The bytes for reason.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getReasonBytes() {
       java.lang.Object ref = reason_;
@@ -6949,7 +7038,7 @@ public final class Message {
   /**
    * Protobuf type {@code syft_proto.messaging.v1.PlanCommandMessage}
    */
-  public  static final class PlanCommandMessage extends
+  public static final class PlanCommandMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.messaging.v1.PlanCommandMessage)
       PlanCommandMessageOrBuilder {
@@ -7050,6 +7139,7 @@ public final class Message {
      * <code>string command_name = 1[json_name = "commandName"];</code>
      * @return The commandName.
      */
+    @java.lang.Override
     public java.lang.String getCommandName() {
       java.lang.Object ref = commandName_;
       if (ref instanceof java.lang.String) {
@@ -7066,6 +7156,7 @@ public final class Message {
      * <code>string command_name = 1[json_name = "commandName"];</code>
      * @return The bytes for commandName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getCommandNameBytes() {
       java.lang.Object ref = commandName_;
@@ -7085,12 +7176,14 @@ public final class Message {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 2[json_name = "args"];</code>
      */
+    @java.lang.Override
     public java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getArgsList() {
       return args_;
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 2[json_name = "args"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> 
         getArgsOrBuilderList() {
       return args_;
@@ -7098,18 +7191,21 @@ public final class Message {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 2[json_name = "args"];</code>
      */
+    @java.lang.Override
     public int getArgsCount() {
       return args_.size();
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 2[json_name = "args"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getArgs(int index) {
       return args_.get(index);
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 2[json_name = "args"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder getArgsOrBuilder(
         int index) {
       return args_.get(index);
@@ -7885,7 +7981,7 @@ public final class Message {
   /**
    * Protobuf type {@code syft_proto.messaging.v1.WorkerCommandMessage}
    */
-  public  static final class WorkerCommandMessage extends
+  public static final class WorkerCommandMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.messaging.v1.WorkerCommandMessage)
       WorkerCommandMessageOrBuilder {
@@ -7986,6 +8082,7 @@ public final class Message {
      * <code>string command_name = 1[json_name = "commandName"];</code>
      * @return The commandName.
      */
+    @java.lang.Override
     public java.lang.String getCommandName() {
       java.lang.Object ref = commandName_;
       if (ref instanceof java.lang.String) {
@@ -8002,6 +8099,7 @@ public final class Message {
      * <code>string command_name = 1[json_name = "commandName"];</code>
      * @return The bytes for commandName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getCommandNameBytes() {
       java.lang.Object ref = commandName_;
@@ -8021,12 +8119,14 @@ public final class Message {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 2[json_name = "args"];</code>
      */
+    @java.lang.Override
     public java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getArgsList() {
       return args_;
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 2[json_name = "args"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> 
         getArgsOrBuilderList() {
       return args_;
@@ -8034,18 +8134,21 @@ public final class Message {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 2[json_name = "args"];</code>
      */
+    @java.lang.Override
     public int getArgsCount() {
       return args_.size();
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 2[json_name = "args"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getArgs(int index) {
       return args_.get(index);
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 2[json_name = "args"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder getArgsOrBuilder(
         int index) {
       return args_.get(index);
@@ -8809,7 +8912,7 @@ public final class Message {
   /**
    * Protobuf type {@code syft_proto.messaging.v1.SearchMessage}
    */
-  public  static final class SearchMessage extends
+  public static final class SearchMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.messaging.v1.SearchMessage)
       SearchMessageOrBuilder {
@@ -8902,12 +9005,14 @@ public final class Message {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id query = 1[json_name = "query"];</code>
      */
+    @java.lang.Override
     public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> getQueryList() {
       return query_;
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id query = 1[json_name = "query"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
         getQueryOrBuilderList() {
       return query_;
@@ -8915,18 +9020,21 @@ public final class Message {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id query = 1[json_name = "query"];</code>
      */
+    @java.lang.Override
     public int getQueryCount() {
       return query_.size();
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id query = 1[json_name = "query"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getQuery(int index) {
       return query_.get(index);
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id query = 1[json_name = "query"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getQueryOrBuilder(
         int index) {
       return query_.get(index);

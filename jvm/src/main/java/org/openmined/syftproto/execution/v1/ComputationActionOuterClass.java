@@ -201,7 +201,7 @@ public final class ComputationActionOuterClass {
   /**
    * Protobuf type {@code syft_proto.execution.v1.ComputationAction}
    */
-  public  static final class ComputationAction extends
+  public static final class ComputationAction extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.ComputationAction)
       ComputationActionOrBuilder {
@@ -454,6 +454,7 @@ public final class ComputationActionOuterClass {
      * <code>string command = 1[json_name = "command"];</code>
      * @return The command.
      */
+    @java.lang.Override
     public java.lang.String getCommand() {
       java.lang.Object ref = command_;
       if (ref instanceof java.lang.String) {
@@ -470,6 +471,7 @@ public final class ComputationActionOuterClass {
      * <code>string command = 1[json_name = "command"];</code>
      * @return The bytes for command.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getCommandBytes() {
       java.lang.Object ref = command_;
@@ -489,6 +491,7 @@ public final class ComputationActionOuterClass {
      * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
      * @return Whether the targetId field is set.
      */
+    @java.lang.Override
     public boolean hasTargetId() {
       return targetCase_ == 9;
     }
@@ -496,6 +499,7 @@ public final class ComputationActionOuterClass {
      * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
      * @return The targetId.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getTargetId() {
       if (targetCase_ == 9) {
          return (org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_;
@@ -505,6 +509,7 @@ public final class ComputationActionOuterClass {
     /**
      * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getTargetIdOrBuilder() {
       if (targetCase_ == 9) {
          return (org.openmined.syftproto.types.syft.v1.IdOuterClass.Id) target_;
@@ -517,6 +522,7 @@ public final class ComputationActionOuterClass {
      * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
      * @return Whether the targetPointer field is set.
      */
+    @java.lang.Override
     public boolean hasTargetPointer() {
       return targetCase_ == 2;
     }
@@ -524,6 +530,7 @@ public final class ComputationActionOuterClass {
      * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
      * @return The targetPointer.
      */
+    @java.lang.Override
     public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getTargetPointer() {
       if (targetCase_ == 2) {
          return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_;
@@ -533,6 +540,7 @@ public final class ComputationActionOuterClass {
     /**
      * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getTargetPointerOrBuilder() {
       if (targetCase_ == 2) {
          return (org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor) target_;
@@ -545,6 +553,7 @@ public final class ComputationActionOuterClass {
      * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
      * @return Whether the targetPlaceholderId field is set.
      */
+    @java.lang.Override
     public boolean hasTargetPlaceholderId() {
       return targetCase_ == 3;
     }
@@ -552,6 +561,7 @@ public final class ComputationActionOuterClass {
      * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
      * @return The targetPlaceholderId.
      */
+    @java.lang.Override
     public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getTargetPlaceholderId() {
       if (targetCase_ == 3) {
          return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) target_;
@@ -561,6 +571,7 @@ public final class ComputationActionOuterClass {
     /**
      * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getTargetPlaceholderIdOrBuilder() {
       if (targetCase_ == 3) {
          return (org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId) target_;
@@ -573,6 +584,7 @@ public final class ComputationActionOuterClass {
      * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
      * @return Whether the targetTensor field is set.
      */
+    @java.lang.Override
     public boolean hasTargetTensor() {
       return targetCase_ == 4;
     }
@@ -580,6 +592,7 @@ public final class ComputationActionOuterClass {
      * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
      * @return The targetTensor.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTargetTensor() {
       if (targetCase_ == 4) {
          return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_;
@@ -589,6 +602,7 @@ public final class ComputationActionOuterClass {
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getTargetTensorOrBuilder() {
       if (targetCase_ == 4) {
          return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) target_;
@@ -601,12 +615,14 @@ public final class ComputationActionOuterClass {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
      */
+    @java.lang.Override
     public java.util.List<org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getArgsList() {
       return args_;
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder> 
         getArgsOrBuilderList() {
       return args_;
@@ -614,18 +630,21 @@ public final class ComputationActionOuterClass {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
      */
+    @java.lang.Override
     public int getArgsCount() {
       return args_.size();
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getArgs(int index) {
       return args_.get(index);
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Arg args = 5[json_name = "args"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.ArgOrBuilder getArgsOrBuilder(
         int index) {
       return args_.get(index);
@@ -661,6 +680,7 @@ public final class ComputationActionOuterClass {
      * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
 
+    @java.lang.Override
     public boolean containsKwargs(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
@@ -669,6 +689,7 @@ public final class ComputationActionOuterClass {
     /**
      * Use {@link #getKwargsMap()} instead.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getKwargs() {
       return getKwargsMap();
@@ -676,6 +697,7 @@ public final class ComputationActionOuterClass {
     /**
      * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
+    @java.lang.Override
 
     public java.util.Map<java.lang.String, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getKwargsMap() {
       return internalGetKwargs().getMap();
@@ -683,6 +705,7 @@ public final class ComputationActionOuterClass {
     /**
      * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
+    @java.lang.Override
 
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getKwargsOrDefault(
         java.lang.String key,
@@ -695,6 +718,7 @@ public final class ComputationActionOuterClass {
     /**
      * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
      */
+    @java.lang.Override
 
     public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getKwargsOrThrow(
         java.lang.String key) {
@@ -712,12 +736,14 @@ public final class ComputationActionOuterClass {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
      */
+    @java.lang.Override
     public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> getReturnIdsList() {
       return returnIds_;
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
         getReturnIdsOrBuilderList() {
       return returnIds_;
@@ -725,18 +751,21 @@ public final class ComputationActionOuterClass {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
      */
+    @java.lang.Override
     public int getReturnIdsCount() {
       return returnIds_.size();
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getReturnIds(int index) {
       return returnIds_.get(index);
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id return_ids = 7[json_name = "returnIds"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getReturnIdsOrBuilder(
         int index) {
       return returnIds_.get(index);
@@ -747,12 +776,14 @@ public final class ComputationActionOuterClass {
     /**
      * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
+    @java.lang.Override
     public java.util.List<org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId> getReturnPlaceholderIdsList() {
       return returnPlaceholderIds_;
     }
     /**
      * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
+    @java.lang.Override
     public java.util.List<? extends org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder> 
         getReturnPlaceholderIdsOrBuilderList() {
       return returnPlaceholderIds_;
@@ -760,18 +791,21 @@ public final class ComputationActionOuterClass {
     /**
      * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
+    @java.lang.Override
     public int getReturnPlaceholderIdsCount() {
       return returnPlaceholderIds_.size();
     }
     /**
      * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getReturnPlaceholderIds(int index) {
       return returnPlaceholderIds_.get(index);
     }
     /**
      * <code>repeated .syft_proto.execution.v1.PlaceholderId return_placeholder_ids = 8[json_name = "returnPlaceholderIds"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getReturnPlaceholderIdsOrBuilder(
         int index) {
       return returnPlaceholderIds_.get(index);
@@ -1513,6 +1547,7 @@ public final class ComputationActionOuterClass {
        * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
        * @return Whether the targetId field is set.
        */
+      @java.lang.Override
       public boolean hasTargetId() {
         return targetCase_ == 9;
       }
@@ -1520,6 +1555,7 @@ public final class ComputationActionOuterClass {
        * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
        * @return The targetId.
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getTargetId() {
         if (targetIdBuilder_ == null) {
           if (targetCase_ == 9) {
@@ -1613,6 +1649,7 @@ public final class ComputationActionOuterClass {
       /**
        * <code>.syft_proto.types.syft.v1.Id target_id = 9[json_name = "targetId"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getTargetIdOrBuilder() {
         if ((targetCase_ == 9) && (targetIdBuilder_ != null)) {
           return targetIdBuilder_.getMessageOrBuilder();
@@ -1651,6 +1688,7 @@ public final class ComputationActionOuterClass {
        * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        * @return Whether the targetPointer field is set.
        */
+      @java.lang.Override
       public boolean hasTargetPointer() {
         return targetCase_ == 2;
       }
@@ -1658,6 +1696,7 @@ public final class ComputationActionOuterClass {
        * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        * @return The targetPointer.
        */
+      @java.lang.Override
       public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensor getTargetPointer() {
         if (targetPointerBuilder_ == null) {
           if (targetCase_ == 2) {
@@ -1751,6 +1790,7 @@ public final class ComputationActionOuterClass {
       /**
        * <code>.syft_proto.generic.pointers.v1.PointerTensor target_pointer = 2[json_name = "targetPointer"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.generic.pointers.v1.PointerTensorOuterClass.PointerTensorOrBuilder getTargetPointerOrBuilder() {
         if ((targetCase_ == 2) && (targetPointerBuilder_ != null)) {
           return targetPointerBuilder_.getMessageOrBuilder();
@@ -1789,6 +1829,7 @@ public final class ComputationActionOuterClass {
        * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
        * @return Whether the targetPlaceholderId field is set.
        */
+      @java.lang.Override
       public boolean hasTargetPlaceholderId() {
         return targetCase_ == 3;
       }
@@ -1796,6 +1837,7 @@ public final class ComputationActionOuterClass {
        * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
        * @return The targetPlaceholderId.
        */
+      @java.lang.Override
       public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderId getTargetPlaceholderId() {
         if (targetPlaceholderIdBuilder_ == null) {
           if (targetCase_ == 3) {
@@ -1889,6 +1931,7 @@ public final class ComputationActionOuterClass {
       /**
        * <code>.syft_proto.execution.v1.PlaceholderId target_placeholder_id = 3[json_name = "targetPlaceholderId"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.execution.v1.PlaceholderIdOuterClass.PlaceholderIdOrBuilder getTargetPlaceholderIdOrBuilder() {
         if ((targetCase_ == 3) && (targetPlaceholderIdBuilder_ != null)) {
           return targetPlaceholderIdBuilder_.getMessageOrBuilder();
@@ -1927,6 +1970,7 @@ public final class ComputationActionOuterClass {
        * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
        * @return Whether the targetTensor field is set.
        */
+      @java.lang.Override
       public boolean hasTargetTensor() {
         return targetCase_ == 4;
       }
@@ -1934,6 +1978,7 @@ public final class ComputationActionOuterClass {
        * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
        * @return The targetTensor.
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTargetTensor() {
         if (targetTensorBuilder_ == null) {
           if (targetCase_ == 4) {
@@ -2027,6 +2072,7 @@ public final class ComputationActionOuterClass {
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor target_tensor = 4[json_name = "targetTensor"];</code>
        */
+      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getTargetTensorOrBuilder() {
         if ((targetCase_ == 4) && (targetTensorBuilder_ != null)) {
           return targetTensorBuilder_.getMessageOrBuilder();
@@ -2329,6 +2375,7 @@ public final class ComputationActionOuterClass {
        * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
        */
 
+      @java.lang.Override
       public boolean containsKwargs(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
@@ -2337,6 +2384,7 @@ public final class ComputationActionOuterClass {
       /**
        * Use {@link #getKwargsMap()} instead.
        */
+      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getKwargs() {
         return getKwargsMap();
@@ -2344,6 +2392,7 @@ public final class ComputationActionOuterClass {
       /**
        * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
        */
+      @java.lang.Override
 
       public java.util.Map<java.lang.String, org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg> getKwargsMap() {
         return internalGetKwargs().getMap();
@@ -2351,6 +2400,7 @@ public final class ComputationActionOuterClass {
       /**
        * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
        */
+      @java.lang.Override
 
       public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getKwargsOrDefault(
           java.lang.String key,
@@ -2363,6 +2413,7 @@ public final class ComputationActionOuterClass {
       /**
        * <code>map&lt;string, .syft_proto.types.syft.v1.Arg&gt; kwargs = 6[json_name = "kwargs"];</code>
        */
+      @java.lang.Override
 
       public org.openmined.syftproto.types.syft.v1.ArgOuterClass.Arg getKwargsOrThrow(
           java.lang.String key) {

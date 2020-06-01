@@ -119,7 +119,7 @@ public final class ProtocolOuterClass {
   /**
    * Protobuf type {@code syft_proto.execution.v1.Protocol}
    */
-  public  static final class Protocol extends
+  public static final class Protocol extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.Protocol)
       ProtocolOrBuilder {
@@ -265,6 +265,7 @@ public final class ProtocolOuterClass {
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      * @return Whether the id field is set.
      */
+    @java.lang.Override
     public boolean hasId() {
       return id_ != null;
     }
@@ -272,12 +273,14 @@ public final class ProtocolOuterClass {
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      * @return The id.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder() {
       return getId();
     }
@@ -288,6 +291,7 @@ public final class ProtocolOuterClass {
      * <code>string name = 2[json_name = "name"];</code>
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -304,6 +308,7 @@ public final class ProtocolOuterClass {
      * <code>string name = 2[json_name = "name"];</code>
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -348,6 +353,7 @@ public final class ProtocolOuterClass {
      * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
      */
 
+    @java.lang.Override
     public boolean containsRoles(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
@@ -356,6 +362,7 @@ public final class ProtocolOuterClass {
     /**
      * Use {@link #getRolesMap()} instead.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRoles() {
       return getRolesMap();
@@ -363,6 +370,7 @@ public final class ProtocolOuterClass {
     /**
      * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
      */
+    @java.lang.Override
 
     public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRolesMap() {
       return internalGetRoles().getMap();
@@ -370,6 +378,7 @@ public final class ProtocolOuterClass {
     /**
      * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
      */
+    @java.lang.Override
 
     public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrDefault(
         java.lang.String key,
@@ -382,6 +391,7 @@ public final class ProtocolOuterClass {
     /**
      * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
      */
+    @java.lang.Override
 
     public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrThrow(
         java.lang.String key) {
@@ -435,6 +445,7 @@ public final class ProtocolOuterClass {
      * <code>string description = 5[json_name = "description"];</code>
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -451,6 +462,7 @@ public final class ProtocolOuterClass {
      * <code>string description = 5[json_name = "description"];</code>
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1124,6 +1136,7 @@ public final class ProtocolOuterClass {
        * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
        */
 
+      @java.lang.Override
       public boolean containsRoles(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
@@ -1132,6 +1145,7 @@ public final class ProtocolOuterClass {
       /**
        * Use {@link #getRolesMap()} instead.
        */
+      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRoles() {
         return getRolesMap();
@@ -1139,6 +1153,7 @@ public final class ProtocolOuterClass {
       /**
        * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
        */
+      @java.lang.Override
 
       public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRolesMap() {
         return internalGetRoles().getMap();
@@ -1146,6 +1161,7 @@ public final class ProtocolOuterClass {
       /**
        * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
        */
+      @java.lang.Override
 
       public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrDefault(
           java.lang.String key,
@@ -1158,6 +1174,7 @@ public final class ProtocolOuterClass {
       /**
        * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 3[json_name = "roles"];</code>
        */
+      @java.lang.Override
 
       public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrThrow(
           java.lang.String key) {

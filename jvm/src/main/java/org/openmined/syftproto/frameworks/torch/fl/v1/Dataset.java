@@ -118,7 +118,7 @@ public final class Dataset {
   /**
    * Protobuf type {@code syft_proto.frameworks.torch.fl.v1.BaseDataset}
    */
-  public  static final class BaseDataset extends
+  public static final class BaseDataset extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.frameworks.torch.fl.v1.BaseDataset)
       BaseDatasetOrBuilder {
@@ -271,6 +271,7 @@ public final class Dataset {
      * <code>.syft_proto.types.torch.v1.TorchTensor data = 1[json_name = "data"];</code>
      * @return Whether the data field is set.
      */
+    @java.lang.Override
     public boolean hasData() {
       return data_ != null;
     }
@@ -278,12 +279,14 @@ public final class Dataset {
      * <code>.syft_proto.types.torch.v1.TorchTensor data = 1[json_name = "data"];</code>
      * @return The data.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getData() {
       return data_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : data_;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor data = 1[json_name = "data"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getDataOrBuilder() {
       return getData();
     }
@@ -294,6 +297,7 @@ public final class Dataset {
      * <code>.syft_proto.types.torch.v1.TorchTensor targets = 2[json_name = "targets"];</code>
      * @return Whether the targets field is set.
      */
+    @java.lang.Override
     public boolean hasTargets() {
       return targets_ != null;
     }
@@ -301,12 +305,14 @@ public final class Dataset {
      * <code>.syft_proto.types.torch.v1.TorchTensor targets = 2[json_name = "targets"];</code>
      * @return The targets.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getTargets() {
       return targets_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : targets_;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor targets = 2[json_name = "targets"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getTargetsOrBuilder() {
       return getTargets();
     }
@@ -317,6 +323,7 @@ public final class Dataset {
      * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
      * @return Whether the id field is set.
      */
+    @java.lang.Override
     public boolean hasId() {
       return id_ != null;
     }
@@ -324,12 +331,14 @@ public final class Dataset {
      * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
      * @return The id.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder() {
       return getId();
     }
@@ -375,6 +384,7 @@ public final class Dataset {
      * <code>string description = 5[json_name = "description"];</code>
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -391,6 +401,7 @@ public final class Dataset {
      * <code>string description = 5[json_name = "description"];</code>
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -411,6 +422,7 @@ public final class Dataset {
      * <code>.syft_proto.types.torch.v1.TorchTensor child = 6[json_name = "child"];</code>
      * @return Whether the child field is set.
      */
+    @java.lang.Override
     public boolean hasChild() {
       return child_ != null;
     }
@@ -418,12 +430,14 @@ public final class Dataset {
      * <code>.syft_proto.types.torch.v1.TorchTensor child = 6[json_name = "child"];</code>
      * @return The child.
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getChild() {
       return child_ == null ? org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance() : child_;
     }
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor child = 6[json_name = "child"];</code>
      */
+    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getChildOrBuilder() {
       return getChild();
     }

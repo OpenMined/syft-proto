@@ -20,6 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n#syft_proto/execution/v1/state.proto\x12\x17syft_proto.execution.v1\x1a*syft_proto/execution/v1/state_tensor.proto\x1a)syft_proto/execution/v1/placeholder.proto\"\x91\x01\n\x05State\x12H\n\x0cplaceholders\x18\x01 \x03(\x0b\x32$.syft_proto.execution.v1.PlaceholderR\x0cplaceholders\x12>\n\x07tensors\x18\x02 \x03(\x0b\x32$.syft_proto.execution.v1.StateTensorR\x07tensorsB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
   ,
   dependencies=[syft__proto_dot_execution_dot_v1_dot_state__tensor__pb2.DESCRIPTOR,syft__proto_dot_execution_dot_v1_dot_placeholder__pb2.DESCRIPTOR,])
@@ -33,6 +34,7 @@ _STATE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='placeholders', full_name='syft_proto.execution.v1.State.placeholders', index=0,
@@ -40,14 +42,14 @@ _STATE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='placeholders', file=DESCRIPTOR),
+      serialized_options=None, json_name='placeholders', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tensors', full_name='syft_proto.execution.v1.State.tensors', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='tensors', file=DESCRIPTOR),
+      serialized_options=None, json_name='tensors', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
