@@ -752,6 +752,8 @@ $root.syft_proto = (function() {
                  * Properties of a Placeholder.
                  * @memberof syft_proto.execution.v1
                  * @interface IPlaceholder
+                 * @property {syft_proto.types.torch.v1.ITorchTensor|null} [child_tensor] Placeholder child_tensor
+                 * @property {syft_proto.types.torch.v1.IParameter|null} [child_parameter] Placeholder child_parameter
                  * @property {syft_proto.types.syft.v1.IId|null} [id] Placeholder id
                  * @property {Array.<string>|null} [tags] Placeholder tags
                  * @property {string|null} [description] Placeholder description
@@ -773,6 +775,22 @@ $root.syft_proto = (function() {
                             if (properties[keys[i]] != null)
                                 this[keys[i]] = properties[keys[i]];
                 }
+
+                /**
+                 * Placeholder child_tensor.
+                 * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} child_tensor
+                 * @memberof syft_proto.execution.v1.Placeholder
+                 * @instance
+                 */
+                Placeholder.prototype.child_tensor = null;
+
+                /**
+                 * Placeholder child_parameter.
+                 * @member {syft_proto.types.torch.v1.IParameter|null|undefined} child_parameter
+                 * @memberof syft_proto.execution.v1.Placeholder
+                 * @instance
+                 */
+                Placeholder.prototype.child_parameter = null;
 
                 /**
                  * Placeholder id.
@@ -806,6 +824,20 @@ $root.syft_proto = (function() {
                  */
                 Placeholder.prototype.expected_shape = null;
 
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+
+                /**
+                 * Placeholder child.
+                 * @member {"child_tensor"|"child_parameter"|undefined} child
+                 * @memberof syft_proto.execution.v1.Placeholder
+                 * @instance
+                 */
+                Object.defineProperty(Placeholder.prototype, "child", {
+                    get: $util.oneOfGetter($oneOfFields = ["child_tensor", "child_parameter"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
                 /**
                  * Creates a new Placeholder instance using the specified properties.
                  * @function create
@@ -830,15 +862,19 @@ $root.syft_proto = (function() {
                 Placeholder.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
+                    if (message.child_tensor != null && message.hasOwnProperty("child_tensor"))
+                        $root.syft_proto.types.torch.v1.TorchTensor.encode(message.child_tensor, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.child_parameter != null && message.hasOwnProperty("child_parameter"))
+                        $root.syft_proto.types.torch.v1.Parameter.encode(message.child_parameter, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.id != null && message.hasOwnProperty("id"))
-                        $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     if (message.tags != null && message.tags.length)
                         for (var i = 0; i < message.tags.length; ++i)
-                            writer.uint32(/* id 2, wireType 2 =*/18).string(message.tags[i]);
+                            writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
                     if (message.description != null && message.hasOwnProperty("description"))
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.description);
+                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
                     if (message.expected_shape != null && message.hasOwnProperty("expected_shape"))
-                        $root.syft_proto.types.syft.v1.Shape.encode(message.expected_shape, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                        $root.syft_proto.types.syft.v1.Shape.encode(message.expected_shape, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                     return writer;
                 };
 
@@ -874,17 +910,23 @@ $root.syft_proto = (function() {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            message.child_tensor = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
                             break;
                         case 2:
+                            message.child_parameter = $root.syft_proto.types.torch.v1.Parameter.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            break;
+                        case 4:
                             if (!(message.tags && message.tags.length))
                                 message.tags = [];
                             message.tags.push(reader.string());
                             break;
-                        case 3:
+                        case 5:
                             message.description = reader.string();
                             break;
-                        case 4:
+                        case 6:
                             message.expected_shape = $root.syft_proto.types.syft.v1.Shape.decode(reader, reader.uint32());
                             break;
                         default:
@@ -922,6 +964,25 @@ $root.syft_proto = (function() {
                 Placeholder.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
+                    var properties = {};
+                    if (message.child_tensor != null && message.hasOwnProperty("child_tensor")) {
+                        properties.child = 1;
+                        {
+                            var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.child_tensor);
+                            if (error)
+                                return "child_tensor." + error;
+                        }
+                    }
+                    if (message.child_parameter != null && message.hasOwnProperty("child_parameter")) {
+                        if (properties.child === 1)
+                            return "child: multiple values";
+                        properties.child = 1;
+                        {
+                            var error = $root.syft_proto.types.torch.v1.Parameter.verify(message.child_parameter);
+                            if (error)
+                                return "child_parameter." + error;
+                        }
+                    }
                     if (message.id != null && message.hasOwnProperty("id")) {
                         var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
                         if (error)
@@ -957,6 +1018,16 @@ $root.syft_proto = (function() {
                     if (object instanceof $root.syft_proto.execution.v1.Placeholder)
                         return object;
                     var message = new $root.syft_proto.execution.v1.Placeholder();
+                    if (object.child_tensor != null) {
+                        if (typeof object.child_tensor !== "object")
+                            throw TypeError(".syft_proto.execution.v1.Placeholder.child_tensor: object expected");
+                        message.child_tensor = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.child_tensor);
+                    }
+                    if (object.child_parameter != null) {
+                        if (typeof object.child_parameter !== "object")
+                            throw TypeError(".syft_proto.execution.v1.Placeholder.child_parameter: object expected");
+                        message.child_parameter = $root.syft_proto.types.torch.v1.Parameter.fromObject(object.child_parameter);
+                    }
                     if (object.id != null) {
                         if (typeof object.id !== "object")
                             throw TypeError(".syft_proto.execution.v1.Placeholder.id: object expected");
@@ -998,6 +1069,16 @@ $root.syft_proto = (function() {
                         object.id = null;
                         object.description = "";
                         object.expected_shape = null;
+                    }
+                    if (message.child_tensor != null && message.hasOwnProperty("child_tensor")) {
+                        object.child_tensor = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.child_tensor, options);
+                        if (options.oneofs)
+                            object.child = "child_tensor";
+                    }
+                    if (message.child_parameter != null && message.hasOwnProperty("child_parameter")) {
+                        object.child_parameter = $root.syft_proto.types.torch.v1.Parameter.toObject(message.child_parameter, options);
+                        if (options.oneofs)
+                            object.child = "child_parameter";
                     }
                     if (message.id != null && message.hasOwnProperty("id"))
                         object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);

@@ -19,39 +19,69 @@ public final class PlaceholderOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+     * @return Whether the childTensor field is set.
+     */
+    boolean hasChildTensor();
+    /**
+     * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+     * @return The childTensor.
+     */
+    org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getChildTensor();
+    /**
+     * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+     */
+    org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getChildTensorOrBuilder();
+
+    /**
+     * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+     * @return Whether the childParameter field is set.
+     */
+    boolean hasChildParameter();
+    /**
+     * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+     * @return The childParameter.
+     */
+    org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getChildParameter();
+    /**
+     * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+     */
+    org.openmined.syftproto.types.torch.v1.ParameterOuterClass.ParameterOrBuilder getChildParameterOrBuilder();
+
+    /**
+     * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
      * @return Whether the id field is set.
      */
     boolean hasId();
     /**
-     * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
      * @return The id.
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId();
     /**
-     * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
      */
     org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder();
 
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @return The count of tags.
      */
     int getTagsCount();
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @param index The index of the element to return.
      * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the tags at the given index.
      */
@@ -59,31 +89,33 @@ public final class PlaceholderOuterClass {
         getTagsBytes(int index);
 
     /**
-     * <code>string description = 3[json_name = "description"];</code>
+     * <code>string description = 5[json_name = "description"];</code>
      * @return The description.
      */
     java.lang.String getDescription();
     /**
-     * <code>string description = 3[json_name = "description"];</code>
+     * <code>string description = 5[json_name = "description"];</code>
      * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
-     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
      * @return Whether the expectedShape field is set.
      */
     boolean hasExpectedShape();
     /**
-     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
      * @return The expectedShape.
      */
     org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getExpectedShape();
     /**
-     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
      */
     org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder getExpectedShapeOrBuilder();
+
+    public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.ChildCase getChildCase();
   }
   /**
    * Protobuf type {@code syft_proto.execution.v1.Placeholder}
@@ -134,6 +166,34 @@ public final class PlaceholderOuterClass {
               done = true;
               break;
             case 10: {
+              org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder subBuilder = null;
+              if (childCase_ == 1) {
+                subBuilder = ((org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) child_).toBuilder();
+              }
+              child_ =
+                  input.readMessage(org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) child_);
+                child_ = subBuilder.buildPartial();
+              }
+              childCase_ = 1;
+              break;
+            }
+            case 18: {
+              org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.Builder subBuilder = null;
+              if (childCase_ == 2) {
+                subBuilder = ((org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) child_).toBuilder();
+              }
+              child_ =
+                  input.readMessage(org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) child_);
+                child_ = subBuilder.buildPartial();
+              }
+              childCase_ = 2;
+              break;
+            }
+            case 26: {
               org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder subBuilder = null;
               if (id_ != null) {
                 subBuilder = id_.toBuilder();
@@ -146,7 +206,7 @@ public final class PlaceholderOuterClass {
 
               break;
             }
-            case 18: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
@@ -155,13 +215,13 @@ public final class PlaceholderOuterClass {
               tags_.add(s);
               break;
             }
-            case 26: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-            case 34: {
+            case 50: {
               org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder subBuilder = null;
               if (expectedShape_ != null) {
                 subBuilder = expectedShape_.toBuilder();
@@ -209,10 +269,113 @@ public final class PlaceholderOuterClass {
               org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.class, org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
+    private int childCase_ = 0;
+    private java.lang.Object child_;
+    public enum ChildCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      CHILD_TENSOR(1),
+      CHILD_PARAMETER(2),
+      CHILD_NOT_SET(0);
+      private final int value;
+      private ChildCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ChildCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ChildCase forNumber(int value) {
+        switch (value) {
+          case 1: return CHILD_TENSOR;
+          case 2: return CHILD_PARAMETER;
+          case 0: return CHILD_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ChildCase
+    getChildCase() {
+      return ChildCase.forNumber(
+          childCase_);
+    }
+
+    public static final int CHILD_TENSOR_FIELD_NUMBER = 1;
+    /**
+     * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+     * @return Whether the childTensor field is set.
+     */
+    @java.lang.Override
+    public boolean hasChildTensor() {
+      return childCase_ == 1;
+    }
+    /**
+     * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+     * @return The childTensor.
+     */
+    @java.lang.Override
+    public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getChildTensor() {
+      if (childCase_ == 1) {
+         return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) child_;
+      }
+      return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+    }
+    /**
+     * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+     */
+    @java.lang.Override
+    public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getChildTensorOrBuilder() {
+      if (childCase_ == 1) {
+         return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) child_;
+      }
+      return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+    }
+
+    public static final int CHILD_PARAMETER_FIELD_NUMBER = 2;
+    /**
+     * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+     * @return Whether the childParameter field is set.
+     */
+    @java.lang.Override
+    public boolean hasChildParameter() {
+      return childCase_ == 2;
+    }
+    /**
+     * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+     * @return The childParameter.
+     */
+    @java.lang.Override
+    public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getChildParameter() {
+      if (childCase_ == 2) {
+         return (org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) child_;
+      }
+      return org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.getDefaultInstance();
+    }
+    /**
+     * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+     */
+    @java.lang.Override
+    public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.ParameterOrBuilder getChildParameterOrBuilder() {
+      if (childCase_ == 2) {
+         return (org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) child_;
+      }
+      return org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.getDefaultInstance();
+    }
+
+    public static final int ID_FIELD_NUMBER = 3;
     private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id id_;
     /**
-     * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
      * @return Whether the id field is set.
      */
     @java.lang.Override
@@ -220,7 +383,7 @@ public final class PlaceholderOuterClass {
       return id_ != null;
     }
     /**
-     * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
      * @return The id.
      */
     @java.lang.Override
@@ -228,17 +391,17 @@ public final class PlaceholderOuterClass {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
     }
     /**
-     * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+     * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
      */
     @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder() {
       return getId();
     }
 
-    public static final int TAGS_FIELD_NUMBER = 2;
+    public static final int TAGS_FIELD_NUMBER = 4;
     private com.google.protobuf.LazyStringList tags_;
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
@@ -246,14 +409,14 @@ public final class PlaceholderOuterClass {
       return tags_;
     }
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @param index The index of the element to return.
      * @return The tags at the given index.
      */
@@ -261,7 +424,7 @@ public final class PlaceholderOuterClass {
       return tags_.get(index);
     }
     /**
-     * <code>repeated string tags = 2[json_name = "tags"];</code>
+     * <code>repeated string tags = 4[json_name = "tags"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the tags at the given index.
      */
@@ -270,10 +433,10 @@ public final class PlaceholderOuterClass {
       return tags_.getByteString(index);
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 3;
+    public static final int DESCRIPTION_FIELD_NUMBER = 5;
     private volatile java.lang.Object description_;
     /**
-     * <code>string description = 3[json_name = "description"];</code>
+     * <code>string description = 5[json_name = "description"];</code>
      * @return The description.
      */
     @java.lang.Override
@@ -290,7 +453,7 @@ public final class PlaceholderOuterClass {
       }
     }
     /**
-     * <code>string description = 3[json_name = "description"];</code>
+     * <code>string description = 5[json_name = "description"];</code>
      * @return The bytes for description.
      */
     @java.lang.Override
@@ -308,10 +471,10 @@ public final class PlaceholderOuterClass {
       }
     }
 
-    public static final int EXPECTED_SHAPE_FIELD_NUMBER = 4;
+    public static final int EXPECTED_SHAPE_FIELD_NUMBER = 6;
     private org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape expectedShape_;
     /**
-     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
      * @return Whether the expectedShape field is set.
      */
     @java.lang.Override
@@ -319,7 +482,7 @@ public final class PlaceholderOuterClass {
       return expectedShape_ != null;
     }
     /**
-     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
      * @return The expectedShape.
      */
     @java.lang.Override
@@ -327,7 +490,7 @@ public final class PlaceholderOuterClass {
       return expectedShape_ == null ? org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.getDefaultInstance() : expectedShape_;
     }
     /**
-     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+     * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
      */
     @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder getExpectedShapeOrBuilder() {
@@ -348,17 +511,23 @@ public final class PlaceholderOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (childCase_ == 1) {
+        output.writeMessage(1, (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) child_);
+      }
+      if (childCase_ == 2) {
+        output.writeMessage(2, (org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) child_);
+      }
       if (id_ != null) {
-        output.writeMessage(1, getId());
+        output.writeMessage(3, getId());
       }
       for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tags_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
       }
       if (!getDescriptionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
       if (expectedShape_ != null) {
-        output.writeMessage(4, getExpectedShape());
+        output.writeMessage(6, getExpectedShape());
       }
       unknownFields.writeTo(output);
     }
@@ -369,9 +538,17 @@ public final class PlaceholderOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (childCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) child_);
+      }
+      if (childCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) child_);
+      }
       if (id_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getId());
+          .computeMessageSize(3, getId());
       }
       {
         int dataSize = 0;
@@ -382,11 +559,11 @@ public final class PlaceholderOuterClass {
         size += 1 * getTagsList().size();
       }
       if (!getDescriptionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
       }
       if (expectedShape_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getExpectedShape());
+          .computeMessageSize(6, getExpectedShape());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -417,6 +594,19 @@ public final class PlaceholderOuterClass {
         if (!getExpectedShape()
             .equals(other.getExpectedShape())) return false;
       }
+      if (!getChildCase().equals(other.getChildCase())) return false;
+      switch (childCase_) {
+        case 1:
+          if (!getChildTensor()
+              .equals(other.getChildTensor())) return false;
+          break;
+        case 2:
+          if (!getChildParameter()
+              .equals(other.getChildParameter())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -441,6 +631,18 @@ public final class PlaceholderOuterClass {
       if (hasExpectedShape()) {
         hash = (37 * hash) + EXPECTED_SHAPE_FIELD_NUMBER;
         hash = (53 * hash) + getExpectedShape().hashCode();
+      }
+      switch (childCase_) {
+        case 1:
+          hash = (37 * hash) + CHILD_TENSOR_FIELD_NUMBER;
+          hash = (53 * hash) + getChildTensor().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + CHILD_PARAMETER_FIELD_NUMBER;
+          hash = (53 * hash) + getChildParameter().hashCode();
+          break;
+        case 0:
+        default:
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -591,6 +793,8 @@ public final class PlaceholderOuterClass {
           expectedShape_ = null;
           expectedShapeBuilder_ = null;
         }
+        childCase_ = 0;
+        child_ = null;
         return this;
       }
 
@@ -618,6 +822,20 @@ public final class PlaceholderOuterClass {
       public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder buildPartial() {
         org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder result = new org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder(this);
         int from_bitField0_ = bitField0_;
+        if (childCase_ == 1) {
+          if (childTensorBuilder_ == null) {
+            result.child_ = child_;
+          } else {
+            result.child_ = childTensorBuilder_.build();
+          }
+        }
+        if (childCase_ == 2) {
+          if (childParameterBuilder_ == null) {
+            result.child_ = child_;
+          } else {
+            result.child_ = childParameterBuilder_.build();
+          }
+        }
         if (idBuilder_ == null) {
           result.id_ = id_;
         } else {
@@ -634,6 +852,7 @@ public final class PlaceholderOuterClass {
         } else {
           result.expectedShape_ = expectedShapeBuilder_.build();
         }
+        result.childCase_ = childCase_;
         onBuilt();
         return result;
       }
@@ -702,6 +921,19 @@ public final class PlaceholderOuterClass {
         if (other.hasExpectedShape()) {
           mergeExpectedShape(other.getExpectedShape());
         }
+        switch (other.getChildCase()) {
+          case CHILD_TENSOR: {
+            mergeChildTensor(other.getChildTensor());
+            break;
+          }
+          case CHILD_PARAMETER: {
+            mergeChildParameter(other.getChildParameter());
+            break;
+          }
+          case CHILD_NOT_SET: {
+            break;
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -730,20 +962,317 @@ public final class PlaceholderOuterClass {
         }
         return this;
       }
+      private int childCase_ = 0;
+      private java.lang.Object child_;
+      public ChildCase
+          getChildCase() {
+        return ChildCase.forNumber(
+            childCase_);
+      }
+
+      public Builder clearChild() {
+        childCase_ = 0;
+        child_ = null;
+        onChanged();
+        return this;
+      }
+
       private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> childTensorBuilder_;
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+       * @return Whether the childTensor field is set.
+       */
+      @java.lang.Override
+      public boolean hasChildTensor() {
+        return childCase_ == 1;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+       * @return The childTensor.
+       */
+      @java.lang.Override
+      public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getChildTensor() {
+        if (childTensorBuilder_ == null) {
+          if (childCase_ == 1) {
+            return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) child_;
+          }
+          return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+        } else {
+          if (childCase_ == 1) {
+            return childTensorBuilder_.getMessage();
+          }
+          return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+       */
+      public Builder setChildTensor(org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor value) {
+        if (childTensorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          child_ = value;
+          onChanged();
+        } else {
+          childTensorBuilder_.setMessage(value);
+        }
+        childCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+       */
+      public Builder setChildTensor(
+          org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder builderForValue) {
+        if (childTensorBuilder_ == null) {
+          child_ = builderForValue.build();
+          onChanged();
+        } else {
+          childTensorBuilder_.setMessage(builderForValue.build());
+        }
+        childCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+       */
+      public Builder mergeChildTensor(org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor value) {
+        if (childTensorBuilder_ == null) {
+          if (childCase_ == 1 &&
+              child_ != org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance()) {
+            child_ = org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.newBuilder((org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) child_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            child_ = value;
+          }
+          onChanged();
+        } else {
+          if (childCase_ == 1) {
+            childTensorBuilder_.mergeFrom(value);
+          }
+          childTensorBuilder_.setMessage(value);
+        }
+        childCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+       */
+      public Builder clearChildTensor() {
+        if (childTensorBuilder_ == null) {
+          if (childCase_ == 1) {
+            childCase_ = 0;
+            child_ = null;
+            onChanged();
+          }
+        } else {
+          if (childCase_ == 1) {
+            childCase_ = 0;
+            child_ = null;
+          }
+          childTensorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+       */
+      public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder getChildTensorBuilder() {
+        return getChildTensorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+       */
+      @java.lang.Override
+      public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getChildTensorOrBuilder() {
+        if ((childCase_ == 1) && (childTensorBuilder_ != null)) {
+          return childTensorBuilder_.getMessageOrBuilder();
+        } else {
+          if (childCase_ == 1) {
+            return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) child_;
+          }
+          return org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder> 
+          getChildTensorFieldBuilder() {
+        if (childTensorBuilder_ == null) {
+          if (!(childCase_ == 1)) {
+            child_ = org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.getDefaultInstance();
+          }
+          childTensorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor.Builder, org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder>(
+                  (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) child_,
+                  getParentForChildren(),
+                  isClean());
+          child_ = null;
+        }
+        childCase_ = 1;
+        onChanged();;
+        return childTensorBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter, org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.Builder, org.openmined.syftproto.types.torch.v1.ParameterOuterClass.ParameterOrBuilder> childParameterBuilder_;
+      /**
+       * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+       * @return Whether the childParameter field is set.
+       */
+      @java.lang.Override
+      public boolean hasChildParameter() {
+        return childCase_ == 2;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+       * @return The childParameter.
+       */
+      @java.lang.Override
+      public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getChildParameter() {
+        if (childParameterBuilder_ == null) {
+          if (childCase_ == 2) {
+            return (org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) child_;
+          }
+          return org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.getDefaultInstance();
+        } else {
+          if (childCase_ == 2) {
+            return childParameterBuilder_.getMessage();
+          }
+          return org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+       */
+      public Builder setChildParameter(org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter value) {
+        if (childParameterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          child_ = value;
+          onChanged();
+        } else {
+          childParameterBuilder_.setMessage(value);
+        }
+        childCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+       */
+      public Builder setChildParameter(
+          org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.Builder builderForValue) {
+        if (childParameterBuilder_ == null) {
+          child_ = builderForValue.build();
+          onChanged();
+        } else {
+          childParameterBuilder_.setMessage(builderForValue.build());
+        }
+        childCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+       */
+      public Builder mergeChildParameter(org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter value) {
+        if (childParameterBuilder_ == null) {
+          if (childCase_ == 2 &&
+              child_ != org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.getDefaultInstance()) {
+            child_ = org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.newBuilder((org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) child_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            child_ = value;
+          }
+          onChanged();
+        } else {
+          if (childCase_ == 2) {
+            childParameterBuilder_.mergeFrom(value);
+          }
+          childParameterBuilder_.setMessage(value);
+        }
+        childCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+       */
+      public Builder clearChildParameter() {
+        if (childParameterBuilder_ == null) {
+          if (childCase_ == 2) {
+            childCase_ = 0;
+            child_ = null;
+            onChanged();
+          }
+        } else {
+          if (childCase_ == 2) {
+            childCase_ = 0;
+            child_ = null;
+          }
+          childParameterBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+       */
+      public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.Builder getChildParameterBuilder() {
+        return getChildParameterFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+       */
+      @java.lang.Override
+      public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.ParameterOrBuilder getChildParameterOrBuilder() {
+        if ((childCase_ == 2) && (childParameterBuilder_ != null)) {
+          return childParameterBuilder_.getMessageOrBuilder();
+        } else {
+          if (childCase_ == 2) {
+            return (org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) child_;
+          }
+          return org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter, org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.Builder, org.openmined.syftproto.types.torch.v1.ParameterOuterClass.ParameterOrBuilder> 
+          getChildParameterFieldBuilder() {
+        if (childParameterBuilder_ == null) {
+          if (!(childCase_ == 2)) {
+            child_ = org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.getDefaultInstance();
+          }
+          childParameterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter, org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter.Builder, org.openmined.syftproto.types.torch.v1.ParameterOuterClass.ParameterOrBuilder>(
+                  (org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) child_,
+                  getParentForChildren(),
+                  isClean());
+          child_ = null;
+        }
+        childCase_ = 2;
+        onChanged();;
+        return childParameterBuilder_;
+      }
 
       private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id id_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> idBuilder_;
       /**
-       * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
        * @return Whether the id field is set.
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
        * @return The id.
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
@@ -754,7 +1283,7 @@ public final class PlaceholderOuterClass {
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
        */
       public Builder setId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
         if (idBuilder_ == null) {
@@ -770,7 +1299,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
        */
       public Builder setId(
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
@@ -784,7 +1313,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
        */
       public Builder mergeId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
         if (idBuilder_ == null) {
@@ -802,7 +1331,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
        */
       public Builder clearId() {
         if (idBuilder_ == null) {
@@ -816,7 +1345,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getIdBuilder() {
         
@@ -824,7 +1353,7 @@ public final class PlaceholderOuterClass {
         return getIdFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
        */
       public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder() {
         if (idBuilder_ != null) {
@@ -835,7 +1364,7 @@ public final class PlaceholderOuterClass {
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
+       * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
@@ -859,7 +1388,7 @@ public final class PlaceholderOuterClass {
          }
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
@@ -867,14 +1396,14 @@ public final class PlaceholderOuterClass {
         return tags_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @param index The index of the element to return.
        * @return The tags at the given index.
        */
@@ -882,7 +1411,7 @@ public final class PlaceholderOuterClass {
         return tags_.get(index);
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @param index The index of the value to return.
        * @return The bytes of the tags at the given index.
        */
@@ -891,7 +1420,7 @@ public final class PlaceholderOuterClass {
         return tags_.getByteString(index);
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @param index The index to set the value at.
        * @param value The tags to set.
        * @return This builder for chaining.
@@ -907,7 +1436,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @param value The tags to add.
        * @return This builder for chaining.
        */
@@ -922,7 +1451,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @param values The tags to add.
        * @return This builder for chaining.
        */
@@ -935,7 +1464,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTags() {
@@ -945,7 +1474,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>repeated string tags = 2[json_name = "tags"];</code>
+       * <code>repeated string tags = 4[json_name = "tags"];</code>
        * @param value The bytes of the tags to add.
        * @return This builder for chaining.
        */
@@ -963,7 +1492,7 @@ public final class PlaceholderOuterClass {
 
       private java.lang.Object description_ = "";
       /**
-       * <code>string description = 3[json_name = "description"];</code>
+       * <code>string description = 5[json_name = "description"];</code>
        * @return The description.
        */
       public java.lang.String getDescription() {
@@ -979,7 +1508,7 @@ public final class PlaceholderOuterClass {
         }
       }
       /**
-       * <code>string description = 3[json_name = "description"];</code>
+       * <code>string description = 5[json_name = "description"];</code>
        * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
@@ -996,7 +1525,7 @@ public final class PlaceholderOuterClass {
         }
       }
       /**
-       * <code>string description = 3[json_name = "description"];</code>
+       * <code>string description = 5[json_name = "description"];</code>
        * @param value The description to set.
        * @return This builder for chaining.
        */
@@ -1011,7 +1540,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>string description = 3[json_name = "description"];</code>
+       * <code>string description = 5[json_name = "description"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
@@ -1021,7 +1550,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>string description = 3[json_name = "description"];</code>
+       * <code>string description = 5[json_name = "description"];</code>
        * @param value The bytes for description to set.
        * @return This builder for chaining.
        */
@@ -1041,14 +1570,14 @@ public final class PlaceholderOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder> expectedShapeBuilder_;
       /**
-       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
        * @return Whether the expectedShape field is set.
        */
       public boolean hasExpectedShape() {
         return expectedShapeBuilder_ != null || expectedShape_ != null;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
        * @return The expectedShape.
        */
       public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getExpectedShape() {
@@ -1059,7 +1588,7 @@ public final class PlaceholderOuterClass {
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
        */
       public Builder setExpectedShape(org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape value) {
         if (expectedShapeBuilder_ == null) {
@@ -1075,7 +1604,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
        */
       public Builder setExpectedShape(
           org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder builderForValue) {
@@ -1089,7 +1618,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
        */
       public Builder mergeExpectedShape(org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape value) {
         if (expectedShapeBuilder_ == null) {
@@ -1107,7 +1636,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
        */
       public Builder clearExpectedShape() {
         if (expectedShapeBuilder_ == null) {
@@ -1121,7 +1650,7 @@ public final class PlaceholderOuterClass {
         return this;
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
        */
       public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder getExpectedShapeBuilder() {
         
@@ -1129,7 +1658,7 @@ public final class PlaceholderOuterClass {
         return getExpectedShapeFieldBuilder().getBuilder();
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
        */
       public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder getExpectedShapeOrBuilder() {
         if (expectedShapeBuilder_ != null) {
@@ -1140,7 +1669,7 @@ public final class PlaceholderOuterClass {
         }
       }
       /**
-       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 4[json_name = "expectedShape"];</code>
+       * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.Builder, org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder> 
@@ -1225,28 +1754,38 @@ public final class PlaceholderOuterClass {
       "\n)syft_proto/execution/v1/placeholder.pr" +
       "oto\022\027syft_proto.execution.v1\032!syft_proto" +
       "/types/syft/v1/id.proto\032$syft_proto/type" +
-      "s/syft/v1/shape.proto\"\271\001\n\013Placeholder\022,\n" +
-      "\002id\030\001 \001(\0132\034.syft_proto.types.syft.v1.IdR" +
-      "\002id\022\022\n\004tags\030\002 \003(\tR\004tags\022 \n\013description\030\003" +
-      " \001(\tR\013description\022F\n\016expected_shape\030\004 \001(" +
-      "\0132\037.syft_proto.types.syft.v1.ShapeR\rexpe" +
-      "ctedShapeB&\n$org.openmined.syftproto.exe" +
-      "cution.v1b\006proto3"
+      "s/syft/v1/shape.proto\032&syft_proto/types/" +
+      "torch/v1/tensor.proto\032)syft_proto/types/" +
+      "torch/v1/parameter.proto\"\340\002\n\013Placeholder" +
+      "\022K\n\014child_tensor\030\001 \001(\0132&.syft_proto.type" +
+      "s.torch.v1.TorchTensorH\000R\013childTensor\022O\n" +
+      "\017child_parameter\030\002 \001(\0132$.syft_proto.type" +
+      "s.torch.v1.ParameterH\000R\016childParameter\022," +
+      "\n\002id\030\003 \001(\0132\034.syft_proto.types.syft.v1.Id" +
+      "R\002id\022\022\n\004tags\030\004 \003(\tR\004tags\022 \n\013description\030" +
+      "\005 \001(\tR\013description\022F\n\016expected_shape\030\006 \001" +
+      "(\0132\037.syft_proto.types.syft.v1.ShapeR\rexp" +
+      "ectedShapeB\007\n\005childB&\n$org.openmined.syf" +
+      "tproto.execution.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor(),
           org.openmined.syftproto.types.syft.v1.ShapeOuterClass.getDescriptor(),
+          org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor(),
+          org.openmined.syftproto.types.torch.v1.ParameterOuterClass.getDescriptor(),
         });
     internal_static_syft_proto_execution_v1_Placeholder_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_syft_proto_execution_v1_Placeholder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_Placeholder_descriptor,
-        new java.lang.String[] { "Id", "Tags", "Description", "ExpectedShape", });
+        new java.lang.String[] { "ChildTensor", "ChildParameter", "Id", "Tags", "Description", "ExpectedShape", "Child", });
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.ShapeOuterClass.getDescriptor();
+    org.openmined.syftproto.types.torch.v1.Tensor.getDescriptor();
+    org.openmined.syftproto.types.torch.v1.ParameterOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
