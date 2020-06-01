@@ -242,6 +242,12 @@ export namespace syft_proto {
             /** Properties of a Placeholder. */
             interface IPlaceholder {
 
+                /** Placeholder child_tensor */
+                child_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** Placeholder child_parameter */
+                child_parameter?: (syft_proto.types.torch.v1.IParameter|null);
+
                 /** Placeholder id */
                 id?: (syft_proto.types.syft.v1.IId|null);
 
@@ -264,6 +270,12 @@ export namespace syft_proto {
                  */
                 constructor(properties?: syft_proto.execution.v1.IPlaceholder);
 
+                /** Placeholder child_tensor. */
+                public child_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** Placeholder child_parameter. */
+                public child_parameter?: (syft_proto.types.torch.v1.IParameter|null);
+
                 /** Placeholder id. */
                 public id?: (syft_proto.types.syft.v1.IId|null);
 
@@ -275,6 +287,9 @@ export namespace syft_proto {
 
                 /** Placeholder expected_shape. */
                 public expected_shape?: (syft_proto.types.syft.v1.IShape|null);
+
+                /** Placeholder child. */
+                public child?: ("child_tensor"|"child_parameter");
 
                 /**
                  * Creates a new Placeholder instance using the specified properties.
