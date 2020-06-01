@@ -76,6 +76,10 @@ swift: buf-lint
 clean:
 	rm -rf buf-lint
 	rm -rf buf-check-breaking
+	rm -rf syft_proto/**/
+	rm -rf jvm/src/main/java/org/openmined/syftproto/**/
+	rm -rf js/protobuf*.js
+	rm -rf swift/syft_proto/**/
 
 stubs: clean python java javascript swift
 
