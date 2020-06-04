@@ -221,6 +221,7 @@
       "code": 67
     },
     "syft.frameworks.crypten.model.OnnxModel": {
-        "code": 68
+      "code": 68
+    }
   }
 }
