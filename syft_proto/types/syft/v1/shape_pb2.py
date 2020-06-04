@@ -18,6 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.types.syft.v1',
   syntax='proto3',
   serialized_options=b'\n%org.openmined.syftproto.types.syft.v1',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n$syft_proto/types/syft/v1/shape.proto\x12\x18syft_proto.types.syft.v1\"\x1b\n\x05Shape\x12\x12\n\x04\x64ims\x18\x01 \x03(\x05R\x04\x64imsB\'\n%org.openmined.syftproto.types.syft.v1b\x06proto3'
 )
 
@@ -30,6 +31,7 @@ _SHAPE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dims', full_name='syft_proto.types.syft.v1.Shape.dims', index=0,
@@ -37,7 +39,7 @@ _SHAPE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='dims', file=DESCRIPTOR),
+      serialized_options=None, json_name='dims', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],

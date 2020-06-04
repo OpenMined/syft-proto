@@ -6,23 +6,27 @@ option java_package = "org.openmined.syftproto.messaging.v1";
 import "google/protobuf/empty.proto";
 import "syft_proto/execution/v1/computation_action.proto";
 import "syft_proto/execution/v1/communication_action.proto";
+import "syft_proto/types/syft/v1/id.proto";
 import "syft_proto/types/torch/v1/tensor.proto";
-
+import "syft_proto/types/syft/v1/arg.proto";
 
 message SyftMessage {
   oneof contents {
     google.protobuf.Empty contents_empty_msg = 1;
-    // ForceObjectDeleteMessage contents_delete_msg = 2;
-    // GetShapeMessage contents_get_shape_msg = 3;
-    // IsNoneMessage contents_is_none_msg = 4;
+    ForceObjectDeleteMessage contents_delete_msg = 2;
+    GetShapeMessage contents_get_shape_msg = 3;
+    IsNoneMessage contents_is_none_msg = 4;
     ObjectMessage contents_object_msg = 5;
-    // ObjectRequestMessage contents_object_request_msg = 6;
+    ObjectRequestMessage contents_object_request_msg = 6;
     TensorCommandMessage contents_tensor_cmd_msg = 7;
-    // PlanCommandMessage contents_plan_cmd_msg = 8;
-    // WorkerCommandMessage contents_worker_cmd_msg = 9;
-    // SearchMessage contents_search_msg = 10;
-    
+    PlanCommandMessage contents_plan_cmd_msg = 8;
+    WorkerCommandMessage contents_worker_cmd_msg = 9;
+    SearchMessage contents_search_msg = 10;
   }
+}
+
+message IsNoneMessage {
+  syft_proto.types.syft.v1.Id object_id = 1;
 }
 
 message ObjectMessage {
@@ -34,4 +38,31 @@ message TensorCommandMessage {
     syft_proto.execution.v1.ComputationAction computation = 1;
     syft_proto.execution.v1.CommunicationAction communication = 2;
   }
+}
+
+message ForceObjectDeleteMessage {
+  syft_proto.types.syft.v1.Id object_id = 1;
+}
+
+message GetShapeMessage {
+  syft_proto.types.syft.v1.Id object_id = 1;
+}
+
+message ObjectRequestMessage {
+  syft_proto.types.syft.v1.Id object_id = 1;
+  string reason = 2;
+}
+
+message PlanCommandMessage {
+  string command_name = 1;
+  repeated syft_proto.types.syft.v1.Arg args = 2;
+}
+
+message WorkerCommandMessage {
+  string command_name = 1;
+  repeated syft_proto.types.syft.v1.Arg args = 2;
+}
+
+message SearchMessage {
+  repeated syft_proto.types.syft.v1.Id query = 1;
 }

@@ -5,10 +5,16 @@ option java_package = "org.openmined.syftproto.execution.v1";
 
 import "syft_proto/types/syft/v1/id.proto";
 import "syft_proto/types/syft/v1/shape.proto";
+import "syft_proto/types/torch/v1/tensor.proto";
+import "syft_proto/types/torch/v1/parameter.proto";
 
 message Placeholder {
-    syft_proto.types.syft.v1.Id id = 1;
-    repeated string tags = 2;
-    string description = 3;
-    syft_proto.types.syft.v1.Shape expected_shape = 4;
+    oneof child {
+        syft_proto.types.torch.v1.TorchTensor child_tensor = 1;
+        syft_proto.types.torch.v1.Parameter child_parameter = 2;
+    }
+    syft_proto.types.syft.v1.Id id = 3;
+    repeated string tags = 4;
+    string description = 5;
+    syft_proto.types.syft.v1.Shape expected_shape = 6;
 }

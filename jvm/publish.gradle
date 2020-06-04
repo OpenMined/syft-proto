@@ -1,7 +1,7 @@
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
-version = '0.0.8'
+version = System.getenv("LIB_VERSION")
 group = 'org.openmined.kotlinsyft'
 
 install {

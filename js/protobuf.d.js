@@ -242,6 +242,12 @@ export namespace syft_proto {
             /** Properties of a Placeholder. */
             interface IPlaceholder {
 
+                /** Placeholder child_tensor */
+                child_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** Placeholder child_parameter */
+                child_parameter?: (syft_proto.types.torch.v1.IParameter|null);
+
                 /** Placeholder id */
                 id?: (syft_proto.types.syft.v1.IId|null);
 
@@ -264,6 +270,12 @@ export namespace syft_proto {
                  */
                 constructor(properties?: syft_proto.execution.v1.IPlaceholder);
 
+                /** Placeholder child_tensor. */
+                public child_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** Placeholder child_parameter. */
+                public child_parameter?: (syft_proto.types.torch.v1.IParameter|null);
+
                 /** Placeholder id. */
                 public id?: (syft_proto.types.syft.v1.IId|null);
 
@@ -275,6 +287,9 @@ export namespace syft_proto {
 
                 /** Placeholder expected_shape. */
                 public expected_shape?: (syft_proto.types.syft.v1.IShape|null);
+
+                /** Placeholder child. */
+                public child?: ("child_tensor"|"child_parameter");
 
                 /**
                  * Creates a new Placeholder instance using the specified properties.
@@ -1624,6 +1639,147 @@ export namespace syft_proto {
                  */
                 public toJSON(): { [k: string]: any };
             }
+
+            /** Properties of a WorkerAction. */
+            interface IWorkerAction {
+
+                /** WorkerAction command */
+                command?: (string|null);
+
+                /** WorkerAction target_id */
+                target_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** WorkerAction target_pointer */
+                target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
+
+                /** WorkerAction target_placeholder_id */
+                target_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+
+                /** WorkerAction target_tensor */
+                target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** WorkerAction args */
+                args?: (syft_proto.types.syft.v1.IArg[]|null);
+
+                /** WorkerAction kwargs */
+                kwargs?: ({ [k: string]: syft_proto.types.syft.v1.IArg }|null);
+
+                /** WorkerAction return_ids */
+                return_ids?: (syft_proto.types.syft.v1.IId[]|null);
+
+                /** WorkerAction return_placeholder_ids */
+                return_placeholder_ids?: (syft_proto.execution.v1.IPlaceholderId[]|null);
+            }
+
+            /** Represents a WorkerAction. */
+            class WorkerAction implements IWorkerAction {
+
+                /**
+                 * Constructs a new WorkerAction.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.execution.v1.IWorkerAction);
+
+                /** WorkerAction command. */
+                public command: string;
+
+                /** WorkerAction target_id. */
+                public target_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** WorkerAction target_pointer. */
+                public target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
+
+                /** WorkerAction target_placeholder_id. */
+                public target_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+
+                /** WorkerAction target_tensor. */
+                public target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** WorkerAction args. */
+                public args: syft_proto.types.syft.v1.IArg[];
+
+                /** WorkerAction kwargs. */
+                public kwargs: { [k: string]: syft_proto.types.syft.v1.IArg };
+
+                /** WorkerAction return_ids. */
+                public return_ids: syft_proto.types.syft.v1.IId[];
+
+                /** WorkerAction return_placeholder_ids. */
+                public return_placeholder_ids: syft_proto.execution.v1.IPlaceholderId[];
+
+                /** WorkerAction target. */
+                public target?: ("target_id"|"target_pointer"|"target_placeholder_id"|"target_tensor");
+
+                /**
+                 * Creates a new WorkerAction instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns WorkerAction instance
+                 */
+                public static create(properties?: syft_proto.execution.v1.IWorkerAction): syft_proto.execution.v1.WorkerAction;
+
+                /**
+                 * Encodes the specified WorkerAction message. Does not implicitly {@link syft_proto.execution.v1.WorkerAction.verify|verify} messages.
+                 * @param message WorkerAction message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.execution.v1.IWorkerAction, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified WorkerAction message, length delimited. Does not implicitly {@link syft_proto.execution.v1.WorkerAction.verify|verify} messages.
+                 * @param message WorkerAction message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.execution.v1.IWorkerAction, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a WorkerAction message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns WorkerAction
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.WorkerAction;
+
+                /**
+                 * Decodes a WorkerAction message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns WorkerAction
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.WorkerAction;
+
+                /**
+                 * Verifies a WorkerAction message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a WorkerAction message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns WorkerAction
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.WorkerAction;
+
+                /**
+                 * Creates a plain object from a WorkerAction message. Also converts values to other types if specified.
+                 * @param message WorkerAction
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.execution.v1.WorkerAction, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this WorkerAction to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
         }
     }
 
@@ -1832,7 +1988,7 @@ export namespace syft_proto {
                     arg_bool?: (boolean|null);
 
                     /** Arg arg_int */
-                    arg_int?: (number|null);
+                    arg_int?: (number|Long|null);
 
                     /** Arg arg_float */
                     arg_float?: (number|null);
@@ -1857,6 +2013,9 @@ export namespace syft_proto {
 
                     /** Arg arg_placeholder_id */
                     arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
+
+                    /** Arg arg_list */
+                    arg_list?: (syft_proto.types.syft.v1.IArgList|null);
                 }
 
                 /** Represents an Arg. */
@@ -1872,7 +2031,7 @@ export namespace syft_proto {
                     public arg_bool: boolean;
 
                     /** Arg arg_int. */
-                    public arg_int: number;
+                    public arg_int: (number|Long);
 
                     /** Arg arg_float. */
                     public arg_float: number;
@@ -1898,8 +2057,11 @@ export namespace syft_proto {
                     /** Arg arg_placeholder_id. */
                     public arg_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
 
+                    /** Arg arg_list. */
+                    public arg_list?: (syft_proto.types.syft.v1.IArgList|null);
+
                     /** Arg arg. */
-                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_str"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id");
+                    public arg?: ("arg_bool"|"arg_int"|"arg_float"|"arg_str"|"arg_shape"|"arg_tensor"|"arg_torch_param"|"arg_pointer_tensor"|"arg_placeholder"|"arg_placeholder_id"|"arg_list");
 
                     /**
                      * Creates a new Arg instance using the specified properties.
@@ -1967,6 +2129,96 @@ export namespace syft_proto {
 
                     /**
                      * Converts this Arg to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of an ArgList. */
+                interface IArgList {
+
+                    /** ArgList args */
+                    args?: (syft_proto.types.syft.v1.IArg[]|null);
+                }
+
+                /** Represents an ArgList. */
+                class ArgList implements IArgList {
+
+                    /**
+                     * Constructs a new ArgList.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.types.syft.v1.IArgList);
+
+                    /** ArgList args. */
+                    public args: syft_proto.types.syft.v1.IArg[];
+
+                    /**
+                     * Creates a new ArgList instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns ArgList instance
+                     */
+                    public static create(properties?: syft_proto.types.syft.v1.IArgList): syft_proto.types.syft.v1.ArgList;
+
+                    /**
+                     * Encodes the specified ArgList message. Does not implicitly {@link syft_proto.types.syft.v1.ArgList.verify|verify} messages.
+                     * @param message ArgList message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.types.syft.v1.IArgList, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified ArgList message, length delimited. Does not implicitly {@link syft_proto.types.syft.v1.ArgList.verify|verify} messages.
+                     * @param message ArgList message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.types.syft.v1.IArgList, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes an ArgList message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns ArgList
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.types.syft.v1.ArgList;
+
+                    /**
+                     * Decodes an ArgList message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns ArgList
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.types.syft.v1.ArgList;
+
+                    /**
+                     * Verifies an ArgList message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates an ArgList message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns ArgList
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.syft.v1.ArgList;
+
+                    /**
+                     * Creates a plain object from an ArgList message. Also converts values to other types if specified.
+                     * @param message ArgList
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.types.syft.v1.ArgList, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this ArgList to JSON.
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
@@ -2697,6 +2949,186 @@ export namespace syft_proto {
                     public toJSON(): { [k: string]: any };
                 }
 
+                /** Properties of a TorchDType. */
+                interface ITorchDType {
+
+                    /** TorchDType torch_type */
+                    torch_type?: (string|null);
+                }
+
+                /** Represents a TorchDType. */
+                class TorchDType implements ITorchDType {
+
+                    /**
+                     * Constructs a new TorchDType.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.types.torch.v1.ITorchDType);
+
+                    /** TorchDType torch_type. */
+                    public torch_type: string;
+
+                    /**
+                     * Creates a new TorchDType instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns TorchDType instance
+                     */
+                    public static create(properties?: syft_proto.types.torch.v1.ITorchDType): syft_proto.types.torch.v1.TorchDType;
+
+                    /**
+                     * Encodes the specified TorchDType message. Does not implicitly {@link syft_proto.types.torch.v1.TorchDType.verify|verify} messages.
+                     * @param message TorchDType message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.types.torch.v1.ITorchDType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified TorchDType message, length delimited. Does not implicitly {@link syft_proto.types.torch.v1.TorchDType.verify|verify} messages.
+                     * @param message TorchDType message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.types.torch.v1.ITorchDType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a TorchDType message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns TorchDType
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.types.torch.v1.TorchDType;
+
+                    /**
+                     * Decodes a TorchDType message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns TorchDType
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.types.torch.v1.TorchDType;
+
+                    /**
+                     * Verifies a TorchDType message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a TorchDType message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns TorchDType
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.TorchDType;
+
+                    /**
+                     * Creates a plain object from a TorchDType message. Also converts values to other types if specified.
+                     * @param message TorchDType
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.types.torch.v1.TorchDType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this TorchDType to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a MemoryFormat. */
+                interface IMemoryFormat {
+
+                    /** MemoryFormat memory_format_type */
+                    memory_format_type?: (string|null);
+                }
+
+                /** Represents a MemoryFormat. */
+                class MemoryFormat implements IMemoryFormat {
+
+                    /**
+                     * Constructs a new MemoryFormat.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.types.torch.v1.IMemoryFormat);
+
+                    /** MemoryFormat memory_format_type. */
+                    public memory_format_type: string;
+
+                    /**
+                     * Creates a new MemoryFormat instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns MemoryFormat instance
+                     */
+                    public static create(properties?: syft_proto.types.torch.v1.IMemoryFormat): syft_proto.types.torch.v1.MemoryFormat;
+
+                    /**
+                     * Encodes the specified MemoryFormat message. Does not implicitly {@link syft_proto.types.torch.v1.MemoryFormat.verify|verify} messages.
+                     * @param message MemoryFormat message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.types.torch.v1.IMemoryFormat, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified MemoryFormat message, length delimited. Does not implicitly {@link syft_proto.types.torch.v1.MemoryFormat.verify|verify} messages.
+                     * @param message MemoryFormat message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.types.torch.v1.IMemoryFormat, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a MemoryFormat message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns MemoryFormat
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.types.torch.v1.MemoryFormat;
+
+                    /**
+                     * Decodes a MemoryFormat message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns MemoryFormat
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.types.torch.v1.MemoryFormat;
+
+                    /**
+                     * Verifies a MemoryFormat message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a MemoryFormat message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns MemoryFormat
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.types.torch.v1.MemoryFormat;
+
+                    /**
+                     * Creates a plain object from a MemoryFormat message. Also converts values to other types if specified.
+                     * @param message MemoryFormat
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.types.torch.v1.MemoryFormat, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this MemoryFormat to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
                 /** Properties of a ScriptFunction. */
                 interface IScriptFunction {
 
@@ -3098,6 +3530,348 @@ export namespace syft_proto {
                      */
                     public toJSON(): { [k: string]: any };
                 }
+
+                /** Properties of an ObjectPointer. */
+                interface IObjectPointer {
+
+                    /** ObjectPointer object_id */
+                    object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** ObjectPointer location_id */
+                    location_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** ObjectPointer object_id_at_location */
+                    object_id_at_location?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** ObjectPointer point_to_attr */
+                    point_to_attr?: (string|null);
+                }
+
+                /** Represents an ObjectPointer. */
+                class ObjectPointer implements IObjectPointer {
+
+                    /**
+                     * Constructs a new ObjectPointer.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.generic.pointers.v1.IObjectPointer);
+
+                    /** ObjectPointer object_id. */
+                    public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** ObjectPointer location_id. */
+                    public location_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** ObjectPointer object_id_at_location. */
+                    public object_id_at_location?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** ObjectPointer point_to_attr. */
+                    public point_to_attr: string;
+
+                    /**
+                     * Creates a new ObjectPointer instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns ObjectPointer instance
+                     */
+                    public static create(properties?: syft_proto.generic.pointers.v1.IObjectPointer): syft_proto.generic.pointers.v1.ObjectPointer;
+
+                    /**
+                     * Encodes the specified ObjectPointer message. Does not implicitly {@link syft_proto.generic.pointers.v1.ObjectPointer.verify|verify} messages.
+                     * @param message ObjectPointer message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.generic.pointers.v1.IObjectPointer, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified ObjectPointer message, length delimited. Does not implicitly {@link syft_proto.generic.pointers.v1.ObjectPointer.verify|verify} messages.
+                     * @param message ObjectPointer message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.generic.pointers.v1.IObjectPointer, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes an ObjectPointer message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns ObjectPointer
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.generic.pointers.v1.ObjectPointer;
+
+                    /**
+                     * Decodes an ObjectPointer message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns ObjectPointer
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.generic.pointers.v1.ObjectPointer;
+
+                    /**
+                     * Verifies an ObjectPointer message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates an ObjectPointer message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns ObjectPointer
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.generic.pointers.v1.ObjectPointer;
+
+                    /**
+                     * Creates a plain object from an ObjectPointer message. Also converts values to other types if specified.
+                     * @param message ObjectPointer
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.generic.pointers.v1.ObjectPointer, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this ObjectPointer to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a PointerDataset. */
+                interface IPointerDataset {
+
+                    /** PointerDataset object_id */
+                    object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerDataset location_id */
+                    location_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerDataset object_id_at_location */
+                    object_id_at_location?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerDataset tags */
+                    tags?: (string[]|null);
+
+                    /** PointerDataset description */
+                    description?: (string|null);
+
+                    /** PointerDataset garbage_collect_data */
+                    garbage_collect_data?: (boolean|null);
+                }
+
+                /** Represents a PointerDataset. */
+                class PointerDataset implements IPointerDataset {
+
+                    /**
+                     * Constructs a new PointerDataset.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.generic.pointers.v1.IPointerDataset);
+
+                    /** PointerDataset object_id. */
+                    public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerDataset location_id. */
+                    public location_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerDataset object_id_at_location. */
+                    public object_id_at_location?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerDataset tags. */
+                    public tags: string[];
+
+                    /** PointerDataset description. */
+                    public description: string;
+
+                    /** PointerDataset garbage_collect_data. */
+                    public garbage_collect_data: boolean;
+
+                    /**
+                     * Creates a new PointerDataset instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns PointerDataset instance
+                     */
+                    public static create(properties?: syft_proto.generic.pointers.v1.IPointerDataset): syft_proto.generic.pointers.v1.PointerDataset;
+
+                    /**
+                     * Encodes the specified PointerDataset message. Does not implicitly {@link syft_proto.generic.pointers.v1.PointerDataset.verify|verify} messages.
+                     * @param message PointerDataset message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.generic.pointers.v1.IPointerDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified PointerDataset message, length delimited. Does not implicitly {@link syft_proto.generic.pointers.v1.PointerDataset.verify|verify} messages.
+                     * @param message PointerDataset message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.generic.pointers.v1.IPointerDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a PointerDataset message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns PointerDataset
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.generic.pointers.v1.PointerDataset;
+
+                    /**
+                     * Decodes a PointerDataset message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns PointerDataset
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.generic.pointers.v1.PointerDataset;
+
+                    /**
+                     * Verifies a PointerDataset message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a PointerDataset message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns PointerDataset
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.generic.pointers.v1.PointerDataset;
+
+                    /**
+                     * Creates a plain object from a PointerDataset message. Also converts values to other types if specified.
+                     * @param message PointerDataset
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.generic.pointers.v1.PointerDataset, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this PointerDataset to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a PointerPlan. */
+                interface IPointerPlan {
+
+                    /** PointerPlan object_id */
+                    object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerPlan location_id */
+                    location_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerPlan object_id_at_location */
+                    object_id_at_location?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerPlan tags */
+                    tags?: (string[]|null);
+
+                    /** PointerPlan garbage_collect_data */
+                    garbage_collect_data?: (boolean|null);
+                }
+
+                /** Represents a PointerPlan. */
+                class PointerPlan implements IPointerPlan {
+
+                    /**
+                     * Constructs a new PointerPlan.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: syft_proto.generic.pointers.v1.IPointerPlan);
+
+                    /** PointerPlan object_id. */
+                    public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerPlan location_id. */
+                    public location_id?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerPlan object_id_at_location. */
+                    public object_id_at_location?: (syft_proto.types.syft.v1.IId|null);
+
+                    /** PointerPlan tags. */
+                    public tags: string[];
+
+                    /** PointerPlan garbage_collect_data. */
+                    public garbage_collect_data: boolean;
+
+                    /**
+                     * Creates a new PointerPlan instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns PointerPlan instance
+                     */
+                    public static create(properties?: syft_proto.generic.pointers.v1.IPointerPlan): syft_proto.generic.pointers.v1.PointerPlan;
+
+                    /**
+                     * Encodes the specified PointerPlan message. Does not implicitly {@link syft_proto.generic.pointers.v1.PointerPlan.verify|verify} messages.
+                     * @param message PointerPlan message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: syft_proto.generic.pointers.v1.IPointerPlan, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified PointerPlan message, length delimited. Does not implicitly {@link syft_proto.generic.pointers.v1.PointerPlan.verify|verify} messages.
+                     * @param message PointerPlan message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: syft_proto.generic.pointers.v1.IPointerPlan, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a PointerPlan message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns PointerPlan
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.generic.pointers.v1.PointerPlan;
+
+                    /**
+                     * Decodes a PointerPlan message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns PointerPlan
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.generic.pointers.v1.PointerPlan;
+
+                    /**
+                     * Verifies a PointerPlan message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a PointerPlan message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns PointerPlan
+                     */
+                    public static fromObject(object: { [k: string]: any }): syft_proto.generic.pointers.v1.PointerPlan;
+
+                    /**
+                     * Creates a plain object from a PointerPlan message. Also converts values to other types if specified.
+                     * @param message PointerPlan
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: syft_proto.generic.pointers.v1.PointerPlan, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this PointerPlan to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
             }
         }
     }
@@ -3107,6 +3881,134 @@ export namespace syft_proto {
 
         /** Namespace torch. */
         namespace torch {
+
+            /** Namespace fl. */
+            namespace fl {
+
+                /** Namespace v1. */
+                namespace v1 {
+
+                    /** Properties of a BaseDataset. */
+                    interface IBaseDataset {
+
+                        /** BaseDataset data */
+                        data?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset targets */
+                        targets?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset id */
+                        id?: (syft_proto.types.syft.v1.IId|null);
+
+                        /** BaseDataset tags */
+                        tags?: (string[]|null);
+
+                        /** BaseDataset description */
+                        description?: (string|null);
+
+                        /** BaseDataset child */
+                        child?: (syft_proto.types.torch.v1.ITorchTensor|null);
+                    }
+
+                    /** Represents a BaseDataset. */
+                    class BaseDataset implements IBaseDataset {
+
+                        /**
+                         * Constructs a new BaseDataset.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: syft_proto.frameworks.torch.fl.v1.IBaseDataset);
+
+                        /** BaseDataset data. */
+                        public data?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset targets. */
+                        public targets?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset id. */
+                        public id?: (syft_proto.types.syft.v1.IId|null);
+
+                        /** BaseDataset tags. */
+                        public tags: string[];
+
+                        /** BaseDataset description. */
+                        public description: string;
+
+                        /** BaseDataset child. */
+                        public child?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /**
+                         * Creates a new BaseDataset instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns BaseDataset instance
+                         */
+                        public static create(properties?: syft_proto.frameworks.torch.fl.v1.IBaseDataset): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Encodes the specified BaseDataset message. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
+                         * @param message BaseDataset message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: syft_proto.frameworks.torch.fl.v1.IBaseDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified BaseDataset message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
+                         * @param message BaseDataset message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: syft_proto.frameworks.torch.fl.v1.IBaseDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a BaseDataset message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns BaseDataset
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Decodes a BaseDataset message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns BaseDataset
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Verifies a BaseDataset message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a BaseDataset message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns BaseDataset
+                         */
+                        public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Creates a plain object from a BaseDataset message. Also converts values to other types if specified.
+                         * @param message BaseDataset
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: syft_proto.frameworks.torch.fl.v1.BaseDataset, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this BaseDataset to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+                    }
+                }
+            }
 
             /** Namespace tensors. */
             namespace tensors {
@@ -3245,6 +4147,144 @@ export namespace syft_proto {
                              */
                             public toJSON(): { [k: string]: any };
                         }
+
+                        /** Properties of a FixedPrecisionTensor. */
+                        interface IFixedPrecisionTensor {
+
+                            /** FixedPrecisionTensor id */
+                            id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** FixedPrecisionTensor field */
+                            field?: (string|null);
+
+                            /** FixedPrecisionTensor dtype */
+                            dtype?: (string|null);
+
+                            /** FixedPrecisionTensor base */
+                            base?: (number|null);
+
+                            /** FixedPrecisionTensor kappa */
+                            kappa?: (number|null);
+
+                            /** FixedPrecisionTensor precision_fractional */
+                            precision_fractional?: (number|null);
+
+                            /** FixedPrecisionTensor tags */
+                            tags?: (string[]|null);
+
+                            /** FixedPrecisionTensor description */
+                            description?: (string|null);
+
+                            /** FixedPrecisionTensor child */
+                            child?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor|null);
+                        }
+
+                        /** Represents a FixedPrecisionTensor. */
+                        class FixedPrecisionTensor implements IFixedPrecisionTensor {
+
+                            /**
+                             * Constructs a new FixedPrecisionTensor.
+                             * @param [properties] Properties to set
+                             */
+                            constructor(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor);
+
+                            /** FixedPrecisionTensor id. */
+                            public id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** FixedPrecisionTensor field. */
+                            public field: string;
+
+                            /** FixedPrecisionTensor dtype. */
+                            public dtype: string;
+
+                            /** FixedPrecisionTensor base. */
+                            public base: number;
+
+                            /** FixedPrecisionTensor kappa. */
+                            public kappa: number;
+
+                            /** FixedPrecisionTensor precision_fractional. */
+                            public precision_fractional: number;
+
+                            /** FixedPrecisionTensor tags. */
+                            public tags: string[];
+
+                            /** FixedPrecisionTensor description. */
+                            public description: string;
+
+                            /** FixedPrecisionTensor child. */
+                            public child?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor|null);
+
+                            /**
+                             * Creates a new FixedPrecisionTensor instance using the specified properties.
+                             * @param [properties] Properties to set
+                             * @returns FixedPrecisionTensor instance
+                             */
+                            public static create(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor): syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor;
+
+                            /**
+                             * Encodes the specified FixedPrecisionTensor message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.verify|verify} messages.
+                             * @param message FixedPrecisionTensor message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encode(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Encodes the specified FixedPrecisionTensor message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.verify|verify} messages.
+                             * @param message FixedPrecisionTensor message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encodeDelimited(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Decodes a FixedPrecisionTensor message from the specified reader or buffer.
+                             * @param reader Reader or buffer to decode from
+                             * @param [length] Message length if known beforehand
+                             * @returns FixedPrecisionTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor;
+
+                            /**
+                             * Decodes a FixedPrecisionTensor message from the specified reader or buffer, length delimited.
+                             * @param reader Reader or buffer to decode from
+                             * @returns FixedPrecisionTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor;
+
+                            /**
+                             * Verifies a FixedPrecisionTensor message.
+                             * @param message Plain object to verify
+                             * @returns `null` if valid, otherwise the reason why it is not
+                             */
+                            public static verify(message: { [k: string]: any }): (string|null);
+
+                            /**
+                             * Creates a FixedPrecisionTensor message from a plain object. Also converts values to their respective internal types.
+                             * @param object Plain object
+                             * @returns FixedPrecisionTensor
+                             */
+                            public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor;
+
+                            /**
+                             * Creates a plain object from a FixedPrecisionTensor message. Also converts values to other types if specified.
+                             * @param message FixedPrecisionTensor
+                             * @param [options] Conversion options
+                             * @returns Plain object
+                             */
+                            public static toObject(message: syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                            /**
+                             * Converts this FixedPrecisionTensor to JSON.
+                             * @returns JSON object
+                             */
+                            public toJSON(): { [k: string]: any };
+                        }
                     }
                 }
             }
@@ -3257,17 +4297,140 @@ export namespace syft_proto {
         /** Namespace v1. */
         namespace v1 {
 
+            /** Properties of a String. */
+            interface IString {
+
+                /** String child */
+                child?: (string|null);
+
+                /** String tags */
+                tags?: (string[]|null);
+
+                /** String description */
+                description?: (string|null);
+            }
+
+            /** Represents a String. */
+            class String implements IString {
+
+                /**
+                 * Constructs a new String.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IString);
+
+                /** String child. */
+                public child: string;
+
+                /** String tags. */
+                public tags: string[];
+
+                /** String description. */
+                public description: string;
+
+                /**
+                 * Creates a new String instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns String instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IString): syft_proto.messaging.v1.String;
+
+                /**
+                 * Encodes the specified String message. Does not implicitly {@link syft_proto.messaging.v1.String.verify|verify} messages.
+                 * @param message String message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IString, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified String message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.String.verify|verify} messages.
+                 * @param message String message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IString, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a String message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns String
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.String;
+
+                /**
+                 * Decodes a String message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns String
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.String;
+
+                /**
+                 * Verifies a String message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a String message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns String
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.String;
+
+                /**
+                 * Creates a plain object from a String message. Also converts values to other types if specified.
+                 * @param message String
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.String, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this String to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
             /** Properties of a SyftMessage. */
             interface ISyftMessage {
 
                 /** SyftMessage contents_empty_msg */
                 contents_empty_msg?: (google.protobuf.IEmpty|null);
 
+                /** SyftMessage contents_delete_msg */
+                contents_delete_msg?: (syft_proto.messaging.v1.IForceObjectDeleteMessage|null);
+
+                /** SyftMessage contents_get_shape_msg */
+                contents_get_shape_msg?: (syft_proto.messaging.v1.IGetShapeMessage|null);
+
+                /** SyftMessage contents_is_none_msg */
+                contents_is_none_msg?: (syft_proto.messaging.v1.IIsNoneMessage|null);
+
                 /** SyftMessage contents_object_msg */
                 contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
 
+                /** SyftMessage contents_object_request_msg */
+                contents_object_request_msg?: (syft_proto.messaging.v1.IObjectRequestMessage|null);
+
                 /** SyftMessage contents_tensor_cmd_msg */
                 contents_tensor_cmd_msg?: (syft_proto.messaging.v1.ITensorCommandMessage|null);
+
+                /** SyftMessage contents_plan_cmd_msg */
+                contents_plan_cmd_msg?: (syft_proto.messaging.v1.IPlanCommandMessage|null);
+
+                /** SyftMessage contents_worker_cmd_msg */
+                contents_worker_cmd_msg?: (syft_proto.messaging.v1.IWorkerCommandMessage|null);
+
+                /** SyftMessage contents_search_msg */
+                contents_search_msg?: (syft_proto.messaging.v1.ISearchMessage|null);
             }
 
             /** Represents a SyftMessage. */
@@ -3282,14 +4445,35 @@ export namespace syft_proto {
                 /** SyftMessage contents_empty_msg. */
                 public contents_empty_msg?: (google.protobuf.IEmpty|null);
 
+                /** SyftMessage contents_delete_msg. */
+                public contents_delete_msg?: (syft_proto.messaging.v1.IForceObjectDeleteMessage|null);
+
+                /** SyftMessage contents_get_shape_msg. */
+                public contents_get_shape_msg?: (syft_proto.messaging.v1.IGetShapeMessage|null);
+
+                /** SyftMessage contents_is_none_msg. */
+                public contents_is_none_msg?: (syft_proto.messaging.v1.IIsNoneMessage|null);
+
                 /** SyftMessage contents_object_msg. */
                 public contents_object_msg?: (syft_proto.messaging.v1.IObjectMessage|null);
+
+                /** SyftMessage contents_object_request_msg. */
+                public contents_object_request_msg?: (syft_proto.messaging.v1.IObjectRequestMessage|null);
 
                 /** SyftMessage contents_tensor_cmd_msg. */
                 public contents_tensor_cmd_msg?: (syft_proto.messaging.v1.ITensorCommandMessage|null);
 
+                /** SyftMessage contents_plan_cmd_msg. */
+                public contents_plan_cmd_msg?: (syft_proto.messaging.v1.IPlanCommandMessage|null);
+
+                /** SyftMessage contents_worker_cmd_msg. */
+                public contents_worker_cmd_msg?: (syft_proto.messaging.v1.IWorkerCommandMessage|null);
+
+                /** SyftMessage contents_search_msg. */
+                public contents_search_msg?: (syft_proto.messaging.v1.ISearchMessage|null);
+
                 /** SyftMessage contents. */
-                public contents?: ("contents_empty_msg"|"contents_object_msg"|"contents_tensor_cmd_msg");
+                public contents?: ("contents_empty_msg"|"contents_delete_msg"|"contents_get_shape_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_object_request_msg"|"contents_tensor_cmd_msg"|"contents_plan_cmd_msg"|"contents_worker_cmd_msg"|"contents_search_msg");
 
                 /**
                  * Creates a new SyftMessage instance using the specified properties.
@@ -3357,6 +4541,96 @@ export namespace syft_proto {
 
                 /**
                  * Converts this SyftMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of an IsNoneMessage. */
+            interface IIsNoneMessage {
+
+                /** IsNoneMessage object_id */
+                object_id?: (syft_proto.types.syft.v1.IId|null);
+            }
+
+            /** Represents an IsNoneMessage. */
+            class IsNoneMessage implements IIsNoneMessage {
+
+                /**
+                 * Constructs a new IsNoneMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IIsNoneMessage);
+
+                /** IsNoneMessage object_id. */
+                public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /**
+                 * Creates a new IsNoneMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns IsNoneMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IIsNoneMessage): syft_proto.messaging.v1.IsNoneMessage;
+
+                /**
+                 * Encodes the specified IsNoneMessage message. Does not implicitly {@link syft_proto.messaging.v1.IsNoneMessage.verify|verify} messages.
+                 * @param message IsNoneMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IIsNoneMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified IsNoneMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.IsNoneMessage.verify|verify} messages.
+                 * @param message IsNoneMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IIsNoneMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes an IsNoneMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns IsNoneMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.IsNoneMessage;
+
+                /**
+                 * Decodes an IsNoneMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns IsNoneMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.IsNoneMessage;
+
+                /**
+                 * Verifies an IsNoneMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates an IsNoneMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns IsNoneMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.IsNoneMessage;
+
+                /**
+                 * Creates a plain object from an IsNoneMessage message. Also converts values to other types if specified.
+                 * @param message IsNoneMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.IsNoneMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this IsNoneMessage to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
@@ -3546,6 +4820,564 @@ export namespace syft_proto {
 
                 /**
                  * Converts this TensorCommandMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a ForceObjectDeleteMessage. */
+            interface IForceObjectDeleteMessage {
+
+                /** ForceObjectDeleteMessage object_id */
+                object_id?: (syft_proto.types.syft.v1.IId|null);
+            }
+
+            /** Represents a ForceObjectDeleteMessage. */
+            class ForceObjectDeleteMessage implements IForceObjectDeleteMessage {
+
+                /**
+                 * Constructs a new ForceObjectDeleteMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IForceObjectDeleteMessage);
+
+                /** ForceObjectDeleteMessage object_id. */
+                public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /**
+                 * Creates a new ForceObjectDeleteMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns ForceObjectDeleteMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IForceObjectDeleteMessage): syft_proto.messaging.v1.ForceObjectDeleteMessage;
+
+                /**
+                 * Encodes the specified ForceObjectDeleteMessage message. Does not implicitly {@link syft_proto.messaging.v1.ForceObjectDeleteMessage.verify|verify} messages.
+                 * @param message ForceObjectDeleteMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IForceObjectDeleteMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified ForceObjectDeleteMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.ForceObjectDeleteMessage.verify|verify} messages.
+                 * @param message ForceObjectDeleteMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IForceObjectDeleteMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a ForceObjectDeleteMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns ForceObjectDeleteMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.ForceObjectDeleteMessage;
+
+                /**
+                 * Decodes a ForceObjectDeleteMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns ForceObjectDeleteMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.ForceObjectDeleteMessage;
+
+                /**
+                 * Verifies a ForceObjectDeleteMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a ForceObjectDeleteMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns ForceObjectDeleteMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.ForceObjectDeleteMessage;
+
+                /**
+                 * Creates a plain object from a ForceObjectDeleteMessage message. Also converts values to other types if specified.
+                 * @param message ForceObjectDeleteMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.ForceObjectDeleteMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this ForceObjectDeleteMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a GetShapeMessage. */
+            interface IGetShapeMessage {
+
+                /** GetShapeMessage object_id */
+                object_id?: (syft_proto.types.syft.v1.IId|null);
+            }
+
+            /** Represents a GetShapeMessage. */
+            class GetShapeMessage implements IGetShapeMessage {
+
+                /**
+                 * Constructs a new GetShapeMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IGetShapeMessage);
+
+                /** GetShapeMessage object_id. */
+                public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /**
+                 * Creates a new GetShapeMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns GetShapeMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IGetShapeMessage): syft_proto.messaging.v1.GetShapeMessage;
+
+                /**
+                 * Encodes the specified GetShapeMessage message. Does not implicitly {@link syft_proto.messaging.v1.GetShapeMessage.verify|verify} messages.
+                 * @param message GetShapeMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IGetShapeMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified GetShapeMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.GetShapeMessage.verify|verify} messages.
+                 * @param message GetShapeMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IGetShapeMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a GetShapeMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns GetShapeMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.GetShapeMessage;
+
+                /**
+                 * Decodes a GetShapeMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns GetShapeMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.GetShapeMessage;
+
+                /**
+                 * Verifies a GetShapeMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a GetShapeMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns GetShapeMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.GetShapeMessage;
+
+                /**
+                 * Creates a plain object from a GetShapeMessage message. Also converts values to other types if specified.
+                 * @param message GetShapeMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.GetShapeMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this GetShapeMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of an ObjectRequestMessage. */
+            interface IObjectRequestMessage {
+
+                /** ObjectRequestMessage object_id */
+                object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** ObjectRequestMessage reason */
+                reason?: (string|null);
+            }
+
+            /** Represents an ObjectRequestMessage. */
+            class ObjectRequestMessage implements IObjectRequestMessage {
+
+                /**
+                 * Constructs a new ObjectRequestMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IObjectRequestMessage);
+
+                /** ObjectRequestMessage object_id. */
+                public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** ObjectRequestMessage reason. */
+                public reason: string;
+
+                /**
+                 * Creates a new ObjectRequestMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns ObjectRequestMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IObjectRequestMessage): syft_proto.messaging.v1.ObjectRequestMessage;
+
+                /**
+                 * Encodes the specified ObjectRequestMessage message. Does not implicitly {@link syft_proto.messaging.v1.ObjectRequestMessage.verify|verify} messages.
+                 * @param message ObjectRequestMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IObjectRequestMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified ObjectRequestMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.ObjectRequestMessage.verify|verify} messages.
+                 * @param message ObjectRequestMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IObjectRequestMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes an ObjectRequestMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns ObjectRequestMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.ObjectRequestMessage;
+
+                /**
+                 * Decodes an ObjectRequestMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns ObjectRequestMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.ObjectRequestMessage;
+
+                /**
+                 * Verifies an ObjectRequestMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates an ObjectRequestMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns ObjectRequestMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.ObjectRequestMessage;
+
+                /**
+                 * Creates a plain object from an ObjectRequestMessage message. Also converts values to other types if specified.
+                 * @param message ObjectRequestMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.ObjectRequestMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this ObjectRequestMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a PlanCommandMessage. */
+            interface IPlanCommandMessage {
+
+                /** PlanCommandMessage command_name */
+                command_name?: (string|null);
+
+                /** PlanCommandMessage args */
+                args?: (syft_proto.types.syft.v1.IArg[]|null);
+            }
+
+            /** Represents a PlanCommandMessage. */
+            class PlanCommandMessage implements IPlanCommandMessage {
+
+                /**
+                 * Constructs a new PlanCommandMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IPlanCommandMessage);
+
+                /** PlanCommandMessage command_name. */
+                public command_name: string;
+
+                /** PlanCommandMessage args. */
+                public args: syft_proto.types.syft.v1.IArg[];
+
+                /**
+                 * Creates a new PlanCommandMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns PlanCommandMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IPlanCommandMessage): syft_proto.messaging.v1.PlanCommandMessage;
+
+                /**
+                 * Encodes the specified PlanCommandMessage message. Does not implicitly {@link syft_proto.messaging.v1.PlanCommandMessage.verify|verify} messages.
+                 * @param message PlanCommandMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IPlanCommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified PlanCommandMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.PlanCommandMessage.verify|verify} messages.
+                 * @param message PlanCommandMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IPlanCommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a PlanCommandMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns PlanCommandMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.PlanCommandMessage;
+
+                /**
+                 * Decodes a PlanCommandMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns PlanCommandMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.PlanCommandMessage;
+
+                /**
+                 * Verifies a PlanCommandMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a PlanCommandMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns PlanCommandMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.PlanCommandMessage;
+
+                /**
+                 * Creates a plain object from a PlanCommandMessage message. Also converts values to other types if specified.
+                 * @param message PlanCommandMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.PlanCommandMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this PlanCommandMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a WorkerCommandMessage. */
+            interface IWorkerCommandMessage {
+
+                /** WorkerCommandMessage command_name */
+                command_name?: (string|null);
+
+                /** WorkerCommandMessage args */
+                args?: (syft_proto.types.syft.v1.IArg[]|null);
+            }
+
+            /** Represents a WorkerCommandMessage. */
+            class WorkerCommandMessage implements IWorkerCommandMessage {
+
+                /**
+                 * Constructs a new WorkerCommandMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IWorkerCommandMessage);
+
+                /** WorkerCommandMessage command_name. */
+                public command_name: string;
+
+                /** WorkerCommandMessage args. */
+                public args: syft_proto.types.syft.v1.IArg[];
+
+                /**
+                 * Creates a new WorkerCommandMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns WorkerCommandMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IWorkerCommandMessage): syft_proto.messaging.v1.WorkerCommandMessage;
+
+                /**
+                 * Encodes the specified WorkerCommandMessage message. Does not implicitly {@link syft_proto.messaging.v1.WorkerCommandMessage.verify|verify} messages.
+                 * @param message WorkerCommandMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IWorkerCommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified WorkerCommandMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.WorkerCommandMessage.verify|verify} messages.
+                 * @param message WorkerCommandMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IWorkerCommandMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a WorkerCommandMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns WorkerCommandMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.WorkerCommandMessage;
+
+                /**
+                 * Decodes a WorkerCommandMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns WorkerCommandMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.WorkerCommandMessage;
+
+                /**
+                 * Verifies a WorkerCommandMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a WorkerCommandMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns WorkerCommandMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.WorkerCommandMessage;
+
+                /**
+                 * Creates a plain object from a WorkerCommandMessage message. Also converts values to other types if specified.
+                 * @param message WorkerCommandMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.WorkerCommandMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this WorkerCommandMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a SearchMessage. */
+            interface ISearchMessage {
+
+                /** SearchMessage query */
+                query?: (syft_proto.types.syft.v1.IId[]|null);
+            }
+
+            /** Represents a SearchMessage. */
+            class SearchMessage implements ISearchMessage {
+
+                /**
+                 * Constructs a new SearchMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.ISearchMessage);
+
+                /** SearchMessage query. */
+                public query: syft_proto.types.syft.v1.IId[];
+
+                /**
+                 * Creates a new SearchMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns SearchMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.ISearchMessage): syft_proto.messaging.v1.SearchMessage;
+
+                /**
+                 * Encodes the specified SearchMessage message. Does not implicitly {@link syft_proto.messaging.v1.SearchMessage.verify|verify} messages.
+                 * @param message SearchMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.ISearchMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified SearchMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.SearchMessage.verify|verify} messages.
+                 * @param message SearchMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.ISearchMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a SearchMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns SearchMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.SearchMessage;
+
+                /**
+                 * Decodes a SearchMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns SearchMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.SearchMessage;
+
+                /**
+                 * Verifies a SearchMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a SearchMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns SearchMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.SearchMessage;
+
+                /**
+                 * Creates a plain object from a SearchMessage message. Also converts values to other types if specified.
+                 * @param message SearchMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.SearchMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this SearchMessage to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
