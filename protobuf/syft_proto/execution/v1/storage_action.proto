@@ -9,7 +9,7 @@ import "syft_proto/types/syft/v1/arg.proto";
 import "syft_proto/types/syft/v1/id.proto";
 import "syft_proto/types/torch/v1/tensor.proto";
 
-message WorkerAction {
+message StorageAction {
     string command = 1;
     oneof target {
         syft_proto.types.syft.v1.Id target_id = 9;

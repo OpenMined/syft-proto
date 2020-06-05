@@ -18,7 +18,7 @@ buf:
 	curl -sSL \
 	"https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_OS}-${UNAME_ARCH}" \
 	-o "buf" && \
-	chmod +x "buf"	
+	chmod +x "buf"
 
 protoc:
 ifeq "${PROTOC_OS}" "osx"
@@ -88,7 +88,7 @@ stage: stubs
 	git add syft_proto/*
 	git add jvm/src/*
 	git add js/*
-	git add swift/* 
+	git add swift/*
 
 commit: stage
 	git diff --quiet && git diff --staged --quiet || \
