@@ -1,6 +1,7 @@
 SHELL := /bin/bash
 
-BUF_VERSION := 0.8.0
+BUF_VERSION := 0.13.0
+PROTOC_VERSION := 3.12.2
 UNAME_OS := $(shell uname -s)
 UNAME_ARCH := $(shell uname -m)
 HTTPS_GIT := "https://github.com/OpenMined/syft-proto.git"
@@ -11,7 +12,7 @@ else
 PROTOC_OS := ${UNAME_OS}
 endif
 
-PROTOC_ZIP := protoc-3.11.4-${PROTOC_OS}-x86_64.zip
+PROTOC_ZIP := protoc-${PROTOC_VERSION}-${PROTOC_OS}-x86_64.zip
 
 buf:
 	curl -sSL \
@@ -24,7 +25,7 @@ ifeq "${PROTOC_OS}" "osx"
 	brew install protobuf
 	ln -s $(shell which protoc) protoc
 else
-	curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.11.4/${PROTOC_ZIP}
+	curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/${PROTOC_ZIP}
 	sudo unzip -o ${PROTOC_ZIP} -d /usr/local bin/protoc
 	sudo unzip -o ${PROTOC_ZIP} -d /usr/local 'include/*'
 	rm -f ${PROTOC_ZIP}
@@ -75,6 +76,10 @@ swift: buf-lint
 clean:
 	rm -rf buf-lint
 	rm -rf buf-check-breaking
+	rm -rf syft_proto/**/
+	rm -rf jvm/src/main/java/org/openmined/syftproto/**/
+	rm -rf js/protobuf*.js
+	rm -rf swift/syft_proto/**/
 
 stubs: clean python java javascript swift
 

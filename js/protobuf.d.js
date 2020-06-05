@@ -242,6 +242,12 @@ export namespace syft_proto {
             /** Properties of a Placeholder. */
             interface IPlaceholder {
 
+                /** Placeholder child_tensor */
+                child_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** Placeholder child_parameter */
+                child_parameter?: (syft_proto.types.torch.v1.IParameter|null);
+
                 /** Placeholder id */
                 id?: (syft_proto.types.syft.v1.IId|null);
 
@@ -264,6 +270,12 @@ export namespace syft_proto {
                  */
                 constructor(properties?: syft_proto.execution.v1.IPlaceholder);
 
+                /** Placeholder child_tensor. */
+                public child_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                /** Placeholder child_parameter. */
+                public child_parameter?: (syft_proto.types.torch.v1.IParameter|null);
+
                 /** Placeholder id. */
                 public id?: (syft_proto.types.syft.v1.IId|null);
 
@@ -275,6 +287,9 @@ export namespace syft_proto {
 
                 /** Placeholder expected_shape. */
                 public expected_shape?: (syft_proto.types.syft.v1.IShape|null);
+
+                /** Placeholder child. */
+                public child?: ("child_tensor"|"child_parameter");
 
                 /**
                  * Creates a new Placeholder instance using the specified properties.
@@ -1973,7 +1988,7 @@ export namespace syft_proto {
                     arg_bool?: (boolean|null);
 
                     /** Arg arg_int */
-                    arg_int?: (number|null);
+                    arg_int?: (number|Long|null);
 
                     /** Arg arg_float */
                     arg_float?: (number|null);
@@ -2016,7 +2031,7 @@ export namespace syft_proto {
                     public arg_bool: boolean;
 
                     /** Arg arg_int. */
-                    public arg_int: number;
+                    public arg_int: (number|Long);
 
                     /** Arg arg_float. */
                     public arg_float: number;
@@ -3867,6 +3882,134 @@ export namespace syft_proto {
         /** Namespace torch. */
         namespace torch {
 
+            /** Namespace fl. */
+            namespace fl {
+
+                /** Namespace v1. */
+                namespace v1 {
+
+                    /** Properties of a BaseDataset. */
+                    interface IBaseDataset {
+
+                        /** BaseDataset data */
+                        data?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset targets */
+                        targets?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset id */
+                        id?: (syft_proto.types.syft.v1.IId|null);
+
+                        /** BaseDataset tags */
+                        tags?: (string[]|null);
+
+                        /** BaseDataset description */
+                        description?: (string|null);
+
+                        /** BaseDataset child */
+                        child?: (syft_proto.types.torch.v1.ITorchTensor|null);
+                    }
+
+                    /** Represents a BaseDataset. */
+                    class BaseDataset implements IBaseDataset {
+
+                        /**
+                         * Constructs a new BaseDataset.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: syft_proto.frameworks.torch.fl.v1.IBaseDataset);
+
+                        /** BaseDataset data. */
+                        public data?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset targets. */
+                        public targets?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset id. */
+                        public id?: (syft_proto.types.syft.v1.IId|null);
+
+                        /** BaseDataset tags. */
+                        public tags: string[];
+
+                        /** BaseDataset description. */
+                        public description: string;
+
+                        /** BaseDataset child. */
+                        public child?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /**
+                         * Creates a new BaseDataset instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns BaseDataset instance
+                         */
+                        public static create(properties?: syft_proto.frameworks.torch.fl.v1.IBaseDataset): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Encodes the specified BaseDataset message. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
+                         * @param message BaseDataset message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: syft_proto.frameworks.torch.fl.v1.IBaseDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified BaseDataset message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
+                         * @param message BaseDataset message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: syft_proto.frameworks.torch.fl.v1.IBaseDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a BaseDataset message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns BaseDataset
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Decodes a BaseDataset message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns BaseDataset
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Verifies a BaseDataset message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a BaseDataset message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns BaseDataset
+                         */
+                        public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Creates a plain object from a BaseDataset message. Also converts values to other types if specified.
+                         * @param message BaseDataset
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: syft_proto.frameworks.torch.fl.v1.BaseDataset, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this BaseDataset to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+                    }
+                }
+            }
+
             /** Namespace tensors. */
             namespace tensors {
 
@@ -4000,6 +4143,144 @@ export namespace syft_proto {
 
                             /**
                              * Converts this AdditiveSharingTensor to JSON.
+                             * @returns JSON object
+                             */
+                            public toJSON(): { [k: string]: any };
+                        }
+
+                        /** Properties of a FixedPrecisionTensor. */
+                        interface IFixedPrecisionTensor {
+
+                            /** FixedPrecisionTensor id */
+                            id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** FixedPrecisionTensor field */
+                            field?: (string|null);
+
+                            /** FixedPrecisionTensor dtype */
+                            dtype?: (string|null);
+
+                            /** FixedPrecisionTensor base */
+                            base?: (number|null);
+
+                            /** FixedPrecisionTensor kappa */
+                            kappa?: (number|null);
+
+                            /** FixedPrecisionTensor precision_fractional */
+                            precision_fractional?: (number|null);
+
+                            /** FixedPrecisionTensor tags */
+                            tags?: (string[]|null);
+
+                            /** FixedPrecisionTensor description */
+                            description?: (string|null);
+
+                            /** FixedPrecisionTensor child */
+                            child?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor|null);
+                        }
+
+                        /** Represents a FixedPrecisionTensor. */
+                        class FixedPrecisionTensor implements IFixedPrecisionTensor {
+
+                            /**
+                             * Constructs a new FixedPrecisionTensor.
+                             * @param [properties] Properties to set
+                             */
+                            constructor(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor);
+
+                            /** FixedPrecisionTensor id. */
+                            public id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** FixedPrecisionTensor field. */
+                            public field: string;
+
+                            /** FixedPrecisionTensor dtype. */
+                            public dtype: string;
+
+                            /** FixedPrecisionTensor base. */
+                            public base: number;
+
+                            /** FixedPrecisionTensor kappa. */
+                            public kappa: number;
+
+                            /** FixedPrecisionTensor precision_fractional. */
+                            public precision_fractional: number;
+
+                            /** FixedPrecisionTensor tags. */
+                            public tags: string[];
+
+                            /** FixedPrecisionTensor description. */
+                            public description: string;
+
+                            /** FixedPrecisionTensor child. */
+                            public child?: (syft_proto.frameworks.torch.tensors.interpreters.v1.IAdditiveSharingTensor|null);
+
+                            /**
+                             * Creates a new FixedPrecisionTensor instance using the specified properties.
+                             * @param [properties] Properties to set
+                             * @returns FixedPrecisionTensor instance
+                             */
+                            public static create(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor): syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor;
+
+                            /**
+                             * Encodes the specified FixedPrecisionTensor message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.verify|verify} messages.
+                             * @param message FixedPrecisionTensor message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encode(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Encodes the specified FixedPrecisionTensor message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor.verify|verify} messages.
+                             * @param message FixedPrecisionTensor message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encodeDelimited(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IFixedPrecisionTensor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Decodes a FixedPrecisionTensor message from the specified reader or buffer.
+                             * @param reader Reader or buffer to decode from
+                             * @param [length] Message length if known beforehand
+                             * @returns FixedPrecisionTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor;
+
+                            /**
+                             * Decodes a FixedPrecisionTensor message from the specified reader or buffer, length delimited.
+                             * @param reader Reader or buffer to decode from
+                             * @returns FixedPrecisionTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor;
+
+                            /**
+                             * Verifies a FixedPrecisionTensor message.
+                             * @param message Plain object to verify
+                             * @returns `null` if valid, otherwise the reason why it is not
+                             */
+                            public static verify(message: { [k: string]: any }): (string|null);
+
+                            /**
+                             * Creates a FixedPrecisionTensor message from a plain object. Also converts values to their respective internal types.
+                             * @param object Plain object
+                             * @returns FixedPrecisionTensor
+                             */
+                            public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor;
+
+                            /**
+                             * Creates a plain object from a FixedPrecisionTensor message. Also converts values to other types if specified.
+                             * @param message FixedPrecisionTensor
+                             * @param [options] Conversion options
+                             * @returns Plain object
+                             */
+                            public static toObject(message: syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                            /**
+                             * Converts this FixedPrecisionTensor to JSON.
                              * @returns JSON object
                              */
                             public toJSON(): { [k: string]: any };
