@@ -219,6 +219,9 @@
     },
     "syft.execution.worker_actions.WorkerAction": {
       "code": 67
+    },
+    "syft.messaging.message.ObjectRequestCopyMessage": {
+      "code": 68
     }
   }
 }

@@ -4431,6 +4431,9 @@ export namespace syft_proto {
 
                 /** SyftMessage contents_search_msg */
                 contents_search_msg?: (syft_proto.messaging.v1.ISearchMessage|null);
+
+                /** SyftMessage contents_object_request_copy_msg */
+                contents_object_request_copy_msg?: (syft_proto.messaging.v1.IObjectRequestCopyMessage|null);
             }
 
             /** Represents a SyftMessage. */
@@ -4472,8 +4475,11 @@ export namespace syft_proto {
                 /** SyftMessage contents_search_msg. */
                 public contents_search_msg?: (syft_proto.messaging.v1.ISearchMessage|null);
 
+                /** SyftMessage contents_object_request_copy_msg. */
+                public contents_object_request_copy_msg?: (syft_proto.messaging.v1.IObjectRequestCopyMessage|null);
+
                 /** SyftMessage contents. */
-                public contents?: ("contents_empty_msg"|"contents_delete_msg"|"contents_get_shape_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_object_request_msg"|"contents_tensor_cmd_msg"|"contents_plan_cmd_msg"|"contents_worker_cmd_msg"|"contents_search_msg");
+                public contents?: ("contents_empty_msg"|"contents_delete_msg"|"contents_get_shape_msg"|"contents_is_none_msg"|"contents_object_msg"|"contents_object_request_msg"|"contents_tensor_cmd_msg"|"contents_plan_cmd_msg"|"contents_worker_cmd_msg"|"contents_search_msg"|"contents_object_request_copy_msg");
 
                 /**
                  * Creates a new SyftMessage instance using the specified properties.
@@ -5096,6 +5102,102 @@ export namespace syft_proto {
 
                 /**
                  * Converts this ObjectRequestMessage to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of an ObjectRequestCopyMessage. */
+            interface IObjectRequestCopyMessage {
+
+                /** ObjectRequestCopyMessage object_id */
+                object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** ObjectRequestCopyMessage reason */
+                reason?: (string|null);
+            }
+
+            /** Represents an ObjectRequestCopyMessage. */
+            class ObjectRequestCopyMessage implements IObjectRequestCopyMessage {
+
+                /**
+                 * Constructs a new ObjectRequestCopyMessage.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: syft_proto.messaging.v1.IObjectRequestCopyMessage);
+
+                /** ObjectRequestCopyMessage object_id. */
+                public object_id?: (syft_proto.types.syft.v1.IId|null);
+
+                /** ObjectRequestCopyMessage reason. */
+                public reason: string;
+
+                /**
+                 * Creates a new ObjectRequestCopyMessage instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns ObjectRequestCopyMessage instance
+                 */
+                public static create(properties?: syft_proto.messaging.v1.IObjectRequestCopyMessage): syft_proto.messaging.v1.ObjectRequestCopyMessage;
+
+                /**
+                 * Encodes the specified ObjectRequestCopyMessage message. Does not implicitly {@link syft_proto.messaging.v1.ObjectRequestCopyMessage.verify|verify} messages.
+                 * @param message ObjectRequestCopyMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: syft_proto.messaging.v1.IObjectRequestCopyMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified ObjectRequestCopyMessage message, length delimited. Does not implicitly {@link syft_proto.messaging.v1.ObjectRequestCopyMessage.verify|verify} messages.
+                 * @param message ObjectRequestCopyMessage message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: syft_proto.messaging.v1.IObjectRequestCopyMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes an ObjectRequestCopyMessage message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns ObjectRequestCopyMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.messaging.v1.ObjectRequestCopyMessage;
+
+                /**
+                 * Decodes an ObjectRequestCopyMessage message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns ObjectRequestCopyMessage
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.messaging.v1.ObjectRequestCopyMessage;
+
+                /**
+                 * Verifies an ObjectRequestCopyMessage message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates an ObjectRequestCopyMessage message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns ObjectRequestCopyMessage
+                 */
+                public static fromObject(object: { [k: string]: any }): syft_proto.messaging.v1.ObjectRequestCopyMessage;
+
+                /**
+                 * Creates a plain object from an ObjectRequestCopyMessage message. Also converts values to other types if specified.
+                 * @param message ObjectRequestCopyMessage
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: syft_proto.messaging.v1.ObjectRequestCopyMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this ObjectRequestCopyMessage to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
