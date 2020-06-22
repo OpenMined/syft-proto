@@ -10844,365 +10844,6 @@ $root.syft_proto = (function() {
              */
             var torch = {};
 
-            torch.fl = (function() {
-
-                /**
-                 * Namespace fl.
-                 * @memberof syft_proto.frameworks.torch
-                 * @namespace
-                 */
-                var fl = {};
-
-                fl.v1 = (function() {
-
-                    /**
-                     * Namespace v1.
-                     * @memberof syft_proto.frameworks.torch.fl
-                     * @namespace
-                     */
-                    var v1 = {};
-
-                    v1.BaseDataset = (function() {
-
-                        /**
-                         * Properties of a BaseDataset.
-                         * @memberof syft_proto.frameworks.torch.fl.v1
-                         * @interface IBaseDataset
-                         * @property {syft_proto.types.torch.v1.ITorchTensor|null} [data] BaseDataset data
-                         * @property {syft_proto.types.torch.v1.ITorchTensor|null} [targets] BaseDataset targets
-                         * @property {syft_proto.types.syft.v1.IId|null} [id] BaseDataset id
-                         * @property {Array.<string>|null} [tags] BaseDataset tags
-                         * @property {string|null} [description] BaseDataset description
-                         * @property {syft_proto.types.torch.v1.ITorchTensor|null} [child] BaseDataset child
-                         */
-
-                        /**
-                         * Constructs a new BaseDataset.
-                         * @memberof syft_proto.frameworks.torch.fl.v1
-                         * @classdesc Represents a BaseDataset.
-                         * @implements IBaseDataset
-                         * @constructor
-                         * @param {syft_proto.frameworks.torch.fl.v1.IBaseDataset=} [properties] Properties to set
-                         */
-                        function BaseDataset(properties) {
-                            this.tags = [];
-                            if (properties)
-                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                                    if (properties[keys[i]] != null)
-                                        this[keys[i]] = properties[keys[i]];
-                        }
-
-                        /**
-                         * BaseDataset data.
-                         * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} data
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @instance
-                         */
-                        BaseDataset.prototype.data = null;
-
-                        /**
-                         * BaseDataset targets.
-                         * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} targets
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @instance
-                         */
-                        BaseDataset.prototype.targets = null;
-
-                        /**
-                         * BaseDataset id.
-                         * @member {syft_proto.types.syft.v1.IId|null|undefined} id
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @instance
-                         */
-                        BaseDataset.prototype.id = null;
-
-                        /**
-                         * BaseDataset tags.
-                         * @member {Array.<string>} tags
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @instance
-                         */
-                        BaseDataset.prototype.tags = $util.emptyArray;
-
-                        /**
-                         * BaseDataset description.
-                         * @member {string} description
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @instance
-                         */
-                        BaseDataset.prototype.description = "";
-
-                        /**
-                         * BaseDataset child.
-                         * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} child
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @instance
-                         */
-                        BaseDataset.prototype.child = null;
-
-                        /**
-                         * Creates a new BaseDataset instance using the specified properties.
-                         * @function create
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @static
-                         * @param {syft_proto.frameworks.torch.fl.v1.IBaseDataset=} [properties] Properties to set
-                         * @returns {syft_proto.frameworks.torch.fl.v1.BaseDataset} BaseDataset instance
-                         */
-                        BaseDataset.create = function create(properties) {
-                            return new BaseDataset(properties);
-                        };
-
-                        /**
-                         * Encodes the specified BaseDataset message. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
-                         * @function encode
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @static
-                         * @param {syft_proto.frameworks.torch.fl.v1.IBaseDataset} message BaseDataset message or plain object to encode
-                         * @param {$protobuf.Writer} [writer] Writer to encode to
-                         * @returns {$protobuf.Writer} Writer
-                         */
-                        BaseDataset.encode = function encode(message, writer) {
-                            if (!writer)
-                                writer = $Writer.create();
-                            if (message.data != null && message.hasOwnProperty("data"))
-                                $root.syft_proto.types.torch.v1.TorchTensor.encode(message.data, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                            if (message.targets != null && message.hasOwnProperty("targets"))
-                                $root.syft_proto.types.torch.v1.TorchTensor.encode(message.targets, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                            if (message.id != null && message.hasOwnProperty("id"))
-                                $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                            if (message.tags != null && message.tags.length)
-                                for (var i = 0; i < message.tags.length; ++i)
-                                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
-                            if (message.description != null && message.hasOwnProperty("description"))
-                                writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
-                            if (message.child != null && message.hasOwnProperty("child"))
-                                $root.syft_proto.types.torch.v1.TorchTensor.encode(message.child, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                            return writer;
-                        };
-
-                        /**
-                         * Encodes the specified BaseDataset message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
-                         * @function encodeDelimited
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @static
-                         * @param {syft_proto.frameworks.torch.fl.v1.IBaseDataset} message BaseDataset message or plain object to encode
-                         * @param {$protobuf.Writer} [writer] Writer to encode to
-                         * @returns {$protobuf.Writer} Writer
-                         */
-                        BaseDataset.encodeDelimited = function encodeDelimited(message, writer) {
-                            return this.encode(message, writer).ldelim();
-                        };
-
-                        /**
-                         * Decodes a BaseDataset message from the specified reader or buffer.
-                         * @function decode
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @static
-                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                         * @param {number} [length] Message length if known beforehand
-                         * @returns {syft_proto.frameworks.torch.fl.v1.BaseDataset} BaseDataset
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        BaseDataset.decode = function decode(reader, length) {
-                            if (!(reader instanceof $Reader))
-                                reader = $Reader.create(reader);
-                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.frameworks.torch.fl.v1.BaseDataset();
-                            while (reader.pos < end) {
-                                var tag = reader.uint32();
-                                switch (tag >>> 3) {
-                                case 1:
-                                    message.data = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
-                                    break;
-                                case 2:
-                                    message.targets = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
-                                    break;
-                                case 3:
-                                    message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
-                                    break;
-                                case 4:
-                                    if (!(message.tags && message.tags.length))
-                                        message.tags = [];
-                                    message.tags.push(reader.string());
-                                    break;
-                                case 5:
-                                    message.description = reader.string();
-                                    break;
-                                case 6:
-                                    message.child = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
-                                    break;
-                                default:
-                                    reader.skipType(tag & 7);
-                                    break;
-                                }
-                            }
-                            return message;
-                        };
-
-                        /**
-                         * Decodes a BaseDataset message from the specified reader or buffer, length delimited.
-                         * @function decodeDelimited
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @static
-                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                         * @returns {syft_proto.frameworks.torch.fl.v1.BaseDataset} BaseDataset
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        BaseDataset.decodeDelimited = function decodeDelimited(reader) {
-                            if (!(reader instanceof $Reader))
-                                reader = new $Reader(reader);
-                            return this.decode(reader, reader.uint32());
-                        };
-
-                        /**
-                         * Verifies a BaseDataset message.
-                         * @function verify
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @static
-                         * @param {Object.<string,*>} message Plain object to verify
-                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                         */
-                        BaseDataset.verify = function verify(message) {
-                            if (typeof message !== "object" || message === null)
-                                return "object expected";
-                            if (message.data != null && message.hasOwnProperty("data")) {
-                                var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.data);
-                                if (error)
-                                    return "data." + error;
-                            }
-                            if (message.targets != null && message.hasOwnProperty("targets")) {
-                                var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.targets);
-                                if (error)
-                                    return "targets." + error;
-                            }
-                            if (message.id != null && message.hasOwnProperty("id")) {
-                                var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
-                                if (error)
-                                    return "id." + error;
-                            }
-                            if (message.tags != null && message.hasOwnProperty("tags")) {
-                                if (!Array.isArray(message.tags))
-                                    return "tags: array expected";
-                                for (var i = 0; i < message.tags.length; ++i)
-                                    if (!$util.isString(message.tags[i]))
-                                        return "tags: string[] expected";
-                            }
-                            if (message.description != null && message.hasOwnProperty("description"))
-                                if (!$util.isString(message.description))
-                                    return "description: string expected";
-                            if (message.child != null && message.hasOwnProperty("child")) {
-                                var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.child);
-                                if (error)
-                                    return "child." + error;
-                            }
-                            return null;
-                        };
-
-                        /**
-                         * Creates a BaseDataset message from a plain object. Also converts values to their respective internal types.
-                         * @function fromObject
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @static
-                         * @param {Object.<string,*>} object Plain object
-                         * @returns {syft_proto.frameworks.torch.fl.v1.BaseDataset} BaseDataset
-                         */
-                        BaseDataset.fromObject = function fromObject(object) {
-                            if (object instanceof $root.syft_proto.frameworks.torch.fl.v1.BaseDataset)
-                                return object;
-                            var message = new $root.syft_proto.frameworks.torch.fl.v1.BaseDataset();
-                            if (object.data != null) {
-                                if (typeof object.data !== "object")
-                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.data: object expected");
-                                message.data = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.data);
-                            }
-                            if (object.targets != null) {
-                                if (typeof object.targets !== "object")
-                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.targets: object expected");
-                                message.targets = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.targets);
-                            }
-                            if (object.id != null) {
-                                if (typeof object.id !== "object")
-                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.id: object expected");
-                                message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
-                            }
-                            if (object.tags) {
-                                if (!Array.isArray(object.tags))
-                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.tags: array expected");
-                                message.tags = [];
-                                for (var i = 0; i < object.tags.length; ++i)
-                                    message.tags[i] = String(object.tags[i]);
-                            }
-                            if (object.description != null)
-                                message.description = String(object.description);
-                            if (object.child != null) {
-                                if (typeof object.child !== "object")
-                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.child: object expected");
-                                message.child = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.child);
-                            }
-                            return message;
-                        };
-
-                        /**
-                         * Creates a plain object from a BaseDataset message. Also converts values to other types if specified.
-                         * @function toObject
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @static
-                         * @param {syft_proto.frameworks.torch.fl.v1.BaseDataset} message BaseDataset
-                         * @param {$protobuf.IConversionOptions} [options] Conversion options
-                         * @returns {Object.<string,*>} Plain object
-                         */
-                        BaseDataset.toObject = function toObject(message, options) {
-                            if (!options)
-                                options = {};
-                            var object = {};
-                            if (options.arrays || options.defaults)
-                                object.tags = [];
-                            if (options.defaults) {
-                                object.data = null;
-                                object.targets = null;
-                                object.id = null;
-                                object.description = "";
-                                object.child = null;
-                            }
-                            if (message.data != null && message.hasOwnProperty("data"))
-                                object.data = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.data, options);
-                            if (message.targets != null && message.hasOwnProperty("targets"))
-                                object.targets = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.targets, options);
-                            if (message.id != null && message.hasOwnProperty("id"))
-                                object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
-                            if (message.tags && message.tags.length) {
-                                object.tags = [];
-                                for (var j = 0; j < message.tags.length; ++j)
-                                    object.tags[j] = message.tags[j];
-                            }
-                            if (message.description != null && message.hasOwnProperty("description"))
-                                object.description = message.description;
-                            if (message.child != null && message.hasOwnProperty("child"))
-                                object.child = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.child, options);
-                            return object;
-                        };
-
-                        /**
-                         * Converts this BaseDataset to JSON.
-                         * @function toJSON
-                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
-                         * @instance
-                         * @returns {Object.<string,*>} JSON object
-                         */
-                        BaseDataset.prototype.toJSON = function toJSON() {
-                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                        };
-
-                        return BaseDataset;
-                    })();
-
-                    return v1;
-                })();
-
-                return fl;
-            })();
-
             torch.tensors = (function() {
 
                 /**
@@ -11229,6 +10870,291 @@ $root.syft_proto = (function() {
                          * @namespace
                          */
                         var v1 = {};
+
+                        v1.OnnxModel = (function() {
+
+                            /**
+                             * Properties of an OnnxModel.
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1
+                             * @interface IOnnxModel
+                             * @property {syft_proto.types.syft.v1.IId|null} [id] OnnxModel id
+                             * @property {Uint8Array|null} [serialized_model] OnnxModel serialized_model
+                             * @property {Array.<string>|null} [tags] OnnxModel tags
+                             * @property {string|null} [description] OnnxModel description
+                             */
+
+                            /**
+                             * Constructs a new OnnxModel.
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1
+                             * @classdesc Represents an OnnxModel.
+                             * @implements IOnnxModel
+                             * @constructor
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IOnnxModel=} [properties] Properties to set
+                             */
+                            function OnnxModel(properties) {
+                                this.tags = [];
+                                if (properties)
+                                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                        if (properties[keys[i]] != null)
+                                            this[keys[i]] = properties[keys[i]];
+                            }
+
+                            /**
+                             * OnnxModel id.
+                             * @member {syft_proto.types.syft.v1.IId|null|undefined} id
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @instance
+                             */
+                            OnnxModel.prototype.id = null;
+
+                            /**
+                             * OnnxModel serialized_model.
+                             * @member {Uint8Array} serialized_model
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @instance
+                             */
+                            OnnxModel.prototype.serialized_model = $util.newBuffer([]);
+
+                            /**
+                             * OnnxModel tags.
+                             * @member {Array.<string>} tags
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @instance
+                             */
+                            OnnxModel.prototype.tags = $util.emptyArray;
+
+                            /**
+                             * OnnxModel description.
+                             * @member {string} description
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @instance
+                             */
+                            OnnxModel.prototype.description = "";
+
+                            /**
+                             * Creates a new OnnxModel instance using the specified properties.
+                             * @function create
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IOnnxModel=} [properties] Properties to set
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel} OnnxModel instance
+                             */
+                            OnnxModel.create = function create(properties) {
+                                return new OnnxModel(properties);
+                            };
+
+                            /**
+                             * Encodes the specified OnnxModel message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel.verify|verify} messages.
+                             * @function encode
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IOnnxModel} message OnnxModel message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            OnnxModel.encode = function encode(message, writer) {
+                                if (!writer)
+                                    writer = $Writer.create();
+                                if (message.id != null && message.hasOwnProperty("id"))
+                                    $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                if (message.serialized_model != null && message.hasOwnProperty("serialized_model"))
+                                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.serialized_model);
+                                if (message.tags != null && message.tags.length)
+                                    for (var i = 0; i < message.tags.length; ++i)
+                                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.tags[i]);
+                                if (message.description != null && message.hasOwnProperty("description"))
+                                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.description);
+                                return writer;
+                            };
+
+                            /**
+                             * Encodes the specified OnnxModel message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel.verify|verify} messages.
+                             * @function encodeDelimited
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IOnnxModel} message OnnxModel message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            OnnxModel.encodeDelimited = function encodeDelimited(message, writer) {
+                                return this.encode(message, writer).ldelim();
+                            };
+
+                            /**
+                             * Decodes an OnnxModel message from the specified reader or buffer.
+                             * @function decode
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @param {number} [length] Message length if known beforehand
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel} OnnxModel
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            OnnxModel.decode = function decode(reader, length) {
+                                if (!(reader instanceof $Reader))
+                                    reader = $Reader.create(reader);
+                                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel();
+                                while (reader.pos < end) {
+                                    var tag = reader.uint32();
+                                    switch (tag >>> 3) {
+                                    case 1:
+                                        message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                                        break;
+                                    case 2:
+                                        message.serialized_model = reader.bytes();
+                                        break;
+                                    case 3:
+                                        if (!(message.tags && message.tags.length))
+                                            message.tags = [];
+                                        message.tags.push(reader.string());
+                                        break;
+                                    case 4:
+                                        message.description = reader.string();
+                                        break;
+                                    default:
+                                        reader.skipType(tag & 7);
+                                        break;
+                                    }
+                                }
+                                return message;
+                            };
+
+                            /**
+                             * Decodes an OnnxModel message from the specified reader or buffer, length delimited.
+                             * @function decodeDelimited
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel} OnnxModel
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            OnnxModel.decodeDelimited = function decodeDelimited(reader) {
+                                if (!(reader instanceof $Reader))
+                                    reader = new $Reader(reader);
+                                return this.decode(reader, reader.uint32());
+                            };
+
+                            /**
+                             * Verifies an OnnxModel message.
+                             * @function verify
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @static
+                             * @param {Object.<string,*>} message Plain object to verify
+                             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                             */
+                            OnnxModel.verify = function verify(message) {
+                                if (typeof message !== "object" || message === null)
+                                    return "object expected";
+                                if (message.id != null && message.hasOwnProperty("id")) {
+                                    var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
+                                    if (error)
+                                        return "id." + error;
+                                }
+                                if (message.serialized_model != null && message.hasOwnProperty("serialized_model"))
+                                    if (!(message.serialized_model && typeof message.serialized_model.length === "number" || $util.isString(message.serialized_model)))
+                                        return "serialized_model: buffer expected";
+                                if (message.tags != null && message.hasOwnProperty("tags")) {
+                                    if (!Array.isArray(message.tags))
+                                        return "tags: array expected";
+                                    for (var i = 0; i < message.tags.length; ++i)
+                                        if (!$util.isString(message.tags[i]))
+                                            return "tags: string[] expected";
+                                }
+                                if (message.description != null && message.hasOwnProperty("description"))
+                                    if (!$util.isString(message.description))
+                                        return "description: string expected";
+                                return null;
+                            };
+
+                            /**
+                             * Creates an OnnxModel message from a plain object. Also converts values to their respective internal types.
+                             * @function fromObject
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @static
+                             * @param {Object.<string,*>} object Plain object
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel} OnnxModel
+                             */
+                            OnnxModel.fromObject = function fromObject(object) {
+                                if (object instanceof $root.syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel)
+                                    return object;
+                                var message = new $root.syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel();
+                                if (object.id != null) {
+                                    if (typeof object.id !== "object")
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel.id: object expected");
+                                    message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
+                                }
+                                if (object.serialized_model != null)
+                                    if (typeof object.serialized_model === "string")
+                                        $util.base64.decode(object.serialized_model, message.serialized_model = $util.newBuffer($util.base64.length(object.serialized_model)), 0);
+                                    else if (object.serialized_model.length)
+                                        message.serialized_model = object.serialized_model;
+                                if (object.tags) {
+                                    if (!Array.isArray(object.tags))
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel.tags: array expected");
+                                    message.tags = [];
+                                    for (var i = 0; i < object.tags.length; ++i)
+                                        message.tags[i] = String(object.tags[i]);
+                                }
+                                if (object.description != null)
+                                    message.description = String(object.description);
+                                return message;
+                            };
+
+                            /**
+                             * Creates a plain object from an OnnxModel message. Also converts values to other types if specified.
+                             * @function toObject
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel} message OnnxModel
+                             * @param {$protobuf.IConversionOptions} [options] Conversion options
+                             * @returns {Object.<string,*>} Plain object
+                             */
+                            OnnxModel.toObject = function toObject(message, options) {
+                                if (!options)
+                                    options = {};
+                                var object = {};
+                                if (options.arrays || options.defaults)
+                                    object.tags = [];
+                                if (options.defaults) {
+                                    object.id = null;
+                                    if (options.bytes === String)
+                                        object.serialized_model = "";
+                                    else {
+                                        object.serialized_model = [];
+                                        if (options.bytes !== Array)
+                                            object.serialized_model = $util.newBuffer(object.serialized_model);
+                                    }
+                                    object.description = "";
+                                }
+                                if (message.id != null && message.hasOwnProperty("id"))
+                                    object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
+                                if (message.serialized_model != null && message.hasOwnProperty("serialized_model"))
+                                    object.serialized_model = options.bytes === String ? $util.base64.encode(message.serialized_model, 0, message.serialized_model.length) : options.bytes === Array ? Array.prototype.slice.call(message.serialized_model) : message.serialized_model;
+                                if (message.tags && message.tags.length) {
+                                    object.tags = [];
+                                    for (var j = 0; j < message.tags.length; ++j)
+                                        object.tags[j] = message.tags[j];
+                                }
+                                if (message.description != null && message.hasOwnProperty("description"))
+                                    object.description = message.description;
+                                return object;
+                            };
+
+                            /**
+                             * Converts this OnnxModel to JSON.
+                             * @function toJSON
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel
+                             * @instance
+                             * @returns {Object.<string,*>} JSON object
+                             */
+                            OnnxModel.prototype.toJSON = function toJSON() {
+                                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                            };
+
+                            return OnnxModel;
+                        })();
 
                         v1.AdditiveSharingTensor = (function() {
 
@@ -12037,6 +11963,365 @@ $root.syft_proto = (function() {
                 })();
 
                 return tensors;
+            })();
+
+            torch.fl = (function() {
+
+                /**
+                 * Namespace fl.
+                 * @memberof syft_proto.frameworks.torch
+                 * @namespace
+                 */
+                var fl = {};
+
+                fl.v1 = (function() {
+
+                    /**
+                     * Namespace v1.
+                     * @memberof syft_proto.frameworks.torch.fl
+                     * @namespace
+                     */
+                    var v1 = {};
+
+                    v1.BaseDataset = (function() {
+
+                        /**
+                         * Properties of a BaseDataset.
+                         * @memberof syft_proto.frameworks.torch.fl.v1
+                         * @interface IBaseDataset
+                         * @property {syft_proto.types.torch.v1.ITorchTensor|null} [data] BaseDataset data
+                         * @property {syft_proto.types.torch.v1.ITorchTensor|null} [targets] BaseDataset targets
+                         * @property {syft_proto.types.syft.v1.IId|null} [id] BaseDataset id
+                         * @property {Array.<string>|null} [tags] BaseDataset tags
+                         * @property {string|null} [description] BaseDataset description
+                         * @property {syft_proto.types.torch.v1.ITorchTensor|null} [child] BaseDataset child
+                         */
+
+                        /**
+                         * Constructs a new BaseDataset.
+                         * @memberof syft_proto.frameworks.torch.fl.v1
+                         * @classdesc Represents a BaseDataset.
+                         * @implements IBaseDataset
+                         * @constructor
+                         * @param {syft_proto.frameworks.torch.fl.v1.IBaseDataset=} [properties] Properties to set
+                         */
+                        function BaseDataset(properties) {
+                            this.tags = [];
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+
+                        /**
+                         * BaseDataset data.
+                         * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} data
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         */
+                        BaseDataset.prototype.data = null;
+
+                        /**
+                         * BaseDataset targets.
+                         * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} targets
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         */
+                        BaseDataset.prototype.targets = null;
+
+                        /**
+                         * BaseDataset id.
+                         * @member {syft_proto.types.syft.v1.IId|null|undefined} id
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         */
+                        BaseDataset.prototype.id = null;
+
+                        /**
+                         * BaseDataset tags.
+                         * @member {Array.<string>} tags
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         */
+                        BaseDataset.prototype.tags = $util.emptyArray;
+
+                        /**
+                         * BaseDataset description.
+                         * @member {string} description
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         */
+                        BaseDataset.prototype.description = "";
+
+                        /**
+                         * BaseDataset child.
+                         * @member {syft_proto.types.torch.v1.ITorchTensor|null|undefined} child
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         */
+                        BaseDataset.prototype.child = null;
+
+                        /**
+                         * Creates a new BaseDataset instance using the specified properties.
+                         * @function create
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {syft_proto.frameworks.torch.fl.v1.IBaseDataset=} [properties] Properties to set
+                         * @returns {syft_proto.frameworks.torch.fl.v1.BaseDataset} BaseDataset instance
+                         */
+                        BaseDataset.create = function create(properties) {
+                            return new BaseDataset(properties);
+                        };
+
+                        /**
+                         * Encodes the specified BaseDataset message. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
+                         * @function encode
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {syft_proto.frameworks.torch.fl.v1.IBaseDataset} message BaseDataset message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        BaseDataset.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.data != null && message.hasOwnProperty("data"))
+                                $root.syft_proto.types.torch.v1.TorchTensor.encode(message.data, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                            if (message.targets != null && message.hasOwnProperty("targets"))
+                                $root.syft_proto.types.torch.v1.TorchTensor.encode(message.targets, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                            if (message.id != null && message.hasOwnProperty("id"))
+                                $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                            if (message.tags != null && message.tags.length)
+                                for (var i = 0; i < message.tags.length; ++i)
+                                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
+                            if (message.description != null && message.hasOwnProperty("description"))
+                                writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
+                            if (message.child != null && message.hasOwnProperty("child"))
+                                $root.syft_proto.types.torch.v1.TorchTensor.encode(message.child, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                            return writer;
+                        };
+
+                        /**
+                         * Encodes the specified BaseDataset message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {syft_proto.frameworks.torch.fl.v1.IBaseDataset} message BaseDataset message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        BaseDataset.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+
+                        /**
+                         * Decodes a BaseDataset message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {syft_proto.frameworks.torch.fl.v1.BaseDataset} BaseDataset
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        BaseDataset.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.frameworks.torch.fl.v1.BaseDataset();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.data = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
+                                    break;
+                                case 2:
+                                    message.targets = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
+                                    break;
+                                case 3:
+                                    message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                                    break;
+                                case 4:
+                                    if (!(message.tags && message.tags.length))
+                                        message.tags = [];
+                                    message.tags.push(reader.string());
+                                    break;
+                                case 5:
+                                    message.description = reader.string();
+                                    break;
+                                case 6:
+                                    message.child = $root.syft_proto.types.torch.v1.TorchTensor.decode(reader, reader.uint32());
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+
+                        /**
+                         * Decodes a BaseDataset message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {syft_proto.frameworks.torch.fl.v1.BaseDataset} BaseDataset
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        BaseDataset.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+
+                        /**
+                         * Verifies a BaseDataset message.
+                         * @function verify
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        BaseDataset.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.data != null && message.hasOwnProperty("data")) {
+                                var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.data);
+                                if (error)
+                                    return "data." + error;
+                            }
+                            if (message.targets != null && message.hasOwnProperty("targets")) {
+                                var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.targets);
+                                if (error)
+                                    return "targets." + error;
+                            }
+                            if (message.id != null && message.hasOwnProperty("id")) {
+                                var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
+                                if (error)
+                                    return "id." + error;
+                            }
+                            if (message.tags != null && message.hasOwnProperty("tags")) {
+                                if (!Array.isArray(message.tags))
+                                    return "tags: array expected";
+                                for (var i = 0; i < message.tags.length; ++i)
+                                    if (!$util.isString(message.tags[i]))
+                                        return "tags: string[] expected";
+                            }
+                            if (message.description != null && message.hasOwnProperty("description"))
+                                if (!$util.isString(message.description))
+                                    return "description: string expected";
+                            if (message.child != null && message.hasOwnProperty("child")) {
+                                var error = $root.syft_proto.types.torch.v1.TorchTensor.verify(message.child);
+                                if (error)
+                                    return "child." + error;
+                            }
+                            return null;
+                        };
+
+                        /**
+                         * Creates a BaseDataset message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {syft_proto.frameworks.torch.fl.v1.BaseDataset} BaseDataset
+                         */
+                        BaseDataset.fromObject = function fromObject(object) {
+                            if (object instanceof $root.syft_proto.frameworks.torch.fl.v1.BaseDataset)
+                                return object;
+                            var message = new $root.syft_proto.frameworks.torch.fl.v1.BaseDataset();
+                            if (object.data != null) {
+                                if (typeof object.data !== "object")
+                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.data: object expected");
+                                message.data = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.data);
+                            }
+                            if (object.targets != null) {
+                                if (typeof object.targets !== "object")
+                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.targets: object expected");
+                                message.targets = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.targets);
+                            }
+                            if (object.id != null) {
+                                if (typeof object.id !== "object")
+                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.id: object expected");
+                                message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
+                            }
+                            if (object.tags) {
+                                if (!Array.isArray(object.tags))
+                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.tags: array expected");
+                                message.tags = [];
+                                for (var i = 0; i < object.tags.length; ++i)
+                                    message.tags[i] = String(object.tags[i]);
+                            }
+                            if (object.description != null)
+                                message.description = String(object.description);
+                            if (object.child != null) {
+                                if (typeof object.child !== "object")
+                                    throw TypeError(".syft_proto.frameworks.torch.fl.v1.BaseDataset.child: object expected");
+                                message.child = $root.syft_proto.types.torch.v1.TorchTensor.fromObject(object.child);
+                            }
+                            return message;
+                        };
+
+                        /**
+                         * Creates a plain object from a BaseDataset message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @static
+                         * @param {syft_proto.frameworks.torch.fl.v1.BaseDataset} message BaseDataset
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        BaseDataset.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.arrays || options.defaults)
+                                object.tags = [];
+                            if (options.defaults) {
+                                object.data = null;
+                                object.targets = null;
+                                object.id = null;
+                                object.description = "";
+                                object.child = null;
+                            }
+                            if (message.data != null && message.hasOwnProperty("data"))
+                                object.data = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.data, options);
+                            if (message.targets != null && message.hasOwnProperty("targets"))
+                                object.targets = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.targets, options);
+                            if (message.id != null && message.hasOwnProperty("id"))
+                                object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
+                            if (message.tags && message.tags.length) {
+                                object.tags = [];
+                                for (var j = 0; j < message.tags.length; ++j)
+                                    object.tags[j] = message.tags[j];
+                            }
+                            if (message.description != null && message.hasOwnProperty("description"))
+                                object.description = message.description;
+                            if (message.child != null && message.hasOwnProperty("child"))
+                                object.child = $root.syft_proto.types.torch.v1.TorchTensor.toObject(message.child, options);
+                            return object;
+                        };
+
+                        /**
+                         * Converts this BaseDataset to JSON.
+                         * @function toJSON
+                         * @memberof syft_proto.frameworks.torch.fl.v1.BaseDataset
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        BaseDataset.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+
+                        return BaseDataset;
+                    })();
+
+                    return v1;
+                })();
+
+                return fl;
             })();
 
             return torch;
