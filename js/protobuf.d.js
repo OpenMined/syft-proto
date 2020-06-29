@@ -1640,142 +1640,142 @@ export namespace syft_proto {
                 public toJSON(): { [k: string]: any };
             }
 
-            /** Properties of a WorkerAction. */
-            interface IWorkerAction {
+            /** Properties of a StorageAction. */
+            interface IStorageAction {
 
-                /** WorkerAction command */
+                /** StorageAction command */
                 command?: (string|null);
 
-                /** WorkerAction target_id */
+                /** StorageAction target_id */
                 target_id?: (syft_proto.types.syft.v1.IId|null);
 
-                /** WorkerAction target_pointer */
+                /** StorageAction target_pointer */
                 target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
-                /** WorkerAction target_placeholder_id */
+                /** StorageAction target_placeholder_id */
                 target_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
 
-                /** WorkerAction target_tensor */
+                /** StorageAction target_tensor */
                 target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
 
-                /** WorkerAction args */
+                /** StorageAction args */
                 args?: (syft_proto.types.syft.v1.IArg[]|null);
 
-                /** WorkerAction kwargs */
+                /** StorageAction kwargs */
                 kwargs?: ({ [k: string]: syft_proto.types.syft.v1.IArg }|null);
 
-                /** WorkerAction return_ids */
+                /** StorageAction return_ids */
                 return_ids?: (syft_proto.types.syft.v1.IId[]|null);
 
-                /** WorkerAction return_placeholder_ids */
+                /** StorageAction return_placeholder_ids */
                 return_placeholder_ids?: (syft_proto.execution.v1.IPlaceholderId[]|null);
             }
 
-            /** Represents a WorkerAction. */
-            class WorkerAction implements IWorkerAction {
+            /** Represents a StorageAction. */
+            class StorageAction implements IStorageAction {
 
                 /**
-                 * Constructs a new WorkerAction.
+                 * Constructs a new StorageAction.
                  * @param [properties] Properties to set
                  */
-                constructor(properties?: syft_proto.execution.v1.IWorkerAction);
+                constructor(properties?: syft_proto.execution.v1.IStorageAction);
 
-                /** WorkerAction command. */
+                /** StorageAction command. */
                 public command: string;
 
-                /** WorkerAction target_id. */
+                /** StorageAction target_id. */
                 public target_id?: (syft_proto.types.syft.v1.IId|null);
 
-                /** WorkerAction target_pointer. */
+                /** StorageAction target_pointer. */
                 public target_pointer?: (syft_proto.generic.pointers.v1.IPointerTensor|null);
 
-                /** WorkerAction target_placeholder_id. */
+                /** StorageAction target_placeholder_id. */
                 public target_placeholder_id?: (syft_proto.execution.v1.IPlaceholderId|null);
 
-                /** WorkerAction target_tensor. */
+                /** StorageAction target_tensor. */
                 public target_tensor?: (syft_proto.types.torch.v1.ITorchTensor|null);
 
-                /** WorkerAction args. */
+                /** StorageAction args. */
                 public args: syft_proto.types.syft.v1.IArg[];
 
-                /** WorkerAction kwargs. */
+                /** StorageAction kwargs. */
                 public kwargs: { [k: string]: syft_proto.types.syft.v1.IArg };
 
-                /** WorkerAction return_ids. */
+                /** StorageAction return_ids. */
                 public return_ids: syft_proto.types.syft.v1.IId[];
 
-                /** WorkerAction return_placeholder_ids. */
+                /** StorageAction return_placeholder_ids. */
                 public return_placeholder_ids: syft_proto.execution.v1.IPlaceholderId[];
 
-                /** WorkerAction target. */
+                /** StorageAction target. */
                 public target?: ("target_id"|"target_pointer"|"target_placeholder_id"|"target_tensor");
 
                 /**
-                 * Creates a new WorkerAction instance using the specified properties.
+                 * Creates a new StorageAction instance using the specified properties.
                  * @param [properties] Properties to set
-                 * @returns WorkerAction instance
+                 * @returns StorageAction instance
                  */
-                public static create(properties?: syft_proto.execution.v1.IWorkerAction): syft_proto.execution.v1.WorkerAction;
+                public static create(properties?: syft_proto.execution.v1.IStorageAction): syft_proto.execution.v1.StorageAction;
 
                 /**
-                 * Encodes the specified WorkerAction message. Does not implicitly {@link syft_proto.execution.v1.WorkerAction.verify|verify} messages.
-                 * @param message WorkerAction message or plain object to encode
+                 * Encodes the specified StorageAction message. Does not implicitly {@link syft_proto.execution.v1.StorageAction.verify|verify} messages.
+                 * @param message StorageAction message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encode(message: syft_proto.execution.v1.IWorkerAction, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encode(message: syft_proto.execution.v1.IStorageAction, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Encodes the specified WorkerAction message, length delimited. Does not implicitly {@link syft_proto.execution.v1.WorkerAction.verify|verify} messages.
-                 * @param message WorkerAction message or plain object to encode
+                 * Encodes the specified StorageAction message, length delimited. Does not implicitly {@link syft_proto.execution.v1.StorageAction.verify|verify} messages.
+                 * @param message StorageAction message or plain object to encode
                  * @param [writer] Writer to encode to
                  * @returns Writer
                  */
-                public static encodeDelimited(message: syft_proto.execution.v1.IWorkerAction, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static encodeDelimited(message: syft_proto.execution.v1.IStorageAction, writer?: $protobuf.Writer): $protobuf.Writer;
 
                 /**
-                 * Decodes a WorkerAction message from the specified reader or buffer.
+                 * Decodes a StorageAction message from the specified reader or buffer.
                  * @param reader Reader or buffer to decode from
                  * @param [length] Message length if known beforehand
-                 * @returns WorkerAction
+                 * @returns StorageAction
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.WorkerAction;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.execution.v1.StorageAction;
 
                 /**
-                 * Decodes a WorkerAction message from the specified reader or buffer, length delimited.
+                 * Decodes a StorageAction message from the specified reader or buffer, length delimited.
                  * @param reader Reader or buffer to decode from
-                 * @returns WorkerAction
+                 * @returns StorageAction
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.WorkerAction;
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.execution.v1.StorageAction;
 
                 /**
-                 * Verifies a WorkerAction message.
+                 * Verifies a StorageAction message.
                  * @param message Plain object to verify
                  * @returns `null` if valid, otherwise the reason why it is not
                  */
                 public static verify(message: { [k: string]: any }): (string|null);
 
                 /**
-                 * Creates a WorkerAction message from a plain object. Also converts values to their respective internal types.
+                 * Creates a StorageAction message from a plain object. Also converts values to their respective internal types.
                  * @param object Plain object
-                 * @returns WorkerAction
+                 * @returns StorageAction
                  */
-                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.WorkerAction;
+                public static fromObject(object: { [k: string]: any }): syft_proto.execution.v1.StorageAction;
 
                 /**
-                 * Creates a plain object from a WorkerAction message. Also converts values to other types if specified.
-                 * @param message WorkerAction
+                 * Creates a plain object from a StorageAction message. Also converts values to other types if specified.
+                 * @param message StorageAction
                  * @param [options] Conversion options
                  * @returns Plain object
                  */
-                public static toObject(message: syft_proto.execution.v1.WorkerAction, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public static toObject(message: syft_proto.execution.v1.StorageAction, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                 /**
-                 * Converts this WorkerAction to JSON.
+                 * Converts this StorageAction to JSON.
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
