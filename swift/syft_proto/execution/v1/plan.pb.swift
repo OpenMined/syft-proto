@@ -62,6 +62,10 @@ public struct SyftProto_Execution_V1_Plan {
   /// Clears the value of `inputTypes`. Subsequent reads from it will return its default value.
   public mutating func clearInputTypes() {self._inputTypes = nil}
 
+  public var baseFramework: String = String()
+
+  public var roles: Dictionary<String,SyftProto_Execution_V1_Role> = [:]
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -86,6 +90,8 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     6: .same(proto: "description"),
     7: .same(proto: "torchscript"),
     8: .standard(proto: "input_types"),
+    9: .standard(proto: "base_framework"),
+    10: .same(proto: "roles"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -99,6 +105,8 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 6: try decoder.decodeSingularStringField(value: &self.description_p)
       case 7: try decoder.decodeSingularBytesField(value: &self.torchscript)
       case 8: try decoder.decodeSingularMessageField(value: &self._inputTypes)
+      case 9: try decoder.decodeSingularStringField(value: &self.baseFramework)
+      case 10: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Execution_V1_Role>.self, value: &self.roles)
       default: break
       }
     }
@@ -129,6 +137,12 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if let v = self._inputTypes {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
     }
+    if !self.baseFramework.isEmpty {
+      try visitor.visitSingularStringField(value: self.baseFramework, fieldNumber: 9)
+    }
+    if !self.roles.isEmpty {
+      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Execution_V1_Role>.self, value: self.roles, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -141,6 +155,8 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs.description_p != rhs.description_p {return false}
     if lhs.torchscript != rhs.torchscript {return false}
     if lhs._inputTypes != rhs._inputTypes {return false}
+    if lhs.baseFramework != rhs.baseFramework {return false}
+    if lhs.roles != rhs.roles {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

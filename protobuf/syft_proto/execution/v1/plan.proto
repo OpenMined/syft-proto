@@ -16,4 +16,6 @@ message Plan {
     string description = 6;
     bytes torchscript = 7;
     NestedTypeWrapper input_types = 8;
+    string base_framework = 9;
+    map<string, syft_proto.execution.v1.Role> roles = 10;
 }

@@ -123,6 +123,52 @@ public final class PlanOuterClass {
      * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
      */
     org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getInputTypesOrBuilder();
+
+    /**
+     * <code>string base_framework = 9[json_name = "baseFramework"];</code>
+     * @return The baseFramework.
+     */
+    java.lang.String getBaseFramework();
+    /**
+     * <code>string base_framework = 9[json_name = "baseFramework"];</code>
+     * @return The bytes for baseFramework.
+     */
+    com.google.protobuf.ByteString
+        getBaseFrameworkBytes();
+
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+     */
+    int getRolesCount();
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+     */
+    boolean containsRoles(
+        java.lang.String key);
+    /**
+     * Use {@link #getRolesMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+    getRoles();
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+     */
+    java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+    getRolesMap();
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+     */
+
+    org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrDefault(
+        java.lang.String key,
+        org.openmined.syftproto.execution.v1.RoleOuterClass.Role defaultValue);
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+     */
+
+    org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code syft_proto.execution.v1.Plan}
@@ -141,6 +187,7 @@ public final class PlanOuterClass {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
       torchscript_ = com.google.protobuf.ByteString.EMPTY;
+      baseFramework_ = "";
     }
 
     @java.lang.Override
@@ -244,6 +291,25 @@ public final class PlanOuterClass {
 
               break;
             }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              baseFramework_ = s;
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                roles_ = com.google.protobuf.MapField.newMapField(
+                    RolesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+              roles__ = input.readMessage(
+                  RolesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              roles_.getMutableMap().put(
+                  roles__.getKey(), roles__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -271,6 +337,18 @@ public final class PlanOuterClass {
       return org.openmined.syftproto.execution.v1.PlanOuterClass.internal_static_syft_proto_execution_v1_Plan_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 10:
+          return internalGetRoles();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -490,6 +568,125 @@ public final class PlanOuterClass {
       return getInputTypes();
     }
 
+    public static final int BASE_FRAMEWORK_FIELD_NUMBER = 9;
+    private volatile java.lang.Object baseFramework_;
+    /**
+     * <code>string base_framework = 9[json_name = "baseFramework"];</code>
+     * @return The baseFramework.
+     */
+    @java.lang.Override
+    public java.lang.String getBaseFramework() {
+      java.lang.Object ref = baseFramework_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        baseFramework_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string base_framework = 9[json_name = "baseFramework"];</code>
+     * @return The bytes for baseFramework.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBaseFrameworkBytes() {
+      java.lang.Object ref = baseFramework_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        baseFramework_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROLES_FIELD_NUMBER = 10;
+    private static final class RolesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>newDefaultInstance(
+                  org.openmined.syftproto.execution.v1.PlanOuterClass.internal_static_syft_proto_execution_v1_Plan_RolesEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.openmined.syftproto.execution.v1.RoleOuterClass.Role.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> roles_;
+    private com.google.protobuf.MapField<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+    internalGetRoles() {
+      if (roles_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            RolesDefaultEntryHolder.defaultEntry);
+      }
+      return roles_;
+    }
+
+    public int getRolesCount() {
+      return internalGetRoles().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsRoles(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetRoles().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getRolesMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRoles() {
+      return getRolesMap();
+    }
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRolesMap() {
+      return internalGetRoles().getMap();
+    }
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+     */
+    @java.lang.Override
+
+    public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrDefault(
+        java.lang.String key,
+        org.openmined.syftproto.execution.v1.RoleOuterClass.Role defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> map =
+          internalGetRoles().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+     */
+    @java.lang.Override
+
+    public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> map =
+          internalGetRoles().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -528,6 +725,15 @@ public final class PlanOuterClass {
       if (inputTypes_ != null) {
         output.writeMessage(8, getInputTypes());
       }
+      if (!getBaseFrameworkBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, baseFramework_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetRoles(),
+          RolesDefaultEntryHolder.defaultEntry,
+          10);
       unknownFields.writeTo(output);
     }
 
@@ -571,6 +777,19 @@ public final class PlanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getInputTypes());
       }
+      if (!getBaseFrameworkBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, baseFramework_);
+      }
+      for (java.util.Map.Entry<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> entry
+           : internalGetRoles().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+        roles__ = RolesDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(10, roles__);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -611,6 +830,10 @@ public final class PlanOuterClass {
         if (!getInputTypes()
             .equals(other.getInputTypes())) return false;
       }
+      if (!getBaseFramework()
+          .equals(other.getBaseFramework())) return false;
+      if (!internalGetRoles().equals(
+          other.internalGetRoles())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -646,6 +869,12 @@ public final class PlanOuterClass {
       if (hasInputTypes()) {
         hash = (37 * hash) + INPUT_TYPES_FIELD_NUMBER;
         hash = (53 * hash) + getInputTypes().hashCode();
+      }
+      hash = (37 * hash) + BASE_FRAMEWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getBaseFramework().hashCode();
+      if (!internalGetRoles().getMap().isEmpty()) {
+        hash = (37 * hash) + ROLES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetRoles().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -754,6 +983,28 @@ public final class PlanOuterClass {
         return org.openmined.syftproto.execution.v1.PlanOuterClass.internal_static_syft_proto_execution_v1_Plan_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 10:
+            return internalGetRoles();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 10:
+            return internalGetMutableRoles();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -808,6 +1059,9 @@ public final class PlanOuterClass {
           inputTypes_ = null;
           inputTypesBuilder_ = null;
         }
+        baseFramework_ = "";
+
+        internalGetMutableRoles().clear();
         return this;
       }
 
@@ -859,6 +1113,9 @@ public final class PlanOuterClass {
         } else {
           result.inputTypes_ = inputTypesBuilder_.build();
         }
+        result.baseFramework_ = baseFramework_;
+        result.roles_ = internalGetRoles();
+        result.roles_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -940,6 +1197,12 @@ public final class PlanOuterClass {
         if (other.hasInputTypes()) {
           mergeInputTypes(other.getInputTypes());
         }
+        if (!other.getBaseFramework().isEmpty()) {
+          baseFramework_ = other.baseFramework_;
+          onChanged();
+        }
+        internalGetMutableRoles().mergeFrom(
+            other.internalGetRoles());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1653,6 +1916,210 @@ public final class PlanOuterClass {
         }
         return inputTypesBuilder_;
       }
+
+      private java.lang.Object baseFramework_ = "";
+      /**
+       * <code>string base_framework = 9[json_name = "baseFramework"];</code>
+       * @return The baseFramework.
+       */
+      public java.lang.String getBaseFramework() {
+        java.lang.Object ref = baseFramework_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          baseFramework_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string base_framework = 9[json_name = "baseFramework"];</code>
+       * @return The bytes for baseFramework.
+       */
+      public com.google.protobuf.ByteString
+          getBaseFrameworkBytes() {
+        java.lang.Object ref = baseFramework_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          baseFramework_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string base_framework = 9[json_name = "baseFramework"];</code>
+       * @param value The baseFramework to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBaseFramework(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        baseFramework_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string base_framework = 9[json_name = "baseFramework"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBaseFramework() {
+        
+        baseFramework_ = getDefaultInstance().getBaseFramework();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string base_framework = 9[json_name = "baseFramework"];</code>
+       * @param value The bytes for baseFramework to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBaseFrameworkBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        baseFramework_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> roles_;
+      private com.google.protobuf.MapField<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+      internalGetRoles() {
+        if (roles_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              RolesDefaultEntryHolder.defaultEntry);
+        }
+        return roles_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+      internalGetMutableRoles() {
+        onChanged();;
+        if (roles_ == null) {
+          roles_ = com.google.protobuf.MapField.newMapField(
+              RolesDefaultEntryHolder.defaultEntry);
+        }
+        if (!roles_.isMutable()) {
+          roles_ = roles_.copy();
+        }
+        return roles_;
+      }
+
+      public int getRolesCount() {
+        return internalGetRoles().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+       */
+
+      @java.lang.Override
+      public boolean containsRoles(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetRoles().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getRolesMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRoles() {
+        return getRolesMap();
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRolesMap() {
+        return internalGetRoles().getMap();
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+       */
+      @java.lang.Override
+
+      public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrDefault(
+          java.lang.String key,
+          org.openmined.syftproto.execution.v1.RoleOuterClass.Role defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> map =
+            internalGetRoles().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+       */
+      @java.lang.Override
+
+      public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> map =
+            internalGetRoles().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearRoles() {
+        internalGetMutableRoles().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+       */
+
+      public Builder removeRoles(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableRoles().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role>
+      getMutableRoles() {
+        return internalGetMutableRoles().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+       */
+      public Builder putRoles(
+          java.lang.String key,
+          org.openmined.syftproto.execution.v1.RoleOuterClass.Role value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableRoles().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
+       */
+
+      public Builder putAllRoles(
+          java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> values) {
+        internalGetMutableRoles().getMutableMap()
+            .putAll(values);
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1711,6 +2178,11 @@ public final class PlanOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_syft_proto_execution_v1_Plan_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_syft_proto_execution_v1_Plan_RolesEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_syft_proto_execution_v1_Plan_RolesEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1724,7 +2196,7 @@ public final class PlanOuterClass {
       "ft_proto.execution.v1\032\"syft_proto/execut" +
       "ion/v1/role.proto\032!syft_proto/types/syft" +
       "/v1/id.proto\032*syft_proto/execution/v1/ty" +
-      "pe_wrapper.proto\"\305\002\n\004Plan\022,\n\002id\030\001 \001(\0132\034." +
+      "pe_wrapper.proto\"\205\004\n\004Plan\022,\n\002id\030\001 \001(\0132\034." +
       "syft_proto.types.syft.v1.IdR\002id\0221\n\004role\030" +
       "\002 \001(\0132\035.syft_proto.execution.v1.RoleR\004ro" +
       "le\022#\n\rinclude_state\030\003 \001(\010R\014includeState\022" +
@@ -1732,8 +2204,13 @@ public final class PlanOuterClass {
       " \n\013description\030\006 \001(\tR\013description\022 \n\013tor" +
       "chscript\030\007 \001(\014R\013torchscript\022K\n\013input_typ" +
       "es\030\010 \001(\0132*.syft_proto.execution.v1.Neste" +
-      "dTypeWrapperR\ninputTypesB&\n$org.openmine" +
-      "d.syftproto.execution.v1b\006proto3"
+      "dTypeWrapperR\ninputTypes\022%\n\016base_framewo" +
+      "rk\030\t \001(\tR\rbaseFramework\022>\n\005roles\030\n \003(\0132(" +
+      ".syft_proto.execution.v1.Plan.RolesEntry" +
+      "R\005roles\032W\n\nRolesEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
+      "3\n\005value\030\002 \001(\0132\035.syft_proto.execution.v1" +
+      ".RoleR\005value:\0028\001B&\n$org.openmined.syftpr" +
+      "oto.execution.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1747,7 +2224,13 @@ public final class PlanOuterClass {
     internal_static_syft_proto_execution_v1_Plan_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_execution_v1_Plan_descriptor,
-        new java.lang.String[] { "Id", "Role", "IncludeState", "Name", "Tags", "Description", "Torchscript", "InputTypes", });
+        new java.lang.String[] { "Id", "Role", "IncludeState", "Name", "Tags", "Description", "Torchscript", "InputTypes", "BaseFramework", "Roles", });
+    internal_static_syft_proto_execution_v1_Plan_RolesEntry_descriptor =
+      internal_static_syft_proto_execution_v1_Plan_descriptor.getNestedTypes().get(0);
+    internal_static_syft_proto_execution_v1_Plan_RolesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_syft_proto_execution_v1_Plan_RolesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     org.openmined.syftproto.execution.v1.RoleOuterClass.getDescriptor();
     org.openmined.syftproto.types.syft.v1.IdOuterClass.getDescriptor();
     org.openmined.syftproto.execution.v1.TypeWrapper.getDescriptor();
