@@ -1640,6 +1640,8 @@ $root.syft_proto = (function() {
                  * @property {string|null} [description] Plan description
                  * @property {Uint8Array|null} [torchscript] Plan torchscript
                  * @property {syft_proto.execution.v1.INestedTypeWrapper|null} [input_types] Plan input_types
+                 * @property {string|null} [base_framework] Plan base_framework
+                 * @property {Object.<string,syft_proto.execution.v1.IRole>|null} [roles] Plan roles
                  */
 
                 /**
@@ -1652,6 +1654,7 @@ $root.syft_proto = (function() {
                  */
                 function Plan(properties) {
                     this.tags = [];
+                    this.roles = {};
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -1723,6 +1726,22 @@ $root.syft_proto = (function() {
                 Plan.prototype.input_types = null;
 
                 /**
+                 * Plan base_framework.
+                 * @member {string} base_framework
+                 * @memberof syft_proto.execution.v1.Plan
+                 * @instance
+                 */
+                Plan.prototype.base_framework = "";
+
+                /**
+                 * Plan roles.
+                 * @member {Object.<string,syft_proto.execution.v1.IRole>} roles
+                 * @memberof syft_proto.execution.v1.Plan
+                 * @instance
+                 */
+                Plan.prototype.roles = $util.emptyObject;
+
+                /**
                  * Creates a new Plan instance using the specified properties.
                  * @function create
                  * @memberof syft_proto.execution.v1.Plan
@@ -1763,6 +1782,13 @@ $root.syft_proto = (function() {
                         writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.torchscript);
                     if (message.input_types != null && message.hasOwnProperty("input_types"))
                         $root.syft_proto.execution.v1.NestedTypeWrapper.encode(message.input_types, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                    if (message.base_framework != null && message.hasOwnProperty("base_framework"))
+                        writer.uint32(/* id 9, wireType 2 =*/74).string(message.base_framework);
+                    if (message.roles != null && message.hasOwnProperty("roles"))
+                        for (var keys = Object.keys(message.roles), i = 0; i < keys.length; ++i) {
+                            writer.uint32(/* id 10, wireType 2 =*/82).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                            $root.syft_proto.execution.v1.Role.encode(message.roles[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                        }
                     return writer;
                 };
 
@@ -1793,7 +1819,7 @@ $root.syft_proto = (function() {
                 Plan.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.Plan();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.execution.v1.Plan(), key;
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -1822,6 +1848,17 @@ $root.syft_proto = (function() {
                             break;
                         case 8:
                             message.input_types = $root.syft_proto.execution.v1.NestedTypeWrapper.decode(reader, reader.uint32());
+                            break;
+                        case 9:
+                            message.base_framework = reader.string();
+                            break;
+                        case 10:
+                            reader.skip().pos++;
+                            if (message.roles === $util.emptyObject)
+                                message.roles = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.roles[key] = $root.syft_proto.execution.v1.Role.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -1892,6 +1929,19 @@ $root.syft_proto = (function() {
                         if (error)
                             return "input_types." + error;
                     }
+                    if (message.base_framework != null && message.hasOwnProperty("base_framework"))
+                        if (!$util.isString(message.base_framework))
+                            return "base_framework: string expected";
+                    if (message.roles != null && message.hasOwnProperty("roles")) {
+                        if (!$util.isObject(message.roles))
+                            return "roles: object expected";
+                        var key = Object.keys(message.roles);
+                        for (var i = 0; i < key.length; ++i) {
+                            var error = $root.syft_proto.execution.v1.Role.verify(message.roles[key[i]]);
+                            if (error)
+                                return "roles." + error;
+                        }
+                    }
                     return null;
                 };
 
@@ -1940,6 +1990,18 @@ $root.syft_proto = (function() {
                             throw TypeError(".syft_proto.execution.v1.Plan.input_types: object expected");
                         message.input_types = $root.syft_proto.execution.v1.NestedTypeWrapper.fromObject(object.input_types);
                     }
+                    if (object.base_framework != null)
+                        message.base_framework = String(object.base_framework);
+                    if (object.roles) {
+                        if (typeof object.roles !== "object")
+                            throw TypeError(".syft_proto.execution.v1.Plan.roles: object expected");
+                        message.roles = {};
+                        for (var keys = Object.keys(object.roles), i = 0; i < keys.length; ++i) {
+                            if (typeof object.roles[keys[i]] !== "object")
+                                throw TypeError(".syft_proto.execution.v1.Plan.roles: object expected");
+                            message.roles[keys[i]] = $root.syft_proto.execution.v1.Role.fromObject(object.roles[keys[i]]);
+                        }
+                    }
                     return message;
                 };
 
@@ -1958,6 +2020,8 @@ $root.syft_proto = (function() {
                     var object = {};
                     if (options.arrays || options.defaults)
                         object.tags = [];
+                    if (options.objects || options.defaults)
+                        object.roles = {};
                     if (options.defaults) {
                         object.id = null;
                         object.role = null;
@@ -1972,6 +2036,7 @@ $root.syft_proto = (function() {
                                 object.torchscript = $util.newBuffer(object.torchscript);
                         }
                         object.input_types = null;
+                        object.base_framework = "";
                     }
                     if (message.id != null && message.hasOwnProperty("id"))
                         object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
@@ -1992,6 +2057,14 @@ $root.syft_proto = (function() {
                         object.torchscript = options.bytes === String ? $util.base64.encode(message.torchscript, 0, message.torchscript.length) : options.bytes === Array ? Array.prototype.slice.call(message.torchscript) : message.torchscript;
                     if (message.input_types != null && message.hasOwnProperty("input_types"))
                         object.input_types = $root.syft_proto.execution.v1.NestedTypeWrapper.toObject(message.input_types, options);
+                    if (message.base_framework != null && message.hasOwnProperty("base_framework"))
+                        object.base_framework = message.base_framework;
+                    var keys2;
+                    if (message.roles && (keys2 = Object.keys(message.roles)).length) {
+                        object.roles = {};
+                        for (var j = 0; j < keys2.length; ++j)
+                            object.roles[keys2[j]] = $root.syft_proto.execution.v1.Role.toObject(message.roles[keys2[j]], options);
+                    }
                     return object;
                 };
 
