@@ -107,6 +107,14 @@ public struct SyftProto_Messaging_V1_SyftMessage {
     set {contents = .contentsSearchMsg(newValue)}
   }
 
+  public var contentsObjectRequestCopyMsg: SyftProto_Messaging_V1_ObjectRequestCopyMessage {
+    get {
+      if case .contentsObjectRequestCopyMsg(let v)? = contents {return v}
+      return SyftProto_Messaging_V1_ObjectRequestCopyMessage()
+    }
+    set {contents = .contentsObjectRequestCopyMsg(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Contents: Equatable {
@@ -120,6 +128,7 @@ public struct SyftProto_Messaging_V1_SyftMessage {
     case contentsPlanCmdMsg(SyftProto_Messaging_V1_PlanCommandMessage)
     case contentsWorkerCmdMsg(SyftProto_Messaging_V1_WorkerCommandMessage)
     case contentsSearchMsg(SyftProto_Messaging_V1_SearchMessage)
+    case contentsObjectRequestCopyMsg(SyftProto_Messaging_V1_ObjectRequestCopyMessage)
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Messaging_V1_SyftMessage.OneOf_Contents, rhs: SyftProto_Messaging_V1_SyftMessage.OneOf_Contents) -> Bool {
@@ -134,6 +143,7 @@ public struct SyftProto_Messaging_V1_SyftMessage {
       case (.contentsPlanCmdMsg(let l), .contentsPlanCmdMsg(let r)): return l == r
       case (.contentsWorkerCmdMsg(let l), .contentsWorkerCmdMsg(let r)): return l == r
       case (.contentsSearchMsg(let l), .contentsSearchMsg(let r)): return l == r
+      case (.contentsObjectRequestCopyMsg(let l), .contentsObjectRequestCopyMsg(let r)): return l == r
       default: return false
       }
     }
@@ -293,6 +303,29 @@ public struct SyftProto_Messaging_V1_ObjectRequestMessage {
   fileprivate var _objectID: SyftProto_Types_Syft_V1_Id? = nil
 }
 
+public struct SyftProto_Messaging_V1_ObjectRequestCopyMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var objectID: SyftProto_Types_Syft_V1_Id {
+    get {return _objectID ?? SyftProto_Types_Syft_V1_Id()}
+    set {_objectID = newValue}
+  }
+  /// Returns true if `objectID` has been explicitly set.
+  public var hasObjectID: Bool {return self._objectID != nil}
+  /// Clears the value of `objectID`. Subsequent reads from it will return its default value.
+  public mutating func clearObjectID() {self._objectID = nil}
+
+  public var reason: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _objectID: SyftProto_Types_Syft_V1_Id? = nil
+}
+
 public struct SyftProto_Messaging_V1_PlanCommandMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -350,6 +383,7 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
     8: .standard(proto: "contents_plan_cmd_msg"),
     9: .standard(proto: "contents_worker_cmd_msg"),
     10: .standard(proto: "contents_search_msg"),
+    11: .standard(proto: "contents_object_request_copy_msg"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -435,6 +469,14 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsSearchMsg(v)}
+      case 11:
+        var v: SyftProto_Messaging_V1_ObjectRequestCopyMessage?
+        if let current = self.contents {
+          try decoder.handleConflictingOneOf()
+          if case .contentsObjectRequestCopyMsg(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.contents = .contentsObjectRequestCopyMsg(v)}
       default: break
       }
     }
@@ -462,6 +504,8 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
       try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
     case .contentsSearchMsg(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+    case .contentsObjectRequestCopyMsg(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -667,6 +711,41 @@ extension SyftProto_Messaging_V1_ObjectRequestMessage: SwiftProtobuf.Message, Sw
   }
 
   public static func ==(lhs: SyftProto_Messaging_V1_ObjectRequestMessage, rhs: SyftProto_Messaging_V1_ObjectRequestMessage) -> Bool {
+    if lhs._objectID != rhs._objectID {return false}
+    if lhs.reason != rhs.reason {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension SyftProto_Messaging_V1_ObjectRequestCopyMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".ObjectRequestCopyMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "object_id"),
+    2: .same(proto: "reason"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularMessageField(value: &self._objectID)
+      case 2: try decoder.decodeSingularStringField(value: &self.reason)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._objectID {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    }
+    if !self.reason.isEmpty {
+      try visitor.visitSingularStringField(value: self.reason, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: SyftProto_Messaging_V1_ObjectRequestCopyMessage, rhs: SyftProto_Messaging_V1_ObjectRequestCopyMessage) -> Bool {
     if lhs._objectID != rhs._objectID {return false}
     if lhs.reason != rhs.reason {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

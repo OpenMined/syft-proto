@@ -219,6 +219,9 @@
     },
     "syft.execution.storage_actions.StorageAction": {
       "code": 67
+    },
+    "syft.messaging.message.ObjectRequestCopyMessage": {
+      "code": 68
     }
   }
 }

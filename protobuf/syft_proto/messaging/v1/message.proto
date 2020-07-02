@@ -22,6 +22,7 @@ message SyftMessage {
     PlanCommandMessage contents_plan_cmd_msg = 8;
     WorkerCommandMessage contents_worker_cmd_msg = 9;
     SearchMessage contents_search_msg = 10;
+    ObjectRequestCopyMessage contents_object_request_copy_msg = 11;
   }
 }
 
@@ -49,6 +50,11 @@ message GetShapeMessage {
 }
 
 message ObjectRequestMessage {
+  syft_proto.types.syft.v1.Id object_id = 1;
+  string reason = 2;
+}
+
+message ObjectRequestCopyMessage {
   syft_proto.types.syft.v1.Id object_id = 1;
   string reason = 2;
 }

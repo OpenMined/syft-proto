@@ -168,6 +168,21 @@ public final class Message {
      */
     org.openmined.syftproto.messaging.v1.Message.SearchMessageOrBuilder getContentsSearchMsgOrBuilder();
 
+    /**
+     * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+     * @return Whether the contentsObjectRequestCopyMsg field is set.
+     */
+    boolean hasContentsObjectRequestCopyMsg();
+    /**
+     * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+     * @return The contentsObjectRequestCopyMsg.
+     */
+    org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage getContentsObjectRequestCopyMsg();
+    /**
+     * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+     */
+    org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessageOrBuilder getContentsObjectRequestCopyMsgOrBuilder();
+
     public org.openmined.syftproto.messaging.v1.Message.SyftMessage.ContentsCase getContentsCase();
   }
   /**
@@ -355,6 +370,20 @@ public final class Message {
               contentsCase_ = 10;
               break;
             }
+            case 90: {
+              org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.Builder subBuilder = null;
+              if (contentsCase_ == 11) {
+                subBuilder = ((org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) contents_).toBuilder();
+              }
+              contents_ =
+                  input.readMessage(org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) contents_);
+                contents_ = subBuilder.buildPartial();
+              }
+              contentsCase_ = 11;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -402,6 +431,7 @@ public final class Message {
       CONTENTS_PLAN_CMD_MSG(8),
       CONTENTS_WORKER_CMD_MSG(9),
       CONTENTS_SEARCH_MSG(10),
+      CONTENTS_OBJECT_REQUEST_COPY_MSG(11),
       CONTENTS_NOT_SET(0);
       private final int value;
       private ContentsCase(int value) {
@@ -429,6 +459,7 @@ public final class Message {
           case 8: return CONTENTS_PLAN_CMD_MSG;
           case 9: return CONTENTS_WORKER_CMD_MSG;
           case 10: return CONTENTS_SEARCH_MSG;
+          case 11: return CONTENTS_OBJECT_REQUEST_COPY_MSG;
           case 0: return CONTENTS_NOT_SET;
           default: return null;
         }
@@ -754,6 +785,37 @@ public final class Message {
       return org.openmined.syftproto.messaging.v1.Message.SearchMessage.getDefaultInstance();
     }
 
+    public static final int CONTENTS_OBJECT_REQUEST_COPY_MSG_FIELD_NUMBER = 11;
+    /**
+     * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+     * @return Whether the contentsObjectRequestCopyMsg field is set.
+     */
+    @java.lang.Override
+    public boolean hasContentsObjectRequestCopyMsg() {
+      return contentsCase_ == 11;
+    }
+    /**
+     * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+     * @return The contentsObjectRequestCopyMsg.
+     */
+    @java.lang.Override
+    public org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage getContentsObjectRequestCopyMsg() {
+      if (contentsCase_ == 11) {
+         return (org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) contents_;
+      }
+      return org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.getDefaultInstance();
+    }
+    /**
+     * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+     */
+    @java.lang.Override
+    public org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessageOrBuilder getContentsObjectRequestCopyMsgOrBuilder() {
+      if (contentsCase_ == 11) {
+         return (org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) contents_;
+      }
+      return org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -797,6 +859,9 @@ public final class Message {
       }
       if (contentsCase_ == 10) {
         output.writeMessage(10, (org.openmined.syftproto.messaging.v1.Message.SearchMessage) contents_);
+      }
+      if (contentsCase_ == 11) {
+        output.writeMessage(11, (org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) contents_);
       }
       unknownFields.writeTo(output);
     }
@@ -846,6 +911,10 @@ public final class Message {
       if (contentsCase_ == 10) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, (org.openmined.syftproto.messaging.v1.Message.SearchMessage) contents_);
+      }
+      if (contentsCase_ == 11) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, (org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) contents_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -904,6 +973,10 @@ public final class Message {
           if (!getContentsSearchMsg()
               .equals(other.getContentsSearchMsg())) return false;
           break;
+        case 11:
+          if (!getContentsObjectRequestCopyMsg()
+              .equals(other.getContentsObjectRequestCopyMsg())) return false;
+          break;
         case 0:
         default:
       }
@@ -958,6 +1031,10 @@ public final class Message {
         case 10:
           hash = (37 * hash) + CONTENTS_SEARCH_MSG_FIELD_NUMBER;
           hash = (53 * hash) + getContentsSearchMsg().hashCode();
+          break;
+        case 11:
+          hash = (37 * hash) + CONTENTS_OBJECT_REQUEST_COPY_MSG_FIELD_NUMBER;
+          hash = (53 * hash) + getContentsObjectRequestCopyMsg().hashCode();
           break;
         case 0:
         default:
@@ -1193,6 +1270,13 @@ public final class Message {
             result.contents_ = contentsSearchMsgBuilder_.build();
           }
         }
+        if (contentsCase_ == 11) {
+          if (contentsObjectRequestCopyMsgBuilder_ == null) {
+            result.contents_ = contents_;
+          } else {
+            result.contents_ = contentsObjectRequestCopyMsgBuilder_.build();
+          }
+        }
         result.contentsCase_ = contentsCase_;
         onBuilt();
         return result;
@@ -1281,6 +1365,10 @@ public final class Message {
           }
           case CONTENTS_SEARCH_MSG: {
             mergeContentsSearchMsg(other.getContentsSearchMsg());
+            break;
+          }
+          case CONTENTS_OBJECT_REQUEST_COPY_MSG: {
+            mergeContentsObjectRequestCopyMsg(other.getContentsObjectRequestCopyMsg());
             break;
           }
           case CONTENTS_NOT_SET: {
@@ -2739,6 +2827,147 @@ public final class Message {
         contentsCase_ = 10;
         onChanged();;
         return contentsSearchMsgBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage, org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.Builder, org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessageOrBuilder> contentsObjectRequestCopyMsgBuilder_;
+      /**
+       * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+       * @return Whether the contentsObjectRequestCopyMsg field is set.
+       */
+      @java.lang.Override
+      public boolean hasContentsObjectRequestCopyMsg() {
+        return contentsCase_ == 11;
+      }
+      /**
+       * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+       * @return The contentsObjectRequestCopyMsg.
+       */
+      @java.lang.Override
+      public org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage getContentsObjectRequestCopyMsg() {
+        if (contentsObjectRequestCopyMsgBuilder_ == null) {
+          if (contentsCase_ == 11) {
+            return (org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) contents_;
+          }
+          return org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.getDefaultInstance();
+        } else {
+          if (contentsCase_ == 11) {
+            return contentsObjectRequestCopyMsgBuilder_.getMessage();
+          }
+          return org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+       */
+      public Builder setContentsObjectRequestCopyMsg(org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage value) {
+        if (contentsObjectRequestCopyMsgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          contents_ = value;
+          onChanged();
+        } else {
+          contentsObjectRequestCopyMsgBuilder_.setMessage(value);
+        }
+        contentsCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+       */
+      public Builder setContentsObjectRequestCopyMsg(
+          org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.Builder builderForValue) {
+        if (contentsObjectRequestCopyMsgBuilder_ == null) {
+          contents_ = builderForValue.build();
+          onChanged();
+        } else {
+          contentsObjectRequestCopyMsgBuilder_.setMessage(builderForValue.build());
+        }
+        contentsCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+       */
+      public Builder mergeContentsObjectRequestCopyMsg(org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage value) {
+        if (contentsObjectRequestCopyMsgBuilder_ == null) {
+          if (contentsCase_ == 11 &&
+              contents_ != org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.getDefaultInstance()) {
+            contents_ = org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.newBuilder((org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) contents_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            contents_ = value;
+          }
+          onChanged();
+        } else {
+          if (contentsCase_ == 11) {
+            contentsObjectRequestCopyMsgBuilder_.mergeFrom(value);
+          }
+          contentsObjectRequestCopyMsgBuilder_.setMessage(value);
+        }
+        contentsCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+       */
+      public Builder clearContentsObjectRequestCopyMsg() {
+        if (contentsObjectRequestCopyMsgBuilder_ == null) {
+          if (contentsCase_ == 11) {
+            contentsCase_ = 0;
+            contents_ = null;
+            onChanged();
+          }
+        } else {
+          if (contentsCase_ == 11) {
+            contentsCase_ = 0;
+            contents_ = null;
+          }
+          contentsObjectRequestCopyMsgBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+       */
+      public org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.Builder getContentsObjectRequestCopyMsgBuilder() {
+        return getContentsObjectRequestCopyMsgFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+       */
+      @java.lang.Override
+      public org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessageOrBuilder getContentsObjectRequestCopyMsgOrBuilder() {
+        if ((contentsCase_ == 11) && (contentsObjectRequestCopyMsgBuilder_ != null)) {
+          return contentsObjectRequestCopyMsgBuilder_.getMessageOrBuilder();
+        } else {
+          if (contentsCase_ == 11) {
+            return (org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) contents_;
+          }
+          return org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.syft_proto.messaging.v1.ObjectRequestCopyMessage contents_object_request_copy_msg = 11[json_name = "contentsObjectRequestCopyMsg"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage, org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.Builder, org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessageOrBuilder> 
+          getContentsObjectRequestCopyMsgFieldBuilder() {
+        if (contentsObjectRequestCopyMsgBuilder_ == null) {
+          if (!(contentsCase_ == 11)) {
+            contents_ = org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.getDefaultInstance();
+          }
+          contentsObjectRequestCopyMsgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage, org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.Builder, org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessageOrBuilder>(
+                  (org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) contents_,
+                  getParentForChildren(),
+                  isClean());
+          contents_ = null;
+        }
+        contentsCase_ = 11;
+        onChanged();;
+        return contentsObjectRequestCopyMsgBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6995,6 +7224,777 @@ public final class Message {
 
   }
 
+  public interface ObjectRequestCopyMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:syft_proto.messaging.v1.ObjectRequestCopyMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+     * @return Whether the objectId field is set.
+     */
+    boolean hasObjectId();
+    /**
+     * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+     * @return The objectId.
+     */
+    org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectId();
+    /**
+     * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+     */
+    org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjectIdOrBuilder();
+
+    /**
+     * <code>string reason = 2[json_name = "reason"];</code>
+     * @return The reason.
+     */
+    java.lang.String getReason();
+    /**
+     * <code>string reason = 2[json_name = "reason"];</code>
+     * @return The bytes for reason.
+     */
+    com.google.protobuf.ByteString
+        getReasonBytes();
+  }
+  /**
+   * Protobuf type {@code syft_proto.messaging.v1.ObjectRequestCopyMessage}
+   */
+  public static final class ObjectRequestCopyMessage extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:syft_proto.messaging.v1.ObjectRequestCopyMessage)
+      ObjectRequestCopyMessageOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ObjectRequestCopyMessage.newBuilder() to construct.
+    private ObjectRequestCopyMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ObjectRequestCopyMessage() {
+      reason_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ObjectRequestCopyMessage();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ObjectRequestCopyMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder subBuilder = null;
+              if (objectId_ != null) {
+                subBuilder = objectId_.toBuilder();
+              }
+              objectId_ = input.readMessage(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(objectId_);
+                objectId_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reason_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.openmined.syftproto.messaging.v1.Message.internal_static_syft_proto_messaging_v1_ObjectRequestCopyMessage_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.openmined.syftproto.messaging.v1.Message.internal_static_syft_proto_messaging_v1_ObjectRequestCopyMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.class, org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.Builder.class);
+    }
+
+    public static final int OBJECT_ID_FIELD_NUMBER = 1;
+    private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id objectId_;
+    /**
+     * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+     * @return Whether the objectId field is set.
+     */
+    @java.lang.Override
+    public boolean hasObjectId() {
+      return objectId_ != null;
+    }
+    /**
+     * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+     * @return The objectId.
+     */
+    @java.lang.Override
+    public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectId() {
+      return objectId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectId_;
+    }
+    /**
+     * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+     */
+    @java.lang.Override
+    public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjectIdOrBuilder() {
+      return getObjectId();
+    }
+
+    public static final int REASON_FIELD_NUMBER = 2;
+    private volatile java.lang.Object reason_;
+    /**
+     * <code>string reason = 2[json_name = "reason"];</code>
+     * @return The reason.
+     */
+    @java.lang.Override
+    public java.lang.String getReason() {
+      java.lang.Object ref = reason_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reason_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string reason = 2[json_name = "reason"];</code>
+     * @return The bytes for reason.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReasonBytes() {
+      java.lang.Object ref = reason_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (objectId_ != null) {
+        output.writeMessage(1, getObjectId());
+      }
+      if (!getReasonBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reason_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (objectId_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getObjectId());
+      }
+      if (!getReasonBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reason_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage)) {
+        return super.equals(obj);
+      }
+      org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage other = (org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) obj;
+
+      if (hasObjectId() != other.hasObjectId()) return false;
+      if (hasObjectId()) {
+        if (!getObjectId()
+            .equals(other.getObjectId())) return false;
+      }
+      if (!getReason()
+          .equals(other.getReason())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasObjectId()) {
+        hash = (37 * hash) + OBJECT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getObjectId().hashCode();
+      }
+      hash = (37 * hash) + REASON_FIELD_NUMBER;
+      hash = (53 * hash) + getReason().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code syft_proto.messaging.v1.ObjectRequestCopyMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:syft_proto.messaging.v1.ObjectRequestCopyMessage)
+        org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.openmined.syftproto.messaging.v1.Message.internal_static_syft_proto_messaging_v1_ObjectRequestCopyMessage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.openmined.syftproto.messaging.v1.Message.internal_static_syft_proto_messaging_v1_ObjectRequestCopyMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.class, org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.Builder.class);
+      }
+
+      // Construct using org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (objectIdBuilder_ == null) {
+          objectId_ = null;
+        } else {
+          objectId_ = null;
+          objectIdBuilder_ = null;
+        }
+        reason_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.openmined.syftproto.messaging.v1.Message.internal_static_syft_proto_messaging_v1_ObjectRequestCopyMessage_descriptor;
+      }
+
+      @java.lang.Override
+      public org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage getDefaultInstanceForType() {
+        return org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage build() {
+        org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage buildPartial() {
+        org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage result = new org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage(this);
+        if (objectIdBuilder_ == null) {
+          result.objectId_ = objectId_;
+        } else {
+          result.objectId_ = objectIdBuilder_.build();
+        }
+        result.reason_ = reason_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) {
+          return mergeFrom((org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage other) {
+        if (other == org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage.getDefaultInstance()) return this;
+        if (other.hasObjectId()) {
+          mergeObjectId(other.getObjectId());
+        }
+        if (!other.getReason().isEmpty()) {
+          reason_ = other.reason_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private org.openmined.syftproto.types.syft.v1.IdOuterClass.Id objectId_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> objectIdBuilder_;
+      /**
+       * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+       * @return Whether the objectId field is set.
+       */
+      public boolean hasObjectId() {
+        return objectIdBuilder_ != null || objectId_ != null;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+       * @return The objectId.
+       */
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectId() {
+        if (objectIdBuilder_ == null) {
+          return objectId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectId_;
+        } else {
+          return objectIdBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+       */
+      public Builder setObjectId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
+        if (objectIdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          objectId_ = value;
+          onChanged();
+        } else {
+          objectIdBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+       */
+      public Builder setObjectId(
+          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder builderForValue) {
+        if (objectIdBuilder_ == null) {
+          objectId_ = builderForValue.build();
+          onChanged();
+        } else {
+          objectIdBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+       */
+      public Builder mergeObjectId(org.openmined.syftproto.types.syft.v1.IdOuterClass.Id value) {
+        if (objectIdBuilder_ == null) {
+          if (objectId_ != null) {
+            objectId_ =
+              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.newBuilder(objectId_).mergeFrom(value).buildPartial();
+          } else {
+            objectId_ = value;
+          }
+          onChanged();
+        } else {
+          objectIdBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+       */
+      public Builder clearObjectId() {
+        if (objectIdBuilder_ == null) {
+          objectId_ = null;
+          onChanged();
+        } else {
+          objectId_ = null;
+          objectIdBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder getObjectIdBuilder() {
+        
+        onChanged();
+        return getObjectIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+       */
+      public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjectIdOrBuilder() {
+        if (objectIdBuilder_ != null) {
+          return objectIdBuilder_.getMessageOrBuilder();
+        } else {
+          return objectId_ == null ?
+              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectId_;
+        }
+      }
+      /**
+       * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
+          getObjectIdFieldBuilder() {
+        if (objectIdBuilder_ == null) {
+          objectIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.openmined.syftproto.types.syft.v1.IdOuterClass.Id, org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.Builder, org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder>(
+                  getObjectId(),
+                  getParentForChildren(),
+                  isClean());
+          objectId_ = null;
+        }
+        return objectIdBuilder_;
+      }
+
+      private java.lang.Object reason_ = "";
+      /**
+       * <code>string reason = 2[json_name = "reason"];</code>
+       * @return The reason.
+       */
+      public java.lang.String getReason() {
+        java.lang.Object ref = reason_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reason_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string reason = 2[json_name = "reason"];</code>
+       * @return The bytes for reason.
+       */
+      public com.google.protobuf.ByteString
+          getReasonBytes() {
+        java.lang.Object ref = reason_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reason_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string reason = 2[json_name = "reason"];</code>
+       * @param value The reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReason(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        reason_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reason = 2[json_name = "reason"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReason() {
+        
+        reason_ = getDefaultInstance().getReason();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reason = 2[json_name = "reason"];</code>
+       * @param value The bytes for reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReasonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        reason_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:syft_proto.messaging.v1.ObjectRequestCopyMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:syft_proto.messaging.v1.ObjectRequestCopyMessage)
+    private static final org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage();
+    }
+
+    public static org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ObjectRequestCopyMessage>
+        PARSER = new com.google.protobuf.AbstractParser<ObjectRequestCopyMessage>() {
+      @java.lang.Override
+      public ObjectRequestCopyMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ObjectRequestCopyMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ObjectRequestCopyMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ObjectRequestCopyMessage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.openmined.syftproto.messaging.v1.Message.ObjectRequestCopyMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface PlanCommandMessageOrBuilder extends
       // @@protoc_insertion_point(interface_extends:syft_proto.messaging.v1.PlanCommandMessage)
       com.google.protobuf.MessageOrBuilder {
@@ -9710,6 +10710,11 @@ public final class Message {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_syft_proto_messaging_v1_ObjectRequestMessage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_syft_proto_messaging_v1_ObjectRequestCopyMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_syft_proto_messaging_v1_ObjectRequestCopyMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_syft_proto_messaging_v1_PlanCommandMessage_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9740,7 +10745,7 @@ public final class Message {
       "ution/v1/communication_action.proto\032!syf" +
       "t_proto/types/syft/v1/id.proto\032&syft_pro" +
       "to/types/torch/v1/tensor.proto\032\"syft_pro" +
-      "to/types/syft/v1/arg.proto\"\330\007\n\013SyftMessa" +
+      "to/types/syft/v1/arg.proto\"\325\010\n\013SyftMessa" +
       "ge\022F\n\022contents_empty_msg\030\001 \001(\0132\026.google." +
       "protobuf.EmptyH\000R\020contentsEmptyMsg\022c\n\023co" +
       "ntents_delete_msg\030\002 \001(\01321.syft_proto.mes" +
@@ -9765,31 +10770,37 @@ public final class Message {
       "MessageH\000R\024contentsWorkerCmdMsg\022X\n\023conte" +
       "nts_search_msg\030\n \001(\0132&.syft_proto.messag" +
       "ing.v1.SearchMessageH\000R\021contentsSearchMs" +
-      "gB\n\n\010contents\"J\n\rIsNoneMessage\0229\n\tobject" +
-      "_id\030\001 \001(\0132\034.syft_proto.types.syft.v1.IdR" +
-      "\010objectId\"O\n\rObjectMessage\022>\n\006tensor\030\001 \001" +
-      "(\0132&.syft_proto.types.torch.v1.TorchTens" +
-      "orR\006tensor\"\306\001\n\024TensorCommandMessage\022N\n\013c" +
-      "omputation\030\001 \001(\0132*.syft_proto.execution." +
-      "v1.ComputationActionH\000R\013computation\022T\n\rc" +
-      "ommunication\030\002 \001(\0132,.syft_proto.executio" +
-      "n.v1.CommunicationActionH\000R\rcommunicatio" +
-      "nB\010\n\006action\"U\n\030ForceObjectDeleteMessage\022" +
-      "9\n\tobject_id\030\001 \001(\0132\034.syft_proto.types.sy" +
-      "ft.v1.IdR\010objectId\"L\n\017GetShapeMessage\0229\n" +
-      "\tobject_id\030\001 \001(\0132\034.syft_proto.types.syft" +
-      ".v1.IdR\010objectId\"i\n\024ObjectRequestMessage" +
-      "\0229\n\tobject_id\030\001 \001(\0132\034.syft_proto.types.s" +
-      "yft.v1.IdR\010objectId\022\026\n\006reason\030\002 \001(\tR\006rea" +
-      "son\"j\n\022PlanCommandMessage\022!\n\014command_nam" +
-      "e\030\001 \001(\tR\013commandName\0221\n\004args\030\002 \003(\0132\035.syf" +
-      "t_proto.types.syft.v1.ArgR\004args\"l\n\024Worke" +
-      "rCommandMessage\022!\n\014command_name\030\001 \001(\tR\013c" +
-      "ommandName\0221\n\004args\030\002 \003(\0132\035.syft_proto.ty" +
-      "pes.syft.v1.ArgR\004args\"C\n\rSearchMessage\0222" +
-      "\n\005query\030\001 \003(\0132\034.syft_proto.types.syft.v1" +
-      ".IdR\005queryB&\n$org.openmined.syftproto.me" +
-      "ssaging.v1b\006proto3"
+      "g\022{\n contents_object_request_copy_msg\030\013 " +
+      "\001(\01321.syft_proto.messaging.v1.ObjectRequ" +
+      "estCopyMessageH\000R\034contentsObjectRequestC" +
+      "opyMsgB\n\n\010contents\"J\n\rIsNoneMessage\0229\n\to" +
+      "bject_id\030\001 \001(\0132\034.syft_proto.types.syft.v" +
+      "1.IdR\010objectId\"O\n\rObjectMessage\022>\n\006tenso" +
+      "r\030\001 \001(\0132&.syft_proto.types.torch.v1.Torc" +
+      "hTensorR\006tensor\"\306\001\n\024TensorCommandMessage" +
+      "\022N\n\013computation\030\001 \001(\0132*.syft_proto.execu" +
+      "tion.v1.ComputationActionH\000R\013computation" +
+      "\022T\n\rcommunication\030\002 \001(\0132,.syft_proto.exe" +
+      "cution.v1.CommunicationActionH\000R\rcommuni" +
+      "cationB\010\n\006action\"U\n\030ForceObjectDeleteMes" +
+      "sage\0229\n\tobject_id\030\001 \001(\0132\034.syft_proto.typ" +
+      "es.syft.v1.IdR\010objectId\"L\n\017GetShapeMessa" +
+      "ge\0229\n\tobject_id\030\001 \001(\0132\034.syft_proto.types" +
+      ".syft.v1.IdR\010objectId\"i\n\024ObjectRequestMe" +
+      "ssage\0229\n\tobject_id\030\001 \001(\0132\034.syft_proto.ty" +
+      "pes.syft.v1.IdR\010objectId\022\026\n\006reason\030\002 \001(\t" +
+      "R\006reason\"m\n\030ObjectRequestCopyMessage\0229\n\t" +
+      "object_id\030\001 \001(\0132\034.syft_proto.types.syft." +
+      "v1.IdR\010objectId\022\026\n\006reason\030\002 \001(\tR\006reason\"" +
+      "j\n\022PlanCommandMessage\022!\n\014command_name\030\001 " +
+      "\001(\tR\013commandName\0221\n\004args\030\002 \003(\0132\035.syft_pr" +
+      "oto.types.syft.v1.ArgR\004args\"l\n\024WorkerCom" +
+      "mandMessage\022!\n\014command_name\030\001 \001(\tR\013comma" +
+      "ndName\0221\n\004args\030\002 \003(\0132\035.syft_proto.types." +
+      "syft.v1.ArgR\004args\"C\n\rSearchMessage\0222\n\005qu" +
+      "ery\030\001 \003(\0132\034.syft_proto.types.syft.v1.IdR" +
+      "\005queryB&\n$org.openmined.syftproto.messag" +
+      "ing.v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9806,7 +10817,7 @@ public final class Message {
     internal_static_syft_proto_messaging_v1_SyftMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_messaging_v1_SyftMessage_descriptor,
-        new java.lang.String[] { "ContentsEmptyMsg", "ContentsDeleteMsg", "ContentsGetShapeMsg", "ContentsIsNoneMsg", "ContentsObjectMsg", "ContentsObjectRequestMsg", "ContentsTensorCmdMsg", "ContentsPlanCmdMsg", "ContentsWorkerCmdMsg", "ContentsSearchMsg", "Contents", });
+        new java.lang.String[] { "ContentsEmptyMsg", "ContentsDeleteMsg", "ContentsGetShapeMsg", "ContentsIsNoneMsg", "ContentsObjectMsg", "ContentsObjectRequestMsg", "ContentsTensorCmdMsg", "ContentsPlanCmdMsg", "ContentsWorkerCmdMsg", "ContentsSearchMsg", "ContentsObjectRequestCopyMsg", "Contents", });
     internal_static_syft_proto_messaging_v1_IsNoneMessage_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_syft_proto_messaging_v1_IsNoneMessage_fieldAccessorTable = new
@@ -9843,20 +10854,26 @@ public final class Message {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_messaging_v1_ObjectRequestMessage_descriptor,
         new java.lang.String[] { "ObjectId", "Reason", });
-    internal_static_syft_proto_messaging_v1_PlanCommandMessage_descriptor =
+    internal_static_syft_proto_messaging_v1_ObjectRequestCopyMessage_descriptor =
       getDescriptor().getMessageTypes().get(7);
+    internal_static_syft_proto_messaging_v1_ObjectRequestCopyMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_syft_proto_messaging_v1_ObjectRequestCopyMessage_descriptor,
+        new java.lang.String[] { "ObjectId", "Reason", });
+    internal_static_syft_proto_messaging_v1_PlanCommandMessage_descriptor =
+      getDescriptor().getMessageTypes().get(8);
     internal_static_syft_proto_messaging_v1_PlanCommandMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_messaging_v1_PlanCommandMessage_descriptor,
         new java.lang.String[] { "CommandName", "Args", });
     internal_static_syft_proto_messaging_v1_WorkerCommandMessage_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_syft_proto_messaging_v1_WorkerCommandMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_messaging_v1_WorkerCommandMessage_descriptor,
         new java.lang.String[] { "CommandName", "Args", });
     internal_static_syft_proto_messaging_v1_SearchMessage_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_syft_proto_messaging_v1_SearchMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_syft_proto_messaging_v1_SearchMessage_descriptor,
