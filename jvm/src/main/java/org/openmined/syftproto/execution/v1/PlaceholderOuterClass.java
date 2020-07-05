@@ -120,7 +120,7 @@ public final class PlaceholderOuterClass {
   /**
    * Protobuf type {@code syft_proto.execution.v1.Placeholder}
    */
-  public static final class Placeholder extends
+  public  static final class Placeholder extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.Placeholder)
       PlaceholderOrBuilder {
@@ -315,7 +315,6 @@ public final class PlaceholderOuterClass {
      * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
      * @return Whether the childTensor field is set.
      */
-    @java.lang.Override
     public boolean hasChildTensor() {
       return childCase_ == 1;
     }
@@ -323,7 +322,6 @@ public final class PlaceholderOuterClass {
      * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
      * @return The childTensor.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getChildTensor() {
       if (childCase_ == 1) {
          return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) child_;
@@ -333,7 +331,6 @@ public final class PlaceholderOuterClass {
     /**
      * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getChildTensorOrBuilder() {
       if (childCase_ == 1) {
          return (org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor) child_;
@@ -346,7 +343,6 @@ public final class PlaceholderOuterClass {
      * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
      * @return Whether the childParameter field is set.
      */
-    @java.lang.Override
     public boolean hasChildParameter() {
       return childCase_ == 2;
     }
@@ -354,7 +350,6 @@ public final class PlaceholderOuterClass {
      * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
      * @return The childParameter.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getChildParameter() {
       if (childCase_ == 2) {
          return (org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) child_;
@@ -364,7 +359,6 @@ public final class PlaceholderOuterClass {
     /**
      * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.ParameterOrBuilder getChildParameterOrBuilder() {
       if (childCase_ == 2) {
          return (org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter) child_;
@@ -378,7 +372,6 @@ public final class PlaceholderOuterClass {
      * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
      * @return Whether the id field is set.
      */
-    @java.lang.Override
     public boolean hasId() {
       return id_ != null;
     }
@@ -386,14 +379,12 @@ public final class PlaceholderOuterClass {
      * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
      * @return The id.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 3[json_name = "id"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder() {
       return getId();
     }
@@ -439,7 +430,6 @@ public final class PlaceholderOuterClass {
      * <code>string description = 5[json_name = "description"];</code>
      * @return The description.
      */
-    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -456,7 +446,6 @@ public final class PlaceholderOuterClass {
      * <code>string description = 5[json_name = "description"];</code>
      * @return The bytes for description.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -477,7 +466,6 @@ public final class PlaceholderOuterClass {
      * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
      * @return Whether the expectedShape field is set.
      */
-    @java.lang.Override
     public boolean hasExpectedShape() {
       return expectedShape_ != null;
     }
@@ -485,14 +473,12 @@ public final class PlaceholderOuterClass {
      * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
      * @return The expectedShape.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape getExpectedShape() {
       return expectedShape_ == null ? org.openmined.syftproto.types.syft.v1.ShapeOuterClass.Shape.getDefaultInstance() : expectedShape_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Shape expected_shape = 6[json_name = "expectedShape"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.ShapeOuterClass.ShapeOrBuilder getExpectedShapeOrBuilder() {
       return getExpectedShape();
     }
@@ -985,7 +971,6 @@ public final class PlaceholderOuterClass {
        * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
        * @return Whether the childTensor field is set.
        */
-      @java.lang.Override
       public boolean hasChildTensor() {
         return childCase_ == 1;
       }
@@ -993,7 +978,6 @@ public final class PlaceholderOuterClass {
        * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
        * @return The childTensor.
        */
-      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensor getChildTensor() {
         if (childTensorBuilder_ == null) {
           if (childCase_ == 1) {
@@ -1087,7 +1071,6 @@ public final class PlaceholderOuterClass {
       /**
        * <code>.syft_proto.types.torch.v1.TorchTensor child_tensor = 1[json_name = "childTensor"];</code>
        */
-      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.Tensor.TorchTensorOrBuilder getChildTensorOrBuilder() {
         if ((childCase_ == 1) && (childTensorBuilder_ != null)) {
           return childTensorBuilder_.getMessageOrBuilder();
@@ -1126,7 +1109,6 @@ public final class PlaceholderOuterClass {
        * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
        * @return Whether the childParameter field is set.
        */
-      @java.lang.Override
       public boolean hasChildParameter() {
         return childCase_ == 2;
       }
@@ -1134,7 +1116,6 @@ public final class PlaceholderOuterClass {
        * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
        * @return The childParameter.
        */
-      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.Parameter getChildParameter() {
         if (childParameterBuilder_ == null) {
           if (childCase_ == 2) {
@@ -1228,7 +1209,6 @@ public final class PlaceholderOuterClass {
       /**
        * <code>.syft_proto.types.torch.v1.Parameter child_parameter = 2[json_name = "childParameter"];</code>
        */
-      @java.lang.Override
       public org.openmined.syftproto.types.torch.v1.ParameterOuterClass.ParameterOrBuilder getChildParameterOrBuilder() {
         if ((childCase_ == 2) && (childParameterBuilder_ != null)) {
           return childParameterBuilder_.getMessageOrBuilder();

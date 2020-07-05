@@ -130,7 +130,7 @@ public final class Precision {
   /**
    * Protobuf type {@code syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor}
    */
-  public static final class FixedPrecisionTensor extends
+  public  static final class FixedPrecisionTensor extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.frameworks.torch.tensors.interpreters.v1.FixedPrecisionTensor)
       FixedPrecisionTensorOrBuilder {
@@ -286,7 +286,6 @@ public final class Precision {
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      * @return Whether the id field is set.
      */
-    @java.lang.Override
     public boolean hasId() {
       return id_ != null;
     }
@@ -294,14 +293,12 @@ public final class Precision {
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      * @return The id.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder() {
       return getId();
     }
@@ -312,7 +309,6 @@ public final class Precision {
      * <code>string field = 3[json_name = "field"];</code>
      * @return The field.
      */
-    @java.lang.Override
     public java.lang.String getField() {
       java.lang.Object ref = field_;
       if (ref instanceof java.lang.String) {
@@ -329,7 +325,6 @@ public final class Precision {
      * <code>string field = 3[json_name = "field"];</code>
      * @return The bytes for field.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getFieldBytes() {
       java.lang.Object ref = field_;
@@ -350,7 +345,6 @@ public final class Precision {
      * <code>string dtype = 4[json_name = "dtype"];</code>
      * @return The dtype.
      */
-    @java.lang.Override
     public java.lang.String getDtype() {
       java.lang.Object ref = dtype_;
       if (ref instanceof java.lang.String) {
@@ -367,7 +361,6 @@ public final class Precision {
      * <code>string dtype = 4[json_name = "dtype"];</code>
      * @return The bytes for dtype.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDtypeBytes() {
       java.lang.Object ref = dtype_;
@@ -388,7 +381,6 @@ public final class Precision {
      * <code>int32 base = 5[json_name = "base"];</code>
      * @return The base.
      */
-    @java.lang.Override
     public int getBase() {
       return base_;
     }
@@ -399,7 +391,6 @@ public final class Precision {
      * <code>int32 kappa = 6[json_name = "kappa"];</code>
      * @return The kappa.
      */
-    @java.lang.Override
     public int getKappa() {
       return kappa_;
     }
@@ -410,7 +401,6 @@ public final class Precision {
      * <code>int32 precision_fractional = 7[json_name = "precisionFractional"];</code>
      * @return The precisionFractional.
      */
-    @java.lang.Override
     public int getPrecisionFractional() {
       return precisionFractional_;
     }
@@ -456,7 +446,6 @@ public final class Precision {
      * <code>string description = 9[json_name = "description"];</code>
      * @return The description.
      */
-    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -473,7 +462,6 @@ public final class Precision {
      * <code>string description = 9[json_name = "description"];</code>
      * @return The bytes for description.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -494,7 +482,6 @@ public final class Precision {
      * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor child = 10[json_name = "child"];</code>
      * @return Whether the child field is set.
      */
-    @java.lang.Override
     public boolean hasChild() {
       return child_ != null;
     }
@@ -502,14 +489,12 @@ public final class Precision {
      * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor child = 10[json_name = "child"];</code>
      * @return The child.
      */
-    @java.lang.Override
     public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.AdditiveShared.AdditiveSharingTensor getChild() {
       return child_ == null ? org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.AdditiveShared.AdditiveSharingTensor.getDefaultInstance() : child_;
     }
     /**
      * <code>.syft_proto.frameworks.torch.tensors.interpreters.v1.AdditiveSharingTensor child = 10[json_name = "child"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1.AdditiveShared.AdditiveSharingTensorOrBuilder getChildOrBuilder() {
       return getChild();
     }
@@ -1273,7 +1258,6 @@ public final class Precision {
        * <code>int32 base = 5[json_name = "base"];</code>
        * @return The base.
        */
-      @java.lang.Override
       public int getBase() {
         return base_;
       }
@@ -1304,7 +1288,6 @@ public final class Precision {
        * <code>int32 kappa = 6[json_name = "kappa"];</code>
        * @return The kappa.
        */
-      @java.lang.Override
       public int getKappa() {
         return kappa_;
       }
@@ -1335,7 +1318,6 @@ public final class Precision {
        * <code>int32 precision_fractional = 7[json_name = "precisionFractional"];</code>
        * @return The precisionFractional.
        */
-      @java.lang.Override
       public int getPrecisionFractional() {
         return precisionFractional_;
       }

@@ -31,7 +31,7 @@ public final class ScriptModuleOuterClass {
    *
    * Protobuf type {@code syft_proto.types.torch.v1.ScriptModule}
    */
-  public static final class ScriptModule extends
+  public  static final class ScriptModule extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.torch.v1.ScriptModule)
       ScriptModuleOrBuilder {
@@ -117,7 +117,6 @@ public final class ScriptModuleOuterClass {
      * <code>bytes obj = 1[json_name = "obj"];</code>
      * @return The obj.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getObj() {
       return obj_;
     }
@@ -433,7 +432,6 @@ public final class ScriptModuleOuterClass {
        * <code>bytes obj = 1[json_name = "obj"];</code>
        * @return The obj.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getObj() {
         return obj_;
       }

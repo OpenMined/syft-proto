@@ -184,7 +184,7 @@ public final class RoleOuterClass {
   /**
    * Protobuf type {@code syft_proto.execution.v1.Role}
    */
-  public static final class Role extends
+  public  static final class Role extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.Role)
       RoleOrBuilder {
@@ -363,7 +363,6 @@ public final class RoleOuterClass {
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      * @return Whether the id field is set.
      */
-    @java.lang.Override
     public boolean hasId() {
       return id_ != null;
     }
@@ -371,14 +370,12 @@ public final class RoleOuterClass {
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      * @return The id.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder() {
       return getId();
     }
@@ -388,14 +385,12 @@ public final class RoleOuterClass {
     /**
      * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
-    @java.lang.Override
     public java.util.List<org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction> getActionsList() {
       return actions_;
     }
     /**
      * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
-    @java.lang.Override
     public java.util.List<? extends org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder> 
         getActionsOrBuilderList() {
       return actions_;
@@ -403,21 +398,18 @@ public final class RoleOuterClass {
     /**
      * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
-    @java.lang.Override
     public int getActionsCount() {
       return actions_.size();
     }
     /**
      * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationAction getActions(int index) {
       return actions_.get(index);
     }
     /**
      * <code>repeated .syft_proto.execution.v1.ComputationAction actions = 2[json_name = "actions"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.ComputationActionOuterClass.ComputationActionOrBuilder getActionsOrBuilder(
         int index) {
       return actions_.get(index);
@@ -429,7 +421,6 @@ public final class RoleOuterClass {
      * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
      * @return Whether the state field is set.
      */
-    @java.lang.Override
     public boolean hasState() {
       return state_ != null;
     }
@@ -437,14 +428,12 @@ public final class RoleOuterClass {
      * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
      * @return The state.
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.StateOuterClass.State getState() {
       return state_ == null ? org.openmined.syftproto.execution.v1.StateOuterClass.State.getDefaultInstance() : state_;
     }
     /**
      * <code>.syft_proto.execution.v1.State state = 3[json_name = "state"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.StateOuterClass.StateOrBuilder getStateOrBuilder() {
       return getState();
     }
@@ -454,14 +443,12 @@ public final class RoleOuterClass {
     /**
      * <code>repeated .syft_proto.execution.v1.Placeholder placeholders = 4[json_name = "placeholders"];</code>
      */
-    @java.lang.Override
     public java.util.List<org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder> getPlaceholdersList() {
       return placeholders_;
     }
     /**
      * <code>repeated .syft_proto.execution.v1.Placeholder placeholders = 4[json_name = "placeholders"];</code>
      */
-    @java.lang.Override
     public java.util.List<? extends org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder> 
         getPlaceholdersOrBuilderList() {
       return placeholders_;
@@ -469,21 +456,18 @@ public final class RoleOuterClass {
     /**
      * <code>repeated .syft_proto.execution.v1.Placeholder placeholders = 4[json_name = "placeholders"];</code>
      */
-    @java.lang.Override
     public int getPlaceholdersCount() {
       return placeholders_.size();
     }
     /**
      * <code>repeated .syft_proto.execution.v1.Placeholder placeholders = 4[json_name = "placeholders"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder getPlaceholders(int index) {
       return placeholders_.get(index);
     }
     /**
      * <code>repeated .syft_proto.execution.v1.Placeholder placeholders = 4[json_name = "placeholders"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder getPlaceholdersOrBuilder(
         int index) {
       return placeholders_.get(index);
@@ -494,14 +478,12 @@ public final class RoleOuterClass {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id input_placeholder_ids = 5[json_name = "inputPlaceholderIds"];</code>
      */
-    @java.lang.Override
     public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> getInputPlaceholderIdsList() {
       return inputPlaceholderIds_;
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id input_placeholder_ids = 5[json_name = "inputPlaceholderIds"];</code>
      */
-    @java.lang.Override
     public java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
         getInputPlaceholderIdsOrBuilderList() {
       return inputPlaceholderIds_;
@@ -509,21 +491,18 @@ public final class RoleOuterClass {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id input_placeholder_ids = 5[json_name = "inputPlaceholderIds"];</code>
      */
-    @java.lang.Override
     public int getInputPlaceholderIdsCount() {
       return inputPlaceholderIds_.size();
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id input_placeholder_ids = 5[json_name = "inputPlaceholderIds"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getInputPlaceholderIds(int index) {
       return inputPlaceholderIds_.get(index);
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id input_placeholder_ids = 5[json_name = "inputPlaceholderIds"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getInputPlaceholderIdsOrBuilder(
         int index) {
       return inputPlaceholderIds_.get(index);
@@ -534,14 +513,12 @@ public final class RoleOuterClass {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id output_placeholder_ids = 6[json_name = "outputPlaceholderIds"];</code>
      */
-    @java.lang.Override
     public java.util.List<org.openmined.syftproto.types.syft.v1.IdOuterClass.Id> getOutputPlaceholderIdsList() {
       return outputPlaceholderIds_;
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id output_placeholder_ids = 6[json_name = "outputPlaceholderIds"];</code>
      */
-    @java.lang.Override
     public java.util.List<? extends org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder> 
         getOutputPlaceholderIdsOrBuilderList() {
       return outputPlaceholderIds_;
@@ -549,21 +526,18 @@ public final class RoleOuterClass {
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id output_placeholder_ids = 6[json_name = "outputPlaceholderIds"];</code>
      */
-    @java.lang.Override
     public int getOutputPlaceholderIdsCount() {
       return outputPlaceholderIds_.size();
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id output_placeholder_ids = 6[json_name = "outputPlaceholderIds"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getOutputPlaceholderIds(int index) {
       return outputPlaceholderIds_.get(index);
     }
     /**
      * <code>repeated .syft_proto.types.syft.v1.Id output_placeholder_ids = 6[json_name = "outputPlaceholderIds"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getOutputPlaceholderIdsOrBuilder(
         int index) {
       return outputPlaceholderIds_.get(index);
@@ -610,7 +584,6 @@ public final class RoleOuterClass {
      * <code>string description = 8[json_name = "description"];</code>
      * @return The description.
      */
-    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -627,7 +600,6 @@ public final class RoleOuterClass {
      * <code>string description = 8[json_name = "description"];</code>
      * @return The bytes for description.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;

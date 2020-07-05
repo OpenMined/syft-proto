@@ -18,7 +18,6 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.types.syft.v1',
   syntax='proto3',
   serialized_options=b'\n%org.openmined.syftproto.types.syft.v1',
-  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n!syft_proto/types/syft/v1/id.proto\x12\x18syft_proto.types.syft.v1\"<\n\x02Id\x12\x17\n\x06id_int\x18\x01 \x01(\x03H\x00R\x05idInt\x12\x17\n\x06id_str\x18\x02 \x01(\tH\x00R\x05idStrB\x04\n\x02idB\'\n%org.openmined.syftproto.types.syft.v1b\x06proto3'
 )
 
@@ -31,7 +30,6 @@ _ID = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id_int', full_name='syft_proto.types.syft.v1.Id.id_int', index=0,
@@ -39,14 +37,14 @@ _ID = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='idInt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='idInt', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='id_str', full_name='syft_proto.types.syft.v1.Id.id_str', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='idStr', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='idStr', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -60,9 +58,7 @@ _ID = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='id', full_name='syft_proto.types.syft.v1.Id.id',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
+      index=0, containing_type=None, fields=[]),
   ],
   serialized_start=63,
   serialized_end=123,

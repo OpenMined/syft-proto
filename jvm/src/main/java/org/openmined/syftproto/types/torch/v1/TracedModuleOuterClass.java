@@ -31,7 +31,7 @@ public final class TracedModuleOuterClass {
    *
    * Protobuf type {@code syft_proto.types.torch.v1.TracedModule}
    */
-  public static final class TracedModule extends
+  public  static final class TracedModule extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.torch.v1.TracedModule)
       TracedModuleOrBuilder {
@@ -117,7 +117,6 @@ public final class TracedModuleOuterClass {
      * <code>bytes obj = 1[json_name = "obj"];</code>
      * @return The obj.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getObj() {
       return obj_;
     }
@@ -433,7 +432,6 @@ public final class TracedModuleOuterClass {
        * <code>bytes obj = 1[json_name = "obj"];</code>
        * @return The obj.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getObj() {
         return obj_;
       }

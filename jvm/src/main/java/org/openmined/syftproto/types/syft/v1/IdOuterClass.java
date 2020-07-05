@@ -41,7 +41,7 @@ public final class IdOuterClass {
   /**
    * Protobuf type {@code syft_proto.types.syft.v1.Id}
    */
-  public static final class Id extends
+  public  static final class Id extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.syft.v1.Id)
       IdOrBuilder {
@@ -172,7 +172,6 @@ public final class IdOuterClass {
      * <code>int64 id_int = 1[json_name = "idInt"];</code>
      * @return The idInt.
      */
-    @java.lang.Override
     public long getIdInt() {
       if (idCase_ == 1) {
         return (java.lang.Long) id_;
@@ -628,7 +627,6 @@ public final class IdOuterClass {
        * <code>string id_str = 2[json_name = "idStr"];</code>
        * @return The idStr.
        */
-      @java.lang.Override
       public java.lang.String getIdStr() {
         java.lang.Object ref = "";
         if (idCase_ == 2) {
@@ -650,7 +648,6 @@ public final class IdOuterClass {
        * <code>string id_str = 2[json_name = "idStr"];</code>
        * @return The bytes for idStr.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString
           getIdStrBytes() {
         java.lang.Object ref = "";

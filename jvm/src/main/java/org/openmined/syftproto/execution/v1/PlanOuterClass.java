@@ -173,7 +173,7 @@ public final class PlanOuterClass {
   /**
    * Protobuf type {@code syft_proto.execution.v1.Plan}
    */
-  public static final class Plan extends
+  public  static final class Plan extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.Plan)
       PlanOrBuilder {
@@ -363,7 +363,6 @@ public final class PlanOuterClass {
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      * @return Whether the id field is set.
      */
-    @java.lang.Override
     public boolean hasId() {
       return id_ != null;
     }
@@ -371,14 +370,12 @@ public final class PlanOuterClass {
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      * @return The id.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getId() {
       return id_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : id_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id id = 1[json_name = "id"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getIdOrBuilder() {
       return getId();
     }
@@ -389,7 +386,6 @@ public final class PlanOuterClass {
      * <code>.syft_proto.execution.v1.Role role = 2[json_name = "role"];</code>
      * @return Whether the role field is set.
      */
-    @java.lang.Override
     public boolean hasRole() {
       return role_ != null;
     }
@@ -397,14 +393,12 @@ public final class PlanOuterClass {
      * <code>.syft_proto.execution.v1.Role role = 2[json_name = "role"];</code>
      * @return The role.
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRole() {
       return role_ == null ? org.openmined.syftproto.execution.v1.RoleOuterClass.Role.getDefaultInstance() : role_;
     }
     /**
      * <code>.syft_proto.execution.v1.Role role = 2[json_name = "role"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.RoleOuterClass.RoleOrBuilder getRoleOrBuilder() {
       return getRole();
     }
@@ -415,7 +409,6 @@ public final class PlanOuterClass {
      * <code>bool include_state = 3[json_name = "includeState"];</code>
      * @return The includeState.
      */
-    @java.lang.Override
     public boolean getIncludeState() {
       return includeState_;
     }
@@ -426,7 +419,6 @@ public final class PlanOuterClass {
      * <code>string name = 4[json_name = "name"];</code>
      * @return The name.
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -443,7 +435,6 @@ public final class PlanOuterClass {
      * <code>string name = 4[json_name = "name"];</code>
      * @return The bytes for name.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -499,7 +490,6 @@ public final class PlanOuterClass {
      * <code>string description = 6[json_name = "description"];</code>
      * @return The description.
      */
-    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -516,7 +506,6 @@ public final class PlanOuterClass {
      * <code>string description = 6[json_name = "description"];</code>
      * @return The bytes for description.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -537,7 +526,6 @@ public final class PlanOuterClass {
      * <code>bytes torchscript = 7[json_name = "torchscript"];</code>
      * @return The torchscript.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getTorchscript() {
       return torchscript_;
     }
@@ -548,7 +536,6 @@ public final class PlanOuterClass {
      * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
      * @return Whether the inputTypes field is set.
      */
-    @java.lang.Override
     public boolean hasInputTypes() {
       return inputTypes_ != null;
     }
@@ -556,14 +543,12 @@ public final class PlanOuterClass {
      * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
      * @return The inputTypes.
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper getInputTypes() {
       return inputTypes_ == null ? org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapper.getDefaultInstance() : inputTypes_;
     }
     /**
      * <code>.syft_proto.execution.v1.NestedTypeWrapper input_types = 8[json_name = "inputTypes"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.TypeWrapper.NestedTypeWrapperOrBuilder getInputTypesOrBuilder() {
       return getInputTypes();
     }
@@ -574,7 +559,6 @@ public final class PlanOuterClass {
      * <code>string base_framework = 9[json_name = "baseFramework"];</code>
      * @return The baseFramework.
      */
-    @java.lang.Override
     public java.lang.String getBaseFramework() {
       java.lang.Object ref = baseFramework_;
       if (ref instanceof java.lang.String) {
@@ -591,7 +575,6 @@ public final class PlanOuterClass {
      * <code>string base_framework = 9[json_name = "baseFramework"];</code>
      * @return The bytes for baseFramework.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getBaseFrameworkBytes() {
       java.lang.Object ref = baseFramework_;
@@ -636,7 +619,6 @@ public final class PlanOuterClass {
      * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
      */
 
-    @java.lang.Override
     public boolean containsRoles(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
@@ -645,7 +627,6 @@ public final class PlanOuterClass {
     /**
      * Use {@link #getRolesMap()} instead.
      */
-    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRoles() {
       return getRolesMap();
@@ -653,7 +634,6 @@ public final class PlanOuterClass {
     /**
      * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
      */
-    @java.lang.Override
 
     public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRolesMap() {
       return internalGetRoles().getMap();
@@ -661,7 +641,6 @@ public final class PlanOuterClass {
     /**
      * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
      */
-    @java.lang.Override
 
     public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrDefault(
         java.lang.String key,
@@ -674,7 +653,6 @@ public final class PlanOuterClass {
     /**
      * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
      */
-    @java.lang.Override
 
     public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrThrow(
         java.lang.String key) {
@@ -1476,7 +1454,6 @@ public final class PlanOuterClass {
        * <code>bool include_state = 3[json_name = "includeState"];</code>
        * @return The includeState.
        */
-      @java.lang.Override
       public boolean getIncludeState() {
         return includeState_;
       }
@@ -1769,7 +1746,6 @@ public final class PlanOuterClass {
        * <code>bytes torchscript = 7[json_name = "torchscript"];</code>
        * @return The torchscript.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getTorchscript() {
         return torchscript_;
       }
@@ -2023,7 +1999,6 @@ public final class PlanOuterClass {
        * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
        */
 
-      @java.lang.Override
       public boolean containsRoles(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
@@ -2032,7 +2007,6 @@ public final class PlanOuterClass {
       /**
        * Use {@link #getRolesMap()} instead.
        */
-      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRoles() {
         return getRolesMap();
@@ -2040,7 +2014,6 @@ public final class PlanOuterClass {
       /**
        * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
        */
-      @java.lang.Override
 
       public java.util.Map<java.lang.String, org.openmined.syftproto.execution.v1.RoleOuterClass.Role> getRolesMap() {
         return internalGetRoles().getMap();
@@ -2048,7 +2021,6 @@ public final class PlanOuterClass {
       /**
        * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
        */
-      @java.lang.Override
 
       public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrDefault(
           java.lang.String key,
@@ -2061,7 +2033,6 @@ public final class PlanOuterClass {
       /**
        * <code>map&lt;string, .syft_proto.execution.v1.Role&gt; roles = 10[json_name = "roles"];</code>
        */
-      @java.lang.Override
 
       public org.openmined.syftproto.execution.v1.RoleOuterClass.Role getRolesOrThrow(
           java.lang.String key) {

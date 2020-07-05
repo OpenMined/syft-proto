@@ -33,7 +33,7 @@ public final class MemoryFormatOuterClass {
   /**
    * Protobuf type {@code syft_proto.types.torch.v1.MemoryFormat}
    */
-  public static final class MemoryFormat extends
+  public  static final class MemoryFormat extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.torch.v1.MemoryFormat)
       MemoryFormatOrBuilder {
@@ -120,7 +120,6 @@ public final class MemoryFormatOuterClass {
      * <code>string memory_format_type = 1[json_name = "memoryFormatType"];</code>
      * @return The memoryFormatType.
      */
-    @java.lang.Override
     public java.lang.String getMemoryFormatType() {
       java.lang.Object ref = memoryFormatType_;
       if (ref instanceof java.lang.String) {
@@ -137,7 +136,6 @@ public final class MemoryFormatOuterClass {
      * <code>string memory_format_type = 1[json_name = "memoryFormatType"];</code>
      * @return The bytes for memoryFormatType.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getMemoryFormatTypeBytes() {
       java.lang.Object ref = memoryFormatType_;

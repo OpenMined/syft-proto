@@ -41,7 +41,7 @@ message TensorCommandMessage {
 }
 
 message ForceObjectDeleteMessage {
-  syft_proto.types.syft.v1.Id object_id = 1;
+  repeated syft_proto.types.syft.v1.Id object_ids = 1;
 }
 
 message GetShapeMessage {

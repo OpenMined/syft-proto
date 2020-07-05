@@ -31,7 +31,7 @@ public final class CFunctionOuterClass {
    *
    * Protobuf type {@code syft_proto.types.torch.v1.CFunction}
    */
-  public static final class CFunction extends
+  public  static final class CFunction extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.torch.v1.CFunction)
       CFunctionOrBuilder {
@@ -117,7 +117,6 @@ public final class CFunctionOuterClass {
      * <code>bytes obj = 1[json_name = "obj"];</code>
      * @return The obj.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getObj() {
       return obj_;
     }
@@ -433,7 +432,6 @@ public final class CFunctionOuterClass {
        * <code>bytes obj = 1[json_name = "obj"];</code>
        * @return The obj.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getObj() {
         return obj_;
       }

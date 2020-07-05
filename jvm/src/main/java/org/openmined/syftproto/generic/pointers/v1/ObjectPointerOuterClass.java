@@ -78,7 +78,7 @@ public final class ObjectPointerOuterClass {
   /**
    * Protobuf type {@code syft_proto.generic.pointers.v1.ObjectPointer}
    */
-  public static final class ObjectPointer extends
+  public  static final class ObjectPointer extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.generic.pointers.v1.ObjectPointer)
       ObjectPointerOrBuilder {
@@ -204,7 +204,6 @@ public final class ObjectPointerOuterClass {
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      * @return Whether the objectId field is set.
      */
-    @java.lang.Override
     public boolean hasObjectId() {
       return objectId_ != null;
     }
@@ -212,14 +211,12 @@ public final class ObjectPointerOuterClass {
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      * @return The objectId.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectId() {
       return objectId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectId_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjectIdOrBuilder() {
       return getObjectId();
     }
@@ -230,7 +227,6 @@ public final class ObjectPointerOuterClass {
      * <code>.syft_proto.types.syft.v1.Id location_id = 2[json_name = "locationId"];</code>
      * @return Whether the locationId field is set.
      */
-    @java.lang.Override
     public boolean hasLocationId() {
       return locationId_ != null;
     }
@@ -238,14 +234,12 @@ public final class ObjectPointerOuterClass {
      * <code>.syft_proto.types.syft.v1.Id location_id = 2[json_name = "locationId"];</code>
      * @return The locationId.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getLocationId() {
       return locationId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : locationId_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id location_id = 2[json_name = "locationId"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getLocationIdOrBuilder() {
       return getLocationId();
     }
@@ -256,7 +250,6 @@ public final class ObjectPointerOuterClass {
      * <code>.syft_proto.types.syft.v1.Id object_id_at_location = 3[json_name = "objectIdAtLocation"];</code>
      * @return Whether the objectIdAtLocation field is set.
      */
-    @java.lang.Override
     public boolean hasObjectIdAtLocation() {
       return objectIdAtLocation_ != null;
     }
@@ -264,14 +257,12 @@ public final class ObjectPointerOuterClass {
      * <code>.syft_proto.types.syft.v1.Id object_id_at_location = 3[json_name = "objectIdAtLocation"];</code>
      * @return The objectIdAtLocation.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectIdAtLocation() {
       return objectIdAtLocation_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectIdAtLocation_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id_at_location = 3[json_name = "objectIdAtLocation"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjectIdAtLocationOrBuilder() {
       return getObjectIdAtLocation();
     }
@@ -282,7 +273,6 @@ public final class ObjectPointerOuterClass {
      * <code>string point_to_attr = 4[json_name = "pointToAttr"];</code>
      * @return The pointToAttr.
      */
-    @java.lang.Override
     public java.lang.String getPointToAttr() {
       java.lang.Object ref = pointToAttr_;
       if (ref instanceof java.lang.String) {
@@ -299,7 +289,6 @@ public final class ObjectPointerOuterClass {
      * <code>string point_to_attr = 4[json_name = "pointToAttr"];</code>
      * @return The bytes for pointToAttr.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getPointToAttrBytes() {
       java.lang.Object ref = pointToAttr_;

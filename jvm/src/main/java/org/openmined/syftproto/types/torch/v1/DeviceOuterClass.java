@@ -33,7 +33,7 @@ public final class DeviceOuterClass {
   /**
    * Protobuf type {@code syft_proto.types.torch.v1.Device}
    */
-  public static final class Device extends
+  public  static final class Device extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.torch.v1.Device)
       DeviceOrBuilder {
@@ -120,7 +120,6 @@ public final class DeviceOuterClass {
      * <code>string type = 1[json_name = "type"];</code>
      * @return The type.
      */
-    @java.lang.Override
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
@@ -137,7 +136,6 @@ public final class DeviceOuterClass {
      * <code>string type = 1[json_name = "type"];</code>
      * @return The bytes for type.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getTypeBytes() {
       java.lang.Object ref = type_;

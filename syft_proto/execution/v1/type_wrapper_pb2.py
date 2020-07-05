@@ -18,7 +18,6 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='syft_proto.execution.v1',
   syntax='proto3',
   serialized_options=b'\n$org.openmined.syftproto.execution.v1',
-  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n*syft_proto/execution/v1/type_wrapper.proto\x12\x17syft_proto.execution.v1\"2\n\x13InputTypeDescriptor\x12\x1b\n\ttype_name\x18\x01 \x01(\tR\x08typeName\"\xa3\x07\n\x11NestedTypeWrapper\x12[\n\x0cnested_types\x18\x01 \x01(\x0b\x32\x38.syft_proto.execution.v1.NestedTypeWrapper.TypeContainerR\x0bnestedTypes\x1aY\n\x08TypeList\x12M\n\x0cnested_types\x18\x01 \x03(\x0b\x32*.syft_proto.execution.v1.NestedTypeWrapperR\x0bnestedTypes\x1aZ\n\tTypeTuple\x12M\n\x0cnested_types\x18\x01 \x03(\x0b\x32*.syft_proto.execution.v1.NestedTypeWrapperR\x0bnestedTypes\x1a\xdd\x01\n\x07TypeMap\x12\x66\n\x0cnested_types\x18\x01 \x03(\x0b\x32\x43.syft_proto.execution.v1.NestedTypeWrapper.TypeMap.NestedTypesEntryR\x0bnestedTypes\x1aj\n\x10NestedTypesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12@\n\x05value\x18\x02 \x01(\x0b\x32*.syft_proto.execution.v1.NestedTypeWrapperR\x05value:\x02\x38\x01\x1a\x99\x03\n\rTypeContainer\x12O\n\x0bnested_type\x18\x01 \x01(\x0b\x32,.syft_proto.execution.v1.InputTypeDescriptorH\x00R\nnestedType\x12_\n\x10nested_type_list\x18\x02 \x01(\x0b\x32\x33.syft_proto.execution.v1.NestedTypeWrapper.TypeListH\x00R\x0enestedTypeList\x12\x62\n\x11nested_type_tuple\x18\x03 \x01(\x0b\x32\x34.syft_proto.execution.v1.NestedTypeWrapper.TypeTupleH\x00R\x0fnestedTypeTuple\x12^\n\x10nested_type_dict\x18\x04 \x01(\x0b\x32\x32.syft_proto.execution.v1.NestedTypeWrapper.TypeMapH\x00R\x0enestedTypeDictB\x12\n\x10nested_containerB&\n$org.openmined.syftproto.execution.v1b\x06proto3'
 )
 
@@ -31,7 +30,6 @@ _INPUTTYPEDESCRIPTOR = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='type_name', full_name='syft_proto.execution.v1.InputTypeDescriptor.type_name', index=0,
@@ -39,7 +37,7 @@ _INPUTTYPEDESCRIPTOR = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='typeName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='typeName', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -63,7 +61,6 @@ _NESTEDTYPEWRAPPER_TYPELIST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='nested_types', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeList.nested_types', index=0,
@@ -71,7 +68,7 @@ _NESTEDTYPEWRAPPER_TYPELIST = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='nestedTypes', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='nestedTypes', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -94,7 +91,6 @@ _NESTEDTYPEWRAPPER_TYPETUPLE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='nested_types', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeTuple.nested_types', index=0,
@@ -102,7 +98,7 @@ _NESTEDTYPEWRAPPER_TYPETUPLE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='nestedTypes', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='nestedTypes', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -125,7 +121,6 @@ _NESTEDTYPEWRAPPER_TYPEMAP_NESTEDTYPESENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeMap.NestedTypesEntry.key', index=0,
@@ -133,14 +128,14 @@ _NESTEDTYPEWRAPPER_TYPEMAP_NESTEDTYPESENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='key', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='key', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeMap.NestedTypesEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='value', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='value', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -163,7 +158,6 @@ _NESTEDTYPEWRAPPER_TYPEMAP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='nested_types', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeMap.nested_types', index=0,
@@ -171,7 +165,7 @@ _NESTEDTYPEWRAPPER_TYPEMAP = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='nestedTypes', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='nestedTypes', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -194,7 +188,6 @@ _NESTEDTYPEWRAPPER_TYPECONTAINER = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='nested_type', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type', index=0,
@@ -202,28 +195,28 @@ _NESTEDTYPEWRAPPER_TYPECONTAINER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='nestedType', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='nestedType', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nested_type_list', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type_list', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='nestedTypeList', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='nestedTypeList', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nested_type_tuple', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type_tuple', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='nestedTypeTuple', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='nestedTypeTuple', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nested_type_dict', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_type_dict', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='nestedTypeDict', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='nestedTypeDict', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -237,9 +230,7 @@ _NESTEDTYPEWRAPPER_TYPECONTAINER = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='nested_container', full_name='syft_proto.execution.v1.NestedTypeWrapper.TypeContainer.nested_container',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
+      index=0, containing_type=None, fields=[]),
   ],
   serialized_start=646,
   serialized_end=1055,
@@ -251,7 +242,6 @@ _NESTEDTYPEWRAPPER = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='nested_types', full_name='syft_proto.execution.v1.NestedTypeWrapper.nested_types', index=0,
@@ -259,7 +249,7 @@ _NESTEDTYPEWRAPPER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='nestedTypes', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='nestedTypes', file=DESCRIPTOR),
   ],
   extensions=[
   ],

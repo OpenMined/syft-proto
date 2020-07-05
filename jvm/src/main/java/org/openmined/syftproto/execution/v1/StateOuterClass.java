@@ -69,7 +69,7 @@ public final class StateOuterClass {
   /**
    * Protobuf type {@code syft_proto.execution.v1.State}
    */
-  public static final class State extends
+  public  static final class State extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.execution.v1.State)
       StateOrBuilder {
@@ -175,14 +175,12 @@ public final class StateOuterClass {
     /**
      * <code>repeated .syft_proto.execution.v1.Placeholder placeholders = 1[json_name = "placeholders"];</code>
      */
-    @java.lang.Override
     public java.util.List<org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder> getPlaceholdersList() {
       return placeholders_;
     }
     /**
      * <code>repeated .syft_proto.execution.v1.Placeholder placeholders = 1[json_name = "placeholders"];</code>
      */
-    @java.lang.Override
     public java.util.List<? extends org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder> 
         getPlaceholdersOrBuilderList() {
       return placeholders_;
@@ -190,21 +188,18 @@ public final class StateOuterClass {
     /**
      * <code>repeated .syft_proto.execution.v1.Placeholder placeholders = 1[json_name = "placeholders"];</code>
      */
-    @java.lang.Override
     public int getPlaceholdersCount() {
       return placeholders_.size();
     }
     /**
      * <code>repeated .syft_proto.execution.v1.Placeholder placeholders = 1[json_name = "placeholders"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.Placeholder getPlaceholders(int index) {
       return placeholders_.get(index);
     }
     /**
      * <code>repeated .syft_proto.execution.v1.Placeholder placeholders = 1[json_name = "placeholders"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.PlaceholderOuterClass.PlaceholderOrBuilder getPlaceholdersOrBuilder(
         int index) {
       return placeholders_.get(index);
@@ -215,14 +210,12 @@ public final class StateOuterClass {
     /**
      * <code>repeated .syft_proto.execution.v1.StateTensor tensors = 2[json_name = "tensors"];</code>
      */
-    @java.lang.Override
     public java.util.List<org.openmined.syftproto.execution.v1.StateTensorOuterClass.StateTensor> getTensorsList() {
       return tensors_;
     }
     /**
      * <code>repeated .syft_proto.execution.v1.StateTensor tensors = 2[json_name = "tensors"];</code>
      */
-    @java.lang.Override
     public java.util.List<? extends org.openmined.syftproto.execution.v1.StateTensorOuterClass.StateTensorOrBuilder> 
         getTensorsOrBuilderList() {
       return tensors_;
@@ -230,21 +223,18 @@ public final class StateOuterClass {
     /**
      * <code>repeated .syft_proto.execution.v1.StateTensor tensors = 2[json_name = "tensors"];</code>
      */
-    @java.lang.Override
     public int getTensorsCount() {
       return tensors_.size();
     }
     /**
      * <code>repeated .syft_proto.execution.v1.StateTensor tensors = 2[json_name = "tensors"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.StateTensorOuterClass.StateTensor getTensors(int index) {
       return tensors_.get(index);
     }
     /**
      * <code>repeated .syft_proto.execution.v1.StateTensor tensors = 2[json_name = "tensors"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.execution.v1.StateTensorOuterClass.StateTensorOrBuilder getTensorsOrBuilder(
         int index) {
       return tensors_.get(index);

@@ -371,7 +371,7 @@ public final class TensorDataOuterClass {
   /**
    * Protobuf type {@code syft_proto.types.torch.v1.TensorData}
    */
-  public static final class TensorData extends
+  public  static final class TensorData extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.types.torch.v1.TensorData)
       TensorDataOrBuilder {
@@ -812,7 +812,6 @@ public final class TensorDataOuterClass {
      * <code>.syft_proto.types.torch.v1.Size shape = 1[json_name = "shape"];</code>
      * @return Whether the shape field is set.
      */
-    @java.lang.Override
     public boolean hasShape() {
       return shape_ != null;
     }
@@ -820,14 +819,12 @@ public final class TensorDataOuterClass {
      * <code>.syft_proto.types.torch.v1.Size shape = 1[json_name = "shape"];</code>
      * @return The shape.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.SizeOuterClass.Size getShape() {
       return shape_ == null ? org.openmined.syftproto.types.torch.v1.SizeOuterClass.Size.getDefaultInstance() : shape_;
     }
     /**
      * <code>.syft_proto.types.torch.v1.Size shape = 1[json_name = "shape"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.torch.v1.SizeOuterClass.SizeOrBuilder getShapeOrBuilder() {
       return getShape();
     }
@@ -838,7 +835,6 @@ public final class TensorDataOuterClass {
      * <code>string dtype = 2[json_name = "dtype"];</code>
      * @return The dtype.
      */
-    @java.lang.Override
     public java.lang.String getDtype() {
       java.lang.Object ref = dtype_;
       if (ref instanceof java.lang.String) {
@@ -855,7 +851,6 @@ public final class TensorDataOuterClass {
      * <code>string dtype = 2[json_name = "dtype"];</code>
      * @return The bytes for dtype.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDtypeBytes() {
       java.lang.Object ref = dtype_;
@@ -876,7 +871,6 @@ public final class TensorDataOuterClass {
      * <code>bool is_quantized = 3[json_name = "isQuantized"];</code>
      * @return The isQuantized.
      */
-    @java.lang.Override
     public boolean getIsQuantized() {
       return isQuantized_;
     }
@@ -887,7 +881,6 @@ public final class TensorDataOuterClass {
      * <code>float scale = 4[json_name = "scale"];</code>
      * @return The scale.
      */
-    @java.lang.Override
     public float getScale() {
       return scale_;
     }
@@ -898,7 +891,6 @@ public final class TensorDataOuterClass {
      * <code>int32 zero_point = 5[json_name = "zeroPoint"];</code>
      * @return The zeroPoint.
      */
-    @java.lang.Override
     public int getZeroPoint() {
       return zeroPoint_;
     }
@@ -913,7 +905,6 @@ public final class TensorDataOuterClass {
      * <code>repeated uint32 contents_uint8 = 16[json_name = "contentsUint8"];</code>
      * @return A list containing the contentsUint8.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Integer>
         getContentsUint8List() {
       return contentsUint8_;
@@ -949,7 +940,6 @@ public final class TensorDataOuterClass {
      * <code>repeated int32 contents_int8 = 17[json_name = "contentsInt8"];</code>
      * @return A list containing the contentsInt8.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Integer>
         getContentsInt8List() {
       return contentsInt8_;
@@ -977,7 +967,6 @@ public final class TensorDataOuterClass {
      * <code>repeated int32 contents_int16 = 18[json_name = "contentsInt16"];</code>
      * @return A list containing the contentsInt16.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Integer>
         getContentsInt16List() {
       return contentsInt16_;
@@ -1005,7 +994,6 @@ public final class TensorDataOuterClass {
      * <code>repeated int32 contents_int32 = 19[json_name = "contentsInt32"];</code>
      * @return A list containing the contentsInt32.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Integer>
         getContentsInt32List() {
       return contentsInt32_;
@@ -1033,7 +1021,6 @@ public final class TensorDataOuterClass {
      * <code>repeated int64 contents_int64 = 20[json_name = "contentsInt64"];</code>
      * @return A list containing the contentsInt64.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Long>
         getContentsInt64List() {
       return contentsInt64_;
@@ -1065,7 +1052,6 @@ public final class TensorDataOuterClass {
      * <code>repeated float contents_float16 = 21[json_name = "contentsFloat16"];</code>
      * @return A list containing the contentsFloat16.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Float>
         getContentsFloat16List() {
       return contentsFloat16_;
@@ -1101,7 +1087,6 @@ public final class TensorDataOuterClass {
      * <code>repeated float contents_float32 = 22[json_name = "contentsFloat32"];</code>
      * @return A list containing the contentsFloat32.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Float>
         getContentsFloat32List() {
       return contentsFloat32_;
@@ -1129,7 +1114,6 @@ public final class TensorDataOuterClass {
      * <code>repeated double contents_float64 = 23[json_name = "contentsFloat64"];</code>
      * @return A list containing the contentsFloat64.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Double>
         getContentsFloat64List() {
       return contentsFloat64_;
@@ -1161,7 +1145,6 @@ public final class TensorDataOuterClass {
      * <code>repeated bool contents_bool = 24[json_name = "contentsBool"];</code>
      * @return A list containing the contentsBool.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Boolean>
         getContentsBoolList() {
       return contentsBool_;
@@ -1201,7 +1184,6 @@ public final class TensorDataOuterClass {
      * <code>repeated sint32 contents_qint8 = 25[json_name = "contentsQint8"];</code>
      * @return A list containing the contentsQint8.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Integer>
         getContentsQint8List() {
       return contentsQint8_;
@@ -1241,7 +1223,6 @@ public final class TensorDataOuterClass {
      * <code>repeated uint32 contents_quint8 = 26[json_name = "contentsQuint8"];</code>
      * @return A list containing the contentsQuint8.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Integer>
         getContentsQuint8List() {
       return contentsQuint8_;
@@ -1281,7 +1262,6 @@ public final class TensorDataOuterClass {
      * <code>repeated sint32 contents_qint32 = 27[json_name = "contentsQint32"];</code>
      * @return A list containing the contentsQint32.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Integer>
         getContentsQint32List() {
       return contentsQint32_;
@@ -1321,7 +1301,6 @@ public final class TensorDataOuterClass {
      * <code>repeated float contents_bfloat16 = 28[json_name = "contentsBfloat16"];</code>
      * @return A list containing the contentsBfloat16.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Float>
         getContentsBfloat16List() {
       return contentsBfloat16_;
@@ -2497,7 +2476,6 @@ public final class TensorDataOuterClass {
        * <code>bool is_quantized = 3[json_name = "isQuantized"];</code>
        * @return The isQuantized.
        */
-      @java.lang.Override
       public boolean getIsQuantized() {
         return isQuantized_;
       }
@@ -2528,7 +2506,6 @@ public final class TensorDataOuterClass {
        * <code>float scale = 4[json_name = "scale"];</code>
        * @return The scale.
        */
-      @java.lang.Override
       public float getScale() {
         return scale_;
       }
@@ -2559,7 +2536,6 @@ public final class TensorDataOuterClass {
        * <code>int32 zero_point = 5[json_name = "zeroPoint"];</code>
        * @return The zeroPoint.
        */
-      @java.lang.Override
       public int getZeroPoint() {
         return zeroPoint_;
       }

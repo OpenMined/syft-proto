@@ -109,7 +109,7 @@ public final class PointerDatasetOuterClass {
   /**
    * Protobuf type {@code syft_proto.generic.pointers.v1.PointerDataset}
    */
-  public static final class PointerDataset extends
+  public  static final class PointerDataset extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:syft_proto.generic.pointers.v1.PointerDataset)
       PointerDatasetOrBuilder {
@@ -254,7 +254,6 @@ public final class PointerDatasetOuterClass {
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      * @return Whether the objectId field is set.
      */
-    @java.lang.Override
     public boolean hasObjectId() {
       return objectId_ != null;
     }
@@ -262,14 +261,12 @@ public final class PointerDatasetOuterClass {
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      * @return The objectId.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectId() {
       return objectId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectId_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id = 1[json_name = "objectId"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjectIdOrBuilder() {
       return getObjectId();
     }
@@ -280,7 +277,6 @@ public final class PointerDatasetOuterClass {
      * <code>.syft_proto.types.syft.v1.Id location_id = 2[json_name = "locationId"];</code>
      * @return Whether the locationId field is set.
      */
-    @java.lang.Override
     public boolean hasLocationId() {
       return locationId_ != null;
     }
@@ -288,14 +284,12 @@ public final class PointerDatasetOuterClass {
      * <code>.syft_proto.types.syft.v1.Id location_id = 2[json_name = "locationId"];</code>
      * @return The locationId.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getLocationId() {
       return locationId_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : locationId_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id location_id = 2[json_name = "locationId"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getLocationIdOrBuilder() {
       return getLocationId();
     }
@@ -306,7 +300,6 @@ public final class PointerDatasetOuterClass {
      * <code>.syft_proto.types.syft.v1.Id object_id_at_location = 3[json_name = "objectIdAtLocation"];</code>
      * @return Whether the objectIdAtLocation field is set.
      */
-    @java.lang.Override
     public boolean hasObjectIdAtLocation() {
       return objectIdAtLocation_ != null;
     }
@@ -314,14 +307,12 @@ public final class PointerDatasetOuterClass {
      * <code>.syft_proto.types.syft.v1.Id object_id_at_location = 3[json_name = "objectIdAtLocation"];</code>
      * @return The objectIdAtLocation.
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.Id getObjectIdAtLocation() {
       return objectIdAtLocation_ == null ? org.openmined.syftproto.types.syft.v1.IdOuterClass.Id.getDefaultInstance() : objectIdAtLocation_;
     }
     /**
      * <code>.syft_proto.types.syft.v1.Id object_id_at_location = 3[json_name = "objectIdAtLocation"];</code>
      */
-    @java.lang.Override
     public org.openmined.syftproto.types.syft.v1.IdOuterClass.IdOrBuilder getObjectIdAtLocationOrBuilder() {
       return getObjectIdAtLocation();
     }
@@ -367,7 +358,6 @@ public final class PointerDatasetOuterClass {
      * <code>string description = 5[json_name = "description"];</code>
      * @return The description.
      */
-    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -384,7 +374,6 @@ public final class PointerDatasetOuterClass {
      * <code>string description = 5[json_name = "description"];</code>
      * @return The bytes for description.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -405,7 +394,6 @@ public final class PointerDatasetOuterClass {
      * <code>bool garbage_collect_data = 6[json_name = "garbageCollectData"];</code>
      * @return The garbageCollectData.
      */
-    @java.lang.Override
     public boolean getGarbageCollectData() {
       return garbageCollectData_;
     }
@@ -1404,7 +1392,6 @@ public final class PointerDatasetOuterClass {
        * <code>bool garbage_collect_data = 6[json_name = "garbageCollectData"];</code>
        * @return The garbageCollectData.
        */
-      @java.lang.Override
       public boolean getGarbageCollectData() {
         return garbageCollectData_;
       }
