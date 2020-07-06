@@ -529,6 +529,12 @@ export namespace syft_proto {
 
                 /** Plan input_types */
                 input_types?: (syft_proto.execution.v1.INestedTypeWrapper|null);
+
+                /** Plan base_framework */
+                base_framework?: (string|null);
+
+                /** Plan roles */
+                roles?: ({ [k: string]: syft_proto.execution.v1.IRole }|null);
             }
 
             /** Represents a Plan. */
@@ -563,6 +569,12 @@ export namespace syft_proto {
 
                 /** Plan input_types. */
                 public input_types?: (syft_proto.execution.v1.INestedTypeWrapper|null);
+
+                /** Plan base_framework. */
+                public base_framework: string;
+
+                /** Plan roles. */
+                public roles: { [k: string]: syft_proto.execution.v1.IRole };
 
                 /**
                  * Creates a new Plan instance using the specified properties.
