@@ -3894,134 +3894,6 @@ export namespace syft_proto {
         /** Namespace torch. */
         namespace torch {
 
-            /** Namespace fl. */
-            namespace fl {
-
-                /** Namespace v1. */
-                namespace v1 {
-
-                    /** Properties of a BaseDataset. */
-                    interface IBaseDataset {
-
-                        /** BaseDataset data */
-                        data?: (syft_proto.types.torch.v1.ITorchTensor|null);
-
-                        /** BaseDataset targets */
-                        targets?: (syft_proto.types.torch.v1.ITorchTensor|null);
-
-                        /** BaseDataset id */
-                        id?: (syft_proto.types.syft.v1.IId|null);
-
-                        /** BaseDataset tags */
-                        tags?: (string[]|null);
-
-                        /** BaseDataset description */
-                        description?: (string|null);
-
-                        /** BaseDataset child */
-                        child?: (syft_proto.types.torch.v1.ITorchTensor|null);
-                    }
-
-                    /** Represents a BaseDataset. */
-                    class BaseDataset implements IBaseDataset {
-
-                        /**
-                         * Constructs a new BaseDataset.
-                         * @param [properties] Properties to set
-                         */
-                        constructor(properties?: syft_proto.frameworks.torch.fl.v1.IBaseDataset);
-
-                        /** BaseDataset data. */
-                        public data?: (syft_proto.types.torch.v1.ITorchTensor|null);
-
-                        /** BaseDataset targets. */
-                        public targets?: (syft_proto.types.torch.v1.ITorchTensor|null);
-
-                        /** BaseDataset id. */
-                        public id?: (syft_proto.types.syft.v1.IId|null);
-
-                        /** BaseDataset tags. */
-                        public tags: string[];
-
-                        /** BaseDataset description. */
-                        public description: string;
-
-                        /** BaseDataset child. */
-                        public child?: (syft_proto.types.torch.v1.ITorchTensor|null);
-
-                        /**
-                         * Creates a new BaseDataset instance using the specified properties.
-                         * @param [properties] Properties to set
-                         * @returns BaseDataset instance
-                         */
-                        public static create(properties?: syft_proto.frameworks.torch.fl.v1.IBaseDataset): syft_proto.frameworks.torch.fl.v1.BaseDataset;
-
-                        /**
-                         * Encodes the specified BaseDataset message. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
-                         * @param message BaseDataset message or plain object to encode
-                         * @param [writer] Writer to encode to
-                         * @returns Writer
-                         */
-                        public static encode(message: syft_proto.frameworks.torch.fl.v1.IBaseDataset, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                        /**
-                         * Encodes the specified BaseDataset message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
-                         * @param message BaseDataset message or plain object to encode
-                         * @param [writer] Writer to encode to
-                         * @returns Writer
-                         */
-                        public static encodeDelimited(message: syft_proto.frameworks.torch.fl.v1.IBaseDataset, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                        /**
-                         * Decodes a BaseDataset message from the specified reader or buffer.
-                         * @param reader Reader or buffer to decode from
-                         * @param [length] Message length if known beforehand
-                         * @returns BaseDataset
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.fl.v1.BaseDataset;
-
-                        /**
-                         * Decodes a BaseDataset message from the specified reader or buffer, length delimited.
-                         * @param reader Reader or buffer to decode from
-                         * @returns BaseDataset
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.fl.v1.BaseDataset;
-
-                        /**
-                         * Verifies a BaseDataset message.
-                         * @param message Plain object to verify
-                         * @returns `null` if valid, otherwise the reason why it is not
-                         */
-                        public static verify(message: { [k: string]: any }): (string|null);
-
-                        /**
-                         * Creates a BaseDataset message from a plain object. Also converts values to their respective internal types.
-                         * @param object Plain object
-                         * @returns BaseDataset
-                         */
-                        public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.fl.v1.BaseDataset;
-
-                        /**
-                         * Creates a plain object from a BaseDataset message. Also converts values to other types if specified.
-                         * @param message BaseDataset
-                         * @param [options] Conversion options
-                         * @returns Plain object
-                         */
-                        public static toObject(message: syft_proto.frameworks.torch.fl.v1.BaseDataset, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                        /**
-                         * Converts this BaseDataset to JSON.
-                         * @returns JSON object
-                         */
-                        public toJSON(): { [k: string]: any };
-                    }
-                }
-            }
-
             /** Namespace tensors. */
             namespace tensors {
 
@@ -4030,6 +3902,114 @@ export namespace syft_proto {
 
                     /** Namespace v1. */
                     namespace v1 {
+
+                        /** Properties of an OnnxModel. */
+                        interface IOnnxModel {
+
+                            /** OnnxModel id */
+                            id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** OnnxModel serialized_model */
+                            serialized_model?: (Uint8Array|null);
+
+                            /** OnnxModel tags */
+                            tags?: (string[]|null);
+
+                            /** OnnxModel description */
+                            description?: (string|null);
+                        }
+
+                        /** Represents an OnnxModel. */
+                        class OnnxModel implements IOnnxModel {
+
+                            /**
+                             * Constructs a new OnnxModel.
+                             * @param [properties] Properties to set
+                             */
+                            constructor(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IOnnxModel);
+
+                            /** OnnxModel id. */
+                            public id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** OnnxModel serialized_model. */
+                            public serialized_model: Uint8Array;
+
+                            /** OnnxModel tags. */
+                            public tags: string[];
+
+                            /** OnnxModel description. */
+                            public description: string;
+
+                            /**
+                             * Creates a new OnnxModel instance using the specified properties.
+                             * @param [properties] Properties to set
+                             * @returns OnnxModel instance
+                             */
+                            public static create(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IOnnxModel): syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel;
+
+                            /**
+                             * Encodes the specified OnnxModel message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel.verify|verify} messages.
+                             * @param message OnnxModel message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encode(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IOnnxModel, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Encodes the specified OnnxModel message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel.verify|verify} messages.
+                             * @param message OnnxModel message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encodeDelimited(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IOnnxModel, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Decodes an OnnxModel message from the specified reader or buffer.
+                             * @param reader Reader or buffer to decode from
+                             * @param [length] Message length if known beforehand
+                             * @returns OnnxModel
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel;
+
+                            /**
+                             * Decodes an OnnxModel message from the specified reader or buffer, length delimited.
+                             * @param reader Reader or buffer to decode from
+                             * @returns OnnxModel
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel;
+
+                            /**
+                             * Verifies an OnnxModel message.
+                             * @param message Plain object to verify
+                             * @returns `null` if valid, otherwise the reason why it is not
+                             */
+                            public static verify(message: { [k: string]: any }): (string|null);
+
+                            /**
+                             * Creates an OnnxModel message from a plain object. Also converts values to their respective internal types.
+                             * @param object Plain object
+                             * @returns OnnxModel
+                             */
+                            public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel;
+
+                            /**
+                             * Creates a plain object from an OnnxModel message. Also converts values to other types if specified.
+                             * @param message OnnxModel
+                             * @param [options] Conversion options
+                             * @returns Plain object
+                             */
+                            public static toObject(message: syft_proto.frameworks.torch.tensors.interpreters.v1.OnnxModel, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                            /**
+                             * Converts this OnnxModel to JSON.
+                             * @returns JSON object
+                             */
+                            public toJSON(): { [k: string]: any };
+                        }
 
                         /** Properties of an AdditiveSharingTensor. */
                         interface IAdditiveSharingTensor {
@@ -4297,6 +4277,134 @@ export namespace syft_proto {
                              */
                             public toJSON(): { [k: string]: any };
                         }
+                    }
+                }
+            }
+
+            /** Namespace fl. */
+            namespace fl {
+
+                /** Namespace v1. */
+                namespace v1 {
+
+                    /** Properties of a BaseDataset. */
+                    interface IBaseDataset {
+
+                        /** BaseDataset data */
+                        data?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset targets */
+                        targets?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset id */
+                        id?: (syft_proto.types.syft.v1.IId|null);
+
+                        /** BaseDataset tags */
+                        tags?: (string[]|null);
+
+                        /** BaseDataset description */
+                        description?: (string|null);
+
+                        /** BaseDataset child */
+                        child?: (syft_proto.types.torch.v1.ITorchTensor|null);
+                    }
+
+                    /** Represents a BaseDataset. */
+                    class BaseDataset implements IBaseDataset {
+
+                        /**
+                         * Constructs a new BaseDataset.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: syft_proto.frameworks.torch.fl.v1.IBaseDataset);
+
+                        /** BaseDataset data. */
+                        public data?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset targets. */
+                        public targets?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /** BaseDataset id. */
+                        public id?: (syft_proto.types.syft.v1.IId|null);
+
+                        /** BaseDataset tags. */
+                        public tags: string[];
+
+                        /** BaseDataset description. */
+                        public description: string;
+
+                        /** BaseDataset child. */
+                        public child?: (syft_proto.types.torch.v1.ITorchTensor|null);
+
+                        /**
+                         * Creates a new BaseDataset instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns BaseDataset instance
+                         */
+                        public static create(properties?: syft_proto.frameworks.torch.fl.v1.IBaseDataset): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Encodes the specified BaseDataset message. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
+                         * @param message BaseDataset message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: syft_proto.frameworks.torch.fl.v1.IBaseDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified BaseDataset message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.fl.v1.BaseDataset.verify|verify} messages.
+                         * @param message BaseDataset message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: syft_proto.frameworks.torch.fl.v1.IBaseDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a BaseDataset message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns BaseDataset
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Decodes a BaseDataset message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns BaseDataset
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Verifies a BaseDataset message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a BaseDataset message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns BaseDataset
+                         */
+                        public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.fl.v1.BaseDataset;
+
+                        /**
+                         * Creates a plain object from a BaseDataset message. Also converts values to other types if specified.
+                         * @param message BaseDataset
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: syft_proto.frameworks.torch.fl.v1.BaseDataset, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this BaseDataset to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
                     }
                 }
             }
