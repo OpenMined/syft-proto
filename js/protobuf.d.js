@@ -4948,8 +4948,8 @@ export namespace syft_proto {
             /** Properties of a ForceObjectDeleteMessage. */
             interface IForceObjectDeleteMessage {
 
-                /** ForceObjectDeleteMessage object_id */
-                object_id?: (syft_proto.types.syft.v1.IId|null);
+                /** ForceObjectDeleteMessage object_ids */
+                object_ids?: (syft_proto.types.syft.v1.IId[]|null);
             }
 
             /** Represents a ForceObjectDeleteMessage. */
@@ -4961,8 +4961,8 @@ export namespace syft_proto {
                  */
                 constructor(properties?: syft_proto.messaging.v1.IForceObjectDeleteMessage);
 
-                /** ForceObjectDeleteMessage object_id. */
-                public object_id?: (syft_proto.types.syft.v1.IId|null);
+                /** ForceObjectDeleteMessage object_ids. */
+                public object_ids: syft_proto.types.syft.v1.IId[];
 
                 /**
                  * Creates a new ForceObjectDeleteMessage instance using the specified properties.

@@ -13822,7 +13822,7 @@ $root.syft_proto = (function() {
                  * Properties of a ForceObjectDeleteMessage.
                  * @memberof syft_proto.messaging.v1
                  * @interface IForceObjectDeleteMessage
-                 * @property {syft_proto.types.syft.v1.IId|null} [object_id] ForceObjectDeleteMessage object_id
+                 * @property {Array.<syft_proto.types.syft.v1.IId>|null} [object_ids] ForceObjectDeleteMessage object_ids
                  */
 
                 /**
@@ -13834,6 +13834,7 @@ $root.syft_proto = (function() {
                  * @param {syft_proto.messaging.v1.IForceObjectDeleteMessage=} [properties] Properties to set
                  */
                 function ForceObjectDeleteMessage(properties) {
+                    this.object_ids = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -13841,12 +13842,12 @@ $root.syft_proto = (function() {
                 }
 
                 /**
-                 * ForceObjectDeleteMessage object_id.
-                 * @member {syft_proto.types.syft.v1.IId|null|undefined} object_id
+                 * ForceObjectDeleteMessage object_ids.
+                 * @member {Array.<syft_proto.types.syft.v1.IId>} object_ids
                  * @memberof syft_proto.messaging.v1.ForceObjectDeleteMessage
                  * @instance
                  */
-                ForceObjectDeleteMessage.prototype.object_id = null;
+                ForceObjectDeleteMessage.prototype.object_ids = $util.emptyArray;
 
                 /**
                  * Creates a new ForceObjectDeleteMessage instance using the specified properties.
@@ -13872,8 +13873,9 @@ $root.syft_proto = (function() {
                 ForceObjectDeleteMessage.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.object_id != null && message.hasOwnProperty("object_id"))
-                        $root.syft_proto.types.syft.v1.Id.encode(message.object_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.object_ids != null && message.object_ids.length)
+                        for (var i = 0; i < message.object_ids.length; ++i)
+                            $root.syft_proto.types.syft.v1.Id.encode(message.object_ids[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     return writer;
                 };
 
@@ -13909,7 +13911,9 @@ $root.syft_proto = (function() {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.object_id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                            if (!(message.object_ids && message.object_ids.length))
+                                message.object_ids = [];
+                            message.object_ids.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -13946,10 +13950,14 @@ $root.syft_proto = (function() {
                 ForceObjectDeleteMessage.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.object_id != null && message.hasOwnProperty("object_id")) {
-                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.object_id);
-                        if (error)
-                            return "object_id." + error;
+                    if (message.object_ids != null && message.hasOwnProperty("object_ids")) {
+                        if (!Array.isArray(message.object_ids))
+                            return "object_ids: array expected";
+                        for (var i = 0; i < message.object_ids.length; ++i) {
+                            var error = $root.syft_proto.types.syft.v1.Id.verify(message.object_ids[i]);
+                            if (error)
+                                return "object_ids." + error;
+                        }
                     }
                     return null;
                 };
@@ -13966,10 +13974,15 @@ $root.syft_proto = (function() {
                     if (object instanceof $root.syft_proto.messaging.v1.ForceObjectDeleteMessage)
                         return object;
                     var message = new $root.syft_proto.messaging.v1.ForceObjectDeleteMessage();
-                    if (object.object_id != null) {
-                        if (typeof object.object_id !== "object")
-                            throw TypeError(".syft_proto.messaging.v1.ForceObjectDeleteMessage.object_id: object expected");
-                        message.object_id = $root.syft_proto.types.syft.v1.Id.fromObject(object.object_id);
+                    if (object.object_ids) {
+                        if (!Array.isArray(object.object_ids))
+                            throw TypeError(".syft_proto.messaging.v1.ForceObjectDeleteMessage.object_ids: array expected");
+                        message.object_ids = [];
+                        for (var i = 0; i < object.object_ids.length; ++i) {
+                            if (typeof object.object_ids[i] !== "object")
+                                throw TypeError(".syft_proto.messaging.v1.ForceObjectDeleteMessage.object_ids: object expected");
+                            message.object_ids[i] = $root.syft_proto.types.syft.v1.Id.fromObject(object.object_ids[i]);
+                        }
                     }
                     return message;
                 };
@@ -13987,10 +14000,13 @@ $root.syft_proto = (function() {
                     if (!options)
                         options = {};
                     var object = {};
-                    if (options.defaults)
-                        object.object_id = null;
-                    if (message.object_id != null && message.hasOwnProperty("object_id"))
-                        object.object_id = $root.syft_proto.types.syft.v1.Id.toObject(message.object_id, options);
+                    if (options.arrays || options.defaults)
+                        object.object_ids = [];
+                    if (message.object_ids && message.object_ids.length) {
+                        object.object_ids = [];
+                        for (var j = 0; j < message.object_ids.length; ++j)
+                            object.object_ids[j] = $root.syft_proto.types.syft.v1.Id.toObject(message.object_ids[j], options);
+                    }
                     return object;
                 };
 
