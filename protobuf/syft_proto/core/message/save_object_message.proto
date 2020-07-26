@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package syft_proto.core.message.v1;
+option java_package = "org.openmined.syftproto.core.message.v1";
+
+message SaveObjectMessage {
+
+}

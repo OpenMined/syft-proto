@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package syft_proto.types.torch.v1;
-option java_package = "org.openmined.syftproto.types.torch.v1";
-
-// torch.jit.TopLevelTracedModule
-message TracedModule {
-    bytes obj = 1;
-}
