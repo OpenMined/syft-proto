@@ -45,3 +45,5 @@ Using Gradle:
 implementation 'org.openmined.kotlinsyft:syft-proto-jvm:<latest_version>'
 ```
 
+## Support
+For support in using this library, please join the **#lib_syft-proto** Slack channel. If you’d like to follow along with any code changes to the library, please join the **#code_syft-proto** Slack channel. [Click here to join our Slack community!](https://slack.openmined.org)
