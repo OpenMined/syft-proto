@@ -222,6 +222,13 @@
     },
     "syft.frameworks.crypten.model.OnnxModel": {
       "code": 68
+    },
+    "syft.exceptions.EmptyCryptoPrimitiveStoreError": {
+      "code": 69
+    },
+    "syft.grid.clients.data_centric_fl_client.DataCentricFLClient": {
+      "code": 70,
+      "forced_code": 71
     }
   }
 }
