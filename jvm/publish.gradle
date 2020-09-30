@@ -4,6 +4,21 @@ apply plugin: 'com.github.dcendents.android-maven'
 version = System.getenv("LIB_VERSION")
 group = 'org.openmined.kotlinsyft'
 
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    from javadoc
+    classifier = 'javadoc'
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -41,7 +56,7 @@ Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 bintray {
-    user = System.getenv("BINTRAY_USERNAME")
+    user = System.getenv("BINTRAY_USER")
     key = System.getenv("BINTRAY_KEY")
 
     configurations = ['archives']
