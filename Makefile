@@ -14,9 +14,6 @@ endif
 
 PROTOC_ZIP := protoc-${PROTOC_VERSION}-${PROTOC_OS}-x86_64.zip
 DOWNLOAD_FOLDER := $(shell pwd)/protoc-download
-PROTOC_BIN := "${DOWNLOAD_FOLDER}/bin/protoc"
-
-all: stubs
 
 buf:
 	curl -sSL \
@@ -34,6 +31,7 @@ else
 	unzip -o ${PROTOC_ZIP} -d ${DOWNLOAD_FOLDER} 'bin/protoc'
 	unzip -o ${PROTOC_ZIP} -d ${DOWNLOAD_FOLDER} 'include/*'
 	rm -f ${PROTOC_ZIP}
+	ln -s ${DOWNLOAD_FOLDER}/bin/protoc protoc
 endif
 
 buf-lint: buf
@@ -53,7 +51,7 @@ python: buf-lint protoc
 	set -o pipefail
 	cd protobuf && \
 		../buf image build -o - | \
-			${PROTOC_BIN} --descriptor_set_in=/dev/stdin --python_out=../ \
+			protoc --descriptor_set_in=/dev/stdin --python_out=../ \
 			$(shell cd protobuf && ../buf image build -o - | ../buf ls-files --input -) && \
 		cd .. && \
 		find syft_proto/ -type d -print0 | \
@@ -63,7 +61,7 @@ java: buf-lint protoc
 	set -o pipefail
 	cd protobuf && \
 		../buf image build -o - | \
-			${PROTOC_BIN} --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java \
+			protoc --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java \
 			$(shell cd protobuf && ../buf image build -o - | ../buf ls-files --input -) && \
 		cd .. && \
 		./jvm/gradlew cleanFiles install
@@ -75,7 +73,7 @@ javascript: buf-lint
 swift: buf-lint
 	rm -rf swift
 	mkdir -p swift
-	${PROTOC_BIN} -I=protobuf --swift_opt=Visibility=Public --swift_out=swift $(shell find protobuf -name "*.proto")
+	protoc -I=protobuf --swift_opt=Visibility=Public --swift_out=swift $(shell find protobuf -name "*.proto")
 
 clean:
 	rm -rf buf-lint
