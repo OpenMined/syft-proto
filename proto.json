@@ -232,6 +232,9 @@
     },
     "syft.grid.clients.model_centric_fl_client.ModelCentricFLClient": {
       "code": 72
+    },
+    "syft.frameworks.torch.tensors.interpreters.replicated_shared.ReplicatedSharingTensor": {
+      "code": 73
     }
   }
 }

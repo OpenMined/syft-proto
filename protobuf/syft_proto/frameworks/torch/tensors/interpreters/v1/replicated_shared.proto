@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package syft_proto.frameworks.torch.tensors.interpreters.v1;
+option java_package = "org.openmined.syftproto.frameworks.torch.tensors.interpreters.v1";
+
+import "syft_proto/generic/pointers/v1/pointer_tensor.proto";
+import "syft_proto/types/syft/v1/id.proto";
+
+message ReplicatedSharingTensor {
+    syft_proto.types.syft.v1.Id id = 1;
+    oneof ring_size {
+        int64 ring_int = 2;
+        string ring_str = 3;
+    }
+    string dtype = 4;
+    // It would be natural to capture a {location_id->share} dictionary
+    // as a map, but the key types of a map can't be messages. The ids
+    // use the Id type because they can be either integers or strings.
+    // Capturing them as two parallel lists/arrays isn't ideal but ought
+    // to work okay (given that constraint.)
+    repeated syft_proto.types.syft.v1.Id location_ids = 5;
+    repeated syft_proto.generic.pointers.v1.PointerTensor shares = 6;
+}
