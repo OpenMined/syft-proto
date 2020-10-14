@@ -229,6 +229,9 @@
     "syft.grid.clients.data_centric_fl_client.DataCentricFLClient": {
       "code": 70,
       "forced_code": 71
+    },
+    "syft.grid.clients.model_centric_fl_client.ModelCentricFLClient": {
+      "code": 72
     }
   }
 }

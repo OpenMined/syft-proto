@@ -85,16 +85,19 @@ extension SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_FixedPrecisionTenso
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularMessageField(value: &self._id)
-      case 3: try decoder.decodeSingularStringField(value: &self.field)
-      case 4: try decoder.decodeSingularStringField(value: &self.dtype)
-      case 5: try decoder.decodeSingularInt32Field(value: &self.base)
-      case 6: try decoder.decodeSingularInt32Field(value: &self.kappa)
-      case 7: try decoder.decodeSingularInt32Field(value: &self.precisionFractional)
-      case 8: try decoder.decodeRepeatedStringField(value: &self.tags)
-      case 9: try decoder.decodeSingularStringField(value: &self.description_p)
-      case 10: try decoder.decodeSingularMessageField(value: &self._child)
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._id) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.field) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.dtype) }()
+      case 5: try { try decoder.decodeSingularInt32Field(value: &self.base) }()
+      case 6: try { try decoder.decodeSingularInt32Field(value: &self.kappa) }()
+      case 7: try { try decoder.decodeSingularInt32Field(value: &self.precisionFractional) }()
+      case 8: try { try decoder.decodeRepeatedStringField(value: &self.tags) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 10: try { try decoder.decodeSingularMessageField(value: &self._child) }()
       default: break
       }
     }

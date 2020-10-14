@@ -26,53 +26,72 @@ public struct SyftProto_Execution_V1_Plan {
   // methods supported on all messages.
 
   public var id: SyftProto_Types_Syft_V1_Id {
-    get {return _id ?? SyftProto_Types_Syft_V1_Id()}
-    set {_id = newValue}
+    get {return _storage._id ?? SyftProto_Types_Syft_V1_Id()}
+    set {_uniqueStorage()._id = newValue}
   }
   /// Returns true if `id` has been explicitly set.
-  public var hasID: Bool {return self._id != nil}
+  public var hasID: Bool {return _storage._id != nil}
   /// Clears the value of `id`. Subsequent reads from it will return its default value.
-  public mutating func clearID() {self._id = nil}
+  public mutating func clearID() {_uniqueStorage()._id = nil}
 
   public var role: SyftProto_Execution_V1_Role {
-    get {return _role ?? SyftProto_Execution_V1_Role()}
-    set {_role = newValue}
+    get {return _storage._role ?? SyftProto_Execution_V1_Role()}
+    set {_uniqueStorage()._role = newValue}
   }
   /// Returns true if `role` has been explicitly set.
-  public var hasRole: Bool {return self._role != nil}
+  public var hasRole: Bool {return _storage._role != nil}
   /// Clears the value of `role`. Subsequent reads from it will return its default value.
-  public mutating func clearRole() {self._role = nil}
+  public mutating func clearRole() {_uniqueStorage()._role = nil}
 
-  public var includeState: Bool = false
+  public var includeState: Bool {
+    get {return _storage._includeState}
+    set {_uniqueStorage()._includeState = newValue}
+  }
 
-  public var name: String = String()
+  public var name: String {
+    get {return _storage._name}
+    set {_uniqueStorage()._name = newValue}
+  }
 
-  public var tags: [String] = []
+  public var tags: [String] {
+    get {return _storage._tags}
+    set {_uniqueStorage()._tags = newValue}
+  }
 
-  public var description_p: String = String()
+  public var description_p: String {
+    get {return _storage._description_p}
+    set {_uniqueStorage()._description_p = newValue}
+  }
 
-  public var torchscript: Data = SwiftProtobuf.Internal.emptyData
+  public var torchscript: Data {
+    get {return _storage._torchscript}
+    set {_uniqueStorage()._torchscript = newValue}
+  }
 
   public var inputTypes: SyftProto_Execution_V1_NestedTypeWrapper {
-    get {return _inputTypes ?? SyftProto_Execution_V1_NestedTypeWrapper()}
-    set {_inputTypes = newValue}
+    get {return _storage._inputTypes ?? SyftProto_Execution_V1_NestedTypeWrapper()}
+    set {_uniqueStorage()._inputTypes = newValue}
   }
   /// Returns true if `inputTypes` has been explicitly set.
-  public var hasInputTypes: Bool {return self._inputTypes != nil}
+  public var hasInputTypes: Bool {return _storage._inputTypes != nil}
   /// Clears the value of `inputTypes`. Subsequent reads from it will return its default value.
-  public mutating func clearInputTypes() {self._inputTypes = nil}
+  public mutating func clearInputTypes() {_uniqueStorage()._inputTypes = nil}
 
-  public var baseFramework: String = String()
+  public var baseFramework: String {
+    get {return _storage._baseFramework}
+    set {_uniqueStorage()._baseFramework = newValue}
+  }
 
-  public var roles: Dictionary<String,SyftProto_Execution_V1_Role> = [:]
+  public var roles: Dictionary<String,SyftProto_Execution_V1_Role> {
+    get {return _storage._roles}
+    set {_uniqueStorage()._roles = newValue}
+  }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
 
-  fileprivate var _id: SyftProto_Types_Syft_V1_Id? = nil
-  fileprivate var _role: SyftProto_Execution_V1_Role? = nil
-  fileprivate var _inputTypes: SyftProto_Execution_V1_NestedTypeWrapper? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -94,69 +113,122 @@ extension SyftProto_Execution_V1_Plan: SwiftProtobuf.Message, SwiftProtobuf._Mes
     10: .same(proto: "roles"),
   ]
 
+  fileprivate class _StorageClass {
+    var _id: SyftProto_Types_Syft_V1_Id? = nil
+    var _role: SyftProto_Execution_V1_Role? = nil
+    var _includeState: Bool = false
+    var _name: String = String()
+    var _tags: [String] = []
+    var _description_p: String = String()
+    var _torchscript: Data = Data()
+    var _inputTypes: SyftProto_Execution_V1_NestedTypeWrapper? = nil
+    var _baseFramework: String = String()
+    var _roles: Dictionary<String,SyftProto_Execution_V1_Role> = [:]
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _id = source._id
+      _role = source._role
+      _includeState = source._includeState
+      _name = source._name
+      _tags = source._tags
+      _description_p = source._description_p
+      _torchscript = source._torchscript
+      _inputTypes = source._inputTypes
+      _baseFramework = source._baseFramework
+      _roles = source._roles
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularMessageField(value: &self._id)
-      case 2: try decoder.decodeSingularMessageField(value: &self._role)
-      case 3: try decoder.decodeSingularBoolField(value: &self.includeState)
-      case 4: try decoder.decodeSingularStringField(value: &self.name)
-      case 5: try decoder.decodeRepeatedStringField(value: &self.tags)
-      case 6: try decoder.decodeSingularStringField(value: &self.description_p)
-      case 7: try decoder.decodeSingularBytesField(value: &self.torchscript)
-      case 8: try decoder.decodeSingularMessageField(value: &self._inputTypes)
-      case 9: try decoder.decodeSingularStringField(value: &self.baseFramework)
-      case 10: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Execution_V1_Role>.self, value: &self.roles)
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._id) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._role) }()
+        case 3: try { try decoder.decodeSingularBoolField(value: &_storage._includeState) }()
+        case 4: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
+        case 5: try { try decoder.decodeRepeatedStringField(value: &_storage._tags) }()
+        case 6: try { try decoder.decodeSingularStringField(value: &_storage._description_p) }()
+        case 7: try { try decoder.decodeSingularBytesField(value: &_storage._torchscript) }()
+        case 8: try { try decoder.decodeSingularMessageField(value: &_storage._inputTypes) }()
+        case 9: try { try decoder.decodeSingularStringField(value: &_storage._baseFramework) }()
+        case 10: try { try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Execution_V1_Role>.self, value: &_storage._roles) }()
+        default: break
+        }
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._id {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._role {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if self.includeState != false {
-      try visitor.visitSingularBoolField(value: self.includeState, fieldNumber: 3)
-    }
-    if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 4)
-    }
-    if !self.tags.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.tags, fieldNumber: 5)
-    }
-    if !self.description_p.isEmpty {
-      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 6)
-    }
-    if !self.torchscript.isEmpty {
-      try visitor.visitSingularBytesField(value: self.torchscript, fieldNumber: 7)
-    }
-    if let v = self._inputTypes {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    }
-    if !self.baseFramework.isEmpty {
-      try visitor.visitSingularStringField(value: self.baseFramework, fieldNumber: 9)
-    }
-    if !self.roles.isEmpty {
-      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Execution_V1_Role>.self, value: self.roles, fieldNumber: 10)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._id {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if let v = _storage._role {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if _storage._includeState != false {
+        try visitor.visitSingularBoolField(value: _storage._includeState, fieldNumber: 3)
+      }
+      if !_storage._name.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 4)
+      }
+      if !_storage._tags.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._tags, fieldNumber: 5)
+      }
+      if !_storage._description_p.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._description_p, fieldNumber: 6)
+      }
+      if !_storage._torchscript.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._torchscript, fieldNumber: 7)
+      }
+      if let v = _storage._inputTypes {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+      }
+      if !_storage._baseFramework.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._baseFramework, fieldNumber: 9)
+      }
+      if !_storage._roles.isEmpty {
+        try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Execution_V1_Role>.self, value: _storage._roles, fieldNumber: 10)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: SyftProto_Execution_V1_Plan, rhs: SyftProto_Execution_V1_Plan) -> Bool {
-    if lhs._id != rhs._id {return false}
-    if lhs._role != rhs._role {return false}
-    if lhs.includeState != rhs.includeState {return false}
-    if lhs.name != rhs.name {return false}
-    if lhs.tags != rhs.tags {return false}
-    if lhs.description_p != rhs.description_p {return false}
-    if lhs.torchscript != rhs.torchscript {return false}
-    if lhs._inputTypes != rhs._inputTypes {return false}
-    if lhs.baseFramework != rhs.baseFramework {return false}
-    if lhs.roles != rhs.roles {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._id != rhs_storage._id {return false}
+        if _storage._role != rhs_storage._role {return false}
+        if _storage._includeState != rhs_storage._includeState {return false}
+        if _storage._name != rhs_storage._name {return false}
+        if _storage._tags != rhs_storage._tags {return false}
+        if _storage._description_p != rhs_storage._description_p {return false}
+        if _storage._torchscript != rhs_storage._torchscript {return false}
+        if _storage._inputTypes != rhs_storage._inputTypes {return false}
+        if _storage._baseFramework != rhs_storage._baseFramework {return false}
+        if _storage._roles != rhs_storage._roles {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

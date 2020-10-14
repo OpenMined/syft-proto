@@ -79,11 +79,26 @@ public struct SyftProto_Execution_V1_CommunicationAction {
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Execution_V1_CommunicationAction.OneOf_Target, rhs: SyftProto_Execution_V1_CommunicationAction.OneOf_Target) -> Bool {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch (lhs, rhs) {
-      case (.targetID(let l), .targetID(let r)): return l == r
-      case (.targetPointer(let l), .targetPointer(let r)): return l == r
-      case (.targetPlaceholderID(let l), .targetPlaceholderID(let r)): return l == r
-      case (.targetTensor(let l), .targetTensor(let r)): return l == r
+      case (.targetID, .targetID): return {
+        guard case .targetID(let l) = lhs, case .targetID(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.targetPointer, .targetPointer): return {
+        guard case .targetPointer(let l) = lhs, case .targetPointer(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.targetPlaceholderID, .targetPlaceholderID): return {
+        guard case .targetPlaceholderID(let l) = lhs, case .targetPlaceholderID(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.targetTensor, .targetTensor): return {
+        guard case .targetTensor(let l) = lhs, case .targetTensor(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
       default: return false
       }
     }
@@ -113,9 +128,12 @@ extension SyftProto_Execution_V1_CommunicationAction: SwiftProtobuf.Message, Swi
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.command)
-      case 2:
+      case 1: try { try decoder.decodeSingularStringField(value: &self.command) }()
+      case 2: try {
         var v: SyftProto_Generic_Pointers_V1_PointerTensor?
         if let current = self.target {
           try decoder.handleConflictingOneOf()
@@ -123,7 +141,8 @@ extension SyftProto_Execution_V1_CommunicationAction: SwiftProtobuf.Message, Swi
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.target = .targetPointer(v)}
-      case 3:
+      }()
+      case 3: try {
         var v: SyftProto_Execution_V1_PlaceholderId?
         if let current = self.target {
           try decoder.handleConflictingOneOf()
@@ -131,7 +150,8 @@ extension SyftProto_Execution_V1_CommunicationAction: SwiftProtobuf.Message, Swi
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.target = .targetPlaceholderID(v)}
-      case 4:
+      }()
+      case 4: try {
         var v: SyftProto_Types_Torch_V1_TorchTensor?
         if let current = self.target {
           try decoder.handleConflictingOneOf()
@@ -139,11 +159,12 @@ extension SyftProto_Execution_V1_CommunicationAction: SwiftProtobuf.Message, Swi
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.target = .targetTensor(v)}
-      case 5: try decoder.decodeRepeatedMessageField(value: &self.args)
-      case 6: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Types_Syft_V1_Arg>.self, value: &self.kwargs)
-      case 7: try decoder.decodeRepeatedMessageField(value: &self.returnIds)
-      case 8: try decoder.decodeRepeatedMessageField(value: &self.returnPlaceholderIds)
-      case 9:
+      }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.args) }()
+      case 6: try { try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,SyftProto_Types_Syft_V1_Arg>.self, value: &self.kwargs) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.returnIds) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.returnPlaceholderIds) }()
+      case 9: try {
         var v: SyftProto_Types_Syft_V1_Id?
         if let current = self.target {
           try decoder.handleConflictingOneOf()
@@ -151,6 +172,7 @@ extension SyftProto_Execution_V1_CommunicationAction: SwiftProtobuf.Message, Swi
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.target = .targetID(v)}
+      }()
       default: break
       }
     }
@@ -160,14 +182,22 @@ extension SyftProto_Execution_V1_CommunicationAction: SwiftProtobuf.Message, Swi
     if !self.command.isEmpty {
       try visitor.visitSingularStringField(value: self.command, fieldNumber: 1)
     }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.target {
-    case .targetPointer(let v)?:
+    case .targetPointer?: try {
+      guard case .targetPointer(let v)? = self.target else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    case .targetPlaceholderID(let v)?:
+    }()
+    case .targetPlaceholderID?: try {
+      guard case .targetPlaceholderID(let v)? = self.target else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    case .targetTensor(let v)?:
+    }()
+    case .targetTensor?: try {
+      guard case .targetTensor(let v)? = self.target else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    case nil: break
+    }()
     default: break
     }
     if !self.args.isEmpty {

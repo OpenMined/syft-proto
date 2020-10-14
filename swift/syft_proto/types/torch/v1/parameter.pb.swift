@@ -78,11 +78,14 @@ extension SyftProto_Types_Torch_V1_Parameter: SwiftProtobuf.Message, SwiftProtob
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularMessageField(value: &self._id)
-      case 2: try decoder.decodeSingularMessageField(value: &self._tensor)
-      case 3: try decoder.decodeSingularBoolField(value: &self.requiresGrad)
-      case 4: try decoder.decodeSingularMessageField(value: &self._grad)
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._id) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._tensor) }()
+      case 3: try { try decoder.decodeSingularBoolField(value: &self.requiresGrad) }()
+      case 4: try { try decoder.decodeSingularMessageField(value: &self._grad) }()
       default: break
       }
     }

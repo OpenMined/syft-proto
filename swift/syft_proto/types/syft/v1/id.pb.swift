@@ -51,9 +51,18 @@ public struct SyftProto_Types_Syft_V1_Id {
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Types_Syft_V1_Id.OneOf_ID, rhs: SyftProto_Types_Syft_V1_Id.OneOf_ID) -> Bool {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch (lhs, rhs) {
-      case (.idInt(let l), .idInt(let r)): return l == r
-      case (.idStr(let l), .idStr(let r)): return l == r
+      case (.idInt, .idInt): return {
+        guard case .idInt(let l) = lhs, case .idInt(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.idStr, .idStr): return {
+        guard case .idStr(let l) = lhs, case .idStr(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
       default: return false
       }
     }
@@ -76,28 +85,40 @@ extension SyftProto_Types_Syft_V1_Id: SwiftProtobuf.Message, SwiftProtobuf._Mess
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1:
+      case 1: try {
         if self.id != nil {try decoder.handleConflictingOneOf()}
         var v: Int64?
         try decoder.decodeSingularInt64Field(value: &v)
         if let v = v {self.id = .idInt(v)}
-      case 2:
+      }()
+      case 2: try {
         if self.id != nil {try decoder.handleConflictingOneOf()}
         var v: String?
         try decoder.decodeSingularStringField(value: &v)
         if let v = v {self.id = .idStr(v)}
+      }()
       default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.id {
-    case .idInt(let v)?:
+    case .idInt?: try {
+      guard case .idInt(let v)? = self.id else { preconditionFailure() }
       try visitor.visitSingularInt64Field(value: v, fieldNumber: 1)
-    case .idStr(let v)?:
+    }()
+    case .idStr?: try {
+      guard case .idStr(let v)? = self.id else { preconditionFailure() }
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
+    }()
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)

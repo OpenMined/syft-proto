@@ -80,9 +80,18 @@ public struct SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharing
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor.OneOf_FieldSize, rhs: SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTensor.OneOf_FieldSize) -> Bool {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch (lhs, rhs) {
-      case (.fieldInt(let l), .fieldInt(let r)): return l == r
-      case (.fieldStr(let l), .fieldStr(let r)): return l == r
+      case (.fieldInt, .fieldInt): return {
+        guard case .fieldInt(let l) = lhs, case .fieldInt(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.fieldStr, .fieldStr): return {
+        guard case .fieldStr(let l) = lhs, case .fieldStr(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
       default: return false
       }
     }
@@ -113,22 +122,27 @@ extension SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTens
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularMessageField(value: &self._id)
-      case 2:
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._id) }()
+      case 2: try {
         if self.fieldSize != nil {try decoder.handleConflictingOneOf()}
         var v: Int64?
         try decoder.decodeSingularInt64Field(value: &v)
         if let v = v {self.fieldSize = .fieldInt(v)}
-      case 3:
+      }()
+      case 3: try {
         if self.fieldSize != nil {try decoder.handleConflictingOneOf()}
         var v: String?
         try decoder.decodeSingularStringField(value: &v)
         if let v = v {self.fieldSize = .fieldStr(v)}
-      case 4: try decoder.decodeSingularStringField(value: &self.dtype)
-      case 5: try decoder.decodeSingularMessageField(value: &self._cryptoProviderID)
-      case 6: try decoder.decodeRepeatedMessageField(value: &self.locationIds)
-      case 7: try decoder.decodeRepeatedMessageField(value: &self.shares)
+      }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.dtype) }()
+      case 5: try { try decoder.decodeSingularMessageField(value: &self._cryptoProviderID) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.locationIds) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.shares) }()
       default: break
       }
     }
@@ -138,11 +152,18 @@ extension SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_AdditiveSharingTens
     if let v = self._id {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.fieldSize {
-    case .fieldInt(let v)?:
+    case .fieldInt?: try {
+      guard case .fieldInt(let v)? = self.fieldSize else { preconditionFailure() }
       try visitor.visitSingularInt64Field(value: v, fieldNumber: 2)
-    case .fieldStr(let v)?:
+    }()
+    case .fieldStr?: try {
+      guard case .fieldStr(let v)? = self.fieldSize else { preconditionFailure() }
       try visitor.visitSingularStringField(value: v, fieldNumber: 3)
+    }()
     case nil: break
     }
     if !self.dtype.isEmpty {

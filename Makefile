@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
-BUF_VERSION := 0.13.0
-PROTOC_VERSION := 3.12.2
+BUF_VERSION := 0.26.0
+PROTOC_VERSION := 3.13.0
 UNAME_OS := $(shell uname -s)
 UNAME_ARCH := $(shell uname -m)
 HTTPS_GIT := "https://github.com/OpenMined/syft-proto.git"
@@ -13,6 +13,10 @@ PROTOC_OS := ${UNAME_OS}
 endif
 
 PROTOC_ZIP := protoc-${PROTOC_VERSION}-${PROTOC_OS}-x86_64.zip
+DOWNLOAD_FOLDER := $(shell pwd)/protoc-download
+PROTOC_BIN := "${DOWNLOAD_FOLDER}/bin/protoc"
+
+all: stubs
 
 buf:
 	curl -sSL \
@@ -26,10 +30,10 @@ ifeq "${PROTOC_OS}" "osx"
 	ln -s $(shell which protoc) protoc
 else
 	curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/${PROTOC_ZIP}
-	sudo unzip -o ${PROTOC_ZIP} -d /usr/local bin/protoc
-	sudo unzip -o ${PROTOC_ZIP} -d /usr/local 'include/*'
+	mkdir -p ${DOWNLOAD_FOLDER}
+	unzip -o ${PROTOC_ZIP} -d ${DOWNLOAD_FOLDER} 'bin/protoc'
+	unzip -o ${PROTOC_ZIP} -d ${DOWNLOAD_FOLDER} 'include/*'
 	rm -f ${PROTOC_ZIP}
-	ln -s /usr/local/bin/protoc protoc
 endif
 
 buf-lint: buf
@@ -49,7 +53,7 @@ python: buf-lint protoc
 	set -o pipefail
 	cd protobuf && \
 		../buf image build -o - | \
-			protoc --descriptor_set_in=/dev/stdin --python_out=../ \
+			${PROTOC_BIN} --descriptor_set_in=/dev/stdin --python_out=../ \
 			$(shell cd protobuf && ../buf image build -o - | ../buf ls-files --input -) && \
 		cd .. && \
 		find syft_proto/ -type d -print0 | \
@@ -59,7 +63,7 @@ java: buf-lint protoc
 	set -o pipefail
 	cd protobuf && \
 		../buf image build -o - | \
-			protoc --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java \
+			${PROTOC_BIN} --descriptor_set_in=/dev/stdin --java_out=../jvm/src/main/java \
 			$(shell cd protobuf && ../buf image build -o - | ../buf ls-files --input -) && \
 		cd .. && \
 		./jvm/gradlew cleanFiles install
@@ -71,7 +75,7 @@ javascript: buf-lint
 swift: buf-lint
 	rm -rf swift
 	mkdir -p swift
-	protoc -I=protobuf --swift_opt=Visibility=Public --swift_out=swift $(shell find protobuf -name "*.proto")
+	${PROTOC_BIN} -I=protobuf --swift_opt=Visibility=Public --swift_out=swift $(shell find protobuf -name "*.proto")
 
 clean:
 	rm -rf buf-lint
@@ -103,4 +107,3 @@ push: stage
 
 
 .PHONY: python java javascript swift clean stubs stage commit push
-

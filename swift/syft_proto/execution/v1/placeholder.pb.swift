@@ -73,9 +73,18 @@ public struct SyftProto_Execution_V1_Placeholder {
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Execution_V1_Placeholder.OneOf_Child, rhs: SyftProto_Execution_V1_Placeholder.OneOf_Child) -> Bool {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch (lhs, rhs) {
-      case (.childTensor(let l), .childTensor(let r)): return l == r
-      case (.childParameter(let l), .childParameter(let r)): return l == r
+      case (.childTensor, .childTensor): return {
+        guard case .childTensor(let l) = lhs, case .childTensor(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.childParameter, .childParameter): return {
+        guard case .childParameter(let l) = lhs, case .childParameter(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
       default: return false
       }
     }
@@ -105,8 +114,11 @@ extension SyftProto_Execution_V1_Placeholder: SwiftProtobuf.Message, SwiftProtob
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1:
+      case 1: try {
         var v: SyftProto_Types_Torch_V1_TorchTensor?
         if let current = self.child {
           try decoder.handleConflictingOneOf()
@@ -114,7 +126,8 @@ extension SyftProto_Execution_V1_Placeholder: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.child = .childTensor(v)}
-      case 2:
+      }()
+      case 2: try {
         var v: SyftProto_Types_Torch_V1_Parameter?
         if let current = self.child {
           try decoder.handleConflictingOneOf()
@@ -122,21 +135,29 @@ extension SyftProto_Execution_V1_Placeholder: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.child = .childParameter(v)}
-      case 3: try decoder.decodeSingularMessageField(value: &self._id)
-      case 4: try decoder.decodeRepeatedStringField(value: &self.tags)
-      case 5: try decoder.decodeSingularStringField(value: &self.description_p)
-      case 6: try decoder.decodeSingularMessageField(value: &self._expectedShape)
+      }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._id) }()
+      case 4: try { try decoder.decodeRepeatedStringField(value: &self.tags) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 6: try { try decoder.decodeSingularMessageField(value: &self._expectedShape) }()
       default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.child {
-    case .childTensor(let v)?:
+    case .childTensor?: try {
+      guard case .childTensor(let v)? = self.child else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    case .childParameter(let v)?:
+    }()
+    case .childParameter?: try {
+      guard case .childParameter(let v)? = self.child else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    }()
     case nil: break
     }
     if let v = self._id {

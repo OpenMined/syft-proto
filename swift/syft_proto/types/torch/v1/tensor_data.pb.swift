@@ -217,25 +217,28 @@ extension SyftProto_Types_Torch_V1_TensorData: SwiftProtobuf.Message, SwiftProto
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
         switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._shape)
-        case 2: try decoder.decodeSingularStringField(value: &_storage._dtype)
-        case 3: try decoder.decodeSingularBoolField(value: &_storage._isQuantized)
-        case 4: try decoder.decodeSingularFloatField(value: &_storage._scale)
-        case 5: try decoder.decodeSingularInt32Field(value: &_storage._zeroPoint)
-        case 16: try decoder.decodeRepeatedUInt32Field(value: &_storage._contentsUint8)
-        case 17: try decoder.decodeRepeatedInt32Field(value: &_storage._contentsInt8)
-        case 18: try decoder.decodeRepeatedInt32Field(value: &_storage._contentsInt16)
-        case 19: try decoder.decodeRepeatedInt32Field(value: &_storage._contentsInt32)
-        case 20: try decoder.decodeRepeatedInt64Field(value: &_storage._contentsInt64)
-        case 21: try decoder.decodeRepeatedFloatField(value: &_storage._contentsFloat16)
-        case 22: try decoder.decodeRepeatedFloatField(value: &_storage._contentsFloat32)
-        case 23: try decoder.decodeRepeatedDoubleField(value: &_storage._contentsFloat64)
-        case 24: try decoder.decodeRepeatedBoolField(value: &_storage._contentsBool)
-        case 25: try decoder.decodeRepeatedSInt32Field(value: &_storage._contentsQint8)
-        case 26: try decoder.decodeRepeatedUInt32Field(value: &_storage._contentsQuint8)
-        case 27: try decoder.decodeRepeatedSInt32Field(value: &_storage._contentsQint32)
-        case 28: try decoder.decodeRepeatedFloatField(value: &_storage._contentsBfloat16)
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._shape) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._dtype) }()
+        case 3: try { try decoder.decodeSingularBoolField(value: &_storage._isQuantized) }()
+        case 4: try { try decoder.decodeSingularFloatField(value: &_storage._scale) }()
+        case 5: try { try decoder.decodeSingularInt32Field(value: &_storage._zeroPoint) }()
+        case 16: try { try decoder.decodeRepeatedUInt32Field(value: &_storage._contentsUint8) }()
+        case 17: try { try decoder.decodeRepeatedInt32Field(value: &_storage._contentsInt8) }()
+        case 18: try { try decoder.decodeRepeatedInt32Field(value: &_storage._contentsInt16) }()
+        case 19: try { try decoder.decodeRepeatedInt32Field(value: &_storage._contentsInt32) }()
+        case 20: try { try decoder.decodeRepeatedInt64Field(value: &_storage._contentsInt64) }()
+        case 21: try { try decoder.decodeRepeatedFloatField(value: &_storage._contentsFloat16) }()
+        case 22: try { try decoder.decodeRepeatedFloatField(value: &_storage._contentsFloat32) }()
+        case 23: try { try decoder.decodeRepeatedDoubleField(value: &_storage._contentsFloat64) }()
+        case 24: try { try decoder.decodeRepeatedBoolField(value: &_storage._contentsBool) }()
+        case 25: try { try decoder.decodeRepeatedSInt32Field(value: &_storage._contentsQint8) }()
+        case 26: try { try decoder.decodeRepeatedUInt32Field(value: &_storage._contentsQuint8) }()
+        case 27: try { try decoder.decodeRepeatedSInt32Field(value: &_storage._contentsQint32) }()
+        case 28: try { try decoder.decodeRepeatedFloatField(value: &_storage._contentsBfloat16) }()
         default: break
         }
       }

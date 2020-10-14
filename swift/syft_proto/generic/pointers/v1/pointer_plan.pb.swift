@@ -81,12 +81,15 @@ extension SyftProto_Generic_Pointers_V1_PointerPlan: SwiftProtobuf.Message, Swif
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularMessageField(value: &self._objectID)
-      case 2: try decoder.decodeSingularMessageField(value: &self._locationID)
-      case 3: try decoder.decodeSingularMessageField(value: &self._objectIDAtLocation)
-      case 4: try decoder.decodeRepeatedStringField(value: &self.tags)
-      case 5: try decoder.decodeSingularBoolField(value: &self.garbageCollectData)
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._objectID) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._locationID) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._objectIDAtLocation) }()
+      case 4: try { try decoder.decodeRepeatedStringField(value: &self.tags) }()
+      case 5: try { try decoder.decodeSingularBoolField(value: &self.garbageCollectData) }()
       default: break
       }
     }

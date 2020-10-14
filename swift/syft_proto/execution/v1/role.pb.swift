@@ -82,15 +82,18 @@ extension SyftProto_Execution_V1_Role: SwiftProtobuf.Message, SwiftProtobuf._Mes
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularMessageField(value: &self._id)
-      case 2: try decoder.decodeRepeatedMessageField(value: &self.actions)
-      case 3: try decoder.decodeSingularMessageField(value: &self._state)
-      case 4: try decoder.decodeRepeatedMessageField(value: &self.placeholders)
-      case 5: try decoder.decodeRepeatedMessageField(value: &self.inputPlaceholderIds)
-      case 6: try decoder.decodeRepeatedMessageField(value: &self.outputPlaceholderIds)
-      case 7: try decoder.decodeRepeatedStringField(value: &self.tags)
-      case 8: try decoder.decodeSingularStringField(value: &self.description_p)
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._id) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.actions) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._state) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.placeholders) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.inputPlaceholderIds) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.outputPlaceholderIds) }()
+      case 7: try { try decoder.decodeRepeatedStringField(value: &self.tags) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
       default: break
       }
     }
