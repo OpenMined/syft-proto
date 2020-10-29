@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
-BUF_VERSION := 0.13.0
-PROTOC_VERSION := 3.12.2
+BUF_VERSION := 0.26.0
+PROTOC_VERSION := 3.13.0
 UNAME_OS := $(shell uname -s)
 UNAME_ARCH := $(shell uname -m)
 HTTPS_GIT := "https://github.com/OpenMined/syft-proto.git"
@@ -13,6 +13,7 @@ PROTOC_OS := ${UNAME_OS}
 endif
 
 PROTOC_ZIP := protoc-${PROTOC_VERSION}-${PROTOC_OS}-x86_64.zip
+DOWNLOAD_FOLDER := $(shell pwd)/protoc-download
 
 buf:
 	curl -sSL \
@@ -26,10 +27,11 @@ ifeq "${PROTOC_OS}" "osx"
 	ln -s $(shell which protoc) protoc
 else
 	curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/${PROTOC_ZIP}
-	sudo unzip -o ${PROTOC_ZIP} -d /usr/local bin/protoc
-	sudo unzip -o ${PROTOC_ZIP} -d /usr/local 'include/*'
+	mkdir -p ${DOWNLOAD_FOLDER}
+	unzip -o ${PROTOC_ZIP} -d ${DOWNLOAD_FOLDER} 'bin/protoc'
+	unzip -o ${PROTOC_ZIP} -d ${DOWNLOAD_FOLDER} 'include/*'
 	rm -f ${PROTOC_ZIP}
-	ln -s /usr/local/bin/protoc protoc
+	ln -s ${DOWNLOAD_FOLDER}/bin/protoc protoc
 endif
 
 buf-lint: buf
@@ -103,4 +105,3 @@ push: stage
 
 
 .PHONY: python java javascript swift clean stubs stage commit push
-

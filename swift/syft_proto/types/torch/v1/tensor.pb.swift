@@ -50,7 +50,7 @@ public struct SyftProto_Types_Torch_V1_TorchTensor {
   public var contentsBin: Data {
     get {
       if case .contentsBin(let v)? = _storage._contents {return v}
-      return SwiftProtobuf.Internal.emptyData
+      return Data()
     }
     set {_uniqueStorage()._contents = .contentsBin(newValue)}
   }
@@ -96,9 +96,18 @@ public struct SyftProto_Types_Torch_V1_TorchTensor {
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Types_Torch_V1_TorchTensor.OneOf_Contents, rhs: SyftProto_Types_Torch_V1_TorchTensor.OneOf_Contents) -> Bool {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch (lhs, rhs) {
-      case (.contentsData(let l), .contentsData(let r)): return l == r
-      case (.contentsBin(let l), .contentsBin(let r)): return l == r
+      case (.contentsData, .contentsData): return {
+        guard case .contentsData(let l) = lhs, case .contentsData(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.contentsBin, .contentsBin): return {
+        guard case .contentsBin(let l) = lhs, case .contentsBin(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
       default: return false
       }
     }
@@ -214,9 +223,12 @@ extension SyftProto_Types_Torch_V1_TorchTensor: SwiftProtobuf.Message, SwiftProt
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
         switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._id)
-        case 2:
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._id) }()
+        case 2: try {
           var v: SyftProto_Types_Torch_V1_TensorData?
           if let current = _storage._contents {
             try decoder.handleConflictingOneOf()
@@ -224,16 +236,18 @@ extension SyftProto_Types_Torch_V1_TorchTensor: SwiftProtobuf.Message, SwiftProt
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._contents = .contentsData(v)}
-        case 3:
+        }()
+        case 3: try {
           if _storage._contents != nil {try decoder.handleConflictingOneOf()}
           var v: Data?
           try decoder.decodeSingularBytesField(value: &v)
           if let v = v {_storage._contents = .contentsBin(v)}
-        case 4: try decoder.decodeSingularMessageField(value: &_storage._chain)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._gradChain)
-        case 6: try decoder.decodeRepeatedStringField(value: &_storage._tags)
-        case 7: try decoder.decodeSingularStringField(value: &_storage._description_p)
-        case 8: try decoder.decodeSingularEnumField(value: &_storage._serializer)
+        }()
+        case 4: try { try decoder.decodeSingularMessageField(value: &_storage._chain) }()
+        case 5: try { try decoder.decodeSingularMessageField(value: &_storage._gradChain) }()
+        case 6: try { try decoder.decodeRepeatedStringField(value: &_storage._tags) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._description_p) }()
+        case 8: try { try decoder.decodeSingularEnumField(value: &_storage._serializer) }()
         default: break
         }
       }
@@ -245,11 +259,18 @@ extension SyftProto_Types_Torch_V1_TorchTensor: SwiftProtobuf.Message, SwiftProt
       if let v = _storage._id {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       }
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch _storage._contents {
-      case .contentsData(let v)?:
+      case .contentsData?: try {
+        guard case .contentsData(let v)? = _storage._contents else { preconditionFailure() }
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      case .contentsBin(let v)?:
+      }()
+      case .contentsBin?: try {
+        guard case .contentsBin(let v)? = _storage._contents else { preconditionFailure() }
         try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
+      }()
       case nil: break
       }
       if let v = _storage._chain {

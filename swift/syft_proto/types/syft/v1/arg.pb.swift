@@ -132,18 +132,54 @@ public struct SyftProto_Types_Syft_V1_Arg {
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Types_Syft_V1_Arg.OneOf_Arg, rhs: SyftProto_Types_Syft_V1_Arg.OneOf_Arg) -> Bool {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch (lhs, rhs) {
-      case (.argBool(let l), .argBool(let r)): return l == r
-      case (.argInt(let l), .argInt(let r)): return l == r
-      case (.argFloat(let l), .argFloat(let r)): return l == r
-      case (.argStr(let l), .argStr(let r)): return l == r
-      case (.argShape(let l), .argShape(let r)): return l == r
-      case (.argTensor(let l), .argTensor(let r)): return l == r
-      case (.argTorchParam(let l), .argTorchParam(let r)): return l == r
-      case (.argPointerTensor(let l), .argPointerTensor(let r)): return l == r
-      case (.argPlaceholder(let l), .argPlaceholder(let r)): return l == r
-      case (.argPlaceholderID(let l), .argPlaceholderID(let r)): return l == r
-      case (.argList(let l), .argList(let r)): return l == r
+      case (.argBool, .argBool): return {
+        guard case .argBool(let l) = lhs, case .argBool(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.argInt, .argInt): return {
+        guard case .argInt(let l) = lhs, case .argInt(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.argFloat, .argFloat): return {
+        guard case .argFloat(let l) = lhs, case .argFloat(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.argStr, .argStr): return {
+        guard case .argStr(let l) = lhs, case .argStr(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.argShape, .argShape): return {
+        guard case .argShape(let l) = lhs, case .argShape(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.argTensor, .argTensor): return {
+        guard case .argTensor(let l) = lhs, case .argTensor(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.argTorchParam, .argTorchParam): return {
+        guard case .argTorchParam(let l) = lhs, case .argTorchParam(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.argPointerTensor, .argPointerTensor): return {
+        guard case .argPointerTensor(let l) = lhs, case .argPointerTensor(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.argPlaceholder, .argPlaceholder): return {
+        guard case .argPlaceholder(let l) = lhs, case .argPlaceholder(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.argPlaceholderID, .argPlaceholderID): return {
+        guard case .argPlaceholderID(let l) = lhs, case .argPlaceholderID(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.argList, .argList): return {
+        guard case .argList(let l) = lhs, case .argList(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
       default: return false
       }
     }
@@ -187,28 +223,35 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1:
+      case 1: try {
         if self.arg != nil {try decoder.handleConflictingOneOf()}
         var v: Bool?
         try decoder.decodeSingularBoolField(value: &v)
         if let v = v {self.arg = .argBool(v)}
-      case 2:
+      }()
+      case 2: try {
         if self.arg != nil {try decoder.handleConflictingOneOf()}
         var v: Int64?
         try decoder.decodeSingularInt64Field(value: &v)
         if let v = v {self.arg = .argInt(v)}
-      case 3:
+      }()
+      case 3: try {
         if self.arg != nil {try decoder.handleConflictingOneOf()}
         var v: Float?
         try decoder.decodeSingularFloatField(value: &v)
         if let v = v {self.arg = .argFloat(v)}
-      case 4:
+      }()
+      case 4: try {
         if self.arg != nil {try decoder.handleConflictingOneOf()}
         var v: String?
         try decoder.decodeSingularStringField(value: &v)
         if let v = v {self.arg = .argStr(v)}
-      case 5:
+      }()
+      case 5: try {
         var v: SyftProto_Types_Syft_V1_Shape?
         if let current = self.arg {
           try decoder.handleConflictingOneOf()
@@ -216,7 +259,8 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.arg = .argShape(v)}
-      case 6:
+      }()
+      case 6: try {
         var v: SyftProto_Types_Torch_V1_TorchTensor?
         if let current = self.arg {
           try decoder.handleConflictingOneOf()
@@ -224,7 +268,8 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.arg = .argTensor(v)}
-      case 7:
+      }()
+      case 7: try {
         var v: SyftProto_Types_Torch_V1_Parameter?
         if let current = self.arg {
           try decoder.handleConflictingOneOf()
@@ -232,7 +277,8 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.arg = .argTorchParam(v)}
-      case 8:
+      }()
+      case 8: try {
         var v: SyftProto_Generic_Pointers_V1_PointerTensor?
         if let current = self.arg {
           try decoder.handleConflictingOneOf()
@@ -240,7 +286,8 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.arg = .argPointerTensor(v)}
-      case 9:
+      }()
+      case 9: try {
         var v: SyftProto_Execution_V1_Placeholder?
         if let current = self.arg {
           try decoder.handleConflictingOneOf()
@@ -248,7 +295,8 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.arg = .argPlaceholder(v)}
-      case 10:
+      }()
+      case 10: try {
         var v: SyftProto_Execution_V1_PlaceholderId?
         if let current = self.arg {
           try decoder.handleConflictingOneOf()
@@ -256,7 +304,8 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.arg = .argPlaceholderID(v)}
-      case 11:
+      }()
+      case 11: try {
         var v: SyftProto_Types_Syft_V1_ArgList?
         if let current = self.arg {
           try decoder.handleConflictingOneOf()
@@ -264,35 +313,61 @@ extension SyftProto_Types_Syft_V1_Arg: SwiftProtobuf.Message, SwiftProtobuf._Mes
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.arg = .argList(v)}
+      }()
       default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.arg {
-    case .argBool(let v)?:
+    case .argBool?: try {
+      guard case .argBool(let v)? = self.arg else { preconditionFailure() }
       try visitor.visitSingularBoolField(value: v, fieldNumber: 1)
-    case .argInt(let v)?:
+    }()
+    case .argInt?: try {
+      guard case .argInt(let v)? = self.arg else { preconditionFailure() }
       try visitor.visitSingularInt64Field(value: v, fieldNumber: 2)
-    case .argFloat(let v)?:
+    }()
+    case .argFloat?: try {
+      guard case .argFloat(let v)? = self.arg else { preconditionFailure() }
       try visitor.visitSingularFloatField(value: v, fieldNumber: 3)
-    case .argStr(let v)?:
+    }()
+    case .argStr?: try {
+      guard case .argStr(let v)? = self.arg else { preconditionFailure() }
       try visitor.visitSingularStringField(value: v, fieldNumber: 4)
-    case .argShape(let v)?:
+    }()
+    case .argShape?: try {
+      guard case .argShape(let v)? = self.arg else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    case .argTensor(let v)?:
+    }()
+    case .argTensor?: try {
+      guard case .argTensor(let v)? = self.arg else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    case .argTorchParam(let v)?:
+    }()
+    case .argTorchParam?: try {
+      guard case .argTorchParam(let v)? = self.arg else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    case .argPointerTensor(let v)?:
+    }()
+    case .argPointerTensor?: try {
+      guard case .argPointerTensor(let v)? = self.arg else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    case .argPlaceholder(let v)?:
+    }()
+    case .argPlaceholder?: try {
+      guard case .argPlaceholder(let v)? = self.arg else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-    case .argPlaceholderID(let v)?:
+    }()
+    case .argPlaceholderID?: try {
+      guard case .argPlaceholderID(let v)? = self.arg else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-    case .argList(let v)?:
+    }()
+    case .argList?: try {
+      guard case .argList(let v)? = self.arg else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
+    }()
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -313,8 +388,11 @@ extension SyftProto_Types_Syft_V1_ArgList: SwiftProtobuf.Message, SwiftProtobuf.
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeRepeatedMessageField(value: &self.args)
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.args) }()
       default: break
       }
     }

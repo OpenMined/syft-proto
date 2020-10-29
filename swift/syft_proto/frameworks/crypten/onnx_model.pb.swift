@@ -34,7 +34,7 @@ public struct SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_OnnxModel {
   /// Clears the value of `id`. Subsequent reads from it will return its default value.
   public mutating func clearID() {self._id = nil}
 
-  public var serializedModel: Data = SwiftProtobuf.Internal.emptyData
+  public var serializedModel: Data = Data()
 
   public var tags: [String] = []
 
@@ -62,11 +62,14 @@ extension SyftProto_Frameworks_Torch_Tensors_Interpreters_V1_OnnxModel: SwiftPro
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularMessageField(value: &self._id)
-      case 2: try decoder.decodeSingularBytesField(value: &self.serializedModel)
-      case 3: try decoder.decodeRepeatedStringField(value: &self.tags)
-      case 4: try decoder.decodeSingularStringField(value: &self.description_p)
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._id) }()
+      case 2: try { try decoder.decodeSingularBytesField(value: &self.serializedModel) }()
+      case 3: try { try decoder.decodeRepeatedStringField(value: &self.tags) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
       default: break
       }
     }

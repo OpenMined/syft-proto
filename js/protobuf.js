@@ -12029,6 +12029,388 @@ $root.syft_proto = (function() {
                             return FixedPrecisionTensor;
                         })();
 
+                        v1.ReplicatedSharingTensor = (function() {
+
+                            /**
+                             * Properties of a ReplicatedSharingTensor.
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1
+                             * @interface IReplicatedSharingTensor
+                             * @property {syft_proto.types.syft.v1.IId|null} [id] ReplicatedSharingTensor id
+                             * @property {number|Long|null} [ring_int] ReplicatedSharingTensor ring_int
+                             * @property {string|null} [ring_str] ReplicatedSharingTensor ring_str
+                             * @property {string|null} [dtype] ReplicatedSharingTensor dtype
+                             * @property {Array.<syft_proto.types.syft.v1.IId>|null} [location_ids] ReplicatedSharingTensor location_ids
+                             * @property {Array.<syft_proto.generic.pointers.v1.IPointerTensor>|null} [shares] ReplicatedSharingTensor shares
+                             */
+
+                            /**
+                             * Constructs a new ReplicatedSharingTensor.
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1
+                             * @classdesc Represents a ReplicatedSharingTensor.
+                             * @implements IReplicatedSharingTensor
+                             * @constructor
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IReplicatedSharingTensor=} [properties] Properties to set
+                             */
+                            function ReplicatedSharingTensor(properties) {
+                                this.location_ids = [];
+                                this.shares = [];
+                                if (properties)
+                                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                        if (properties[keys[i]] != null)
+                                            this[keys[i]] = properties[keys[i]];
+                            }
+
+                            /**
+                             * ReplicatedSharingTensor id.
+                             * @member {syft_proto.types.syft.v1.IId|null|undefined} id
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @instance
+                             */
+                            ReplicatedSharingTensor.prototype.id = null;
+
+                            /**
+                             * ReplicatedSharingTensor ring_int.
+                             * @member {number|Long} ring_int
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @instance
+                             */
+                            ReplicatedSharingTensor.prototype.ring_int = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+                            /**
+                             * ReplicatedSharingTensor ring_str.
+                             * @member {string} ring_str
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @instance
+                             */
+                            ReplicatedSharingTensor.prototype.ring_str = "";
+
+                            /**
+                             * ReplicatedSharingTensor dtype.
+                             * @member {string} dtype
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @instance
+                             */
+                            ReplicatedSharingTensor.prototype.dtype = "";
+
+                            /**
+                             * ReplicatedSharingTensor location_ids.
+                             * @member {Array.<syft_proto.types.syft.v1.IId>} location_ids
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @instance
+                             */
+                            ReplicatedSharingTensor.prototype.location_ids = $util.emptyArray;
+
+                            /**
+                             * ReplicatedSharingTensor shares.
+                             * @member {Array.<syft_proto.generic.pointers.v1.IPointerTensor>} shares
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @instance
+                             */
+                            ReplicatedSharingTensor.prototype.shares = $util.emptyArray;
+
+                            // OneOf field names bound to virtual getters and setters
+                            var $oneOfFields;
+
+                            /**
+                             * ReplicatedSharingTensor ring_size.
+                             * @member {"ring_int"|"ring_str"|undefined} ring_size
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @instance
+                             */
+                            Object.defineProperty(ReplicatedSharingTensor.prototype, "ring_size", {
+                                get: $util.oneOfGetter($oneOfFields = ["ring_int", "ring_str"]),
+                                set: $util.oneOfSetter($oneOfFields)
+                            });
+
+                            /**
+                             * Creates a new ReplicatedSharingTensor instance using the specified properties.
+                             * @function create
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IReplicatedSharingTensor=} [properties] Properties to set
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor} ReplicatedSharingTensor instance
+                             */
+                            ReplicatedSharingTensor.create = function create(properties) {
+                                return new ReplicatedSharingTensor(properties);
+                            };
+
+                            /**
+                             * Encodes the specified ReplicatedSharingTensor message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor.verify|verify} messages.
+                             * @function encode
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IReplicatedSharingTensor} message ReplicatedSharingTensor message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            ReplicatedSharingTensor.encode = function encode(message, writer) {
+                                if (!writer)
+                                    writer = $Writer.create();
+                                if (message.id != null && message.hasOwnProperty("id"))
+                                    $root.syft_proto.types.syft.v1.Id.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                                if (message.ring_int != null && message.hasOwnProperty("ring_int"))
+                                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.ring_int);
+                                if (message.ring_str != null && message.hasOwnProperty("ring_str"))
+                                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.ring_str);
+                                if (message.dtype != null && message.hasOwnProperty("dtype"))
+                                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.dtype);
+                                if (message.location_ids != null && message.location_ids.length)
+                                    for (var i = 0; i < message.location_ids.length; ++i)
+                                        $root.syft_proto.types.syft.v1.Id.encode(message.location_ids[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                                if (message.shares != null && message.shares.length)
+                                    for (var i = 0; i < message.shares.length; ++i)
+                                        $root.syft_proto.generic.pointers.v1.PointerTensor.encode(message.shares[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                                return writer;
+                            };
+
+                            /**
+                             * Encodes the specified ReplicatedSharingTensor message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor.verify|verify} messages.
+                             * @function encodeDelimited
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.IReplicatedSharingTensor} message ReplicatedSharingTensor message or plain object to encode
+                             * @param {$protobuf.Writer} [writer] Writer to encode to
+                             * @returns {$protobuf.Writer} Writer
+                             */
+                            ReplicatedSharingTensor.encodeDelimited = function encodeDelimited(message, writer) {
+                                return this.encode(message, writer).ldelim();
+                            };
+
+                            /**
+                             * Decodes a ReplicatedSharingTensor message from the specified reader or buffer.
+                             * @function decode
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @param {number} [length] Message length if known beforehand
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor} ReplicatedSharingTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            ReplicatedSharingTensor.decode = function decode(reader, length) {
+                                if (!(reader instanceof $Reader))
+                                    reader = $Reader.create(reader);
+                                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor();
+                                while (reader.pos < end) {
+                                    var tag = reader.uint32();
+                                    switch (tag >>> 3) {
+                                    case 1:
+                                        message.id = $root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32());
+                                        break;
+                                    case 2:
+                                        message.ring_int = reader.int64();
+                                        break;
+                                    case 3:
+                                        message.ring_str = reader.string();
+                                        break;
+                                    case 4:
+                                        message.dtype = reader.string();
+                                        break;
+                                    case 5:
+                                        if (!(message.location_ids && message.location_ids.length))
+                                            message.location_ids = [];
+                                        message.location_ids.push($root.syft_proto.types.syft.v1.Id.decode(reader, reader.uint32()));
+                                        break;
+                                    case 6:
+                                        if (!(message.shares && message.shares.length))
+                                            message.shares = [];
+                                        message.shares.push($root.syft_proto.generic.pointers.v1.PointerTensor.decode(reader, reader.uint32()));
+                                        break;
+                                    default:
+                                        reader.skipType(tag & 7);
+                                        break;
+                                    }
+                                }
+                                return message;
+                            };
+
+                            /**
+                             * Decodes a ReplicatedSharingTensor message from the specified reader or buffer, length delimited.
+                             * @function decodeDelimited
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @static
+                             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor} ReplicatedSharingTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            ReplicatedSharingTensor.decodeDelimited = function decodeDelimited(reader) {
+                                if (!(reader instanceof $Reader))
+                                    reader = new $Reader(reader);
+                                return this.decode(reader, reader.uint32());
+                            };
+
+                            /**
+                             * Verifies a ReplicatedSharingTensor message.
+                             * @function verify
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @static
+                             * @param {Object.<string,*>} message Plain object to verify
+                             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                             */
+                            ReplicatedSharingTensor.verify = function verify(message) {
+                                if (typeof message !== "object" || message === null)
+                                    return "object expected";
+                                var properties = {};
+                                if (message.id != null && message.hasOwnProperty("id")) {
+                                    var error = $root.syft_proto.types.syft.v1.Id.verify(message.id);
+                                    if (error)
+                                        return "id." + error;
+                                }
+                                if (message.ring_int != null && message.hasOwnProperty("ring_int")) {
+                                    properties.ring_size = 1;
+                                    if (!$util.isInteger(message.ring_int) && !(message.ring_int && $util.isInteger(message.ring_int.low) && $util.isInteger(message.ring_int.high)))
+                                        return "ring_int: integer|Long expected";
+                                }
+                                if (message.ring_str != null && message.hasOwnProperty("ring_str")) {
+                                    if (properties.ring_size === 1)
+                                        return "ring_size: multiple values";
+                                    properties.ring_size = 1;
+                                    if (!$util.isString(message.ring_str))
+                                        return "ring_str: string expected";
+                                }
+                                if (message.dtype != null && message.hasOwnProperty("dtype"))
+                                    if (!$util.isString(message.dtype))
+                                        return "dtype: string expected";
+                                if (message.location_ids != null && message.hasOwnProperty("location_ids")) {
+                                    if (!Array.isArray(message.location_ids))
+                                        return "location_ids: array expected";
+                                    for (var i = 0; i < message.location_ids.length; ++i) {
+                                        var error = $root.syft_proto.types.syft.v1.Id.verify(message.location_ids[i]);
+                                        if (error)
+                                            return "location_ids." + error;
+                                    }
+                                }
+                                if (message.shares != null && message.hasOwnProperty("shares")) {
+                                    if (!Array.isArray(message.shares))
+                                        return "shares: array expected";
+                                    for (var i = 0; i < message.shares.length; ++i) {
+                                        var error = $root.syft_proto.generic.pointers.v1.PointerTensor.verify(message.shares[i]);
+                                        if (error)
+                                            return "shares." + error;
+                                    }
+                                }
+                                return null;
+                            };
+
+                            /**
+                             * Creates a ReplicatedSharingTensor message from a plain object. Also converts values to their respective internal types.
+                             * @function fromObject
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @static
+                             * @param {Object.<string,*>} object Plain object
+                             * @returns {syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor} ReplicatedSharingTensor
+                             */
+                            ReplicatedSharingTensor.fromObject = function fromObject(object) {
+                                if (object instanceof $root.syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor)
+                                    return object;
+                                var message = new $root.syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor();
+                                if (object.id != null) {
+                                    if (typeof object.id !== "object")
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor.id: object expected");
+                                    message.id = $root.syft_proto.types.syft.v1.Id.fromObject(object.id);
+                                }
+                                if (object.ring_int != null)
+                                    if ($util.Long)
+                                        (message.ring_int = $util.Long.fromValue(object.ring_int)).unsigned = false;
+                                    else if (typeof object.ring_int === "string")
+                                        message.ring_int = parseInt(object.ring_int, 10);
+                                    else if (typeof object.ring_int === "number")
+                                        message.ring_int = object.ring_int;
+                                    else if (typeof object.ring_int === "object")
+                                        message.ring_int = new $util.LongBits(object.ring_int.low >>> 0, object.ring_int.high >>> 0).toNumber();
+                                if (object.ring_str != null)
+                                    message.ring_str = String(object.ring_str);
+                                if (object.dtype != null)
+                                    message.dtype = String(object.dtype);
+                                if (object.location_ids) {
+                                    if (!Array.isArray(object.location_ids))
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor.location_ids: array expected");
+                                    message.location_ids = [];
+                                    for (var i = 0; i < object.location_ids.length; ++i) {
+                                        if (typeof object.location_ids[i] !== "object")
+                                            throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor.location_ids: object expected");
+                                        message.location_ids[i] = $root.syft_proto.types.syft.v1.Id.fromObject(object.location_ids[i]);
+                                    }
+                                }
+                                if (object.shares) {
+                                    if (!Array.isArray(object.shares))
+                                        throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor.shares: array expected");
+                                    message.shares = [];
+                                    for (var i = 0; i < object.shares.length; ++i) {
+                                        if (typeof object.shares[i] !== "object")
+                                            throw TypeError(".syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor.shares: object expected");
+                                        message.shares[i] = $root.syft_proto.generic.pointers.v1.PointerTensor.fromObject(object.shares[i]);
+                                    }
+                                }
+                                return message;
+                            };
+
+                            /**
+                             * Creates a plain object from a ReplicatedSharingTensor message. Also converts values to other types if specified.
+                             * @function toObject
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @static
+                             * @param {syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor} message ReplicatedSharingTensor
+                             * @param {$protobuf.IConversionOptions} [options] Conversion options
+                             * @returns {Object.<string,*>} Plain object
+                             */
+                            ReplicatedSharingTensor.toObject = function toObject(message, options) {
+                                if (!options)
+                                    options = {};
+                                var object = {};
+                                if (options.arrays || options.defaults) {
+                                    object.location_ids = [];
+                                    object.shares = [];
+                                }
+                                if (options.defaults) {
+                                    object.id = null;
+                                    object.dtype = "";
+                                }
+                                if (message.id != null && message.hasOwnProperty("id"))
+                                    object.id = $root.syft_proto.types.syft.v1.Id.toObject(message.id, options);
+                                if (message.ring_int != null && message.hasOwnProperty("ring_int")) {
+                                    if (typeof message.ring_int === "number")
+                                        object.ring_int = options.longs === String ? String(message.ring_int) : message.ring_int;
+                                    else
+                                        object.ring_int = options.longs === String ? $util.Long.prototype.toString.call(message.ring_int) : options.longs === Number ? new $util.LongBits(message.ring_int.low >>> 0, message.ring_int.high >>> 0).toNumber() : message.ring_int;
+                                    if (options.oneofs)
+                                        object.ring_size = "ring_int";
+                                }
+                                if (message.ring_str != null && message.hasOwnProperty("ring_str")) {
+                                    object.ring_str = message.ring_str;
+                                    if (options.oneofs)
+                                        object.ring_size = "ring_str";
+                                }
+                                if (message.dtype != null && message.hasOwnProperty("dtype"))
+                                    object.dtype = message.dtype;
+                                if (message.location_ids && message.location_ids.length) {
+                                    object.location_ids = [];
+                                    for (var j = 0; j < message.location_ids.length; ++j)
+                                        object.location_ids[j] = $root.syft_proto.types.syft.v1.Id.toObject(message.location_ids[j], options);
+                                }
+                                if (message.shares && message.shares.length) {
+                                    object.shares = [];
+                                    for (var j = 0; j < message.shares.length; ++j)
+                                        object.shares[j] = $root.syft_proto.generic.pointers.v1.PointerTensor.toObject(message.shares[j], options);
+                                }
+                                return object;
+                            };
+
+                            /**
+                             * Converts this ReplicatedSharingTensor to JSON.
+                             * @function toJSON
+                             * @memberof syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor
+                             * @instance
+                             * @returns {Object.<string,*>} JSON object
+                             */
+                            ReplicatedSharingTensor.prototype.toJSON = function toJSON() {
+                                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                            };
+
+                            return ReplicatedSharingTensor;
+                        })();
+
                         return v1;
                     })();
 

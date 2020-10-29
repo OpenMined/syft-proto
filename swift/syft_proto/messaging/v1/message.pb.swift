@@ -123,17 +123,50 @@ public struct SyftProto_Messaging_V1_SyftMessage {
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Messaging_V1_SyftMessage.OneOf_Contents, rhs: SyftProto_Messaging_V1_SyftMessage.OneOf_Contents) -> Bool {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch (lhs, rhs) {
-      case (.contentsEmptyMsg(let l), .contentsEmptyMsg(let r)): return l == r
-      case (.contentsDeleteMsg(let l), .contentsDeleteMsg(let r)): return l == r
-      case (.contentsGetShapeMsg(let l), .contentsGetShapeMsg(let r)): return l == r
-      case (.contentsIsNoneMsg(let l), .contentsIsNoneMsg(let r)): return l == r
-      case (.contentsObjectMsg(let l), .contentsObjectMsg(let r)): return l == r
-      case (.contentsObjectRequestMsg(let l), .contentsObjectRequestMsg(let r)): return l == r
-      case (.contentsTensorCmdMsg(let l), .contentsTensorCmdMsg(let r)): return l == r
-      case (.contentsPlanCmdMsg(let l), .contentsPlanCmdMsg(let r)): return l == r
-      case (.contentsWorkerCmdMsg(let l), .contentsWorkerCmdMsg(let r)): return l == r
-      case (.contentsSearchMsg(let l), .contentsSearchMsg(let r)): return l == r
+      case (.contentsEmptyMsg, .contentsEmptyMsg): return {
+        guard case .contentsEmptyMsg(let l) = lhs, case .contentsEmptyMsg(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.contentsDeleteMsg, .contentsDeleteMsg): return {
+        guard case .contentsDeleteMsg(let l) = lhs, case .contentsDeleteMsg(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.contentsGetShapeMsg, .contentsGetShapeMsg): return {
+        guard case .contentsGetShapeMsg(let l) = lhs, case .contentsGetShapeMsg(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.contentsIsNoneMsg, .contentsIsNoneMsg): return {
+        guard case .contentsIsNoneMsg(let l) = lhs, case .contentsIsNoneMsg(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.contentsObjectMsg, .contentsObjectMsg): return {
+        guard case .contentsObjectMsg(let l) = lhs, case .contentsObjectMsg(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.contentsObjectRequestMsg, .contentsObjectRequestMsg): return {
+        guard case .contentsObjectRequestMsg(let l) = lhs, case .contentsObjectRequestMsg(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.contentsTensorCmdMsg, .contentsTensorCmdMsg): return {
+        guard case .contentsTensorCmdMsg(let l) = lhs, case .contentsTensorCmdMsg(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.contentsPlanCmdMsg, .contentsPlanCmdMsg): return {
+        guard case .contentsPlanCmdMsg(let l) = lhs, case .contentsPlanCmdMsg(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.contentsWorkerCmdMsg, .contentsWorkerCmdMsg): return {
+        guard case .contentsWorkerCmdMsg(let l) = lhs, case .contentsWorkerCmdMsg(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.contentsSearchMsg, .contentsSearchMsg): return {
+        guard case .contentsSearchMsg(let l) = lhs, case .contentsSearchMsg(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
       default: return false
       }
     }
@@ -216,9 +249,18 @@ public struct SyftProto_Messaging_V1_TensorCommandMessage {
 
   #if !swift(>=4.1)
     public static func ==(lhs: SyftProto_Messaging_V1_TensorCommandMessage.OneOf_Action, rhs: SyftProto_Messaging_V1_TensorCommandMessage.OneOf_Action) -> Bool {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch (lhs, rhs) {
-      case (.computation(let l), .computation(let r)): return l == r
-      case (.communication(let l), .communication(let r)): return l == r
+      case (.computation, .computation): return {
+        guard case .computation(let l) = lhs, case .computation(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
+      case (.communication, .communication): return {
+        guard case .communication(let l) = lhs, case .communication(let r) = rhs else { preconditionFailure() }
+        return l == r
+      }()
       default: return false
       }
     }
@@ -345,8 +387,11 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1:
+      case 1: try {
         var v: SwiftProtobuf.Google_Protobuf_Empty?
         if let current = self.contents {
           try decoder.handleConflictingOneOf()
@@ -354,7 +399,8 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsEmptyMsg(v)}
-      case 2:
+      }()
+      case 2: try {
         var v: SyftProto_Messaging_V1_ForceObjectDeleteMessage?
         if let current = self.contents {
           try decoder.handleConflictingOneOf()
@@ -362,7 +408,8 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsDeleteMsg(v)}
-      case 3:
+      }()
+      case 3: try {
         var v: SyftProto_Messaging_V1_GetShapeMessage?
         if let current = self.contents {
           try decoder.handleConflictingOneOf()
@@ -370,7 +417,8 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsGetShapeMsg(v)}
-      case 4:
+      }()
+      case 4: try {
         var v: SyftProto_Messaging_V1_IsNoneMessage?
         if let current = self.contents {
           try decoder.handleConflictingOneOf()
@@ -378,7 +426,8 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsIsNoneMsg(v)}
-      case 5:
+      }()
+      case 5: try {
         var v: SyftProto_Messaging_V1_ObjectMessage?
         if let current = self.contents {
           try decoder.handleConflictingOneOf()
@@ -386,7 +435,8 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsObjectMsg(v)}
-      case 6:
+      }()
+      case 6: try {
         var v: SyftProto_Messaging_V1_ObjectRequestMessage?
         if let current = self.contents {
           try decoder.handleConflictingOneOf()
@@ -394,7 +444,8 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsObjectRequestMsg(v)}
-      case 7:
+      }()
+      case 7: try {
         var v: SyftProto_Messaging_V1_TensorCommandMessage?
         if let current = self.contents {
           try decoder.handleConflictingOneOf()
@@ -402,7 +453,8 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsTensorCmdMsg(v)}
-      case 8:
+      }()
+      case 8: try {
         var v: SyftProto_Messaging_V1_PlanCommandMessage?
         if let current = self.contents {
           try decoder.handleConflictingOneOf()
@@ -410,7 +462,8 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsPlanCmdMsg(v)}
-      case 9:
+      }()
+      case 9: try {
         var v: SyftProto_Messaging_V1_WorkerCommandMessage?
         if let current = self.contents {
           try decoder.handleConflictingOneOf()
@@ -418,7 +471,8 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsWorkerCmdMsg(v)}
-      case 10:
+      }()
+      case 10: try {
         var v: SyftProto_Messaging_V1_SearchMessage?
         if let current = self.contents {
           try decoder.handleConflictingOneOf()
@@ -426,33 +480,57 @@ extension SyftProto_Messaging_V1_SyftMessage: SwiftProtobuf.Message, SwiftProtob
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.contents = .contentsSearchMsg(v)}
+      }()
       default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.contents {
-    case .contentsEmptyMsg(let v)?:
+    case .contentsEmptyMsg?: try {
+      guard case .contentsEmptyMsg(let v)? = self.contents else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    case .contentsDeleteMsg(let v)?:
+    }()
+    case .contentsDeleteMsg?: try {
+      guard case .contentsDeleteMsg(let v)? = self.contents else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    case .contentsGetShapeMsg(let v)?:
+    }()
+    case .contentsGetShapeMsg?: try {
+      guard case .contentsGetShapeMsg(let v)? = self.contents else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    case .contentsIsNoneMsg(let v)?:
+    }()
+    case .contentsIsNoneMsg?: try {
+      guard case .contentsIsNoneMsg(let v)? = self.contents else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    case .contentsObjectMsg(let v)?:
+    }()
+    case .contentsObjectMsg?: try {
+      guard case .contentsObjectMsg(let v)? = self.contents else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    case .contentsObjectRequestMsg(let v)?:
+    }()
+    case .contentsObjectRequestMsg?: try {
+      guard case .contentsObjectRequestMsg(let v)? = self.contents else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-    case .contentsTensorCmdMsg(let v)?:
+    }()
+    case .contentsTensorCmdMsg?: try {
+      guard case .contentsTensorCmdMsg(let v)? = self.contents else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-    case .contentsPlanCmdMsg(let v)?:
+    }()
+    case .contentsPlanCmdMsg?: try {
+      guard case .contentsPlanCmdMsg(let v)? = self.contents else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-    case .contentsWorkerCmdMsg(let v)?:
+    }()
+    case .contentsWorkerCmdMsg?: try {
+      guard case .contentsWorkerCmdMsg(let v)? = self.contents else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-    case .contentsSearchMsg(let v)?:
+    }()
+    case .contentsSearchMsg?: try {
+      guard case .contentsSearchMsg(let v)? = self.contents else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+    }()
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -473,8 +551,11 @@ extension SyftProto_Messaging_V1_IsNoneMessage: SwiftProtobuf.Message, SwiftProt
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularMessageField(value: &self._objectID)
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._objectID) }()
       default: break
       }
     }
@@ -502,8 +583,11 @@ extension SyftProto_Messaging_V1_ObjectMessage: SwiftProtobuf.Message, SwiftProt
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularMessageField(value: &self._tensor)
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._tensor) }()
       default: break
       }
     }
@@ -532,8 +616,11 @@ extension SyftProto_Messaging_V1_TensorCommandMessage: SwiftProtobuf.Message, Sw
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1:
+      case 1: try {
         var v: SyftProto_Execution_V1_ComputationAction?
         if let current = self.action {
           try decoder.handleConflictingOneOf()
@@ -541,7 +628,8 @@ extension SyftProto_Messaging_V1_TensorCommandMessage: SwiftProtobuf.Message, Sw
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.action = .computation(v)}
-      case 2:
+      }()
+      case 2: try {
         var v: SyftProto_Execution_V1_CommunicationAction?
         if let current = self.action {
           try decoder.handleConflictingOneOf()
@@ -549,17 +637,25 @@ extension SyftProto_Messaging_V1_TensorCommandMessage: SwiftProtobuf.Message, Sw
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.action = .communication(v)}
+      }()
       default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every case branch when no optimizations are
+    // enabled. https://github.com/apple/swift-protobuf/issues/1034
     switch self.action {
-    case .computation(let v)?:
+    case .computation?: try {
+      guard case .computation(let v)? = self.action else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    case .communication(let v)?:
+    }()
+    case .communication?: try {
+      guard case .communication(let v)? = self.action else { preconditionFailure() }
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    }()
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -580,8 +676,11 @@ extension SyftProto_Messaging_V1_ForceObjectDeleteMessage: SwiftProtobuf.Message
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeRepeatedMessageField(value: &self.objectIds)
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.objectIds) }()
       default: break
       }
     }
@@ -609,8 +708,11 @@ extension SyftProto_Messaging_V1_GetShapeMessage: SwiftProtobuf.Message, SwiftPr
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularMessageField(value: &self._objectID)
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._objectID) }()
       default: break
       }
     }
@@ -639,9 +741,12 @@ extension SyftProto_Messaging_V1_ObjectRequestMessage: SwiftProtobuf.Message, Sw
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularMessageField(value: &self._objectID)
-      case 2: try decoder.decodeSingularStringField(value: &self.reason)
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._objectID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.reason) }()
       default: break
       }
     }
@@ -674,9 +779,12 @@ extension SyftProto_Messaging_V1_PlanCommandMessage: SwiftProtobuf.Message, Swif
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.commandName)
-      case 2: try decoder.decodeRepeatedMessageField(value: &self.args)
+      case 1: try { try decoder.decodeSingularStringField(value: &self.commandName) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.args) }()
       default: break
       }
     }
@@ -709,9 +817,12 @@ extension SyftProto_Messaging_V1_WorkerCommandMessage: SwiftProtobuf.Message, Sw
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.commandName)
-      case 2: try decoder.decodeRepeatedMessageField(value: &self.args)
+      case 1: try { try decoder.decodeSingularStringField(value: &self.commandName) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.args) }()
       default: break
       }
     }
@@ -743,8 +854,11 @@ extension SyftProto_Messaging_V1_SearchMessage: SwiftProtobuf.Message, SwiftProt
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try decoder.decodeRepeatedMessageField(value: &self.query)
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.query) }()
       default: break
       }
     }

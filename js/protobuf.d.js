@@ -4277,6 +4277,129 @@ export namespace syft_proto {
                              */
                             public toJSON(): { [k: string]: any };
                         }
+
+                        /** Properties of a ReplicatedSharingTensor. */
+                        interface IReplicatedSharingTensor {
+
+                            /** ReplicatedSharingTensor id */
+                            id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** ReplicatedSharingTensor ring_int */
+                            ring_int?: (number|Long|null);
+
+                            /** ReplicatedSharingTensor ring_str */
+                            ring_str?: (string|null);
+
+                            /** ReplicatedSharingTensor dtype */
+                            dtype?: (string|null);
+
+                            /** ReplicatedSharingTensor location_ids */
+                            location_ids?: (syft_proto.types.syft.v1.IId[]|null);
+
+                            /** ReplicatedSharingTensor shares */
+                            shares?: (syft_proto.generic.pointers.v1.IPointerTensor[]|null);
+                        }
+
+                        /** Represents a ReplicatedSharingTensor. */
+                        class ReplicatedSharingTensor implements IReplicatedSharingTensor {
+
+                            /**
+                             * Constructs a new ReplicatedSharingTensor.
+                             * @param [properties] Properties to set
+                             */
+                            constructor(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IReplicatedSharingTensor);
+
+                            /** ReplicatedSharingTensor id. */
+                            public id?: (syft_proto.types.syft.v1.IId|null);
+
+                            /** ReplicatedSharingTensor ring_int. */
+                            public ring_int: (number|Long);
+
+                            /** ReplicatedSharingTensor ring_str. */
+                            public ring_str: string;
+
+                            /** ReplicatedSharingTensor dtype. */
+                            public dtype: string;
+
+                            /** ReplicatedSharingTensor location_ids. */
+                            public location_ids: syft_proto.types.syft.v1.IId[];
+
+                            /** ReplicatedSharingTensor shares. */
+                            public shares: syft_proto.generic.pointers.v1.IPointerTensor[];
+
+                            /** ReplicatedSharingTensor ring_size. */
+                            public ring_size?: ("ring_int"|"ring_str");
+
+                            /**
+                             * Creates a new ReplicatedSharingTensor instance using the specified properties.
+                             * @param [properties] Properties to set
+                             * @returns ReplicatedSharingTensor instance
+                             */
+                            public static create(properties?: syft_proto.frameworks.torch.tensors.interpreters.v1.IReplicatedSharingTensor): syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor;
+
+                            /**
+                             * Encodes the specified ReplicatedSharingTensor message. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor.verify|verify} messages.
+                             * @param message ReplicatedSharingTensor message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encode(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IReplicatedSharingTensor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Encodes the specified ReplicatedSharingTensor message, length delimited. Does not implicitly {@link syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor.verify|verify} messages.
+                             * @param message ReplicatedSharingTensor message or plain object to encode
+                             * @param [writer] Writer to encode to
+                             * @returns Writer
+                             */
+                            public static encodeDelimited(message: syft_proto.frameworks.torch.tensors.interpreters.v1.IReplicatedSharingTensor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                            /**
+                             * Decodes a ReplicatedSharingTensor message from the specified reader or buffer.
+                             * @param reader Reader or buffer to decode from
+                             * @param [length] Message length if known beforehand
+                             * @returns ReplicatedSharingTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor;
+
+                            /**
+                             * Decodes a ReplicatedSharingTensor message from the specified reader or buffer, length delimited.
+                             * @param reader Reader or buffer to decode from
+                             * @returns ReplicatedSharingTensor
+                             * @throws {Error} If the payload is not a reader or valid buffer
+                             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                             */
+                            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor;
+
+                            /**
+                             * Verifies a ReplicatedSharingTensor message.
+                             * @param message Plain object to verify
+                             * @returns `null` if valid, otherwise the reason why it is not
+                             */
+                            public static verify(message: { [k: string]: any }): (string|null);
+
+                            /**
+                             * Creates a ReplicatedSharingTensor message from a plain object. Also converts values to their respective internal types.
+                             * @param object Plain object
+                             * @returns ReplicatedSharingTensor
+                             */
+                            public static fromObject(object: { [k: string]: any }): syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor;
+
+                            /**
+                             * Creates a plain object from a ReplicatedSharingTensor message. Also converts values to other types if specified.
+                             * @param message ReplicatedSharingTensor
+                             * @param [options] Conversion options
+                             * @returns Plain object
+                             */
+                            public static toObject(message: syft_proto.frameworks.torch.tensors.interpreters.v1.ReplicatedSharingTensor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                            /**
+                             * Converts this ReplicatedSharingTensor to JSON.
+                             * @returns JSON object
+                             */
+                            public toJSON(): { [k: string]: any };
+                        }
                     }
                 }
             }
